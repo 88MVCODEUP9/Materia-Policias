@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark" data-densidade="normal" data-fonte="padrao" data-movimento="completo">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0d1117">
+<meta name="color-scheme" content="dark light">
+
+<!-- ==========================================================================
+     CARREIRAS POLICIAIS — PLATAFORMA DE ESTUDO
+     --------------------------------------------------------------------------
+     Uma única casca. Todo o conteúdo vem de arquivos de dados em
+     assets/js/data/, então não existe HTML manual por disciplina: acrescentar
+     uma matéria ou um assunto é acrescentar dados, não páginas.
+
+     Os scripts são <script> clássicos, com espaço de nomes global, e não
+     módulos ES. Motivo: a plataforma precisa funcionar abrindo o arquivo
+     direto do disco (file://), onde módulos e fetch() são bloqueados.
+     ========================================================================== -->
+
+<title>Carreiras Policiais · Plataforma de Estudo</title>
+<meta name="description" content="Teoria por assunto, questões, simulados e anotações para concursos de PRF, PM, PC, PF, Guarda Municipal e Polícia Penal. Tudo salvo no seu navegador.">
+<meta name="author" content="Carreiras Policiais — Plataforma de Estudo">
+<link rel="canonical" href="./index.html">
+
+<!-- Fontes: as mesmas do material original (Syne para títulos, Inter para texto) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700;800;900&display=swap">
+<!-- Font Awesome: mesma dependência do material original -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+
+<!-- ==========================================================================
+     DESIGN SYSTEM — um só lugar define cor, tipografia, espaçamento e
+     componente. A ordem importa: tokens -> base -> layout -> componentes.
+     ========================================================================== -->
+<link rel="stylesheet" href="assets/css/01-tokens.css?v=20260929">
+<link rel="stylesheet" href="assets/css/02-menu-lateral.css?v=20260929">
+<link rel="stylesheet" href="assets/css/03-site.css?v=20260929">
+<link rel="stylesheet" href="assets/css/04-cards.css?v=20260929">
+<link rel="stylesheet" href="assets/css/05-visual.css?v=20260929">
+<link rel="stylesheet" href="assets/css/06-mapas-tabelas.css?v=20260929">
+<!-- KaTeX: fórmulas matemáticas -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+
+<!-- Evita o "flash" de tema: aplica a preferência antes da primeira pintura -->
+<script>
+  (function () {
+    try {
+      var s = JSON.parse(localStorage.getItem('gma_aj_u_settings') || '{}');
+      var r = document.documentElement;
+      var escuro = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      r.setAttribute('data-theme', s.tema === 'light' ? 'light' : s.tema === 'dark' ? 'dark' : (escuro ? 'dark' : 'light'));
+      r.setAttribute('data-densidade', s.densidade || 'normal');
+      r.setAttribute('data-fonte', s.fonte || 'padrao');
+      var semMov = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      r.setAttribute('data-movimento', (s.movimento === false || semMov) ? 'reduzido' : 'completo');
+    } catch (e) { /* segue com os padrões do <html> */ }
+  })();
+</script>
+</head>
+
+<body data-icons="true">
+
+<!-- Pular para o conteúdo (acessibilidade) -->
+<a class="skip-link" href="#main">Pular para o conteúdo principal</a>
+
+<div class="app" id="app">
+
+  <!-- ======================================================================
+       SIDEBAR — o único menu da plataforma
+       ====================================================================== -->
+  <aside class="app-sidebar" id="sidebar" aria-label="Menu principal">
+    <div class="sidebar-brand">
+      <span class="sidebar-brand__mark" aria-hidden="true"></span>
+      <span class="sidebar-brand__text">
+        <span class="sidebar-brand__title">Carreiras Policiais</span>
+        <span class="sidebar-brand__sub">Plataforma de estudo</span>
+      </span>
+      <button class="icon-btn sidebar-toggle" data-toggle-sidebar
+              aria-label="Fechar o menu" aria-expanded="false">
+        <i class="fas fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+
+    <div id="sidebar-nav"></div>
+  </aside>
+
+  <div class="app-overlay" id="overlay" aria-hidden="true"></div>
+
+  <!-- ======================================================================
+       COLUNA PRINCIPAL
+       ====================================================================== -->
+  <div class="app-body">
+
+    <header class="app-topbar">
+      <button class="icon-btn icon-btn--ghost topbar-menu" data-toggle-sidebar
+              aria-label="Abrir o menu" aria-expanded="false">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <div class="topbar-title">
+        <span id="topbar-title">Matérias</span>
+        <span class="topbar-title__sub" id="topbar-sub" hidden></span>
+      </div>
+
+      <div class="spacer"></div>
+
+      <!-- Busca global: o mesmo campo em todas as telas -->
+      <div class="topbar-search">
+        <i class="fas fa-magnifying-glass topbar-search__icon" aria-hidden="true"></i>
+        <input type="search" id="busca-global" autocomplete="off" spellcheck="false"
+               placeholder="Buscar em toda a plataforma…"
+               aria-label="Buscar em toda a plataforma"
+               aria-describedby="dica-busca">
+        <kbd class="kbd kbd--ghost topbar-search__kbd" aria-hidden="true">/</kbd>
+        <span id="dica-busca" class="sr-only">Pressione barra para focar a busca e interrogação para ver os atalhos.</span>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="topbar-progress" id="topbar-progress" aria-label="Progresso geral"></div>
+        <button class="icon-btn icon-btn--ghost" data-tema
+                title="Alternar tema claro/escuro" aria-label="Alternar tema claro e escuro">
+          <i class="fas fa-sun sidebar-theme__icon-light" aria-hidden="true"></i>
+          <i class="fas fa-moon sidebar-theme__icon-dark" aria-hidden="true"></i>
+        </button>
+        <a class="icon-btn icon-btn--ghost" href="#/configuracoes"
+           title="Configurações" aria-label="Ir para as configurações">
+          <i class="fas fa-gear" aria-hidden="true"></i>
+        </a>
+      </div>
+    </header>
+
+    <nav class="breadcrumb" id="breadcrumb" aria-label="Você está aqui" hidden></nav>
+
+    <main class="app-main" id="main" tabindex="-1">
+      <div class="app-container">
+        <!-- O conteúdo de cada rota é montado por assets/js/views/*.js -->
+      </div>
+    </main>
+
+    <footer class="app-footer">
+      <div>Carreiras Policiais — plataforma de estudo do núcleo comum de
+        segurança pública. Conteúdo de elaboração própria; legislação e
+        súmulas sujeitas a alteração.</div>
+      <nav class="app-footer__links" aria-label="Links do rodapé"></nav>
+    </footer>
+
+  </div>
+</div>
+
+<!-- ==========================================================================
+     OUTRAS MATÉRIAS — os links da aba "Outras Matérias"
+     --------------------------------------------------------------------------
+     É AQUI que você adiciona os links. Cada item do array vira um link
+     na aba Outras Matérias do menu lateral.
+
+     "rotulo" é o texto que aparece no menu; "url" é o destino, que abre
+     em aba nova. Acrescente uma linha por link.
+
+       { "rotulo": "Outras Matérias", "url": "./assets/js/data/materias/outros/select.html" }
+     ========================================================================== -->
+<script type="application/json" id="outras-materias">
+[
+  { "rotulo": "Outras Matérias", "url": "./assets/js/data/materias/outros/select.html" }
+]
+</script>
+
+<!-- Aviso para quem chega com o JavaScript desligado -->
+<noscript>
+  <div style="max-width:60ch;margin:4rem auto;padding:0 1.5rem;font-family:Inter,system-ui,sans-serif;line-height:1.7">
+    <h1 style="font-family:Syne,system-ui,sans-serif">Esta plataforma precisa de JavaScript</h1>
+    <p>O conteúdo, as matérias e o seu progresso são montados no navegador.
+       Ative o JavaScript para continuar.</p>
+  </div>
+</noscript>
+
+<script src="assets/js/data/nucleo.js?v=20260929"></script>
+<script src="assets/js/data/videoaulas-complementares.js?v=20260929"></script>
+<!-- Índice de arquivos .js por matéria (gerado por gerar-indice.py). Só é usado
+     quando a listagem da pasta não existe, ou seja, ao abrir por file://. -->
+<script src="assets/js/data/materias/topicos-indice.js?v=20260929"></script>
+<!-- Carregadores individuais: cada um lista a pasta de tópicos da matéria. -->
+<script src="assets/js/loaders/loader-base.js?v=20260929"></script>
+<script src="assets/js/loaders/administrativo-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/atualidades-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/constitucional-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/direitos-humanos-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/extravagante-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/guardas-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/informatica-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/matematica-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/penal-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/portugues-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/processo-penal-loader.js?v=20260929"></script>
+<script src="assets/js/loaders/raciocinio-logico-loader.js?v=20260929"></script>
+<script src="assets/js/core.js?v=20260929"></script>
+<script src="assets/js/componentes.js?v=20260929"></script>
+<script src="assets/js/paginas.js?v=20260929"></script>
+<!-- KaTeX: renderização de fórmulas matemáticas -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<!-- Lucide Icons: ícones profissionais -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+<!-- Auto-render: converte $...$ e $$...$$ em KaTeX -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  /* KaTeX: renderizar fórmulas inline e em bloco */
+  /* Não trata como fórmula o que é texto comum: valores ("R$ 5.000,00")
+     ou português com acento entre dois $ virariam KaTeX quebrado. */
+  function ehFormula(expr) {
+    if (/\d\s*[.,]\d/.test(expr)) return false;
+    if (/[áéíóúâêôãõçÁÉÍÓÚÂÊÔÃÕÇ]/.test(expr)) return false;
+    if (/^[^\\^_={}<>]*\s\s+/.test(expr)) return false;
+    return true;
+  }
+  function renderMathInElement(el) {
+    if (typeof katex === 'undefined') return;
+    var walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT, null, false);
+    var nodes = [];
+    var node;
+    while (node = walker.nextNode()) {
+      if (node.parentElement && (node.parentElement.tagName === 'CODE' || node.parentElement.closest('.katex, .formula, .content-figure'))) continue;
+      nodes.push(node);
+    }
+    nodes.forEach(function(textNode) {
+      var text = textNode.textContent;
+      if (text.indexOf('$') === -1) return;
+      var html = text.replace(/\$\$([^$]+)\$\$|\$([^$]+)\$/g, function(m, bloco, inlineExpr) {
+        var expr = (bloco !== undefined ? bloco : inlineExpr);
+        if (!ehFormula(expr)) return m;          // texto comum: mantém como está
+        try { return katex.renderToString(expr.trim(), { throwOnError: false, displayMode: bloco !== undefined }); }
+        catch(e) { return '<code>' + expr + '</code>'; }
+      });
+      if (html === text) return;
+      var temp = document.createElement('span');
+      temp.innerHTML = html;
+      while (temp.firstChild) {
+        textNode.parentNode.insertBefore(temp.firstChild, textNode);
+      }
+      textNode.remove();
+    });
+  }
+  document.querySelectorAll('.prose, .content-text, .study-block__body, .content-verify__text, .compare__list, .lei-seca__body').forEach(renderMathInElement);
+  /* Lucide: inicializar ícones */
+  if (typeof lucide !== 'undefined') {
+    try { lucide.createIcons(); } catch(e) {}
+  }
+});
+</script>
+
+</body>
+</html>
