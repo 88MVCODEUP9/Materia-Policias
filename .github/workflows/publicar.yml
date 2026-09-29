@@ -1,0 +1,37 @@
+name: Publicar site de estudos
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: pages
+  cancel-in-progress: true
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Criar listagens HTML das pastas de tópicos
+        run: |
+          python3 - <<'PYCODE'
+          from html import escape
+          from pathlib import Path
+          for pasta in Path('assets/js/data/materias').glob('*/topicos'):
+              links = ''.join(f'<li><a href="{escape(arq.name)}">{escape(arq.name)}</a></li>' for arq in sorted(pasta.glob('*.js')))
+              (pasta / 'index.html').write_text('<!doctype html><meta charset="utf-8"><ul>' + links + '</ul>', encoding='utf-8')
+          PYCODE
+      - name: Atualizar índice de tópicos
+        run: python3 gerar-indice.py
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
