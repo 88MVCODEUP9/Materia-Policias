@@ -1,0 +1,1119 @@
+/* 04-cards.css — reorganizado por tools/reorganizar-css.py.
+   Refinamento visual: gradientes, halos, elevação com tinta.
+   Regras novas podem ser acrescentadas no fim deste arquivo. */
+
+
+/* ===== 04-cards.css ===== */
+
+/* ==========================================================================
+   CARDS — base, variantes, matéria, assunto, questões, blocos pedagógicos
+   --------------------------------------------------------------------------
+   Política visual:
+     · Superfícies nunca chapadas — sempre `--grad-surface` ou tinta de --mat.
+     · Filete superior (hairline) dá "volume" a qualquer card.
+     · Hover = leve lift + halo da cor dominante (--mat, --blk, --note).
+     · Sombras herdam a tinta azul-grafite (elev-*), nunca preto puro.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CARD BASE
+   -------------------------------------------------------------------------- */
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--grad-surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--elev-1), inset 0 1px 0 var(--border-highlight);
+  transition:
+    border-color var(--t) var(--ease),
+    transform    var(--t) var(--ease-out),
+    box-shadow   var(--t) var(--ease);
+}
+
+.card--pad   { padding: var(--sp-5); }
+.card--flush { padding: 0; }
+
+.card--hover { cursor: pointer; }
+.card--hover:hover {
+  border-color: color-mix(in srgb, var(--mat, var(--accent)) 55%, var(--border));
+  transform: translateY(-2px);
+  box-shadow:
+    var(--elev-3),
+    0 0 24px -10px var(--mat, var(--accent)),
+    inset 0 1px 0 var(--border-highlight);
+}
+
+.card--flat   { background: var(--surface-2); }
+.card--raised {
+  background: var(--surface-raised);
+  box-shadow: var(--elev-3), inset 0 1px 0 var(--border-highlight);
+}
+
+.card__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-3);
+  padding: var(--sp-4) var(--sp-5);
+  border-bottom: var(--border-w) solid var(--border);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 100%, white 2%) 0%,
+    var(--surface) 100%
+  );
+}
+
+.card__title { font-size: var(--fs-md); font-weight: var(--fw-bold); color: var(--text-strong); }
+.card__body  { padding: var(--sp-5); flex: 1 1 auto; }
+
+.card__foot {
+  padding: var(--sp-3) var(--sp-5);
+  border-top: var(--border-w) solid var(--border);
+  background: var(--surface-2);
+}
+
+/* Fio de cor no topo do card (identificador da matéria). */
+.card--accent::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--mat, var(--accent)) 0%,
+    color-mix(in srgb, var(--mat, var(--accent)) 30%, transparent) 100%
+  );
+  box-shadow: 0 0 12px -2px var(--mat, var(--accent));
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   CARD DE ESTATÍSTICA
+   -------------------------------------------------------------------------- */
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-1);
+  padding: var(--sp-4);
+  background: var(--grad-surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--elev-1), inset 0 1px 0 var(--border-highlight);
+  transition:
+    border-color var(--t) var(--ease),
+    transform    var(--t) var(--ease-out),
+    box-shadow   var(--t) var(--ease);
+}
+
+.stat:hover {
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--elev-2), inset 0 1px 0 var(--border-highlight);
+}
+
+.stat__value {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: var(--fw-black);
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  color: var(--stat-color, var(--text-strong));
+  text-shadow: 0 0 20px color-mix(in srgb, var(--stat-color, var(--accent)) 30%, transparent);
+}
+
+.stat__label { font-size: var(--fs-2xs); color: var(--text-muted); }
+.stat__meta  { font-size: var(--fs-3xs); color: var(--text-faint); }
+
+/* --------------------------------------------------------------------------
+   CARD DE MATÉRIA
+   -------------------------------------------------------------------------- */
+.mat-card {
+  --mat: var(--accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  padding: var(--sp-5);
+  background:
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--mat) 16%, var(--surface)) 0%,
+      var(--surface) 55%
+    );
+  border: var(--border-w) solid color-mix(in srgb, var(--mat) 45%, var(--border));
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-align: left;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--elev-1), inset 0 1px 0 var(--border-highlight);
+  transition:
+    border-color var(--t) var(--ease),
+    background   var(--t) var(--ease),
+    transform    var(--t) var(--ease-out),
+    box-shadow   var(--t) var(--ease);
+}
+
+/* Trilho lateral com a cor da matéria (4px + halo). */
+.mat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    var(--mat) 0%,
+    color-mix(in srgb, var(--mat) 55%, transparent) 100%
+  );
+  box-shadow: 0 0 12px -2px var(--mat);
+}
+
+/* Filete superior de luz (hairline). */
+.mat-card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, .14) 50%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.mat-card:hover {
+  background:
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--mat) 24%, var(--surface)) 0%,
+      var(--surface) 55%
+    );
+  border-color: var(--mat);
+  transform: translateY(-3px);
+  box-shadow:
+    var(--elev-3),
+    0 0 28px -10px var(--mat),
+    inset 0 1px 0 var(--border-highlight);
+  text-decoration: none;
+}
+
+.mat-card__top  { display: flex; align-items: flex-start; gap: var(--sp-3); }
+
+.mat-card__icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--mat) 22%, var(--surface));
+  color: var(--mat);
+  font-size: 1.35rem;
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--mat) 30%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .06);
+  transition: transform var(--t) var(--ease-out), box-shadow var(--t) var(--ease);
+}
+
+.mat-card:hover .mat-card__icon {
+  transform: scale(1.06);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--mat) 40%, transparent),
+    0 0 16px -4px var(--mat);
+}
+
+.mat-card__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-snug);
+  color: var(--mat);
+}
+
+.mat-card__area {
+  font-size: var(--fs-3xs);
+  color: var(--text-faint);
+  letter-spacing: var(--tracking-wide);
+}
+
+.mat-card__desc {
+  font-size: var(--fs-xs);
+  color: var(--text-muted);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mat-card__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2) var(--sp-4);
+  font-size: var(--fs-2xs);
+  color: var(--text-faint);
+}
+.mat-card__stats b { color: var(--text); font-variant-numeric: tabular-nums; }
+
+/* --------------------------------------------------------------------------
+   CARD DE ASSUNTO
+   -------------------------------------------------------------------------- */
+.assunto-card {
+  --mat: var(--accent);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  width: 100%;
+  padding: var(--sp-4) var(--sp-5);
+  padding-left: calc(var(--sp-5) + 4px);
+  background:
+    linear-gradient(
+      120deg,
+      color-mix(in srgb, var(--mat) 14%, var(--surface)) 0%,
+      var(--surface) 60%
+    );
+  border: var(--border-w) solid color-mix(in srgb, var(--mat) 42%, var(--border));
+  border-radius: var(--radius);
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: var(--elev-1), inset 0 1px 0 var(--border-highlight);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background   var(--t-fast) var(--ease),
+    transform    var(--t-fast) var(--ease-out),
+    box-shadow   var(--t-fast) var(--ease);
+}
+
+/* Trilho lateral com halo. */
+.assunto-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  background: linear-gradient(
+    180deg,
+    var(--mat) 0%,
+    color-mix(in srgb, var(--mat) 50%, transparent) 100%
+  );
+  box-shadow: 0 0 12px -2px var(--mat);
+}
+
+.assunto-card__icon {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--mat) 22%, var(--surface));
+  color: var(--mat);
+  font-size: var(--fs-md);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--mat) 28%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .05);
+  transition: transform var(--t-fast) var(--ease-out), box-shadow var(--t-fast) var(--ease);
+}
+
+.assunto-card:hover {
+  background:
+    linear-gradient(
+      120deg,
+      color-mix(in srgb, var(--mat) 22%, var(--surface)) 0%,
+      var(--surface) 60%
+    );
+  border-color: var(--mat);
+  transform: translateY(-2px);
+  box-shadow:
+    var(--elev-3),
+    0 0 24px -10px var(--mat),
+    inset 0 1px 0 var(--border-highlight);
+  text-decoration: none;
+}
+
+.assunto-card:hover .assunto-card__icon {
+  transform: scale(1.06);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--mat) 38%, transparent),
+    0 0 14px -4px var(--mat);
+}
+
+.assunto-card__body  { flex: 1 1 auto; min-width: 0; }
+
+.assunto-card__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-semibold);
+  line-height: 1.5;
+  color: var(--text-strong);
+}
+
+.assunto-card__meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-1) var(--sp-3);
+  margin-top: var(--sp-2);
+  font-size: var(--fs-2xs);
+  color: var(--text-faint);
+}
+
+.assunto-card__arrow {
+  color: var(--text-faint);
+  font-size: var(--fs-2xs);
+  transition:
+    transform var(--t-fast) var(--ease-out),
+    color     var(--t-fast) var(--ease);
+}
+.assunto-card:hover .assunto-card__arrow {
+  transform: translateX(4px);
+  color: var(--mat);
+}
+
+/* Trecho de resultado (busca) */
+.assunto-card__snippet {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-top: 3px;
+  font-size: var(--fs-3xs);
+  line-height: var(--lh-snug);
+  color: var(--text-faint);
+}
+
+/* Card genérico que já recebe --mat. */
+.card.is-mat {
+  background:
+    linear-gradient(
+      155deg,
+      color-mix(in srgb, var(--mat) 15%, var(--surface)) 0%,
+      var(--surface) 60%
+    );
+  border-color: color-mix(in srgb, var(--mat) 55%, var(--border));
+  box-shadow: var(--elev-1), inset 0 1px 0 var(--border-highlight);
+}
+
+/* Focus visível em cards interativos. */
+.mat-card:focus-visible,
+.assunto-card:focus-visible,
+.card--hover:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+  box-shadow: var(--focus-ring);
+}
+
+/* --------------------------------------------------------------------------
+   TEMA CLARO — tintas mais suaves
+   -------------------------------------------------------------------------- */
+[data-theme="light"] .mat-card,
+[data-theme="light"] .assunto-card,
+[data-theme="light"] .card.is-mat {
+  background: color-mix(in srgb, var(--mat) 8%, var(--surface));
+}
+
+[data-theme="light"] .mat-card:hover,
+[data-theme="light"] .assunto-card:hover {
+  background: color-mix(in srgb, var(--mat) 14%, var(--surface));
+}
+
+
+/* ==========================================================================
+   QUESTÕES — componente único (regra 23)
+   ========================================================================== */
+.q-card {
+  --mat: var(--accent);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--grad-surface);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--elev-1), inset 0 1px 0 var(--border-highlight);
+  transition:
+    border-color var(--t) var(--ease),
+    box-shadow   var(--t) var(--ease);
+}
+
+.q-card + .q-card { margin-top: var(--sp-4); }
+
+.q-card__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-2) 100%, white 2%) 0%,
+    var(--surface-2) 100%
+  );
+  border-bottom: var(--border-w) solid var(--border);
+  flex-wrap: wrap;
+}
+
+.q-card__num {
+  display: grid;
+  place-items: center;
+  min-width: 34px;
+  height: 26px;
+  padding: 0 var(--sp-2);
+  border-radius: var(--radius-xs);
+  background: var(--surface-3);
+  color: var(--text);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-black);
+  font-variant-numeric: tabular-nums;
+  box-shadow:
+    inset 0 0 0 1px var(--border-subtle),
+    inset 0 1px 0 rgba(255, 255, 255, .05);
+}
+
+.q-card__body       { padding: var(--sp-4); }
+.q-card__enunciado  { font-size: var(--fs-md); line-height: var(--lh-relaxed); color: var(--text); }
+.q-card__enunciado strong { color: var(--text-strong); }
+
+.q-card__comando {
+  margin-top: var(--sp-3);
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.q-card.is-answered {
+  border-color: color-mix(in srgb, var(--accent) 55%, var(--border));
+  box-shadow:
+    var(--elev-2),
+    0 0 24px -12px var(--accent),
+    inset 0 1px 0 var(--border-highlight);
+}
+.q-card.is-answered .q-card__num {
+  background: var(--accent-soft);
+  color: var(--accent-2);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+.q-card__foot {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  border-top: var(--border-w) solid var(--border);
+  background: var(--surface-2);
+  flex-wrap: wrap;
+}
+
+
+/* ==========================================================================
+   CARDS POR TIPO (study-block) — cor vem do rótulo
+   --------------------------------------------------------------------------
+   Cores de cada tipo (contraste AA sobre fundo escuro):
+     · azul      → explicação, conhecimento principal
+     · violeta   → conceito, definição
+     · ciano     → exemplo, fórmula
+     · verde     → certo, exemplo correto
+     · amarelo   → atenção, resumo
+     · vermelho  → errado, pegadinha, importante
+     · rosa      → bizu, dica, jurisprudência
+     · dourado   → lei seca
+   ========================================================================== */
+.blk {
+  --blk: var(--study-explanation);
+  position: relative;
+  padding: var(--sp-5);
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--blk) 16%, var(--surface)) 0%,
+      color-mix(in srgb, var(--blk) 6%, var(--surface)) 60%
+    );
+  border: var(--border-w) solid color-mix(in srgb, var(--blk) 55%, var(--border));
+  border-left: 4px solid var(--blk);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  box-shadow:
+    var(--elev-1),
+    inset 0 1px 0 var(--border-highlight);
+  transition:
+    border-color var(--t) var(--ease-out),
+    box-shadow   var(--t) var(--ease-out);
+}
+
+/* Filete lateral luminoso. */
+.blk::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: var(--sp-3);
+  bottom: var(--sp-3);
+  width: 4px;
+  border-radius: var(--radius-full);
+  background: var(--blk);
+  filter: blur(3px);
+  opacity: .55;
+  pointer-events: none;
+}
+
+.blk:hover {
+  border-color: color-mix(in srgb, var(--blk) 75%, var(--border));
+  box-shadow:
+    var(--elev-2),
+    0 0 24px -12px var(--blk),
+    inset 0 1px 0 var(--border-highlight);
+}
+
+.blk__label {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-bottom: var(--sp-2);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--blk);
+}
+
+.blk__title {
+  margin-bottom: var(--sp-2);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--blk);
+  line-height: var(--lh-snug);
+}
+
+/* Variantes semânticas. */
+.blk--explicacao  { --blk: var(--study-explanation); }
+.blk--conceito,
+.blk--definicao   { --blk: var(--study-concept); }
+.blk--dica,
+.blk--bizu        { --blk: var(--study-bizu); }
+.blk--exemplo     { --blk: var(--study-example); }
+.blk--acerto,
+.blk--certo       { --blk: var(--study-correct); }
+.blk--atencao     { --blk: var(--study-attention); }
+.blk--pegadinha,
+.blk--erro,
+.blk--errado      { --blk: var(--study-wrong); }
+.blk--importante  { --blk: var(--study-wrong); }
+.blk--resumo      { --blk: var(--study-attention); }
+.blk--observacao  { --blk: var(--text-muted); background: var(--surface-2); }
+.blk--fonte       { --blk: var(--text-faint); }
+
+.blk--exemplo .blk__ex {
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--surface);
+  border: var(--border-w) dashed var(--border-strong);
+  border-radius: var(--radius-sm);
+  margin-bottom: var(--sp-3);
+  box-shadow: inset 0 1px 0 var(--border-highlight);
+}
+
+.blk--exemplo .blk__sol {
+  padding: var(--sp-3) var(--sp-4);
+  background: var(--success-soft);
+  border-radius: var(--radius-sm);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--success) 22%, transparent);
+}
+.blk--exemplo .blk__sol strong { color: var(--success-light); }
+
+
+/* ==========================================================================
+   STUDY-NOTE — variante mais leve, cabeçalho com ícone
+   ========================================================================== */
+.study-note {
+  --note: var(--study-explanation);
+  position: relative;
+  display: grid;
+  gap: var(--sp-3);
+  padding: var(--sp-5);
+  color: var(--text);
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--note) 16%, var(--surface)) 0%,
+      color-mix(in srgb, var(--note) 6%, var(--surface)) 65%
+    );
+  border: 1px solid color-mix(in srgb, var(--note) 55%, var(--border));
+  border-left: 4px solid var(--note);
+  border-radius: var(--radius-sm);
+  line-height: var(--lh-relaxed);
+  box-shadow:
+    var(--elev-1),
+    inset 0 1px 0 var(--border-highlight);
+  transition:
+    border-color var(--t) var(--ease-out),
+    transform    var(--t) var(--ease-out),
+    box-shadow   var(--t) var(--ease-out);
+}
+
+.study-note:hover {
+  border-color: color-mix(in srgb, var(--note) 75%, var(--border));
+  box-shadow:
+    var(--elev-2),
+    0 0 24px -12px var(--note),
+    inset 0 1px 0 var(--border-highlight);
+}
+
+.study-note__head {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2) var(--sp-3);
+  min-width: 0;
+  flex-wrap: wrap;
+  color: var(--note);
+}
+
+.study-note__head > i {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
+  border-radius: var(--radius-sm);
+  background: color-mix(in srgb, var(--note) 22%, var(--surface));
+  color: var(--note);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--note) 30%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+
+.study-note__label {
+  flex: 0 0 auto;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-black);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.study-note__title {
+  min-width: 0;
+  color: var(--note);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  line-height: 1.5;
+}
+
+.study-note__body {
+  display: grid;
+  gap: var(--sp-3);
+  color: var(--text);
+  font-size: var(--fs-md);
+}
+.study-note__body p { margin: 0; }
+
+/* Variantes semânticas. */
+.study-note--explicacao { --note: var(--study-explanation); }
+.study-note--conceito,
+.study-note--definicao  { --note: var(--study-concept); }
+.study-note--exemplo    { --note: var(--study-example); }
+.study-note--certo      { --note: var(--study-correct); }
+.study-note--errado     { --note: var(--study-wrong); }
+.study-note--bizu       { --note: var(--study-bizu); }
+.study-note--atencao    { --note: var(--study-attention); }
+
+
+/* ==========================================================================
+   TAGS SEMÂNTICAS INLINE
+   ========================================================================== */
+.semantic-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  margin: 0 2px;
+  border: 1px solid color-mix(in srgb, var(--note) 45%, transparent);
+  border-radius: var(--radius-xs);
+  color: var(--note);
+  background: color-mix(in srgb, var(--note) 20%, var(--surface));
+  font-size: .78em;
+  font-weight: var(--fw-black);
+  line-height: 1.6;
+  vertical-align: .06em;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+
+.semantic-tag--explicacao { --note: var(--study-explanation); }
+.semantic-tag--conceito,
+.semantic-tag--definicao  { --note: var(--study-concept); }
+.semantic-tag--exemplo    { --note: var(--study-example); }
+.semantic-tag--certo      { --note: var(--study-correct); }
+.semantic-tag--errado     { --note: var(--study-wrong); }
+.semantic-tag--bizu       { --note: var(--study-bizu); }
+.semantic-tag--atencao    { --note: var(--study-attention); }
+
+
+/* ==========================================================================
+   LEGENDA DE ESTUDO
+   ========================================================================== */
+.study-legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--sp-3) var(--sp-5);
+  margin: 0 0 var(--sp-4);
+  padding: var(--sp-2) 0;
+  background: transparent;
+  border: 0;
+  border-radius: var(--radius-sm);
+}
+
+.study-legend__title {
+  margin-right: var(--sp-1);
+  color: var(--text-muted);
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.study-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--note);
+  font-size: var(--fs-2xs);
+  white-space: nowrap;
+}
+
+.study-legend__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--note);
+  box-shadow:
+    0 0 0 2px color-mix(in srgb, var(--note) 20%, transparent),
+    0 0 8px -1px var(--note);
+}
+
+.study-legend__item--explicacao { --note: var(--study-explanation); }
+.study-legend__item--conceito,
+.study-legend__item--definicao  { --note: var(--study-concept); }
+.study-legend__item--exemplo    { --note: var(--study-example); }
+.study-legend__item--certo      { --note: var(--study-correct); }
+.study-legend__item--errado     { --note: var(--study-wrong); }
+.study-legend__item--bizu       { --note: var(--study-bizu); }
+.study-legend__item--atencao    { --note: var(--study-attention); }
+
+
+/* ==========================================================================
+   STUDY-BLOCK — blocos pedagógicos (compatibilidade)
+   ========================================================================== */
+.study-block {
+  --sb-color: var(--study-explanation);
+  position: relative;
+  display: grid;
+  gap: var(--sp-2);
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  margin: var(--sp-3) 0;
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--sb-color) 16%, var(--surface)) 0%,
+      color-mix(in srgb, var(--sb-color) 6%, var(--surface)) 65%
+    );
+  border: 1px solid color-mix(in srgb, var(--sb-color) 55%, var(--border));
+  border-left: 4px solid var(--sb-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-md);
+  line-height: var(--lh-relaxed);
+  overflow-wrap: break-word;
+  box-shadow:
+    var(--elev-1),
+    inset 0 1px 0 var(--border-highlight);
+  transition: border-color var(--t) var(--ease-out), box-shadow var(--t) var(--ease-out);
+}
+
+.study-block:hover {
+  border-color: color-mix(in srgb, var(--sb-color) 75%, var(--border));
+  box-shadow:
+    var(--elev-2),
+    0 0 24px -12px var(--sb-color),
+    inset 0 1px 0 var(--border-highlight);
+}
+
+.study-block__tag {
+  position: absolute;
+  left: 0;
+  top: var(--sp-3);
+  bottom: var(--sp-3);
+  width: 4px;
+  border-radius: var(--radius-full);
+  background: var(--sb-color);
+  filter: blur(3px);
+  opacity: .55;
+  pointer-events: none;
+}
+
+.study-block__label {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+  width: fit-content;
+  padding: 0;
+  background: transparent;
+  border-radius: 0;
+  font-size: var(--fs-xs);
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--sb-color);
+  margin-bottom: var(--sp-3);
+}
+.study-block__label i { font-size: var(--fs-3xs); }
+
+.study-block__title {
+  font-size: var(--fs-md);
+  font-weight: var(--fw-bold);
+  color: var(--sb-color);
+  margin-bottom: var(--sp-3);
+  line-height: 1.5;
+}
+
+.study-block__body { color: var(--text); }
+.study-block__body > * + * { margin-top: var(--sp-3); }
+.study-block__body p { margin: 0; line-height: var(--lh-relaxed); }
+.study-block__body ul, .study-block__body ol { margin: var(--sp-1) 0 0; }
+
+/* Cores por tipo. */
+.study-block--explicacao     { --sb-color: var(--study-explanation); }
+.study-block--conceito,
+.study-block--definicao      { --sb-color: var(--study-concept); }
+.study-block--exemplo        { --sb-color: var(--study-example); }
+.study-block--certo          { --sb-color: var(--study-correct); }
+.study-block--errado         { --sb-color: var(--study-wrong); }
+.study-block--atencao        { --sb-color: var(--study-attention); }
+.study-block--bizu           { --sb-color: var(--study-bizu); }
+.study-block--lei            { --sb-color: var(--gold); }
+.study-block--jurisprudencia { --sb-color: var(--study-bizu); }
+.study-block--formula        { --sb-color: var(--info); }
+
+@media (prefers-reduced-motion: reduce) {
+  .study-block { transition: none; }
+}
+
+[data-fonte="ampliada"] .study-block { font-size: var(--fs-md); }
+[data-fonte="reduzida"] .study-block { font-size: var(--fs-sm); }
+
+[data-theme="light"] .study-block {
+  background: color-mix(in srgb, var(--sb-color) 9%, var(--surface));
+}
+
+
+/* ==========================================================================
+   ÍCONES — fallback Lucide → Font Awesome
+   ========================================================================== */
+[data-icons="true"] .study-block__label i::before,
+[data-icons="true"] .content-verify__icon i::before {
+  /* Ícones carregados via CDN. */
+}
+
+.study-block__label i,
+.content-verify__icon i {
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+}
+
+
+/* ==========================================================================
+   CARTÃO DE DIA (cronograma)
+   ========================================================================== */
+.dia-card {
+  position: relative;
+  transition:
+    border-color var(--t) var(--ease),
+    transform    var(--t) var(--ease-out),
+    box-shadow   var(--t) var(--ease),
+    opacity      var(--t) var(--ease);
+}
+
+.dia-card.is-done { opacity: .74; }
+.dia-card.is-done:hover { opacity: 1; }
+
+.dia-card.is-hoje {
+  border-color: var(--gold);
+  box-shadow:
+    0 0 0 1px var(--gold-soft-strong),
+    0 0 24px -8px var(--gold),
+    var(--elev-2);
+}
+.dia-card.is-hoje::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    transparent 40%,
+    color-mix(in srgb, var(--gold) 12%, transparent) 50%,
+    transparent 60%
+  );
+  pointer-events: none;
+  animation: diaShine 3.5s var(--ease) infinite;
+}
+
+@keyframes diaShine {
+  0%, 100% { opacity: .35; }
+  50%      { opacity: .85; }
+}
+
+
+/* ==========================================================================
+   TABELA DE QUESTÕES MINI (busca, revisões)
+   ========================================================================== */
+.q-mini {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sp-3);
+  padding: var(--sp-3);
+  border: var(--border-w) solid var(--border);
+  border-left: 3px solid var(--status-color, var(--border-strong));
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  background: var(--grad-surface);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  box-shadow: inset 0 1px 0 var(--border-highlight);
+  transition: border-color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease-out);
+}
+.q-mini:hover {
+  border-color: var(--border-strong);
+  transform: translateX(2px);
+}
+
+.q-mini--certa  { --status-color: var(--success); }
+.q-mini--errada { --status-color: var(--danger); }
+
+.q-mini__texto { flex: 1 1 auto; min-width: 0; }
+.q-mini__meta {
+  margin-top: 2px;
+  font-size: var(--fs-3xs);
+  color: var(--text-faint);
+  display: flex;
+  gap: var(--sp-2);
+  flex-wrap: wrap;
+}
+
+
+/* ==========================================================================
+   GRADE DE ESTATÍSTICAS
+   ========================================================================== */
+.stat-grid { grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); }
+
+
+/* ==========================================================================
+   COMPARAÇÃO — duas colunas
+   ========================================================================== */
+.content-compare {
+  display: grid;
+  gap: var(--sp-4);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: var(--sp-5) 0;
+}
+
+.content-compare__col {
+  min-width: 0;
+  padding: var(--sp-5);
+  background: color-mix(in srgb, var(--cmp-color, var(--mat, var(--accent))) 12%, var(--surface));
+  border: var(--border-w) solid color-mix(in srgb, var(--cmp-color, var(--mat, var(--accent))) 45%, var(--border));
+  border-top: 4px solid var(--cmp-color, var(--mat, var(--accent)));
+  border-radius: var(--radius);
+  box-shadow:
+    var(--elev-1),
+    inset 0 1px 0 var(--border-highlight);
+  transition: box-shadow var(--t) var(--ease);
+}
+.content-compare__col:hover {
+  box-shadow:
+    var(--elev-2),
+    0 0 20px -10px var(--cmp-color, var(--mat, var(--accent))),
+    inset 0 1px 0 var(--border-highlight);
+}
+
+.content-compare__title {
+  margin-bottom: var(--sp-3);
+  padding-bottom: var(--sp-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-black);
+  color: var(--text-strong);
+  text-align: left;
+  border-bottom: var(--border-w) solid var(--border);
+}
+
+.content-compare__list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+.content-compare__list li {
+  font-size: var(--fs-sm);
+  color: var(--text-muted);
+  line-height: var(--lh-snug);
+}
+
+
+/* ==========================================================================
+   TEXTO-CONCEITO — painel violeta sem virar card
+   ========================================================================== */
+.texto-conceito {
+  --cb: var(--study-concept, var(--study-bizu));
+  position: relative;
+  background:
+    linear-gradient(
+      160deg,
+      color-mix(in srgb, var(--cb) 13%, var(--surface)) 0%,
+      color-mix(in srgb, var(--cb) 5%, var(--surface)) 70%
+    );
+  border-left: 4px solid var(--cb);
+  border-radius: var(--radius-sm);
+  padding: var(--sp-3) var(--sp-4);
+  margin: var(--sp-4) 0;
+  box-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    inset 0 0 0 1px color-mix(in srgb, var(--cb) 18%, transparent);
+}
+
+.texto-conceito p { margin: var(--sp-2) 0; }
+.texto-conceito p:first-child { margin-top: 0; }
+.texto-conceito p:last-child  { margin-bottom: 0; }
+.texto-conceito strong { color: var(--cb); font-weight: 700; }
+
+[data-theme="light"] .texto-conceito {
+  background: color-mix(in srgb, var(--cb) 9%, #fff);
+}
+
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+@media (max-width: 640px) {
+  .blk { padding: var(--sp-3) var(--sp-4); }
+  .blk--exemplo .blk__ex,
+  .blk--exemplo .blk__sol { padding: var(--sp-2) var(--sp-3); }
+  .study-block { padding: var(--sp-2) var(--sp-3) var(--sp-2) var(--sp-4); font-size: var(--fs-sm); }
+  .study-block__label { font-size: var(--fs-3xs); }
+  .content-compare { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .study-note { padding: var(--sp-3) var(--sp-4); }
+  .study-legend { gap: var(--sp-2) var(--sp-3); padding: var(--sp-3); }
+  .study-legend__title { flex-basis: 100%; }
+  .content-compare { grid-template-columns: 1fr; }
+}
+
+
+/* ==========================================================================
+   IMPRESSÃO
+   ========================================================================== */
+@media print {
+  .study-block__tag { display: none; }
+  .blk, .study-note, .study-block, .mat-card, .assunto-card, .q-card {
+    box-shadow: none !important;
+    background-image: none !important;
+  }
+}

@@ -1,0 +1,729 @@
+/* 02-menu-lateral.css — reorganizado por tools/reorganizar-css.py.
+   Refinamento visual: vidro, gradientes, halos, microinterações.
+   Regras novas podem ser acrescentadas no fim deste arquivo. */
+
+
+/* ===== 02-menu-lateral.css ===== */
+
+/* ==========================================================================
+   CARREIRAS POLICIAIS / MENU LATERAL E TOPBAR
+   --------------------------------------------------------------------------
+   Responsabilidade deste arquivo:
+     · Brand / navegação / rodapé da sidebar
+     · Topbar (título, busca, foco, progresso) com efeito de vidro
+     · Breadcrumb
+     · Estados colapsados (desktop) e off-canvas (mobile)
+
+   Breakpoints usados (ordem decrescente de prioridade na leitura):
+     · min-width: 1025px  → sidebar mini colapsável
+     · max-width: 1024px  → sidebar off-canvas
+     · max-width: 900px   → ajuste do seletor de foco
+     · max-width: 768px   → topbar compacta + busca em tela cheia
+     · max-width: 480px   → topbar ultra-compacta
+     · max-width: 360px   → último refinamento
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   IMPRESSÃO: esconde a casca da aplicação
+   -------------------------------------------------------------------------- */
+@media print {
+  .app-sidebar,
+  .app-topbar,
+  .app-footer,
+  .no-print { display: none !important; }
+}
+
+/* --------------------------------------------------------------------------
+   SIDEBAR: marca / navegação / rodapé
+   -------------------------------------------------------------------------- */
+.sidebar-brand {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  height: var(--topbar-h);
+  padding: 0 var(--sp-4);
+  flex-shrink: 0;
+  border-bottom: var(--border-w) solid var(--border);
+  text-decoration: none;
+  color: var(--text-strong);
+  transition: background-color var(--t) var(--ease);
+}
+
+/* Filete dourado sutil sob a marca — reforço de identidade. */
+.sidebar-brand::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 1px;
+  background: var(--grad-brand);
+  opacity: .35;
+  pointer-events: none;
+}
+
+.sidebar-brand:hover { text-decoration: none; }
+.sidebar-brand:hover .sidebar-brand__mark {
+  transform: translateY(-1px);
+  box-shadow: var(--elev-2), var(--halo-gold);
+}
+
+.sidebar-brand__mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: var(--grad-gold);
+  color: var(--gold-ink);
+  font-size: var(--fs-md);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--tracking-tight);
+  box-shadow: var(--elev-1), inset 0 1px 0 rgba(255, 255, 255, .18);
+  transition: transform var(--t) var(--ease-out), box-shadow var(--t) var(--ease);
+}
+
+.sidebar-brand__text { min-width: 0; }
+
+.sidebar-brand__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--tracking-wide);
+  line-height: 1.1;
+  white-space: nowrap;
+  background: linear-gradient(
+    180deg,
+    var(--text-strong) 0%,
+    color-mix(in srgb, var(--text-strong) 78%, var(--gold)) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.sidebar-brand__sub {
+  font-size: var(--fs-3xs);
+  color: var(--text-faint);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sidebar-nav {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: var(--sp-3) var(--sp-3) var(--sp-2);
+  scrollbar-gutter: stable;
+}
+
+.sidebar-section + .sidebar-section { margin-top: var(--sp-5); }
+
+.sidebar-section__title {
+  padding: 0 var(--sp-3);
+  margin-bottom: var(--sp-3);
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-semibold);
+  color: var(--text-faint);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   ITEM DE NAVEGAÇÃO
+   -------------------------------------------------------------------------- */
+.nav-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  width: 100%;
+  min-height: var(--tap-min);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  text-align: left;
+  text-decoration: none;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease-out);
+}
+
+.nav-item:hover {
+  background: var(--surface-2);
+  color: var(--text-strong);
+  text-decoration: none;
+  transform: translateX(2px);
+}
+
+.nav-item:active { transform: translateX(2px) scale(.99); }
+
+.nav-item__icon {
+  width: 20px;
+  flex-shrink: 0;
+  text-align: center;
+  font-size: var(--fs-sm);
+  color: var(--text-faint);
+  transition: color var(--t-fast) var(--ease), transform var(--t-fast) var(--ease-out);
+}
+
+.nav-item:hover .nav-item__icon {
+  color: var(--text-muted);
+  transform: scale(1.06);
+}
+
+.nav-item__label {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   ESTADO ATIVO
+   Fundo com tinta de accent + barra lateral luminosa + leve halo.
+   -------------------------------------------------------------------------- */
+.nav-item.is-active {
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent-soft-strong) 0%,
+      var(--accent-soft) 55%,
+      transparent 100%
+    ),
+    var(--surface-2);
+  color: var(--text-strong);
+  font-weight: var(--fw-semibold);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 22%, transparent);
+}
+
+.nav-item.is-active .nav-item__icon {
+  color: var(--accent-2);
+  transform: scale(1.05);
+}
+
+/* Barra luminosa vertical — antes era chapada; agora tem halo. */
+.nav-item.is-active::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--sp-3) * -1 + 2px);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    180deg,
+    var(--accent-2) 0%,
+    var(--accent) 100%
+  );
+  box-shadow: 0 0 10px -1px var(--accent-2);
+  animation: navPulse 2.4s var(--ease) infinite;
+}
+
+@keyframes navPulse {
+  0%, 100% { box-shadow: 0 0 10px -1px var(--accent-2); }
+  50%      { box-shadow: 0 0 14px 1px var(--accent-2); }
+}
+
+/* --------------------------------------------------------------------------
+   ITEM DE DISCIPLINA: ponto colorido no lugar do ícone.
+   Ganha um halo da própria cor quando ativo/hover.
+   -------------------------------------------------------------------------- */
+.nav-item--materia .nav-item__dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  flex-shrink: 0;
+  border-radius: var(--radius-full);
+  background: var(--mat, var(--neutral));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--mat, var(--neutral)) 18%, transparent);
+  transition:
+    transform var(--t-fast) var(--ease-out),
+    box-shadow var(--t-fast) var(--ease);
+}
+
+.nav-item--materia:hover .nav-item__dot,
+.nav-item--materia.is-active .nav-item__dot {
+  transform: scale(1.15);
+  box-shadow:
+    0 0 0 3px color-mix(in srgb, var(--mat, var(--neutral)) 26%, transparent),
+    0 0 12px -2px var(--mat, var(--neutral));
+}
+
+.nav-item--materia .nav-item__icon { display: none; }
+
+/* --------------------------------------------------------------------------
+   CONTADOR (badge numérico)
+   -------------------------------------------------------------------------- */
+.nav-item__count {
+  flex-shrink: 0;
+  min-width: 22px;
+  padding: 1px var(--sp-2);
+  border-radius: var(--radius-full);
+  background: var(--surface-3);
+  color: var(--text-faint);
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-semibold);
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+  box-shadow: inset 0 0 0 1px var(--border-subtle);
+  transition: background-color var(--t-fast) var(--ease), color var(--t-fast) var(--ease);
+}
+
+.nav-item:hover .nav-item__count {
+  background: var(--surface-4);
+  color: var(--text-muted);
+}
+
+.nav-item.is-active .nav-item__count {
+  background: color-mix(in srgb, var(--accent) 22%, transparent);
+  color: var(--accent-2);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   RODAPÉ DA SIDEBAR
+   -------------------------------------------------------------------------- */
+.sidebar-foot {
+  flex-shrink: 0;
+  padding: var(--sp-3);
+  border-top: var(--border-w) solid var(--border);
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    color-mix(in srgb, var(--bg-deep) 40%, transparent) 100%
+  );
+}
+
+/* Botão de tema */
+.sidebar-theme {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sp-2);
+  width: 100%;
+  min-height: var(--tap-min);
+  border-radius: var(--radius-sm);
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--tracking-wide);
+  box-shadow: inset 0 0 0 1px var(--border-subtle);
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease),
+    transform var(--t-fast) var(--ease-out);
+}
+
+.sidebar-theme:hover {
+  background: var(--surface-3);
+  color: var(--text-strong);
+  box-shadow: inset 0 0 0 1px var(--border-highlight);
+}
+
+.sidebar-theme:active { transform: scale(.985); }
+
+.sidebar-theme__icon-dark  { display: inline; }
+.sidebar-theme__icon-light { display: none; }
+
+[data-theme="light"] .sidebar-theme__icon-dark  { display: none; }
+[data-theme="light"] .sidebar-theme__icon-light { display: inline; }
+
+/* --------------------------------------------------------------------------
+   TOPBAR — camada de vidro
+   -------------------------------------------------------------------------- */
+.app-topbar {
+  position: sticky;
+  top: 0;
+  z-index: var(--z-topbar);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  padding: 0 var(--sp-5);
+  padding-top: var(--safe-t);
+  height: calc(var(--topbar-h) + var(--safe-t));
+  background: var(--glass-bg);
+  -webkit-backdrop-filter: var(--glass-blur);
+  backdrop-filter: var(--glass-blur);
+  border-bottom: var(--border-w) solid var(--border);
+  box-shadow: var(--elev-1);
+}
+
+/* Filete superior sutil (luz vinda de cima). */
+.app-topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--grad-hairline);
+  pointer-events: none;
+}
+
+/* Fallback para navegadores sem backdrop-filter. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .app-topbar { background: var(--bg); }
+}
+
+/* Botões de menu: por padrão invisíveis (desktop mostra tudo na sidebar).
+   No mobile viram botões de gaveta. */
+.sidebar-toggle,
+.topbar-menu { display: none; }
+
+.topbar-title {
+  min-width: 0;
+  flex: 1 1 auto;
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text-strong);
+}
+
+.topbar-title__sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-regular);
+  color: var(--text-faint);
+  margin-top: 1px;
+}
+
+/* --------------------------------------------------------------------------
+   BUSCA GLOBAL (regra 39: uma única busca para toda a plataforma)
+   -------------------------------------------------------------------------- */
+.topbar-search {
+  position: relative;
+  flex: 0 1 340px;
+  min-width: 0;
+}
+
+.topbar-search__icon {
+  position: absolute;
+  left: var(--sp-3);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-faint);
+  font-size: var(--fs-2xs);
+  pointer-events: none;
+  transition: color var(--t-fast) var(--ease);
+}
+
+.topbar-search:focus-within .topbar-search__icon {
+  color: var(--accent-2);
+}
+
+.topbar-search input {
+  width: 100%;
+  height: 40px;
+  padding: 0 var(--sp-3) 0 var(--sp-8);
+  background: var(--surface-2);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, .08);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+
+.topbar-search input::placeholder { color: var(--text-faint); }
+
+.topbar-search input:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-3);
+}
+
+.topbar-search input:focus-visible {
+  border-color: var(--accent);
+  background: var(--surface-3);
+  box-shadow:
+    inset 0 1px 0 rgba(0, 0, 0, .08),
+    0 0 0 3px color-mix(in srgb, var(--accent) 22%, transparent);
+  outline: none;
+}
+
+/* Dica de atalho ("/") dentro do campo. */
+.topbar-search__kbd { z-index: 1; }
+
+.topbar-search:has(.topbar-search__kbd) input { padding-right: var(--sp-8); }
+
+.topbar-search input:focus ~ .topbar-search__kbd,
+.topbar-search input:not(:placeholder-shown) ~ .topbar-search__kbd { opacity: 0; }
+
+/* Botão de fechar a busca em tela cheia (visível só no mobile). */
+.topbar-search__close { display: none; }
+
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-1);
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SELETOR DE FOCO (corporação)
+   -------------------------------------------------------------------------- */
+.topbar-foco {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  flex-shrink: 0;
+}
+
+.topbar-foco__label {
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  color: var(--text-faint);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+.topbar-foco__select {
+  height: 40px;
+  max-width: 220px;
+  padding: 0 var(--sp-3);
+  background: var(--surface-2);
+  border: var(--border-w) solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
+  cursor: pointer;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, .08);
+  transition:
+    border-color var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    box-shadow var(--t-fast) var(--ease);
+}
+
+.topbar-foco__select:hover {
+  border-color: var(--border-strong);
+  background: var(--surface-3);
+}
+
+.topbar-foco__select:focus-visible {
+  border-color: var(--foco, var(--accent));
+  outline: none;
+  box-shadow:
+    inset 0 1px 0 rgba(0, 0, 0, .08),
+    0 0 0 3px color-mix(in srgb, var(--foco, var(--accent)) 24%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   INDICADOR DE PROGRESSO NO TOPO
+   -------------------------------------------------------------------------- */
+.topbar-progress {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--success) 12%, var(--surface-2)) 0%,
+    var(--surface-2) 100%
+  );
+  border: var(--border-w) solid color-mix(in srgb, var(--success) 22%, var(--border));
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-bold);
+  color: var(--text-muted);
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+.topbar-progress__value {
+  color: var(--success-light);
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 12px color-mix(in srgb, var(--success) 45%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   BREADCRUMB (regra 31)
+   -------------------------------------------------------------------------- */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--sp-1);
+  font-size: var(--fs-2xs);
+  color: var(--text-faint);
+}
+
+.breadcrumb__sep {
+  color: var(--border-strong);
+  font-size: var(--fs-3xs);
+  opacity: .7;
+}
+
+.breadcrumb__item {
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 2px 4px;
+  border-radius: var(--radius-xs);
+  transition: color var(--t-fast) var(--ease), background-color var(--t-fast) var(--ease);
+}
+
+.breadcrumb__item:hover {
+  color: var(--accent-2);
+  background: var(--accent-soft);
+  text-decoration: none;
+}
+
+.breadcrumb__item[aria-current="page"] {
+  color: var(--text-strong);
+  font-weight: var(--fw-semibold);
+}
+
+/* ==========================================================================
+   RESPONSIVO
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   ≥ 1025px: sidebar mini colapsável
+   -------------------------------------------------------------------------- */
+@media (min-width: 1025px) {
+  .app.is-collapsed .sidebar-brand__text,
+  .app.is-collapsed .nav-item__label,
+  .app.is-collapsed .nav-item__count,
+  .app.is-collapsed .sidebar-section__title,
+  .app.is-collapsed .sidebar-theme span { display: none; }
+
+  .app.is-collapsed .sidebar-brand {
+    justify-content: center;
+    padding: 0;
+  }
+
+  .app.is-collapsed .nav-item {
+    justify-content: center;
+    padding: var(--sp-2);
+  }
+
+  /* No modo colapsado, o hover não empurra pra direita. */
+  .app.is-collapsed .nav-item:hover { transform: none; }
+
+  .app.is-collapsed .nav-item__icon {
+    width: auto;
+    font-size: var(--fs-md);
+  }
+
+  .app.is-collapsed .nav-item--materia .nav-item__dot {
+    width: 11px;
+    height: 11px;
+  }
+
+  .app.is-collapsed .sidebar-section {
+    margin-top: var(--sp-4);
+    padding-top: var(--sp-3);
+    border-top: 1px solid var(--border);
+  }
+
+  .app.is-collapsed .sidebar-section:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  .app.is-collapsed .sidebar-theme {
+    font-size: 0;
+    gap: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ≤ 1024px: sidebar off-canvas; botão de menu aparece
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .sidebar-toggle,
+  .topbar-menu { display: inline-grid; }
+
+  .topbar-search { flex-basis: 260px; }
+}
+
+/* --------------------------------------------------------------------------
+   ≤ 900px: encurta o seletor de foco
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .topbar-foco__label { display: none; }
+  .topbar-foco__select { max-width: 132px; }
+}
+
+/* --------------------------------------------------------------------------
+   ≤ 768px: topbar compacta + busca em tela cheia
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .app-topbar {
+    padding: 0 var(--sp-3);
+    padding-top: var(--safe-t);
+    gap: var(--sp-2);
+  }
+
+  .topbar-title { font-size: var(--fs-md); }
+  .topbar-title__sub { font-size: var(--fs-3xs); }
+
+  .topbar-progress { display: none; }
+
+  /* Busca vira uma camada de tela cheia, com botão de fechar dedicado. */
+  .topbar-search {
+    position: fixed;
+    inset: 0 0 auto 0;
+    z-index: var(--z-modal);
+    flex: none;
+    height: calc(var(--topbar-h) + var(--safe-t));
+    padding: var(--sp-2) var(--sp-3);
+    background: var(--glass-bg);
+    -webkit-backdrop-filter: var(--glass-blur);
+    backdrop-filter: var(--glass-blur);
+    border-bottom: var(--border-w) solid var(--border);
+    box-shadow: var(--elev-3);
+    transform: translateY(-102%);
+    transition: transform var(--t) var(--ease-out);
+  }
+
+  .topbar-search.is-open { transform: translateY(0); }
+
+  .topbar-search input {
+    height: var(--tap-min);
+    background: var(--surface-3);
+  }
+
+  .topbar-search__close { display: grid; }
+
+  .topbar-search__kbd { display: none; }
+
+  .topbar-search:has(.topbar-search__kbd) input { padding-right: var(--sp-3); }
+
+  @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+    .topbar-search { background: var(--bg); }
+  }
+}
+
+/* --------------------------------------------------------------------------
+   ≤ 480px: topbar ultra-compacta
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .topbar-actions { gap: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   ≤ 360px: último refinamento
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  .sidebar-brand { padding: 0 var(--sp-3); }
+}

@@ -1,0 +1,1218 @@
+/* ==========================================================================
+   CARREIRAS POLICIAIS / DESIGN SYSTEM: 05 / VISUAL (cards)
+   --------------------------------------------------------------------------
+   Camada visual carregada por último. Não muda conteúdo: só aparência.
+   Toda cor vem de 01-tokens.css:
+
+     · --mat ............ cor do ASSUNTO (--cor-N): cabeçalho, títulos,
+                          filetes e cards de texto corrido.
+     · --study-* ........ cor do TIPO de bloco (regra pedagógica).
+     · --gold ........... legislação / lei seca.
+
+   Refinamento: halos coloridos, sombras em camadas, hero com orbs,
+   microinterações, tipografia com tracking, vidro no topbar/sumário.
+
+   ORGANIZAÇÃO:
+     0. Fundação (variáveis da camada visual)
+     1. Peças globais (botões, selos, sidebar)
+     2. Hero / cabeçalho de página
+     3. Página de assunto
+        3.1 Legenda · 3.2 Ritmo · 3.3 H2 · 3.4 H3
+        3.5 Card de texto (.txt-card) ← CORREÇÃO de bullets
+        3.6 Study-block / texto-conceito / verify
+        3.7 Tabelas, comparações, fórmulas, figuras
+        3.8 Lei seca / artigos
+     4. Seções de apoio (vídeos, revisão, navegação)
+     5. Sumário lateral
+     6. Grades de cards
+     7. Responsivo, movimento reduzido, impressão, forced-colors
+   ========================================================================== */
+
+
+/* ==========================================================================
+   0. FUNDAÇÃO — variáveis da camada visual
+   ========================================================================== */
+:root {
+  --r-card:    18px;
+  --r-card-sm: 14px;
+  --r-hero:    24px;
+
+  /* Superfície de card: gradiente sutil + fio de luz no topo. */
+  --card-bg: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-2) 55%, var(--surface)) 0%,
+    var(--surface) 100%
+  );
+  --card-border: color-mix(in srgb, var(--border) 88%, transparent);
+
+  /* Elevação em DUAS camadas: fio interno + sombra externa.
+     (Bug antigo: `inset` na 2ª sombra estava fora de ordem.)
+     Formato correto: inset antes das coordenadas. */
+  --card-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    0 1px 0 rgba(255, 255, 255, .03),
+    0 10px 24px -14px rgba(2, 6, 14, .55);
+  --card-shadow-hover:
+    inset 0 1px 0 var(--border-highlight),
+    0 20px 38px -16px rgba(2, 6, 14, .65);
+
+  --font-titulo: 'Syne', var(--font-display);
+  --mat-ink: #0b1220;
+
+  /* Espaço vertical entre seções — ajustável globalmente. */
+  --section-rhythm: clamp(1.15rem, 2.4vw, 1.5rem);
+}
+
+[data-theme="light"] {
+  --card-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    0 1px 2px rgba(16, 24, 40, .04),
+    0 12px 26px -18px rgba(16, 24, 40, .18);
+  --card-shadow-hover:
+    inset 0 1px 0 var(--border-highlight),
+    0 2px 4px rgba(16, 24, 40, .05),
+    0 22px 38px -18px rgba(16, 24, 40, .26);
+  --mat-ink: #ffffff;
+}
+
+/* Fundo global com brilho institucional discreto. */
+body {
+  background:
+    radial-gradient(1100px 460px at 88% -8%,
+      color-mix(in srgb, var(--accent) 15%, transparent),
+      transparent 62%),
+    radial-gradient(820px 380px at 0% 0%,
+      color-mix(in srgb, var(--gold) 8%, transparent),
+      transparent 58%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+.app-body, .app-main { background: transparent; }
+
+/* Topbar com vidro mais refinado. */
+.app-topbar {
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  -webkit-backdrop-filter: saturate(150%) blur(16px);
+  backdrop-filter: saturate(150%) blur(16px);
+  box-shadow:
+    inset 0 -1px 0 var(--border),
+    0 1px 0 rgba(255, 255, 255, .02);
+}
+
+::selection {
+  background: color-mix(in srgb, var(--mat, var(--accent-2)) 42%, transparent);
+  color: var(--text-strong);
+}
+[data-theme="light"] ::selection {
+  background: color-mix(in srgb, var(--mat, var(--accent)) 28%, transparent);
+  color: var(--text-strong);
+}
+
+
+/* ==========================================================================
+   1. PEÇAS GLOBAIS — botões, selos, sidebar
+   ========================================================================== */
+.btn {
+  border-radius: 12px;
+  font-weight: var(--fw-bold);
+  letter-spacing: .005em;
+  transition:
+    transform        var(--t-fast) var(--ease-out),
+    box-shadow       var(--t-fast) var(--ease),
+    background-color var(--t-fast) var(--ease),
+    border-color     var(--t-fast) var(--ease);
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn:focus-visible {
+  outline: none;
+  box-shadow:
+    var(--focus-ring),
+    var(--card-shadow);
+}
+
+.badge {
+  border-radius: var(--radius-full);
+  letter-spacing: .025em;
+}
+
+.nav-item {
+  border-radius: 12px;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color            var(--t-fast) var(--ease),
+    transform        var(--t-fast) var(--ease-out);
+}
+.nav-item:hover { transform: translateX(2px); }
+.nav-item:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.nav-item.is-active {
+  background:
+    linear-gradient(
+      90deg,
+      var(--accent-soft-strong) 0%,
+      var(--accent-soft) 55%,
+      transparent 100%
+    ),
+    var(--surface-2);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent-2) 32%, transparent);
+}
+
+.sidebar-brand__mark {
+  border-radius: 12px;
+  box-shadow:
+    0 8px 18px -8px var(--gold),
+    inset 0 1px 0 rgba(255, 255, 255, .22);
+}
+
+
+/* ==========================================================================
+   2. CABEÇALHO DE PÁGINA (hero)
+   ========================================================================== */
+.page-head,
+.page-head.mat-accent {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  padding: clamp(1.35rem, 3.2vw, 2.2rem);
+  margin-bottom: var(--sp-6);
+  border: 1px solid color-mix(in srgb, var(--mat, var(--accent)) 42%, var(--border));
+  border-radius: var(--r-hero);
+  background:
+    radial-gradient(620px 260px at 100% 0%,
+      color-mix(in srgb, var(--mat, var(--accent)) 32%, transparent),
+      transparent 70%),
+    radial-gradient(420px 220px at 0% 100%,
+      color-mix(in srgb, var(--gold) 8%, transparent),
+      transparent 65%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--mat, var(--accent)) 16%, var(--surface)) 0%,
+      var(--surface) 64%);
+  box-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    0 22px 44px -22px color-mix(in srgb, var(--mat, var(--accent)) 55%, transparent),
+    var(--card-shadow);
+}
+
+/* Filete superior — barra com brilho.
+   Antes usava z-index: -1 (podia ser capturado por isolation em alguns UAs);
+   agora é posicionado no topo via `inset` e pointer-events desligado. */
+.page-head::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--mat, var(--accent)) 0%,
+    color-mix(in srgb, var(--mat, var(--accent)) 55%, var(--gold)) 45%,
+    color-mix(in srgb, var(--mat, var(--accent)) 8%, transparent) 78%
+  );
+  box-shadow: 0 0 18px -4px var(--mat, var(--accent));
+}
+
+/* Ornamento radial duplo no canto inferior direito. */
+.page-head::after {
+  content: "";
+  position: absolute;
+  right: -70px;
+  bottom: -100px;
+  width: 270px;
+  height: 270px;
+  border-radius: 50%;
+  pointer-events: none;
+  border: 1px solid color-mix(in srgb, var(--mat, var(--accent)) 30%, transparent);
+  box-shadow:
+    0 0 0 30px color-mix(in srgb, var(--mat, var(--accent)) 6%, transparent),
+    0 0 0 62px color-mix(in srgb, var(--mat, var(--accent)) 3%, transparent);
+  animation: pageHeadOrb 8s var(--ease) infinite;
+}
+
+@keyframes pageHeadOrb {
+  0%, 100% { transform: scale(1);    opacity: .9; }
+  50%      { transform: scale(1.04); opacity: 1;  }
+}
+
+/* Conteúdo do hero fica acima dos ornamentos. */
+.page-head > * { position: relative; z-index: 1; }
+
+.page-head__title {
+  font-family: var(--font-titulo);
+  font-size: clamp(1.65rem, 3.3vw, 2.5rem);
+  letter-spacing: -.022em;
+  line-height: 1.1;
+  text-wrap: balance;
+  color: var(--text-strong);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .04);
+}
+[data-theme="light"] .page-head__title {
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.page-head__desc {
+  font-size: var(--fs-md);
+  color: var(--text-muted);
+  line-height: var(--lh-relaxed);
+}
+
+.page-head .btn--ghost {
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--surface) 72%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  border-color: color-mix(in srgb, var(--mat, var(--accent)) 38%, var(--border));
+}
+.page-head .btn--ghost:hover {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border-color: var(--mat, var(--accent));
+  box-shadow: 0 0 20px -8px var(--mat, var(--accent));
+}
+
+
+/* ==========================================================================
+   3. PÁGINA DE ASSUNTO
+   ========================================================================== */
+.assunto-layout {
+  --mat-soft: color-mix(in srgb, var(--mat, var(--accent)) 14%, transparent);
+}
+
+/* --------------------------------------------------------------------------
+   3.1 Legenda de cores
+   -------------------------------------------------------------------------- */
+.assunto-layout .study-legend {
+  gap: .55rem .6rem;
+  padding: .8rem 1.1rem;
+  margin: 0 0 var(--sp-5);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  background: color-mix(in srgb, var(--surface) 78%, transparent);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 var(--border-highlight);
+}
+
+.assunto-layout .study-legend__title {
+  color: var(--text-faint);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: .7rem;
+  font-weight: 800;
+}
+
+.assunto-layout .study-legend__item {
+  padding: .25rem .75rem;
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--note) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--note) 36%, transparent);
+  font-weight: 700;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    border-color     var(--t-fast) var(--ease),
+    transform        var(--t-fast) var(--ease-out);
+}
+.assunto-layout .study-legend__item:hover {
+  background: color-mix(in srgb, var(--note) 22%, transparent);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   3.2 Ritmo do conteúdo
+   -------------------------------------------------------------------------- */
+.assunto-layout .prose[data-conteudo] {
+  max-width: none;
+  counter-reset: secao;
+}
+.assunto-layout .prose[data-conteudo] > * { margin: 0; }
+.assunto-layout .prose[data-conteudo] > * + * { margin-top: var(--section-rhythm); }
+
+/* --------------------------------------------------------------------------
+   3.3 Títulos de seção (H2)
+   -------------------------------------------------------------------------- */
+.assunto-layout .prose[data-conteudo] > .content-section {
+  counter-increment: secao;
+  margin-top: var(--sp-10);
+}
+.assunto-layout .prose[data-conteudo] > .content-section:first-child { margin-top: 0; }
+.assunto-layout .prose[data-conteudo] > .content-section + * { margin-top: 1rem; }
+
+.assunto-layout .content-section__head {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  margin: 0;
+  padding: 1.05rem 1.4rem 1.05rem 1.6rem;
+  border: 1px solid color-mix(in srgb, var(--mat) 46%, var(--border));
+  border-radius: 20px;
+  background:
+    radial-gradient(360px 140px at 100% 0%,
+      color-mix(in srgb, var(--mat) 24%, transparent),
+      transparent 70%),
+    linear-gradient(100deg,
+      color-mix(in srgb, var(--mat) 22%, var(--surface)) 0%,
+      color-mix(in srgb, var(--mat) 6%, var(--surface)) 78%);
+  box-shadow:
+    inset 6px 0 0 var(--mat),
+    inset 0 1px 0 var(--border-highlight),
+    0 12px 24px -16px color-mix(in srgb, var(--mat) 60%, transparent),
+    var(--card-shadow);
+  overflow: hidden;
+}
+
+/* Número automático quando o título não traz um. */
+.assunto-layout .content-section__head::before {
+  content: counter(secao, decimal-leading-zero);
+  flex: none;
+  display: grid;
+  place-items: center;
+  min-width: 2.7rem;
+  height: 2.7rem;
+  padding: 0 .45rem;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--mat) 100%, white 8%) 0%,
+    var(--mat) 55%,
+    color-mix(in srgb, var(--mat) 100%, black 8%) 100%
+  );
+  color: var(--mat-ink);
+  font-family: var(--font-titulo);
+  font-weight: 800;
+  font-size: 1.02rem;
+  font-variant-numeric: tabular-nums;
+  box-shadow:
+    0 8px 18px -8px var(--mat),
+    inset 0 1px 0 rgba(255, 255, 255, .22),
+    inset 0 -1px 0 rgba(0, 0, 0, .18);
+}
+.assunto-layout .content-section__head:has(.content-section__num)::before {
+  display: none;
+}
+
+.assunto-layout .content-section__num {
+  display: grid;
+  place-items: center;
+  min-width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--mat) 100%, white 8%) 0%,
+    var(--mat) 55%,
+    color-mix(in srgb, var(--mat) 100%, black 8%) 100%
+  );
+  color: var(--mat-ink);
+  font-family: var(--font-titulo);
+  box-shadow:
+    0 8px 18px -8px var(--mat),
+    inset 0 1px 0 rgba(255, 255, 255, .22);
+}
+
+.assunto-layout .content-section__title {
+  margin: 0;
+  font-family: var(--font-titulo);
+  font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+  line-height: 1.2;
+  letter-spacing: -.012em;
+  color: var(--text-strong);
+  text-wrap: balance;
+}
+
+/* --------------------------------------------------------------------------
+   3.4 Subtítulos (H3) — losango + linha degradê
+   -------------------------------------------------------------------------- */
+.assunto-layout .prose[data-conteudo] > .content-subsection { margin-top: var(--sp-8); }
+.assunto-layout .prose[data-conteudo] > .content-subsection + * { margin-top: .85rem; }
+
+.assunto-layout .content-subsection__title {
+  display: flex;
+  align-items: center;
+  gap: .85rem;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: var(--font-titulo);
+  font-size: 1.14rem;
+  line-height: 1.3;
+  color: var(--text-strong);
+  letter-spacing: -.008em;
+}
+.assunto-layout .content-subsection__title::before {
+  content: "";
+  flex: none;
+  width: .74rem;
+  height: .74rem;
+  border-radius: 3px;
+  transform: rotate(45deg);
+  background: var(--mat);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--mat) 20%, transparent),
+    0 0 14px -2px var(--mat);
+}
+.assunto-layout .content-subsection__title::after {
+  content: "";
+  flex: 1 1 auto;
+  min-width: 1.5rem;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--mat) 55%, transparent) 0%,
+    transparent 100%
+  );
+}
+
+.assunto-layout .c-h4,
+.assunto-layout .c-h5 {
+  font-family: var(--font-titulo);
+  color: var(--text-strong);
+}
+
+/* --------------------------------------------------------------------------
+   3.5 CARD DE TEXTO — todo texto corrido mora num card
+   --------------------------------------------------------------------------
+   CORREÇÃO APLICADA: o bullet gerado por `.prose ul li::before`
+   (03-site.css) fica ancorado em `left: var(--sp-2)` = 8px, com ~5px
+   de largura — ocupando a faixa 8–13px. Antes, esta regra tinha
+   `padding-left: .4rem` + `margin-left: -.4rem`, o que empurrava o
+   texto para 0px e o bullet caía em cima da primeira letra.
+   Agora o padding é maior que o bullet, e a margem negativa foi
+   removida para o card manter alinhamento próprio.
+   -------------------------------------------------------------------------- */
+.assunto-layout .txt-card {
+  position: relative;
+  isolation: isolate;
+  padding:
+    clamp(1rem, 2.2vw, 1.45rem)
+    clamp(1.1rem, 2.6vw, 1.8rem);
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-card);
+  background: var(--card-bg);
+  box-shadow:
+    inset 0 3px 0 color-mix(in srgb, var(--mat) 62%, transparent),
+    var(--card-shadow);
+  overflow-wrap: anywhere;
+  transition:
+    border-color var(--t) var(--ease),
+    box-shadow   var(--t) var(--ease),
+    transform    var(--t) var(--ease-out);
+}
+.assunto-layout .txt-card:hover {
+  border-color: color-mix(in srgb, var(--mat) 40%, var(--border));
+  box-shadow:
+    inset 0 3px 0 var(--mat),
+    0 0 26px -12px var(--mat),
+    var(--card-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.assunto-layout .txt-card > * { margin: 0; }
+.assunto-layout .txt-card > * + * { margin-top: .95rem; }
+.assunto-layout .txt-card p { line-height: 1.82; }
+.assunto-layout .txt-card p strong,
+.assunto-layout .txt-card li strong { color: var(--text-strong); }
+
+/* "Cabeça" do trecho: linha em negrito que abre o card. */
+.assunto-layout .txt-card .txt-lead {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  padding-bottom: .5rem;
+  border-bottom: 1px dashed color-mix(in srgb, var(--mat) 36%, transparent);
+  font-family: var(--font-titulo);
+  font-size: 1.05rem;
+  line-height: 1.35;
+  letter-spacing: -.005em;
+}
+.assunto-layout .txt-card .txt-lead strong {
+  color: color-mix(in srgb, var(--mat) 72%, var(--text-strong));
+}
+.assunto-layout .txt-card .txt-lead::before {
+  content: "";
+  flex: none;
+  width: .55rem;
+  height: .55rem;
+  border-radius: 50%;
+  background: var(--mat);
+  box-shadow: 0 0 10px -1px var(--mat);
+}
+.assunto-layout .txt-card .txt-lead + * { margin-top: .78rem; }
+.assunto-layout .txt-card .txt-abertura {
+  font-family: var(--font-titulo);
+  font-size: 1.08rem;
+  line-height: 1.5;
+}
+.assunto-layout .txt-card > * + .txt-lead { margin-top: 1.4rem; }
+
+/* Card que tem só a "cabeça". */
+.assunto-layout .txt-card--cabeca {
+  padding: .8rem 1.35rem;
+  border-radius: 15px;
+}
+.assunto-layout .txt-card--cabeca .txt-lead {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+.assunto-layout .prose[data-conteudo] > .txt-card--cabeca + * { margin-top: .6rem; }
+
+/* --- Listas dentro do card ------------------------------------------- */
+.assunto-layout .txt-card ul,
+.assunto-layout .txt-card ol,
+.assunto-layout .txt-card .content-list {
+  display: grid;
+  gap: .3rem;
+  margin: .1rem 0;
+  padding-left: 0;      /* o padding fica no <li>, não no <ul> */
+}
+
+.assunto-layout .txt-card li {
+  position: relative;                /* âncora do ::before do bullet */
+  list-style: none;                  /* remove bullet nativo quando <ul> */
+  padding: .28rem .55rem .28rem 1.5rem;  /* ← 24px: comporta o bullet */
+  margin-left: 0;                    /* ← era -.4rem; removido */
+  border-radius: 10px;
+  line-height: 1.72;
+  transition: background var(--t-fast) var(--ease);
+}
+.assunto-layout .txt-card li:hover {
+  background: color-mix(in srgb, var(--mat) 9%, transparent);
+}
+
+/* Reposiciona o bullet mais perto do texto — combina com o novo padding. */
+.assunto-layout .txt-card li::before {
+  left: .6rem;    /* ~9.6px — alinhado ao trilho visual */
+}
+
+/* Títulos (h4/h5) dentro de listas — não herdam o padding do <li> no grid. */
+.assunto-layout .txt-card li > :first-child { margin-top: 0; }
+.assunto-layout .txt-card li > :last-child  { margin-bottom: 0; }
+
+/* --- Código / termos inline ----------------------------------------- */
+.assunto-layout .prose code,
+.assunto-layout .prose .t-mono {
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--mat) 12%, var(--surface-3));
+  border: 1px solid color-mix(in srgb, var(--mat) 24%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
+}
+
+/* --------------------------------------------------------------------------
+   3.6 BLOCOS DE CATEGORIA (study-block)
+   -------------------------------------------------------------------------- */
+.assunto-layout .study-block--conceito,
+.assunto-layout .study-block--definicao { --sb-color: var(--study-concept); }
+.assunto-layout .study-block--explicacao { --sb-color: var(--study-explanation); }
+
+.assunto-layout .study-block {
+  --sb: var(--sb-color, var(--study-explanation));
+  display: block;
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  padding: 1.1rem 1.45rem 1.3rem 1.75rem;
+  border: 1px solid color-mix(in srgb, var(--sb) 46%, var(--border));
+  border-left-width: 1px;
+  border-radius: var(--r-card);
+  background:
+    radial-gradient(440px 170px at 100% 0%,
+      color-mix(in srgb, var(--sb) 18%, transparent),
+      transparent 72%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--sb) 13%, var(--surface)) 0%,
+      color-mix(in srgb, var(--sb) 5%, var(--surface)) 100%);
+  box-shadow:
+    inset 6px 0 0 var(--sb),
+    inset 0 1px 0 var(--border-highlight),
+    0 12px 24px -16px color-mix(in srgb, var(--sb) 60%, transparent),
+    var(--card-shadow);
+  transition:
+    border-color var(--t) var(--ease),
+    box-shadow   var(--t) var(--ease),
+    transform    var(--t) var(--ease-out);
+}
+.assunto-layout .study-block:hover {
+  border-color: color-mix(in srgb, var(--sb) 72%, var(--border));
+  box-shadow:
+    inset 6px 0 0 var(--sb),
+    0 0 28px -14px var(--sb),
+    var(--card-shadow-hover);
+  transform: translateY(-1px);
+}
+
+.assunto-layout .study-block__tag { display: none; }
+
+.assunto-layout .study-block__label {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  width: fit-content;
+  margin: 0 0 .8rem;
+  padding: .32rem .85rem;
+  border: 1px solid color-mix(in srgb, var(--sb) 54%, transparent);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--sb) 22%, transparent);
+  color: var(--sb);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+.assunto-layout .study-block__label i { font-size: .78rem; }
+
+/* Corpo — preserva quebras de linha do conteúdo (pre-line). */
+.assunto-layout .study-block__body {
+  white-space: pre-line;
+  line-height: 1.82;
+  color: var(--text);
+  overflow-wrap: anywhere;
+}
+.assunto-layout .study-block__body strong { color: var(--text-strong); }
+.assunto-layout .study-block__body > * + * { margin-top: var(--sp-3); }
+
+/* --- Conceito / Definição (violeta) --------------------------------- */
+.assunto-layout .texto-conceito {
+  --cb: var(--study-concept, var(--study-bizu));
+  position: relative;
+  isolation: isolate;
+  margin: 0;
+  padding: 1.1rem 1.45rem 1.3rem 1.75rem;
+  border: 1px solid color-mix(in srgb, var(--cb) 46%, var(--border));
+  border-radius: var(--r-card);
+  background:
+    radial-gradient(440px 170px at 100% 0%,
+      color-mix(in srgb, var(--cb) 19%, transparent),
+      transparent 72%),
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--cb) 14%, var(--surface)) 0%,
+      color-mix(in srgb, var(--cb) 5%, var(--surface)) 100%);
+  box-shadow:
+    inset 6px 0 0 var(--cb),
+    inset 0 1px 0 var(--border-highlight),
+    0 12px 24px -16px color-mix(in srgb, var(--cb) 60%, transparent),
+    var(--card-shadow);
+}
+
+.assunto-layout .texto-conceito::before {
+  content: attr(data-rotulo);
+  display: flex;
+  width: fit-content;
+  margin: 0 0 .8rem;
+  padding: .32rem .85rem;
+  border: 1px solid color-mix(in srgb, var(--cb) 54%, transparent);
+  border-radius: var(--radius-full);
+  background: color-mix(in srgb, var(--cb) 22%, transparent);
+  color: var(--cb);
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+.assunto-layout .texto-conceito p { margin: .6rem 0; line-height: 1.82; }
+.assunto-layout .texto-conceito p:first-of-type { margin-top: 0; }
+.assunto-layout .texto-conceito p:last-child { margin-bottom: 0; }
+.assunto-layout .texto-conceito strong { color: var(--cb); }
+
+/* --- Certo / Errado ------------------------------------------------- */
+.assunto-layout .content-verify {
+  display: grid;
+  gap: .65rem;
+  margin: 0;
+}
+.assunto-layout .content-verify__item {
+  --vc: var(--study-correct);
+  display: flex;
+  align-items: flex-start;
+  gap: .9rem;
+  padding: .95rem 1.25rem .95rem 1.55rem;
+  border: 1px solid color-mix(in srgb, var(--vc) 46%, var(--border));
+  border-radius: var(--r-card-sm);
+  background:
+    linear-gradient(135deg,
+      color-mix(in srgb, var(--vc) 13%, var(--surface)) 0%,
+      color-mix(in srgb, var(--vc) 5%, var(--surface)) 100%);
+  box-shadow:
+    inset 5px 0 0 var(--vc),
+    inset 0 1px 0 var(--border-highlight),
+    0 10px 22px -16px color-mix(in srgb, var(--vc) 55%, transparent),
+    var(--card-shadow);
+  transition: box-shadow var(--t) var(--ease), transform var(--t) var(--ease-out);
+}
+.assunto-layout .content-verify__item:hover {
+  transform: translateY(-1px);
+  box-shadow:
+    inset 5px 0 0 var(--vc),
+    0 0 22px -12px var(--vc),
+    var(--card-shadow-hover);
+}
+.assunto-layout .content-verify__item--errado { --vc: var(--study-wrong); }
+.assunto-layout .content-verify__icon--certo   { color: var(--study-correct); }
+.assunto-layout .content-verify__icon--errado  { color: var(--study-wrong); }
+
+/* --------------------------------------------------------------------------
+   3.7 Tabelas, comparações, passos, fórmulas, figuras
+   -------------------------------------------------------------------------- */
+.assunto-layout .content-table {
+  margin: 0;
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-card);
+  background: var(--surface);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+.assunto-layout .content-table .table-wrap {
+  border: 0;
+  border-radius: 0;
+}
+.assunto-layout .content-table .table th {
+  padding: .9rem 1.1rem;
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--mat) 30%, var(--surface-3)) 0%,
+    color-mix(in srgb, var(--mat) 22%, var(--surface-3)) 100%
+  );
+  color: var(--text-strong);
+  font-size: .72rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  border-bottom: 1px solid color-mix(in srgb, var(--mat) 40%, var(--border-strong));
+}
+.assunto-layout .content-table .table td { padding: .9rem 1.1rem; }
+.assunto-layout .content-table .table tbody tr:hover {
+  background: color-mix(in srgb, var(--mat) 9%, var(--surface-2));
+}
+.assunto-layout .content-table__caption {
+  padding: .75rem 1.1rem;
+  font-family: var(--font-titulo);
+  letter-spacing: .02em;
+}
+
+.assunto-layout .content-compare { margin: 0; gap: .95rem; }
+.assunto-layout .content-compare__col {
+  border-radius: var(--r-card);
+  border: 1px solid color-mix(in srgb, var(--cmp-color, var(--mat)) 42%, var(--border));
+  box-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    0 12px 24px -18px color-mix(in srgb, var(--cmp-color, var(--mat)) 50%, transparent),
+    var(--card-shadow);
+  transition: box-shadow var(--t) var(--ease), transform var(--t) var(--ease-out);
+}
+.assunto-layout .content-compare__col:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 0 26px -12px var(--cmp-color, var(--mat)),
+    var(--card-shadow-hover);
+}
+
+.assunto-layout .steps,
+.assunto-layout .formula,
+.assunto-layout .calc,
+.assunto-layout .content-diagram,
+.assunto-layout .content-figure {
+  padding: 1.15rem 1.4rem;
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-card);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+.assunto-layout .formula {
+  border-left: 3px solid color-mix(in srgb, var(--mat) 55%, transparent);
+}
+.assunto-layout .content-figure:hover .figure__frame {
+  border-color: color-mix(in srgb, var(--mat) 45%, var(--border));
+  box-shadow: 0 0 26px -12px var(--mat), var(--card-shadow);
+}
+
+/* --------------------------------------------------------------------------
+   3.8 Lei seca / artigos (dourado)
+   -------------------------------------------------------------------------- */
+.assunto-layout .lei-seca {
+  margin: 0;
+  border: 1px solid color-mix(in srgb, var(--gold) 48%, var(--border));
+  border-radius: var(--r-card);
+  background: var(--surface);
+  box-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    0 14px 28px -18px color-mix(in srgb, var(--gold) 55%, transparent),
+    var(--card-shadow);
+  overflow: hidden;
+}
+.assunto-layout .lei-seca__header {
+  padding: .95rem 1.35rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--gold) 38%, var(--border));
+  background:
+    radial-gradient(360px 130px at 100% 0%,
+      color-mix(in srgb, var(--gold) 20%, transparent),
+      transparent 70%),
+    linear-gradient(100deg,
+      color-mix(in srgb, var(--gold) 28%, var(--surface)) 0%,
+      color-mix(in srgb, var(--gold) 7%, var(--surface)) 100%);
+}
+.assunto-layout .lei-seca__title { font-family: var(--font-titulo); }
+.assunto-layout .art__num {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .24rem .75rem;
+  border-radius: var(--radius-full);
+  background: var(--gold-soft-strong);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+/* Acordeão */
+.assunto-layout .prose[data-conteudo] details,
+.assunto-layout .prose[data-conteudo] .acordeao {
+  border: 1px solid var(--card-border);
+  border-radius: var(--r-card);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+}
+
+
+/* ==========================================================================
+   4. SEÇÕES DE APOIO — vídeos, revisão, navegação
+   ========================================================================== */
+.assunto-layout .sec-head {
+  align-items: center;
+  gap: .95rem;
+  margin-bottom: var(--sp-4);
+  padding: 1rem 1.25rem;
+  border: 1px solid color-mix(in srgb, var(--mat, var(--accent)) 40%, var(--border));
+  border-radius: 20px;
+  background:
+    radial-gradient(340px 130px at 100% 0%,
+      color-mix(in srgb, var(--mat, var(--accent)) 18%, transparent),
+      transparent 70%),
+    linear-gradient(100deg,
+      color-mix(in srgb, var(--mat, var(--accent)) 18%, var(--surface)) 0%,
+      var(--surface) 78%);
+  box-shadow:
+    inset 6px 0 0 var(--mat, var(--accent)),
+    inset 0 1px 0 var(--border-highlight),
+    0 12px 24px -16px color-mix(in srgb, var(--mat, var(--accent)) 55%, transparent),
+    var(--card-shadow);
+}
+.assunto-layout .sec-head__title { font-family: var(--font-titulo); }
+
+.assunto-layout .video-grid { gap: var(--sp-4); }
+.assunto-layout .video {
+  border-radius: var(--r-card);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  transition:
+    transform    var(--t) var(--ease-out),
+    box-shadow   var(--t) var(--ease),
+    border-color var(--t) var(--ease);
+}
+.assunto-layout .video:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--mat, var(--accent)) 60%, var(--border));
+  box-shadow:
+    0 0 28px -12px var(--mat, var(--accent)),
+    var(--card-shadow-hover);
+}
+.assunto-layout .video:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), var(--card-shadow-hover);
+}
+
+/* Revisão — cartão dourado */
+#s-revisao .card {
+  border: 1px solid color-mix(in srgb, var(--gold) 44%, var(--border));
+  border-radius: 20px;
+  background:
+    radial-gradient(520px 200px at 100% 0%,
+      color-mix(in srgb, var(--gold) 18%, transparent),
+      transparent 70%),
+    var(--card-bg);
+  box-shadow:
+    inset 6px 0 0 var(--gold),
+    inset 0 1px 0 var(--border-highlight),
+    0 14px 28px -18px color-mix(in srgb, var(--gold) 50%, transparent),
+    var(--card-shadow);
+}
+#s-revisao .card__title {
+  font-family: var(--font-titulo);
+  font-size: var(--fs-lg);
+}
+
+/* --- Navegação entre assuntos --------------------------------------- */
+.nav-assuntos,
+nav[aria-label="Navegação entre assuntos"] {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--sp-4);
+}
+.nav-assuntos .btn,
+nav[aria-label="Navegação entre assuntos"] .btn {
+  position: relative;
+  width: 100%;
+  min-height: 4.25rem;
+  padding: 1.05rem 1.35rem;
+  justify-content: flex-start;
+  border: 1px solid var(--card-border);
+  border-radius: 18px;
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  color: var(--text-strong);
+  text-align: left;
+  white-space: normal;
+  overflow: hidden;
+  transition:
+    transform     var(--t) var(--ease-out),
+    box-shadow    var(--t) var(--ease),
+    border-color  var(--t) var(--ease),
+    background    var(--t) var(--ease);
+}
+.nav-assuntos .btn::before,
+nav[aria-label="Navegação entre assuntos"] .btn::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: linear-gradient(
+    180deg,
+    var(--mat, var(--accent)) 0%,
+    color-mix(in srgb, var(--mat, var(--accent)) 30%, transparent) 100%
+  );
+  opacity: 0;
+  transition: opacity var(--t) var(--ease);
+}
+.nav-assuntos .btn:hover::before,
+nav[aria-label="Navegação entre assuntos"] .btn:hover::before { opacity: 1; }
+
+.nav-assuntos .btn:last-child,
+nav[aria-label="Navegação entre assuntos"] .btn:last-child {
+  justify-content: flex-end;
+  text-align: right;
+}
+.nav-assuntos .btn:hover,
+nav[aria-label="Navegação entre assuntos"] .btn:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--mat, var(--accent)) 55%, var(--border));
+  box-shadow:
+    0 0 26px -12px var(--mat, var(--accent)),
+    var(--card-shadow-hover);
+}
+.nav-assuntos .btn:focus-visible,
+nav[aria-label="Navegação entre assuntos"] .btn:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), var(--card-shadow-hover);
+}
+
+
+/* ==========================================================================
+   5. SUMÁRIO LATERAL ("Nesta página")
+   ========================================================================== */
+.assunto-layout .sumario {
+  /* Usa --assunto-mat (definido pelo JS do assunto) com fallback
+     para --mat do assunto atual e depois para --accent-2. */
+  --mat: var(--assunto-mat, var(--mat-cor, var(--accent-2)));
+  padding: 1.15rem;
+  border: 1px solid var(--card-border);
+  border-radius: 20px;
+  background: var(--card-bg);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  box-shadow:
+    inset 0 3px 0 var(--mat),
+    inset 0 1px 0 var(--border-highlight),
+    0 14px 28px -20px color-mix(in srgb, var(--mat) 55%, transparent),
+    var(--card-shadow);
+}
+.assunto-layout .sumario__title {
+  margin-bottom: .85rem;
+  color: var(--mat);
+  font-size: .7rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.assunto-layout .sumario__list { gap: 2px; }
+.assunto-layout .sumario__link {
+  border-left: 0;
+  border-radius: 10px;
+  padding: .55rem .85rem;
+  line-height: 1.35;
+  transition:
+    background-color var(--t-fast) var(--ease),
+    color            var(--t-fast) var(--ease),
+    padding-left     var(--t-fast) var(--ease-out),
+    box-shadow       var(--t-fast) var(--ease);
+}
+.assunto-layout .sumario__link:hover {
+  background: color-mix(in srgb, var(--mat) 11%, transparent);
+  padding-left: 1.05rem;
+}
+.assunto-layout .sumario__link.is-active {
+  background: color-mix(in srgb, var(--mat) 18%, transparent);
+  color: var(--text-strong);
+  font-weight: var(--fw-bold);
+  box-shadow: inset 3px 0 0 var(--mat);
+}
+.assunto-layout .sumario__link:focus-visible {
+  outline: none;
+  box-shadow:
+    var(--focus-ring),
+    inset 3px 0 0 var(--mat);
+}
+
+
+/* ==========================================================================
+   6. GRADES DE CARDS — assuntos da matéria
+   ========================================================================== */
+.assuntos-grid > * {
+  border-radius: 18px;
+  box-shadow: var(--card-shadow);
+  transition:
+    transform     var(--t) var(--ease-out),
+    box-shadow    var(--t) var(--ease),
+    border-color  var(--t) var(--ease);
+}
+.assuntos-grid > *:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 0 28px -14px var(--mat, var(--accent)),
+    var(--card-shadow-hover);
+}
+.assuntos-grid > *:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring), var(--card-shadow-hover);
+}
+
+.stat-grid > * {
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition:
+    transform  var(--t) var(--ease-out),
+    box-shadow var(--t) var(--ease);
+}
+.stat-grid > *:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--card-shadow-hover);
+}
+
+
+/* ==========================================================================
+   7. RESPONSIVO, MOVIMENTO REDUZIDO, IMPRESSÃO, FORCED-COLORS
+   ========================================================================== */
+@media (max-width: 720px) {
+  .page-head,
+  .page-head.mat-accent {
+    border-radius: 20px;
+    padding: 1.25rem 1.25rem 1.35rem;
+  }
+
+  .nav-assuntos,
+  nav[aria-label="Navegação entre assuntos"] { grid-template-columns: minmax(0, 1fr); }
+  .nav-assuntos .btn:last-child,
+  nav[aria-label="Navegação entre assuntos"] .btn:last-child {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .assunto-layout .content-section__head {
+    padding: .9rem 1.05rem .9rem 1.25rem;
+    gap: .85rem;
+    border-radius: 17px;
+  }
+  .assunto-layout .content-section__head::before,
+  .assunto-layout .content-section__num {
+    min-width: 2.3rem;
+    height: 2.3rem;
+    border-radius: 12px;
+    font-size: .95rem;
+  }
+
+  .assunto-layout .study-block,
+  .assunto-layout .texto-conceito {
+    padding: 1rem 1.15rem 1.15rem 1.5rem;
+  }
+
+  /* Em telas pequenas, o bullet fica levemente mais perto. */
+  .assunto-layout .txt-card li {
+    padding-left: 1.35rem;
+  }
+  .assunto-layout .txt-card li::before { left: .5rem; }
+}
+
+@media (max-width: 480px) {
+  .assunto-layout .txt-card { border-radius: 14px; }
+  .assunto-layout .txt-card li { padding-left: 1.2rem; }
+}
+
+/* --- Movimento reduzido --------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .page-head::after { animation: none; }
+
+  .btn,
+  .assunto-layout .txt-card,
+  .assunto-layout .study-block,
+  .assunto-layout .texto-conceito,
+  .assunto-layout .content-verify__item,
+  .assunto-layout .video,
+  .assunto-layout .sumario__link,
+  .assuntos-grid > *,
+  .stat-grid > * { transition: none; }
+
+  .btn:hover,
+  .assunto-layout .txt-card:hover,
+  .assunto-layout .study-block:hover,
+  .assunto-layout .content-verify__item:hover,
+  .assunto-layout .video:hover,
+  .assuntos-grid > *:hover,
+  .stat-grid > *:hover { transform: none; }
+}
+
+[data-movimento="reduzido"] .btn,
+[data-movimento="reduzido"] .page-head::after,
+[data-movimento="reduzido"] .assunto-layout .txt-card,
+[data-movimento="reduzido"] .assunto-layout .study-block,
+[data-movimento="reduzido"] .assunto-layout .video,
+[data-movimento="reduzido"] .assuntos-grid > * {
+  transition: none;
+  animation: none;
+}
+
+/* --- Forced colors (Windows High Contrast) -------------------------- */
+@media (forced-colors: active) {
+  .assunto-layout .txt-card,
+  .assunto-layout .study-block,
+  .assunto-layout .texto-conceito,
+  .assunto-layout .content-section__head,
+  .assunto-layout .sec-head {
+    border: 1px solid CanvasText;
+    box-shadow: none;
+  }
+  .btn:focus-visible,
+  .assunto-layout .sumario__link:focus-visible,
+  .nav-assuntos .btn:focus-visible {
+    outline: 2px solid Highlight;
+    outline-offset: 2px;
+    box-shadow: none;
+  }
+}
+
+/* --- Impressão ------------------------------------------------------ */
+@media print {
+  body { background: #fff; }
+  .assunto-layout .txt-card,
+  .assunto-layout .study-block,
+  .assunto-layout .texto-conceito,
+  .assunto-layout .content-section__head,
+  .assunto-layout .sec-head {
+    box-shadow: none;
+    break-inside: avoid;
+  }
+  .page-head::after { display: none; }
+  .assunto-layout .txt-card li::before { box-shadow: none; }
+}

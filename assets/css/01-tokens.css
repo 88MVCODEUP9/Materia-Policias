@@ -1,0 +1,583 @@
+/* 01-tokens.css — reorganizado por tools/reorganizar-css.py.
+   Refinamento visual: gradientes, elevação com tinta, vidro, motion rico.
+   Regras novas podem ser acrescentadas no fim deste arquivo. */
+
+
+/* ===== 01-tokens.css ===== */
+
+/* ==========================================================================
+   CARREIRAS POLICIAIS / DESIGN SYSTEM: 01 / TOKENS
+   --------------------------------------------------------------------------
+   Fonte única de verdade para cor, tipografia, espaçamento, borda, raio,
+   sombra, gradientes, motion, vidro e estados. Toda a plataforma consome
+   estes tokens — nenhum componente deve trazer cor/medida "solta".
+
+   Identidade preservada do projeto original:
+     - fundo azul-grafite com superfícies graduais
+     - dourado institucional suave
+     - azul de ação com destaque claro
+     - verde de progresso #2ea043 (GMA)
+     - cores por disciplina herdadas da página de Edital
+
+   ORGANIZAÇÃO:
+     1.  Cores primárias
+     2.  Semânticas
+     3.  Texto
+     4.  Soft (derivadas via color-mix)
+     4b. Gradientes e vidro (NOVO)
+     5.  Cores por disciplina
+     5b. Paleta por assunto
+     6.  Tipografia
+     7.  Espaçamento
+     8.  Bordas e raio
+     9.  Elevação (com tinta de fundo)
+     9b. Foco e glow (NOVO)
+     10. Layout
+     11. Motion
+     12. Densidade / utilitários
+   ========================================================================== */
+:root {
+  /* ---------------------------------------------------------------------
+     1. CORES PRIMÁRIAS
+     Superfícies em 6 níveis, cada uma ~4–6% mais clara que a anterior —
+     leitura em camadas sem "saltos" perceptíveis.
+     --------------------------------------------------------------------- */
+  --bg:              #121a24;
+  --bg-deep:         #0d141c;              /* AJUSTADO — mais profundo p/ contraste com topo */
+  --surface-sunken:  #141d28;
+  --surface:         #19232f;
+  --surface-2:       #1e2a37;
+  --surface-3:       #283645;
+  --surface-4:       #31424f;
+  --surface-raised:  #233140;
+
+  --border:          #344352;
+  --border-strong:   #536679;
+  --border-subtle:   rgba(255, 255, 255, .06);
+  --border-highlight: rgba(255, 255, 255, .10);  /* NOVO — brilho superior de cards */
+
+  /* ---------------------------------------------------------------------
+     2. CORES SEMÂNTICAS
+     Azul de ação com hover MAIS claro (não mais escuro). Verde GMA do
+     projeto original mantido em --success.
+     --------------------------------------------------------------------- */
+  --accent:        #2f70b8;
+  --accent-hover:  #3d81c9;
+  --accent-active: #2a66a8;   /* NOVO — estado pressionado */
+  --accent-2:      #9cc7f0;
+  --accent-ink:    #0b1220;
+
+  --gold:        #c3a36b;
+  --gold-light:  #e0c28c;
+  --gold-dark:   #9c7f4d;    /* NOVO — para bordas e sombras douradas */
+  --gold-ink:    #231b0f;
+
+  --success:        #2ea043;
+  --success-light:  #56d364;
+  --success-ink:    #04160a;
+
+  --warning:        #d29922;
+  --warning-light:  #e3b341;
+  --warning-ink:    #221703;
+
+  --danger:         #f85149;
+  --danger-light:   #ff7b72;
+  --danger-ink:     #2a0706;
+
+  --info:           #39c5cf;
+  --info-light:     #56d4dd;
+  --info-ink:       #02201f;
+
+  --neutral:        #6e7681;
+  --neutral-light:  #8b949e;
+
+  /* Categorias de estudo — paleta viva do projeto original. */
+  --study-explanation: #79baff;
+  --study-example:     #4edbe6;
+  --study-correct:     #72e59d;
+  --study-wrong:       #ff909c;
+  --study-bizu:        #f6a0dc;
+  --study-attention:   #ffd06b;
+  --study-concept:     #bf9aff;
+
+  /* ---------------------------------------------------------------------
+     3. TEXTO
+     Hierarquia clara: forte → normal → muted → faint.
+     --------------------------------------------------------------------- */
+  --text:          #e0e7ed;
+  --text-strong:   #f5f7fa;
+  --text-muted:    #b4c0cd;
+  --text-faint:    #8f9dae;    /* AJUSTADO — leve subida p/ AA em 13px */
+  --text-inverse:  #0b0f14;
+
+  /* ---------------------------------------------------------------------
+     4. VARIÁVEIS SOFT (color-mix): derivadas, para evitar repetição.
+     --------------------------------------------------------------------- */
+  --accent-soft:         color-mix(in srgb, var(--accent) 14%, transparent);
+  --accent-soft-strong:  color-mix(in srgb, var(--accent) 30%, transparent);
+  --gold-soft:           color-mix(in srgb, var(--gold) 16%, transparent);
+  --gold-soft-strong:    color-mix(in srgb, var(--gold) 32%, transparent);
+  --success-soft:        color-mix(in srgb, var(--success) 16%, transparent);
+  --warning-soft:        color-mix(in srgb, var(--warning) 18%, transparent);
+  --danger-soft:         color-mix(in srgb, var(--danger) 16%, transparent);
+  --info-soft:           color-mix(in srgb, var(--info) 16%, transparent);
+  --neutral-soft:        color-mix(in srgb, var(--neutral) 16%, transparent);
+
+  /* ---------------------------------------------------------------------
+     4b. GRADIENTES E VIDRO  (NOVO)
+     Para heros, topbar, sidebar, botões primários e cards destacados.
+     Regra: usar gradientes institucionais discretos, nunca "arco-íris".
+     --------------------------------------------------------------------- */
+
+  /* Gradiente do fundo global (sutil — não compete com conteúdo). */
+  --grad-bg: radial-gradient(
+      1200px 600px at 15% -10%,
+      color-mix(in srgb, var(--accent) 8%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      color-mix(in srgb, var(--gold) 6%, transparent),
+      transparent 55%
+    );
+
+  /* Gradiente de superfície — usado em cards "raised" e no topbar. */
+  --grad-surface: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 100%, white 2%) 0%,
+    var(--surface) 100%
+  );
+
+  /* Gradiente institucional (azul → dourado) — filetes, badges de marca. */
+  --grad-brand: linear-gradient(
+    120deg,
+    var(--accent) 0%,
+    color-mix(in srgb, var(--accent) 60%, var(--gold)) 55%,
+    var(--gold) 100%
+  );
+
+  /* Gradiente de ação (botões primários). */
+  --grad-accent: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 100%, white 6%) 0%,
+    var(--accent) 55%,
+    color-mix(in srgb, var(--accent) 100%, black 8%) 100%
+  );
+
+  /* Gradiente dourado (destaques institucionais). */
+  --grad-gold: linear-gradient(
+    180deg,
+    var(--gold-light) 0%,
+    var(--gold) 55%,
+    var(--gold-dark) 100%
+  );
+
+  /* Filete superior sutil para cards "raised". */
+  --grad-hairline: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, .08) 0%,
+    rgba(255, 255, 255, 0) 40%
+  );
+
+  /* Vidro (glass) — para topbar, modais, dropdowns. */
+  --glass-bg:     color-mix(in srgb, var(--surface) 78%, transparent);
+  --glass-border: rgba(255, 255, 255, .08);
+  --glass-blur:   saturate(140%) blur(14px);
+
+  /* ---------------------------------------------------------------------
+     5. CORES POR DISCIPLINA
+     Núcleo comum das carreiras policiais.
+     --------------------------------------------------------------------- */
+
+  --d-lingua:          #42cde6;
+  --d-matematica:      #ffbf57;
+  --d-logica:          #b69aff;
+  --d-info:            #61daa0;
+  --d-atual:           #ff90b3;
+  --d-administrativo:  #79baff;
+  --d-constitucional:  #d294ff;
+  --d-humanos:         #48d8c9;
+  --d-penal:           #ff9690;
+  --d-processo:        #f4d761;
+  --d-extravagante:    #f895da;
+  --d-guardas:         #ffb578;
+  --d-editais:         #8fd0ff;
+
+  /* Programas por carreira — só aparecem com o Foco na corporação. */
+  --d-pm:              #6ea8ff;
+  --d-pf:              #5ed98a;
+  --d-prf:             #ffc978;
+  --d-pc:              #c4a2ff;
+  --d-pp:              #ffa3d5;
+  --d-guarda-programa: #ffd39b;
+
+  /* ---------------------------------------------------------------------
+     5b. PALETA POR ASSUNTO
+     Cada assunto recebe --cor-N. O passo 5 na atribuição pula vizinhos
+     diretos — a grade nunca fica monocromática.
+     --------------------------------------------------------------------- */
+  --cor-1:  #42cde6;  --cor-2:  #ffbf57;  --cor-3:  #b69aff;  --cor-4:  #61daa0;
+  --cor-5:  #ff90b3;  --cor-6:  #79baff;  --cor-7:  #d294ff;  --cor-8:  #48d8c9;
+  --cor-9:  #ff9690;  --cor-10: #f4d761;  --cor-11: #f895da;  --cor-12: #ffb578;
+  --cor-13: #b8df65;  --cor-14: #64ceff;  --cor-15: #a5b0ff;  --cor-16: #e7a0f5;
+  --cor-qtd: 16;
+
+  --area-comum:        #799abb;
+  --area-comum-light:  #b0c9e1;
+  --area-comum-bg:     color-mix(in srgb, var(--area-comum) 10%, transparent);
+  --area-espec:        #c3a36b;
+  --area-espec-light:  #e0c28c;
+  --area-espec-bg:     color-mix(in srgb, var(--area-espec) 10%, transparent);
+
+  /* ---------------------------------------------------------------------
+     6. TIPOGRAFIA
+     --------------------------------------------------------------------- */
+  --font-display: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono:    ui-monospace, 'SFMono-Regular', 'JetBrains Mono', Menlo, Consolas, monospace;
+  --font-legal:   'Charter', 'Bitstream Charter', Georgia, serif;
+  --font-math:    'Cambria Math', 'STIX Two Math', 'DejaVu Sans', serif;
+
+  --fs-3xs: .75rem;      /* 12px */
+  --fs-2xs: .8125rem;    /* 13px */
+  --fs-xs:  .875rem;     /* 14px */
+  --fs-sm:  .9375rem;    /* 15px */
+  --fs-md:  1rem;        /* 16px */
+  --fs-lg:  1.125rem;    /* 18px */
+  --fs-xl:  1.375rem;    /* 22px */
+  --fs-2xl: 1.75rem;     /* 28px */
+  --fs-3xl: 2rem;        /* 32px */
+  --fs-4xl: 2.5rem;      /* 40px */
+
+  --lh-tight:   1.2;
+  --lh-snug:    1.35;
+  --lh-normal:  1.6;
+  --lh-relaxed: 1.75;
+
+  --fw-regular:  400;
+  --fw-medium:   500;
+  --fw-semibold: 600;
+  --fw-bold:     700;
+  --fw-black:    800;
+
+  --tracking-tight:   -.015em;
+  --tracking-normal:   0;
+  --tracking-wide:     .015em;
+  --tracking-widest:   .035em;
+
+  /* ---------------------------------------------------------------------
+     7. ESPAÇAMENTO: escala de 4px
+     --------------------------------------------------------------------- */
+  --sp-0:  0;
+  --sp-1:  .25rem;
+  --sp-2:  .5rem;
+  --sp-3:  .75rem;
+  --sp-4:  1rem;
+  --sp-5:  1.25rem;
+  --sp-6:  1.5rem;
+  --sp-7:  1.75rem;
+  --sp-8:  2rem;
+  --sp-10: 2.5rem;
+  --sp-12: 3rem;
+  --sp-16: 4rem;
+  --sp-20: 5rem;
+
+  --section-gap: var(--sp-8);
+  --page-max:     1240px;
+  --prose-max:    74ch;
+
+  /* ---------------------------------------------------------------------
+     8. BORDAS E RAIO
+     Progressão: xs(4) → sm(8) → base(12) → lg(16) → xl(22) → 2xl(28).
+     --------------------------------------------------------------------- */
+  --radius-xs:  4px;
+  --radius-sm:  8px;
+  --radius:     12px;
+  --radius-md:  12px;   /* alias de --radius para compatibilidade */
+  --radius-lg:  16px;
+  --radius-xl:  22px;
+  --radius-2xl: 28px;
+  --radius-full: 999px;
+
+  --border-w:        1px;
+  --border-w-strong: 2px;
+
+  /* ---------------------------------------------------------------------
+     9. ELEVAÇÃO
+     Sombras com TINTA de fundo (não preto puro) — mais naturais em azul-grafite.
+     --------------------------------------------------------------------- */
+  --elev-0: none;
+  --elev-1: 0 1px 2px rgba(2, 6, 14, .35);
+  --elev-2: 0 2px 6px rgba(2, 6, 14, .38), 0 1px 2px rgba(2, 6, 14, .28);
+  --elev-3: 0 10px 24px -10px rgba(2, 6, 14, .55), 0 3px 8px rgba(2, 6, 14, .32);
+  --elev-4: 0 22px 44px -16px rgba(2, 6, 14, .65), 0 6px 14px rgba(2, 6, 14, .34);
+
+  --shadow-xs: var(--elev-1);
+  --shadow-sm: var(--elev-2);
+  --shadow:    var(--elev-3);
+  --shadow-lg: var(--elev-4);
+  --shadow-xl: var(--elev-4);
+
+  /* ---------------------------------------------------------------------
+     9b. FOCO E GLOW  (NOVO)
+     Anel de foco duplo (fundo + accent-2) para contraste em qualquer superfície.
+     --------------------------------------------------------------------- */
+  --focus-ring:        0 0 0 2px var(--bg), 0 0 0 4px var(--accent-2);
+  --focus-ring-inset:  inset 0 0 0 2px var(--accent-2);
+
+  --glow-accent: 0 0 0 1px var(--accent-2);
+  --glow-gold:   0 0 0 1px var(--gold);
+  --glow-mat:    0 0 0 1px var(--mat, var(--accent-2));
+
+  /* Halos suaves (usar em :hover de botões primários / cards em destaque). */
+  --halo-accent: 0 0 24px -6px color-mix(in srgb, var(--accent) 55%, transparent);
+  --halo-gold:   0 0 24px -6px color-mix(in srgb, var(--gold)   55%, transparent);
+  --halo-success:0 0 24px -6px color-mix(in srgb, var(--success)55%, transparent);
+  --halo-danger: 0 0 24px -6px color-mix(in srgb, var(--danger) 55%, transparent);
+
+  /* ---------------------------------------------------------------------
+     10. LAYOUT
+     --------------------------------------------------------------------- */
+  --sidebar-w:      244px;
+  --sidebar-w-mini: 68px;
+  --topbar-h:       64px;
+  --content-max:    var(--page-max);
+  --tap-min:        44px;   /* alvo de toque mínimo (regra 34) */
+
+  --z-base:    0;
+  --z-content: 1;
+  --z-sticky:  20;
+  --z-overlay: 50;
+  --z-sidebar: 60;
+  --z-topbar:  70;
+  --z-modal:   90;
+  --z-toast:   100;
+
+  /* ---------------------------------------------------------------------
+     11. MOTION
+     --------------------------------------------------------------------- */
+  --ease:        cubic-bezier(.4, 0, .2, 1);
+  --ease-out:    cubic-bezier(.16, 1, .3, 1);
+  --ease-in:     cubic-bezier(.4, 0, 1, 1);
+  --ease-spring: cubic-bezier(.2, .7, .3, 1);
+
+  --t-instant: .08s;
+  --t-fast:    .15s;
+  --t:         .2s;
+  --t-slow:    .3s;
+  --t-slower:  .45s;
+
+  /* Atalhos prontos para transições comuns. */
+  --tr-colors: color var(--t) var(--ease),
+               background-color var(--t) var(--ease),
+               border-color var(--t) var(--ease);
+  --tr-transform: transform var(--t) var(--ease-out);
+  --tr-shadow:    box-shadow var(--t) var(--ease);
+  --tr-all:       all var(--t) var(--ease);
+
+  /* ---------------------------------------------------------------------
+     12. DENSIDADE / UTILITÁRIOS
+     --------------------------------------------------------------------- */
+  --safe-b: env(safe-area-inset-bottom, 0px);
+  --safe-t: env(safe-area-inset-top, 0px);
+  --safe-l: env(safe-area-inset-left, 0px);
+  --safe-r: env(safe-area-inset-right, 0px);
+}
+
+/* ==========================================================================
+   TEMA CLARO
+   --------------------------------------------------------------------------
+   Mesmo mapeamento semântico, valores invertidos. Ativado por
+   <html data-theme="light"> ou pelo botão em Configurações.
+
+   IMPORTANTE: este é o ÚNICO bloco [data-theme="light"] de variáveis.
+   ========================================================================== */
+[data-theme="light"] {
+  color-scheme: light;
+
+  /* Tons de leitura com contraste sobre superfícies claras. */
+  --study-explanation: #1759a5;
+  --study-example:     #006672;
+  --study-correct:     #146b38;
+  --study-wrong:       #ad273d;
+  --study-bizu:        #9b286f;
+  --study-attention:   #825200;
+  --study-concept:     #6934ad;
+
+  /* Superfícies */
+  --bg:             #f4f6f8;
+  --bg-deep:        #e9edf1;
+  --surface-sunken: #edf1f5;
+  --surface:        #ffffff;
+  --surface-2:      #f7f9fb;
+  --surface-3:      #eaeff4;
+  --surface-4:      #dde4ec;
+  --surface-raised: #ffffff;
+
+  --border:           #d5dce4;
+  --border-strong:    #8a99ab;
+  --border-subtle:    rgba(15, 23, 42, .08);
+  --border-highlight: rgba(15, 23, 42, .04);
+
+  /* Semânticas */
+  --accent:        #245d9c;
+  --accent-hover:  #1c4d82;
+  --accent-active: #17406d;
+  --accent-2:      #245d9c;
+  --accent-ink:    #ffffff;
+
+  --gold:       #785a2b;
+  --gold-light: #8a6a35;
+  --gold-dark:  #5f4620;
+  --gold-ink:   #ffffff;
+
+  --success:       #1a7f37;
+  --success-light: #146b2f;
+  --success-ink:   #ffffff;
+
+  --warning:       #9a6700;
+  --warning-light: #805c12;
+  --warning-ink:   #ffffff;
+
+  --danger:       #cf222e;
+  --danger-light: #b3333e;
+  --danger-ink:   #ffffff;
+
+  --info:         #0b7c85;
+  --info-light:   #136a74;
+  --info-ink:     #ffffff;
+
+  /* Texto */
+  --text:         #16202c;
+  --text-strong:  #0a1119;
+  --text-muted:   #55616f;
+  --text-faint:   #67788c;
+  --text-inverse: #ffffff;
+
+  /* Gradientes no claro: quase imperceptíveis, só dão "vida". */
+  --grad-bg: radial-gradient(
+      1200px 600px at 15% -10%,
+      color-mix(in srgb, var(--accent) 6%, transparent),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 100% 0%,
+      color-mix(in srgb, var(--gold) 5%, transparent),
+      transparent 55%
+    );
+
+  --grad-surface: linear-gradient(
+    180deg,
+    #ffffff 0%,
+    #fbfcfd 100%
+  );
+
+  --grad-accent: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--accent) 100%, white 5%) 0%,
+    var(--accent) 60%,
+    color-mix(in srgb, var(--accent) 100%, black 4%) 100%
+  );
+
+  --grad-gold: linear-gradient(
+    180deg,
+    var(--gold-light) 0%,
+    var(--gold) 60%,
+    var(--gold-dark) 100%
+  );
+
+  --grad-hairline: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, .06) 0%,
+    rgba(15, 23, 42, 0) 40%
+  );
+
+  --glass-bg:     color-mix(in srgb, #ffffff 82%, transparent);
+  --glass-border: rgba(15, 23, 42, .08);
+  --glass-blur:   saturate(140%) blur(14px);
+
+  /* Foco */
+  --focus-ring:        0 0 0 2px var(--surface), 0 0 0 4px var(--accent-2);
+  --focus-ring-inset:  inset 0 0 0 2px var(--accent-2);
+
+  /* Elevação — mesma escala, valores mais suaves e frios. */
+  --elev-1: 0 1px 2px rgba(16, 24, 40, .06);
+  --elev-2: 0 2px 6px rgba(16, 24, 40, .08), 0 1px 2px rgba(16, 24, 40, .05);
+  --elev-3: 0 10px 22px -10px rgba(16, 24, 40, .18), 0 2px 5px rgba(16, 24, 40, .08);
+  --elev-4: 0 20px 40px -14px rgba(16, 24, 40, .22), 0 4px 10px rgba(16, 24, 40, .10);
+
+  --shadow-xs: var(--elev-1);
+  --shadow-sm: var(--elev-2);
+  --shadow:    var(--elev-3);
+  --shadow-lg: var(--elev-4);
+  --shadow-xl: var(--elev-4);
+
+  /* Halos no claro são mais discretos. */
+  --halo-accent:  0 6px 18px -8px color-mix(in srgb, var(--accent) 45%, transparent);
+  --halo-gold:    0 6px 18px -8px color-mix(in srgb, var(--gold)   45%, transparent);
+  --halo-success: 0 6px 18px -8px color-mix(in srgb, var(--success)45%, transparent);
+  --halo-danger:  0 6px 18px -8px color-mix(in srgb, var(--danger) 45%, transparent);
+
+  /* Áreas e paleta de disciplinas — consolidadas aqui. */
+  --area-comum:       #365d83;
+  --area-comum-light: #365d83;
+  --area-comum-bg:    color-mix(in srgb, var(--area-comum) 8%, transparent);
+
+  --area-espec:       #785a2b;
+  --area-espec-light: #785a2b;
+  --area-espec-bg:    color-mix(in srgb, var(--area-espec) 8%, transparent);
+
+  --neutral-light: #536170;
+
+
+  --d-lingua:         #006a80;
+  --d-matematica:     #825200;
+  --d-logica:         #6538ae;
+  --d-info:           #146b38;
+  --d-atual:          #a42b57;
+  --d-administrativo: #1759a5;
+  --d-constitucional: #7935a7;
+  --d-humanos:        #006b61;
+  --d-penal:          #b02e27;
+  --d-processo:       #746000;
+  --d-extravagante:   #9b286f;
+  --d-guardas:        #924800;
+  --d-editais:        #0b4a70;
+
+  --d-pm:             #17457f;
+  --d-pf:             #0f4a2c;
+  --d-prf:            #6b4300;
+  --d-pc:             #3c2470;
+  --d-pp:             #6d1246;
+  --d-guarda-programa:#6b3d00;
+
+  --cor-1:  #006a80;  --cor-2:  #825200;  --cor-3:  #6538ae;  --cor-4:  #146b38;
+  --cor-5:  #a42b57;  --cor-6:  #1759a5;  --cor-7:  #7935a7;  --cor-8:  #006b61;
+  --cor-9:  #b02e27;  --cor-10: #746000;  --cor-11: #9b286f;  --cor-12: #924800;
+  --cor-13: #536900;  --cor-14: #08658b;  --cor-15: #454faa;  --cor-16: #84329b;
+}
+
+/* ---------------------------------------------------------------------
+   Breakpoints de largura de conteúdo
+   --------------------------------------------------------------------- */
+@media (min-width: 1600px) {
+  :root { --content-max: 1360px; }
+}
+
+/* ---------------------------------------------------------------------
+   Acessibilidade: respeita quem prefere menos movimento.
+   Componentes que consomem --t / --t-slow passam a "instantâneo".
+   --------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --t-instant: 0s;
+    --t-fast:    0s;
+    --t:         0s;
+    --t-slow:    0s;
+    --t-slower:  0s;
+    --tr-colors:    none;
+    --tr-transform: none;
+    --tr-shadow:    none;
+    --tr-all:       none;
+  }
+}

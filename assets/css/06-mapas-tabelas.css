@@ -1,0 +1,712 @@
+/* ==========================================================================
+   CARREIRAS POLICIAIS · 06 / MAPAS MENTAIS E TABELAS
+   --------------------------------------------------------------------------
+   CSS dedicado aos dois componentes "visuais" da plataforma:
+
+     1. MAPA MENTAL  — .mapa-mental
+        Árvore horizontal cuja estrutura é declarada no bloco do dado
+        (ramos + sub-ramos), nunca gerada do assunto. Sem imagem, sem
+        dependência: HTML posicionado em fluxo + trilhas SVG medidas no
+        DOM, com entrada escalonada e hover que destaca o caminho.
+
+     2. TABELAS      — .content-table / .table
+        Versão profissional: cabeçalho com gradiente + brilho na cor da
+        matéria, zebra suave, hover na linha, 1ª coluna com trilho colorido,
+        legenda com ícone e layout de cartão no mobile.
+
+   Refinamento: nós metálicos, trilhas com glow, canvas com máscara radial,
+   hover tátil, contagem com halo.
+   ========================================================================== */
+
+
+/* ==========================================================================
+   1. MAPA MENTAL
+   ========================================================================== */
+
+.mapa-mental {
+  --mm-raio: var(--radius-lg);
+  position: relative;
+  isolation: isolate;
+  margin: var(--sp-8) 0 var(--sp-6);
+  padding: var(--sp-5) var(--sp-5) var(--sp-4);
+  border-radius: var(--radius-2xl);
+  border: 1px solid color-mix(in srgb, var(--mat, var(--accent)) 38%, var(--border));
+  background:
+    radial-gradient(900px 280px at 12% -20%,
+      color-mix(in srgb, var(--mat, var(--accent)) 18%, transparent),
+      transparent 62%),
+    radial-gradient(700px 240px at 100% 120%,
+      color-mix(in srgb, var(--gold) 6%, transparent),
+      transparent 62%),
+    linear-gradient(180deg, var(--surface-2), var(--surface));
+  box-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    0 22px 44px -22px color-mix(in srgb, var(--mat, var(--accent)) 55%, transparent),
+    var(--elev-3);
+  overflow: hidden;
+}
+
+/* Fio superior com brilho institucional. */
+.mapa-mental::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--mat, var(--accent)) 0%,
+    color-mix(in srgb, var(--mat, var(--accent)) 55%, var(--gold)) 40%,
+    color-mix(in srgb, var(--mat, var(--accent)) 8%, transparent) 78%
+  );
+  box-shadow: 0 0 18px -4px var(--mat, var(--accent));
+  pointer-events: none;
+}
+
+/* Ornamento radial sutil no canto. */
+.mapa-mental::after {
+  content: "";
+  position: absolute;
+  right: -90px;
+  top: -110px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  z-index: -1;
+  border: 1px solid color-mix(in srgb, var(--mat, var(--accent)) 22%, transparent);
+  box-shadow:
+    0 0 0 32px color-mix(in srgb, var(--mat, var(--accent)) 5%, transparent),
+    0 0 0 66px color-mix(in srgb, var(--mat, var(--accent)) 3%, transparent);
+  pointer-events: none;
+}
+
+/* ---- cabeçalho ---- */
+.mapa-mental__head {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-3);
+  margin-bottom: var(--sp-4);
+}
+
+.mapa-mental__icon {
+  flex: none;
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius);
+  font-size: var(--fs-md);
+  color: var(--mat, var(--accent));
+  background:
+    radial-gradient(circle at 30% 25%,
+      color-mix(in srgb, var(--mat, var(--accent)) 34%, transparent) 0%,
+      color-mix(in srgb, var(--mat, var(--accent)) 14%, transparent) 70%);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--mat, var(--accent)) 38%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .08),
+    0 6px 14px -8px var(--mat, var(--accent));
+}
+
+.mapa-mental__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-lg);
+  font-weight: var(--fw-black);
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.2;
+  color: var(--text-strong);
+  background: linear-gradient(
+    180deg,
+    var(--text-strong) 0%,
+    color-mix(in srgb, var(--text-strong) 82%, var(--mat, var(--accent))) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.mapa-mental__count {
+  margin-left: auto;
+  flex: none;
+  padding: var(--sp-1) var(--sp-3);
+  border-radius: var(--radius-full);
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--mat, var(--accent));
+  background: color-mix(in srgb, var(--mat, var(--accent)) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--mat, var(--accent)) 32%, transparent);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, .06),
+    0 0 14px -4px var(--mat, var(--accent));
+}
+
+/* ---- canvas: SVG por cima, nós em fluxo (a altura de cada nó depende
+       de quantos sub-ramos ele tem) ---- */
+.mapa-mental__canvas {
+  position: relative;
+  z-index: 1;
+  --mm-esq: 34%;      /* onde começa a coluna de ramos */
+  --mm-dir: 1.6%;
+  --mm-gap: 12px;
+}
+
+/* Grade pontilhada com máscara radial — desvanece nas bordas. */
+.mapa-mental__canvas::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, var(--border-subtle) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  opacity: .55;
+  pointer-events: none;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 55%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, #000 55%, transparent 100%);
+}
+
+/* viewBox 1:1 com pixels, preenchido por JS depois da medição. */
+.mapa-mental__svg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* Coluna de ramos: o padding reserva a faixa do nó raiz. */
+.mapa-mental__nos {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mm-gap);
+  padding-left: var(--mm-esq);
+  padding-right: var(--mm-dir);
+}
+
+/* ---- trilhas (paths SVG) ---- */
+/* A opacidade de repouso mora aqui, e não no keyframe: assim o hover que
+   apaga as outras trilhas consegue vencer, e `animation: none` (movimento
+   reduzido) não deixa a trilha invisível. */
+.mapa-mental__path {
+  fill: none;
+  stroke: color-mix(in srgb, var(--cor, var(--accent)) 58%, transparent);
+  stroke-width: 2;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
+  opacity: .85;
+  filter: drop-shadow(0 0 4px color-mix(in srgb, var(--cor, var(--accent)) 45%, transparent));
+  transition:
+    stroke-width var(--t-fast) var(--ease),
+    opacity      var(--t-fast) var(--ease),
+    stroke       var(--t-fast) var(--ease);
+  animation: mm-traco .55s var(--ease-out);
+  animation-delay: calc(var(--i) * 45ms + 90ms);
+}
+
+.mapa-mental:has(.mapa-mental__path.is-ativa) .mapa-mental__path:not(.is-ativa) {
+  opacity: .18 !important;   /* a animação de entrada segura a opacidade */
+  filter: none;
+}
+
+.mapa-mental__path.is-ativa {
+  stroke-width: 3.5;
+  stroke: var(--cor, var(--accent));
+  opacity: 1 !important;
+  filter:
+    drop-shadow(0 0 5px var(--cor, var(--accent)))
+    drop-shadow(0 0 12px color-mix(in srgb, var(--cor, var(--accent)) 55%, transparent));
+}
+
+@keyframes mm-traco {
+  from { opacity: 0; }
+}
+
+/* ---- nó raiz (título do assunto) ---- */
+.mapa-mental__root {
+  position: absolute;
+  left: 1.6%;
+  top: 50%;
+  width: 22.4%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  padding: var(--sp-3) var(--sp-3);
+  border-radius: var(--mm-raio);
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-black);
+  letter-spacing: -.005em;
+  line-height: var(--lh-snug);
+  color: #fff;
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--mat, var(--accent)) 100%, white 14%) 0%,
+      var(--mat, var(--accent)) 55%,
+      color-mix(in srgb, var(--mat, var(--accent)) 55%, #000) 100%);
+  box-shadow:
+    0 10px 26px -10px color-mix(in srgb, var(--mat, var(--accent)) 80%, transparent),
+    inset 0 1px 0 rgba(255, 255, 255, .28),
+    inset 0 -1px 0 rgba(0, 0, 0, .22);
+  animation: mm-entra-raiz .55s var(--ease-out) both;
+  transition: transform var(--t) var(--ease-out), box-shadow var(--t) var(--ease);
+}
+.mapa-mental__root:hover {
+  transform: translateY(-50%) scale(1.02);
+  box-shadow:
+    0 14px 32px -10px color-mix(in srgb, var(--mat, var(--accent)) 90%, transparent),
+    0 0 30px -8px var(--mat, var(--accent)),
+    inset 0 1px 0 rgba(255, 255, 255, .32),
+    inset 0 -1px 0 rgba(0, 0, 0, .22);
+}
+
+/* ---- ramos ---- */
+.mapa-mental__no {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-2) var(--sp-3);
+  border-radius: var(--radius);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface) 100%, white 2%) 0%,
+    var(--surface) 100%
+  );
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--cor, var(--accent));
+  box-shadow:
+    var(--elev-1),
+    inset 0 1px 0 var(--border-highlight);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-snug);
+  color: var(--text);
+  cursor: default;
+  transition:
+    transform      var(--t) var(--ease-out),
+    box-shadow     var(--t) var(--ease),
+    border-color   var(--t) var(--ease),
+    background     var(--t) var(--ease);
+  animation: mm-entra .5s var(--ease-out) both;
+  animation-delay: calc(var(--i) * 45ms);
+}
+
+.mapa-mental__no:hover,
+.mapa-mental__no.is-ativo {
+  transform: translateX(6px);
+  border-color: color-mix(in srgb, var(--cor, var(--accent)) 55%, var(--border));
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--cor, var(--accent)) 10%, var(--surface)) 0%,
+    var(--surface) 100%
+  );
+  box-shadow:
+    var(--elev-3),
+    0 0 26px -10px var(--cor, var(--accent)),
+    inset 0 1px 0 var(--border-highlight);
+}
+
+/* Com sub-ramos (ou explicação) o número alinha com a primeira linha do
+   texto, não com o centro do bloco inteiro. */
+.mapa-mental__no:has(.mapa-mental__filhos),
+.mapa-mental__no:has(.mapa-mental__desc) { align-items: flex-start; }
+.mapa-mental__no:has(.mapa-mental__filhos) .mapa-mental__num,
+.mapa-mental__no:has(.mapa-mental__desc) .mapa-mental__num {
+  width: 20px;
+  height: 20px;
+  margin-top: -1px;
+}
+
+.mapa-mental__corpo {
+  min-width: 0;
+  flex: 1;
+}
+
+/* ---- sub-ramos: trilho à esquerda, quantos níveis o dado declarar ---- */
+.mapa-mental__filhos {
+  list-style: none;
+  margin: var(--sp-2) 0 0;
+  padding: 0 0 0 var(--sp-3);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  border-left: 1px dashed
+    color-mix(in srgb, var(--cor, var(--accent)) 42%, transparent);
+}
+
+.mapa-mental__filho {
+  position: relative;
+  padding-left: var(--sp-3);
+  font-size: var(--fs-3xs);
+  line-height: var(--lh-snug);
+  color: var(--text-muted);
+}
+
+.mapa-mental__filho::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .6em;
+  width: var(--sp-2);
+  height: 1px;
+  background: color-mix(in srgb, var(--cor, var(--accent)) 55%, transparent);
+}
+
+.mapa-mental__filho-txt,
+.mapa-mental__filho-desc { display: block; }
+.mapa-mental__filho-desc {
+  margin-top: 1px;
+  color: var(--text-faint);
+}
+
+.mapa-mental__filhos .mapa-mental__filhos {
+  margin-top: 2px;
+  border-left-color:
+    color-mix(in srgb, var(--cor, var(--accent)) 26%, transparent);
+}
+
+.mapa-mental__mais {
+  margin: var(--sp-1) 0 0 var(--sp-3);
+  font-size: var(--fs-3xs);
+  font-style: italic;
+  color: var(--text-faint);
+}
+
+.mapa-mental__num {
+  flex: none;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: var(--radius-full);
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-black);
+  font-variant-numeric: tabular-nums;
+  color: var(--cor, var(--accent));
+  background: color-mix(in srgb, var(--cor, var(--accent)) 18%, transparent);
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--cor, var(--accent)) 32%, transparent),
+    0 0 8px -3px var(--cor, var(--accent));
+  transition: box-shadow var(--t-fast) var(--ease);
+}
+.mapa-mental__no:hover .mapa-mental__num,
+.mapa-mental__no.is-ativo .mapa-mental__num {
+  box-shadow:
+    inset 0 0 0 1px color-mix(in srgb, var(--cor, var(--accent)) 55%, transparent),
+    0 0 12px -2px var(--cor, var(--accent));
+}
+
+.mapa-mental__txt {
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  font-weight: var(--fw-semibold);
+}
+
+/* ---- explicação do ramo, abaixo do rótulo ---- */
+.mapa-mental__desc {
+  display: block;
+  min-width: 0;
+  margin-top: 2px;
+  font-size: var(--fs-3xs);
+  line-height: var(--lh-snug);
+  color: var(--text-muted);
+}
+
+@keyframes mm-entra {
+  from { opacity: 0; transform: translateX(-8px) scale(.96); }
+}
+@keyframes mm-entra-raiz {
+  from { opacity: 0; transform: translateY(-50%) scale(.9); }
+}
+
+/* ---- rodapé ---- */
+.mapa-mental__foot {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  margin-top: var(--sp-3);
+  padding-top: var(--sp-3);
+  border-top: 1px dashed var(--border);
+  font-size: var(--fs-3xs);
+  color: var(--text-faint);
+}
+
+/* ---- mobile: vira lista vertical com trilho ---- */
+@media (max-width: 759px) {
+  .mapa-mental { padding: var(--sp-4) var(--sp-3); border-radius: var(--radius-xl); }
+  .mapa-mental::after { display: none; }
+  .mapa-mental__canvas::before { display: none; }
+  .mapa-mental__svg { display: none; }
+
+  .mapa-mental__root {
+    position: static;
+    transform: none;
+    width: auto;
+    margin-bottom: var(--sp-3);
+    font-size: var(--fs-xs);
+  }
+  .mapa-mental__root:hover { transform: none; }
+
+  /* sem faixa reservada: a raiz já ocupa o topo da lista */
+  .mapa-mental__nos {
+    padding-left: 0;
+    padding-right: 0;
+    gap: var(--sp-2);
+  }
+  .mapa-mental__no {
+    margin: 0 0 0 16px;
+    font-size: var(--fs-2xs);
+  }
+  .mapa-mental__no:hover,
+  .mapa-mental__no.is-ativo { transform: translateX(2px); }
+  .mapa-mental__filho { font-size: var(--fs-3xs); }
+  .mapa-mental__canvas { min-height: 0; }
+}
+
+/* ---- acessibilidade / utilitários ---- */
+[data-fonte="ampliada"] .mapa-mental__no { font-size: var(--fs-sm); }
+[data-fonte="reduzida"] .mapa-mental__no { font-size: var(--fs-3xs); }
+[data-fonte="ampliada"] .mapa-mental__root { font-size: var(--fs-md); }
+
+@media (prefers-reduced-motion: reduce) {
+  .mapa-mental__no,
+  .mapa-mental__root,
+  .mapa-mental__path {
+    animation: none;
+    transition: none;
+  }
+  .mapa-mental__path { opacity: .85; filter: none; }
+  .mapa-mental__path.is-ativa { filter: none; }
+}
+
+[data-movimento="reduzido"] .mapa-mental__no,
+[data-movimento="reduzido"] .mapa-mental__root,
+[data-movimento="reduzido"] .mapa-mental__path {
+  animation: none;
+  transition: none;
+}
+/* sem animação a opacidade de repouso (.85) já está na regra base —
+   as trilhas não somem. */
+
+@media print {
+  .mapa-mental {
+    box-shadow: none;
+    break-inside: avoid;
+    background: #fff;
+  }
+  .mapa-mental::before,
+  .mapa-mental::after,
+  .mapa-mental__canvas::before { display: none; }
+  .mapa-mental__no,
+  .mapa-mental__root,
+  .mapa-mental__path { animation: none; opacity: 1; }
+  .mapa-mental__no,
+  .mapa-mental__root { box-shadow: none; }
+}
+
+
+/* ==========================================================================
+   2. TABELAS
+   ========================================================================== */
+
+/* ---- moldura ---- */
+.assunto-layout .content-table {
+  position: relative;
+  margin: var(--sp-6) 0;
+  border: 1px solid color-mix(in srgb, var(--mat, var(--accent)) 34%, var(--border));
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow:
+    inset 0 1px 0 var(--border-highlight),
+    0 14px 30px -20px color-mix(in srgb, var(--mat, var(--accent)) 55%, transparent),
+    var(--elev-2);
+  overflow: hidden;
+}
+
+/* Fio superior com a cor da matéria (assinatura). */
+.assunto-layout .content-table::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--mat, var(--accent)) 0%,
+    color-mix(in srgb, var(--mat, var(--accent)) 55%, var(--gold)) 45%,
+    color-mix(in srgb, var(--mat, var(--accent)) 8%, transparent) 85%
+  );
+  box-shadow: 0 0 14px -3px var(--mat, var(--accent));
+  pointer-events: none;
+  z-index: 1;
+}
+
+.assunto-layout .content-table .table-wrap {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow-x: auto;
+}
+
+/* ---- cabeçalho (th) ---- */
+.assunto-layout .content-table .table th {
+  position: relative;
+  padding: var(--sp-3) var(--sp-4);
+  background:
+    linear-gradient(180deg,
+      color-mix(in srgb, var(--mat, var(--accent)) 26%, var(--surface-2)) 0%,
+      color-mix(in srgb, var(--mat, var(--accent)) 12%, var(--surface-2)) 100%);
+  color: var(--text-strong);
+  font-size: var(--fs-3xs);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  border-bottom: 2px solid color-mix(in srgb, var(--mat, var(--accent)) 55%, var(--border));
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .06);
+}
+
+/* Fio inferior luminoso do header. */
+.assunto-layout .content-table .table th::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 2px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    color-mix(in srgb, var(--mat, var(--accent)) 60%, transparent) 50%,
+    transparent 100%
+  );
+  opacity: .55;
+  pointer-events: none;
+}
+
+/* ---- corpo (td) ---- */
+.assunto-layout .content-table .table td {
+  padding: var(--sp-3) var(--sp-4);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-normal);
+  vertical-align: top;
+  transition: background-color var(--t-fast) var(--ease);
+}
+
+.assunto-layout .content-table .table tbody tr:last-child td { border-bottom: 0; }
+
+.assunto-layout .content-table .table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--surface-2) 42%, var(--surface));
+}
+
+.assunto-layout .content-table .table tbody tr {
+  transition: background-color var(--t-fast) var(--ease);
+}
+.assunto-layout .content-table .table tbody tr:hover {
+  background: color-mix(in srgb, var(--mat, var(--accent)) 10%, var(--surface-2));
+}
+
+/* 1ª coluna é a "chave" da linha: trilho colorido + ênfase. */
+.assunto-layout .content-table .table tbody td:first-child {
+  position: relative;
+  font-weight: var(--fw-semibold);
+  color: var(--text-strong);
+  padding-left: calc(var(--sp-4) + 6px);
+}
+.assunto-layout .content-table .table tbody td:first-child::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 3px;
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+  background: var(--mat, var(--accent));
+  opacity: .35;
+  transition: opacity var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease);
+  pointer-events: none;
+}
+.assunto-layout .content-table .table tbody tr:hover td:first-child::before {
+  opacity: 1;
+  box-shadow: 0 0 10px -1px var(--mat, var(--accent));
+}
+
+/* ---- legenda / caption ---- */
+.assunto-layout .content-table__caption {
+  display: flex;
+  align-items: center;
+  gap: var(--sp-2);
+  padding: var(--sp-3) var(--sp-4);
+  border-top: 1px dashed var(--border);
+  font-size: var(--fs-3xs);
+  color: var(--text-faint);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--surface-2) 50%, var(--surface)) 0%,
+    color-mix(in srgb, var(--surface-2) 32%, var(--surface)) 100%
+  );
+}
+
+/* ---- variante compacta ---- */
+.assunto-layout .content-table .table--compact th,
+.assunto-layout .content-table .table--compact td { padding: var(--sp-2) var(--sp-3); }
+
+.assunto-layout .content-table .table--compact tbody td:first-child { padding-left: calc(var(--sp-3) + 6px); }
+
+/* ---- mobile: cartão com rótulo ---- */
+@media (max-width: 640px) {
+  .assunto-layout .content-table { border-radius: var(--radius); }
+  .assunto-layout .content-table .table tbody td:first-child::before { display: none; }
+
+  .assunto-layout .content-table .table--responsive td::before {
+    color: var(--mat, var(--accent));
+    letter-spacing: var(--tracking-widest);
+  }
+  .assunto-layout .content-table .table--responsive tr:hover {
+    background: color-mix(in srgb, var(--mat, var(--accent)) 8%, transparent);
+  }
+}
+
+[data-fonte="ampliada"] .assunto-layout .content-table .table td { font-size: var(--fs-sm); }
+[data-fonte="reduzida"] .assunto-layout .content-table .table td { font-size: var(--fs-3xs); }
+
+@media (prefers-reduced-motion: reduce) {
+  .assunto-layout .content-table,
+  .assunto-layout .content-table .table tbody tr,
+  .assunto-layout .content-table .table tbody td,
+  .assunto-layout .content-table .table tbody td:first-child::before {
+    transition: none;
+  }
+}
+
+@media print {
+  .assunto-layout .content-table {
+    box-shadow: none;
+    border-color: #ccc;
+    break-inside: avoid;
+  }
+  .assunto-layout .content-table::before { display: none; }
+  .assunto-layout .content-table .table th {
+    background: #f3f4f6 !important;
+    border-bottom: 2px solid #999;
+    box-shadow: none;
+  }
+  .assunto-layout .content-table .table tbody td:first-child::before { display: none; }
+  .assunto-layout .content-table .table tbody tr:nth-child(even) {
+    background: #f9fafb !important;
+  }
+}
