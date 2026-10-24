@@ -1,0 +1,1402 @@
+[
+  {
+    "id": "direito-administrativo/administrativo-01/teoria",
+    "titulo": "Administração Direta e Indireta",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-01.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-01/resumo",
+    "titulo": "Administração Direta e Indireta",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-01.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-02/teoria",
+    "titulo": "Agentes Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-02.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-02/legislacao",
+    "titulo": "Agentes Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "legislacao",
+    "pagina": "Materias/direito-administrativo/administrativo-02.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-02/resumo",
+    "titulo": "Agentes Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-02.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-03/teoria",
+    "titulo": "Bens Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-03.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-03/resumo",
+    "titulo": "Bens Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-03.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-04/teoria",
+    "titulo": "Controle da Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-04.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-04/legislacao",
+    "titulo": "Controle da Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "legislacao",
+    "pagina": "Materias/direito-administrativo/administrativo-04.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-04/resumo",
+    "titulo": "Controle da Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-04.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-05/teoria",
+    "titulo": "Estado, Governo e Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-05.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-05/resumo",
+    "titulo": "Estado, Governo e Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-05.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-06/teoria",
+    "titulo": "Improbidade Administrativa (Lei 8.429/92 + Lei 14.230/2021)",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-06.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-06/resumo",
+    "titulo": "Improbidade Administrativa (Lei 8.429/92 + Lei 14.230/2021)",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-06.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-07/teoria",
+    "titulo": "Intervenção do Estado na Propriedade Privada",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-07.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-07/resumo",
+    "titulo": "Intervenção do Estado na Propriedade Privada",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-07.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-08/teoria",
+    "titulo": "Licitações, Atos e Contratos (Lei 14.133/2021)",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-08.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-08/resumo",
+    "titulo": "Licitações, Atos e Contratos (Lei 14.133/2021)",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-08.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-09/teoria",
+    "titulo": "Poderes Administrativos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-09.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-09/resumo",
+    "titulo": "Poderes Administrativos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-09.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-10/teoria",
+    "titulo": "Princípios da Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-10.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-10/resumo",
+    "titulo": "Princípios da Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-10.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-11/teoria",
+    "titulo": "Processo Administrativo Federal (Lei 9.784/99)",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-11.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-11/resumo",
+    "titulo": "Processo Administrativo Federal (Lei 9.784/99)",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-11.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-12/teoria",
+    "titulo": "Regime Jurídico Administrativo",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-12.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-12/resumo",
+    "titulo": "Regime Jurídico Administrativo",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-12.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-13/legislacao",
+    "titulo": "Responsabilidade Civil do Estado",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "legislacao",
+    "pagina": "Materias/direito-administrativo/administrativo-13.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-13/teoria",
+    "titulo": "Responsabilidade Civil do Estado",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-13.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-15/teoria",
+    "titulo": "Serviços Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-15.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-15/resumo",
+    "titulo": "Serviços Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-15.html"
+  },
+  {
+    "id": "atualidades/desenvolvimento-sustentavel/teoria",
+    "titulo": "Desenvolvimento sustentável",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/desenvolvimento-sustentavel.html"
+  },
+  {
+    "id": "atualidades/ecologia/teoria",
+    "titulo": "Ecologia",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/ecologia.html"
+  },
+  {
+    "id": "atualidades/economia/teoria",
+    "titulo": "Economia",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/economia.html"
+  },
+  {
+    "id": "atualidades/educacao/teoria",
+    "titulo": "Educação",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/educacao.html"
+  },
+  {
+    "id": "atualidades/energia/teoria",
+    "titulo": "Energia",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/energia.html"
+  },
+  {
+    "id": "atualidades/politica-e-poder-publico/teoria",
+    "titulo": "Política e poder público",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/politica-e-poder-publico.html"
+  },
+  {
+    "id": "atualidades/relacoes-internacionais/teoria",
+    "titulo": "Relações internacionais",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/relacoes-internacionais.html"
+  },
+  {
+    "id": "atualidades/sociedade/teoria",
+    "titulo": "Sociedade",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/sociedade.html"
+  },
+  {
+    "id": "atualidades/tecnologia/teoria",
+    "titulo": "Tecnologia",
+    "disciplina": "atualidades",
+    "nomeDisciplina": "Atualidades",
+    "tipo": "teoria",
+    "pagina": "Materias/atualidades/tecnologia.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-01/teoria",
+    "titulo": "Administração Pública — Art. 37 CF",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-01.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-01/resumo",
+    "titulo": "Administração Pública — Art. 37 CF",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-01.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-02/teoria",
+    "titulo": "Aplicabilidade das Normas",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-02.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-02/resumo",
+    "titulo": "Aplicabilidade das Normas",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-02.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-03/teoria",
+    "titulo": "Controle de Constitucionalidade",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-03.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-03/resumo",
+    "titulo": "Controle de Constitucionalidade",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-03.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-04/teoria",
+    "titulo": "Crimes de Preconceito e Discriminação",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-04.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-05/teoria",
+    "titulo": "Defesa do Estado e das Instituições Democráticas",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-05.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-05/resumo",
+    "titulo": "Defesa do Estado e das Instituições Democráticas",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-05.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-06/teoria",
+    "titulo": "Direito de Nacionalidade",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-06.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-07/teoria",
+    "titulo": "Direitos Fundamentais",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-07.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-07/resumo",
+    "titulo": "Direitos Fundamentais",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-07.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-08/teoria",
+    "titulo": "Direitos Políticos",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-08.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-08/resumo",
+    "titulo": "Direitos Políticos",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-08.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-09/teoria",
+    "titulo": "Estrutura e Organização do Estado Brasileiro",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-09.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-09/resumo",
+    "titulo": "Estrutura e Organização do Estado Brasileiro",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-09.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-10/teoria",
+    "titulo": "Ordem Econômica e Financeira",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-10.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-10/resumo",
+    "titulo": "Ordem Econômica e Financeira",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-10.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-11/teoria",
+    "titulo": "Poder Legislativo e Processo Legislativo",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-11.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-11/resumo",
+    "titulo": "Poder Legislativo e Processo Legislativo",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-11.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-13/teoria",
+    "titulo": "Teoria da Constituição e Poder Constituinte",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-13.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-13/resumo",
+    "titulo": "Teoria da Constituição e Poder Constituinte",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-13.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-14/teoria",
+    "titulo": "Teoria das Gerações",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-constitucional/constitucional-14.html"
+  },
+  {
+    "id": "direito-constitucional/constitucional-14/resumo",
+    "titulo": "Teoria das Gerações",
+    "disciplina": "direito-constitucional",
+    "nomeDisciplina": "Direito Constitucional",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-constitucional/constitucional-14.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-01/teoria",
+    "titulo": "Características e Classificação",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "teoria",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-01.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-01/resumo",
+    "titulo": "Características e Classificação",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "resumo",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-01.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-03/teoria",
+    "titulo": "Gerações dos Direitos Humanos",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "teoria",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-03.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-03/resumo",
+    "titulo": "Gerações dos Direitos Humanos",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "resumo",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-03.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-05/teoria",
+    "titulo": "Sistemas de Proteção",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "teoria",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-05.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-05/resumo",
+    "titulo": "Sistemas de Proteção",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "resumo",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-05.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-06/legislacao",
+    "titulo": "Tratados Internacionais",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "legislacao",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-06.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-06/teoria",
+    "titulo": "Tratados Internacionais",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "teoria",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-06.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-06/resumo",
+    "titulo": "Tratados Internacionais",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "resumo",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-06.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-01/teoria",
+    "titulo": "Consolidado da Legislação Aplicável à Polícia Militar de Alagoas",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-01.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-01/resumo",
+    "titulo": "Consolidado da Legislação Aplicável à Polícia Militar de Alagoas",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-01.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-02/teoria",
+    "titulo": "Dc-Estadual nº 37.042/1996 — Regulamento Disciplinar da Polícia Militar de Alagoas (RDPMAL)",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-02.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-02/resumo",
+    "titulo": "Dc-Estadual nº 37.042/1996 — Regulamento Disciplinar da Polícia Militar de Alagoas (RDPMAL)",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-02.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-03/teoria",
+    "titulo": "Dc-Lei nº 2.848/1940 — Parte Geral do Código Penal (Arts. 1º a 120)",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-03.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-03/resumo",
+    "titulo": "Dc-Lei nº 2.848/1940 — Parte Geral do Código Penal (Arts. 1º a 120)",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-03.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-04/teoria",
+    "titulo": "Justiça e Processo Penal Militar",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-04.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-04/resumo",
+    "titulo": "Justiça e Processo Penal Militar",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-04.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-05/teoria",
+    "titulo": "Lei Estadual nº 5.346/1992 — Estatuto dos Policiais Militares de Alagoas",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-05.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-05/resumo",
+    "titulo": "Lei Estadual nº 5.346/1992 — Estatuto dos Policiais Militares de Alagoas",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-05.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-06/teoria",
+    "titulo": "Lei nº 14.751/2023 — Lei Orgânica Nacional das Polícias Militares e Corpos de Bombeiros Militares",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-06.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-06/resumo",
+    "titulo": "Lei nº 14.751/2023 — Lei Orgânica Nacional das Polícias Militares e Corpos de Bombeiros Militares",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-06.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-07/teoria",
+    "titulo": "Poderes Executivo e Legislativo + Processo Legislativo (LOMA)",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-07.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-07/resumo",
+    "titulo": "Poderes Executivo e Legislativo + Processo Legislativo (LOMA)",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-07.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-08/teoria",
+    "titulo": "Remuneração, Vantagens e Indenizações",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "teoria",
+    "pagina": "Materias/legislacao-extravagante/extravagante-08.html"
+  },
+  {
+    "id": "legislacao-extravagante/extravagante-08/resumo",
+    "titulo": "Remuneração, Vantagens e Indenizações",
+    "disciplina": "legislacao-extravagante",
+    "nomeDisciplina": "Legislação Extravagante",
+    "tipo": "resumo",
+    "pagina": "Materias/legislacao-extravagante/extravagante-08.html"
+  },
+  {
+    "id": "guardas-municipais/conhecimentos-na-area-de-atuacao/teoria",
+    "titulo": "Conhecimentos na Área de Atuação",
+    "disciplina": "guardas-municipais",
+    "nomeDisciplina": "Guardas Municipais",
+    "tipo": "teoria",
+    "pagina": "Materias/guardas-municipais/conhecimentos-na-area-de-atuacao.html"
+  },
+  {
+    "id": "guardas-municipais/legislacao-especial-e-acessoria/teoria",
+    "titulo": "Legislação Especial e Acessória",
+    "disciplina": "guardas-municipais",
+    "nomeDisciplina": "Guardas Municipais",
+    "tipo": "teoria",
+    "pagina": "Materias/guardas-municipais/legislacao-especial-e-acessoria.html"
+  },
+  {
+    "id": "guardas-municipais/noes-de-administracao-e-politicas-publicas/teoria",
+    "titulo": "Noções de Administração e Políticas Públicas",
+    "disciplina": "guardas-municipais",
+    "nomeDisciplina": "Guardas Municipais",
+    "tipo": "teoria",
+    "pagina": "Materias/guardas-municipais/noes-de-administracao-e-politicas-publicas.html"
+  },
+  {
+    "id": "guardas-municipais/noes-de-direito-civil/teoria",
+    "titulo": "Noções de Direito Civil",
+    "disciplina": "guardas-municipais",
+    "nomeDisciplina": "Guardas Municipais",
+    "tipo": "teoria",
+    "pagina": "Materias/guardas-municipais/noes-de-direito-civil.html"
+  },
+  {
+    "id": "guardas-municipais/noes-de-direito-constitucional/teoria",
+    "titulo": "Noções de Direito Constitucional",
+    "disciplina": "guardas-municipais",
+    "nomeDisciplina": "Guardas Municipais",
+    "tipo": "teoria",
+    "pagina": "Materias/guardas-municipais/noes-de-direito-constitucional.html"
+  },
+  {
+    "id": "guardas-municipais/noes-de-direito-penal/teoria",
+    "titulo": "Noções de Direito Penal",
+    "disciplina": "guardas-municipais",
+    "nomeDisciplina": "Guardas Municipais",
+    "tipo": "teoria",
+    "pagina": "Materias/guardas-municipais/noes-de-direito-penal.html"
+  },
+  {
+    "id": "guardas-municipais/noes-de-direito-processual-penal/teoria",
+    "titulo": "Noções de Direito Processual Penal",
+    "disciplina": "guardas-municipais",
+    "nomeDisciplina": "Guardas Municipais",
+    "tipo": "teoria",
+    "pagina": "Materias/guardas-municipais/noes-de-direito-processual-penal.html"
+  },
+  {
+    "id": "informatica/informatica-01/teoria",
+    "titulo": "Ambiente Apple",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "teoria",
+    "pagina": "Materias/informatica/informatica-01.html"
+  },
+  {
+    "id": "informatica/informatica-01/resumo",
+    "titulo": "Ambiente Apple",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "resumo",
+    "pagina": "Materias/informatica/informatica-01.html"
+  },
+  {
+    "id": "informatica/informatica-02/teoria",
+    "titulo": "Ambiente Linux",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "teoria",
+    "pagina": "Materias/informatica/informatica-02.html"
+  },
+  {
+    "id": "informatica/informatica-02/resumo",
+    "titulo": "Ambiente Linux",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "resumo",
+    "pagina": "Materias/informatica/informatica-02.html"
+  },
+  {
+    "id": "informatica/informatica-03/teoria",
+    "titulo": "Ambiente Windows",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "teoria",
+    "pagina": "Materias/informatica/informatica-03.html"
+  },
+  {
+    "id": "informatica/informatica-03/resumo",
+    "titulo": "Ambiente Windows",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "resumo",
+    "pagina": "Materias/informatica/informatica-03.html"
+  },
+  {
+    "id": "informatica/informatica-04/teoria",
+    "titulo": "Hardware",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "teoria",
+    "pagina": "Materias/informatica/informatica-04.html"
+  },
+  {
+    "id": "informatica/informatica-04/resumo",
+    "titulo": "Hardware",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "resumo",
+    "pagina": "Materias/informatica/informatica-04.html"
+  },
+  {
+    "id": "informatica/informatica-05/teoria",
+    "titulo": "O que é Informática",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "teoria",
+    "pagina": "Materias/informatica/informatica-05.html"
+  },
+  {
+    "id": "informatica/informatica-05/resumo",
+    "titulo": "O que é Informática",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "resumo",
+    "pagina": "Materias/informatica/informatica-05.html"
+  },
+  {
+    "id": "informatica/informatica-06/teoria",
+    "titulo": "Software",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "teoria",
+    "pagina": "Materias/informatica/informatica-06.html"
+  },
+  {
+    "id": "informatica/informatica-06/resumo",
+    "titulo": "Software",
+    "disciplina": "informatica",
+    "nomeDisciplina": "Informática",
+    "tipo": "resumo",
+    "pagina": "Materias/informatica/informatica-06.html"
+  },
+  {
+    "id": "matematica/conjuntos-numericos/teoria",
+    "titulo": "Conjuntos Numéricos",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/conjuntos-numericos.html"
+  },
+  {
+    "id": "matematica/conjuntos-numericos/resumo",
+    "titulo": "Conjuntos Numéricos",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "resumo",
+    "pagina": "Materias/matematica/conjuntos-numericos.html"
+  },
+  {
+    "id": "matematica/equacoes-primeiro-grau/teoria",
+    "titulo": "Equações do 1º Grau",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/equacoes-primeiro-grau.html"
+  },
+  {
+    "id": "matematica/equacoes-segundo-grau/teoria",
+    "titulo": "Equações do 2º Grau",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/equacoes-segundo-grau.html"
+  },
+  {
+    "id": "matematica/equacoes-segundo-grau/resumo",
+    "titulo": "Equações do 2º Grau",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "resumo",
+    "pagina": "Materias/matematica/equacoes-segundo-grau.html"
+  },
+  {
+    "id": "matematica/estatistica-basica/teoria",
+    "titulo": "Estatística Básica",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/estatistica-basica.html"
+  },
+  {
+    "id": "matematica/estatistica-basica/resumo",
+    "titulo": "Estatística Básica",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "resumo",
+    "pagina": "Materias/matematica/estatistica-basica.html"
+  },
+  {
+    "id": "matematica/funcoes/teoria",
+    "titulo": "Funções",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/funcoes.html"
+  },
+  {
+    "id": "matematica/geometria-espacial/teoria",
+    "titulo": "Geometria Espacial",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/geometria-espacial.html"
+  },
+  {
+    "id": "matematica/geometria-plana/teoria",
+    "titulo": "Geometria Plana",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/geometria-plana.html"
+  },
+  {
+    "id": "matematica/geometria-plana/resumo",
+    "titulo": "Geometria Plana",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "resumo",
+    "pagina": "Materias/matematica/geometria-plana.html"
+  },
+  {
+    "id": "matematica/mmc-mdc/teoria",
+    "titulo": "MMC e MDC",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/mmc-mdc.html"
+  },
+  {
+    "id": "matematica/porcentagem/teoria",
+    "titulo": "Porcentagem",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/porcentagem.html"
+  },
+  {
+    "id": "matematica/porcentagem/resumo",
+    "titulo": "Porcentagem",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "resumo",
+    "pagina": "Materias/matematica/porcentagem.html"
+  },
+  {
+    "id": "matematica/probabilidade/teoria",
+    "titulo": "Probabilidade",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/probabilidade.html"
+  },
+  {
+    "id": "matematica/razao-proporcao/teoria",
+    "titulo": "Razão e Proporção",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/razao-proporcao.html"
+  },
+  {
+    "id": "matematica/razao-proporcao/resumo",
+    "titulo": "Razão e Proporção",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "resumo",
+    "pagina": "Materias/matematica/razao-proporcao.html"
+  },
+  {
+    "id": "matematica/regra-tres/teoria",
+    "titulo": "Regra de Três",
+    "disciplina": "matematica",
+    "nomeDisciplina": "Matemática",
+    "tipo": "teoria",
+    "pagina": "Materias/matematica/regra-tres.html"
+  },
+  {
+    "id": "direito-penal/aplicacao-da-lei-penal-comum/teoria",
+    "titulo": "Aplicação da Lei Penal Comum",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-penal/aplicacao-da-lei-penal-comum.html"
+  },
+  {
+    "id": "direito-penal/aplicacao-da-lei-penal-comum/resumo",
+    "titulo": "Aplicação da Lei Penal Comum",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-penal/aplicacao-da-lei-penal-comum.html"
+  },
+  {
+    "id": "direito-penal/concurso-de-pessoas-e-concurso-de-crimes/teoria",
+    "titulo": "Concurso de Pessoas e Concurso de Crimes",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-penal/concurso-de-pessoas-e-concurso-de-crimes.html"
+  },
+  {
+    "id": "direito-penal/concurso-de-pessoas-e-concurso-de-crimes/resumo",
+    "titulo": "Concurso de Pessoas e Concurso de Crimes",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-penal/concurso-de-pessoas-e-concurso-de-crimes.html"
+  },
+  {
+    "id": "direito-penal/crimes-contra-a-pessoa/teoria",
+    "titulo": "Crimes contra a Pessoa",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-penal/crimes-contra-a-pessoa.html"
+  },
+  {
+    "id": "direito-penal/crimes-contra-a-pessoa/resumo",
+    "titulo": "Crimes contra a Pessoa",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-penal/crimes-contra-a-pessoa.html"
+  },
+  {
+    "id": "direito-penal/crimes-patrimoniais-furto-e-roubo/teoria",
+    "titulo": "Crimes Patrimoniais (Furto e Roubo)",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-penal/crimes-patrimoniais-furto-e-roubo.html"
+  },
+  {
+    "id": "direito-penal/erro-excludentes-e-descriminantes-putativas/teoria",
+    "titulo": "Erro, Excludentes e Descriminantes Putativas",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-penal/erro-excludentes-e-descriminantes-putativas.html"
+  },
+  {
+    "id": "direito-penal/erro-excludentes-e-descriminantes-putativas/resumo",
+    "titulo": "Erro, Excludentes e Descriminantes Putativas",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-penal/erro-excludentes-e-descriminantes-putativas.html"
+  },
+  {
+    "id": "direito-penal/teoria-do-crime/teoria",
+    "titulo": "Teoria do Crime",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "teoria",
+    "pagina": "Materias/direito-penal/teoria-do-crime.html"
+  },
+  {
+    "id": "direito-penal/teoria-do-crime/resumo",
+    "titulo": "Teoria do Crime",
+    "disciplina": "direito-penal",
+    "nomeDisciplina": "Direito Penal",
+    "tipo": "resumo",
+    "pagina": "Materias/direito-penal/teoria-do-crime.html"
+  },
+  {
+    "id": "portugues/classes-de-palavras/teoria",
+    "titulo": "Classes de Palavras",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "teoria",
+    "pagina": "Materias/portugues/classes-de-palavras.html"
+  },
+  {
+    "id": "portugues/classes-de-palavras/resumo",
+    "titulo": "Classes de Palavras",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "resumo",
+    "pagina": "Materias/portugues/classes-de-palavras.html"
+  },
+  {
+    "id": "portugues/concordancia-verbal-e-nominal/teoria",
+    "titulo": "Concordância Verbal e Nominal",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "teoria",
+    "pagina": "Materias/portugues/concordancia-verbal-e-nominal.html"
+  },
+  {
+    "id": "portugues/concordancia-verbal-e-nominal/resumo",
+    "titulo": "Concordância Verbal e Nominal",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "resumo",
+    "pagina": "Materias/portugues/concordancia-verbal-e-nominal.html"
+  },
+  {
+    "id": "portugues/interpretacao-de-texto/teoria",
+    "titulo": "Interpretação de Texto",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "teoria",
+    "pagina": "Materias/portugues/interpretacao-de-texto.html"
+  },
+  {
+    "id": "portugues/interpretacao-de-texto/resumo",
+    "titulo": "Interpretação de Texto",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "resumo",
+    "pagina": "Materias/portugues/interpretacao-de-texto.html"
+  },
+  {
+    "id": "portugues/ortografia-e-acentuacao/teoria",
+    "titulo": "Ortografia e Acentuação",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "teoria",
+    "pagina": "Materias/portugues/ortografia-e-acentuacao.html"
+  },
+  {
+    "id": "portugues/ortografia-e-acentuacao/resumo",
+    "titulo": "Ortografia e Acentuação",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "resumo",
+    "pagina": "Materias/portugues/ortografia-e-acentuacao.html"
+  },
+  {
+    "id": "portugues/regencia-e-pontuacao/teoria",
+    "titulo": "Regência e Pontuação",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "teoria",
+    "pagina": "Materias/portugues/regencia-e-pontuacao.html"
+  },
+  {
+    "id": "portugues/regencia-e-pontuacao/resumo",
+    "titulo": "Regência e Pontuação",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "resumo",
+    "pagina": "Materias/portugues/regencia-e-pontuacao.html"
+  },
+  {
+    "id": "portugues/sintaxe-da-oracao/teoria",
+    "titulo": "Sintaxe da Oração",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "teoria",
+    "pagina": "Materias/portugues/sintaxe-da-oracao.html"
+  },
+  {
+    "id": "portugues/sintaxe-da-oracao/resumo",
+    "titulo": "Sintaxe da Oração",
+    "disciplina": "portugues",
+    "nomeDisciplina": "Língua Portuguesa",
+    "tipo": "resumo",
+    "pagina": "Materias/portugues/sintaxe-da-oracao.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-01/teoria",
+    "titulo": "Ação Penal Militar e seu exercício",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-01.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-01/resumo",
+    "titulo": "Ação Penal Militar e seu exercício",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-01.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-02/teoria",
+    "titulo": "Conselhos de Justiça – Lei nº 8.457/1992",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-02.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-02/resumo",
+    "titulo": "Conselhos de Justiça – Lei nº 8.457/1992",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-02.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-03/teoria",
+    "titulo": "Liberdade Provisória e Medidas de Segurança no Processo Penal Militar",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-03.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-03/resumo",
+    "titulo": "Liberdade Provisória e Medidas de Segurança no Processo Penal Militar",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-03.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-04/teoria",
+    "titulo": "Menagem — Palavra de Honra no Processo Penal Militar",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-04.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-04/resumo",
+    "titulo": "Menagem — Palavra de Honra no Processo Penal Militar",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-04.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-05/teoria",
+    "titulo": "Polícia Judiciária Militar (PJM) — Arts. 7º e 8º do CPPM",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-05.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-05/resumo",
+    "titulo": "Polícia Judiciária Militar (PJM) — Arts. 7º e 8º do CPPM",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-05.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-06/teoria",
+    "titulo": "Processo Penal Militar e sua aplicação",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-06.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-06/resumo",
+    "titulo": "Processo Penal Militar e sua aplicação",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-06.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-07/teoria",
+    "titulo": "Processos Especiais: Deserção e Insubmissão",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-07.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-07/resumo",
+    "titulo": "Processos Especiais: Deserção e Insubmissão",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-07.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-08/teoria",
+    "titulo": "RESUMO",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-08.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-08/resumo",
+    "titulo": "RESUMO",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-08.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-09/teoria",
+    "titulo": "Tipos de Prisões Cautelares no Processo Penal Militar",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-09.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-09/resumo",
+    "titulo": "Tipos de Prisões Cautelares no Processo Penal Militar",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-09.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-10/teoria",
+    "titulo": "Tipos de inquéritos",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "teoria",
+    "pagina": "Materias/processo-penal/processo-penal-10.html"
+  },
+  {
+    "id": "processo-penal/processo-penal-10/resumo",
+    "titulo": "Tipos de inquéritos",
+    "disciplina": "processo-penal",
+    "nomeDisciplina": "Processo Penal Militar",
+    "tipo": "resumo",
+    "pagina": "Materias/processo-penal/processo-penal-10.html"
+  },
+  {
+    "id": "raciocinio-logico/argumentacao-logica/teoria",
+    "titulo": "Argumentação lógica",
+    "disciplina": "raciocinio-logico",
+    "nomeDisciplina": "Raciocínio Lógico",
+    "tipo": "teoria",
+    "pagina": "Materias/raciocinio-logico/argumentacao-logica.html"
+  },
+  {
+    "id": "raciocinio-logico/complemento-proposicoes-e-tabela-verdade/teoria",
+    "titulo": "Complemento: Proposições e Tabela-Verdade",
+    "disciplina": "raciocinio-logico",
+    "nomeDisciplina": "Raciocínio Lógico",
+    "tipo": "teoria",
+    "pagina": "Materias/raciocinio-logico/complemento-proposicoes-e-tabela-verdade.html"
+  },
+  {
+    "id": "raciocinio-logico/complemento-proposicoes-e-tabela-verdade/questoes",
+    "titulo": "Complemento: Proposições e Tabela-Verdade",
+    "disciplina": "raciocinio-logico",
+    "nomeDisciplina": "Raciocínio Lógico",
+    "tipo": "questoes",
+    "pagina": "Materias/raciocinio-logico/complemento-proposicoes-e-tabela-verdade.html"
+  },
+  {
+    "id": "raciocinio-logico/equivalencias-e-negacoes/teoria",
+    "titulo": "Equivalências e negações",
+    "disciplina": "raciocinio-logico",
+    "nomeDisciplina": "Raciocínio Lógico",
+    "tipo": "teoria",
+    "pagina": "Materias/raciocinio-logico/equivalencias-e-negacoes.html"
+  },
+  {
+    "id": "raciocinio-logico/outros-assuntos-que-podem-cair/teoria",
+    "titulo": "Outros assuntos que podem cair",
+    "disciplina": "raciocinio-logico",
+    "nomeDisciplina": "Raciocínio Lógico",
+    "tipo": "teoria",
+    "pagina": "Materias/raciocinio-logico/outros-assuntos-que-podem-cair.html"
+  },
+  {
+    "id": "raciocinio-logico/questao-da-imagem-passo-a-passo/teoria",
+    "titulo": "Questão da imagem — passo a passo",
+    "disciplina": "raciocinio-logico",
+    "nomeDisciplina": "Raciocínio Lógico",
+    "tipo": "teoria",
+    "pagina": "Materias/raciocinio-logico/questao-da-imagem-passo-a-passo.html"
+  },
+  {
+    "id": "raciocinio-logico/simbolos-logicos-corretos/teoria",
+    "titulo": "Símbolos lógicos corretos",
+    "disciplina": "raciocinio-logico",
+    "nomeDisciplina": "Raciocínio Lógico",
+    "tipo": "teoria",
+    "pagina": "Materias/raciocinio-logico/simbolos-logicos-corretos.html"
+  }
+]
