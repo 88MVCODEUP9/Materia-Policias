@@ -24,19 +24,19 @@
     "pagina": "Materias/direito-administrativo/administrativo-02.html"
   },
   {
-    "id": "direito-administrativo/administrativo-02/legislacao",
-    "titulo": "Agentes Públicos",
-    "disciplina": "direito-administrativo",
-    "nomeDisciplina": "Direito Administrativo",
-    "tipo": "legislacao",
-    "pagina": "Materias/direito-administrativo/administrativo-02.html"
-  },
-  {
     "id": "direito-administrativo/administrativo-02/resumo",
     "titulo": "Agentes Públicos",
     "disciplina": "direito-administrativo",
     "nomeDisciplina": "Direito Administrativo",
     "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-02.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-02/legislacao",
+    "titulo": "Agentes Públicos",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "legislacao",
     "pagina": "Materias/direito-administrativo/administrativo-02.html"
   },
   {
@@ -64,19 +64,19 @@
     "pagina": "Materias/direito-administrativo/administrativo-04.html"
   },
   {
-    "id": "direito-administrativo/administrativo-04/legislacao",
-    "titulo": "Controle da Administração Pública",
-    "disciplina": "direito-administrativo",
-    "nomeDisciplina": "Direito Administrativo",
-    "tipo": "legislacao",
-    "pagina": "Materias/direito-administrativo/administrativo-04.html"
-  },
-  {
     "id": "direito-administrativo/administrativo-04/resumo",
     "titulo": "Controle da Administração Pública",
     "disciplina": "direito-administrativo",
     "nomeDisciplina": "Direito Administrativo",
     "tipo": "resumo",
+    "pagina": "Materias/direito-administrativo/administrativo-04.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-04/legislacao",
+    "titulo": "Controle da Administração Pública",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "legislacao",
     "pagina": "Materias/direito-administrativo/administrativo-04.html"
   },
   {
@@ -208,19 +208,19 @@
     "pagina": "Materias/direito-administrativo/administrativo-12.html"
   },
   {
-    "id": "direito-administrativo/administrativo-13/legislacao",
-    "titulo": "Responsabilidade Civil do Estado",
-    "disciplina": "direito-administrativo",
-    "nomeDisciplina": "Direito Administrativo",
-    "tipo": "legislacao",
-    "pagina": "Materias/direito-administrativo/administrativo-13.html"
-  },
-  {
     "id": "direito-administrativo/administrativo-13/teoria",
     "titulo": "Responsabilidade Civil do Estado",
     "disciplina": "direito-administrativo",
     "nomeDisciplina": "Direito Administrativo",
     "tipo": "teoria",
+    "pagina": "Materias/direito-administrativo/administrativo-13.html"
+  },
+  {
+    "id": "direito-administrativo/administrativo-13/legislacao",
+    "titulo": "Responsabilidade Civil do Estado",
+    "disciplina": "direito-administrativo",
+    "nomeDisciplina": "Direito Administrativo",
+    "tipo": "legislacao",
     "pagina": "Materias/direito-administrativo/administrativo-13.html"
   },
   {
@@ -552,14 +552,6 @@
     "pagina": "Materias/direitos-humanos/direitos-humanos-05.html"
   },
   {
-    "id": "direitos-humanos/direitos-humanos-06/legislacao",
-    "titulo": "Tratados Internacionais",
-    "disciplina": "direitos-humanos",
-    "nomeDisciplina": "Direitos Humanos",
-    "tipo": "legislacao",
-    "pagina": "Materias/direitos-humanos/direitos-humanos-06.html"
-  },
-  {
     "id": "direitos-humanos/direitos-humanos-06/teoria",
     "titulo": "Tratados Internacionais",
     "disciplina": "direitos-humanos",
@@ -573,6 +565,14 @@
     "disciplina": "direitos-humanos",
     "nomeDisciplina": "Direitos Humanos",
     "tipo": "resumo",
+    "pagina": "Materias/direitos-humanos/direitos-humanos-06.html"
+  },
+  {
+    "id": "direitos-humanos/direitos-humanos-06/legislacao",
+    "titulo": "Tratados Internacionais",
+    "disciplina": "direitos-humanos",
+    "nomeDisciplina": "Direitos Humanos",
+    "tipo": "legislacao",
     "pagina": "Materias/direitos-humanos/direitos-humanos-06.html"
   },
   {

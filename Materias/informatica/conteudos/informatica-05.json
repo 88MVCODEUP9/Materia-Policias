@@ -1,0 +1,197 @@
+{
+  "titulo": "O que é Informática",
+  "blocos": [
+    {
+      "tipo": "destaque",
+      "texto": "O que é Informática",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Informática é o estudo do tratamento automatizado da informação por meio de computadores. Todo sistema informatizado é formado por três elementos essenciais: Hardware, Software e Peopleware.",
+      "titulo": "O que é Informática",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que é Informática",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Informática é o estudo do tratamento automatizado da informação por meio de computadores. Todo sistema informatizado é formado por três elementos essenciais: Hardware, Software e Peopleware.",
+      "titulo": "O que é Informática",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Diagrama de sistema informatizado",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Sistema informatizado",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Um sistema informatizado é composto por:\\n- **Hardware** (parte física)\\n- **Software** (parte lógica)\\n- **Peopleware** (elemento humano)\\nEsses três trabalham em conjunto para processar dados e gerar informações.",
+      "titulo": "Sistema informatizado",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Sistema informatizado",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Um sistema informatizado é composto por:\\n- **Hardware** (parte física)\\n- **Software** (parte lógica)\\n- **Peopleware** (elemento humano)\\nEsses três trabalham em conjunto para processar dados e gerar informações.",
+      "titulo": "Sistema informatizado",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Parte física do computador. Componentes que podemos tocar e ver.\\nExemplos: CPU, teclado, monitor, HD, placa-mãe, mouse.",
+      "titulo": "Hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Parte física do computador. Componentes que podemos tocar e ver.\\nExemplos: CPU, teclado, monitor, HD, placa-mãe, mouse.",
+      "titulo": "Hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Componentes de hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Software",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Parte lógica — programas e instruções. Controla e instrui o hardware. Não tem forma física — não pode ser tocado.\\nExemplos: Windows, Word, Chrome, antivírus.",
+      "titulo": "Software",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Software",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Parte lógica — programas e instruções. Controla e instrui o hardware. Não tem forma física — não pode ser tocado.\\nExemplos: Windows, Word, Chrome, antivírus.",
+      "titulo": "Software",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ícones de programas (software)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Peopleware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O elemento humano do sistema. Quem usa, opera e programa o computador. Terceiro elemento essencial — sem usuário, o sistema está incompleto.",
+      "titulo": "Peopleware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Peopleware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O elemento humano do sistema. Quem usa, opera e programa o computador. Terceiro elemento essencial — sem usuário, o sistema está incompleto.",
+      "titulo": "Peopleware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Usuário utilizando computador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mnemônico para lembrar",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Hardware** = físico (toca)  |  **Software** = programa (não toca)  |  **Peopleware** = usuário.",
+      "titulo": "Mnemônico para lembrar",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mnemônico para lembrar",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Hardware** = físico (toca)  |  **Software** = programa (não toca)  |  **Peopleware** = usuário.",
+      "titulo": "Mnemônico para lembrar",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware ≠ Software",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware e Software **não são sinônimos** nem intercambiáveis. Um é físico, o outro é lógico; ambos são necessários, mas são conceitos distintos.",
+      "titulo": "Hardware ≠ Software",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware ≠ Software",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware e Software **não são sinônimos** nem intercambiáveis. Um é físico, o outro é lógico; ambos são necessários, mas são conceitos distintos.",
+      "titulo": "Hardware ≠ Software",
+      "rotulo": "Pegadinha"
+    }
+  ]
+}

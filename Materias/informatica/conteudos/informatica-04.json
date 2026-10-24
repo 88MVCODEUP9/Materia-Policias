@@ -1,0 +1,1493 @@
+{
+  "titulo": "Hardware",
+  "blocos": [
+    {
+      "tipo": "destaque",
+      "texto": "O que é Hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware é o conjunto de **componentes físicos** de um computador ou dispositivo eletrônico. São partes tangíveis, que podem ser tocadas e vistas.",
+      "titulo": "O que é Hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que é Hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware é o conjunto de **componentes físicos** de um computador ou dispositivo eletrônico. São partes tangíveis, que podem ser tocadas e vistas.",
+      "titulo": "O que é Hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo de hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplos de hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Processador, placa-mãe, memória RAM, placa de vídeo, SSD, HD, fonte de alimentação, cooler, monitor, teclado, mouse, webcam, impressora, placa de rede, placa de som.",
+      "titulo": "Exemplos de hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplos de hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Processador, placa-mãe, memória RAM, placa de vídeo, SSD, HD, fonte de alimentação, cooler, monitor, teclado, mouse, webcam, impressora, placa de rede, placa de som.",
+      "titulo": "Exemplos de hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware = físico",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tudo o que você pode tocar no computador é hardware. Se não pode tocar, é software.",
+      "titulo": "Hardware = físico",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hardware = físico",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tudo o que você pode tocar no computador é hardware. Se não pode tocar, é software.",
+      "titulo": "Hardware = físico",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa-mãe (Motherboard)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "É a principal placa do computador. Permite a comunicação entre todos os componentes. Possui socket da CPU, slots de memória, slots PCI Express, conectores SATA, slots M.2, chipset, conectores de energia, USB, áudio, rede e firmware UEFI.",
+      "titulo": "Placa-mãe (Motherboard)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa-mãe (Motherboard)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "É a principal placa do computador. Permite a comunicação entre todos os componentes. Possui socket da CPU, slots de memória, slots PCI Express, conectores SATA, slots M.2, chipset, conectores de energia, USB, áudio, rede e firmware UEFI.",
+      "titulo": "Placa-mãe (Motherboard)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa-mãe",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Chipset",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Conjunto de circuitos que gerencia a comunicação entre a CPU, memória, periféricos e barramentos. Define quais tecnologias são suportadas (ex.: PCIe, USB, SATA).",
+      "titulo": "Chipset",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Chipset",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Conjunto de circuitos que gerencia a comunicação entre a CPU, memória, periféricos e barramentos. Define quais tecnologias são suportadas (ex.: PCIe, USB, SATA).",
+      "titulo": "Chipset",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Chipset em placa-mãe",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CPU (Unidade Central de Processamento)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Principal componente responsável pelo processamento de instruções. Executa operações aritméticas, lógicas e de controle. Características: número de núcleos, threads, frequência, cache, arquitetura, consumo e tecnologia de fabricação.",
+      "titulo": "CPU (Unidade Central de Processamento)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CPU (Unidade Central de Processamento)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Principal componente responsável pelo processamento de instruções. Executa operações aritméticas, lógicas e de controle. Características: número de núcleos, threads, frequência, cache, arquitetura, consumo e tecnologia de fabricação.",
+      "titulo": "CPU (Unidade Central de Processamento)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Processador (chip)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Núcleos e Threads",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Núcleo (core):** unidade física de processamento. Ex.: 8 cores = 8 núcleos físicos.\\n**Thread:** linha de execução lógica. Ex.: 8 cores / 16 threads (cada core pode executar 2 threads simultaneamente com Hyper-Threading/SMT).",
+      "titulo": "Núcleos e Threads",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Núcleos e Threads",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Núcleo (core):** unidade física de processamento. Ex.: 8 cores = 8 núcleos físicos.\\n**Thread:** linha de execução lógica. Ex.: 8 cores / 16 threads (cada core pode executar 2 threads simultaneamente com Hyper-Threading/SMT).",
+      "titulo": "Núcleos e Threads",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Cache do processador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Memória extremamente rápida integrada à CPU, usada para armazenar dados frequentemente acessados. Níveis: L1 (mais rápido, menor), L2, L3 (mais lento, maior). Reduz a necessidade de acessar a RAM.",
+      "titulo": "Cache do processador",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Cache do processador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Memória extremamente rápida integrada à CPU, usada para armazenar dados frequentemente acessados. Níveis: L1 (mais rápido, menor), L2, L3 (mais lento, maior). Reduz a necessidade de acessar a RAM.",
+      "titulo": "Cache do processador",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Hierarquia de cache",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CPU ≠ Gabinete",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CPU é o processador (chip), não o gabinete do computador. Muitas pessoas confundem, mas são coisas diferentes.",
+      "titulo": "CPU ≠ Gabinete",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CPU ≠ Gabinete",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CPU é o processador (chip), não o gabinete do computador. Muitas pessoas confundem, mas são coisas diferentes.",
+      "titulo": "CPU ≠ Gabinete",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que é RAM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM (Random Access Memory) é a memória de trabalho do computador. Armazena temporariamente dados e programas em uso. É **volátil** — perde os dados ao desligar.",
+      "titulo": "O que é RAM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que é RAM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM (Random Access Memory) é a memória de trabalho do computador. Armazena temporariamente dados e programas em uso. É **volátil** — perde os dados ao desligar.",
+      "titulo": "O que é RAM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Pentes de RAM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Gerações de RAM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "DDR, DDR2, DDR3, DDR4, DDR5. Cada geração traz maior velocidade, menor consumo e maior capacidade. Não são compatíveis entre si (encaixes diferentes).",
+      "titulo": "Gerações de RAM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Gerações de RAM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "DDR, DDR2, DDR3, DDR4, DDR5. Cada geração traz maior velocidade, menor consumo e maior capacidade. Não são compatíveis entre si (encaixes diferentes).",
+      "titulo": "Gerações de RAM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM ≠ Armazenamento",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM é memória volátil de curto prazo; SSD/HD são armazenamento permanente. Não confunda os dois.",
+      "titulo": "RAM ≠ Armazenamento",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM ≠ Armazenamento",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM é memória volátil de curto prazo; SSD/HD são armazenamento permanente. Não confunda os dois.",
+      "titulo": "RAM ≠ Armazenamento",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "GPU (Graphics Processing Unit)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Responsável pelo processamento gráfico e também por tarefas de processamento paralelo (ex.: inteligência artificial, mineração). Pode ser **integrada** (no processador) ou **dedicada** (placa separada).",
+      "titulo": "GPU (Graphics Processing Unit)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "GPU (Graphics Processing Unit)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Responsável pelo processamento gráfico e também por tarefas de processamento paralelo (ex.: inteligência artificial, mineração). Pode ser **integrada** (no processador) ou **dedicada** (placa separada).",
+      "titulo": "GPU (Graphics Processing Unit)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa de vídeo dedicada",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "VRAM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Memória dedicada da GPU (Video RAM). Armazena texturas, imagens, buffers e dados gráficos. Quanto mais VRAM, melhor para jogos e aplicações pesadas.",
+      "titulo": "VRAM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "VRAM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Memória dedicada da GPU (Video RAM). Armazena texturas, imagens, buffers e dados gráficos. Quanto mais VRAM, melhor para jogos e aplicações pesadas.",
+      "titulo": "VRAM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "VRAM em placa de vídeo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "HD (Hard Disk Drive)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Armazenamento magnético com discos giratórios e cabeças de leitura/gravação. **Características:** grande capacidade, baixo custo por GB, partes móveis, maior latência, suscetível a impactos.",
+      "titulo": "HD (Hard Disk Drive)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "HD (Hard Disk Drive)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Armazenamento magnético com discos giratórios e cabeças de leitura/gravação. **Características:** grande capacidade, baixo custo por GB, partes móveis, maior latência, suscetível a impactos.",
+      "titulo": "HD (Hard Disk Drive)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "HD interno",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "SSD (Solid State Drive)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Armazenamento baseado em memória flash, sem partes móveis. **Características:** alta velocidade, baixa latência, silencioso, resistente a impactos, mais caro por GB que HD.",
+      "titulo": "SSD (Solid State Drive)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "SSD (Solid State Drive)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Armazenamento baseado em memória flash, sem partes móveis. **Características:** alta velocidade, baixa latência, silencioso, resistente a impactos, mais caro por GB que HD.",
+      "titulo": "SSD (Solid State Drive)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "SSD SATA e NVMe",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "SSD SATA vs. NVMe",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**SSD SATA:** utiliza interface SATA, formato 2,5 polegadas, desempenho limitado pela interface (até ~550 MB/s).\\n**SSD NVMe:** utiliza protocolo NVMe via PCI Express, desempenho muito superior (vários GB/s).",
+      "titulo": "SSD SATA vs. NVMe",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "SSD SATA vs. NVMe",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**SSD SATA:** utiliza interface SATA, formato 2,5 polegadas, desempenho limitado pela interface (até ~550 MB/s).\\n**SSD NVMe:** utiliza protocolo NVMe via PCI Express, desempenho muito superior (vários GB/s).",
+      "titulo": "SSD SATA vs. NVMe",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2 é um **formato físico** de dispositivo. Pode ser SATA ou NVMe. Importante: **M.2 ≠ NVMe**. Existem M.2 SATA e M.2 NVMe.",
+      "titulo": "M.2",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2 é um **formato físico** de dispositivo. Pode ser SATA ou NVMe. Importante: **M.2 ≠ NVMe**. Existem M.2 SATA e M.2 NVMe.",
+      "titulo": "M.2",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2 não significa velocidade",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2 é apenas o formato físico. A velocidade depende se é SATA ou NVMe. Sempre verifique o protocolo.",
+      "titulo": "M.2 não significa velocidade",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2 não significa velocidade",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2 é apenas o formato físico. A velocidade depende se é SATA ou NVMe. Sempre verifique o protocolo.",
+      "titulo": "M.2 não significa velocidade",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Fonte de Alimentação",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Transforma a energia da tomada em tensões adequadas para os componentes (+12V, +5V, +3,3V). Fornece energia, regula tensões, protege contra picos e distribui energia para todos os componentes.",
+      "titulo": "Fonte de Alimentação",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Fonte de Alimentação",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Transforma a energia da tomada em tensões adequadas para os componentes (+12V, +5V, +3,3V). Fornece energia, regula tensões, protege contra picos e distribui energia para todos os componentes.",
+      "titulo": "Fonte de Alimentação",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Fonte de alimentação ATX",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Principais linhas de tensão",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **+12V:** para CPU, GPU, placa-mãe (conectores principais).\\n- **+5V:** para USB, SSDs, periféricos.\\n- **+3,3V:** para chipsets, RAM, alguns componentes.",
+      "titulo": "Principais linhas de tensão",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Principais linhas de tensão",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **+12V:** para CPU, GPU, placa-mãe (conectores principais).\\n- **+5V:** para USB, SSDs, periféricos.\\n- **+3,3V:** para chipsets, RAM, alguns componentes.",
+      "titulo": "Principais linhas de tensão",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Refrigeração do computador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Componentes geram calor. O sistema de refrigeração remove esse calor para evitar superaquecimento. Inclui: dissipador, ventoinha, pasta térmica, heat pipes, radiador, bomba (water cooler).",
+      "titulo": "Refrigeração do computador",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Refrigeração do computador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Componentes geram calor. O sistema de refrigeração remove esse calor para evitar superaquecimento. Inclui: dissipador, ventoinha, pasta térmica, heat pipes, radiador, bomba (water cooler).",
+      "titulo": "Refrigeração do computador",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Air cooler vs Water cooler",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Cooler",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Air cooler:** dissipador de calor + ventoinha.\\n**Water cooler:** líquido circula para transportar calor até um radiador com ventoinhas.",
+      "titulo": "Cooler",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Cooler",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Air cooler:** dissipador de calor + ventoinha.\\n**Water cooler:** líquido circula para transportar calor até um radiador com ventoinhas.",
+      "titulo": "Cooler",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Pasta Térmica",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Aplicada entre a CPU (ou GPU) e o cooler. Preenche imperfeições microscópicas das superfícies, melhorando a transferência de calor.",
+      "titulo": "Pasta Térmica",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Pasta Térmica",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Aplicada entre a CPU (ou GPU) e o cooler. Preenche imperfeições microscópicas das superfícies, melhorando a transferência de calor.",
+      "titulo": "Pasta Térmica",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Aplicação de pasta térmica",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Thermal Throttling",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Redução automática do desempenho (frequência) para controlar a temperatura. Ex.: temperatura alta → redução de frequência → menor consumo e calor.",
+      "titulo": "Thermal Throttling",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Thermal Throttling",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Redução automática do desempenho (frequência) para controlar a temperatura. Ex.: temperatura alta → redução de frequência → menor consumo e calor.",
+      "titulo": "Thermal Throttling",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "PCI Express (PCIe)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface de alta velocidade para conectar componentes como GPU, placa de rede, SSD NVMe, placas de captura. Versões: PCIe 3.0, 4.0, 5.0. Configurações: x1, x4, x8, x16 (quanto maior, mais largura de banda).",
+      "titulo": "PCI Express (PCIe)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "PCI Express (PCIe)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface de alta velocidade para conectar componentes como GPU, placa de rede, SSD NVMe, placas de captura. Versões: PCIe 3.0, 4.0, 5.0. Configurações: x1, x4, x8, x16 (quanto maior, mais largura de banda).",
+      "titulo": "PCI Express (PCIe)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Slots PCIe",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "SATA",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface para HDs, SSDs SATA e unidades ópticas. Atualmente na versão SATA III (6 Gb/s).",
+      "titulo": "SATA",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "SATA",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface para HDs, SSDs SATA e unidades ópticas. Atualmente na versão SATA III (6 Gb/s).",
+      "titulo": "SATA",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Conector físico para SSDs (e outros dispositivos). Suporta SATA ou NVMe via PCIe.",
+      "titulo": "M.2",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "M.2",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Conector físico para SSDs (e outros dispositivos). Suporta SATA ou NVMe via PCIe.",
+      "titulo": "M.2",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM DIMM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Slots para módulos de memória RAM. Normalmente 2 ou 4 slots por placa-mãe. Canais duais (dual channel) aumentam desempenho.",
+      "titulo": "RAM DIMM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAM DIMM",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Slots para módulos de memória RAM. Normalmente 2 ou 4 slots por placa-mãe. Canais duais (dual channel) aumentam desempenho.",
+      "titulo": "RAM DIMM",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UEFI (Unified Extensible Firmware Interface)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Firmware moderno que substitui a BIOS. Inicializa o hardware, executa o POST e carrega o sistema operacional. Interface gráfica, suporte a discos >2TB (GPT), inicialização mais rápida.",
+      "titulo": "UEFI (Unified Extensible Firmware Interface)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UEFI (Unified Extensible Firmware Interface)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Firmware moderno que substitui a BIOS. Inicializa o hardware, executa o POST e carrega o sistema operacional. Interface gráfica, suporte a discos >2TB (GPT), inicialização mais rápida.",
+      "titulo": "UEFI (Unified Extensible Firmware Interface)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tela UEFI",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CMOS e Bateria",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A placa-mãe tem uma bateria CR2032 que mantém as configurações da UEFI/BIOS e o relógio em tempo real quando o computador está desligado.",
+      "titulo": "CMOS e Bateria",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "CMOS e Bateria",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A placa-mãe tem uma bateria CR2032 que mantém as configurações da UEFI/BIOS e o relógio em tempo real quando o computador está desligado.",
+      "titulo": "CMOS e Bateria",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Bateria CMOS",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UEFI ≠ BIOS",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UEFI é o sucessor da BIOS, com mais recursos. Muitos ainda chamam de BIOS, mas são diferentes.",
+      "titulo": "UEFI ≠ BIOS",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UEFI ≠ BIOS",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UEFI é o sucessor da BIOS, com mais recursos. Muitos ainda chamam de BIOS, mas são diferentes.",
+      "titulo": "UEFI ≠ BIOS",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dispositivos de Entrada",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Enviam informações ao computador. Exemplos: teclado, mouse, microfone, webcam, scanner, controle, mesa digitalizadora.",
+      "titulo": "Dispositivos de Entrada",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dispositivos de Entrada",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Enviam informações ao computador. Exemplos: teclado, mouse, microfone, webcam, scanner, controle, mesa digitalizadora.",
+      "titulo": "Dispositivos de Entrada",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Teclado e mouse",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Teclado",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipos: membrana, mecânico, tesoura, capacitivo. O mecânico é preferido por gamers e digitadores por feedback tátil e durabilidade.",
+      "titulo": "Teclado",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Teclado",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipos: membrana, mecânico, tesoura, capacitivo. O mecânico é preferido por gamers e digitadores por feedback tátil e durabilidade.",
+      "titulo": "Teclado",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mouse",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Características: sensor (laser/óptico), DPI/CPI (sensibilidade), polling rate (taxa de atualização), botões, conectividade (com fio, Bluetooth, 2,4 GHz).",
+      "titulo": "Mouse",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mouse",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Características: sensor (laser/óptico), DPI/CPI (sensibilidade), polling rate (taxa de atualização), botões, conectividade (com fio, Bluetooth, 2,4 GHz).",
+      "titulo": "Mouse",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dispositivos de Saída",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Apresentam informações ao usuário. Exemplos: monitor, impressora, projetor, caixa de som, fone de ouvido.",
+      "titulo": "Dispositivos de Saída",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dispositivos de Saída",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Apresentam informações ao usuário. Exemplos: monitor, impressora, projetor, caixa de som, fone de ouvido.",
+      "titulo": "Dispositivos de Saída",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Monitor e impressora",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Monitor",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Características: tamanho (polegadas), resolução (Full HD, QHD, 4K), taxa de atualização (60Hz, 144Hz, 240Hz), tempo de resposta (ms), tipo de painel (IPS, TN, VA), brilho, contraste, conectores.",
+      "titulo": "Monitor",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Monitor",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Características: tamanho (polegadas), resolução (Full HD, QHD, 4K), taxa de atualização (60Hz, 144Hz, 240Hz), tempo de resposta (ms), tipo de painel (IPS, TN, VA), brilho, contraste, conectores.",
+      "titulo": "Monitor",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Resolução",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**1920×1080** – Full HD\\n**2560×1440** – QHD\\n**3840×2160** – 4K UHD",
+      "titulo": "Resolução",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Resolução",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**1920×1080** – Full HD\\n**2560×1440** – QHD\\n**3840×2160** – 4K UHD",
+      "titulo": "Resolução",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Taxa de atualização (Hz)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Número de quadros por segundo que o monitor pode exibir. Quanto maior, mais fluidez (ex.: 144Hz para jogos).",
+      "titulo": "Taxa de atualização (Hz)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Taxa de atualização (Hz)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Número de quadros por segundo que o monitor pode exibir. Quanto maior, mais fluidez (ex.: 144Hz para jogos).",
+      "titulo": "Taxa de atualização (Hz)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dispositivos de Entrada e Saída",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Podem enviar e receber informações. Exemplos: tela touchscreen, armazenamento externo (pendrive, HD externo), placas de rede, impressoras multifuncionais.",
+      "titulo": "Dispositivos de Entrada e Saída",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dispositivos de Entrada e Saída",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Podem enviar e receber informações. Exemplos: tela touchscreen, armazenamento externo (pendrive, HD externo), placas de rede, impressoras multifuncionais.",
+      "titulo": "Dispositivos de Entrada e Saída",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Touchscreen é entrada e saída",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A tela touchscreen exibe (saída) e recebe toques (entrada). É um dispositivo híbrido.",
+      "titulo": "Touchscreen é entrada e saída",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Touchscreen é entrada e saída",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A tela touchscreen exibe (saída) e recebe toques (entrada). É um dispositivo híbrido.",
+      "titulo": "Touchscreen é entrada e saída",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "USB",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface universal para conectar teclado, mouse, pendrive, HD externo, webcam, impressora, celular, etc. Gerações: USB 2.0, 3.0, 3.1, 3.2, 4.0. Velocidades variam.",
+      "titulo": "USB",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "USB",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface universal para conectar teclado, mouse, pendrive, HD externo, webcam, impressora, celular, etc. Gerações: USB 2.0, 3.0, 3.1, 3.2, 4.0. Velocidades variam.",
+      "titulo": "USB",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Conectores USB",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "USB-C",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipo de conector físico reversível. Pode suportar USB 3.0, 3.1, 4.0, Thunderbolt, DisplayPort, etc. **Não indica velocidade** — apenas o formato.",
+      "titulo": "USB-C",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "USB-C",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipo de conector físico reversível. Pode suportar USB 3.0, 3.1, 4.0, Thunderbolt, DisplayPort, etc. **Não indica velocidade** — apenas o formato.",
+      "titulo": "USB-C",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "HDMI",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface digital para vídeo e áudio. Comum em monitores, TVs, placas de vídeo, consoles. Versões: HDMI 1.4, 2.0, 2.1 (suporte a resoluções e taxas maiores).",
+      "titulo": "HDMI",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "HDMI",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface digital para vídeo e áudio. Comum em monitores, TVs, placas de vídeo, consoles. Versões: HDMI 1.4, 2.0, 2.1 (suporte a resoluções e taxas maiores).",
+      "titulo": "HDMI",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "DisplayPort",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface digital para monitores, similar ao HDMI, mas mais comum em computadores. Suporta altas resoluções e taxas de atualização.",
+      "titulo": "DisplayPort",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "DisplayPort",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface digital para monitores, similar ao HDMI, mas mais comum em computadores. Suporta altas resoluções e taxas de atualização.",
+      "titulo": "DisplayPort",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ethernet",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tecnologia de rede com fio. Velocidades: 100 Mb/s, 1 Gb/s (Gigabit), 2,5 Gb/s, 5 Gb/s, 10 Gb/s.",
+      "titulo": "Ethernet",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ethernet",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tecnologia de rede com fio. Velocidades: 100 Mb/s, 1 Gb/s (Gigabit), 2,5 Gb/s, 5 Gb/s, 10 Gb/s.",
+      "titulo": "Ethernet",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa de Rede",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Permite comunicação com outros dispositivos via Ethernet, Wi-Fi ou outras tecnologias. Pode ser integrada à placa-mãe ou dedicada (PCIe).",
+      "titulo": "Placa de Rede",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa de Rede",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Permite comunicação com outros dispositivos via Ethernet, Wi-Fi ou outras tecnologias. Pode ser integrada à placa-mãe ou dedicada (PCIe).",
+      "titulo": "Placa de Rede",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa de rede Ethernet",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa de Som",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Processa sinais de áudio. Pode ser integrada à placa-mãe (áudio onboard), dedicada (PCIe) ou externa (USB).",
+      "titulo": "Placa de Som",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Placa de Som",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Processa sinais de áudio. Pode ser integrada à placa-mãe (áudio onboard), dedicada (PCIe) ou externa (USB).",
+      "titulo": "Placa de Som",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAID (Redundant Array of Independent Disks)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Combina múltiplas unidades de armazenamento para melhorar desempenho, redundância ou ambos.",
+      "titulo": "RAID (Redundant Array of Independent Disks)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "RAID (Redundant Array of Independent Disks)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Combina múltiplas unidades de armazenamento para melhorar desempenho, redundância ou ambos.",
+      "titulo": "RAID (Redundant Array of Independent Disks)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Frequência",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Medida em Hz, MHz, GHz. Ex.: 4 GHz = 4 bilhões de ciclos por segundo. **Frequência maior não significa necessariamente maior desempenho** — arquitetura também importa.",
+      "titulo": "Frequência",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Frequência",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Medida em Hz, MHz, GHz. Ex.: 4 GHz = 4 bilhões de ciclos por segundo. **Frequência maior não significa necessariamente maior desempenho** — arquitetura também importa.",
+      "titulo": "Frequência",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Latência",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tempo para uma operação ser concluída. Presente em RAM, CPU, SSD, HD, GPU, rede. Menor latência = melhor resposta.",
+      "titulo": "Latência",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Latência",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tempo para uma operação ser concluída. Presente em RAM, CPU, SSD, HD, GPU, rede. Menor latência = melhor resposta.",
+      "titulo": "Latência",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Largura de Banda",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Quantidade de dados transferida por segundo. Importante em RAM, VRAM, PCIe, armazenamento e redes.",
+      "titulo": "Largura de Banda",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Largura de Banda",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Quantidade de dados transferida por segundo. Importante em RAM, VRAM, PCIe, armazenamento e redes.",
+      "titulo": "Largura de Banda",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Temperatura",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Componentes têm limites de temperatura. Superaquecimento pode causar: redução de desempenho, instabilidade, desligamento, danos permanentes.",
+      "titulo": "Temperatura",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Temperatura",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Componentes têm limites de temperatura. Superaquecimento pode causar: redução de desempenho, instabilidade, desligamento, danos permanentes.",
+      "titulo": "Temperatura",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Overclock e Undervolt",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Overclock:** operar acima das especificações (aumenta desempenho, consumo e calor).\\n**Undervolt:** reduzir tensão (diminui consumo e temperatura, pode manter desempenho).",
+      "titulo": "Overclock e Undervolt",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Overclock e Undervolt",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Overclock:** operar acima das especificações (aumenta desempenho, consumo e calor).\\n**Undervolt:** reduzir tensão (diminui consumo e temperatura, pode manter desempenho).",
+      "titulo": "Overclock e Undervolt",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipos de Computadores",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Desktop:** expansível, componentes padrão.\\n- **Notebook:** portátil, componentes compactos.\\n- **Servidor:** projetado para serviços e alta confiabilidade.\\n- **Workstation:** alto desempenho para tarefas profissionais.\\n- **Mini PC:** compacto, baixo consumo.\\n- **Sistema embarcado:** hardware para função específica.",
+      "titulo": "Tipos de Computadores",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipos de Computadores",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Desktop:** expansível, componentes padrão.\\n- **Notebook:** portátil, componentes compactos.\\n- **Servidor:** projetado para serviços e alta confiabilidade.\\n- **Workstation:** alto desempenho para tarefas profissionais.\\n- **Mini PC:** compacto, baixo consumo.\\n- **Sistema embarcado:** hardware para função específica.",
+      "titulo": "Tipos de Computadores",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Compatibilidade de Hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Antes de instalar, verifique:\\n- **CPU:** socket, chipset, suporte da placa-mãe, BIOS/UEFI.\\n- **RAM:** geração DDR, capacidade, frequência, compatibilidade.\\n- **GPU:** PCIe, dimensões, fonte, conectores.\\n- **SSD:** formato, interface, protocolo.\\n- **Fonte:** potência, conectores, qualidade.",
+      "titulo": "Compatibilidade de Hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Compatibilidade de Hardware",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Antes de instalar, verifique:\\n- **CPU:** socket, chipset, suporte da placa-mãe, BIOS/UEFI.\\n- **RAM:** geração DDR, capacidade, frequência, compatibilidade.\\n- **GPU:** PCIe, dimensões, fonte, conectores.\\n- **SSD:** formato, interface, protocolo.\\n- **Fonte:** potência, conectores, qualidade.",
+      "titulo": "Compatibilidade de Hardware",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Resumo rápido",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Hardware** = físico. **CPU** = processador. **GPU** = gráficos. **RAM** = memória temporária. **SSD/HD** = armazenamento. **Placa-mãe** = liga tudo. **Fonte** = energia. **Cooler** = resfria. **Periféricos** = entrada/saída.",
+      "titulo": "Resumo rápido",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Resumo rápido",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Hardware** = físico. **CPU** = processador. **GPU** = gráficos. **RAM** = memória temporária. **SSD/HD** = armazenamento. **Placa-mãe** = liga tudo. **Fonte** = energia. **Cooler** = resfria. **Periféricos** = entrada/saída.",
+      "titulo": "Resumo rápido",
+      "rotulo": "Bizu"
+    }
+  ]
+}

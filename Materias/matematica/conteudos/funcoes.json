@@ -1,0 +1,31 @@
+{
+  "titulo": "Funções",
+  "blocos": [
+    {
+      "tipo": "destaque",
+      "rotulo": "Conceito",
+      "texto": "Função associa cada elemento do domínio a um único elemento do contradomínio. Notação: f(x)."
+    },
+    {
+      "tipo": "h2",
+      "texto": "Função do 1º Grau"
+    },
+    {
+      "tipo": "texto",
+      "texto": "f(x) = ax + b, com a ≠ 0. O gráfico é uma reta; a é a taxa de variação (inclinação). a > 0: crescente. a < 0: decrescente. Raiz: o valor de x onde f(x) = 0, ou seja x = −b/a."
+    },
+    {
+      "tipo": "h2",
+      "texto": "Função do 2º Grau"
+    },
+    {
+      "tipo": "texto",
+      "texto": "f(x) = ax² + bx + c, com a ≠ 0. O gráfico é uma parábola. a > 0: concavidade para cima, com mínimo no vértice. a < 0: concavidade para baixo, com máximo. Vértice: xᵥ = −b/(2a), yᵥ = −Δ/(4a)."
+    },
+    {
+      "tipo": "destaque",
+      "rotulo": "Atenção",
+      "texto": "Em problemas de máximo e mínimo, o sinal de a diz se o vértice é máximo ou mínimo."
+    }
+  ]
+}

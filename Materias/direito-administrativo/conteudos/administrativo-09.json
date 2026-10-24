@@ -1,0 +1,671 @@
+{
+  "titulo": "Poderes Administrativos",
+  "blocos": [
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A lei determina exatamente como agir, sem margem de escolha. O servidor apenas cumpre o que a lei manda.",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A lei determina exatamente como agir, sem margem de escolha. O servidor apenas cumpre o que a lei manda.",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Aposentadoria compulsória aos 75 anos. O servidor do INSS não pode decidir se concede ou não — deve seguir exatamente a lei.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Aposentadoria compulsória aos 75 anos. O servidor do INSS não pode decidir se concede ou não — deve seguir exatamente a lei.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Importância",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Garante segurança jurídica, impede arbitrariedades e trata todos de forma igual em situações idênticas.",
+      "titulo": "Importância",
+      "rotulo": "Importante"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Importância",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Garante segurança jurídica, impede arbitrariedades e trata todos de forma igual em situações idênticas.",
+      "titulo": "Importância",
+      "rotulo": "Importante"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A lei concede margem de escolha (conveniência e oportunidade), dentro dos limites legais.",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "A lei concede margem de escolha (conveniência e oportunidade), dentro dos limites legais.",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Autorização para porte de arma — a autoridade analisa necessidade, idoneidade e antecedentes para decidir.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Autorização para porte de arma — a autoridade analisa necessidade, idoneidade e antecedentes para decidir.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Limites",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Não pode violar direitos fundamentais, deve respeitar finalidade pública e pode ser controlado pelo Judiciário se houver abuso ou desvio de finalidade.",
+      "titulo": "Limites",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Limites",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Não pode violar direitos fundamentais, deve respeitar finalidade pública e pode ser controlado pelo Judiciário se houver abuso ou desvio de finalidade.",
+      "titulo": "Limites",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Relação de hierarquia verticalizada voltada para organização da administração. Permite ordenar, fiscalizar e rever atos dos subordinados.",
+      "titulo": "Definição",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Relação de hierarquia verticalizada voltada para organização da administração. Permite ordenar, fiscalizar e rever atos dos subordinados.",
+      "titulo": "Definição",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Prerrogativas",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Avocação e Delegação",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O Poder Hierárquico permite a **delegação** (transferir a execução) e a **avocação** (trazer para si) de competências.  \\n**Delegação:** em regra, permitida (mesmo sem subordinação direta).  \\n**Não pode ser delegado** (mnemônico **CENORA** / **CENORE**):  \\n• **CE** – Competência Exclusiva;  \\n• **NO** – Edição de atos **NO**rmativos;  \\n• **RA/RE** – Decisão de **RE**cursos Administrativos.  \\n**Avocação:** excepcional, temporária, exige justificativa por motivos relevantes.",
+      "titulo": "Avocação e Delegação",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Avocação e Delegação",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O Poder Hierárquico permite a **delegação** (transferir a execução) e a **avocação** (trazer para si) de competências.  \\n**Delegação:** em regra, permitida (mesmo sem subordinação direta).  \\n**Não pode ser delegado** (mnemônico **CENORA** / **CENORE**):  \\n• **CE** – Competência Exclusiva;  \\n• **NO** – Edição de atos **NO**rmativos;  \\n• **RA/RE** – Decisão de **RE**cursos Administrativos.  \\n**Avocação:** excepcional, temporária, exige justificativa por motivos relevantes.",
+      "titulo": "Avocação e Delegação",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atenção!",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Agente Público** e **Órgão Público** → relação de hierarquia/subordinação.  \\n**Entidades da Adm. Indireta** → não há hierarquia, mas sim vinculação (tutela administrativa, controle finalístico).",
+      "titulo": "Atenção!",
+      "rotulo": "Atenção"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atenção!",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Agente Público** e **Órgão Público** → relação de hierarquia/subordinação.  \\n**Entidades da Adm. Indireta** → não há hierarquia, mas sim vinculação (tutela administrativa, controle finalístico).",
+      "titulo": "Atenção!",
+      "rotulo": "Atenção"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Verdade Sabida (proibida)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Consiste na aplicação imediata de penalidade sem processo administrativo. É **vedada** por violar contraditório e ampla defesa.",
+      "titulo": "Verdade Sabida (proibida)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Verdade Sabida (proibida)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Consiste na aplicação imediata de penalidade sem processo administrativo. É **vedada** por violar contraditório e ampla defesa.",
+      "titulo": "Verdade Sabida (proibida)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Aplicação de sanções a servidores e particulares com vínculo com a Administração (ex: demissão, suspensão, advertência).",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Aplicação de sanções a servidores e particulares com vínculo com a Administração (ex: demissão, suspensão, advertência).",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Professor federal que falta reiteradamente e não cumpre planejamento pode receber advertência, suspensão ou ser demitido após processo administrativo.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Professor federal que falta reiteradamente e não cumpre planejamento pode receber advertência, suspensão ou ser demitido após processo administrativo.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Princípios correlatos",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Edição de decretos e regulamentos para fiel execução da lei, exercido privativamente pelo Chefe do Executivo. **Não pode inovar** na ordem jurídica, apenas detalhar a execução da lei.",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Edição de decretos e regulamentos para fiel execução da lei, exercido privativamente pelo Chefe do Executivo. **Não pode inovar** na ordem jurídica, apenas detalhar a execução da lei.",
+      "titulo": "Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Lei que determina creches para crianças de 0 a 3 anos; o Prefeito edita decreto fixando zoneamento, horários e documentos necessários — isso é regulamentar.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Lei que determina creches para crianças de 0 a 3 anos; o Prefeito edita decreto fixando zoneamento, horários e documentos necessários — isso é regulamentar.",
+      "titulo": "Exemplo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que NÃO pode",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Criar obrigações ou restringir direitos além do que a lei previu. Ex: se a lei garante aposentadoria, o decreto não pode criar 'taxa de processamento'.",
+      "titulo": "O que NÃO pode",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que NÃO pode",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Criar obrigações ou restringir direitos além do que a lei previu. Ex: se a lei garante aposentadoria, o decreto não pode criar 'taxa de processamento'.",
+      "titulo": "O que NÃO pode",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Espécies de atos normativos",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Características",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Natureza derivada (subordinada à lei), generalidade e abstração, e é um poder-dever (obrigatório quando a lei exige regulamentação).",
+      "titulo": "Características",
+      "rotulo": "Importante"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Características",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Natureza derivada (subordinada à lei), generalidade e abstração, e é um poder-dever (obrigatório quando a lei exige regulamentação).",
+      "titulo": "Características",
+      "rotulo": "Importante"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Poder de Polícia – Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Prerrogativa do Estado de **limitar ou condicionar direitos individuais** e o exercício de atividades em favor do interesse coletivo, com base na supremacia do interesse público.",
+      "titulo": "Poder de Polícia – Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Poder de Polícia – Definição",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Prerrogativa do Estado de **limitar ou condicionar direitos individuais** e o exercício de atividades em favor do interesse coletivo, com base na supremacia do interesse público.",
+      "titulo": "Poder de Polícia – Definição",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo prático",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interdição de uma ponte com risco de queda — restringe temporariamente a locomoção, mas protege a vida de todos.",
+      "titulo": "Exemplo prático",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo prático",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interdição de uma ponte com risco de queda — restringe temporariamente a locomoção, mas protege a vida de todos.",
+      "titulo": "Exemplo prático",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atributos do Poder de Polícia (DAC)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Obs1:** A autoexecutoriedade dispensa autorização do Judiciário (ex: guinchar carro irregular), mas o particular pode recorrer ao juiz posteriormente.  \\n**Obs2:** Nem todo ato de polícia é autoexecutável — **a cobrança forçada de multa não é autoexecutável** (exige Execução Fiscal judicial).",
+      "titulo": "Atributos do Poder de Polícia (DAC)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atributos do Poder de Polícia (DAC)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Obs1:** A autoexecutoriedade dispensa autorização do Judiciário (ex: guinchar carro irregular), mas o particular pode recorrer ao juiz posteriormente.  \\n**Obs2:** Nem todo ato de polícia é autoexecutável — **a cobrança forçada de multa não é autoexecutável** (exige Execução Fiscal judicial).",
+      "titulo": "Atributos do Poder de Polícia (DAC)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Manifestações e Fases do Ciclo de Polícia",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Licença vs. Autorização (Consentimento de Polícia)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Licença:** ato **vinculado** e **definitivo**. Preenchidos os requisitos legais, a Administração deve conceder (ex: CNH, licença para construir).  \\n**Autorização:** ato **discricionário** e **precário** (revogável a qualquer tempo, sem indenização). Concedido segundo conveniência (ex: autorização para fechar rua em evento privado).",
+      "titulo": "Licença vs. Autorização (Consentimento de Polícia)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Licença vs. Autorização (Consentimento de Polícia)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Licença:** ato **vinculado** e **definitivo**. Preenchidos os requisitos legais, a Administração deve conceder (ex: CNH, licença para construir).  \\n**Autorização:** ato **discricionário** e **precário** (revogável a qualquer tempo, sem indenização). Concedido segundo conveniência (ex: autorização para fechar rua em evento privado).",
+      "titulo": "Licença vs. Autorização (Consentimento de Polícia)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Abuso de Poder – O que é",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ocorre quando o agente público usa sua autoridade de forma inadequada. Pode ser por **excesso** (vai além da competência), por **desvio** (usa o poder para fim diverso do legal) ou por **omissão** (deixa de praticar ato obrigatório).",
+      "titulo": "Abuso de Poder – O que é",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Abuso de Poder – O que é",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ocorre quando o agente público usa sua autoridade de forma inadequada. Pode ser por **excesso** (vai além da competência), por **desvio** (usa o poder para fim diverso do legal) ou por **omissão** (deixa de praticar ato obrigatório).",
+      "titulo": "Abuso de Poder – O que é",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Excesso de Poder",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Agente ultrapassa os limites de sua competência (vício de **competência**). Ex: delegado que prende sem flagrante ou mandado.",
+      "titulo": "Excesso de Poder",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Excesso de Poder",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Agente ultrapassa os limites de sua competência (vício de **competência**). Ex: delegado que prende sem flagrante ou mandado.",
+      "titulo": "Excesso de Poder",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Desvio de Poder (Desvio de Finalidade)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ato praticado dentro da competência, mas com finalidade diversa da prevista em lei (vício de **finalidade**). Ex: remoção de servidor para puni-lo pessoalmente.",
+      "titulo": "Desvio de Poder (Desvio de Finalidade)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Desvio de Poder (Desvio de Finalidade)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ato praticado dentro da competência, mas com finalidade diversa da prevista em lei (vício de **finalidade**). Ex: remoção de servidor para puni-lo pessoalmente.",
+      "titulo": "Desvio de Poder (Desvio de Finalidade)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Omissão Administrativa",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Abuso de poder por **inação**: o agente deixa de praticar um ato obrigatório (com prazo ou dever legal), causando prejuízo ao particular ou à coletividade. Ex: autoridade que não aprecia recurso no prazo, deixando o cidadão sem resposta.",
+      "titulo": "Omissão Administrativa",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Omissão Administrativa",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Abuso de poder por **inação**: o agente deixa de praticar um ato obrigatório (com prazo ou dever legal), causando prejuízo ao particular ou à coletividade. Ex: autoridade que não aprecia recurso no prazo, deixando o cidadão sem resposta.",
+      "titulo": "Omissão Administrativa",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Bizu",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Excesso** = vai além da competência (não tinha poder).  \\n**Desvio** = usa poder para fim errado (tinha poder, mas usou mal).  \\n**Omissão** = não faz o que deveria fazer (inação ilegal).",
+      "titulo": "Bizu",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Bizu",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Excesso** = vai além da competência (não tinha poder).  \\n**Desvio** = usa poder para fim errado (tinha poder, mas usou mal).  \\n**Omissão** = não faz o que deveria fazer (inação ilegal).",
+      "titulo": "Bizu",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Consequências do Abuso de Poder",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo completo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Servidor que desvia recursos por desvio de poder terá que restituir, pagar multa, pode ser demitido e preso, além de indenizar danos morais e materiais.",
+      "titulo": "Exemplo completo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Exemplo completo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Servidor que desvia recursos por desvio de poder terá que restituir, pagar multa, pode ser demitido e preso, além de indenizar danos morais e materiais.",
+      "titulo": "Exemplo completo",
+      "rotulo": "Exemplo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mapa-mental",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mapa-mental",
+      "titulo": "",
+      "rotulo": ""
+    }
+  ]
+}

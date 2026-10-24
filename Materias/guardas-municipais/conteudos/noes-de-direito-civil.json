@@ -1,0 +1,33 @@
+{
+  "titulo": "Noções de Direito Civil",
+  "blocos": [
+    {
+      "tipo": "h3",
+      "texto": "Noções de Direito Civil"
+    },
+    {
+      "tipo": "texto",
+      "texto": "Conteúdo de Noções de Direito Civil para a preparação em concursos de Guardas Municipais.\n\nOs tópicos abaixo estão organizados por tema. A legislação de referência inclui o Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014)."
+    },
+    {
+      "tipo": "ul",
+      "itens": [
+        "Aplicação da lei no tempo e no espaço",
+        "Pessoas naturais, jurídicas e domicílio",
+        "Dos bens e dos bens públicos",
+        "Fatos jurídicos, negócio e atos jurídicos",
+        "Prescrição, decadencia e prova",
+        "Direitos das obrigações",
+        "Responsabilidade civil do Estado",
+        "Danos morais e perda de chance",
+        "Súmulas do STF e do STJ"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "texto": "https://www2.camara.leg.br/legin/fed/lei/2014/lei-13022-8-agosto-2014-779152-normaatualizada-pl.html",
+      "titulo": "Estatuto Geral das Guardas Municipais",
+      "rotulo": "Legislação de referência"
+    }
+  ]
+}

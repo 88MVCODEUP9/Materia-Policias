@@ -1,0 +1,191 @@
+{
+  "titulo": "Justiça e Processo Penal Militar",
+  "blocos": [
+    {
+      "tipo": "destaque",
+      "texto": "Códigos aplicáveis",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O policial militar, nas hipóteses legais, está sujeito ao Código Penal Militar (CPM) e ao Código de Processo Penal Militar (CPPM). A Justiça Militar estadual (Tribunal de Justiça Militar ou órgão equivalente) é competente para crimes militares propriamente ditos, além de competência subsidiária para crimes comuns praticados por militares em serviço, conforme legislação.",
+      "titulo": "Códigos aplicáveis",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Códigos aplicáveis",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O policial militar, nas hipóteses legais, está sujeito ao Código Penal Militar (CPM) e ao Código de Processo Penal Militar (CPPM). A Justiça Militar estadual (Tribunal de Justiça Militar ou órgão equivalente) é competente para crimes militares propriamente ditos, além de competência subsidiária para crimes comuns praticados por militares em serviço, conforme legislação.",
+      "titulo": "Códigos aplicáveis",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tempo de paz x tempo de guerra (art. 9º do CPM)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O art. 9º do CPM distingue crime militar em tempo de paz e em tempo de guerra: a tipificação pode variar conforme o momento (ex.: condutas que só são crime em tempo de guerra). É essencial identificar o contexto fático para aplicar corretamente o tipo penal militar.",
+      "titulo": "Tempo de paz x tempo de guerra (art. 9º do CPM)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tempo de paz x tempo de guerra (art. 9º do CPM)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O art. 9º do CPM distingue crime militar em tempo de paz e em tempo de guerra: a tipificação pode variar conforme o momento (ex.: condutas que só são crime em tempo de guerra). É essencial identificar o contexto fático para aplicar corretamente o tipo penal militar.",
+      "titulo": "Tempo de paz x tempo de guerra (art. 9º do CPM)",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Infrações militares comuns",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Etapas principais",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Sindicância preliminar (quando aplicável) → Instauração de Inquérito Policial Militar (IPM) → Denúncia/atos formais → Instrução (oitiva de testemunhas, produção de provas) → Julgamento por Conselho competente ou Juízo Militar → Recursos.",
+      "titulo": "Etapas principais",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Etapas principais",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Sindicância preliminar (quando aplicável) → Instauração de Inquérito Policial Militar (IPM) → Denúncia/atos formais → Instrução (oitiva de testemunhas, produção de provas) → Julgamento por Conselho competente ou Juízo Militar → Recursos.",
+      "titulo": "Etapas principais",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Medidas cautelares",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Medidas como prisão em flagrante, prisão preventiva e afastamento cautelar podem ser aplicadas em processos penais militares, observando os requisitos constitucionais e processuais (fundamentação, proporcionalidade e prazo).",
+      "titulo": "Medidas cautelares",
+      "rotulo": "Atenção"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Medidas cautelares",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Medidas como prisão em flagrante, prisão preventiva e afastamento cautelar podem ser aplicadas em processos penais militares, observando os requisitos constitucionais e processuais (fundamentação, proporcionalidade e prazo).",
+      "titulo": "Medidas cautelares",
+      "rotulo": "Atenção"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Direitos do acusado",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Amplos direitos processuais se aplicam: direito à defesa (advogado), contraditório, ampla defesa, presunção de inocência, acesso aos autos, prazo para apresentação de resposta à acusação e possibilidade de recursos regimentais.",
+      "titulo": "Direitos do acusado",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Direitos do acusado",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Amplos direitos processuais se aplicam: direito à defesa (advogado), contraditório, ampla defesa, presunção de inocência, acesso aos autos, prazo para apresentação de resposta à acusação e possibilidade de recursos regimentais.",
+      "titulo": "Direitos do acusado",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Assistência do Ministério Público Militar",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O Ministério Público Militar (MPM) atua na fiscalização da lei penal militar, promoção da ação penal e acompanhamento do processo, com garantias de independência funcional.",
+      "titulo": "Assistência do Ministério Público Militar",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Assistência do Ministério Público Militar",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O Ministério Público Militar (MPM) atua na fiscalização da lei penal militar, promoção da ação penal e acompanhamento do processo, com garantias de independência funcional.",
+      "titulo": "Assistência do Ministério Público Militar",
+      "rotulo": "Conteúdo"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Foco em distinções",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Questões costumam explorar a diferença entre crime militar em tempo de paz e em tempo de guerra (art. 9º CPM), competência (Justiça Militar vs Justiça comum) e o procedimento: quando cabe sindicância e quando instaura-se IPM. Memorizar o fluxo e as garantias minimiza erros.",
+      "titulo": "Foco em distinções",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Foco em distinções",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Questões costumam explorar a diferença entre crime militar em tempo de paz e em tempo de guerra (art. 9º CPM), competência (Justiça Militar vs Justiça comum) e o procedimento: quando cabe sindicância e quando instaura-se IPM. Memorizar o fluxo e as garantias minimiza erros.",
+      "titulo": "Foco em distinções",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mapa-mental",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Mapa-mental",
+      "titulo": "",
+      "rotulo": ""
+    }
+  ]
+}

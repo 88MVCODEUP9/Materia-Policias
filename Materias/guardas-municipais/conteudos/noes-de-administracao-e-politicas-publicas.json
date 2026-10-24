@@ -1,0 +1,36 @@
+{
+  "titulo": "Noções de Administração e Políticas Públicas",
+  "blocos": [
+    {
+      "tipo": "h3",
+      "texto": "Noções de Administração e Políticas Públicas"
+    },
+    {
+      "tipo": "texto",
+      "texto": "Conteúdo de Noções de Administração e Políticas Públicas para a preparação em concursos de Guardas Municipais.\n\nOs tópicos abaixo estão organizados por tema. A legislação de referência inclui o Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014)."
+    },
+    {
+      "tipo": "ul",
+      "itens": [
+        "Introdução a Administração e funções administrativas",
+        "Teorias da Administração",
+        "Planejamento estratégico e análise SWOT",
+        "Estruturas organizacionais",
+        "Gestão financeira e orçamento",
+        "Recursos humanos e avaliação de desempenho",
+        "Ética e responsabilidade social corporativa",
+        "Conceitos e ciclo de políticas públicas",
+        "Governança e federalismo",
+        "Estatística aplicada a políticas públicas",
+        "Economia aplicada a políticas públicas",
+        "Análise de impacto e gestão de riscos"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "texto": "https://www2.camara.leg.br/legin/fed/lei/2014/lei-13022-8-agosto-2014-779152-normaatualizada-pl.html",
+      "titulo": "Estatuto Geral das Guardas Municipais",
+      "rotulo": "Legislação de referência"
+    }
+  ]
+}

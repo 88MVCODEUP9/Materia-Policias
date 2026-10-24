@@ -1,0 +1,32 @@
+{
+  "titulo": "Noções de Direito Constitucional",
+  "blocos": [
+    {
+      "tipo": "h3",
+      "texto": "Noções de Direito Constitucional"
+    },
+    {
+      "tipo": "texto",
+      "texto": "Conteúdo de Noções de Direito Constitucional para a preparação em concursos de Guardas Municipais.\n\nOs tópicos abaixo estão organizados por tema. A legislação de referência inclui o Estatuto Geral das Guardas Municipais (Lei nº 13.022/2014)."
+    },
+    {
+      "tipo": "ul",
+      "itens": [
+        "Constituição: conceito e princípios fundamentais",
+        "Direitos e garantias fundamentais",
+        "Direitos sociais, nacionalidade e cidadania",
+        "Direitos políticos e partidos políticos",
+        "Organização politico-administrativa",
+        "Administração pública e servidores",
+        "Poder Judiciário e Conselho Nacional de Justiça",
+        "Segurança pública: art. 144"
+      ]
+    },
+    {
+      "tipo": "destaque",
+      "texto": "https://www2.camara.leg.br/legin/fed/lei/2014/lei-13022-8-agosto-2014-779152-normaatualizada-pl.html",
+      "titulo": "Estatuto Geral das Guardas Municipais",
+      "rotulo": "Legislação de referência"
+    }
+  ]
+}

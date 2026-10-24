@@ -1,0 +1,31 @@
+{
+  "titulo": "Probabilidade",
+  "blocos": [
+    {
+      "tipo": "destaque",
+      "rotulo": "Conceito",
+      "texto": "Probabilidade mede a chance de um evento ocorrer, de 0 (impossível) a 1 (certo). P(A) = casos favoráveis / casos possíveis."
+    },
+    {
+      "tipo": "h2",
+      "texto": "Probabilidade simples"
+    },
+    {
+      "tipo": "texto",
+      "texto": "Ao lançar um dado, P(sair 3) = 1/6 e P(sair número par) = 3/6 = 1/2. Espaço amostral: todos os resultados possíveis. Evento: um subconjunto do espaço amostral."
+    },
+    {
+      "tipo": "h2",
+      "texto": "Eventos independentes e mutuamente exclusivos"
+    },
+    {
+      "tipo": "texto",
+      "texto": "Independentes: um não afeta o outro, então P(A e B) = P(A)·P(B). Exemplo: dois dados, P(ambos 6) = 1/6 · 1/6 = 1/36. Mutuamente exclusivos: não ocorrem juntos, então P(A ou B) = P(A) + P(B). Exemplo: um dado, P(sair 2 ou 5) = 1/6 + 1/6 = 1/3."
+    },
+    {
+      "tipo": "destaque",
+      "rotulo": "Atenção",
+      "texto": "Diferencie \"e\" (multiplica, eventos simultâneos) de \"ou\" (soma, eventos excludentes). Com reposição e sem reposição dão resultados diferentes."
+    }
+  ]
+}

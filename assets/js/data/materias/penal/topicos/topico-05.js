@@ -1,0 +1,123 @@
+/* ==========================================================================
+   CARREIRAS POLICIAIS · DATA · penal · TOPICO 5
+   --------------------------------------------------------------------------
+   Gerado automaticamente. Tópico 5 de penal.
+   ========================================================================== */
+(function (global) {
+  'use strict';
+  var D = global.GMData;
+  D.conteudoTeoria = D.conteudoTeoria || {};
+  var modulo = D.conteudoTeoria["penal"] || (D.conteudoTeoria["penal"] = { materiaId: "penal", rotulo: "penal", assuntos: [] });
+  modulo.assuntos = modulo.assuntos || [];
+  var existentes = Object.create(null);
+  modulo.assuntos.forEach(function (a) { existentes[a.id] = true; });
+  
+  [
+{
+      "id": "crimes-contra-a-pessoa",
+      "titulo": "Crimes contra a Pessoa",
+      "ordem": 5,
+      "origem": "penal-md",
+      "origemSecao": "crimes-contra-a-pessoa",
+      "blocos": [
+        {"tipo": "h2", "texto": "Crimes contra a Pessoa"},
+        {"tipo": "texto", "texto": "Análise completa dos crimes do Título I da Parte Especial do CP: homicídio (simples, privilegiado, qualificado, majorado, feminicídio, perdão judicial), lesão corporal (leve, grave, gravíssima, seguida de morte, culposa, doméstica, com aumento), periclitação da vida e da saúde, crimes contra a honra (calúnia, difamação, injúria) e crimes contra a liberdade individual (constrangimento ilegal, ameaça, sequestro, cárcere privado, redução a escravo, violação de domicílio)."},
+        {"tipo": "h3", "texto": "Homicídio (Art. 121 do CP) – Visão Geral"},
+        {"tipo": "conceito", "texto": "**Conceito e Bem Jurídico**\n\nHomicídio: matar alguém. Pena: reclusão de 6 a 20 anos."},
+        {"tipo": "texto", "texto": "Bem jurídico: a vida humana extrauterina (a partir do parto, com respiração ou cordão cortado). A vida intrauterina é protegida pelo crime de aborto."},
+        {"tipo": "texto", "texto": "Classificação do homicídio:"},
+        {"tipo": "ul", "itens": ["Crime comum (qualquer pessoa pode ser sujeito ativo);", "Material (exige resultado morte);", "Instantâneo (consumação se esgota no momento da morte);", "De dano (lesão efetiva ao bem jurídico);", "Livre (admitido por qualquer meio);", "Comissivo (regra) e omissivo impróprio (se o agente tem dever de garantia)."]},
+        {"tipo": "h3", "texto": "Homicídio – Espécies e Modalidades"},
+        {"tipo": "conceito", "texto": "**Homicídio Simples (caput)**\n\nMatar alguém. Pena: reclusão de 6 a 20 anos. É a regra geral."},
+        {"tipo": "conceito", "texto": "**Homicídio Privilegiado (§1º)**\n\nO agente comete o crime:"},
+        {"tipo": "ul", "itens": ["Impelido por motivo de relevante valor social ou moral;", "Ou sob o domínio de violenta emoção, logo em seguida a injusta provocação da vítima."]},
+        {"tipo": "texto", "texto": "Efeito: redução da pena de 1/3 a 2/3 (e não 1/6 a 1/3, conforme redação correta)."},
+        {"tipo": "texto", "texto": "Compatibilidade: O privilégio é compatível com qualificadoras de natureza objetiva (ex.: meio cruel), mas incompatível com qualificadoras subjetivas (ex.: motivo fútil)."},
+        {"tipo": "conceito", "texto": "**Homicídio Qualificado (§2º)**\n\nCircunstâncias que tornam o crime hediondo e elevam a pena (reclusão de 12 a 30 anos):"},
+        {"tipo": "ul", "itens": ["Mediante paga ou promessa de recompensa (torpe);", "Por motivo fútil;", "Com emprego de veneno, fogo, explosivo, asfixia, tortura ou outro meio insidioso ou cruel;", "Com traição, emboscada, dissimulação;", "Para assegurar a execução, a ocultação, a impunidade ou a vantagem de outro crime (conexão)."]},
+        {"tipo": "atencao", "texto": "**Homicídio Majorado (§4º) – Causas de Aumento**\n\nA pena do homicídio (simples ou qualificado) é aumentada de 1/3 até a metade se o crime for praticado:"},
+        {"tipo": "ul", "itens": ["a) contra menor de 14 anos, maior de 60 anos, gestante, ou pessoa com deficiência;", "b) na presença de ascendente, descendente, cônjuge ou companheiro da vítima (desde que presentes no momento do crime);", "c) em razão de discriminação à condição de mulher (feminicídio – já tratado no §2º, VI)."]},
+        {"tipo": "texto", "texto": "Exemplo: Matar o filho na presença da esposa – aumento de 1/3."},
+        {"tipo": "atencao", "texto": "**Feminicídio – Aprofundamento**\n\nConceito legal (Art. 121, §2º, VI): homicídio contra a mulher por razões da condição de sexo feminino, quando o crime envolve:"},
+        {"tipo": "ul", "itens": ["Violência doméstica e familiar (Lei Maria da Penha);", "Menosprezo ou discriminação à condição de mulher."]},
+        {"tipo": "texto", "texto": "Pena: reclusão de 12 a 30 anos (hediondo)."},
+        {"tipo": "texto", "texto": "Causas de aumento (art. 121, §2º-A): de 1/3 até a metade se o crime for praticado:"},
+        {"tipo": "ul", "itens": ["Durante a gestação ou nos 3 meses pós-parto;", "Contra menor de 14 anos, maior de 60, ou pessoa com deficiência;", "Na presença de descendente ou ascendente da vítima."]},
+        {"tipo": "conceito", "texto": "**Perdão Judicial (§5º)**\n\nO juiz pode deixar de aplicar a pena (extinção da punibilidade) quando as consequências do crime atingem o próprio agente de forma tão grave que a sanção penal se torne desnecessária."},
+        {"tipo": "texto", "texto": "Hipótese típica: homicídio culposo em que o agente, por exemplo, mata o próprio filho em acidente de trânsito, sofrendo intenso sofrimento psicológico."},
+        {"tipo": "texto", "texto": "Requisitos:"},
+        {"tipo": "ul", "itens": ["Crime culposo;", "Consequências do fato alcançam o agente de modo extremamente grave (material e moralmente);", "A reprovação social já é suficiente."]},
+        {"tipo": "conceito", "texto": "**Homicídio Funcional (Lei 13.142/2015)**\n\nAumento de pena de 1/3 até a metade se o homicídio for praticado contra:"},
+        {"tipo": "ul", "itens": ["Integrante das Forças Armadas, polícias (federal, civil, militar, rodoviária, ferroviária), bombeiros militares, agentes penitenciários e guardas municipais, no exercício da função ou em razão dela;", "Cônjuge, companheiro ou parente consanguíneo até 3º grau dessas pessoas, em razão da função."]},
+        {"tipo": "texto", "texto": "Fundamento: Lei nº 13.142/2015 (alterou o art. 121, §2º, acrescentando o inciso VII)."},
+        {"tipo": "conceito", "texto": "**Homicídio contra menores de 14 anos**\n\nAlém de ser crime hediondo, se praticado contra menor de 14 anos, aplica-se a majorante do art. 121, §4º (aumento de 1/3 até a metade). Em caso de homicídio qualificado, a pena-base já é elevada; a majorante incide sobre a pena final."},
+        {"tipo": "conceito", "texto": "**Homicídio Culposo (§3º)**\n\nQuando o agente não tem intenção de matar, mas age com negligência, imprudência ou imperícia. Pena: detenção de 1 a 3 anos."},
+        {"tipo": "texto", "texto": "Aumento de pena: se o crime é cometido na direção de veículo automotor, a pena pode ser de 2 a 4 anos (art. 302 do CTB – lei especial)."},
+        {"tipo": "h3", "texto": "Lesão Corporal (Art. 129 do CP)"},
+        {"tipo": "conceito", "texto": "**Conceito e Classificação**\n\nLesão corporal: ofender a integridade corporal ou a saúde de alguém."},
+        {"tipo": "texto", "texto": "Classificação:"},
+        {"tipo": "ul", "itens": ["Crime material (exige resultado);", "Comum (qualquer sujeito ativo);", "Instantâneo (consumação imediata);", "De dano;", "Livre (qualquer meio)."]},
+        {"tipo": "conceito", "texto": "**Lesão Corporal Leve (caput)**\n\nPena: detenção de 3 meses a 1 ano."},
+        {"tipo": "texto", "texto": "Ação penal:"},
+        {"tipo": "ul", "itens": ["Em regra, pública condicionada à representação (art. 88 da Lei 9.099/95) – correção: não é privada, como constava anteriormente.", "Exceções: pública incondicionada quando houver violência doméstica (Lei Maria da Penha) ou se a vítima for autoridade (ex.: juiz, policial no exercício da função)."]},
+        {"tipo": "conceito", "texto": "**Lesão Corporal Grave (§1º)**\n\nResulta em:"},
+        {"tipo": "ul", "itens": ["Incapacidade para as ocupações habituais por mais de 30 dias;", "Perigo de vida;", "Debilidade permanente de membro, sentido ou função;", "Aceleração de parto."]},
+        {"tipo": "texto", "texto": "Pena: reclusão de 1 a 5 anos."},
+        {"tipo": "texto", "texto": "Ação penal: pública incondicionada."},
+        {"tipo": "conceito", "texto": "**Lesão Corporal Gravíssima (§2º)**\n\nResulta em:"},
+        {"tipo": "ul", "itens": ["Incapacidade permanente para o trabalho;", "Enfermidade incurável;", "Perda ou inutilização de membro, sentido ou função;", "Deformidade permanente;", "Aborto (provocado pelo agente)."]},
+        {"tipo": "texto", "texto": "Pena: reclusão de 2 a 8 anos."},
+        {"tipo": "conceito", "texto": "**Lesão Corporal Seguida de Morte (§3º)**\n\nSe a lesão corporal (dolosa) resulta em morte, sem que o agente a tenha desejado, a pena é de reclusão de 4 a 12 anos. Aqui o dolo é de lesionar, mas o resultado morte é culposo (crime preterdoloso)."},
+        {"tipo": "texto", "texto": "Diferença do homicídio culposo: no homicídio culposo, não há dolo de lesionar; na lesão seguida de morte, há dolo de lesionar, e a morte é consequência não desejada."},
+        {"tipo": "conceito", "texto": "**Lesão Corporal Culposa (§6º)**\n\nQuando o agente causa lesão por imprudência, negligência ou imperícia, sem intenção. Pena: detenção de 2 meses a 1 ano."},
+        {"tipo": "texto", "texto": "Ação penal: pública condicionada à representação (regra)."},
+        {"tipo": "texto", "texto": "Aumento de pena (art. 129, §7º): se o crime é cometido na direção de veículo automotor (infração de trânsito), a pena é aumentada de 1/3 até a metade (art. 303 do CTB)."},
+        {"tipo": "atencao", "texto": "**Aumento de Pena – Lesão Corporal (§7º)**\n\nA pena da lesão corporal (leve, grave ou gravíssima) é aumentada de 1/3 até a metade se o crime for praticado:"},
+        {"tipo": "ul", "itens": ["Contra ascendente, descendente, irmão, cônjuge ou companheiro;", "Contra maior de 60 anos ou pessoa com deficiência;", "Na presença de descendente ou ascendente da vítima;", "Em razão de discriminação racial, religiosa, de gênero ou orientação sexual (Lei do Racismo)."]},
+        {"tipo": "conceito", "texto": "**Perdão Judicial – Lesão Corporal (§8º)**\n\nO juiz pode deixar de aplicar a pena quando as consequências da lesão atingirem o próprio agente de forma grave (ex.: pai que fere o filho e sofre intenso abalo moral), desde que a lesão seja culposa e o agente não seja reincidente."},
+        {"tipo": "atencao", "texto": "**Lesão Corporal no Âmbito Doméstico (§9º)**\n\nSe a lesão corporal for praticada contra a mulher no âmbito de violência doméstica e familiar (Lei Maria da Penha), a pena é aumentada em 1/3 (além da majorante genérica). A ação penal é pública incondicionada, mesmo para lesão leve."},
+        {"tipo": "conceito", "texto": "**Lesão contra Autoridades**\n\nA lesão corporal contra autoridades (ex.: policial, juiz, servidor público) no exercício da função ou em razão dela é crime de ação penal pública incondicionada, e pode ser qualificada pela majorante do §7º (discriminação) ou por outras circunstâncias (ex.: funcional)."},
+        {"tipo": "tabela", "colunas": ["Critério", "Homicídio (simples)", "Lesão seguida de morte"], "linhas": [["Dolo", "Matar (dolo de morte)", "Lesionar (dolo de lesão)"], ["Resultado", "Morte desejada ou assumida", "Morte não desejada (culposa)"], ["Pena", "6 a 20 anos (reclusão)", "4 a 12 anos (reclusão)"]], "compacta": true},
+        {"tipo": "dica", "texto": "**Comparativo: Homicídio × Lesão seguida de morte**"},
+        {"tipo": "h3", "texto": "Periclitação da Vida e da Saúde (Arts. 130 a 136)"},
+        {"tipo": "conceito", "texto": "**Perigo de Contágio Venéreo (Art. 130)**\n\nPraticar ato sexual ou manter relação íntima com alguém, sabendo estar infectado por doença venérea, sem advertir o parceiro. Pena: detenção de 3 meses a 1 ano, ou multa."},
+        {"tipo": "texto", "texto": "Aumento: se há intenção de transmitir a doença."},
+        {"tipo": "conceito", "texto": "**Perigo de Contágio de Moléstia Grave (Art. 131)**\n\nPraticar ato que possa transmitir moléstia grave (ex.: tuberculose, HIV) a outrem, sem advertência. Pena: reclusão de 1 a 4 anos."},
+        {"tipo": "conceito", "texto": "**Perigo para a Vida ou Saúde (Art. 132)**\n\nExpor a vida ou a saúde de outrem a perigo direto e iminente. Pena: detenção de 3 meses a 1 ano, se o fato não constitui crime mais grave."},
+        {"tipo": "texto", "texto": "Exemplo: Dirigir em alta velocidade em via pública colocando pedestres em risco."},
+        {"tipo": "conceito", "texto": "**Abandono de Incapaz (Art. 133)**\n\nAbandonar pessoa que está sob seu cuidado, guarda, vigilância ou autoridade, e que é incapaz de defender-se (criança, doente, idoso). Pena: detenção de 6 meses a 3 anos."},
+        {"tipo": "texto", "texto": "Qualificada: se do abandono resulta lesão grave (reclusão 1 a 5 anos) ou morte (reclusão 4 a 12 anos)."},
+        {"tipo": "conceito", "texto": "**Exposição ou Abandono de Recém-Nascido (Art. 134)**\n\nExpor ou abandonar recém-nascido para ocultar desonra própria. Pena: detenção de 6 meses a 2 anos."},
+        {"tipo": "texto", "texto": "Qualificada: se resulta lesão grave ou morte (penas elevadas)."},
+        {"tipo": "conceito", "texto": "**Omissão de Socorro (Art. 135)**\n\nDeixar de prestar assistência a pessoa que está em grave perigo (ferida, inválida, desamparada), ou não pedir socorro. Pena: detenção de 1 a 6 meses, ou multa."},
+        {"tipo": "texto", "texto": "Exceção: se o socorro trouxer risco pessoal, não é crime."},
+        {"tipo": "conceito", "texto": "**Maus-Tratos (Art. 136)**\n\nExpor a perigo a vida ou a saúde de pessoa sob sua autoridade, guarda ou vigilância, privando-a de alimentação ou cuidados, ou sujeitando-a a trabalho excessivo ou castigo imoderado. Pena: detenção de 2 meses a 1 ano, ou multa."},
+        {"tipo": "texto", "texto": "Qualificada: se resulta lesão grave ou morte."},
+        {"tipo": "h3", "texto": "Crimes contra a Honra (Arts. 138 a 145)"},
+        {"tipo": "conceito", "texto": "**Calúnia (Art. 138)**\n\nAtribuir falsamente a alguém a prática de crime (fato definido como crime). Pena: detenção de 6 meses a 2 anos, e multa."},
+        {"tipo": "texto", "texto": "Exceção da verdade: admite-se prova da verdade se a vítima é funcionário público e o fato imputado é relativo ao exercício de suas funções."},
+        {"tipo": "conceito", "texto": "**Difamação (Art. 139)**\n\nAtribuir a alguém fato ofensivo à sua reputação (mesmo que não seja crime). Pena: detenção de 3 meses a 1 ano, e multa."},
+        {"tipo": "texto", "texto": "Exceção da verdade: não é admitida, salvo se a vítima é funcionário público (relativo ao cargo)."},
+        {"tipo": "conceito", "texto": "**Injúria (Art. 140)**\n\nOfender a dignidade ou decoro de alguém (xingamentos, ofensas morais). Pena: detenção de 1 a 6 meses, ou multa."},
+        {"tipo": "texto", "texto": "Injúria racial (qualificada): se a injúria consiste em elementos referentes à raça, cor, etnia, religião ou origem (Lei 7.716/89) – pena de 1 a 3 anos (crime de ação penal pública incondicionada)."},
+        {"tipo": "conceito", "texto": "**Ação Penal e Exceções**\n\nRegra: ação penal privada (queixa-crime)."},
+        {"tipo": "texto", "texto": "Exceções (pública incondicionada):"},
+        {"tipo": "ul", "itens": ["Calúnia contra chefe de governo estrangeiro;", "Injúria racial (Lei 7.716/89);", "Crimes contra a honra cometidos por servidor público no exercício da função."]},
+        {"tipo": "texto", "texto": "Retratação: O caluniador e o difamador podem retratar-se em juízo (antes da sentença) para extinguir a punibilidade; na injúria não há retratação (admite-se perdão do ofendido)."},
+        {"tipo": "h3", "texto": "Crimes contra a Liberdade Individual (Arts. 146 a 154)"},
+        {"tipo": "conceito", "texto": "**Constrangimento Ilegal (Art. 146)**\n\nConstranger alguém, mediante violência ou grave ameaça, a fazer, não fazer ou tolerar alguma coisa que a lei não manda. Pena: detenção de 3 meses a 1 ano, ou multa."},
+        {"tipo": "texto", "texto": "Aumento: se há uso de arma, ou concurso de pessoas."},
+        {"tipo": "conceito", "texto": "**Ameaça (Art. 147)**\n\nAmeaçar alguém, por palavra, escrito ou gesto, de causar-lhe mal injusto e grave. Pena: detenção de 1 a 6 meses, ou multa."},
+        {"tipo": "texto", "texto": "Ação penal: pública condicionada à representação (regra)."},
+        {"tipo": "conceito", "texto": "**Sequestro e Cárcere Privado (Art. 148)**\n\nPrivar alguém de sua liberdade de locomoção (sequestro) ou mantê-lo em cárcere privado. Pena: reclusão de 1 a 3 anos."},
+        {"tipo": "texto", "texto": "Qualificada: se a vítima é ascendente, descendente, cônjuge, ou se o crime é praticado com violência (penas elevadas)."},
+        {"tipo": "conceito", "texto": "**Redução à Condição Análoga à de Escravo (Art. 149)**\n\nReduzir alguém a condição análoga à de escravo, submetendo a trabalhos forçados ou jornada exaustiva, ou sujeitando a condições degradantes, ou restringindo sua locomoção. Pena: reclusão de 2 a 8 anos, e multa."},
+        {"tipo": "texto", "texto": "Aumento: se o crime é cometido contra menor de 18 anos, ou com fim de exploração sexual, ou com violência."},
+        {"tipo": "texto", "texto": "Ação penal: pública incondicionada."},
+        {"tipo": "conceito", "texto": "**Violação de Domicílio (Art. 150)**\n\nEntrar ou permanecer em domicílio alheio sem consentimento do morador. Pena: detenção de 1 a 3 meses, ou multa."},
+        {"tipo": "texto", "texto": "Exceções: em caso de flagrante delito, desastre, ou para prestar socorro, ou durante o dia (com consentimento tácito)."}
+      ]
+    }
+  ].forEach(function (assunto) { if (!existentes[assunto.id]) modulo.assuntos.push(assunto); });
+  
+})(window);

@@ -1,0 +1,1241 @@
+{
+  "titulo": "Ambiente Windows",
+  "blocos": [
+    {
+      "tipo": "destaque",
+      "texto": "Explorador de Arquivos",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ferramenta para gerenciar pastas, diretórios e arquivos do computador. Permite navegar, copiar, mover, renomear e excluir itens.",
+      "titulo": "Explorador de Arquivos",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Explorador de Arquivos",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ferramenta para gerenciar pastas, diretórios e arquivos do computador. Permite navegar, copiar, mover, renomear e excluir itens.",
+      "titulo": "Explorador de Arquivos",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Explorador de Arquivos do Windows",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Lixeira",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Local onde os arquivos excluídos vão primeiro. É possível restaurá-los. Atenção: **Shift + Delete** exclui permanentemente, sem passar pela Lixeira.",
+      "titulo": "Lixeira",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Lixeira",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Local onde os arquivos excluídos vão primeiro. É possível restaurá-los. Atenção: **Shift + Delete** exclui permanentemente, sem passar pela Lixeira.",
+      "titulo": "Lixeira",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ícone da Lixeira",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Shift + Delete",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Shift + Delete **NÃO** vai para a lixeira — exclui de forma permanente e imediata!",
+      "titulo": "Shift + Delete",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Shift + Delete",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Shift + Delete **NÃO** vai para a lixeira — exclui de forma permanente e imediata!",
+      "titulo": "Shift + Delete",
+      "rotulo": "Pegadinha"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Barra de Tarefas",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ferramenta que exibe programas em execução e permite fixar aplicativos para acesso rápido. Contém o botão Iniciar, a pesquisa e o relógio.",
+      "titulo": "Barra de Tarefas",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Barra de Tarefas",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ferramenta que exibe programas em execução e permite fixar aplicativos para acesso rápido. Contém o botão Iniciar, a pesquisa e o relógio.",
+      "titulo": "Barra de Tarefas",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Barra de Tarefas do Windows 11",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "OneDrive",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Armazenamento em nuvem integrado ao Windows. Permite backup automático e sincronização de arquivos entre dispositivos.",
+      "titulo": "OneDrive",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "OneDrive",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Armazenamento em nuvem integrado ao Windows. Permite backup automático e sincronização de arquivos entre dispositivos.",
+      "titulo": "OneDrive",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ícone do OneDrive",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Área de Trabalho",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Contém ícones de atalho e papel de parede. Ferramentas de configuração ficam no Painel de Controle ou em Configurações.",
+      "titulo": "Área de Trabalho",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Área de Trabalho",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Contém ícones de atalho e papel de parede. Ferramentas de configuração ficam no Painel de Controle ou em Configurações.",
+      "titulo": "Área de Trabalho",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Área de Trabalho do Windows",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Bibliotecas",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Organizam pastas de diferentes locais em um único grupo virtual. Exemplos: Documentos, Imagens, Músicas, Vídeos.",
+      "titulo": "Bibliotecas",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Bibliotecas",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Organizam pastas de diferentes locais em um único grupo virtual. Exemplos: Documentos, Imagens, Músicas, Vídeos.",
+      "titulo": "Bibliotecas",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Extensões de Arquivo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Por padrão, extensões não são exibidas no Windows. Para ativar: **Explorador de Arquivos → Exibir → Extensões de nome de arquivo**.\\nExemplos: .docx (Word), .xlsx (Excel), .pdf, .exe (programa), .mp4 (vídeo).",
+      "titulo": "Extensões de Arquivo",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Extensões de Arquivo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Por padrão, extensões não são exibidas no Windows. Para ativar: **Explorador de Arquivos → Exibir → Extensões de nome de arquivo**.\\nExemplos: .docx (Word), .xlsx (Excel), .pdf, .exe (programa), .mp4 (vídeo).",
+      "titulo": "Extensões de Arquivo",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Símbolos Proibidos em Nomes de Arquivo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Os seguintes caracteres **não são permitidos** em nomes de arquivos e pastas no Windows:\\n?   \\\"   /     <   >   *   |   :",
+      "titulo": "Símbolos Proibidos em Nomes de Arquivo",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Símbolos Proibidos em Nomes de Arquivo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Os seguintes caracteres **não são permitidos** em nomes de arquivos e pastas no Windows:\\n?   \\\"   /     <   >   *   |   :",
+      "titulo": "Símbolos Proibidos em Nomes de Arquivo",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Desfragmentador de Disco",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Reorganiza arquivos fragmentados para melhorar o desempenho. Menos necessário em SSDs (que não sofrem com fragmentação da mesma forma).",
+      "titulo": "Desfragmentador de Disco",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Desfragmentador de Disco",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Reorganiza arquivos fragmentados para melhorar o desempenho. Menos necessário em SSDs (que não sofrem com fragmentação da mesma forma).",
+      "titulo": "Desfragmentador de Disco",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Desfragmentador de disco",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Limpeza de Disco",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Remove arquivos temporários, cache e outros itens desnecessários para liberar espaço.",
+      "titulo": "Limpeza de Disco",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Limpeza de Disco",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Remove arquivos temporários, cache e outros itens desnecessários para liberar espaço.",
+      "titulo": "Limpeza de Disco",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Limpeza de disco",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Restauração do Sistema",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Cria pontos de restauração para reverter alterações do sistema caso ocorram problemas.",
+      "titulo": "Restauração do Sistema",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Restauração do Sistema",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Cria pontos de restauração para reverter alterações do sistema caso ocorram problemas.",
+      "titulo": "Restauração do Sistema",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Windows Update",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atualizações automáticas de segurança e funcionalidades, mantendo o sistema protegido e atualizado.",
+      "titulo": "Windows Update",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Windows Update",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atualizações automáticas de segurança e funcionalidades, mantendo o sistema protegido e atualizado.",
+      "titulo": "Windows Update",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Firewall do Windows",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Proteção contra acessos não autorizados, bloqueando ou permitindo conexões de rede.",
+      "titulo": "Firewall do Windows",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Firewall do Windows",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Proteção contra acessos não autorizados, bloqueando ou permitindo conexões de rede.",
+      "titulo": "Firewall do Windows",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Windows Defender",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Antivírus integrado ao Windows, oferecendo proteção em tempo real contra ameaças.",
+      "titulo": "Windows Defender",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Windows Defender",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Antivírus integrado ao Windows, oferecendo proteção em tempo real contra ameaças.",
+      "titulo": "Windows Defender",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipos de conta",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Administrador:** controle total sobre o sistema.\\n**Padrão:** limitado, não pode instalar programas ou alterar configurações críticas.",
+      "titulo": "Tipos de conta",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tipos de conta",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Administrador:** controle total sobre o sistema.\\n**Padrão:** limitado, não pode instalar programas ou alterar configurações críticas.",
+      "titulo": "Tipos de conta",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Gerenciamento de contas",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Controle Parental",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Permite limitar o tempo de uso, restringir aplicativos e monitorar atividades para crianças.",
+      "titulo": "Controle Parental",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Controle Parental",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Permite limitar o tempo de uso, restringir aplicativos e monitorar atividades para crianças.",
+      "titulo": "Controle Parental",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UAC (Controle de Conta de Usuário)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Solicita confirmação sempre que alterações importantes são feitas, evitando ações não autorizadas.",
+      "titulo": "UAC (Controle de Conta de Usuário)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "UAC (Controle de Conta de Usuário)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Solicita confirmação sempre que alterações importantes são feitas, evitando ações não autorizadas.",
+      "titulo": "UAC (Controle de Conta de Usuário)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Plug and Play",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tecnologia que permite o reconhecimento e configuração automática de dispositivos conectados ao computador.",
+      "titulo": "Plug and Play",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Plug and Play",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tecnologia que permite o reconhecimento e configuração automática de dispositivos conectados ao computador.",
+      "titulo": "Plug and Play",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Drivers",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Programas que permitem a comunicação entre o hardware e o sistema operacional. Cada dispositivo precisa de seu driver específico.",
+      "titulo": "Drivers",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Drivers",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Programas que permitem a comunicação entre o hardware e o sistema operacional. Cada dispositivo precisa de seu driver específico.",
+      "titulo": "Drivers",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Virtualização",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Windows permite criar máquinas virtuais para rodar outros sistemas operacionais (ex.: Hyper-V).",
+      "titulo": "Virtualização",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Virtualização",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Windows permite criar máquinas virtuais para rodar outros sistemas operacionais (ex.: Hyper-V).",
+      "titulo": "Virtualização",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Modo de Segurança",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Inicia o sistema com configurações mínimas (apenas drivers essenciais) para solução de problemas.",
+      "titulo": "Modo de Segurança",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Modo de Segurança",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Inicia o sistema com configurações mínimas (apenas drivers essenciais) para solução de problemas.",
+      "titulo": "Modo de Segurança",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Tela de Modo de Segurança",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Prompt de Comando (CMD)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface de linha de comando para tarefas avançadas (ex.: ipconfig, ping, sfc /scannow).",
+      "titulo": "Prompt de Comando (CMD)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Prompt de Comando (CMD)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface de linha de comando para tarefas avançadas (ex.: ipconfig, ping, sfc /scannow).",
+      "titulo": "Prompt de Comando (CMD)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "PowerShell",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Versão moderna do CMD com mais recursos, incluindo suporte a scripts e objetos.",
+      "titulo": "PowerShell",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "PowerShell",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Versão moderna do CMD com mais recursos, incluindo suporte a scripts e objetos.",
+      "titulo": "PowerShell",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Win + R: comandos úteis",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Use **Win + R** e digite:\\n- `%temp%` → pasta de arquivos temporários\\n- `msconfig` → configuração do sistema\\n- `cmd` → Prompt de Comando\\n- `powershell` → PowerShell\\n- `control` → Painel de Controle",
+      "titulo": "Win + R: comandos úteis",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Win + R: comandos úteis",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Use **Win + R** e digite:\\n- `%temp%` → pasta de arquivos temporários\\n- `msconfig` → configuração do sistema\\n- `cmd` → Prompt de Comando\\n- `powershell` → PowerShell\\n- `control` → Painel de Controle",
+      "titulo": "Win + R: comandos úteis",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Funcionalidades",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Processos:** visualizar e encerrar programas em execução.\\n- **Desempenho:** monitorar CPU, memória, disco e rede.\\n- **Inicialização:** gerenciar programas que iniciam com o Windows.",
+      "titulo": "Funcionalidades",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Funcionalidades",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Processos:** visualizar e encerrar programas em execução.\\n- **Desempenho:** monitorar CPU, memória, disco e rede.\\n- **Inicialização:** gerenciar programas que iniciam com o Windows.",
+      "titulo": "Funcionalidades",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Gerenciador de Tarefas",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atalhos para abrir",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Direto:** Ctrl + Shift + Esc\\n**Indireto:** Ctrl + Alt + Del → escolher 'Gerenciador de Tarefas'",
+      "titulo": "Atalhos para abrir",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atalhos para abrir",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Direto:** Ctrl + Shift + Esc\\n**Indireto:** Ctrl + Alt + Del → escolher 'Gerenciador de Tarefas'",
+      "titulo": "Atalhos para abrir",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que é um Sistema Operacional?",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Software responsável por gerenciar o hardware e fornecer serviços aos programas. É a camada entre o hardware e os aplicativos do usuário. Exemplos: Windows 10/11, Linux, Android, iOS, macOS.",
+      "titulo": "O que é um Sistema Operacional?",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O que é um Sistema Operacional?",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Software responsável por gerenciar o hardware e fornecer serviços aos programas. É a camada entre o hardware e os aplicativos do usuário. Exemplos: Windows 10/11, Linux, Android, iOS, macOS.",
+      "titulo": "O que é um Sistema Operacional?",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Diagrama de camadas do SO",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Kernel (Núcleo)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "É o núcleo central do sistema operacional. Gerencia diretamente o hardware (CPU, memória, dispositivos). Controla processos, memória, sistema de arquivos e comunicação. É a parte mais fundamental do SO.",
+      "titulo": "Kernel (Núcleo)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Kernel (Núcleo)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "É o núcleo central do sistema operacional. Gerencia diretamente o hardware (CPU, memória, dispositivos). Controla processos, memória, sistema de arquivos e comunicação. É a parte mais fundamental do SO.",
+      "titulo": "Kernel (Núcleo)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Representação do Kernel",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Driver (Controlador)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Programa que permite ao SO se comunicar com um dispositivo. Cada hardware precisa de um driver específico. Sem o driver correto, o dispositivo não funciona.",
+      "titulo": "Driver (Controlador)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Driver (Controlador)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Programa que permite ao SO se comunicar com um dispositivo. Cada hardware precisa de um driver específico. Sem o driver correto, o dispositivo não funciona.",
+      "titulo": "Driver (Controlador)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Codec",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Programa que codifica e decodifica arquivos de mídia. Necessário para reproduzir áudios e vídeos em determinados formatos. Exemplos: H.264, MP3, AAC, HEVC (H.265).",
+      "titulo": "Codec",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Codec",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Programa que codifica e decodifica arquivos de mídia. Necessário para reproduzir áudios e vídeos em determinados formatos. Exemplos: H.264, MP3, AAC, HEVC (H.265).",
+      "titulo": "Codec",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Resumo rápido",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Kernel** = núcleo do SO  |  **Driver** = ponte entre SO e hardware  |  **Codec** = tradutor de arquivos de mídia",
+      "titulo": "Resumo rápido",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Resumo rápido",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Kernel** = núcleo do SO  |  **Driver** = ponte entre SO e hardware  |  **Codec** = tradutor de arquivos de mídia",
+      "titulo": "Resumo rápido",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Painel de Controle",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface clássica de configuração do Windows. Pode ser aberta com **Win + R → control**.",
+      "titulo": "Painel de Controle",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Painel de Controle",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface clássica de configuração do Windows. Pode ser aberta com **Win + R → control**.",
+      "titulo": "Painel de Controle",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Painel de Controle",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Configurações (Settings)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface moderna (Windows 10/11), acessada pelo atalho **Win + I**. Oferece opções de segurança, backup, histórico de atividades, arquivos e muito mais.",
+      "titulo": "Configurações (Settings)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Configurações (Settings)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Interface moderna (Windows 10/11), acessada pelo atalho **Win + I**. Oferece opções de segurança, backup, histórico de atividades, arquivos e muito mais.",
+      "titulo": "Configurações (Settings)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Configurações do Windows 11",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atalho para Configurações",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Win + I** abre diretamente o aplicativo Configurações, a maneira mais rápida de ajustar o sistema.",
+      "titulo": "Atalho para Configurações",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Atalho para Configurações",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Win + I** abre diretamente o aplicativo Configurações, a maneira mais rápida de ajustar o sistema.",
+      "titulo": "Atalho para Configurações",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Explorador de Arquivos (Windows Explorer)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ferramenta principal para gerenciar arquivos e pastas. Atalho: **Win + E**. Anteriormente chamado de Windows Explorer, atualmente é Explorador de Arquivos.",
+      "titulo": "Explorador de Arquivos (Windows Explorer)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Explorador de Arquivos (Windows Explorer)",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Ferramenta principal para gerenciar arquivos e pastas. Atalho: **Win + E**. Anteriormente chamado de Windows Explorer, atualmente é Explorador de Arquivos.",
+      "titulo": "Explorador de Arquivos (Windows Explorer)",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Limites do sistema",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Caminho máximo: **260 caracteres** (exemplo: C:\\\\Users\\\\joao\\\\Downloads\\\\PostaLA.PDF). Raiz do sistema: **Windows (NTFS)**.",
+      "titulo": "Limites do sistema",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Limites do sistema",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Caminho máximo: **260 caracteres** (exemplo: C:\\\\Users\\\\joao\\\\Downloads\\\\PostaLA.PDF). Raiz do sistema: **Windows (NTFS)**.",
+      "titulo": "Limites do sistema",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Operações básicas com arquivos",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Criar:** clique direito → Novo → Pasta/Arquivo\\n- **Copiar:** Ctrl + C ou clique direito → Copiar\\n- **Colar:** Ctrl + V ou clique direito → Colar\\n- **Recortar:** Ctrl + X ou clique direito → Recortar\\n- **Renomear:** F2 ou clique direito → Renomear\\n- **Excluir:** Delete (vai para Lixeira) ou Shift + Delete (exclusão permanente)",
+      "titulo": "Operações básicas com arquivos",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Operações básicas com arquivos",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Criar:** clique direito → Novo → Pasta/Arquivo\\n- **Copiar:** Ctrl + C ou clique direito → Copiar\\n- **Colar:** Ctrl + V ou clique direito → Colar\\n- **Recortar:** Ctrl + X ou clique direito → Recortar\\n- **Renomear:** F2 ou clique direito → Renomear\\n- **Excluir:** Delete (vai para Lixeira) ou Shift + Delete (exclusão permanente)",
+      "titulo": "Operações básicas com arquivos",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Estrutura de Diretórios do Windows",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Raiz (C:):** diretório principal do sistema\\n- **Windows:** arquivos do sistema operacional\\n- **Program Files:** programas instalados (64 bits)\\n- **Program Files (x86):** programas 32 bits\\n- **Users:** dados dos usuários (Documentos, Downloads, etc.)\\n- **ProgramData:** dados compartilhados de programas",
+      "titulo": "Estrutura de Diretórios do Windows",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Estrutura de Diretórios do Windows",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Raiz (C:):** diretório principal do sistema\\n- **Windows:** arquivos do sistema operacional\\n- **Program Files:** programas instalados (64 bits)\\n- **Program Files (x86):** programas 32 bits\\n- **Users:** dados dos usuários (Documentos, Downloads, etc.)\\n- **ProgramData:** dados compartilhados de programas",
+      "titulo": "Estrutura de Diretórios do Windows",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Busca e Localização",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Barra de Busca:** localizar arquivos e pastas rapidamente\\n- **Filtros:** refinar busca por data, tipo, tamanho\\n- **Busca Avançada:** operadores como 'data:>2023/01/01'\\n- **Indexação:** Windows indexa conteúdo para buscas rápidas\\n- **Opções de Pesquisa:** incluir conteúdo de arquivos, sistema, ocultos",
+      "titulo": "Busca e Localização",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Busca e Localização",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Barra de Busca:** localizar arquivos e pastas rapidamente\\n- **Filtros:** refinar busca por data, tipo, tamanho\\n- **Busca Avançada:** operadores como 'data:>2023/01/01'\\n- **Indexação:** Windows indexa conteúdo para buscas rápidas\\n- **Opções de Pesquisa:** incluir conteúdo de arquivos, sistema, ocultos",
+      "titulo": "Busca e Localização",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Visualização e Organização",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Modos de Exibição:** Ícones grandes/pequenos, Lista, Detalhes, Lado a lado\\n- **Ordenação:** por nome, data, tipo, tamanho\\n- **Agrupar por:** organizar por data modificada, tipo, etc.\\n- **Painel de Detalhes:** informações do arquivo selecionado\\n- **Painel de Visualização:** prévia do conteúdo\\n- **Navegador:** árvore de diretórios à esquerda",
+      "titulo": "Visualização e Organização",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Visualização e Organização",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Modos de Exibição:** Ícones grandes/pequenos, Lista, Detalhes, Lado a lado\\n- **Ordenação:** por nome, data, tipo, tamanho\\n- **Agrupar por:** organizar por data modificada, tipo, etc.\\n- **Painel de Detalhes:** informações do arquivo selecionado\\n- **Painel de Visualização:** prévia do conteúdo\\n- **Navegador:** árvore de diretórios à esquerda",
+      "titulo": "Visualização e Organização",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Configurações e Opções do Explorador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Exibir:** mostrar/ocultar arquivos ocultos, extensões\\n- **Opções de Pasta:** configurações de navegação\\n- **Personalizar:** layout do explorador de arquivos\\n- **Acesso Rápido:** pastas favoritas e recentes\\n- **Bibliotecas:** agrupar pastas de diferentes locais",
+      "titulo": "Configurações e Opções do Explorador",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Configurações e Opções do Explorador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Exibir:** mostrar/ocultar arquivos ocultos, extensões\\n- **Opções de Pasta:** configurações de navegação\\n- **Personalizar:** layout do explorador de arquivos\\n- **Acesso Rápido:** pastas favoritas e recentes\\n- **Bibliotecas:** agrupar pastas de diferentes locais",
+      "titulo": "Configurações e Opções do Explorador",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Permissões e Segurança",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Propriedades:** clique direito → Propriedades\\n- **Segurança:** permissões de acesso (ler, escrever, executar)\\n- **Atributos:** somente leitura, oculto, arquivo\\n- **Compartilhamento:** compartilhar pastas na rede\\n- **Criptografia:** proteger pastas com senha (EFS)",
+      "titulo": "Permissões e Segurança",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Permissões e Segurança",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Propriedades:** clique direito → Propriedades\\n- **Segurança:** permissões de acesso (ler, escrever, executar)\\n- **Atributos:** somente leitura, oculto, arquivo\\n- **Compartilhamento:** compartilhar pastas na rede\\n- **Criptografia:** proteger pastas com senha (EFS)",
+      "titulo": "Permissões e Segurança",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Formatação, Sistemas de Arquivos e Criptografia",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Instalação e Formatação:** Durante a instalação do SO, é necessário formatar a unidade de disco para preparar o dispositivo de armazenamento.\\n- **NTFS (New Technology File System):** Sistema de arquivos padrão e mais utilizado no Windows. Oferece controle de permissões, suporte a arquivos de grande tamanho e maior confiabilidade.\\n- **BitLocker:** Recurso opcional que realiza a criptografia completa do disco, protegendo toda a unidade de armazenamento contra acessos não autorizados.\\n- **EFS (Encrypting File System):** Permite criptografar arquivos e pastas específicos, oferecendo uma camada adicional de segurança.",
+      "titulo": "Formatação, Sistemas de Arquivos e Criptografia",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Formatação, Sistemas de Arquivos e Criptografia",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Instalação e Formatação:** Durante a instalação do SO, é necessário formatar a unidade de disco para preparar o dispositivo de armazenamento.\\n- **NTFS (New Technology File System):** Sistema de arquivos padrão e mais utilizado no Windows. Oferece controle de permissões, suporte a arquivos de grande tamanho e maior confiabilidade.\\n- **BitLocker:** Recurso opcional que realiza a criptografia completa do disco, protegendo toda a unidade de armazenamento contra acessos não autorizados.\\n- **EFS (Encrypting File System):** Permite criptografar arquivos e pastas específicos, oferecendo uma camada adicional de segurança.",
+      "titulo": "Formatação, Sistemas de Arquivos e Criptografia",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Compactação e Backup",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Compactar:** reduzir tamanho de arquivos (ZIP, RAR)\\n- **Descompactar:** extrair arquivos compactados\\n- **Backup de Arquivos:** cópias de segurança importantes\\n- **Histórico de Arquivos:** versões anteriores (Windows 10/11)\\n- **Restauração:** recuperar arquivos excluídos ou modificados",
+      "titulo": "Compactação e Backup",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Compactação e Backup",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "- **Compactar:** reduzir tamanho de arquivos (ZIP, RAR)\\n- **Descompactar:** extrair arquivos compactados\\n- **Backup de Arquivos:** cópias de segurança importantes\\n- **Histórico de Arquivos:** versões anteriores (Windows 10/11)\\n- **Restauração:** recuperar arquivos excluídos ou modificados",
+      "titulo": "Compactação e Backup",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Bizu do Gerenciador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Win + E** = Explorador de Arquivos  |  **F2** = Renomear  |  **Shift + Delete** = Exclusão permanente  |  **Bibliotecas** = organização virtual de pastas",
+      "titulo": "Bizu do Gerenciador",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Bizu do Gerenciador",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "**Win + E** = Explorador de Arquivos  |  **F2** = Renomear  |  **Shift + Delete** = Exclusão permanente  |  **Bibliotecas** = organização virtual de pastas",
+      "titulo": "Bizu do Gerenciador",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Extensões de Arquivo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O nome do arquivo é composto por nome + extensão (ex.: documento.docx). Por padrão, o Windows oculta as extensões. Para exibi-las, vá em **Explorador de Arquivos → Exibir → Extensões de nome de arquivo**.",
+      "titulo": "Extensões de Arquivo",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Extensões de Arquivo",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "O nome do arquivo é composto por nome + extensão (ex.: documento.docx). Por padrão, o Windows oculta as extensões. Para exibi-las, vá em **Explorador de Arquivos → Exibir → Extensões de nome de arquivo**.",
+      "titulo": "Extensões de Arquivo",
+      "rotulo": "Conceito"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dica sobre extensões",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Saber as extensões ajuda a identificar o tipo de arquivo e qual programa abri-lo. Exemplo: .docx → Word, .xlsx → Excel, .pdf → Adobe Reader.",
+      "titulo": "Dica sobre extensões",
+      "rotulo": "Bizu"
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Dica sobre extensões",
+      "titulo": "",
+      "rotulo": ""
+    },
+    {
+      "tipo": "destaque",
+      "texto": "Saber as extensões ajuda a identificar o tipo de arquivo e qual programa abri-lo. Exemplo: .docx → Word, .xlsx → Excel, .pdf → Adobe Reader.",
+      "titulo": "Dica sobre extensões",
+      "rotulo": "Bizu"
+    }
+  ]
+}
