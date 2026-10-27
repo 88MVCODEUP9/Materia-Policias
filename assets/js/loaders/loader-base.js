@@ -38,14 +38,17 @@
   function arquivosDaPasta(html) {
     var documento = new DOMParser().parseFromString(html, 'text/html');
     return Array.from(documento.querySelectorAll('a[href]')).map(function (link) {
-      return decodeURIComponent(link.getAttribute('href').split(/[?#]/)[0].split('/').pop());
+      try { return decodeURIComponent(link.getAttribute('href').split(/[?#]/)[0].split('/').pop()); }
+      catch { return ''; }
     }).filter(function (arquivo) { return /^[a-zA-Z0-9_-]+\.js$/i.test(arquivo); })
       .filter(function (arquivo, i, lista) { return lista.indexOf(arquivo) === i; })
       .sort(ordenarNomes);
   }
   function arquivosDoIndice(id) {
     var indice = global.GMIndiceTopicos || {};
-    return (indice[id] || []).slice().sort(ordenarNomes);
+    return (Array.isArray(indice[id]) ? indice[id] : []).filter(function (arquivo) {
+      return typeof arquivo === 'string' && /^[a-zA-Z0-9_-][a-zA-Z0-9_.-]*\.js$/i.test(arquivo);
+    }).filter(function (arquivo, i, lista) { return lista.indexOf(arquivo) === i; }).sort(ordenarNomes);
   }
   function ordenarNomes(a, b) {
     return a.localeCompare(b, 'pt-BR', { numeric: true });
@@ -85,7 +88,7 @@
         return resposta.json();
       }).then(function (lista) {
         if (!Array.isArray(lista) || !lista.length) throw new Error('manifest.json vazio ou inválido');
-        var arquivos = lista.filter(function (arquivo) { return /^[a-zA-Z0-9_.-]+\.js$/i.test(arquivo); }).map(function (arquivo) { return arquivo.split('/').pop(); });
+        var arquivos = lista.filter(function (arquivo) { return typeof arquivo === 'string' && /^[a-zA-Z0-9_-][a-zA-Z0-9_.-]*\.js$/i.test(arquivo); }).filter(function (arquivo, i, lista) { return lista.indexOf(arquivo) === i; }).sort(ordenarNomes);
         if (!arquivos.length) throw new Error('Nenhum .js válido em manifest.json');
         return arquivos;
       }).then(function (arquivos) {

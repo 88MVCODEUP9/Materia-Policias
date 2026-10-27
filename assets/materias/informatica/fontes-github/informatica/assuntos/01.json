@@ -1,0 +1,75 @@
+window.__ESTUDA_DATA__=(window.__ESTUDA_DATA__||{});window.__ESTUDA_DATA__['01.json']=
+{
+  "materia": "Informática",
+  "titulo": "O que é Informática",
+  "icone": "💻",
+  "descricao": "Conceito fundamental de informática, seus elementos essenciais (Hardware, Software, Peopleware) e a distinção entre eles. Material básico para concursos.",
+  "topicos": [
+    {
+      "titulo": "Conceitos Fundamentais",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "O que é Informática",
+          "texto": "Informática é o estudo do tratamento automatizado da informação por meio de computadores. Todo sistema informatizado é formado por três elementos essenciais: Hardware, Software e Peopleware."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Diagrama de sistema informatizado",
+          "imagem": "https://www.devmedia.com.br/arquivos/Artigos/40748/leia_escreva.png"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Sistema informatizado",
+          "texto": "Um sistema informatizado é composto por:\n- **Hardware** (parte física)\n- **Software** (parte lógica)\n- **Peopleware** (elemento humano)\nEsses três trabalham em conjunto para processar dados e gerar informações."
+        }
+      ]
+    },
+    {
+      "titulo": "Elementos de um Sistema Informatizado",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "Hardware",
+          "texto": "Parte física do computador. Componentes que podemos tocar e ver.\nExemplos: CPU, teclado, monitor, HD, placa-mãe, mouse."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Componentes de hardware",
+          "imagem": "https://img.magnific.com/vetores-premium/colecao-de-elementos-de-hardware-de-computador-icone-isometrico-ilustracao-vetorial-webcam-placa-de-video-sd-hdd_93487-2994.jpg?semt=ais_test_b&w=740&q=80"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Software",
+          "texto": "Parte lógica — programas e instruções. Controla e instrui o hardware. Não tem forma física — não pode ser tocado.\nExemplos: Windows, Word, Chrome, antivírus."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Ícones de programas (software)",
+          "imagem": "https://topfreewares.com.br/wp-content/uploads/2018/05/actual_hide_desktop_icons.jpg"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Peopleware",
+          "texto": "O elemento humano do sistema. Quem usa, opera e programa o computador. Terceiro elemento essencial — sem usuário, o sistema está incompleto."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Usuário utilizando computador",
+          "imagem": "https://thumbs.dreamstime.com/b/usu%C3%A1rio-do-computador-31570813.jpg"
+        },
+        {
+          "tipo": "bizu",
+          "titulo": "Mnemônico para lembrar",
+          "texto": "**Hardware** = físico (toca)  |  **Software** = programa (não toca)  |  **Peopleware** = usuário."
+        },
+        {
+          "tipo": "pegadinha",
+          "titulo": "Hardware ≠ Software",
+          "texto": "Hardware e Software **não são sinônimos** nem intercambiáveis. Um é físico, o outro é lógico; ambos são necessários, mas são conceitos distintos."
+        }
+      ]
+    }
+  ]
+}
+;

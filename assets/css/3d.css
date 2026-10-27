@@ -1,0 +1,269 @@
+/* Camada 3D · Matéria Policial
+   Regras de movimento (Emil Kowalski): só transform/opacity, curvas ease-out fortes,
+   entradas ≤ 300 ms, pressão em scale(.97), hover só em ponteiro fino, reduced-motion respeitado.
+   Regras de estilo (taste-skill): profundidade vem de geometria e sombra, sem brilho decorativo. */
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;
+}
+
+/* ---------- Estante 3D (anel de livros) ---------- */
+.estante3d { margin: 0 0 56px; }
+.estante3d .section-title { margin-bottom: 8px; }
+.estante3d-dica { color: var(--muted); font-size: 13px; line-height: 1.6; max-width: 62ch; }
+
+.cena3d {
+  --w: 150px; --h: 206px; --t: 26px; --n: 12;
+  --R: 262px;
+  --esc: 1;
+  position: relative; height: 410px; margin-top: 8px;
+  display: grid; place-items: center;
+  perspective: 1500px; perspective-origin: 50% 38%;
+  overflow: hidden; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, transparent 0 62%, color-mix(in srgb, var(--panel) 80%, transparent) 62% 100%);
+}
+.cena3d.arrastando { cursor: grabbing; }
+.palco3d {
+  position: relative; width: var(--w); height: var(--h);
+  transform-style: preserve-3d;
+  transform: translateY(8px) scale(var(--esc)) rotateX(-12deg);
+}
+.anel3d {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--R) * -1)) rotateY(var(--giro, 0deg));
+  will-change: transform;
+}
+/* chão: sombra projetada, dá a ancoragem de profundidade */
+.chao3d {
+  position: absolute; left: 50%; bottom: 78px; width: 720px; height: 90px; margin-left: -360px;
+  background: radial-gradient(closest-side, rgb(0 0 0 / 55%), transparent);
+  transform: scale(var(--esc)); pointer-events: none;
+}
+
+.livro3d {
+  --cor: var(--discipline-color, #5b9bff);
+  --miolo: color-mix(in srgb, var(--cor) 32%, #0a0d18);
+  --papel: #d9d4c4;
+  position: absolute; inset: 0; display: block; color: var(--ink);
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * (360deg / var(--n)))) translateZ(var(--R));
+  text-decoration: none;
+  outline: none;
+}
+.livro3d > i, .livro3d > b { position: absolute; display: block; font-style: normal; backface-visibility: hidden; }
+
+.livro3d .capa {
+  inset: 0; padding: 16px 14px 14px 18px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: var(--miolo);
+  border: 1px solid color-mix(in srgb, var(--cor) 55%, transparent);
+  border-left: 6px solid var(--cor);
+  border-radius: 2px 5px 5px 2px;
+  transform: translateZ(calc(var(--t) / 2));
+  transition: filter var(--t-base) var(--ease-out);
+}
+.livro3d .capa .num { font: 600 11px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .12em; color: color-mix(in srgb, var(--cor) 70%, #fff); }
+.livro3d .capa .nome { font: 800 14px/1.25 "Segoe UI", system-ui, sans-serif; letter-spacing: -.01em; text-wrap: balance; overflow-wrap: normal; word-break: normal; }
+.livro3d .capa .qtd { font-size: 11px; color: color-mix(in srgb, var(--ink) 70%, transparent); }
+.livro3d .verso {
+  inset: 0; background: color-mix(in srgb, var(--cor) 22%, #0a0d18);
+  border-radius: 5px 2px 2px 5px;
+  transform: translateZ(calc(var(--t) / -2)) rotateY(180deg);
+}
+.livro3d .lombada {
+  width: var(--t); height: 100%; left: calc(50% - var(--t) / 2); top: 0;
+  background: var(--cor);
+  transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+}
+.livro3d .folhas {
+  width: var(--t); height: 100%; left: calc(50% - var(--t) / 2); top: 0;
+  background: repeating-linear-gradient(90deg, var(--papel) 0 2px, #bdb8a7 2px 3px);
+  transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
+}
+.livro3d .topo {
+  width: 100%; height: var(--t); left: 0; top: calc(50% - var(--t) / 2);
+  background: repeating-linear-gradient(0deg, var(--papel) 0 2px, #bdb8a7 2px 3px);
+  transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+}
+.livro3d .base {
+  width: 100%; height: var(--t); left: 0; top: calc(50% - var(--t) / 2);
+  background: color-mix(in srgb, var(--cor) 28%, #05070d);
+  transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
+}
+@media (hover: hover) and (pointer: fine) {
+  .livro3d:hover .capa { filter: brightness(1.18); }
+}
+.livro3d:focus-visible .capa { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.cena3d-controles {
+  position: absolute; inset: auto 0 14px; display: flex; justify-content: center; align-items: center; gap: 18px;
+  pointer-events: none;
+}
+.cena3d-controles > * { pointer-events: auto; }
+.cena3d-legenda { min-width: 230px; text-align: center; color: var(--ink); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cena3d-legenda small { display: block; margin-top: 3px; font-weight: 400; color: var(--muted); font-size: 11px; }
+.cena3d-btn {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; padding: 0;
+  background: var(--surface); border: 1px solid var(--line-strong); color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer;
+  transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
+}
+.cena3d-btn:active { transform: scale(0.94); }
+@media (hover: hover) and (pointer: fine) { .cena3d-btn:hover { background: var(--panel); } }
+.cena3d-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+@media (max-width: 760px) {
+  .cena3d { height: 340px; --esc: .8; }
+  .cena3d-legenda { min-width: 180px; }
+}
+@media (max-width: 460px) { .cena3d { --esc: .62; height: 290px; } }
+
+/* sem JS: estante vira fileira estática de capas, sem 3D */
+.sem-js-estante { display: none; }
+
+/* ---------- Inclinação dos cartões (pointer fino) ---------- */
+.discipline-card, .material.subject, .lei-card {
+  --rx: 0; --ry: 0;
+  transform: perspective(900px) rotateX(calc(var(--rx) * 1deg)) rotateY(calc(var(--ry) * 1deg));
+  transform-style: preserve-3d;
+  box-shadow:
+    calc(var(--ry) * -1.2px) calc(6px + var(--rx) * 1.2px) 18px -8px rgb(0 0 0 / 55%),
+    0 1px 0 rgb(255 255 255 / 3%) inset;
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base) var(--ease-out), background-color .15s ease, border-color .15s ease;
+}
+.discipline-card > *, .material.subject > *, .lei-card > * { transform: translateZ(10px); }
+.discipline-card .discipline-number, .lei-card .lei-sigla { transform: translateZ(22px); }
+.discipline-card:is(:hover, :focus-visible) {
+  transform: perspective(900px) translateY(-3px) rotateX(calc(var(--rx) * 1deg)) rotateY(calc(var(--ry) * 1deg));
+}
+.discipline-card:active, .material.subject:active, .lei-card:active {
+  transform: perspective(900px) scale(0.97);
+  transition-duration: 100ms;
+}
+.tilt-ativo { transition-duration: 60ms, var(--t-base), .15s, .15s; }
+
+/* ---------- Entrada por rolagem ---------- */
+.rev { opacity: 0; transform: translateY(10px); }
+.rev.entrou {
+  opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);
+}
+.js-3d .discipline-card.rev.entrou, .js-3d .lei-card.rev.entrou { transform: perspective(900px) rotateX(calc(var(--rx) * 1deg)) rotateY(calc(var(--ry) * 1deg)); }
+
+/* ---------- Progresso de leitura ---------- */
+.progresso3d {
+  position: fixed; left: 0; top: 0; right: 0; height: 3px; z-index: 40; pointer-events: none;
+  transform-origin: 0 50%; transform: scaleX(var(--p, 0));
+  background: var(--discipline-color, var(--gold));
+}
+
+/* ---------- Transição entre páginas (navegadores com suporte) ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: 120ms var(--ease-out) both vt-sai; }
+::view-transition-new(root) { animation: 200ms var(--ease-out) both vt-entra; }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+
+/* ---------- Página de Legislação ---------- */
+.leis-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-bottom: 36px; }
+.lei-card {
+  --discipline-color: #6c8cff;
+  display: grid; gap: 6px; align-content: start; padding: 18px 18px 16px 20px; min-height: 132px;
+  background: var(--panel); border: 1px solid var(--line); border-left: var(--accent-width) solid var(--discipline-color);
+  border-radius: var(--radius); color: var(--ink); text-decoration: none;
+}
+.lei-card:is(:hover, :focus-visible) { background: var(--surface); border-color: var(--line-strong); text-decoration: none; }
+.lei-card[aria-current="true"] { background: var(--surface); border-color: var(--discipline-color); }
+.lei-sigla { font: 800 11px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: color-mix(in srgb, var(--discipline-color) 70%, #fff); }
+.lei-card h3 { font-size: 16px; line-height: 1.35; }
+.lei-card small { color: var(--muted); font-size: 12px; }
+.lei-card[data-id="cf88"] { --discipline-color: #a66bff; }
+.lei-card[data-id="cp"] { --discipline-color: #ff5a6e; }
+.lei-card[data-id="cpp"] { --discipline-color: #ff8a3d; }
+.lei-card[data-id="cpm"] { --discipline-color: #2fd08a; }
+.lei-card[data-id="cppm"] { --discipline-color: #f5bf2e; }
+.lei-card[data-id="lep"] { --discipline-color: #26c4ee; }
+.lei-card[data-id="eca"] { --discipline-color: #ff5ca8; }
+.lei-card[data-id="maria-da-penha"] { --discipline-color: #d45cf0; }
+.lei-card[data-id="drogas"] { --discipline-color: #9fdc3c; }
+.lei-card[data-id="orcrim"] { --discipline-color: #4d8dff; }
+.lei-card[data-id="abuso"] { --discipline-color: #25d1b8; }
+
+.leitor { scroll-margin-top: 80px; }
+.leitor-barra {
+  position: sticky; top: 60px; z-index: 6; display: grid; gap: 10px; padding: 12px 0 14px;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.leitor-linha { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.leitor-linha input[type="search"], .leitor-linha input[type="text"] {
+  flex: 1 1 220px; min-width: 0; height: 40px; padding: 0 12px; background: var(--panel); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-sm); font: inherit; font-size: 14px;
+}
+.leitor-linha input.curto { flex: 0 1 150px; }
+.leitor-linha input:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.leitor-titulo { font: 800 20px/1.25 "Segoe UI", system-ui, sans-serif; letter-spacing: -.01em; }
+.leitor-meta { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.leitor-meta a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.btn-lei {
+  height: 40px; padding: 0 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm); font: inherit; font-size: 13px; cursor: pointer;
+  transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
+}
+.btn-lei:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) { .btn-lei:hover { background: var(--panel); } }
+.btn-lei:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.leitor-resultados, .leitor-indice {
+  max-height: 320px; overflow: auto; margin: 10px 0 0; padding: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm);
+}
+.leitor-resultados[hidden], .leitor-indice[hidden] { display: none; }
+.leitor-resultados button, .leitor-indice a {
+  display: block; width: 100%; padding: 8px 10px; text-align: left; background: none; border: 0; border-radius: 6px;
+  color: var(--ink); font: inherit; font-size: 13px; line-height: 1.5; cursor: pointer; text-decoration: none;
+}
+.leitor-resultados button:focus-visible, .leitor-indice a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+@media (hover: hover) and (pointer: fine) {
+  .leitor-resultados button:hover, .leitor-indice a:hover { background: var(--surface); }
+}
+.leitor-resultados mark { background: color-mix(in srgb, var(--gold) 38%, transparent); color: inherit; border-radius: 3px; padding: 0 1px; }
+.leitor-resultados .ref { font-weight: 700; margin-right: 6px; }
+.leitor-indice a[data-n="2"] { font-weight: 700; margin-top: 4px; }
+.leitor-indice a[data-n="3"] { padding-left: 22px; }
+.leitor-indice a[data-n="4"], .leitor-indice a[data-n="5"] { padding-left: 38px; color: var(--muted); }
+
+.lei-texto { max-width: 78ch; margin: 26px 0 40px; font-size: 16px; line-height: 1.8; }
+.lei-texto > * { content-visibility: auto; contain-intrinsic-size: auto 48px; }
+.lei-texto p { margin: 0 0 12px; overflow-wrap: anywhere; }
+.lei-texto h2, .lei-texto h3, .lei-texto h4, .lei-texto h5 { scroll-margin-top: 150px; margin: 34px 0 12px; line-height: 1.3; }
+.lei-texto h2 { font-size: 22px; padding-top: 14px; border-top: 1px solid var(--line-strong); }
+.lei-texto h3 { font-size: 18px; }
+.lei-texto h4, .lei-texto h5 { font-size: 15px; color: var(--muted); }
+.lei-texto p.art { scroll-margin-top: 150px; margin-top: 22px; padding-left: 14px; border-left: 3px solid var(--line-strong); }
+.lei-texto p.art strong { color: var(--gold); }
+.lei-texto p.par { padding-left: 14px; }
+.lei-texto p.inc { padding-left: 34px; }
+.lei-texto p.ali { padding-left: 54px; }
+.lei-texto blockquote { margin: 0 0 16px; padding: 10px 14px; color: var(--muted); font-size: 13px; line-height: 1.7; border-left: 3px solid var(--line-strong); background: var(--panel); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.lei-texto hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+.lei-texto del { color: var(--muted); }
+.lei-texto .tabela { overflow-x: auto; margin: 0 0 16px; }
+.lei-texto table { border-collapse: collapse; font-size: 14px; min-width: 100%; }
+.lei-texto th, .lei-texto td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+.lei-texto .alvo { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 4px; }
+.leitor-vazio { padding: 40px 0; color: var(--muted); }
+.leitor-aviso { margin-top: 28px; padding: 12px 14px; color: var(--muted); font-size: 12px; line-height: 1.7; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+
+/* ---------- Movimento reduzido / sem 3D ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rev, .rev.entrou { opacity: 1; transform: none; transition: none; }
+  .discipline-card, .material.subject, .lei-card { transform: none !important; transition: none; }
+  .discipline-card > *, .material.subject > *, .lei-card > * { transform: none; }
+  .progresso3d { transition: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+@media print { .cena3d, .progresso3d, .estante3d { display: none; } }

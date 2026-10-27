@@ -1,0 +1,30 @@
+[
+    {
+        "conteudo": "proposicoes",
+        "icone": "puzzle-piece",
+        "id": "proposicoes",
+        "nome": "Proposições",
+        "tipo": "pagina"
+    },
+    {
+        "conteudo": "equivalencias",
+        "icone": "exchange-alt",
+        "id": "equivalencias",
+        "nome": "Equivalências",
+        "tipo": "pagina"
+    },
+{
+    "conteudo": "negacoes-logicas",
+    "icone": "not-equal",
+    "id": "negacoes-logicas",
+    "nome": "Negação de Proposições",
+    "tipo": "pagina"
+},
+{
+    "conteudo": "argumento-e-diagrama",
+    "icone": "brain",
+    "id": "argumento-e-diagrama",
+    "nome": "Argumento e Diagrama",
+    "tipo": "pagina"
+}
+]

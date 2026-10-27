@@ -1,0 +1,3228 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101820" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<title>Equivalências e negações · Raciocínio Lógico · Matéria Policial</title>
+<meta content="Proposições, tabela-verdade, equivalências, negações e argumentação lógica." name="description"/>
+<link href="../../icone.png" rel="icon"/>
+<link href="../../css/estilos.css?v=leitura-20261026" rel="stylesheet"/>
+<script defer="" src="../../js/app.js?v=leitura-20261026"></script>
+
+<style id="css-sidebar-enviado">
+/* ===== SIDEBAR HEADER ===== */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #2A3A4F;
+    min-height: 70px;
+    background: #0F172A;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #F1F5F9;
+    letter-spacing: 0.5px;
+}
+.logo i {
+    color: #F97316; /* laranja para destaque */
+    font-size: 1.4rem;
+}
+
+.close-sidebar-btn {
+    background: transparent;
+    border: none;
+    color: #94A3B8;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 6px;
+    transition: background 0.2s, color 0.2s;
+    display: none;
+}
+.close-sidebar-btn:hover {
+    background: #1E293B;
+    color: #FFFFFF;
+}
+
+/* ===== SEARCH BOX ===== */
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    margin: 12px 16px;
+    background: #0B1120;
+    border: 1px solid #2A3A4F;
+    border-radius: 8px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.search-box:focus-within {
+    border-color: #F97316;
+    box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.25);
+}
+.search-box i {
+    color: #64748B;
+    font-size: 1rem;
+}
+.search-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #F1F5F9;
+    font-size: 0.95rem;
+    padding: 6px 0;
+    font-weight: 400;
+}
+.search-box input::placeholder {
+    color: #475569;
+    font-weight: 300;
+}
+
+/* ===== MENU NAV ===== */
+.menu-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 12px 20px;
+    scrollbar-width: thin;
+    scrollbar-color: #2A3A4F transparent;
+}
+.menu-nav::-webkit-scrollbar {
+    width: 4px;
+}
+.menu-nav::-webkit-scrollbar-thumb {
+    background: #2A3A4F;
+    border-radius: 10px;
+}
+
+/* ===== CATEGORIAS ===== */
+.category {
+    margin-bottom: 4px;
+}
+
+.category-toggle {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #94A3B8;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: background 0.2s, color 0.2s;
+}
+.category-toggle:hover {
+    background: #1E293B;
+    color: #E2E8F0;
+}
+.category-toggle i:first-child {
+    font-size: 0.9rem;
+    width: 20px;
+    color: #F97316;
+}
+.category-toggle .toggle-icon {
+    margin-left: auto;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+    color: #475569;
+}
+.category-toggle .toggle-icon.open {
+    transform: rotate(90deg);
+}
+
+.sub-menu {
+    padding-left: 16px;
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+.sub-menu.open {
+    max-height: 1000px;
+}
+
+/* ===== ITENS DO MENU ===== */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 0 20px;
+    height: 44px;
+    border-radius: 6px;
+    cursor: pointer;
+    color: #94A3B8;
+    transition: background 0.2s, color 0.2s, padding 0.2s;
+    position: relative;
+    margin: 2px 0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+.menu-item i {
+    width: 20px;
+    font-size: 1rem;
+    color: #64748B;
+    transition: color 0.2s;
+    flex-shrink: 0;
+}
+.menu-item .text {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.menu-item .badge {
+    font-size: 0.65rem;
+    background: #F97316;
+    color: #FFFFFF;
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.menu-item:hover {
+    background: #1E293B;
+    color: #FFFFFF;
+}
+.menu-item:hover i {
+    color: #F97316;
+}
+
+.menu-item.active {
+    background: #1E293B;
+    color: #FFFFFF;
+    border-left: 3px solid #F97316;
+}
+.menu-item.active i {
+    color: #F97316;
+}
+
+.menu-item.external-link i {
+    color: #60A5FA;
+}
+.menu-item.external-link .text::after {
+    content: " \f08e";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    font-size: 0.7rem;
+    color: #475569;
+    margin-left: 4px;
+}
+
+/* ===== SIDEBAR FOOTER ===== */
+.sidebar-footer {
+    border-top: 1px solid #2A3A4F;
+    padding: 12px 20px;
+    color: #475569;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* ===== ESTADO COLLAPSED (desktop) ===== */
+.sidebar.collapsed .menu-item {
+    padding: 0 16px;
+    justify-content: center;
+}
+.sidebar.collapsed .menu-item i {
+    margin: 0;
+}
+.sidebar.collapsed .category-toggle {
+    justify-content: center;
+    padding: 8px 0;
+}
+.sidebar.collapsed .category-toggle i:first-child {
+    margin: 0;
+}
+.sidebar.collapsed .category-toggle .toggle-icon {
+    display: none;
+}
+.sidebar.collapsed .sub-menu {
+    display: none !important;
+}
+
+/* ===== OCULTAR ITENS NA PESQUISA ===== */
+.menu-item.hidden,
+.category.hidden {
+    display: none;
+}
+</style>
+<style id="css-style-enviado">
+/* Reset e base – DARK & MASCULINO */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Inter', system-ui, -apple-system, sans-serif;
+    background: #0B1120;
+    display: flex;
+    min-height: 100vh;
+    color: #000813;
+    font-weight: 400;
+}
+
+/* ----- SIDEBAR ----- */
+.sidebar {
+    width: 280px;
+    background: #0F172A;
+    color: #E2E8F0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease, width 0.3s ease;
+    overflow: hidden;
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.6);
+    border-right: 1px solid #1E293B;
+}
+
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 16px;
+    border-bottom: 1px solid #1E293B;
+    background: #0F172A;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #F1F5F9;
+    letter-spacing: 0.5px;
+}
+.logo i {
+    color: #F97316;
+}
+
+.close-sidebar-btn {
+    background: none;
+    border: none;
+    color: #94A3B8;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: none;
+}
+.close-sidebar-btn:hover {
+    color: #F1F5F9;
+}
+
+/* Pesquisa */
+.search-box {
+    padding: 16px;
+    border-bottom: 1px solid #1E293B;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #0F172A;
+}
+.search-box i {
+    color: #64748B;
+}
+.search-box input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #F1F5F9;
+    width: 100%;
+    font-size: 0.95rem;
+    font-weight: 400;
+}
+.search-box input::placeholder {
+    color: #475569;
+    font-weight: 300;
+}
+
+/* Menu de navegação */
+.menu-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 8px 0;
+    scrollbar-width: thin;
+    scrollbar-color: #1E293B transparent;
+}
+.menu-nav::-webkit-scrollbar {
+    width: 4px;
+}
+.menu-nav::-webkit-scrollbar-thumb {
+    background: #1E293B;
+    border-radius: 10px;
+}
+
+.category {
+    margin-bottom: 4px;
+}
+
+.category-toggle {
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #94A3B8;
+    font-weight: 700;
+    gap: 10px;
+    transition: background 0.2s;
+    border-radius: 4px;
+    margin: 0 8px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+.category-toggle:hover {
+    background: #1E293B;
+    color: #F1F5F9;
+}
+.category-toggle .toggle-icon {
+    margin-left: auto;
+    transition: transform 0.3s;
+    font-size: 0.7rem;
+    color: #475569;
+}
+.category-toggle .toggle-icon.open {
+    transform: rotate(90deg);
+}
+
+.sub-menu {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.3s ease;
+}
+.sub-menu.open {
+    max-height: 1000px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px 8px 40px;
+    color: #94A3B8;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background 0.2s, color 0.2s;
+    border-radius: 4px;
+    margin: 0 8px;
+    cursor: pointer;
+}
+.menu-item:hover {
+    background: #1E293B;
+    color: #F1F5F9;
+}
+.menu-item.active {
+    background: #1E293B;
+    color: #FFFFFF;
+    border-left: 3px solid #F97316;
+}
+.menu-item i {
+    width: 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #64748B;
+}
+.menu-item.active i {
+    color: #F97316;
+}
+.menu-item .badge {
+    margin-left: auto;
+    background: #F97316;
+    color: #FFFFFF;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+.menu-item.hidden {
+    display: none;
+}
+.category.hidden {
+    display: none;
+}
+
+/* Rodapé da sidebar */
+.sidebar-footer {
+    padding: 16px;
+    border-top: 1px solid #1E293B;
+    font-size: 0.7rem;
+    color: #475569;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+}
+
+/* ----- OVERLAY (mobile) ----- */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+.overlay.active {
+    display: block;
+}
+
+/* ----- MAIN CONTENT ----- */
+.main-content {
+    margin-left: 280px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: margin-left 0.3s ease;
+    background: #111827;
+}
+
+.main-header {
+    background: #0F172A;
+    padding: 16px 24px;
+    padding-top: max(16px, env(safe-area-inset-top));
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border-bottom: 1px solid #1E293B;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.open-sidebar-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #F1F5F9;
+    cursor: pointer;
+    display: none;
+    padding: 8px;
+    border-radius: 6px;
+    transition: background 0.2s;
+}
+.open-sidebar-btn:hover {
+    background: #1E293B;
+}
+
+.main-header h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #F1F5F9;
+    letter-spacing: 0.3px;
+}
+.header-actions {
+    margin-left: auto;
+    color: #94A3B8;
+}
+
+.content-area {
+    flex: 1;
+    padding: 24px;
+    background: #111827;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* Iframe wrapper */
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    background: #0B1120;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    border: 1px solid #1E293B;
+}
+
+.content-iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    border: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: #0B1120;
+}
+.content-iframe.loaded {
+    opacity: 1;
+}
+
+.iframe-loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0B1120;
+    z-index: 2;
+    transition: opacity 0.3s;
+}
+.iframe-loader .spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #1E293B;
+    border-top: 4px solid #F97316;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* ----- RESPONSIVO ----- */
+@media (max-width: 1024px) {
+    body {
+        overflow-x: hidden;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        width: 300px;
+        max-width: 85vw;
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+        border-right: none;
+    }
+    .sidebar.open {
+        transform: translateX(0);
+    }
+    .close-sidebar-btn {
+        display: block;
+        font-size: 1.5rem;
+        padding: 8px;
+    }
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+    .open-sidebar-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+        height: 44px;
+        font-size: 1.4rem;
+        border-radius: 8px;
+    }
+    .open-sidebar-btn:active {
+        background: #1E293B;
+    }
+    .menu-item {
+        min-height: 48px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .category-toggle {
+        min-height: 44px;
+    }
+    .search-box input {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+    .main-header {
+        padding: 14px 20px;
+    }
+    .content-area {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 640px) {
+    .main-header {
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    .main-header h1 {
+        font-size: 1.1rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .content-area {
+        padding: 12px;
+    }
+    .iframe-wrapper,
+    .iframe-loader {
+        border-radius: 6px;
+    }
+    .iframe-wrapper {
+        min-height: calc(100vh - 140px);
+    }
+    .content-iframe {
+        min-height: calc(100vh - 140px);
+    }
+    .sidebar-header {
+        padding: 16px;
+    }
+    .logo {
+        font-size: 1.05rem;
+    }
+    .search-box {
+        padding: 12px;
+    }
+    .sidebar-footer {
+        padding: 12px 16px;
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .main-header h1 {
+        font-size: 1rem;
+    }
+    .menu-item {
+        padding-left: 32px;
+        font-size: 0.9rem;
+    }
+}
+
+/* Estado colapsado (desktop) */
+.sidebar.collapsed {
+    width: 70px;
+}
+.sidebar.collapsed .logo span,
+.sidebar.collapsed .search-box input,
+.sidebar.collapsed .menu-item .text,
+.sidebar.collapsed .category-toggle span,
+.sidebar.collapsed .category-toggle .toggle-icon,
+.sidebar.collapsed .badge,
+.sidebar.collapsed .sidebar-footer span {
+    display: none;
+}
+.sidebar.collapsed .menu-item {
+    padding: 8px 16px;
+    justify-content: center;
+}
+.sidebar.collapsed .category-toggle {
+    justify-content: center;
+    padding: 8px;
+}
+.sidebar.collapsed .sub-menu {
+    max-height: 0 !important;
+}
+.sidebar.collapsed .search-box {
+    padding: 12px;
+    justify-content: center;
+}
+.sidebar.collapsed .search-box i {
+    margin: 0;
+}
+
+</style>
+<style id="ajustes-visuais">
+/* ===== AJUSTES VISUAIS DA PÁGINA ===== */
+:root{
+  --acento:#F97316; --ciano:#22D3EE; --texto:#E2E8F0; --muted:#94A3B8;
+  --card:#0F172A; --borda:#1E293B; --bloco:#0B1120;
+}
+body{ background:#0B1120; color:var(--texto); line-height:1.65; }
+.study-card{
+  background:var(--card); border:1px solid var(--borda); border-radius:14px;
+  padding:24px; margin-bottom:24px; box-shadow:0 8px 24px rgba(0,0,0,.35);
+}
+.section-header{ display:flex; align-items:center; gap:14px; margin-bottom:18px; flex-wrap:wrap; }
+.section-header h2{ font-size:1.35rem; font-weight:800; color:#F1F5F9; letter-spacing:.2px; }
+.icon-circle{
+  width:48px; height:48px; border-radius:50%; display:flex; align-items:center;
+  justify-content:center; font-size:1.3rem; background:rgba(249,115,22,.15);
+  border:1px solid rgba(249,115,22,.4); flex-shrink:0;
+}
+.highlight{
+  display:inline-block; margin-left:10px; padding:2px 12px; border-radius:999px;
+  background:rgba(249,115,22,.15); color:#FDBA74; font-size:.78em; font-weight:600;
+}
+.card{ background:var(--bloco); border:1px solid var(--borda); border-radius:10px; padding:18px; margin-bottom:14px; }
+.card-accent-cyan{ border-left:4px solid var(--ciano); }
+
+/* Aspas e citações: cor de destaque */
+.citacao{ color:#FDBA74; font-weight:600; }
+em{ color:#FDBA74; font-style:italic; }
+.quote-block{
+  border-left:4px solid var(--acento); background:rgba(249,115,22,.08);
+  padding:14px 18px; border-radius:8px; margin:14px 0; color:#FDBA74; font-style:italic;
+}
+.quote-author{ display:block; margin-top:6px; font-style:normal; font-size:.85rem; color:var(--muted); }
+.example-box{ background:rgba(34,211,238,.06); border:1px solid rgba(34,211,238,.25); border-radius:10px; padding:14px 16px; margin:14px 0; }
+.example-label{ font-size:.72rem; text-transform:uppercase; letter-spacing:1px; color:var(--ciano); font-weight:700; margin-bottom:6px; }
+.example-text{ color:#67E8F9; font-weight:500; }
+.example-result{ margin-top:8px; font-weight:700; font-size:.9rem; }
+.res-V{ color:#4ADE80; } .res-F{ color:#F87171; }
+
+.symbol{ font-family:'Cambria Math','STIX Two Math',Cambria,serif; color:#67E8F9; font-size:1.05rem; }
+.blk{ background:var(--bloco); border:1px solid var(--borda); border-radius:10px; padding:14px 16px; margin-bottom:12px; }
+.blk--definicao{ border-left:3px solid var(--ciano); }
+.hl{ color:#FDBA74; }
+.bizu-box{ display:flex; gap:12px; align-items:flex-start; background:rgba(249,115,22,.1); border-left:4px solid var(--acento); padding:12px 14px; border-radius:8px; margin-top:14px; }
+.bizu-icon{ font-size:1.2rem; }
+.macete-box{ background:var(--bloco); border:1px solid var(--borda); border-radius:10px; padding:16px; }
+.macete-titulo{ font-weight:800; color:#FDBA74; margin-bottom:10px; }
+.macete-regra{ font-family:'Cambria Math',serif; color:#67E8F9; padding:6px 10px; margin:4px 0; border-radius:6px; background:rgba(34,211,238,.06); }
+.macete-exemplo{ margin-top:12px; color:var(--muted); }
+
+table{ width:100%; border-collapse:collapse; }
+.table-wrap{ overflow-x:auto; border-radius:10px; border:1px solid var(--borda); }
+.truth-table th{ background:#1E293B; color:#F1F5F9; padding:10px 12px; text-align:left; font-size:.85rem; text-transform:uppercase; letter-spacing:.5px; }
+.truth-table td{ padding:10px 12px; border-top:1px solid var(--borda); color:var(--texto); }
+.truth-table tr:hover td{ background:rgba(249,115,22,.05); }
+
+.step-list{ display:flex; flex-direction:column; gap:12px; }
+.step-item{ display:flex; gap:14px; background:var(--bloco); border:1px solid var(--borda); border-radius:10px; padding:14px; }
+.step-number{ width:34px; height:34px; border-radius:50%; background:var(--acento); color:#111827; font-weight:800; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+.step-content h4{ color:#F1F5F9; margin-bottom:4px; }
+
+.master-list{ list-style:none; display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:10px; margin:12px 0; }
+.master-list li{ display:flex; align-items:center; gap:10px; background:var(--bloco); border:1px solid var(--borda); padding:10px 12px; border-radius:8px; }
+.master-list .num{ width:26px; height:26px; border-radius:50%; background:rgba(249,115,22,.2); color:#FDBA74; font-weight:700; display:inline-flex; align-items:center; justify-content:center; font-size:.85rem; flex-shrink:0; }
+
+.logic-lab{ background:var(--bloco); border:1px solid var(--borda); border-radius:12px; padding:18px; }
+.logic-lab h3{ color:#F1F5F9; margin-bottom:6px; }
+.logic-inputs{ display:flex; gap:16px; flex-wrap:wrap; margin:12px 0; }
+.logic-inputs label{ display:flex; gap:8px; align-items:center; color:var(--texto); }
+.logic-inputs select{ background:#1E293B; color:#F1F5F9; border:1px solid #334155; border-radius:6px; padding:6px 10px; }
+.logic-results{ display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+.logic-results > div{ background:#1E293B; border-radius:10px; padding:12px; display:flex; flex-direction:column; gap:4px; }
+.logic-results small{ color:var(--muted); }
+.logic-results output{ font-weight:700; color:#4ADE80; }
+
+.bottom-nav{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:24px 0; }
+.bottom-nav a{ background:var(--card); border:1px solid var(--borda); border-radius:10px; padding:14px; color:#F1F5F9; text-decoration:none; font-weight:600; }
+.bottom-nav a:hover{ border-color:var(--acento); }
+.bottom-nav small{ display:block; color:var(--muted); font-weight:400; font-size:.75rem; text-transform:uppercase; letter-spacing:.8px; }
+.bottom-nav .next{ text-align:right; }
+
+@media (max-width:640px){
+  .study-card{ padding:16px; }
+  .section-header h2{ font-size:1.15rem; }
+  .bottom-nav{ grid-template-columns:1fr; }
+}
+</style>
+<style id="cards-coloridos">
+/* ===== CARDS COLORIDOS ===== */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px;margin:18px 0}
+.kcard{border-radius:16px;padding:20px;color:#F8FAFC;box-shadow:0 10px 30px rgba(0,0,0,.4);position:relative;overflow:hidden}
+.kcard::after{content:"";position:absolute;right:-40px;top:-40px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,.12)}
+.kcard h3{font-size:1.2rem;font-weight:800;margin-bottom:6px}
+.kcard .tag{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;background:rgba(0,0,0,.25);padding:3px 10px;border-radius:999px;margin-bottom:8px}
+.kcard .formula{background:rgba(0,0,0,.3);border-radius:10px;padding:10px 12px;font-family:'Cambria Math','STIX Two Math',serif;font-size:1.05rem;margin:8px 0;color:#FFFFFF}
+.kcard p{margin:6px 0;font-size:.95rem}
+.kcard .mini{background:rgba(255,255,255,.14);border-radius:10px;padding:10px 12px;margin-top:10px;font-size:.92rem}
+.kcard .warn{background:rgba(0,0,0,.35);border-left:4px solid #FDE047;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:.9rem}
+.kcard .big{font-size:1.25rem;font-weight:800;letter-spacing:.5px;margin:10px 0;text-shadow:0 2px 6px rgba(0,0,0,.3)}
+.kcard .frase{font-style:italic;font-weight:600;border-left:4px solid rgba(255,255,255,.6);padding-left:10px;margin:10px 0}
+.kcard table{background:rgba(0,0,0,.25);border-radius:8px;overflow:hidden;font-size:.88rem}
+.kcard th{background:rgba(0,0,0,.35);padding:6px;text-align:center}
+.kcard td{padding:6px;text-align:center;border-top:1px solid rgba(255,255,255,.15)}
+.kcard.laranja{background:linear-gradient(135deg,#F97316,#DC2626)}
+.kcard.ciano{background:linear-gradient(135deg,#06B6D4,#2563EB)}
+.kcard.violeta{background:linear-gradient(135deg,#A855F7,#EC4899)}
+.kcard.verde{background:linear-gradient(135deg,#22C55E,#0D9488)}
+.kcard.dourado{background:linear-gradient(135deg,#EAB308,#F59E0B)}
+.kcard details{margin-top:10px}
+.kcard summary{cursor:pointer;font-weight:700;background:rgba(0,0,0,.3);padding:8px 12px;border-radius:8px}
+.kcard .resp{background:rgba(255,255,255,.14);border-radius:8px;padding:10px 12px;margin-top:8px;font-size:.92rem}
+.kcard .opcoes{font-size:.88rem;margin-top:8px;line-height:1.7}
+</style>
+<style id="cores-extras">
+/* ===== CORES EXTRAS · conteúdo colado (macetes, OU exclusivo, quantificadores, kit, negações) ===== */
+:root{
+  --k1:#F97316; --k2:#22D3EE; --k3:#A855F7; --k4:#22C55E;
+  --k5:#EC4899; --k6:#EAB308; --k7:#EF4444; --k8:#3B82F6;
+  --fundo:#0B1120;
+}
+
+/* --- cor de cada seção --- */
+.prose .study-card{ --sc:var(--k1); border-top:3px solid var(--sc);
+  background:linear-gradient(180deg,color-mix(in srgb,var(--sc) 9%,#0F172A),#0F172A 220px); }
+#equivalencia{--sc:var(--k2)} #macetes{--sc:var(--k1)} #bicondicional{--sc:var(--k4)}
+#classificacao{--sc:var(--k3)} #resumo{--sc:var(--k6)} #explorador{--sc:var(--k5)} #kit{--sc:var(--k1)}
+#proposicao{--sc:var(--k8)} #negacao{--sc:var(--k7)} #simples{--sc:var(--k4)} #quantificadores{--sc:var(--k3)}
+#conectivos{--sc:var(--k1)} #condicional{--sc:var(--k2)} #desigualdades{--sc:var(--k6)}
+#estudar{--sc:var(--k4)} #dominar{--sc:var(--k5)} #cards-assuntos{--sc:var(--k3)}
+.study-card .icon-circle{ background:color-mix(in srgb,var(--sc) 24%,transparent); border-color:var(--sc);
+  box-shadow:0 0 0 5px color-mix(in srgb,var(--sc) 12%,transparent); }
+.study-card .section-header h2{ color:#fff; }
+.study-card .highlight{ background:color-mix(in srgb,var(--sc) 22%,transparent);
+  color:color-mix(in srgb,var(--sc) 55%,#fff); border:1px solid color-mix(in srgb,var(--sc) 45%,transparent); }
+
+/* --- definições do topo --- */
+.blk--definicao{ --bc:var(--k2); border-color:color-mix(in srgb,var(--bc) 40%,transparent); border-left:4px solid var(--bc);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--bc) 14%,var(--fundo)),var(--fundo)); }
+.blk--definicao:nth-child(2){--bc:var(--k4)} .blk--definicao:nth-child(3){--bc:var(--k3)} .blk--definicao:nth-child(4){--bc:var(--k1)}
+.blk--definicao h3{ color:color-mix(in srgb,var(--bc) 55%,#fff); margin-bottom:8px; }
+.blk .symbol{ background:color-mix(in srgb,var(--bc,var(--k2)) 20%,transparent); color:#fff;
+  padding:3px 10px; border-radius:8px; margin:3px 0; }
+p.symbol{ display:inline-block; font-weight:700; }
+
+/* --- cartões .card com acento (usados nos quantificadores etc.) --- */
+.prose .card[class*="card-accent-"]{ --ca:var(--k2); border:1px solid color-mix(in srgb,var(--ca) 40%,transparent);
+  border-left:5px solid var(--ca);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--ca) 14%,var(--fundo)),var(--fundo) 75%); }
+.prose .card.card-accent-blue{--ca:var(--k8)} .prose .card.card-accent-green{--ca:var(--k4)} .prose .card.card-accent-red{--ca:var(--k7)}
+.prose .card.card-accent-yellow{--ca:var(--k6)} .prose .card.card-accent-purple{--ca:var(--k3)} .prose .card.card-accent-orange{--ca:var(--k1)} .prose .card.card-accent-cyan{--ca:var(--k2)}
+.card[class*="card-accent-"] > h3{ color:color-mix(in srgb,var(--ca) 55%,#fff); margin-bottom:10px; font-size:1.15rem; }
+.card[class*="card-accent-"]{ --b:var(--ca); }
+.card .example-box{ background:color-mix(in srgb,var(--ca,var(--k2)) 9%,transparent); border-color:color-mix(in srgb,var(--ca,var(--k2)) 40%,transparent); }
+.card .example-label{ color:color-mix(in srgb,var(--ca,var(--k2)) 60%,#fff); }
+.card .example-text{ color:color-mix(in srgb,var(--ca,var(--k2)) 35%,#fff); }
+.card .quote-block{ border-left-color:var(--ca,var(--k1)); background:color-mix(in srgb,var(--ca,var(--k1)) 12%,transparent); }
+.formula-box{ display:block; margin:12px 0; padding:12px 16px; border-radius:12px; text-align:center;
+  font-family:'Cambria Math','STIX Two Math',Cambria,serif; font-size:1.2rem; font-weight:800; color:#fff;
+  background:color-mix(in srgb,var(--ca,var(--k2)) 26%,var(--fundo)); border:1px solid color-mix(in srgb,var(--ca,var(--k2)) 70%,transparent); }
+.formula-label{ display:block; margin-bottom:4px; font-family:'Segoe UI',system-ui,sans-serif; font-size:.7rem; font-weight:800;
+  letter-spacing:1px; text-transform:uppercase; color:color-mix(in srgb,var(--ca,var(--k2)) 55%,#fff); }
+.bizu-box{ border-left:4px solid var(--k6); background:linear-gradient(90deg,rgba(234,179,8,.18),rgba(249,115,22,.06)); }
+.bizu-text strong{ color:#FDE047; }
+.alert-box{ display:flex; gap:12px; align-items:flex-start; margin-top:14px; padding:12px 14px; border-radius:10px;
+  background:rgba(239,68,68,.13); border:1px solid rgba(239,68,68,.45); border-left:4px solid var(--k7); }
+.alert-text strong{ color:#FCA5A5; }
+
+/* --- artigos colados (macetes, OU exclusivo) e cards do kit --- */
+.prose article.art, .equivalence-card{ --a:var(--k1); position:relative; overflow:hidden; margin:22px 0; padding:22px; border-radius:18px;
+  border:1px solid color-mix(in srgb,var(--a) 50%,transparent);
+  background:linear-gradient(160deg,color-mix(in srgb,var(--a) 18%,var(--fundo)),var(--fundo) 60%);
+  box-shadow:0 12px 32px rgba(0,0,0,.4),inset 0 4px 0 var(--a); --b:var(--a); }
+.art.a1{--a:var(--k1)} .art.a2{--a:var(--k2)} .art.a3{--a:var(--k3)} .art.a4{--a:var(--k5)}
+.eq-condicional{--a:var(--k1)} .eq-contrapositiva{--a:var(--k2)} .eq-bicondicional{--a:var(--k4)} .eq-excludente{--a:var(--k5)}
+.equivalence-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; margin-top:16px; }
+.equivalence-grid .equivalence-card{ margin:0; }
+.equivalence-card .bx, .equivalence-card .stp{ --b:var(--a); }
+.equivalence-card > .ln:empty{ display:none; }
+.prose article.art h3, .equivalence-card h3{ color:#fff; font-size:1.2rem; margin:2px 0 0; }
+
+/* --- blocos gerados da marcação sem classe --- */
+.hdr{ display:flex; align-items:center; gap:14px; margin-bottom:14px; }
+.hdr > .emo{ flex:none; width:54px; height:54px; display:flex; align-items:center; justify-content:center; font-size:1.7rem;
+  border-radius:16px; background:color-mix(in srgb,var(--a,var(--sc)) 28%,transparent); border:1px solid color-mix(in srgb,var(--a,var(--sc)) 65%,transparent); }
+.hdr > .bx{ flex:1; margin:0; }
+.hbox{ min-width:0; }
+.hbox > .lbl{ margin-bottom:2px; }
+.bx{ --b:var(--k1); margin:14px 0; padding:14px 16px 14px 18px; border-radius:12px;
+  border:1px solid color-mix(in srgb,var(--b) 38%,transparent); border-left:5px solid var(--b);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--b) 15%,var(--fundo)),color-mix(in srgb,var(--b) 4%,var(--fundo))); }
+.bx p{ margin:6px 0; }
+.bx strong{ color:color-mix(in srgb,var(--b) 40%,#fff); }
+.lbl{ display:inline-block; margin-bottom:8px; padding:3px 11px; border-radius:999px; font-size:.72rem; font-weight:800;
+  letter-spacing:1px; text-transform:uppercase; color:#0B1120; background:var(--b,var(--a,var(--sc,var(--k1)))); }
+.fml, .prose code{ display:block; margin:8px 0; padding:10px 14px; border-radius:10px; text-align:center;
+  font-family:'Cambria Math','STIX Two Math',Cambria,'DejaVu Sans',serif; font-size:1.25rem; font-weight:800; color:#fff;
+  background:color-mix(in srgb,var(--b,var(--k2)) 28%,var(--fundo)); border:1px dashed color-mix(in srgb,var(--b,var(--k2)) 75%,transparent); }
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:6px 0; }
+.chips > span:not([class]), .itm span:not([class]), .bx > span:not([class]){ display:inline-block; padding:2px 10px; border-radius:8px; font-weight:800;
+  background:color-mix(in srgb,var(--b,var(--k1)) 85%,#fff 0%); color:#0B1120; }
+.emo{ font-size:1.5rem; line-height:1.2; }
+.arw{ text-align:center; font-size:1.3rem; line-height:1; margin:4px 0; color:var(--b,var(--a,var(--sc))); }
+.cap{ font-weight:800; letter-spacing:.5px; color:color-mix(in srgb,var(--b,var(--k1)) 50%,#fff); }
+.sig{ display:inline-block; font-weight:900; font-size:1.1rem; padding:1px 12px; border-radius:8px; background:var(--b,var(--k1)); color:#0B1120; }
+.vv{ margin:6px 0; padding:8px 14px; border-radius:10px; font-weight:900; letter-spacing:.5px; color:#BBF7D0;
+  background:rgba(34,197,94,.2); border:1px solid #22C55E; }
+.vf{ margin:6px 0; padding:8px 14px; border-radius:10px; font-weight:900; letter-spacing:.5px; color:#FECACA;
+  background:rgba(239,68,68,.2); border:1px solid #EF4444; }
+.tv{ color:#4ADE80; } .tf{ color:#F87171; }
+td.tv, td.tf{ text-align:center; font-weight:900; }
+.table-wrap table td.tv, .truth-table td.tv{ background:rgba(34,197,94,.14); }
+.table-wrap table td.tf, .truth-table td.tf{ background:rgba(239,68,68,.14); }
+.stp{ display:flex; gap:12px; align-items:flex-start; margin:10px 0; padding:12px 14px; border-radius:12px;
+  background:color-mix(in srgb,var(--b) 12%,var(--fundo)); border:1px solid color-mix(in srgb,var(--b) 45%,transparent); }
+.stp > span:first-child{ flex:none; width:32px; height:32px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-weight:900; background:var(--b); color:#0B1120; }
+.grp{ display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; margin:12px 0; }
+.itm{ --b:var(--k1); padding:12px 14px; border-radius:12px; font-weight:700; color:#fff;
+  background:linear-gradient(145deg,color-mix(in srgb,var(--b) 26%,var(--fundo)),color-mix(in srgb,var(--b) 8%,var(--fundo)));
+  border:1px solid color-mix(in srgb,var(--b) 60%,transparent); }
+.itm.qc{ text-align:center; display:flex; flex-direction:column; align-items:center; gap:8px; }
+.itm.qc .emo{ font-size:2rem; }
+.itm.qc .cap{ font-size:1.05rem; }
+.itm.qc .sig{ font-size:1.4rem; }
+.itm.qc .chips{ justify-content:center; }
+.itm.qc .ln{ font-weight:500; font-size:.92rem; color:#E2E8F0; }
+.itm .cap{ display:inline-block; padding:3px 10px; border-radius:999px; background:color-mix(in srgb,var(--b) 30%,transparent); }
+.itm .ln{ font-weight:500; }
+.itm > .arw{ margin:2px 0; }
+.ln:empty{ display:none; }
+
+/* --- tabelas sem classe --- */
+.prose .table-wrap table th{ padding:10px 12px; text-align:center; font-size:.82rem; letter-spacing:.5px; text-transform:uppercase;
+  color:#fff; background:linear-gradient(90deg,color-mix(in srgb,var(--sc,var(--k3)) 55%,#1E293B),#1E293B); }
+.prose .table-wrap table td{ padding:10px 12px; border-top:1px solid #1E293B; }
+.prose .table-wrap tbody tr:nth-child(even) td{ background-color:rgba(255,255,255,.035); }
+.prose .table-wrap tbody tr:hover td{ background-color:color-mix(in srgb,var(--sc,var(--k1)) 12%,transparent); }
+.summary-table td:first-child strong{ color:#FDBA74; }
+.summary-table td:nth-child(2) span{ display:inline-block; padding:2px 10px; border-radius:8px; background:rgba(34,211,238,.16); color:#67E8F9;
+  font-family:'Cambria Math','STIX Two Math',serif; font-weight:700; }
+.summary-table td:nth-child(3) strong{ color:#86EFAC; }
+.table-wrap td:first-child{ font-weight:700; }
+
+/* --- negações (cartões neg-*) --- */
+.neg-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin:14px 0; }
+.neg-card{ display:flex; flex-direction:column; gap:6px; padding:14px; border-radius:12px; text-align:center;
+  background:color-mix(in srgb,var(--ca,var(--k1)) 8%,var(--fundo)); border:1px solid color-mix(in srgb,var(--ca,var(--k1)) 45%,transparent); }
+.neg-original{ padding:8px 10px; border-radius:8px; font-weight:700; color:#86EFAC; background:rgba(34,197,94,.14); border:1px solid rgba(34,197,94,.4); }
+.neg-seta{ font-size:1.2rem; line-height:1; color:var(--ca,var(--k1)); }
+.neg-negada{ padding:8px 10px; border-radius:8px; font-weight:700; color:#FCA5A5; background:rgba(239,68,68,.14); border:1px solid rgba(239,68,68,.4); }
+.neg-macete{ margin-top:4px; padding:4px 10px; align-self:center; border-radius:999px; font-size:.78rem; font-weight:900; letter-spacing:.6px;
+  color:#0B1120; background:var(--ca,var(--k1)); }
+
+/* --- questões de fixação --- */
+.quiz-question{ margin:18px 0; padding:18px; border-radius:16px; --b:var(--k3);
+  background:linear-gradient(135deg,rgba(168,85,247,.2),rgba(236,72,153,.08)); border:1px solid rgba(168,85,247,.5); }
+.quiz-question > p{ margin:6px 0 12px; }
+.quiz-option{ display:flex; gap:10px; align-items:flex-start; margin:8px 0; padding:10px 12px; border-radius:10px; cursor:pointer;
+  background:var(--fundo); border:1px solid #334155; transition:.15s; }
+.quiz-option:hover{ border-color:var(--k5); background:rgba(236,72,153,.08); }
+.quiz-option:has(input:checked){ border-color:var(--k2); background:rgba(34,211,238,.12); box-shadow:0 0 0 2px rgba(34,211,238,.25); }
+.quiz-option strong{ flex:none; min-width:26px; color:#FDE047; }
+.quiz-option.correct, .quiz-option.is-correct, .quiz-option.certa{ border-color:#22C55E; background:rgba(34,197,94,.16); }
+.quiz-option.wrong, .quiz-option.is-wrong, .quiz-option.errada{ border-color:#EF4444; background:rgba(239,68,68,.16); }
+.quiz-feedback:not(:empty){ margin-top:10px; padding:10px 14px; border-radius:8px; background:rgba(234,179,8,.14); border-left:4px solid var(--k6); color:#FEF08A; font-weight:600; }
+.result-V, .val-V{ color:#4ADE80; font-weight:800; } .result-F, .val-F{ color:#F87171; font-weight:800; }
+
+/* --- laboratório interativo --- */
+.logic-lab{ border-color:color-mix(in srgb,var(--k5) 50%,transparent); background:linear-gradient(135deg,rgba(236,72,153,.12),var(--fundo)); }
+.logic-results > div:nth-child(1){ background:linear-gradient(135deg,rgba(249,115,22,.28),#1E293B); }
+.logic-results > div:nth-child(2){ background:linear-gradient(135deg,rgba(34,211,238,.26),#1E293B); }
+.logic-results > div:nth-child(3){ background:linear-gradient(135deg,rgba(168,85,247,.28),#1E293B); }
+.logic-results > div:nth-child(4){ background:linear-gradient(135deg,rgba(239,68,68,.26),#1E293B); }
+
+/* --- listas e passos já existentes, agora coloridos --- */
+.step-item:nth-child(5n+1) .step-number{background:var(--k1)} .step-item:nth-child(5n+2) .step-number{background:var(--k2)}
+.step-item:nth-child(5n+3) .step-number{background:var(--k3)} .step-item:nth-child(5n+4) .step-number{background:var(--k4)}
+.step-item:nth-child(5n+5) .step-number{background:var(--k5)}
+.step-item:nth-child(5n+1){border-color:rgba(249,115,22,.5)} .step-item:nth-child(5n+2){border-color:rgba(34,211,238,.5)}
+.step-item:nth-child(5n+3){border-color:rgba(168,85,247,.5)} .step-item:nth-child(5n+4){border-color:rgba(34,197,94,.5)}
+.step-item:nth-child(5n+5){border-color:rgba(236,72,153,.5)}
+.master-list li:nth-child(5n+1) .num{background:var(--k1);color:#0B1120} .master-list li:nth-child(5n+2) .num{background:var(--k2);color:#0B1120}
+.master-list li:nth-child(5n+3) .num{background:var(--k3);color:#0B1120} .master-list li:nth-child(5n+4) .num{background:var(--k4);color:#0B1120}
+.master-list li:nth-child(5n+5) .num{background:var(--k5);color:#0B1120}
+.macete-regra:nth-of-type(5n+1){background:rgba(249,115,22,.14)} .macete-regra:nth-of-type(5n+2){background:rgba(34,211,238,.14)}
+.macete-regra:nth-of-type(5n+3){background:rgba(168,85,247,.16)} .macete-regra:nth-of-type(5n+4){background:rgba(34,197,94,.14)}
+.macete-regra:nth-of-type(5n+5){background:rgba(236,72,153,.14)}
+.prose strong{ color:#fff; }
+.material-github > h2{ color:#fff; }
+@media (max-width:640px){ .prose article.art, .equivalence-card{ padding:16px; } .hdr > .emo{ width:44px; height:44px; } }
+
+/* cores dos blocos (devem vir por último) */
+.prose .c1{--b:var(--k1)} .prose .c2{--b:var(--k2)} .prose .c3{--b:var(--k3)} .prose .c4{--b:var(--k4)}
+.prose .c5{--b:var(--k5)} .prose .c6{--b:var(--k6)} .prose .c7{--b:var(--k7)} .prose .c8{--b:var(--k8)}
+.prose .equivalence-card .bx, .prose .equivalence-card .stp{ --b:var(--a); }
+.prose strong.tv, .prose .bx strong.tv, .prose td.tv{ color:#4ADE80; }
+.prose strong.tf, .prose .bx strong.tf, .prose td.tf{ color:#F87171; }
+
+.pair{ --b:var(--k1); display:flex; flex-direction:column; align-items:center; gap:6px; padding:14px; border-radius:12px; text-align:center;
+  background:color-mix(in srgb,var(--b) 10%,var(--fundo)); border:1px solid color-mix(in srgb,var(--b) 50%,transparent); }
+.pair > .ln:nth-child(1){ padding:6px 12px; border-radius:8px; font-weight:700; color:#86EFAC; background:rgba(34,197,94,.14); border:1px solid rgba(34,197,94,.4); }
+.pair > .ln:nth-child(3){ padding:6px 12px; border-radius:8px; font-weight:700; color:#FCA5A5; background:rgba(239,68,68,.14); border:1px solid rgba(239,68,68,.4); }
+.pair > .cap, .pair > .sig{ padding:3px 12px; border-radius:999px; background:var(--b); color:#0B1120; font-size:.82rem; }
+.pair > .sig{ font-size:1.2rem; }
+.pair > .arw{ color:var(--b); }
+@media (max-width:820px){ .equivalence-grid{ grid-template-columns:1fr; } }
+
+.pair > .chips{ justify-content:center; margin:0; }
+.pair > .chips:nth-child(1){ padding:6px 12px; border-radius:8px; color:#86EFAC; background:rgba(34,197,94,.14); border:1px solid rgba(34,197,94,.4); }
+.pair > .chips:nth-child(3){ padding:6px 12px; border-radius:8px; color:#FCA5A5; background:rgba(239,68,68,.14); border:1px solid rgba(239,68,68,.4); }
+.prose .study-card .card.card-accent-cyan:nth-of-type(even){ --ca:var(--sc); }
+.prose .study-card .card.card-accent-cyan:nth-of-type(3n){ --ca:var(--k5); }
+</style>
+
+<style id="camada-colorida">
+/* ===== camada colorida: parágrafos, exemplos e destaques ===== */
+:root{--rl-cyan:#22D3EE;--rl-orange:#FB923C;--rl-pink:#F472B6;--rl-red:#F87171;--rl-purple:#A78BFA;--rl-green:#4ADE80;--rl-yellow:#FBBF24;--rl-blue:#60A5FA;--rl-teal:#2DD4BF;}
+.prose .card.card-accent-cyan{--ca2:var(--rl-blue);}
+.prose .card.card-accent-orange{--ca2:var(--rl-yellow);}
+.prose .card.card-accent-pink{--ca2:var(--rl-purple);}
+.prose .card.card-accent-red{--ca2:var(--rl-orange);}
+.prose .card.card-accent-purple{--ca2:var(--rl-pink);}
+.prose .card.card-accent-green{--ca2:var(--rl-teal);}
+.prose .card.card-accent-yellow{--ca2:var(--rl-orange);}
+.prose .card.card-accent-blue{--ca2:var(--rl-cyan);}
+.prose .card.card-accent-teal{--ca2:var(--rl-green);}
+
+/* ---------- parágrafos coloridos ---------- */
+.prose .card > p, .prose .study-card > p, .prose .section > p, .prose .step-content > p, .prose .blk > p, .prose .arg-card > p{
+  --pc:var(--ca,var(--sc,var(--rl-cyan))); margin:12px 0; padding:12px 16px 12px 18px; border-radius:12px;
+  font-size:1.02rem; line-height:1.8; text-wrap:pretty;
+  background:rgba(255,255,255,.04);
+  background:linear-gradient(90deg,color-mix(in srgb,var(--pc) 16%,transparent),color-mix(in srgb,var(--pc) 3%,transparent));
+  border-left:4px solid var(--pc);
+  color:#E5EAF5; color:color-mix(in srgb,var(--pc) 22%,#EEF2FF);
+}
+.prose .card > p:nth-of-type(even), .prose .study-card > p:nth-of-type(even), .prose .section > p:nth-of-type(even){
+  --pc:var(--ca2,var(--rl-pink));
+}
+.prose .card > p strong, .prose .study-card > p strong, .prose .section > p strong, .prose .step-content > p strong, .prose .arg-card > p strong{
+  color:#fff; color:color-mix(in srgb,var(--pc) 55%,#fff);
+}
+.prose .card > p em, .prose .study-card > p em{ color:#FDE68A; font-style:italic; }
+
+/* ---------- exemplos coloridos ---------- */
+.prose .example-box{
+  --ex:var(--ca,var(--sc,var(--rl-cyan))); position:relative; margin:16px 0; padding:14px 18px 16px; border-radius:14px;
+  background:rgba(255,255,255,.05);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--ex) 22%,#0B1120),color-mix(in srgb,var(--ex) 6%,#0B1120) 80%);
+  border:1px solid rgba(255,255,255,.14); border:1px solid color-mix(in srgb,var(--ex) 55%,transparent);
+  box-shadow:0 8px 22px rgba(0,0,0,.3), inset 0 3px 0 var(--ex);
+}
+.prose .example-box ~ .example-box{ --ex:var(--ca2,var(--rl-pink)); }
+.prose .example-box ~ .example-box ~ .example-box{ --ex:var(--rl-green); }
+.prose .example-box ~ .example-box ~ .example-box ~ .example-box{ --ex:var(--rl-yellow); }
+.prose .example-box ~ .example-box ~ .example-box ~ .example-box ~ .example-box{ --ex:var(--rl-purple); }
+.prose .example-label{
+  display:inline-block; margin:0 0 10px; padding:3px 12px; border-radius:999px;
+  font-size:.78rem; font-weight:800; letter-spacing:.4px; text-transform:none;
+  background:var(--ex); color:#0B1120;
+}
+.prose .example-text{
+  margin:6px 0; padding-left:12px; font-size:1.02rem; line-height:1.7; font-weight:500;
+  color:#F1F5F9; color:color-mix(in srgb,var(--ex) 35%,#fff);
+  border-left:2px dotted rgba(255,255,255,.4); border-left:2px dotted color-mix(in srgb,var(--ex) 70%,transparent);
+}
+.prose .example-text strong{ color:var(--ex); }
+.prose .example-result{ display:inline-block; margin-top:10px; padding:7px 14px; border-radius:10px; font-weight:800; }
+.prose .res-V{ background:rgba(74,222,128,.2); color:#86EFAC; border:1px solid rgba(74,222,128,.5); }
+.prose .res-F{ background:rgba(248,113,113,.2); color:#FCA5A5; border:1px solid rgba(248,113,113,.5); }
+
+/* ---------- destaques ---------- */
+.prose .bizu-box{ background:linear-gradient(90deg,rgba(251,191,36,.2),rgba(251,146,60,.07)); border:1px solid rgba(251,191,36,.45); border-left:5px solid var(--rl-yellow); border-radius:12px; }
+.prose .bizu-box .bizu-text{ color:#FDF1C7; font-size:.98rem; line-height:1.7; }
+.prose .bizu-box .bizu-text strong{ color:#FDE047; }
+.prose .alert-box{ background:linear-gradient(90deg,rgba(248,113,113,.2),rgba(244,114,182,.07)); border:1px solid rgba(248,113,113,.5); border-left:5px solid var(--rl-red); border-radius:12px; }
+.prose .alert-box .alert-text{ color:#FFE0E0; line-height:1.7; }
+.prose .alert-box .alert-text strong{ color:#FCA5A5; }
+.prose .quote-block{ border-left:5px solid var(--ca,var(--rl-orange)); background:rgba(255,255,255,.05);
+  background:color-mix(in srgb,var(--ca,var(--rl-orange)) 14%,transparent);
+  color:#FDE9C8; color:color-mix(in srgb,var(--ca,var(--rl-orange)) 35%,#fff); font-style:italic; font-size:1.05rem; line-height:1.7; border-radius:12px; }
+.prose .quote-author{ color:#CBD5E1; font-style:normal; }
+.prose .formula-box{ background:linear-gradient(135deg,rgba(34,211,238,.18),rgba(167,139,250,.18)); border:1px dashed rgba(34,211,238,.7); color:#fff; border-radius:12px; }
+.prose .formula-label{ color:#67E8F9; }
+.prose .card h3{ color:#fff; color:color-mix(in srgb,var(--ca,var(--rl-cyan)) 60%,#fff); }
+
+/* ---------- listas de passos e macetes ---------- */
+.prose .step-item:nth-child(6n+1) .step-number{ background:var(--rl-cyan); color:#0B1120; }
+.prose .step-item:nth-child(6n+2) .step-number{ background:var(--rl-orange); color:#0B1120; }
+.prose .step-item:nth-child(6n+3) .step-number{ background:var(--rl-pink); color:#0B1120; }
+.prose .step-item:nth-child(6n+4) .step-number{ background:var(--rl-green); color:#0B1120; }
+.prose .step-item:nth-child(6n+5) .step-number{ background:var(--rl-purple); color:#0B1120; }
+.prose .step-item:nth-child(6n+6) .step-number{ background:var(--rl-yellow); color:#0B1120; }
+.prose .macete-regra:nth-of-type(5n+1){ background:rgba(251,146,60,.16); color:#FED7AA; }
+.prose .macete-regra:nth-of-type(5n+2){ background:rgba(34,211,238,.16); color:#A5F3FC; }
+.prose .macete-regra:nth-of-type(5n+3){ background:rgba(167,139,250,.18); color:#DDD6FE; }
+.prose .macete-regra:nth-of-type(5n+4){ background:rgba(74,222,128,.16); color:#BBF7D0; }
+.prose .macete-regra:nth-of-type(5n+5){ background:rgba(244,114,182,.16); color:#FBCFE8; }
+.prose .macete-regra{ padding:6px 12px; border-radius:8px; }
+.prose .macete-exemplo{ color:#E2E8F0; }
+
+/* ---------- tabelas ---------- */
+.prose .truth-table th, .prose .summary-table th{ color:#fff; background:linear-gradient(90deg,var(--ca,var(--sc,var(--rl-cyan))),#1E293B); text-shadow:0 1px 2px rgba(0,0,0,.45); }
+.prose .truth-table tbody tr:nth-child(even) td, .prose .summary-table tbody tr:nth-child(even) td{ background:rgba(255,255,255,.04); }
+.prose .val-V, .prose .result-V{ color:#4ADE80; font-weight:800; }
+.prose .val-F, .prose .result-F{ color:#F87171; font-weight:800; }
+
+/* ---------- ajustes extras desta página ---------- */
+.prose .bx > p{ color:#EEF2FF; color:color-mix(in srgb,var(--b) 22%,#F1F5F9); font-size:1.02rem; line-height:1.8; }
+.prose .bx > p strong{ color:#fff; color:color-mix(in srgb,var(--b) 50%,#fff); }
+.prose .ln{ color:#EEF2FF; color:color-mix(in srgb,var(--b,var(--a,var(--sc))) 20%,#F1F5F9); line-height:1.7; }
+.prose .itm .ln, .prose .itm.qc .ln{ color:#F1F5F9; }
+.prose .study-card .card > p:nth-of-type(even){ --pc:var(--ca2,var(--rl-pink)); }
+.prose .quiz-question > p{ background:none; border:0; padding:0; color:#F5F3FF; font-weight:600; }
+.prose .step-content > p, .prose .stp p{ background:none; border:0; padding:0; }
+</style>
+</head>
+<body class="tema-biblioteca" data-disciplina-acervo="raciocinio-logico" data-discipline="raciocinio-logico">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a>
+<button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button>
+<nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a href="../direito-constitucional/index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal Militar</a><a aria-current="page" href="index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
+<div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
+<main id="conteudo">
+<nav aria-label="Trilha" class="breadcrumbs">
+<a href="../../../index.html">Biblioteca</a> / <a href="index.html">Raciocínio Lógico</a> / Equivalências e negações
+      </nav>
+<header class="reader-header">
+<a class="chip" href="index.html">Raciocínio Lógico</a>
+<h1>Equivalências e negações</h1>
+<p class="muted">Assunto 2 de 6 · 1 blocos de estudo</p>
+<div class="reader-actions">
+<button aria-pressed="false" data-key="assets/materias/raciocinio-logico/equivalencias-e-negacoes.html" id="concluir" type="button">Marcar como estudado</button>
+<button id="imprimir" type="button">Imprimir</button>
+<span class="status" id="salvamento"></span>
+</div>
+</header>
+<div class="reader-layout" style="grid-template-columns:minmax(0,1fr)">
+<article class="prose">
+<div class="study-card" data-study-kind="html">
+<div class="text-section">
+<div>
+<div class="blk blk--definicao">
+<h3 class="c-h5">Condicional</h3>
+<p class="symbol">p → q ≡ ¬p ∨ q</p>
+<p class="symbol">p → q ≡ ¬q → ¬p</p>
+<p>Contrapositiva: troca as proposições de lugar e nega as duas.</p>
+</div>
+<div class="blk blk--definicao">
+<h3 class="c-h5">Bicondicional</h3>
+<p class="symbol">p ↔ q ≡ (p → q) ∧ (q → p)</p>
+<p class="symbol">p ↔ q ≡ (p ∧ q) ∨ (¬p ∧ ¬q)</p>
+</div>
+<div class="blk blk--definicao">
+<h3 class="c-h5">Leis de De Morgan</h3>
+<p class="symbol">¬(p ∧ q) ≡ ¬p ∨ ¬q</p>
+<p class="symbol">¬(p ∨ q) ≡ ¬p ∧ ¬q</p>
+<p>Nega tudo e troca <span class="symbol">∧</span> por <span class="symbol">∨</span>, ou vice-versa.</p>
+</div>
+<div class="blk blk--definicao">
+<h3 class="c-h5">Negações essenciais</h3>
+<p class="symbol">¬(p → q) ≡ p ∧ ¬q</p>
+<p class="symbol">¬(p ↔ q) ≡ p ⊕ q</p>
+<p>Negar <span class="citacao">“se p, então q”</span> resulta em <span class="citacao">“p e não q”</span>.</p>
+</div>
+</div>
+<div class="ln"><strong class="hl">Quantificadores:</strong> negar <span class="citacao">“todo A é B”</span> dá <span class="citacao">“existe pelo menos um A que não é B”</span>. Negar <span class="citacao">“existe A que é B”</span> dá <span class="citacao">“nenhum A é B”</span>.</div>
+</div>
+</div>
+
+<section class="study-card" id="cards-assuntos" data-study-kind="texto">
+<div class="section-header">
+<div class="icon-circle">🌈</div>
+<h2>Resumo visual dos assuntos<span class="highlight">Condicional · Bicondicional · OU exclusivo</span></h2>
+</div>
+<div class="cards-grid">
+
+<div class="kcard laranja">
+<span class="tag">Macetes 01 e 02</span>
+<h3>➡️ Condicional: P → Q</h3>
+<p>A estrela das provas. Duas formas equivalentes:</p>
+<div class="formula">P → Q ≡ ¬P ∨ Q</div>
+<div class="formula">P → Q ≡ ¬Q → ¬P</div>
+<div class="mini"><strong>NE y MA:</strong> nega o primeiro, mantém o segundo e troca SE... ENTÃO por OU.<br>
+<em>"Se estudo, então passo"</em> → <span class="citacao">"Não estudo ou passo."</span></div>
+<div class="mini"><strong>Contrapositiva (NE i NE):</strong> inverte e nega os dois.<br>
+<span class="citacao">"Se não passo, então não estudo."</span></div>
+<div class="warn">⚠️ A recíproca Q → P <strong>NÃO</strong> é equivalente ao original.</div>
+</div>
+
+<div class="kcard ciano">
+<span class="tag">Bicondicional</span>
+<h3>🔁 Igualdade e diferença</h3>
+<div class="formula">P ↔ Q ≡ (P → Q) ∧ (Q → P)</div>
+<p>"P se, e somente se, Q" equivale a <span class="citacao">"Se P então Q E se Q então P"</span>.</p>
+<div class="mini"><strong>Macete:</strong> valores iguais → V<br>V ↔ V = V &nbsp;·&nbsp; F ↔ F = V</div>
+<div class="mini"><em>"Estudo se, e somente se, tenho tempo"</em><br>→ "Se estudo, então tenho tempo E se tenho tempo, então estudo."</div>
+</div>
+
+<div class="kcard violeta">
+<span class="tag">Bizu de prova</span>
+<h3>⚡ OU exclusivo (⊕)</h3>
+<div class="big">DIFERENTES = V &nbsp;|&nbsp; IGUAIS = F</div>
+<div class="frase">“UM OU OUTRO, MAS NÃO OS DOIS.”</div>
+<p><strong>Pistas na questão:</strong> "ou um, ou outro", "mas não os dois", "exclusivamente um".</p>
+<table>
+<tr><th>P</th><th>Q</th><th>P ⊕ Q</th></tr>
+<tr><td class="tv">V</td><td class="tv">V</td><td class="tf">F</td></tr>
+<tr><td class="tv">V</td><td class="tf">F</td><td class="tv">V</td></tr>
+<tr><td class="tf">F</td><td class="tv">V</td><td class="tv">V</td></tr>
+<tr><td class="tf">F</td><td class="tf">F</td><td class="tf">F</td></tr>
+</table>
+<div class="mini"><strong>Não confunda:</strong> OU comum admite os dois verdadeiros; OU exclusivo não.<br>¬(P ↔ Q) ≡ P ⊕ Q</div>
+</div>
+
+<div class="kcard verde">
+<span class="tag">Questão de fixação 01</span>
+<h3>🧪 OU exclusivo — IDECAN</h3>
+<p>P: aprovado na 1ª etapa. Q: aprovado na 2ª etapa. Afirmação: "aprovado na 1ª ou na 2ª, mas não nas duas". Quando <strong>P = V</strong> e <strong>Q = F</strong>?</p>
+<details><summary>Ver resposta</summary>
+<div class="resp"><strong>Alternativa A.</strong> Verdadeira, pois apenas uma das proposições é verdadeira.</div>
+</details>
+</div>
+
+<div class="kcard dourado">
+<span class="tag">Questão de fixação 02</span>
+<h3>🏆 Participar ou fazer, mas não os dois</h3>
+<p>"O servidor realizará o curso ou participará da operação, mas não fará as duas atividades." Sabendo que ele faz <strong>as duas</strong> atividades, a afirmação é:</p>
+<details><summary>Ver resposta</summary>
+<div class="resp"><strong>Alternativa B.</strong> Falsa, pois as duas proposições são verdadeiras (IGUAIS → F).</div>
+</details>
+</div>
+
+</div>
+</section>
+<section class="material-github"><h2>Guia complementar: Equivalencias</h2><p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/raciocinio-logico/pages/equivalencias.html" rel="noopener" target="_blank">Ver fonte no GitHub</a></p>
+<!-- HERO -->
+<!-- SEÇÃO 1: O QUE É EQUIVALÊNCIA -->
+<section class="study-card" data-study-kind="texto" id="equivalencia">
+<div class="section-header">
+<div class="icon-circle">⚖️</div>
+<h2>O que é Equivalência Lógica?<span class="highlight">Mesma lógica, formas diferentes</span></h2>
+</div>
+<div class="card card-accent-cyan">
+<p>Duas proposições são <strong>logicamente equivalentes</strong> quando, <strong>para todas as combinações de valores</strong> das proposições simples, elas apresentam <strong>exatamente o mesmo valor lógico</strong> (V ou F).</p>
+<div class="quote-block">
+                    <span class="citacao">"Equivalência = formas diferentes de representar a mesma lógica."</span>
+                    <span class="quote-author">— Ideia central</span>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text"><span class="citacao">"Se estudo, então passo"</span> ≡ <span class="citacao">"Não estudo ou passo."</span></div>
+<div class="example-result res-V">Mesma tabela-verdade</div>
+</div>
+<p>O símbolo <strong>≡</strong> significa <span class="citacao">"é logicamente equivalente a"</span>.</p>
+</div>
+</section>
+<!-- SEÇÃO 2: CONDICIONAL E SUAS EQUIVALÊNCIAS (MACETES) -->
+<section class="study-card" data-study-kind="texto" id="macetes">
+<!-- Cabeçalho -->
+<div class="section-header">
+<div class="icon-circle">
+                    ➡️
+                </div>
+<h2>
+                    Condicional e suas Equivalências
+                    <span class="highlight">
+                        P → Q: a estrela das provas
+                    </span>
+</h2>
+</div>
+<!-- Introdução -->
+<div class="bx c1">
+<div class="lbl">
+                    🎯 O que você precisa dominar
+                </div>
+<p>
+                    O condicional
+                    <strong>P → Q</strong>
+                    possui formas equivalentes que aparecem constantemente
+                    em provas. Você precisa reconhecer
+                    <strong>
+                        as duas equivalências fundamentais
+                    </strong>
+                    e saber aplicá-las rapidamente.
+                </p>
+</div>
+<!-- MACETE 1 — NE y MA -->
+<article class="art a1">
+<div class="hdr">
+<div class="emo">🔀</div>
+<div class="hbox">
+<div class="lbl">Macete 01</div>
+<h3>Primeira equivalência — NE y MA</h3>
+</div>
+</div>
+<div class="bx c2">
+<div class="lbl">Equivalência fundamental</div>
+<code>P → Q ≡ ¬P ∨ Q</code>
+</div>
+<div class="bx c3">
+<div class="lbl">🧠 Como memorizar</div>
+<p>
+<strong>Regra:</strong>
+                        Nega o primeiro, mantém o segundo e troca
+                        <strong>SE... ENTÃO</strong>
+                        por
+                        <strong>OU</strong>.
+                    </p>
+<span>NE → MA</span>
+</div>
+<div class="bx c4">
+<div class="lbl">Em português</div>
+<p>
+<em><span class="citacao">"Se P, então Q"</span></em>
+                        é equivalente a
+                        <strong><span class="citacao">"Não P ou Q"</span></strong>.
+                    </p>
+</div>
+<div class="grp">
+<div class="bx c1">
+<div class="lbl">Exemplo 01</div>
+<p>
+<strong><span class="citacao">"Se faço atividade física, então emagreço."</span></strong>
+</p>
+<div class="ln">
+                            →
+                            <strong>Se NÃO</strong>
+                            faço atividade física
+                            <strong>ou</strong>
+                            emagreço.
+                        </div>
+</div>
+<div class="bx c2">
+<div class="lbl">Exemplo 02</div>
+<p>
+<strong><span class="citacao">"Se não viajo, então estudo."</span></strong>
+</p>
+<div class="ln">
+                            →
+                            <strong>Se NÃO</strong>
+                            viajo
+                            <strong>ou</strong>
+                            estudo.
+                        </div>
+</div>
+</div>
+</article>
+<br/>
+<br/>
+<!-- MACETE 2 — NE i NE -->
+<article class="art a2">
+<div class="hdr">
+<div class="emo">🔁</div>
+<div class="hbox">
+<div class="lbl">Macete 02</div>
+<h3>Segunda equivalência — NE i NE</h3>
+</div>
+</div>
+<div class="bx c5">
+<div class="lbl">Contrapositiva</div>
+<code>P → Q ≡ ¬Q → ¬P</code>
+</div>
+<div class="bx c6">
+<div class="lbl">🧠 Como memorizar</div>
+<p>
+<strong>Regra:</strong>
+                        inverte a ordem e nega os dois.
+                    </p>
+<span>NE → I → NE</span>
+</div>
+<div class="bx c1">
+<div class="lbl">Em português</div>
+<p>
+<em><span class="citacao">"Se P, então Q"</span></em>
+                        é equivalente a
+                        <strong><span class="citacao">"Se não Q, então não P"</span></strong>.
+                    </p>
+</div>
+<div class="bx c2">
+<div class="lbl">Exemplo</div>
+<p>
+<strong><span class="citacao">"Se estudo, então passo."</span></strong>
+</p>
+<div class="ln">
+                        Contrapositiva →
+                        <strong><span class="citacao">"Se não passo, então não estudo."</span></strong>
+</div>
+</div>
+<div>
+<span>⚠️</span>
+<p>
+<strong>Cuidado:</strong>
+                        a recíproca
+                        <strong>Q → P</strong>
+<strong>NÃO</strong>
+                        é equivalente ao condicional original.
+                        <br/>
+                        Exemplo:
+                        <strong><span class="citacao">"Se passo, então estudo"</span></strong>
+                        não é a mesma coisa.
+                    </p>
+</div>
+</article>
+<!-- MAPA MENTAL -->
+<article class="art a3">
+<div class="hbox">
+<span>🧠</span>
+<h3>Mapa mental do condicional</h3>
+</div>
+<div>
+<div class="fml">P → Q</div>
+<div class="arw">↕</div>
+<div class="grp">
+<div class="grp itm c1">
+<div class="fml itm c1">¬P ∨ Q</div>
+<div class="ln itm c2">NE y MA</div>
+</div>
+<div class="grp itm c2">
+<div class="fml itm c1">¬Q → ¬P</div>
+<div class="ln itm c2">NE i NE</div>
+</div>
+</div>
+</div>
+<p>
+                    As três formas são
+                    <strong>logicamente equivalentes</strong>.
+                </p>
+</article>
+<!-- LEMBRETE FINAL -->
+<div class="hdr">
+<div class="emo">💡</div>
+<div class="bx c3">
+<div class="lbl">Lembrete de prova</div>
+<p>
+                        Decore as duas formas:
+                        <strong>¬P ∨ Q</strong>
+                        e
+                        <strong>¬Q → ¬P</strong>.
+                        <br/>
+                        A primeira é a equivalência com
+                        <strong>OU</strong>;
+                        a segunda é a
+                        <strong>contrapositiva</strong>.
+                    </p>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 6: BICONDICIONAL-->
+<section class="study-card" data-study-kind="texto" id="bicondicional">
+<div class="section-header">
+<div class="icon-circle">🔁</div>
+<h2>Bicondicional<span class="highlight">Igualdade e diferença</span></h2>
+</div>
+<div class="card card-accent-green">
+<h3>Bicondicional (↔)</h3>
+<div class="formula-box">
+<span class="formula-label">Equivalência do bicondicional</span>
+                    P ↔ Q ≡ (P → Q) ∧ (Q → P)
+                </div>
+<p>Em português: <em><span class="citacao">"P se, e somente se, Q"</span></em> é equivalente a <em><span class="citacao">"Se P então Q E se Q então P"</span></em>.</p>
+<div class="bizu-box">
+<span class="bizu-icon">🧠</span>
+<span class="bizu-text"><strong>Macete:</strong> Bicondicional = valores iguais → V. (V↔V = V; F↔F = V)</span>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text"><span class="citacao">"Estudo se, e somente se, tenho tempo"</span></div>
+<p>Equivalente: <strong><span class="citacao">"Se estudo, então tenho tempo E se tenho tempo, então estudo."</span></strong></p>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     MACETE 02 — OU EXCLUSIVO / EXCLUDENTE (⊕)
+     ============================================================ -->
+<article class="art a4">
+<!-- ========================================================
+         CABEÇALHO
+         ======================================================== -->
+<div class="hdr">
+<div class="emo">
+            ⚡
+        </div>
+<div class="hbox">
+<div class="lbl">
+                Bizu de Prova
+            </div>
+<h3>
+                OU Exclusivo — EXCLUDENTE
+            </h3>
+</div>
+</div>
+<!-- ========================================================
+         BIZU PRINCIPAL
+         ======================================================== -->
+<div class="grp">
+<div class="cap itm c1">
+            🧠 MACETE
+        </div>
+<div class="vv itm c2">
+            DIFERENTES = V
+        </div>
+<div class="vf itm c3">
+            IGUAIS = F
+        </div>
+</div>
+<!-- ========================================================
+         FRASE PARA DECORAR
+         ======================================================== -->
+<div class="bx c4">
+<div class="lbl">
+            🎯 Frase para decorar
+        </div>
+<p>
+            <span class="citacao">“UM OU OUTRO, MAS NÃO OS DOIS.”</span>
+        </p>
+<p>
+            Se apenas uma das proposições for verdadeira,
+            o OU exclusivo será verdadeiro.
+        </p>
+</div>
+<!-- ========================================================
+         COMO IDENTIFICAR
+         ======================================================== -->
+<div class="bx c5">
+<div class="lbl">
+            🔎 Como identificar na questão
+        </div>
+<p>
+
+            Procure expressões como:
+
+            <br/><br/>
+<strong>
+                <span class="citacao">“ou um, ou outro”</span>
+            </strong>
+<br/>
+<strong>
+                <span class="citacao">“mas não os dois”</span>
+            </strong>
+<br/>
+<strong>
+                <span class="citacao">“exclusivamente um”</span>
+            </strong>
+<br/>
+<strong>
+                <span class="citacao">“somente uma das opções”</span>
+            </strong>
+</p>
+</div>
+<!-- ========================================================
+         EXEMPLO 01
+         ======================================================== -->
+<div class="bx c6">
+<div class="lbl">
+            Exemplo 01
+        </div>
+<p>
+<strong>
+                <span class="citacao">“João vai ao cinema ou vai ao teatro, mas não aos dois.”</span>
+            </strong>
+</p>
+<div class="ln">
+<strong>
+                Interpretação:
+            </strong>
+
+            João irá a apenas um dos dois lugares.
+
+            <br/><br/>
+<strong class="tv">
+                DIFERENTES → VERDADEIRO
+            </strong>
+<br/>
+<strong class="tf">
+                IGUAIS → FALSO
+            </strong>
+</div>
+</div>
+<!-- ========================================================
+         EXEMPLO 02
+         ======================================================== -->
+<div class="bx c1">
+<div class="lbl">
+            Exemplo 02
+        </div>
+<p>
+<strong>
+                <span class="citacao">“Maria estuda ou trabalha, mas não faz as duas coisas.”</span>
+            </strong>
+</p>
+<div class="ln">
+<strong>
+                Interpretação:
+            </strong>
+
+            Maria fará somente uma das duas atividades.
+
+            <br/><br/>
+<strong class="tv">
+                DIFERENTES → VERDADEIRO
+            </strong>
+<br/>
+<strong class="tf">
+                IGUAIS → FALSO
+            </strong>
+</div>
+</div>
+<!-- ========================================================
+         TABELA-VERDADE
+         ======================================================== -->
+<div class="bx c2">
+<div class="lbl">
+            Tabela-verdade
+        </div>
+<div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>
+                            P
+                        </th>
+<th>
+                            Q
+                        </th>
+<th>
+                            P ⊕ Q
+                        </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tv">V</td>
+<td class="tv">V</td>
+<td class="tf">F</td>
+</tr>
+<tr>
+<td class="tv">V</td>
+<td class="tf">F</td>
+<td class="tv">V</td>
+</tr>
+<tr>
+<td class="tf">F</td>
+<td class="tv">V</td>
+<td class="tv">V</td>
+</tr>
+<tr>
+<td class="tf">F</td>
+<td class="tf">F</td>
+<td class="tf">F</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<!-- ========================================================
+         RELAÇÃO COM BICONDICIONAL
+         ======================================================== -->
+<div class="bx c3">
+<div class="lbl">
+            🔗 Relação com o bicondicional
+        </div>
+<p>
+
+            O bicondicional é verdadeiro quando P e Q têm o mesmo valor.
+            Sua negação representa justamente o caso em que os valores são diferentes.
+
+        </p>
+<div>
+<code>
+                ¬(P ↔ Q) ≡ P ⊕ Q
+            </code>
+</div>
+</div>
+<!-- ========================================================
+         PEGADINHA
+         ======================================================== -->
+<div class="bx c4">
+<div class="lbl">
+            ⚠️ Não confunda
+        </div>
+<p>
+<strong>
+                OU comum:
+            </strong>
+            P ou Q, podendo os dois ser verdadeiros.
+
+            <br/><br/>
+<strong>
+                OU exclusivo:
+            </strong>
+            P ou Q,
+            <strong>
+                mas não os dois.
+            </strong>
+</p>
+</div>
+<!-- ========================================================
+         QUESTÕES INTERATIVAS — MODELO IDECAN
+         ======================================================== -->
+<div id="quizExcludente">
+<div class="hbox">
+<div class="lbl">
+                📝 Questões de fixação
+            </div>
+<h3>
+                OU Exclusivo — Modelo IDECAN
+            </h3>
+<p>
+                Escolha uma alternativa em cada questão e clique em
+                <strong>Responder</strong>.
+            </p>
+</div>
+<!-- ====================================================
+             QUESTÃO 01
+             ==================================================== -->
+<div class="quiz-question" data-answer="A">
+<div class="lbl">
+                Questão 01
+            </div>
+<p>
+                Considere as proposições simples a seguir:
+
+                <br/><br/>
+<strong>P:</strong> O candidato será aprovado na primeira etapa.
+
+                <br/>
+<strong>Q:</strong> O candidato será aprovado na segunda etapa.
+
+                <br/><br/>
+
+                Considere, ainda, a proposição:
+
+                <br/>
+<strong>
+                    <span class="citacao">“O candidato será aprovado na primeira etapa ou na segunda etapa,
+                    mas não nas duas.”</span>
+                </strong>
+<br/><br/>
+
+                Com base nas informações apresentadas, assinale a alternativa que
+                corresponde corretamente ao valor lógico da proposição quando
+                <strong>P = V</strong> e <strong>Q = F</strong>.
+            </p>
+<!-- ALTERNATIVA A -->
+<label class="quiz-option">
+<input name="questao-excludente-1" type="radio" value="A"/>
+<strong>A)</strong>
+                Verdadeira, pois apenas uma das proposições é verdadeira.
+
+            </label>
+<!-- ALTERNATIVA B -->
+<label class="quiz-option">
+<input name="questao-excludente-1" type="radio" value="B"/>
+<strong>B)</strong>
+                Falsa, pois uma proposição verdadeira exige que ambas sejam verdadeiras.
+
+            </label>
+<!-- ALTERNATIVA C -->
+<label class="quiz-option">
+<input name="questao-excludente-1" type="radio" value="C"/>
+<strong>C)</strong>
+                Falsa, pois o conectivo <span class="citacao">“ou”</span> exige que apenas P seja falsa.
+
+            </label>
+<!-- ALTERNATIVA D -->
+<label class="quiz-option">
+<input name="questao-excludente-1" type="radio" value="D"/>
+<strong>D)</strong>
+                Verdadeira somente quando P e Q apresentam o mesmo valor lógico.
+
+            </label>
+<!-- ALTERNATIVA E -->
+<label class="quiz-option">
+<input name="questao-excludente-1" type="radio" value="E"/>
+<strong>E)</strong>
+                Falsa, pois o OU exclusivo é verdadeiro somente quando P e Q são falsas.
+
+            </label>
+<div aria-live="polite" class="quiz-feedback"></div>
+</div>
+<!-- ====================================================
+             QUESTÃO 02
+             ==================================================== -->
+<div class="quiz-question" data-answer="B">
+<div class="lbl">
+                Questão 02
+            </div>
+<p>
+                Considere a seguinte afirmação:
+
+                <br/><br/>
+<strong>
+                    <span class="citacao">“O servidor realizará o curso de capacitação ou participará
+                    da operação especial, mas não fará as duas atividades.”</span>
+                </strong>
+<br/><br/>
+
+                Sabendo que o servidor
+                <strong>
+                    participará da operação especial e também realizará
+                    o curso de capacitação
+                </strong>,
+                assinale a alternativa correta.
+            </p>
+<!-- A -->
+<label class="quiz-option">
+<input name="questao-excludente-2" type="radio" value="A"/>
+<strong>A)</strong>
+                A afirmação é verdadeira, pois pelo menos uma das atividades ocorre.
+
+            </label>
+<!-- B -->
+<label class="quiz-option">
+<input name="questao-excludente-2" type="radio" value="B"/>
+<strong>B)</strong>
+                A afirmação é falsa, pois as duas proposições são verdadeiras.
+
+            </label>
+<!-- C -->
+<label class="quiz-option">
+<input name="questao-excludente-2" type="radio" value="C"/>
+<strong>C)</strong>
+                A afirmação é verdadeira, pois o conectivo <span class="citacao">“ou”</span> sempre admite as duas situações.
+
+            </label>
+<!-- D -->
+<label class="quiz-option">
+<input name="questao-excludente-2" type="radio" value="D"/>
+<strong>D)</strong>
+                A afirmação somente seria falsa caso as duas proposições fossem falsas.
+
+            </label>
+<!-- E -->
+<label class="quiz-option">
+<input name="questao-excludente-2" type="radio" value="E"/>
+<strong>E)</strong>
+                A afirmação é verdadeira porque o OU exclusivo possui o mesmo comportamento do OU comum.
+
+            </label>
+<div aria-live="polite" class="quiz-feedback"></div>
+</div>
+</div>
+<!-- ========================================================
+         BIZU FINAL
+         ======================================================== -->
+<div class="bx c5">
+<div class="lbl">
+            🏆 BIZU DEFINITIVO
+        </div>
+<div class="cap">
+            EXCLUDENTE
+            <br/>
+            ↓
+            <br/>
+            DIFERENTES = V
+            <br/>
+            IGUAIS = F
+        </div>
+<div class="ln">
+            Pense:
+            <strong>
+                <span class="citacao">“UM OU OUTRO, MAS NÃO OS DOIS.”</span>
+            </strong>
+</div>
+</div>
+</article>
+<!-- ============================================================
+     JAVASCRIPT — QUESTÕES INTERATIVAS
+     ============================================================ -->
+<!-- SEÇÃO 7: CLASSIFICAÇÃO (TAUTOLOGIA, CONTRADIÇÃO, CONTINGÊNCIA) -->
+<section class="study-card" data-study-kind="texto" id="classificacao">
+<div class="section-header">
+<div class="icon-circle">🏷️</div>
+<h2>Classificação das Proposições<span class="highlight">Tautologia, Contradição, Contingência</span></h2>
+</div>
+<div class="card card-accent-yellow">
+<h3>Tautologia</h3>
+<p>Sempre <strong>Verdadeira</strong>, independentemente dos valores de entrada.</p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">P ∨ ¬P (Princípio do terceiro excluído)</div>
+</div>
+</div>
+<div class="card card-accent-red">
+<h3>Contradição</h3>
+<p>Sempre <strong>Falsa</strong>, independentemente dos valores de entrada.</p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">P ∧ ¬P</div>
+</div>
+</div>
+<div class="card card-accent-yellow">
+<h3>Contingência</h3>
+<p>Pode ser <strong>V</strong> ou <strong>F</strong>, dependendo dos valores de entrada.</p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">P → Q (depende de P e Q)</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 8: RESUMO GERAL DAS EQUIVALÊNCIAS -->
+<section class="study-card" data-study-kind="texto" id="resumo">
+<div class="section-header">
+<div class="icon-circle">📋</div>
+<h2>Resumo Geral das Equivalências<span class="highlight">Guarde esta tabela</span></h2>
+</div>
+<div class="card">
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table summary-table">
+<thead>
+<tr><th>Proposição</th><th>Equivalência</th><th>Nome / Macete</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>P → Q</strong></td><td><span>¬P ∨ Q</span></td><td><strong>NE y MA</strong> (Nega, mantém)</td></tr>
+<tr><td><strong>P → Q</strong></td><td><span>¬Q → ¬P</span></td><td><strong>NE i NE</strong> (Nega, inverte, nega)</td></tr>
+<tr><td><strong>P ↔ Q</strong></td><td><span>(P → Q) ∧ (Q → P)</span></td><td>Bicondicional</td></tr>
+<tr><td><strong>¬(P ↔ Q)</strong></td><td><span>P ⊕ Q</span></td><td>OU exclusivo</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     SEÇÃO 9: EXPLORADOR INTERATIVO DE EQUIVALÊNCIAS
+     ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="explorador">
+<div class="section-header">
+<div class="icon-circle">🎮</div>
+<h2>
+            Explorador Interativo
+            <span class="highlight">
+                Teste as equivalências na prática
+            </span>
+</h2>
+</div>
+<section class="logic-lab" data-logic-lab=""><h3>🔬 Laboratório de proposições</h3><p>Escolha os valores de P e Q para comparar os resultados.</p><div class="logic-inputs"><label>P =<select data-proposition="p"><option value="true">Verdadeiro (V)</option><option value="false">Falso (F)</option></select></label><label>Q =<select data-proposition="q"><option value="true">Verdadeiro (V)</option><option value="false">Falso (F)</option></select></label></div><div class="logic-results"><div><code class="symbol">P → Q</code><small>Condicional</small><output aria-live="polite" data-logic-result="implies"></output></div><div><code class="symbol">¬P ∨ Q</code><small>Equivalência</small><output aria-live="polite" data-logic-result="implies"></output></div><div><code class="symbol">¬Q → ¬P</code><small>Contrapositiva</small><output aria-live="polite" data-logic-result="implies"></output></div><div><code class="symbol">P ∧ ¬Q</code><small>Negação do condicional</small><output aria-live="polite" data-logic-result="notimplies"></output></div></div></section>
+</section>
+<!-- ============================================================
+     SEÇÃO 10 — KIT SOBREVIVÊNCIA DA PROVA
+     GRID 2 × 2
+     ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="kit">
+<!-- ========================================================
+         CABEÇALHO
+         ======================================================== -->
+<div class="section-header">
+<div class="icon-circle">🆘</div>
+<h2>
+            Kit Sobrevivência da Prova
+            <span class="highlight">
+                Decore estas fórmulas
+            </span>
+</h2>
+</div>
+<!-- ========================================================
+         GRID 2 × 2
+         ======================================================== -->
+<div class="equivalence-grid">
+<!-- ====================================================
+             CARD 01 — CONDICIONAL / NE Y MA
+             ==================================================== -->
+<article class="equivalence-card eq-condicional">
+<!-- brilho decorativo -->
+<div class="ln"></div>
+<!-- TÍTULO -->
+<div class="hdr">
+<div class="emo">
+                    🔀
+                </div>
+<div class="hbox">
+<div class="lbl">
+                        1ª Equivalência
+                    </div>
+<h3>
+                        Condicional — NE y MA
+                    </h3>
+</div>
+</div>
+<!-- FÓRMULA -->
+<div class="bx c6">
+<div class="lbl">
+                    Equivalência
+                </div>
+<div class="fml">
+                    P → Q ≡ ¬P ∨ Q
+                </div>
+</div>
+<!-- BIZU -->
+<div class="bx c1">
+<div class="lbl">
+                    🧠 BIZU
+                </div>
+<div class="chips">
+<span>
+                        NEga
+                    </span>
+<span>
+                        +
+                    </span>
+<span>
+                        MAntém
+                    </span>
+</div>
+<div class="ln">
+                    Nega o primeiro, mantém o segundo e transforma
+                    <strong>
+                        SE... ENTÃO
+                    </strong>
+                    em
+                    <strong>
+                        OU
+                    </strong>.
+                </div>
+</div>
+<!-- EXEMPLO -->
+<div class="bx c2">
+<div class="lbl">
+                    📌 Exemplo
+                </div>
+<div class="ln">
+<strong>
+                        <span class="citacao">“Se chove, então levo guarda-chuva.”</span>
+                    </strong>
+</div>
+<div class="ln">
+<strong>
+                        NÃO chove
+                    </strong>
+<strong>
+                        OU
+                    </strong>
+<strong>
+                        levo guarda-chuva
+                    </strong>.
+
+                    <br/><br/>
+<span>
+                        ✅ <span class="citacao">“Não chove ou levo guarda-chuva.”</span>
+                    </span>
+</div>
+</div>
+</article>
+<!-- ====================================================
+             CARD 02 — CONTRAPOSITIVA / NE I NE
+             ==================================================== -->
+<article class="equivalence-card eq-contrapositiva">
+<div class="ln"></div>
+<!-- TÍTULO -->
+<div class="hdr">
+<div class="emo">
+                    🔄
+                </div>
+<div class="hbox">
+<div class="lbl">
+                        2ª Equivalência
+                    </div>
+<h3>
+                        Contrapositiva — NE i NE
+                    </h3>
+</div>
+</div>
+<!-- FÓRMULA -->
+<div class="bx c3">
+<div class="lbl">
+                    Equivalência
+                </div>
+<div class="fml">
+                    P → Q ≡ ¬Q → ¬P
+                </div>
+</div>
+<!-- BIZU -->
+<div class="bx c4">
+<div class="lbl">
+                    🧠 BIZU: NE i NE
+                </div>
+<div class="grp">
+<div class="ln itm c1">
+                        1️⃣ NEga
+                    </div>
+<div class="ln itm c2">
+                        2️⃣ INverte
+                    </div>
+<div class="ln itm c3">
+                        3️⃣ NEga
+                    </div>
+</div>
+<div class="ln">
+                    Nega a segunda → inverte as posições → nega a primeira.
+                </div>
+</div>
+<!-- EXEMPLO -->
+<div class="bx c5">
+<div class="lbl">
+                    📌 Exemplo
+                </div>
+<div class="ln">
+<strong>
+                        <span class="citacao">“Se estudo, então passo.”</span>
+                    </strong>
+</div>
+</div>
+<!-- TRANSFORMAÇÃO -->
+<div class="bx c6">
+<div class="lbl">
+                    🔬 Como transformar
+                </div>
+<!-- ETAPA 1 -->
+<div class="stp c1">
+<span>
+                        1
+                    </span>
+<div class="ln">
+<strong>
+                            NEga a segunda
+                        </strong>
+<br/>
+
+                        PASSO →
+
+                        <strong>
+                            NÃO PASSO
+                        </strong>
+</div>
+</div>
+<div class="arw">
+                    ↓
+                </div>
+<!-- ETAPA 2 -->
+<div class="stp c2">
+<span>
+                        2
+                    </span>
+<div class="ln">
+<strong>
+                            INverte
+                        </strong>
+<br/>
+
+                        O que estava depois vai para frente.
+
+                        <br/>
+
+                        <span class="citacao">“Se estudo, então não passo”</span>
+                        →
+
+                        <strong>
+                            <span class="citacao">“Se não passo, então estudo”</span>
+                        </strong>
+</div>
+</div>
+<div class="arw">
+                    ↓
+                </div>
+<!-- ETAPA 3 -->
+<div class="stp c3">
+<span>
+                        3
+                    </span>
+<div class="ln">
+<strong>
+                            NEga a primeira
+                        </strong>
+<br/>
+
+                        ESTUDO →
+
+                        <strong>
+                            NÃO ESTUDO
+                        </strong>
+</div>
+</div>
+</div>
+<!-- RESULTADO -->
+<div class="bx c4">
+<div class="lbl">
+                    ✅ Resultado
+                </div>
+<div class="ln">
+                    <span class="citacao">“Se estudo, então passo.”</span>
+                    <br/>
+<span>
+                        ≡
+                    </span>
+<br/>
+<span>
+                        <span class="citacao">“Se não passo, então não estudo.”</span>
+                    </span>
+</div>
+</div>
+<!-- BIZU FINAL -->
+<div class="ln">
+                🧠 NE i NE = NEga + INverte + NEga
+            </div>
+</article>
+<!-- ====================================================
+             CARD 03 — BICONDICIONAL
+             ==================================================== -->
+<article class="equivalence-card eq-bicondicional">
+<div class="ln"></div>
+<!-- TÍTULO -->
+<div class="hdr">
+<div class="emo">
+                    🔗
+                </div>
+<div class="hbox">
+<div class="lbl">
+                        3ª Equivalência
+                    </div>
+<h3>
+                        Bicondicional
+                    </h3>
+</div>
+</div>
+<!-- FÓRMULA -->
+<div class="bx c5">
+<div class="lbl">
+                    Equivalência
+                </div>
+<div class="fml">
+                    P ↔ Q ≡ (P → Q) ∧ (Q → P)
+                </div>
+</div>
+<!-- CONCEITO -->
+<div class="bx c6">
+<div class="lbl">
+                    🧠 BIZU
+                </div>
+<div class="cap">
+                    VAI → E VOLTA
+                </div>
+<div class="ln">
+                    O bicondicional representa duas condicionais:
+                    uma em cada direção.
+                </div>
+</div>
+<!-- EXEMPLO -->
+<div class="bx c1">
+<div class="lbl">
+                    📌 Exemplo
+                </div>
+<div class="ln">
+<strong>
+                        <span class="citacao">“Estudo se, e somente se, tenho tempo.”</span>
+                    </strong>
+</div>
+</div>
+<!-- TRANSFORMAÇÃO -->
+<div class="bx c2">
+<div class="lbl">
+                    🔄 Transformação
+                </div>
+<div class="grp">
+<div class="ln itm c1">
+<strong>
+                            1ª direção:
+                        </strong>
+
+                        Se estudo, então tenho tempo.
+                    </div>
+<div class="ln itm c2">
+<strong>
+                            2ª direção:
+                        </strong>
+
+                        Se tenho tempo, então estudo.
+                    </div>
+</div>
+</div>
+<!-- RESULTADO -->
+<div class="bx c3">
+<div class="lbl">
+                    ✅ Resultado
+                </div>
+<div class="ln">
+                    <span class="citacao">“Estudo se, e somente se, tenho tempo.”</span>
+
+                    <br/>
+
+                    equivale a:
+
+                    <br/>
+<span>
+                        <span class="citacao">“Se estudo, então tenho tempo E
+                        se tenho tempo, então estudo.”</span>
+                    </span>
+</div>
+</div>
+</article>
+<!-- ====================================================
+             CARD 04 — OU EXCLUSIVO / EXCLUDENTE
+             ==================================================== -->
+<article class="equivalence-card eq-excludente">
+<div class="ln"></div>
+<!-- TÍTULO -->
+<div class="hdr">
+<div class="emo">
+                    ⚡
+                </div>
+<div class="hbox">
+<div class="lbl">
+                        4ª Equivalência
+                    </div>
+<h3>
+                        OU Exclusivo — Excludente
+                    </h3>
+</div>
+</div>
+<!-- FÓRMULA -->
+<div class="bx c4">
+<div class="lbl">
+                    Relação fundamental
+                </div>
+<div class="fml">
+                    P ⊕ Q ≡ ¬(P ↔ Q)
+                </div>
+</div>
+<!-- BIZU -->
+<div class="bx c5">
+<div class="lbl">
+                    🧠 BIZU
+                </div>
+<div class="bx c6">
+<div class="vv">
+                        DIFERENTES → V
+                    </div>
+<div class="vf">
+                        IGUAIS → F
+                    </div>
+</div>
+<div class="chips">
+                    <span class="citacao">“UM OU OUTRO, MAS NÃO OS DOIS.”</span>
+                </div>
+</div>
+<!-- EXEMPLO 01 -->
+<div class="bx c1">
+<div class="lbl">
+                    📌 Exemplo 01
+                </div>
+<div class="ln">
+<strong>
+                        <span class="citacao">“João vai ao cinema ou vai ao teatro,
+                        mas não aos dois.”</span>
+                    </strong>
+</div>
+<div class="ln">
+                    Significa:
+                    <strong>
+                        João vai a apenas um dos dois lugares.
+                    </strong>
+</div>
+</div>
+<!-- EXEMPLO 02 -->
+<div class="bx c2">
+<div class="lbl">
+                    📌 Exemplo 02
+                </div>
+<div class="ln">
+<strong>
+                        <span class="citacao">“Maria estuda ou trabalha,
+                        mas não faz as duas coisas.”</span>
+                    </strong>
+</div>
+<div class="ln">
+                    Significa:
+                    <strong>
+                        Maria faz apenas uma das duas atividades.
+                    </strong>
+</div>
+</div>
+<!-- RELAÇÃO COM BICONDICIONAL -->
+<div class="bx c3">
+<div class="lbl">
+                    🔗 Relação
+                </div>
+<div class="ln">
+                    O bicondicional é verdadeiro quando P e Q são iguais.
+                    Sua negação é verdadeira quando são diferentes.
+                </div>
+<div class="fml">
+                    ¬(P ↔ Q) ≡ P ⊕ Q
+                </div>
+</div>
+</article>
+</div>
+<!-- ========================================================
+         DICA DE OURO
+         ======================================================== -->
+<div class="bizu-box">
+<span class="bizu-icon">
+            💡
+        </span>
+<span class="bizu-text">
+<strong>
+                Dica de ouro:
+            </strong>
+
+            Memorize assim:
+
+            <br/>
+<strong>
+                NE y MA
+            </strong>
+            =
+            <strong>
+                NEga + MAntém
+            </strong>
+<br/>
+<strong>
+                NE i NE
+            </strong>
+            =
+            <strong>
+                NEga + INverte + NEga
+            </strong>
+<br/>
+<strong>
+                ↔
+            </strong>
+            =
+            <strong>
+                Dupla condicional
+            </strong>
+<br/>
+<strong>
+                ⊕
+            </strong>
+            =
+            <strong>
+                Excludente
+            </strong>
+            =
+            <strong class="tv">
+                Diferentes = V
+            </strong>
+            /
+            <strong class="tf">
+                Iguais = F
+            </strong>
+</span>
+</div>
+<!-- ========================================================
+         BIZU FINAL
+         ======================================================== -->
+<div class="bx c4">
+<div class="lbl">
+            🏆 Para decorar antes da prova
+        </div>
+<div class="grp">
+<div class="ln itm c1">
+                NE y MA
+            </div>
+<div class="ln itm c2">
+                NE i NE
+            </div>
+<div class="cap itm c3">
+                ↔ DUPLA
+            </div>
+<div class="cap itm c4">
+                ⊕ DIFERENTES
+            </div>
+</div>
+</div>
+</section>
+<!-- ============================================================
+     RESPONSIVIDADE DO GRID
+     ============================================================ -->
+<!-- FOOTER -->
+</section><section class="material-github"><h2>Guia complementar: Negacoes Logicas</h2><p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/raciocinio-logico/pages/negacoes-logicas.html" rel="noopener" target="_blank">Ver fonte no GitHub</a></p>
+<!-- HERO -->
+<!-- ============================================================ -->
+<!-- SEÇÃO 1: O QUE É UMA PROPOSIÇÃO?                              -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="proposicao">
+<div class="section-header">
+<div class="icon-circle">📌</div>
+<h2>O que é uma proposição?<span class="highlight">Fundamento essencial</span></h2>
+</div>
+<div class="card card-accent-red">
+<p>Uma <strong>proposição</strong> é uma frase declarativa que pode ser classificada como <strong>Verdadeira (V)</strong> ou <strong>Falsa (F)</strong>.</p>
+<div class="example-box">
+<div class="example-label">Exemplo V</div>
+<div class="example-text"><span class="citacao">"O Brasil fica na América do Sul."</span> → <strong>V</strong></div>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo F</div>
+<div class="example-text"><span class="citacao">"2 + 2 = 5."</span> → <strong>F</strong></div>
+</div>
+<div class="alert-box">
+<span class="alert-icon">⚠️</span>
+<span class="alert-text"><strong>Não é proposição:</strong> <span class="citacao">"Feche a porta!"</span> (ordem), <span class="citacao">"Que dia lindo!"</span> (exclamação).</span>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 2: O QUE É NEGAÇÃO?                                     -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="negacao">
+<div class="section-header">
+<div class="icon-circle">🔄</div>
+<h2>O que é negação?<span class="highlight">Dizer o contrário</span></h2>
+</div>
+<div class="card card-accent-red">
+<p><strong>Negar</strong> uma proposição é afirmar exatamente o oposto do que ela diz.</p>
+<div class="quote-block">
+                    <span class="citacao">"Negação = dizer o contrário. Troca V por F e F por V."</span>
+                    <span class="quote-author">— Regra de ouro</span>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">P: <span class="citacao">"João está estudando."</span></div>
+<div class="example-result res-F">¬P: <span class="citacao">"João não está estudando."</span></div>
+</div>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table">
+<thead><tr><th>Proposição</th><th>Valor</th><th>Negação</th><th>Valor</th></tr></thead>
+<tbody>
+<tr><td>P</td><td class="val-V">V</td><td>¬P</td><td class="result-F">F</td></tr>
+<tr><td>P</td><td class="val-F">F</td><td>¬P</td><td class="result-V">V</td></tr>
+</tbody>
+</table></div>
+</div>
+<p>O símbolo da negação pode ser <strong>¬P</strong>, <strong>~P</strong> ou <strong>P'</strong>.</p>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 3: NEGAÇÃO DE PROPOSIÇÕES SIMPLES                      -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="simples">
+<div class="section-header">
+<div class="icon-circle">🔤</div>
+<h2>Negar uma proposição simples<span class="highlight">Basta colocar <span class="citacao">"não"</span></span></h2>
+</div>
+<div class="card card-accent-blue">
+<p>Para negar uma proposição simples, basta acrescentar o <strong><span class="citacao">"não"</span></strong> antes do verbo (ou usar outra palavra de negação).</p>
+<div class="neg-grid">
+<div class="neg-card">
+<div class="neg-original">P: <span class="citacao">"Carlos é alto."</span></div>
+<div class="neg-seta">⬇️</div>
+<div class="neg-negada">¬P: <span class="citacao">"Carlos não é alto."</span></div>
+</div>
+<div class="neg-card">
+<div class="neg-original">P: <span class="citacao">"Ana estuda."</span></div>
+<div class="neg-seta">⬇️</div>
+<div class="neg-negada">¬P: <span class="citacao">"Ana não estuda."</span></div>
+</div>
+<div class="neg-card">
+<div class="neg-original">P: <span class="citacao">"O carro é vermelho."</span></div>
+<div class="neg-seta">⬇️</div>
+<div class="neg-negada">¬P: <span class="citacao">"O carro não é vermelho."</span></div>
+</div>
+</div>
+<div class="bizu-box">
+<span class="bizu-icon">🧠</span>
+<span class="bizu-text"><strong>Importante:</strong> A negação de uma proposição simples é a negação do predicado, não do sujeito.</span>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 4: NEGAÇÃO DE QUANTIFICADORES (personalizada)           -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="quantificadores">
+<div class="section-header">
+<div class="icon-circle">🌐</div>
+<h2>
+                    Negação de Quantificadores
+                    <span class="highlight">TQ • EPA • NENHUM</span>
+</h2>
+</div>
+<!-- INTRODUÇÃO -->
+<div class="card card-accent-purple">
+<h3>🧠 Primeiro: conheça os 3 grupos</h3>
+<p>
+                    Antes de aprender a negar, descubra qual tipo de quantificador
+                    aparece na frase.
+                </p>
+<div class="grp">
+<!-- UNIVERSAL -->
+<div class="qc itm c2">
+<div class="emo">🌎</div>
+<div class="cap">
+                            UNIVERSAL
+                        </div>
+<div class="sig">
+                            TQ
+                        </div>
+<div class="chips">
+<span>TODO</span>
+<span>QUALQUER</span>
+</div>
+<div class="ln">
+                            Fala de <strong>todos</strong>
+                            os elementos.
+                        </div>
+</div>
+<!-- EXISTENCIAL -->
+<div class="qc itm c4">
+<div class="emo">👤</div>
+<div class="cap">
+                            EXISTENCIAL
+                        </div>
+<div class="sig">
+                            EPA
+                        </div>
+<div class="chips">
+<span>EXISTE</span>
+<span>PELO MENOS UM</span>
+<span>ALGUM</span>
+</div>
+<div class="ln">
+                            Fala de <strong>um ou mais</strong>
+                            elementos.
+                        </div>
+</div>
+<!-- NENHUM -->
+<div class="qc itm c7">
+<div class="emo">🚫</div>
+<div class="cap">
+                            NENHUM
+                        </div>
+<div class="sig">
+                            0
+                        </div>
+<div class="chips">
+<span>NENHUM</span>
+<span>NADA</span>
+<span>NINGUÉM</span>
+</div>
+<div class="ln">
+                            Significa <strong>zero</strong>
+                            elementos.
+                        </div>
+</div>
+</div>
+</div>
+<!-- MACETE PRINCIPAL -->
+<div class="card card-accent-purple">
+<h3>🔥 MACETE DA NEGAÇÃO</h3>
+<div class="bx c5">
+<div class="lbl">
+                        🧠 DECORE ASSIM
+                    </div>
+<div class="grp">
+<div class="chips itm c2">
+                            🌎 TODO → <span>
+                            PELO MENOS UM NÃO
+                        </span>
+</div>
+<div class="chips itm c2">
+                            🌎 QUALQUER → <span>
+                            PELO MENOS UM NÃO
+                        </span>
+</div>
+<div class="chips itm c4">
+                            👤 ALGUM → <span>
+                            NENHUM
+                        </span>
+</div>
+<div class="chips itm c4">
+                            👤 EXISTE → <span>
+                            NENHUM
+                        </span>
+</div>
+<div class="chips itm c7">
+                            🚫 NENHUM → <span>
+                            PELO MENOS UM
+                        </span>
+</div>
+</div>
+</div>
+</div>
+<!-- UNIVERSAL -->
+<div class="card card-accent-blue">
+<h3>🌎 1. UNIVERSAL — TQ</h3>
+<div class="formula-box">
+<span class="formula-label">TQ =</span>
+                    TODO • QUALQUER
+                </div>
+<p>
+                    A frase universal afirma que uma característica vale para
+                    <strong>todos</strong>.
+                </p>
+<div class="grp">
+<div class="pair c1">
+<div class="chips">
+                            <span class="citacao">"Todos os alunos estudam."</span>
+                        </div>
+<div class="arw">
+                            ⬇️
+                        </div>
+<div class="chips">
+                            <span class="citacao">"Pelo menos um aluno não estuda."</span>
+                        </div>
+<div class="cap">
+                            TODO → PELO MENOS UM NÃO
+                        </div>
+</div>
+<div class="pair c2">
+<div class="chips">
+                            <span class="citacao">"Qualquer funcionário pode participar."</span>
+                        </div>
+<div class="arw">
+                            ⬇️
+                        </div>
+<div class="ln">
+                            <span class="citacao">"Pelo menos um funcionário não pode participar."</span>
+                        </div>
+<div class="cap">
+                            QUALQUER → PELO MENOS UM NÃO
+                        </div>
+</div>
+</div>
+<div class="bizu-box">
+<span class="bizu-icon">💡</span>
+<span class="bizu-text">
+<strong>Bizu:</strong>
+                        Se TODO MUNDO faz algo, basta encontrar
+                        <strong>UMA pessoa que não faça</strong>
+                        para a afirmação ser falsa.
+                    </span>
+</div>
+</div>
+<!-- EXISTENCIAL -->
+<div class="card card-accent-green">
+<h3>👤 2. EXISTENCIAL — EPA</h3>
+<div class="formula-box">
+<span class="formula-label">EPA =</span>
+                    EXISTE • PELO MENOS UM • ALGUM
+                </div>
+<p>
+                    Aqui basta existir <strong>um único elemento</strong>
+                    que satisfaça a condição.
+                </p>
+<div class="grp">
+<div class="itm c1">
+<strong><span class="citacao">"Algum aluno estuda."</span></strong>
+<div class="arw">⬇️</div>
+<strong>
+                            <span class="citacao">"Nenhum aluno estuda."</span>
+                        </strong>
+<div class="cap">
+                            ALGUM → NENHUM
+                        </div>
+</div>
+<div class="itm c2">
+<strong><span class="citacao">"Existe um funcionário ausente."</span></strong>
+<div class="arw">⬇️</div>
+<strong>
+                            <span class="citacao">"Nenhum funcionário está ausente."</span>
+                        </strong>
+<div class="cap">
+                            EXISTE → NENHUM
+                        </div>
+</div>
+</div>
+</div>
+<!-- NENHUM -->
+<div class="card card-accent-red">
+<h3>🚫 3. NENHUM — ZERO</h3>
+<div class="formula-box">
+<span class="formula-label">NENHUM =</span>
+                    NENHUM • NADA • NINGUÉM
+                </div>
+<p>
+                    A ideia é:
+                    <strong>ZERO</strong> elementos possuem aquela característica.
+                </p>
+<div class="pair">
+<div class="cap">
+                        NENHUM
+                    </div>
+<div class="sig">
+                        0
+                    </div>
+<div class="arw">
+                        ↓
+                    </div>
+<div class="cap">
+                        PELO MENOS UM
+                    </div>
+</div>
+<div class="neg-grid">
+<div class="neg-card">
+<div class="neg-original">
+                            <span class="citacao">"Nenhum aluno faltou."</span>
+                        </div>
+<div class="neg-seta">⬇️</div>
+<div class="neg-negada">
+                            <span class="citacao">"Pelo menos um aluno faltou."</span>
+                        </div>
+<div class="neg-macete">
+                            NENHUM → PELO MENOS UM
+                        </div>
+</div>
+<div class="neg-card">
+<div class="neg-original">
+                            <span class="citacao">"Ninguém foi aprovado."</span>
+                        </div>
+<div class="neg-seta">⬇️</div>
+<div class="neg-negada">
+                            <span class="citacao">"Pelo menos uma pessoa foi aprovada."</span>
+                        </div>
+<div class="neg-macete">
+                            NINGUÉM → PELO MENOS UM
+                        </div>
+</div>
+</div>
+</div>
+<!-- TABELA -->
+<div class="card card-accent-yellow">
+<h3>📌 TABELA DEFINITIVA</h3>
+<div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>QUANTIFICADOR</th>
+<th>IDEIA</th>
+<th>NEGAÇÃO</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+                                    🌎 <strong>TODO / QUALQUER</strong>
+</td>
+<td>
+<div class="chips">
+<span>TQ</span>
+<span>todos os elementos</span>
+</div>
+</td>
+<td>
+                                    PELO MENOS UM NÃO
+                                </td>
+</tr>
+<tr>
+<td>
+                                    👤 <strong>ALGUM / EXISTE</strong>
+</td>
+<td>
+<div class="chips">
+<span>EPA</span>
+<span>pelo menos um</span>
+</div>
+</td>
+<td>
+                                    NENHUM
+                                </td>
+</tr>
+<tr>
+<td>
+                                    🚫 <strong>NENHUM / NINGUÉM</strong>
+</td>
+<td>
+<div class="chips">
+<span>ZERO</span>
+<span>nenhum elemento</span>
+</div>
+</td>
+<td>
+                                    PELO MENOS UM
+                                </td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<!-- Resumo visual rápido -->
+<div class="grp">
+<div class="cap itm c2">
+                        🌎
+                        <strong>TQ</strong>
+<span>↓</span>
+<strong>
+                            PELO MENOS UM NÃO
+                        </strong>
+</div>
+<div class="cap itm c4">
+                        👤
+                        <strong>EPA</strong>
+<span>↓</span>
+<strong>
+                            NENHUM
+                        </strong>
+</div>
+<div class="cap itm c7">
+                        🚫
+                        <strong>NENHUM</strong>
+<span>↓</span>
+<strong>
+                            PELO MENOS UM
+                        </strong>
+</div>
+</div>
+<div class="cap">
+                    🧠
+                    <strong>TQ → 1 NÃO</strong>
+                      |  
+                    <strong>EPA → 0</strong>
+                      |  
+                    <strong>0 → EPA</strong>
+</div>
+</div>
+</section>
+<!-- ===== FIM DA SEÇÃO DE QUANTIFICADORES ===== -->
+<!-- ============================================================ -->
+<!-- SEÇÃO 5: NEGAÇÃO DE CONECTIVOS (E e OU)                      -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="conectivos">
+<div class="section-header">
+<div class="icon-circle">🔗</div>
+<h2>Negar conectivos lógicos<span class="highlight">E, OU</span></h2>
+</div>
+<!-- E -->
+<div class="card card-accent-cyan">
+<h3>Negação da Conjunção (E)</h3>
+<div class="formula-box">
+<span class="formula-label">Fórmula</span>
+                    ¬(P ∧ Q) ≡ ¬P ∨ ¬Q
+                </div>
+<p>Em português: a negação de <em><span class="citacao">"P e Q"</span></em> é <em><span class="citacao">"não P ou não Q"</span></em>.</p>
+<div class="bizu-box">
+<span class="bizu-icon">🧠</span>
+<span class="bizu-text"><strong>Macete:</strong> E → OU (nega tudo e troca E por OU).</span>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text"><span class="citacao">"João estuda e trabalha."</span></div>
+<p>Negação: <strong><span class="citacao">"João não estuda ou não trabalha."</span></strong></p>
+</div>
+</div>
+<!-- OU -->
+<div class="card card-accent-cyan">
+<h3>Negação da Disjunção (OU)</h3>
+<div class="formula-box">
+<span class="formula-label">Fórmula</span>
+                    ¬(P ∨ Q) ≡ ¬P ∧ ¬Q
+                </div>
+<p>Em português: a negação de <em><span class="citacao">"P ou Q"</span></em> é <em><span class="citacao">"não P e não Q"</span></em>.</p>
+<div class="bizu-box">
+<span class="bizu-icon">🧠</span>
+<span class="bizu-text"><strong>Macete:</strong> OU → E (nega tudo e troca OU por E).</span>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text"><span class="citacao">"João estuda ou trabalha."</span></div>
+<p>Negação: <strong><span class="citacao">"João não estuda e não trabalha."</span></strong></p>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 6: NEGAÇÃO DO SE...ENTÃO                                -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="condicional">
+<div class="section-header">
+<div class="icon-circle">➡️</div>
+<h2>Negar o <span class="citacao">"SE... ENTÃO"</span><span class="highlight">MANE: Mantém, Nega, E</span></h2>
+</div>
+<div class="card card-accent-orange">
+<div class="formula-box">
+<span class="formula-label">Fórmula</span>
+                    ¬(P → Q) ≡ P ∧ ¬Q
+                </div>
+<p>Em português: a negação de <em><span class="citacao">"Se P, então Q"</span></em> é <em><span class="citacao">"P e não Q"</span></em>.</p>
+<div class="macete-box">
+<div class="macete-titulo">🔥 Macete MANE</div>
+<div class="macete-regra">Mantém a primeira, Nega a segunda, troca por E.</div>
+<div class="macete-exemplo"><strong>Exemplo:</strong> <span class="citacao">"Se estudo, então passo."</span> → "Estudo <strong>e não</strong> passo."</div>
+</div>
+<div class="alert-box">
+<span class="alert-icon">🚨</span>
+<span class="alert-text"><strong>Pegadinha clássica:</strong> A banca oferece <span class="citacao">"Se não P, então não Q"</span> como negação. <strong>ERRADO!</strong> A negação correta é <strong>P ∧ ¬Q</strong>.</span>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text"><span class="citacao">"Se chover, então eu estudo."</span></div>
+<p>Negação: <strong><span class="citacao">"Chove e eu não estudo."</span></strong></p>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 7: NEGAÇÃO DO BICONDICIONAL                            -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="bicondicional">
+<div class="section-header">
+<div class="icon-circle">🔁</div>
+<h2>Negar o <span class="citacao">"SE E SOMENTE SE"</span><span class="highlight">Valores diferentes</span></h2>
+</div>
+<div class="card card-accent-cyan">
+<div class="formula-box">
+<span class="formula-label">Fórmula</span>
+                    ¬(P ↔ Q) ≡ (P ∧ ¬Q) ∨ (¬P ∧ Q)
+                </div>
+<p>Em português: a negação de <em><span class="citacao">"P se, e somente se, Q"</span></em> é <em><span class="citacao">"(P e não Q) ou (não P e Q)"</span></em>.</p>
+<div class="bizu-box">
+<span class="bizu-icon">🧠</span>
+<span class="bizu-text"><strong>Macete:</strong> A negação do bicondicional significa que P e Q têm valores <strong>diferentes</strong>.</span>
+</div>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text"><span class="citacao">"João estuda se e somente se Maria trabalha."</span></div>
+<p>Negação: <strong><span class="citacao">"João estuda e Maria não trabalha, ou João não estuda e Maria trabalha."</span></strong></p>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 8: NEGAÇÃO DE DESIGUALDADES                            -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="desigualdades">
+<div class="section-header">
+<div class="icon-circle">📊</div>
+<h2>Negar desigualdades<span class="highlight">Maior, menor, igual</span></h2>
+</div>
+<div class="card card-accent-yellow">
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table summary-table">
+<thead>
+<tr><th>Original</th><th>Negação</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>x &gt; 10</strong></td><td><strong>x ≤ 10</strong></td></tr>
+<tr><td><strong>x &lt; 10</strong></td><td><strong>x ≥ 10</strong></td></tr>
+<tr><td><strong>x ≥ 10</strong></td><td><strong>x &lt; 10</strong></td></tr>
+<tr><td><strong>x ≤ 10</strong></td><td><strong>x &gt; 10</strong></td></tr>
+<tr><td><strong>x = 10</strong></td><td><strong>x ≠ 10</strong></td></tr>
+<tr><td><strong>x ≠ 10</strong></td><td><strong>x = 10</strong></td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="bizu-box">
+<span class="bizu-icon">🔥</span>
+<span class="bizu-text"><strong>Macete:</strong> Inverta o sinal e, se houver <span class="citacao">"igual"</span>, remova ou adicione conforme o caso.</span>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 9: RESUMO GERAL                                         -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="resumo">
+<div class="section-header">
+<div class="icon-circle">📋</div>
+<h2>Resumo Geral – Negação<span class="highlight">Tabela completa</span></h2>
+</div>
+<div class="card">
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table summary-table">
+<thead>
+<tr><th>Proposição</th><th>Negação</th><th>Macete</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>P (simples)</strong></td><td><span>¬P</span></td><td>Coloca <span class="citacao">"não"</span></td></tr>
+<tr><td><strong>P ∧ Q</strong></td><td><span>¬P ∨ ¬Q</span></td><td>E → OU</td></tr>
+<tr><td><strong>P ∨ Q</strong></td><td><span>¬P ∧ ¬Q</span></td><td>OU → E</td></tr>
+<tr><td><strong>P → Q</strong></td><td><span>P ∧ ¬Q</span></td><td><strong>MANE</strong></td></tr>
+<tr><td><strong>P ↔ Q</strong></td><td><span>(P ∧ ¬Q) ∨ (¬P ∧ Q)</span></td><td>Valores diferentes</td></tr>
+<tr><td><strong>Todo</strong></td><td><span>Pelo menos um não</span></td><td>TODO → PELO MENOS UM NÃO</td></tr>
+<tr><td><strong>Nenhum</strong></td><td><span>Pelo menos um</span></td><td>NENHUM → PELO MENOS UM</td></tr>
+<tr><td><strong>Algum</strong></td><td><span>Nenhum</span></td><td>ALGUM → NENHUM</td></tr>
+<tr><td><strong>x &gt; 10</strong></td><td><span>x ≤ 10</span></td><td>Inverte o sinal</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 10: MACETES PRINCIPAIS                                  -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="macetes">
+<div class="section-header">
+<div class="icon-circle">🧩</div>
+<h2>Macetes principais<span class="highlight">Decore estes</span></h2>
+</div>
+<div class="card">
+<div class="macete-box">
+<div class="macete-titulo">🚀 Kit sobrevivência</div>
+<div class="macete-regra">E → OU</div>
+<div class="macete-regra">OU → E</div>
+<div class="macete-regra">SE...ENTÃO → MANE</div>
+<div class="macete-regra">TODO → PELO MENOS UM NÃO</div>
+<div class="macete-regra">NENHUM → PELO MENOS UM</div>
+<div class="macete-regra">ALGUM → NENHUM</div>
+<div class="macete-exemplo"><strong>Exemplo rápido:</strong> <span class="citacao">"Todos estudam e trabalham."</span> → <span class="citacao">"Pelo menos um não estuda ou não trabalha."</span></div>
+</div>
+<div class="bizu-box">
+<span class="bizu-icon">💡</span>
+<span class="bizu-text"><strong>Dica:</strong> Pense na negação como <span class="citacao">"o que precisa acontecer para a frase original ser falsa?"</span></span>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 11: EXPLORADOR INTERATIVO DE NEGAÇÃO                   -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="explorador">
+<div class="section-header">
+<div class="icon-circle">🎮</div>
+<h2>Explorador Interativo<span class="highlight">Teste a negação na prática</span></h2>
+</div>
+<section class="logic-lab" data-logic-lab=""><h3>🔬 Laboratório de proposições</h3><p>Escolha os valores de P e Q para comparar os resultados.</p><div class="logic-inputs"><label>P =<select data-proposition="p"><option value="true">Verdadeiro (V)</option><option value="false">Falso (F)</option></select></label><label>Q =<select data-proposition="q"><option value="true">Verdadeiro (V)</option><option value="false">Falso (F)</option></select></label></div><div class="logic-results"><div><code class="symbol">¬(P ∧ Q)</code><small>Negação do E</small><output aria-live="polite" data-logic-result="notand"></output></div><div><code class="symbol">¬(P ∨ Q)</code><small>Negação do OU</small><output aria-live="polite" data-logic-result="notor"></output></div><div><code class="symbol">¬(P → Q)</code><small>Negação do condicional</small><output aria-live="polite" data-logic-result="notimplies"></output></div><div><code class="symbol">¬(P ↔ Q)</code><small>Negação do bicondicional</small><output aria-live="polite" data-logic-result="notiff"></output></div></div></section>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 12: COMO ESTUDAR NEGAÇÃO                               -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="estudar">
+<div class="section-header">
+<div class="icon-circle">🧠</div>
+<h2>Como estudar negação<span class="highlight">Método passo a passo</span></h2>
+</div>
+<div class="step-list">
+<div class="step-item">
+<div class="step-number">1</div>
+<div class="step-content">
+<h4>Identifique a proposição</h4>
+<p>Exemplo: <span class="citacao">"Todos os alunos estudam e trabalham."</span> → proposição composta com <span class="citacao">"Todos"</span> e <span class="citacao">"E"</span>.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">2</div>
+<div class="step-content">
+<h4>Descubra o conectivo/quantificador</h4>
+<p>Temos <span class="citacao">"Todos"</span> e <span class="citacao">"E"</span>. Aplique as regras na ordem correta.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">3</div>
+<div class="step-content">
+<h4>Aplique os macetes</h4>
+<p>Todo → Pelo menos um não; E → OU. Negue as partes.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">4</div>
+<div class="step-content">
+<h4>Escreva a negação</h4>
+<p><span class="citacao">"Pelo menos um aluno não estuda ou não trabalha."</span></p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">5</div>
+<div class="step-content">
+<h4>Verifique se faz sentido</h4>
+<p>Pergunte: <span class="citacao">"Isso realmente torna a frase original falsa?"</span></p>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================================ -->
+<!-- SEÇÃO 13: O QUE DOMINAR PRIMEIRO                              -->
+<!-- ============================================================ -->
+<section class="study-card" data-study-kind="texto" id="dominar">
+<div class="section-header">
+<div class="icon-circle">🎯</div>
+<h2>O que dominar primeiro<span class="highlight">Fundamentos essenciais</span></h2>
+</div>
+<div class="card">
+<p>Antes de avançar para questões complexas, domine <strong>muito bem</strong>:</p>
+<ul class="master-list">
+<li><span class="num">1</span> Negação de proposições simples</li>
+<li><span class="num">2</span> Negação do <span class="citacao">"E"</span> e do <span class="citacao">"OU"</span></li>
+<li><span class="num">3</span> Negação do <span class="citacao">"SE...ENTÃO"</span> (MANE)</li>
+<li><span class="num">4</span> Negação de <span class="citacao">"TODO"</span>, <span class="citacao">"NENHUM"</span>, <span class="citacao">"ALGUM"</span></li>
+<li><span class="num">5</span> Negação de desigualdades</li>
+<li><span class="num">6</span> Negação do bicondicional</li>
+<li><span class="num">7</span> Combinar regras (ex: Todo + E)</li>
+<li><span class="num">8</span> Identificar pegadinhas comuns</li>
+</ul>
+</div>
+<div class="quote-block">
+                <span class="citacao">"Dominar a negação é a base para resolver qualquer questão de Raciocínio Lógico."</span>
+                <span class="quote-author">— Dica final</span>
+</div>
+</section>
+<!-- FOOTER -->
+</section></article>
+</div>
+<nav aria-label="Navegação entre assuntos" class="bottom-nav">
+<a class="previous" href="simbolos-logicos-corretos.html"><small>Assunto anterior</small>Símbolos lógicos corretos</a>
+<a class="next" href="argumentacao-logica.html"><small>Próximo assunto</small>Argumentação lógica</a>
+</nav>
+<footer class="footer">
+<span>Matéria Policial · Conteúdo para estudar e revisar.</span>
+<a href="../../../index.html">Voltar à biblioteca</a>
+</footer>
+</main>
+</div>
+</body>
+</html>
+

@@ -1,0 +1,188 @@
+window.__ESTUDA_DATA__=(window.__ESTUDA_DATA__||{});window.__ESTUDA_DATA__['02.json']=
+{
+  "materia": "Informática",
+  "titulo": "Software",
+  "icone": "📦",
+  "descricao": "Classificação dos softwares: Sistema Operacional, Aplicativos, Utilitários, Barramento e Software Livre. Material completo para concursos sobre a parte lógica do computador.",
+  "topicos": [
+    {
+      "titulo": "Conceitos Gerais",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "O que é Software",
+          "texto": "Software é a parte lógica do computador – programas, dados e instruções que controlam o hardware e permitem a execução de tarefas. Diferente do hardware, o software não tem forma física."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Ilustração de software vs hardware",
+          "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTN3720wTWQahW8oapi-FJDJVkRIckHg8mnVzR1VLmNnA&s=10"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Classificação básica",
+          "texto": "Os softwares podem ser divididos em três grandes grupos:\n- **Sistema Operacional** (gerencia o hardware)\n- **Aplicativos** (ferramentas para o usuário)\n- **Utilitários** (manutenção e segurança)"
+        }
+      ]
+    },
+    {
+      "titulo": "Sistema Operacional (SO)",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "O que é um Sistema Operacional",
+          "texto": "É o software base que controla o hardware, gerencia recursos (memória, processador, dispositivos) e serve de intermediário entre o usuário e o computador. Sem ele, o hardware não funciona."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Logotipos de sistemas operacionais",
+          "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6T36daHUZLQr3x7GLpHIoex5-SXjvuQ26AxUwPSGvJA&s=10"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Exemplos de SO",
+          "texto": "**Desktop/Server:** Windows, Linux, macOS.\n**Móveis:** Android, iOS.\n**Outros:** Chrome OS, FreeBSD."
+        },
+        {
+          "tipo": "bizu",
+          "titulo": "Função principal do SO",
+          "texto": "**SO = intermediário** entre usuário e hardware. Gerencia processos, memória, arquivos e dispositivos."
+        }
+      ]
+    },
+    {
+      "titulo": "Aplicativos / Softwares de Usuário",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "O que são Aplicativos",
+          "texto": "Programas que o usuário executa diretamente para realizar tarefas específicas. Rodam sobre o sistema operacional e dependem dele para funcionar."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Ícones de aplicativos populares",
+          "imagem": "https://thumbs.dreamstime.com/b/microsoft-office-outlook-exchange-onenote-publicador-do-excel-planejer-etc-google-llc-logotipos-oficiais-de-aplicativos-produtos-240123532.jpg"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Exemplos de Aplicativos",
+          "texto": "**Pacote Office:** Word, Excel, PowerPoint.\n**Navegadores:** Chrome, Firefox, Edge.\n**Comunicação:** WhatsApp, Teams, Zoom.\n**Edição:** Photoshop, GIMP."
+        }
+      ]
+    },
+    {
+      "titulo": "Utilitários",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "O que são Utilitários",
+          "texto": "Softwares que auxiliam na manutenção, otimização, segurança e gerenciamento do sistema. Não são essenciais, mas melhoram o desempenho e a confiabilidade."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Exemplos de utilitários",
+          "imagem": "https://github.com/88MVcode9/ARQUIVOS/blob/main/IMAGENS/INFORMATICA/app%20utilit%C3%A1rios.png?raw=true"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Exemplos de Utilitários",
+          "texto": "- **Antivírus** (Windows Defender, Avast)\n- **Firewall** (Windows Firewall)\n- **Desfragmentador de disco**\n- **Backup** (ferramentas de cópia de segurança)\n- **Compactadores** (WinZip, 7-Zip)\n- **Gerenciador de tarefas**"
+        },
+                {
+          "tipo": "imagem",
+          "titulo": "Utilitários vs Aplicativos",
+          "imagem": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-jagf2gvW7Z_m9twD82HLKSd4em3ivSsz-yOxXA15t8KXg78r0riF99g&s=10"
+        },
+      ]
+    },
+    {
+      "titulo": "Barramento",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "O que é Barramento",
+          "texto": "Caminho (trilha elétrica) por onde os dados trafegam internamente na placa-mãe, conectando CPU, memória e periféricos. Quanto mais largo (número de bits), mais rápido o fluxo de dados."
+        },
+        {
+          "tipo": "imagem",
+          "titulo": "Esquema de barramentos",
+          "imagem": "https://informaticando473772625.wordpress.com/wp-content/uploads/2019/01/imagem164.png"
+        },
+        {
+          "tipo": "conceito",
+          "titulo": "Tipos de Barramento",
+          "texto": "- **Barramento de dados** – transporta os dados propriamente ditos.\n- **Barramento de endereço** – indica onde os dados devem ser lidos/escritos.\n- **Barramento de controle** – sinais de comando (leitura, escrita, interrupção).\n\n**Quanto maior a largura (ex.: 32 bits, 64 bits), maior a velocidade de transferência.**"
+        },
+        {
+          "tipo": "pegadinha",
+          "titulo": "Barramento não é cabo externo",
+          "texto": "Barramento refere-se a **circuitos internos da placa-mãe**, não a cabos USB ou HDMI."
+        }
+      ]
+    },
+    {
+      "titulo": "Software Livre (Open Source)",
+      "cards": [
+        {
+          "tipo": "conceito",
+          "titulo": "O que é Software Livre",
+          "texto": "Software que concede ao usuário quatro liberdades essenciais. **Não se confunde com gratuito** – a liberdade é o foco, não o preço."
+        },
+
+        {
+          "tipo": "conceito",
+          "titulo": "As 4 Liberdades do Software Livre",
+          "texto": "**Liberdade 0:** executar o programa para qualquer propósito.\n**Liberdade 1:** estudar como o programa funciona e adaptá-lo (exige acesso ao código-fonte).\n**Liberdade 2:** redistribuir cópias para ajudar outras pessoas.\n**Liberdade 3:** melhorar o programa e liberar as melhorias publicamente."
+        },
+        {
+          "tipo": "tabela",
+          "titulo": "Exemplos de Software Livre",
+          "tabela": {
+            "colunas": ["Categoria", "Exemplos"],
+            "linhas": [
+              ["Sistema Operacional", "Linux (Ubuntu, Fedora, Debian)"],
+              ["Navegador", "Mozilla Firefox, Chromium"],
+              ["Suíte de Escritório", "LibreOffice (Writer, Calc, Impress)"],
+              ["Servidor Web", "Apache"],
+              ["Edição de Imagens", "GIMP"]
+            ]
+          }
+        },
+        {
+          "tipo": "bizu",
+          "titulo": "Software Livre ≠ Gratuito",
+          "texto": "Livre = liberdade de uso, estudo, modificação e distribuição. Gratuito = custo zero. Um software pode ser gratuito mas não livre (ex.: muitos freeware)."
+        },
+        {
+          "tipo": "pegadinha",
+          "titulo": "Software Livre é Open Source?",
+          "texto": "Nem todo software de código aberto (open source) é considerado software livre pelos critérios da FSF, pois pode restringir redistribuição ou modificação. Mas, na prática, muitos usam os termos como sinônimos."
+        }
+      ]
+    },
+    {
+      "titulo": "Resumo e Diferenciação",
+      "cards": [
+        {
+          "tipo": "tabela",
+          "titulo": "Comparação entre tipos de software",
+          "tabela": {
+            "colunas": ["Tipo", "Função principal", "Exemplos"],
+            "linhas": [
+              ["Sistema Operacional", "Gerenciar hardware e recursos", "Windows, Linux, Android"],
+              ["Aplicativos", "Executar tarefas do usuário", "Word, Chrome, Photoshop"],
+              ["Utilitários", "Manutenção e segurança", "Antivírus, backup, desfragmentador"],
+              ["Software Livre", "Garantir liberdades ao usuário", "Linux, Firefox, LibreOffice"]
+            ]
+          }
+        },
+        {
+          "tipo": "bizu",
+          "titulo": "Mnemônico rápido",
+          "texto": "**SO** = base, **Apps** = uso, **Utils** = cuidado, **Livre** = liberdade."
+        }
+      ]
+    }
+  ]
+}
+;

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101820" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<title>Complemento: Proposições e Tabela-Verdade · Raciocínio Lógico · Matéria Policial</title>
+<meta content="Proposições, tabela-verdade, equivalências, negações e argumentação lógica." name="description"/>
+<link href="../../icone.png" rel="icon"/>
+<link href="../../css/estilos.css?v=argumentacao-20261026" rel="stylesheet"/>
+<script defer="" src="../../js/app.js?v=leitura-20261026"></script>
+
+<style id="visual-complemento">
+:root{--k1:#FB923C;--k2:#22D3EE;--k3:#A78BFA;--k4:#4ADE80;--k5:#F472B6;--k6:#FBBF24;--k7:#F87171;--k8:#60A5FA;--fundo:#0B1120}
+html{scroll-behavior:smooth}
+.prose .material-github{padding:0;border:0;background:none}
+.prose .material-github > h2{margin:0 0 4px;font-size:1.5rem;color:#fff}
+.prose .material-github > .muted{margin:0 0 18px}
+.prose .material-github > .muted a{color:var(--k2)}
+/* índice */
+.indice{margin:6px 0 26px;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,rgba(34,211,238,.12),rgba(167,139,250,.12));border:1px solid rgba(167,139,250,.4)}
+.indice-titulo{margin-bottom:10px;font-weight:800;color:#fff}
+.chips-idx{display:flex;flex-wrap:wrap;gap:8px}
+.chips-idx a{--b:var(--k2);display:inline-flex;gap:6px;align-items:center;padding:6px 12px;border-radius:999px;font-size:.88rem;font-weight:700;text-decoration:none;color:#0B1120;background:var(--b);transition:transform .15s}
+.chips-idx a:hover{transform:translateY(-2px)}
+/* seções */
+.prose .study-card{--sc:var(--k2);margin:26px 0;padding:22px;border-radius:18px;border-top:4px solid var(--sc);box-shadow:0 12px 32px rgba(0,0,0,.35);scroll-margin-top:16px;
+  background:linear-gradient(180deg,color-mix(in srgb,var(--sc) 12%,#0F172A),#0F172A 260px)}
+#proposicao{--sc:var(--k2)} #nao-proposicao{--sc:var(--k7)} #simples{--sc:var(--k8)} #composta{--sc:var(--k4)} #conectivos{--sc:var(--k1)}
+#precedencia{--sc:var(--k6)} #classificacao{--sc:var(--k3)} #linhas{--sc:#2DD4BF} #quantificadores{--sc:var(--k5)} #explorador{--sc:var(--k4)}
+#resumo{--sc:var(--k6)} #estudar{--sc:var(--k8)} #dominar{--sc:var(--k1)} #questoes{--sc:var(--k5)}
+.section-header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:14px}
+.section-header h2{margin:0;font-size:1.3rem;color:#fff}
+.icon-circle{flex:none;width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.45rem;
+  background:color-mix(in srgb,var(--sc) 26%,transparent);border:2px solid var(--sc);box-shadow:0 0 0 5px color-mix(in srgb,var(--sc) 14%,transparent)}
+.highlight{display:inline-block;margin-left:10px;padding:3px 12px;border-radius:999px;font-size:.76rem;font-weight:800;color:#0B1120;background:var(--sc)}
+/* cartões e parágrafos */
+.card{--ca:var(--sc);margin:14px 0;padding:18px;border-radius:14px;border:1px solid color-mix(in srgb,var(--ca) 40%,transparent);border-left:5px solid var(--ca);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--ca) 14%,var(--fundo)),var(--fundo) 80%)}
+.card-accent-cyan{--ca:var(--k2)} .card-accent-red{--ca:var(--k7)} .card-accent-blue{--ca:var(--k8)} .card-accent-green{--ca:var(--k4)}
+.card-accent-yellow{--ca:var(--k6)} .card-accent-purple{--ca:var(--k3)}
+.card h3{margin:0 0 10px;font-size:1.12rem;color:color-mix(in srgb,var(--ca) 55%,#fff)}
+.card p, .study-card > p{--pc:var(--ca,var(--sc));margin:10px 0;padding:11px 15px;border-radius:12px;line-height:1.8;border-left:4px solid var(--pc);
+  color:color-mix(in srgb,var(--pc) 22%,#EEF2FF);background:linear-gradient(90deg,color-mix(in srgb,var(--pc) 16%,transparent),color-mix(in srgb,var(--pc) 3%,transparent))}
+.card p:nth-of-type(even){--pc:color-mix(in srgb,var(--ca) 45%,var(--k5))}
+.card p strong, .study-card p strong{color:#fff}
+.card p em{color:#FDE68A}
+code, .symbol{font-family:'Cambria Math','STIX Two Math',Cambria,'DejaVu Sans',serif;font-weight:800}
+.card p code{padding:1px 9px;border-radius:8px;color:#fff;background:color-mix(in srgb,var(--ca) 30%,#0B1120)}
+/* exemplos */
+.example-box{--ex:var(--ca,var(--sc));margin:14px 0;padding:14px 18px 16px;border-radius:14px;border:1px solid color-mix(in srgb,var(--ex) 55%,transparent);
+  background:linear-gradient(135deg,color-mix(in srgb,var(--ex) 22%,var(--fundo)),color-mix(in srgb,var(--ex) 6%,var(--fundo)) 80%);box-shadow:0 8px 22px rgba(0,0,0,.3),inset 0 3px 0 var(--ex)}
+.example-box ~ .example-box{--ex:var(--k5)} .example-box ~ .example-box ~ .example-box{--ex:var(--k4)}
+.example-label{display:inline-block;margin-bottom:10px;padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:800;color:#0B1120;background:var(--ex)}
+.example-text{margin:6px 0;padding-left:12px;font-size:1.02rem;line-height:1.7;color:color-mix(in srgb,var(--ex) 35%,#fff);border-left:2px dotted var(--ex)}
+.example-box p{background:none;border:0;padding:4px 0 0}
+.example-result{display:inline-block;margin-top:10px;padding:7px 14px;border-radius:10px;font-weight:800}
+.res-V{background:rgba(74,222,128,.2);color:#86EFAC;border:1px solid rgba(74,222,128,.5)}
+.res-F{background:rgba(248,113,113,.2);color:#FCA5A5;border:1px solid rgba(248,113,113,.5)}
+.alert-box{display:flex;gap:12px;align-items:flex-start;margin-top:14px;padding:12px 15px;border-radius:12px;line-height:1.7;color:#FFE0E0;
+  background:linear-gradient(90deg,rgba(248,113,113,.22),rgba(244,114,182,.07));border:1px solid rgba(248,113,113,.5);border-left:5px solid var(--k7)}
+.alert-text strong{color:#FCA5A5} .alert-icon{font-size:1.3rem}
+.quote-block{margin:14px 0;padding:14px 18px;border-radius:12px;font-style:italic;font-size:1.05rem;line-height:1.7;color:#FFE7C2;background:rgba(251,146,60,.14);border-left:5px solid var(--k1)}
+.quote-author{display:block;margin-top:6px;font-style:normal;font-size:.85rem;color:#CBD5E1}
+.formula-box{margin:12px 0;padding:14px 18px;border-radius:14px;line-height:1.9;color:#fff;font-size:1.1rem;background:linear-gradient(135deg,rgba(34,211,238,.2),rgba(167,139,250,.2));border:1px dashed var(--k2)}
+.formula-label{display:block;margin-bottom:4px;font-size:.78rem;font-weight:800;color:#67E8F9}
+/* tabelas */
+.table-wrap{overflow-x:auto;margin:12px 0;border-radius:14px;border:1px solid #1E293B}
+.prose table{width:100%;border-collapse:collapse}
+.prose th{padding:10px 12px;text-align:center;color:#fff;font-size:.9rem;background:linear-gradient(90deg,color-mix(in srgb,var(--ca,var(--sc)) 65%,#1E293B),#1E293B);border:0}
+.prose td{padding:10px 12px;text-align:center;border-top:1px solid #1E293B;color:#E2E8F0}
+.prose tbody tr:nth-child(even) td{background:rgba(255,255,255,.035)}
+.summary-table td:first-child{text-align:left;font-weight:700;color:#FDBA74}
+.summary-table td:nth-child(2) strong,.summary-table td:nth-child(2) span{display:inline-block;padding:2px 12px;border-radius:8px;font-size:1.1rem;background:rgba(34,211,238,.18);color:#67E8F9}
+.val-V,.result-V{color:#4ADE80;font-weight:900;background:rgba(74,222,128,.14)!important}
+.val-F,.result-F{color:#F87171;font-weight:900;background:rgba(248,113,113,.14)!important}
+/* conectivos */
+.connective-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:16px;margin-top:16px}
+.connective-card{--b:var(--k2);padding:18px;border-radius:16px;border:1px solid color-mix(in srgb,var(--b) 55%,transparent);box-shadow:inset 0 4px 0 var(--b),0 10px 26px rgba(0,0,0,.3);
+  background:linear-gradient(150deg,color-mix(in srgb,var(--b) 22%,var(--fundo)),color-mix(in srgb,var(--b) 5%,var(--fundo)) 75%)}
+.conn-negacao{--b:var(--k7)} .conn-conjuncao{--b:var(--k8)} .conn-disjuncao{--b:var(--k4)} .conn-xor{--b:var(--k3)} .conn-condicional{--b:var(--k1)} .conn-bicondicional{--b:var(--k5)}
+.connective-symbol{display:inline-block;min-width:48px;padding:2px 14px;border-radius:12px;text-align:center;font-size:1.7rem;font-weight:900;background:var(--b);color:#0B1120}
+.connective-name{margin:8px 0 4px;font-weight:800;font-size:1.05rem;color:color-mix(in srgb,var(--b) 45%,#fff)}
+.connective-rule{margin-bottom:10px;line-height:1.6;color:color-mix(in srgb,var(--b) 15%,#F1F5F9)}
+.connective-card th{background:linear-gradient(90deg,var(--b),color-mix(in srgb,var(--b) 40%,#1E293B));color:#0B1120}
+.connective-macete{margin-top:10px;padding:9px 12px;border-radius:10px;line-height:1.6;color:#FEF3C7;background:rgba(251,191,36,.16);border-left:4px solid var(--k6)}
+.connective-macete strong{color:#FDE047}
+/* passos e lista */
+.step-list{display:grid;gap:12px}
+.step-item{--b:var(--k8);display:flex;gap:14px;padding:14px 16px;border-radius:14px;border:1px solid color-mix(in srgb,var(--b) 50%,transparent);background:color-mix(in srgb,var(--b) 12%,var(--fundo))}
+.step-item:nth-child(5n+1){--b:var(--k2)} .step-item:nth-child(5n+2){--b:var(--k1)} .step-item:nth-child(5n+3){--b:var(--k5)} .step-item:nth-child(5n+4){--b:var(--k4)} .step-item:nth-child(5n+5){--b:var(--k3)}
+.step-number{flex:none;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;background:var(--b);color:#0B1120}
+.step-content h4{margin:0 0 4px;color:color-mix(in srgb,var(--b) 50%,#fff)}
+.step-content p{margin:0;padding:0;border:0;background:none;color:#E2E8F0}
+.master-list{list-style:none;margin:12px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:10px}
+.master-list li{--b:var(--k1);display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;color:#F1F5F9;border:1px solid color-mix(in srgb,var(--b) 45%,transparent);background:color-mix(in srgb,var(--b) 12%,var(--fundo))}
+.master-list li:nth-child(6n+1){--b:var(--k1)} .master-list li:nth-child(6n+2){--b:var(--k2)} .master-list li:nth-child(6n+3){--b:var(--k3)}
+.master-list li:nth-child(6n+4){--b:var(--k4)} .master-list li:nth-child(6n+5){--b:var(--k5)} .master-list li:nth-child(6n+6){--b:var(--k6)}
+.master-list .num{flex:none;min-width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;background:var(--b);color:#0B1120}
+/* laboratório */
+.logic-lab{margin-top:8px;padding:18px;border-radius:16px;border:1px solid rgba(244,114,182,.5);background:linear-gradient(135deg,rgba(244,114,182,.14),rgba(34,211,238,.08))}
+.logic-lab h3{margin:0 0 6px;color:#fff} .logic-lab > p{margin:0 0 12px;color:#FBCFE8}
+.logic-inputs{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:14px}
+.logic-inputs label{display:flex;align-items:center;gap:8px;font-weight:800;color:#fff}
+.logic-inputs select{padding:8px 12px;border-radius:10px;font-weight:700;color:#fff;background:#1E293B;border:2px solid var(--k5)}
+.logic-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.logic-results > div{padding:12px;border-radius:12px;text-align:center;border:1px solid rgba(255,255,255,.15)}
+.logic-results > div:nth-child(1){background:linear-gradient(135deg,rgba(248,113,113,.3),#1E293B)}
+.logic-results > div:nth-child(2){background:linear-gradient(135deg,rgba(96,165,250,.3),#1E293B)}
+.logic-results > div:nth-child(3){background:linear-gradient(135deg,rgba(74,222,128,.3),#1E293B)}
+.logic-results > div:nth-child(4){background:linear-gradient(135deg,rgba(251,146,60,.3),#1E293B)}
+.logic-results > div:nth-child(5){background:linear-gradient(135deg,rgba(244,114,182,.3),#1E293B)}
+.logic-results code{display:block;font-size:1.15rem;color:#fff} .logic-results small{display:block;margin:2px 0 6px;color:#CBD5E1}
+.logic-results output{display:block;font-size:1.5rem;font-weight:900;color:#FDE047}
+/* questões */
+.qcard{--b:var(--k8);margin:20px 0;border-radius:18px;overflow:hidden;border:1px solid color-mix(in srgb,var(--b) 55%,transparent);background:linear-gradient(160deg,color-mix(in srgb,var(--b) 14%,var(--fundo)),var(--fundo) 55%);box-shadow:0 12px 32px rgba(0,0,0,.35)}
+.qtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:16px 20px;background:linear-gradient(90deg,color-mix(in srgb,var(--b) 70%,#0B1120),color-mix(in srgb,var(--b) 25%,#0B1120))}
+.qid{display:flex;align-items:center;gap:14px}
+.qnum{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:1.1rem;background:#0B1120;color:var(--b)}
+.qtop h3{margin:0;color:#fff;font-size:1.12rem} .qsub{color:#F1F5F9;font-size:.88rem}
+.banca{padding:5px 14px;border-radius:999px;font-weight:800;font-size:.85rem;color:#0B1120;background:#FDE047}
+.qbody{padding:20px}
+.qctx,.qexpr{margin-bottom:14px;padding:14px 16px;border-radius:12px;background:color-mix(in srgb,var(--b) 14%,transparent);border-left:5px solid var(--b)}
+.qctx p{margin:6px 0 0;padding:0;border:0;background:none;line-height:1.75;color:#EEF2FF}
+.qlabel{margin-bottom:4px;font-weight:800;color:color-mix(in srgb,var(--b) 50%,#fff)}
+.qexpr code{display:block;margin-top:6px;padding:10px 14px;border-radius:10px;text-align:center;font-size:1.35rem;color:#fff;background:rgba(0,0,0,.35);border:1px dashed var(--b)}
+.qres-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:18px 0 10px}
+.qres-head h4{margin:0;color:#fff}
+.qtag{padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:800;color:#0B1120;background:var(--b)}
+.qsteps{display:grid;gap:10px}
+.qstep{display:flex;gap:12px;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1)}
+.qstep:nth-child(4n+1){--s:var(--k2)} .qstep:nth-child(4n+2){--s:var(--k1)} .qstep:nth-child(4n+3){--s:var(--k5)} .qstep:nth-child(4n+4){--s:var(--k4)}
+.qstep{border-left:5px solid var(--s)}
+.qn{flex:none;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;background:var(--s);color:#0B1120}
+.qb{min-width:0} .qb h5{margin:0 0 4px;font-size:1rem;color:color-mix(in srgb,var(--s) 50%,#fff)}
+.qb p{margin:4px 0;padding:0;border:0;background:none;line-height:1.7;color:#E2E8F0}
+.qcalc{display:inline-block;margin:6px 0;padding:6px 14px;border-radius:10px;font-weight:800;color:#fff;background:rgba(0,0,0,.35);border:1px solid rgba(255,255,255,.2)}
+.qcalc strong,.qcalc span{color:#FDE047}
+.qfinal{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:18px 0;padding:14px 18px;border-radius:14px;font-weight:900}
+.qfinal span{color:#fff} .qfinal strong{font-size:1.2rem}
+.qfinal.f{background:rgba(248,113,113,.2);border:2px solid var(--k7)} .qfinal.f strong{color:#FCA5A5}
+.qfinal.v{background:rgba(74,222,128,.2);border:2px solid var(--k4)} .qfinal.v strong{color:#86EFAC}
+.qdica{display:flex;gap:12px;padding:14px 16px;border-radius:14px;line-height:1.7;color:#FEF3C7;background:linear-gradient(90deg,rgba(251,191,36,.24),rgba(251,146,60,.08));border-left:6px solid var(--k6)}
+.qdica .em{font-size:1.5rem} .qdica p{margin:4px 0 0;padding:0;border:0;background:none;color:#FEF3C7}
+.itens-l{margin:14px 0 8px}
+.qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+.qgrid.mini{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.qitem{--b:var(--k8);padding:14px;border-radius:14px;border:1px solid color-mix(in srgb,var(--b) 55%,transparent);box-shadow:inset 0 4px 0 var(--b);background:linear-gradient(150deg,color-mix(in srgb,var(--b) 20%,var(--fundo)),var(--fundo))}
+.qitem-h{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+.qitem-h strong{color:color-mix(in srgb,var(--b) 50%,#fff)}
+.qitem .op{padding:1px 12px;border-radius:8px;font-size:1.2rem;font-weight:900;background:var(--b);color:#0B1120}
+.qitem code{display:block;padding:8px 10px;border-radius:10px;text-align:center;color:#fff;background:rgba(0,0,0,.35)}
+.qitem p{margin:6px 0;padding:0;border:0;background:none;line-height:1.7;color:#E2E8F0}
+.vf{padding:1px 14px;border-radius:999px;font-weight:900;color:#0B1120}
+.vf.V{background:var(--k4)} .vf.F{background:var(--k7)}
+.qmacetes{margin-top:18px;padding:16px;border-radius:14px;background:rgba(167,139,250,.12);border:1px solid rgba(167,139,250,.45)}
+.qmac-h{display:flex;gap:8px;align-items:center;margin-bottom:10px;color:#fff}
+.qmac{--b:var(--k8);padding:10px 12px;border-radius:10px;color:#F1F5F9;background:color-mix(in srgb,var(--b) 18%,var(--fundo));border-left:5px solid var(--b)}
+.qmac strong{color:color-mix(in srgb,var(--b) 45%,#fff)}
+@media (max-width:640px){.prose .study-card{padding:16px}.qbody{padding:14px}.section-header h2{font-size:1.12rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chips-idx a{transition:none}}
+</style>
+</head>
+<body class="tema-biblioteca" data-discipline="raciocinio-logico">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a>
+<button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button>
+<nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a href="../direito-constitucional/index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal Militar</a><a aria-current="page" href="index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
+<div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
+<main id="conteudo">
+<nav aria-label="Trilha" class="breadcrumbs">
+<a href="../../../index.html">Biblioteca</a> / <a href="index.html">Raciocínio Lógico</a> / Complemento: Proposições e Tabela-Verdade
+      </nav>
+<header class="reader-header">
+<a class="chip" href="index.html">Raciocínio Lógico</a>
+<h1>Complemento: Proposições e Tabela-Verdade</h1>
+<p class="muted">Assunto 6 de 6 · 1 blocos de estudo</p>
+<div class="reader-actions">
+<button aria-pressed="false" data-key="assets/materias/raciocinio-logico/complemento-proposicoes-e-tabela-verdade.html" id="concluir" type="button">Marcar como estudado</button>
+<button id="imprimir" type="button">Imprimir</button>
+<span class="status" id="salvamento"></span>
+</div>
+</header>
+<div class="reader-layout" style="grid-template-columns:minmax(0,1fr)">
+<article class="prose">
+<section class="material-github">
+<h2>Complemento: Proposições e Tabela-Verdade</h2>
+<p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/raciocinio-logico/pages/proposicoes.html" rel="noopener" target="_blank">Ver fonte no GitHub</a></p>
+<nav class="indice" aria-label="Índice do assunto"><div class="indice-titulo">Neste assunto</div><div class="chips-idx"><a href="#proposicao" style="--b:var(--k2)"><span>📌</span>Proposição</a><a href="#nao-proposicao" style="--b:var(--k7)"><span>🚫</span>Não é proposição</a><a href="#simples" style="--b:var(--k8)"><span>🔤</span>Simples</a><a href="#composta" style="--b:var(--k4)"><span>🧩</span>Composta</a><a href="#conectivos" style="--b:var(--k1)"><span>🔗</span>Conectivos</a><a href="#precedencia" style="--b:var(--k6)"><span>📐</span>Precedência</a><a href="#classificacao" style="--b:var(--k3)"><span>🏷️</span>Classificação</a><a href="#linhas" style="--b:var(--k2)"><span>🧮</span>Nº de linhas</a><a href="#quantificadores" style="--b:var(--k5)"><span>🌐</span>Quantificadores</a><a href="#explorador" style="--b:var(--k4)"><span>🎮</span>Laboratório</a><a href="#resumo" style="--b:var(--k6)"><span>📋</span>Resumo</a><a href="#estudar" style="--b:var(--k8)"><span>🧠</span>Como estudar</a><a href="#dominar" style="--b:var(--k1)"><span>🎯</span>Dominar primeiro</a><a href="#questoes" style="--b:var(--k5)"><span>🧾</span>Questões</a></div></nav>
+<section class="study-card" data-study-kind="texto" id="proposicao">
+<div class="section-header">
+<div class="icon-circle">📌</div>
+<h2>O que é uma proposição?<span class="highlight">Fundamento essencial</span></h2>
+</div>
+<div class="card card-accent-cyan">
+<p>Em Raciocínio Lógico, <strong>proposição</strong> é uma frase declarativa que pode ser classificada como <strong>Verdadeira (V)</strong> ou <strong>Falsa (F)</strong>.</p>
+<div class="quote-block">
+                "Uma proposição precisa ter um valor lógico: verdadeiro ou falso."
+                <span class="quote-author">— Ponto mais importante</span>
+</div>
+</div>
+<div class="card card-accent-cyan">
+<h3>✅ Exemplo 1</h3>
+<div class="example-box">
+<div class="example-label">Frase analisada</div>
+<div class="example-text">"O Brasil fica na América do Sul."</div>
+<div class="example-result res-V">V → Verdadeiro</div>
+</div>
+<p>Passo a passo: É uma frase → é uma afirmação → podemos verificar → ela é <strong>verdadeira</strong>.</p>
+</div>
+<div class="card card-accent-cyan">
+<h3>❌ Exemplo 2</h3>
+<div class="example-box">
+<div class="example-label">Frase analisada</div>
+<div class="example-text">"2 + 2 = 5."</div>
+<div class="example-result res-F">F → Falso</div>
+</div>
+<p>Passo a passo: É uma frase → é uma afirmação → podemos determinar o valor lógico → ela é <strong>falsa</strong>.</p>
+<div class="alert-box">
+<span class="alert-icon">⚠️</span>
+<span class="alert-text"><strong>Perceba:</strong> uma proposição não precisa ser verdadeira. Ela pode ser falsa e continuar sendo uma proposição!</span>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 2: NÃO É PROPOSIÇÃO -->
+<section class="study-card" data-study-kind="texto" id="nao-proposicao">
+<div class="section-header">
+<div class="icon-circle">🚫</div>
+<h2>O que NÃO é proposição?<span class="highlight">Cuidado com as pegadinhas</span></h2>
+</div>
+<div class="card card-accent-red">
+<h3>❓ Perguntas</h3>
+<p>Exemplo: <em>"Qual é o seu nome?"</em> ou <em>"Você estudou hoje?"</em></p>
+<p>Não faz sentido dizer que uma pergunta é verdadeira ou falsa. Portanto, <strong>não é proposição</strong>.</p>
+</div>
+<div class="card card-accent-red">
+<h3>❗ Frases exclamativas</h3>
+<p>Exemplo: <em>"Que dia maravilhoso!"</em> ou <em>"Nossa, que prova difícil!"</em></p>
+<p>Expressam emoção/opinião sem valor lógico objetivo. <strong>Não é proposição</strong>.</p>
+</div>
+<div class="card card-accent-red">
+<h3>📢 Ordens ou comandos</h3>
+<p>Exemplo: <em>"Estude Raciocínio Lógico."</em> ou <em>"Feche a porta."</em></p>
+<p>São ordens, não afirmações. <strong>Não é proposição</strong>.</p>
+</div>
+<div class="card card-accent-red">
+<h3>🔢 Frases com variável (sentença aberta)</h3>
+<p>Exemplo: <em>"x + 2 = 5."</em></p>
+<p>Depende do valor de x. Se x = 3 → V. Se x = 10 → F. Enquanto não soubermos o valor de x, <strong>não é proposição</strong>.</p>
+</div>
+<div class="card">
+<h3>📋 Tabela resumo</h3>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table summary-table">
+<thead>
+<tr><th>Frase</th><th>É proposição?</th><th>Motivo</th></tr>
+</thead>
+<tbody>
+<tr><td>"O Brasil fica na América do Sul."</td><td>✅ Sim</td><td>Pode ser V ou F</td></tr>
+<tr><td>"2 + 2 = 5."</td><td>✅ Sim</td><td>Pode ser V ou F</td></tr>
+<tr><td>"Qual é seu nome?"</td><td>❌ Não</td><td>É pergunta</td></tr>
+<tr><td>"Feche a porta."</td><td>❌ Não</td><td>É ordem</td></tr>
+<tr><td>"Que dia lindo!"</td><td>❌ Não</td><td>É exclamação/opinião</td></tr>
+<tr><td>"x + 2 = 5."</td><td>❌ Não</td><td>Depende de x</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 3: PROPOSIÇÃO SIMPLES E COMPOSTA -->
+<section class="study-card" data-study-kind="texto" id="simples">
+<div class="section-header">
+<div class="icon-circle">🔤</div>
+<h2>Proposição Simples<span class="highlight">Uma ideia apenas</span></h2>
+</div>
+<div class="card card-accent-blue">
+<p>Uma proposição simples apresenta <strong>apenas uma ideia ou afirmação</strong>. Normalmente representamos por letras minúsculas: <strong>p, q, r, s...</strong></p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">p: "O Brasil é um país." → p = <strong>V</strong></div>
+</div>
+<div class="example-box">
+<div class="example-label">Outro exemplo</div>
+<div class="example-text">q: "10 é menor que 5." → q = <strong>F</strong></div>
+</div>
+</div>
+</section>
+<section class="study-card" data-study-kind="texto" id="composta">
+<div class="section-header">
+<div class="icon-circle">🧩</div>
+<h2>Proposição Composta<span class="highlight">União de proposições simples</span></h2>
+</div>
+<div class="card card-accent-green">
+<p>Uma proposição composta é formada pela <strong>união de duas ou mais proposições simples</strong>.</p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">"O Brasil é um país <strong>e</strong> Portugal fica na Europa."</div>
+<p>
+                    p: O Brasil é um país.<br/>
+                    q: Portugal fica na Europa.<br/>
+                    Juntando: <strong>p ∧ q</strong> (proposição composta)
+                </p>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 4: CONECTIVOS -->
+<section class="study-card" data-study-kind="texto" id="conectivos">
+<div class="section-header">
+<div class="icon-circle">🔗</div>
+<h2>Conectivos Lógicos<span class="highlight">Os 5 principais</span></h2>
+</div>
+<div class="card">
+<h3>📊 Tabela de Conectivos</h3>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table summary-table">
+<thead>
+<tr><th>Conectivo</th><th>Símbolo</th><th>Nome</th></tr>
+</thead>
+<tbody>
+<tr><td>não</td><td><strong>¬</strong></td><td>Negação</td></tr>
+<tr><td>e</td><td><strong>∧</strong></td><td>Conjunção</td></tr>
+<tr><td>ou</td><td><strong>∨</strong></td><td>Disjunção</td></tr>
+<tr><td>se... então</td><td><strong>→</strong></td><td>Condicional</td></tr>
+<tr><td>se e somente se</td><td><strong>↔</strong></td><td>Bicondicional</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="connective-grid">
+<!-- NEGAÇÃO -->
+<div class="connective-card conn-negacao">
+<span class="connective-symbol">¬</span>
+<div class="connective-name">Negação — "NÃO"</div>
+<div class="connective-rule">Inverte o valor lógico. V → F e F → V.</div>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table">
+<thead><tr><th>p</th><th>¬p</th></tr></thead>
+<tbody>
+<tr><td class="val-V">V</td><td class="result-F">F</td></tr>
+<tr><td class="val-F">F</td><td class="result-V">V</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="connective-macete"><strong>Macete:</strong> Inverte! V vira F, F vira V.</div>
+</div>
+<!-- CONJUNÇÃO -->
+<div class="connective-card conn-conjuncao">
+<span class="connective-symbol">∧</span>
+<div class="connective-name">Conjunção — "E"</div>
+<div class="connective-rule">Só é V se todas forem V. Basta uma F para tudo ser F.</div>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table">
+<thead><tr><th>p</th><th>q</th><th>p∧q</th></tr></thead>
+<tbody>
+<tr><td class="val-V">V</td><td class="val-V">V</td><td class="result-V">V</td></tr>
+<tr><td class="val-V">V</td><td class="val-F">F</td><td class="result-F">F</td></tr>
+<tr><td class="val-F">F</td><td class="val-V">V</td><td class="result-F">F</td></tr>
+<tr><td class="val-F">F</td><td class="val-F">F</td><td class="result-F">F</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="connective-macete"><strong>Macete:</strong> No "E", basta uma parte ser falsa para tudo ser falso.</div>
+</div>
+<!-- DISJUNÇÃO -->
+<div class="connective-card conn-disjuncao">
+<span class="connective-symbol">∨</span>
+<div class="connective-name">Disjunção — "OU"</div>
+<div class="connective-rule">Só é F se todas forem F. Basta uma V para tudo ser V.</div>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table">
+<thead><tr><th>p</th><th>q</th><th>p∨q</th></tr></thead>
+<tbody>
+<tr><td class="val-V">V</td><td class="val-V">V</td><td class="result-V">V</td></tr>
+<tr><td class="val-V">V</td><td class="val-F">F</td><td class="result-V">V</td></tr>
+<tr><td class="val-F">F</td><td class="val-V">V</td><td class="result-V">V</td></tr>
+<tr><td class="val-F">F</td><td class="val-F">F</td><td class="result-F">F</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="connective-macete"><strong>Macete:</strong> No "OU", basta uma parte ser verdadeira para tudo ser verdadeiro.</div>
+</div>
+<!-- 4. Disjunção Exclusiva -->
+<div class="connective-card conn-xor">
+<span class="connective-symbol">⊕</span>
+<div class="connective-name">Disjunção Exclusiva — "OU... OU"</div>
+<div class="connective-rule">Só é V se os valores forem diferentes. Se forem iguais, é F.</div>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table">
+<thead><tr><th>p</th><th>q</th><th>p⊕q</th></tr></thead>
+<tbody>
+<tr><td class="val-V">V</td><td class="val-V">V</td><td class="result-F">F</td></tr>
+<tr><td class="val-V">V</td><td class="val-F">F</td><td class="result-V">V</td></tr>
+<tr><td class="val-F">F</td><td class="val-V">V</td><td class="result-V">V</td></tr>
+<tr><td class="val-F">F</td><td class="val-F">F</td><td class="result-F">F</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="connective-macete"><strong>Macete:</strong> Valores diferentes → V; valores iguais → F.</div>
+</div>
+<!-- CONDICIONAL -->
+<div class="connective-card conn-condicional">
+<span class="connective-symbol">→</span>
+<div class="connective-name">Condicional — "SE... ENTÃO"</div>
+<div class="connective-rule">Só é F quando V → F. Todas as outras são V.</div>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table">
+<thead><tr><th>p</th><th>q</th><th>p→q</th></tr></thead>
+<tbody>
+<tr><td class="val-V">V</td><td class="val-V">V</td><td class="result-V">V</td></tr>
+<tr><td class="val-V">V</td><td class="val-F">F</td><td class="result-F">F</td></tr>
+<tr><td class="val-F">F</td><td class="val-V">V</td><td class="result-V">V</td></tr>
+<tr><td class="val-F">F</td><td class="val-F">F</td><td class="result-V">V</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="connective-macete"><strong>Macete:</strong> Só dá falso quando "promete e não cumpre" (V → F).</div>
+</div>
+<!-- BICONDICIONAL -->
+<div class="connective-card conn-bicondicional">
+<span class="connective-symbol">↔</span>
+<div class="connective-name">Bicondicional — "SE E SOMENTE SE"</div>
+<div class="connective-rule">É V quando os valores são iguais (V↔V ou F↔F).</div>
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table">
+<thead><tr><th>p</th><th>q</th><th>p↔q</th></tr></thead>
+<tbody>
+<tr><td class="val-V">V</td><td class="val-V">V</td><td class="result-V">V</td></tr>
+<tr><td class="val-V">V</td><td class="val-F">F</td><td class="result-F">F</td></tr>
+<tr><td class="val-F">F</td><td class="val-V">V</td><td class="result-F">F</td></tr>
+<tr><td class="val-F">F</td><td class="val-F">F</td><td class="result-V">V</td></tr>
+</tbody>
+</table></div>
+</div>
+<div class="connective-macete"><strong>Macete:</strong> Bicondicional = valores iguais → V.</div>
+</div>
+</div>
+</section>
+<!-- NOVA SEÇÃO: ORDEM DE PRECEDÊNCIA DOS CONECTIVOS (adicionada) -->
+<section class="study-card" data-study-kind="texto" id="precedencia">
+<div class="section-header">
+<div class="icon-circle">📐</div>
+<h2>Ordem de Precedência dos Conectivos<span class="highlight">Resolva na ordem certa</span></h2>
+</div>
+<div class="card card-accent-yellow">
+<p>Assim como na matemática (multiplicação antes da soma), na lógica proposicional existe uma <strong>hierarquia obrigatória</strong> para resolver expressões com vários conectivos. Siga sempre esta ordem:</p>
+<div class="formula-box">
+<span class="formula-label">Precedência (do mais prioritário ao menos)</span>
+                1. Parênteses <strong>( )</strong><br/>
+                2. Negação <strong>¬</strong><br/>
+                3. Conjunção <strong>∧</strong> (E)<br/>
+                4. Disjunção <strong>∨</strong> (OU) e Disjunção Exclusiva <strong>⊕</strong><br/>
+                5. Condicional <strong>→</strong> (SE... ENTÃO)<br/>
+                6. Bicondicional <strong>↔</strong> (SE E SOMENTE SE)
+            </div>
+<p>Exemplo: <code>¬(p ∧ q) ∨ r → s</code> → resolve-se o parêntese, depois a negação, depois o OU, depois o SE...ENTÃO.</p>
+<div class="alert-box">
+<span class="alert-icon">💡</span>
+<span class="alert-text"><strong>Dica:</strong> Se houver dúvida, use parênteses extras para deixar explícita a ordem desejada. A banca sempre respeita essa precedência.</span>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 8: CLASSIFICAÇÃO -->
+<section class="study-card" data-study-kind="texto" id="classificacao">
+<div class="section-header">
+<div class="icon-circle">🏷️</div>
+<h2>Classificação das Proposições Compostas<span class="highlight">Tautologia, Contradição e Contingência</span></h2>
+</div>
+<div class="card card-accent-cyan">
+<h3>Tautologia</h3>
+<p>O resultado é sempre <strong>Verdadeiro</strong>, independentemente do valor das proposições simples.</p>
+</div>
+<div class="card card-accent-red">
+<h3>Contradição</h3>
+<p>O resultado é sempre <strong>Falso</strong>, independentemente do valor das proposições simples.</p>
+</div>
+<div class="card card-accent-yellow">
+<h3>Contingência</h3>
+<p>O resultado pode ser <strong>Verdadeiro ou Falso</strong> (depende dos valores de entrada).</p>
+</div>
+</section>
+<!-- SEÇÃO 9: NÚMERO DE LINHAS -->
+<section class="study-card" data-study-kind="texto" id="linhas">
+<div class="section-header">
+<div class="icon-circle">🧮</div>
+<h2>Número de Linhas da Tabela-Verdade<span class="highlight">Fórmula essencial</span></h2>
+</div>
+<div class="card card-accent-green">
+<p>Para saber quantas linhas terá uma tabela-verdade completa, usa-se a fórmula:</p>
+<div class="formula-box">
+<span class="formula-label">Fórmula</span>
+                Número de linhas = 2<sup>n</sup>
+</div>
+<p>Onde <strong>n</strong> é o número de proposições simples distintas.</p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">Com 3 proposições simples (p, q, r): 2³ = 8 linhas.</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 10: QUANTIFICADORES -->
+<section class="study-card" data-study-kind="texto" id="quantificadores">
+<div class="section-header">
+<div class="icon-circle">🌐</div>
+<h2>Diagramas Lógicos &amp; Quantificadores<span class="highlight">Lógica de Predicados</span></h2>
+</div>
+<div class="card card-accent-purple">
+<h3>Quantificadores Universais</h3>
+<p><strong>Todo</strong>, <strong>Qualquer</strong>, <strong>Nenhum</strong>.</p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">"Todo A é B", "Nenhum A é B".</div>
+</div>
+</div>
+<div class="card card-accent-purple">
+<h3>Quantificadores Existenciais</h3>
+<p><strong>Algum</strong>, <strong>Pelo menos um</strong>, <strong>Existe</strong>.</p>
+<div class="example-box">
+<div class="example-label">Exemplo</div>
+<div class="example-text">"Algum A é B", "Existe pelo menos um A que é B".</div>
+</div>
+</div>
+<div class="card card-accent-purple">
+<h3>Negação de Quantificadores</h3>
+<div class="alert-box">
+<span class="alert-icon">⚠️</span>
+<span class="alert-text"><strong>Cuidado:</strong> A negação de "Todo A é B" não é "Nenhum A é B", mas sim "Pelo menos um A não é B" (Regra do PEA + NÃO).</span>
+</div>
+<div class="formula-box">
+<span class="formula-label">Negação</span>
+                ¬(∀x)(A(x) → B(x)) ≡ (∃x)(A(x) ∧ ¬B(x))
+            </div>
+<p>Em português: negação de "Todo A é B" é "Algum A não é B".</p>
+</div>
+</section>
+<!-- SEÇÃO 11: EXPLORADOR INTERATIVO -->
+<section class="study-card" data-study-kind="texto" id="explorador">
+<div class="section-header">
+<div class="icon-circle">🎮</div>
+<h2>Explorador Interativo<span class="highlight">Clique para testar</span></h2>
+</div>
+<section class="logic-lab" data-logic-lab=""><h3>🔬 Laboratório de proposições</h3><p>Escolha os valores de P e Q para comparar os resultados.</p><div class="logic-inputs"><label>P =<select data-proposition="p"><option value="true">Verdadeiro (V)</option><option value="false">Falso (F)</option></select></label><label>Q =<select data-proposition="q"><option value="true">Verdadeiro (V)</option><option value="false">Falso (F)</option></select></label></div><div class="logic-results"><div><code class="symbol">¬P</code><small>Negação</small><output aria-live="polite" data-logic-result="not"></output></div><div><code class="symbol">P ∧ Q</code><small>Conjunção</small><output aria-live="polite" data-logic-result="and"></output></div><div><code class="symbol">P ∨ Q</code><small>Disjunção</small><output aria-live="polite" data-logic-result="or"></output></div><div><code class="symbol">P → Q</code><small>Condicional</small><output aria-live="polite" data-logic-result="implies"></output></div><div><code class="symbol">P ↔ Q</code><small>Bicondicional</small><output aria-live="polite" data-logic-result="iff"></output></div></div></section>
+</section>
+<!-- SEÇÃO 12: RESUMO GERAL -->
+<section class="study-card" data-study-kind="texto" id="resumo">
+<div class="section-header">
+<div class="icon-circle">📋</div>
+<h2>Resumo Geral<span class="highlight">Guarde isto!</span></h2>
+</div>
+<div class="card">
+<div class="truth-table-wrapper">
+<div class="table-wrap"><table class="truth-table summary-table">
+<thead>
+<tr><th>Operação</th><th>Símbolo</th><th>Regra principal</th></tr>
+</thead>
+<tbody>
+<tr><td><strong>Negação</strong></td><td><span>¬</span></td><td>Inverte o valor</td></tr>
+<tr><td><strong>Conjunção</strong></td><td><span>∧</span></td><td>Só é V se todas forem V</td></tr>
+<tr><td><strong>Disjunção</strong></td><td><span>∨</span></td><td>Só é F se todas forem F</td></tr>
+<tr><td><strong>Disjunção Exclusiva</strong></td><td><span>⊕</span></td><td>É V quando os valores são diferentes</td></tr>
+<tr><td><strong>Condicional</strong></td><td><span>→</span></td><td>Só é F em V → F</td></tr>
+<tr><td><strong>Bicondicional</strong></td><td><span>↔</span></td><td>É V quando os valores são iguais</td></tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="alert-box">
+<span class="alert-icon">💡</span>
+<span class="alert-text"><strong>Cuidado com a confusão comum:</strong> Na linguagem cotidiana, "ou" pode significar "um ou outro, mas não os dois". Na lógica proposicional, o OU (∨) significa "pelo menos uma é verdadeira". Por isso, V ∨ V = V.</span>
+</div>
+</section>
+<!-- SEÇÃO 13: COMO ESTUDAR -->
+<section class="study-card" data-study-kind="texto" id="estudar">
+<div class="section-header">
+<div class="icon-circle">🧠</div>
+<h2>Como Estudar Proposições<span class="highlight">Método passo a passo</span></h2>
+</div>
+<div class="step-list">
+<div class="step-item">
+<div class="step-number">1</div>
+<div class="step-content">
+<h4>Identifique as frases</h4>
+<p>Exemplo: "João estuda e Maria trabalha." → separe: p: João estuda; q: Maria trabalha.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">2</div>
+<div class="step-content">
+<h4>Descubra os valores lógicos</h4>
+<p>Por exemplo: p = V, q = F.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">3</div>
+<div class="step-content">
+<h4>Identifique o conectivo</h4>
+<p>Temos "e" → conectivo ∧ (conjunção).</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">4</div>
+<div class="step-content">
+<h4>Monte a expressão</h4>
+<p>p ∧ q.</p>
+</div>
+</div>
+<div class="step-item">
+<div class="step-number">5</div>
+<div class="step-content">
+<h4>Aplique a regra</h4>
+<p>V ∧ F = F. Resultado: a proposição composta é falsa.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- SEÇÃO 14: O QUE DOMINAR -->
+<section class="study-card" data-study-kind="texto" id="dominar">
+<div class="section-header">
+<div class="icon-circle">🎯</div>
+<h2>O que dominar primeiro<span class="highlight">Fundamentos essenciais</span></h2>
+</div>
+<div class="card">
+<p>Antes de avançar para tabela-verdade, equivalências lógicas, negações compostas, tautologia, contradição e argumentação lógica, <strong>domine muito bem:</strong></p>
+<ul class="master-list">
+<li><span class="num">1</span> O que é proposição</li>
+<li><span class="num">2</span> O que não é proposição</li>
+<li><span class="num">3</span> Proposição simples</li>
+<li><span class="num">4</span> Proposição composta</li>
+<li><span class="num">5</span> Valor lógico V/F</li>
+<li><span class="num">6</span> Negação (¬)</li>
+<li><span class="num">7</span> Conjunção (∧)</li>
+<li><span class="num">8</span> Disjunção (∨)</li>
+<li><span class="num">9</span> Condicional (→)</li>
+<li><span class="num">10</span> Bicondicional (↔)</li>
+<li><span class="num">11</span> Disjunção Exclusiva (⊕)</li>
+<li><span class="num">12</span> Leis de De Morgan</li>
+<li><span class="num">13</span> Equivalências Lógicas</li>
+<li><span class="num">14</span> Tautologia, Contradição, Contingência</li>
+<li><span class="num">15</span> Fórmula 2ⁿ</li>
+<li><span class="num">16</span> Quantificadores e negações</li>
+</ul>
+</div>
+<div class="quote-block">
+            "A partir disso, a tabela-verdade fica muito mais fácil, porque ela nada mais é do que organizar sistematicamente todas essas possibilidades."
+            <span class="quote-author">— Dica final</span>
+</div>
+</section>
+<section class="study-card" data-study-kind="texto" id="questoes">
+<div class="section-header"><div class="icon-circle">🧾</div><h2>Questões Resolvidas Passo a Passo<span class="highlight">Aplique a teoria na prática</span></h2></div>
+<article class="qcard" style="--b:var(--k8)">
+<div class="qtop"><div class="qid"><div class="qnum">01</div><div><h3>Questão de Valor Lógico</h3><span class="qsub">Análise de proposições simples</span></div></div><span class="banca">📚 Fundatec</span></div>
+<div class="qbody">
+<div class="qctx"><div class="qlabel">Contexto da questão</div><p>As proposições simples <strong>A</strong>, <strong>B</strong> e <strong>C</strong> são todas <strong>FALSAS</strong>. Determine o valor lógico da expressão abaixo.</p></div>
+<div class="qexpr"><div class="qlabel">Expressão lógica</div><code>(~A ∧ B) ∨ (C ∧ ~B)</code></div>
+<div class="qres-head"><h4>🔍 Resolução passo a passo</h4><span class="qtag">4 etapas</span></div>
+<div class="qsteps">
+<div class="qstep"><div class="qn">01</div><div class="qb"><h5>Atribuir os valores lógicos</h5><p>Temos <strong>A = F</strong>, <strong>B = F</strong> e <strong>C = F</strong>. Ao negar, temos:</p><div class='qcalc'>~A = V &nbsp;|&nbsp; ~B = V &nbsp;|&nbsp; ~C = V</div></div></div>
+<div class="qstep"><div class="qn">02</div><div class="qb"><h5>Resolver o primeiro parêntese</h5><p>Temos: <strong>(~A ∧ B)</strong></p><div class='qcalc'>V ∧ F = <strong>F</strong></div><p>No conectivo <strong>E (∧)</strong>, basta um valor falso para o resultado ser falso.</p></div></div>
+<div class="qstep"><div class="qn">03</div><div class="qb"><h5>Resolver o segundo parêntese</h5><p>Agora temos: <strong>(C ∧ ~B)</strong></p><div class='qcalc'>F ∧ V = <strong>F</strong></div></div></div>
+<div class="qstep"><div class="qn">04</div><div class="qb"><h5>Aplicar o conectivo OU</h5><p>Juntando os resultados dos dois parênteses:</p><div class='qcalc'>F ∨ F = <strong>F</strong></div><p>No <strong>OU (∨)</strong>, o resultado é falso somente quando os dois valores são falsos.</p></div></div>
+</div>
+<div class="qfinal f"><span>Resultado final</span><strong>❌ Falso (F)</strong></div>
+<div class="qdica"><span class="em">💡</span><div><strong>Dica do professor</strong><p>Em questões de valor lógico, a resposta será <strong>V</strong> ou <strong>F</strong>. Analise cada operação separadamente antes de juntar os resultados.</p></div></div>
+</div></article>
+<article class="qcard" style="--b:var(--k5)">
+<div class="qtop"><div class="qid"><div class="qnum">02</div><div><h3>Questão com Operações e Conectivos</h3><span class="qsub">Matemática + lógica proposicional</span></div></div><span class="banca">📚 Dedalus</span></div>
+<div class="qbody">
+<div class="qctx"><div class="qlabel">Contexto da questão</div><p>Avalie os quatro itens abaixo, que misturam operações matemáticas com conectivos lógicos, e determine a sequência correta dos valores lógicos.</p></div>
+<div class="qlabel itens-l">📋 Itens da questão</div>
+<div class="qgrid"><div class="qitem" style="--b:var(--k4)"><div class="qitem-h"><strong>Item 01</strong><span class="op">∨</span></div><code>(7 − 2/2 = 5) ∨ (3 &gt; 2)</code></div><div class="qitem" style="--b:var(--k5)"><div class="qitem-h"><strong>Item 02</strong><span class="op">↔</span></div><code>(2 + 3 = 4) ↔ (1 &gt; 3)</code></div><div class="qitem" style="--b:var(--k1)"><div class="qitem-h"><strong>Item 03</strong><span class="op">→</span></div><code>(3 × 5 + 6 = 21) → (18/3 − 1 = 7)</code></div><div class="qitem" style="--b:var(--k8)"><div class="qitem-h"><strong>Item 04</strong><span class="op">∧</span></div><code>(4 × 4 + 3 = 19) ∧ (9 − 2 = 7)</code></div></div>
+<div class="qres-head"><h4>🔍 Resolução dos itens</h4><span class="qtag">4 análises</span></div>
+<div class="qgrid"><div class="qitem rV" style="--b:var(--k4)"><div class="qitem-h"><strong>ITEM 01</strong><span class="vf V">V</span></div><p>7 − 2/2 = 6 → <strong>F</strong><br/>3 &gt; 2 → <strong>V</strong></p><div class="qcalc">F ∨ V = <span>V</span></div></div><div class="qitem rV" style="--b:var(--k5)"><div class="qitem-h"><strong>ITEM 02</strong><span class="vf V">V</span></div><p>2 + 3 = 5 → <strong>F</strong><br/>1 &gt; 3 → <strong>F</strong></p><div class="qcalc">F ↔ F = <span>V</span></div><p>Valores iguais no bicondicional produzem V.</p></div><div class="qitem rF" style="--b:var(--k1)"><div class="qitem-h"><strong>ITEM 03</strong><span class="vf F">F</span></div><p>3 × 5 + 6 = 21 → <strong>V</strong><br/>18/3 − 1 = 5 → <strong>F</strong></p><div class="qcalc">V → F = <span>F</span></div><p>Macete: <strong>V → F = F</strong>.</p></div><div class="qitem rV" style="--b:var(--k8)"><div class="qitem-h"><strong>ITEM 04</strong><span class="vf V">V</span></div><p>4 × 4 + 3 = 19 → <strong>V</strong><br/>9 − 2 = 7 → <strong>V</strong></p><div class="qcalc">V ∧ V = <span>V</span></div></div></div>
+<div class="qfinal v"><span>Sequência correta</span><strong>✅ V, V, F, V → Alternativa A</strong></div>
+<div class="qmacetes"><div class="qmac-h"><span>📌</span><strong>Macetes para memorizar</strong></div><div class="qgrid mini"><div class="qmac" style="--b:var(--k4)"><strong>OU (∨):</strong> basta um V.</div><div class="qmac" style="--b:var(--k5)"><strong>↔:</strong> valores iguais = V.</div><div class="qmac" style="--b:var(--k1)"><strong>→:</strong> somente V → F = F.</div><div class="qmac" style="--b:var(--k8)"><strong>∧:</strong> somente V ∧ V = V.</div></div></div>
+</div></article>
+</section>
+</section>
+</article>
+</div>
+<nav aria-label="Navegação entre assuntos" class="bottom-nav">
+<a class="previous" href="outros-assuntos-que-podem-cair.html"><small>Assunto anterior</small>Outros assuntos que podem cair</a>
+</nav>
+<footer class="footer">
+<span>Matéria Policial · Conteúdo para estudar e revisar.</span>
+<a href="../../../index.html">Voltar à biblioteca</a>
+</footer>
+</main>
+</div>
+</body>
+</html>
+
