@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101820" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<title>Estrutura e Organização do Estado Brasileiro · Direito Constitucional · Matéria Policial</title>
+<meta content="Visão Geral — Art. 1º e 18 da CF" name="description"/>
+<link href="../../icone.png" rel="icon"/>
+<script defer="" src="../../js/app.js?v=leitura-20261026"></script>
+<style id="css-personalizado">/* Estrutura e Organização do Estado Brasileiro — CSS próprio (aula). */
+:root {color-scheme: dark;
+  --bg: #0a0d18;
+  --panel: #101527;
+  --surface: #151b30;
+  --surface-2: #1c2440;
+  --ink: #eef1fb;
+  --muted: #9aa5c4;
+  --line: #232c4a;
+  --line-strong: #364067;
+  --gold: #ffc45c;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --accent-width: 4px;
+  --tint: 16%;
+  --glow: 34%;
+  --shadow: 0 8px 28px rgb(2 4 14 / 45%);
+  --grad-brand: linear-gradient(120deg, #ffc45c 0%, #ff8a5c 45%, #ff5c8a 100%);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  
+  --paper: var(--bg);
+  --white: var(--surface);
+  --accent: var(--ink);}
+* {box-sizing: border-box;}
+body {margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;}
+[hidden] {display: none !important;}
+a {color: inherit; text-decoration: none;}
+a:hover {text-decoration: underline; text-underline-offset: 3px;}
+button {font: inherit;}
+button {cursor: pointer;}
+button {color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 10px 16px; min-height: 44px; font-size: 13px; font-weight: 600; transition: border-color .15s ease, background-color .15s ease;}
+button:hover {background: var(--surface-2); border-color: var(--muted);}
+:focus-visible {outline: 2px solid var(--gold); outline-offset: 3px;}
+::selection {color: var(--bg); background: var(--gold);}
+h1,
+h2,
+h3,
+p {margin: 0;}
+h1,
+h2,
+h3 {font-family: Georgia, "Times New Roman", serif; font-weight: 500;}
+h1 {font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -.02em;}
+h2 {font-size: 28px; line-height: 1.25; letter-spacing: -.01em;}
+h3 {font-size: 21px; line-height: 1.35;}
+small {font-size: 12px;}
+.skip {position: fixed; top: -80px; left: 16px; padding: 10px 16px; z-index: 20; background: var(--ink); color: var(--bg); font-weight: 700; border-radius: var(--radius);}
+.skip:focus {top: 12px;}
+.muted {color: var(--muted); font-size: 12px;}
+.status {color: var(--muted); font-size: 12px;}
+.status:empty {display: none;}
+[id] {scroll-margin-top: 24px;}
+.sidebar {position: fixed; inset: 0 auto 0 0; width: 240px; padding: 32px 20px 22px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10;}
+.brand {display: block; margin: 0 10px 28px; font: 500 30px/1 Georgia, serif; letter-spacing: -.02em;}
+.brand-period {color: var(--gold);}
+.brand small {display: block; font: 600 10px/1.5 "Segoe UI", sans-serif; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px;}
+.sidebar nav {overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; padding: 4px; margin: -4px;}
+.nav-label {font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 20px 10px 8px;}
+.sidebar nav a {display: block; font-size: 13px; line-height: 1.45; padding: 8px 10px; margin: 1px 0; border-radius: var(--radius); color: var(--muted);}
+.sidebar nav a:hover {color: var(--ink); background: var(--surface); text-decoration: none;}
+.sidebar nav a[aria-current] {color: var(--ink); background: var(--surface-2); font-weight: 600; box-shadow: inset 2px 0 0 var(--gold);}
+.sidebar-footer {margin-top: auto; padding: 20px 10px 0; font-size: 12px; color: var(--ink);}
+.sidebar-footer span {display: block; color: var(--muted); font-size: 11px; margin-top: 2px;}
+.workspace {margin-left: 240px; min-width: 0;}
+.topbar {min-height: 60px; border-bottom: 1px solid var(--line); padding: 0 44px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; background: var(--bg);}
+.topbar a {color: var(--ink); text-decoration: underline; text-underline-offset: 3px;}
+.topbar > span {font-size: 11px; text-transform: uppercase; letter-spacing: .1em;}
+.mobile-menu {display: none;}
+main {max-width: 1280px; margin: auto; padding: 48px 44px 32px;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: var(--discipline-color, var(--line));}
+.footer {margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px;}
+.footer a {text-decoration: underline; text-underline-offset: 4px;}
+.breadcrumbs {color: var(--muted); font-size: 12px; margin-bottom: 26px;}
+.breadcrumbs a {text-decoration: underline; text-underline-offset: 3px;}
+.reader-header {padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 22px;}
+.chip {display: inline-block; padding: 3px 10px; margin-bottom: 14px; border: 1px solid var(--line-strong); border-left: var(--accent-width) solid var(--discipline-color, var(--line-strong)); border-radius: var(--radius); color: var(--ink); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;}
+.reader-header h1 {max-width: 24ch; margin-bottom: 14px; font-size: clamp(30px, 3.2vw, 44px);}
+.reader-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px;}
+.reader-actions button {font-size: 12px; min-height: 38px; padding: 8px 13px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--surface-2); color: var(--ink); border-color: var(--gold);}
+.reader-layout {display: grid; grid-template-columns: minmax(0,1fr) 180px; gap: 36px; align-items: start; margin-top: 24px;}
+.bottom-nav {display: flex; justify-content: space-between; gap: 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);}
+.bottom-nav a {max-width: 47%; font: 500 17px/1.4 Georgia, serif;}
+.bottom-nav a:hover {color: var(--gold);}
+.bottom-nav small {display: block; font: 11px/1.7 "Segoe UI", sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+.bottom-nav .next {text-align: right;}
+.prose {min-width: 0; width: 100%; font: 17px/1.8 Georgia, "Times New Roman", serif; overflow-wrap: break-word;}
+.prose h2 {font-size: 25px; line-height: 1.3; margin: 4px 0 18px;}
+.prose h3 {font-size: 21px; line-height: 1.4; margin: 26px 0 10px;}
+.prose p {margin: 0 0 16px;}
+.prose strong {font-weight: 700;}
+.prose a {text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere;}
+.prose .text-section p {line-height: 1.85;}
+.prose .text-section p + p {margin-top: 14px;}
+.prose figure {margin: 22px 0;}
+.study-card {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"], [data-study-kind="h2"], [data-study-kind="h3"], [data-study-kind="destaque"]) {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="explicacao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="passo"], [data-study-kind="tabela"], [data-study-kind="laboratorio-logico"], [data-study-label="Explicação"], [data-study-label="Exemplo"], [data-study-label="Analogia"], [data-study-label="Fórmula"]) {--kind-ink: #2bc4e6;}
+.study-card:is([data-study-kind="bizu"], [data-study-kind="mnemonico"], [data-study-kind="resumo"], [data-study-kind="dica"], [data-study-kind="mapa-mental"], [data-type="resumo"], [data-study-label="Resumo"], [data-study-label="Mnemônico"], [data-study-label="Mapa Mental"], [data-study-label="Bizu"], [data-study-label="Como estudar"]) {--kind-ink: #ffc83d;}
+.study-card:is([data-study-kind="alerta"], [data-study-label="Atenção"], [data-study-label="Importante"], [data-study-label="Pegadinha"]) {--kind-ink: #ff9340;}
+.study-card {color: var(--ink); background: var(--panel); padding: 24px 26px; margin-bottom: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink); border-radius: var(--radius); box-shadow: var(--shadow);}
+.study-card :is(h2, h3) {color: var(--ink);}
+.study-card .text-section > :first-child {margin-top: 0;}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {display: inline-block; padding: 3px 9px; margin: 0 0 14px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--muted); font: 600 11px/1.5 "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .08em;}
+.study-card > :last-child,
+.text-section > :last-child {margin-bottom: 0;}
+.text-section {margin: 0; padding: 0;}
+.table-wrap {max-width: 100%; overflow: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); scrollbar-width: thin;}
+table {width: 100%; border-collapse: collapse; font: 13px/1.6 "Segoe UI", sans-serif; font-variant-numeric: tabular-nums;}
+th,
+td {padding: 11px 14px; text-align: left; vertical-align: top; min-width: 90px; border-bottom: 1px solid var(--line);}
+th {background: var(--surface-2); color: var(--ink); font-size: 12px; font-weight: 600; border-bottom-color: var(--line-strong);}
+tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 2%);}
+tbody tr:last-child td {border-bottom: 0;}
+td[data-truth] {font-weight: 700; text-align: center;}
+td[data-truth=true] {color: #34d399;}
+td[data-truth=false] {color: #ff5d7a;}
+[data-discipline="direito-constitucional"] {--discipline-color: #a66bff;}
+.mnemonic-tone-1 {--mnemonic-color: #2bc4e6;}
+.mnemonic-tone-2 {--mnemonic-color: #a56bff;}
+.mnemonic-tone-3 {--mnemonic-color: #34d399;}
+.mnemonic-tone-4 {--mnemonic-color: #ffc83d;}
+.mnemonic-tone-5 {--mnemonic-color: #ff5ca8;}
+.mnemonic-tone-6 {--mnemonic-color: #ff9340;}
+.mnemonic-tone-7 {--mnemonic-color: #6c8cff;}
+.mnemonic-tone-8 {--mnemonic-color: #9fdc3c;}
+.memory-aid li + li {margin-top: 10px;}
+.memory-aid .text-section > p + p {margin-top: 12px;}
+:root {--on-color: #0a0d18;}
+body {--hc: var(--discipline-color, #7a7dff); background:
+  radial-gradient(900px 520px at 88% -8%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 62%),
+  radial-gradient(760px 520px at -6% 38%, rgb(255 92 138 / 11%), transparent 62%),
+  radial-gradient(700px 500px at 60% 112%, rgb(38 196 238 / 10%), transparent 60%),
+  var(--bg); background-attachment: fixed;}
+h1,
+h2,
+h3 {font-family: "Segoe UI", system-ui, Arial, sans-serif; font-weight: 800; letter-spacing: -.02em;}
+h3 {font-weight: 700;}
+::selection {color: var(--on-color); background: var(--gold);}
+* {scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent;}
+button {border-radius: var(--radius-sm); background: var(--surface-2); border-color: var(--line-strong);}
+button:hover {background: color-mix(in srgb, var(--hc) 22%, var(--surface-2)); border-color: var(--hc); transform: translateY(-1px);}
+button {transition: border-color .15s ease, background-color .15s ease, transform .15s ease, box-shadow .15s ease;}
+.sidebar {background: linear-gradient(180deg, #121833 0%, #0d1226 55%, #0a0d18 100%); border-right: 1px solid var(--line); box-shadow: 8px 0 40px rgb(2 4 14 / 40%);}
+.sidebar::before {content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad-brand);}
+.brand {font: 800 29px/1.05 "Segoe UI", system-ui, sans-serif; letter-spacing: -.03em;}
+.brand-period {background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.brand small {color: var(--gold); letter-spacing: .2em;}
+.nav-label {color: #6e7aa3;}
+.sidebar nav a {display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; --nc: var(--gold); transition: background-color .15s ease, color .15s ease, transform .15s ease;}
+.sidebar nav a::before {content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--nc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nc) 22%, transparent); opacity: .85;}
+.sidebar nav a:hover {color: var(--ink); background: color-mix(in srgb, var(--nc) 14%, transparent); transform: translateX(2px);}
+.sidebar nav a[aria-current] {color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 38%, transparent), color-mix(in srgb, var(--nc) 8%, transparent)); box-shadow: inset 3px 0 0 var(--nc);}
+.sidebar nav a[aria-current]::before {opacity: 1; box-shadow: 0 0 12px var(--nc);}
+.sidebar nav a[href*="direito-administrativo"] {--nc: #4d8dff;}
+.sidebar nav a[href*="atualidades"] {--nc: #ff8a3d;}
+.sidebar nav a[href*="direitos-humanos"] {--nc: #ff5ca8;}
+.sidebar nav a[href*="legislacao-extravagante"] {--nc: #d45cf0;}
+.sidebar nav a[href*="guardas-municipais"] {--nc: #2fd08a;}
+.sidebar nav a[href*="informatica"] {--nc: #26c4ee;}
+.sidebar nav a[href*="matematica"] {--nc: #7a7dff;}
+.sidebar nav a[href*="direito-penal"] {--nc: #ff5a6e;}
+.sidebar nav a[href*="portugues"] {--nc: #25d1b8;}
+.sidebar nav a[href*="processo-penal"] {--nc: #f5bf2e;}
+.sidebar nav a[href*="raciocinio-logico"] {--nc: #9fdc3c;}
+.sidebar-footer {border-top: 1px solid var(--line); margin: auto 10px 0; padding: 18px 0 0;}
+.topbar {position: sticky; top: 0; z-index: 5; background: rgb(10 13 24 / 72%); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line);}
+.topbar > span {color: var(--gold); font-weight: 700;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: color-mix(in srgb, var(--hc) 45%, var(--line));}
+.footer {border-top-color: var(--line-strong);}
+.footer a {color: var(--gold);}
+.breadcrumbs a {color: var(--hc); font-weight: 600;}
+.reader-header {position: relative; overflow: hidden; padding: 32px 34px 28px; margin-bottom: 24px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 22px; box-shadow: var(--shadow), 0 0 70px -32px color-mix(in srgb, var(--hc) 65%, transparent);
+  background: radial-gradient(480px 240px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 72%), linear-gradient(160deg, var(--surface-2), var(--panel));}
+.reader-header > * {position: relative; z-index: 1;}
+.reader-header::after {content: ""; position: absolute; right: -50px; top: -50px; width: 190px; height: 190px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 24px color-mix(in srgb, var(--hc) 7%, transparent); pointer-events: none;}
+.reader-header h1 {max-width: 26ch; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; background: linear-gradient(100deg, #fff 20%, color-mix(in srgb, var(--hc) 45%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.chip {border: 0; border-radius: 999px; padding: 5px 14px; background: var(--hc); color: var(--on-color); font-weight: 800; letter-spacing: .09em; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--hc) 80%, transparent);}
+.chip:hover {text-decoration: none; filter: brightness(1.1);}
+.reader-header .muted {color: #b6c0dd; font-size: 13px;}
+.reader-actions button {border-radius: 999px; padding: 8px 18px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--hc); color: var(--on-color); border-color: var(--hc); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--hc) 80%, transparent);}
+.reader-actions button[aria-pressed=true]:hover {filter: brightness(1.08); transform: translateY(-1px);}
+.bottom-nav a {flex: 1; max-width: 48%; padding: 18px 22px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--hc) 30%, var(--line)); background: linear-gradient(120deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface)); font: 800 16px/1.4 "Segoe UI", sans-serif; transition: transform .18s ease, border-color .18s ease;}
+.bottom-nav a:hover {color: #fff; border-color: var(--hc); text-decoration: none; transform: translateY(-2px);}
+.bottom-nav small {color: var(--hc); font-weight: 800;}
+.bottom-nav .next {background: linear-gradient(240deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface));}
+.prose {color: #e4e9f8;}
+.prose h2 {font-weight: 800;}
+.prose strong {color: #fff;}
+.study-card {--k: var(--kind-ink); position: relative; padding: 24px 28px; margin-bottom: 18px; border: 1px solid color-mix(in srgb, var(--k) 34%, var(--line)); border-left: var(--accent-width) solid var(--k); border-radius: 16px; box-shadow: 0 6px 22px -10px rgb(2 4 14 / 60%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--k) 16%, var(--panel)) 0%, color-mix(in srgb, var(--k) 5%, var(--panel)) 75%);}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {padding: 4px 12px; margin-bottom: 14px; border: 0; border-radius: 999px; background: var(--k, var(--hc)); color: var(--on-color); font-weight: 800; letter-spacing: .1em;}
+.study-card[data-study-label="Conteúdo"] > .card-kicker {display: none;}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 8%, var(--panel)), var(--panel) 80%); border-color: color-mix(in srgb, var(--k) 20%, var(--line)); box-shadow: none;}
+.study-card:is([data-study-kind="destaque"], [data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="resumo"], [data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="questao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="mnemonico"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 24%, var(--panel)) 0%, color-mix(in srgb, var(--k) 8%, var(--panel)) 80%); box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--k) 55%, transparent);}
+.table-wrap {border-radius: 14px; border-color: color-mix(in srgb, var(--hc) 30%, var(--line)); box-shadow: 0 6px 20px -10px rgb(2 4 14 / 60%);}
+th {background: linear-gradient(180deg, color-mix(in srgb, var(--hc) 46%, var(--surface-2)), color-mix(in srgb, var(--hc) 26%, var(--surface-2))); color: #fff; font-weight: 700; border-bottom-color: var(--hc);}
+tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 3.5%);}
+tbody tr:hover td:not([data-truth]) {background: color-mix(in srgb, var(--hc) 11%, transparent);}
+td[data-truth=true] {color: #34d399; background: rgb(52 211 153 / 12%);}
+td[data-truth=false] {color: #ff5d7a; background: rgb(255 93 122 / 12%);}
+.skip {background: var(--gold); color: var(--on-color);}
+@media (prefers-reduced-motion: no-preference) {
+main > * {animation: entrar .45s ease both;}
+main > *:nth-child(2) {animation-delay: .05s;}
+main > *:nth-child(3) {animation-delay: .1s;}
+}
+@media (min-width: 1500px) {
+.prose {font-size: 18px;}
+.reader-layout {gap: 44px; grid-template-columns: minmax(0,820px) 200px;}
+}
+@media (max-width: 1120px) {
+main {padding: 36px 28px 28px;}
+.topbar {padding: 0 28px;}
+.reader-layout {grid-template-columns: minmax(0,1fr);}
+}
+@media (max-width: 800px) {
+.sidebar {position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line);}
+.brand {margin: 0; font-size: 26px;}
+.brand small {margin-top: 6px; font-size: 10px;}
+.mobile-menu {display: block; align-self: center; background: transparent;}
+.sidebar nav {display: none; grid-column: 1/-1; max-height: 60vh; margin-top: 20px;}
+.sidebar.open nav {display: block;}
+.sidebar-footer {display: none;}
+.workspace {margin: 0;}
+.topbar {min-height: 46px; padding: 0 24px;}
+main {padding: 30px 24px 26px;}
+.study-card {padding: 22px 22px;}
+.reader-header h1 {font-size: 36px;}
+}
+@media (max-width: 540px) {
+.reader-header h1 {font-size: 32px;}
+.breadcrumbs {margin-bottom: 20px;}
+.prose {font-size: 16.5px;}
+.prose h2 {font-size: 24px;}
+.study-card {padding: 20px 18px; margin-bottom: 15px;}
+th,
+td {padding: 10px; min-width: 100px;}
+.footer {flex-direction: column; gap: 10px;}
+.bottom-nav a {font-size: 16px;}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {scroll-behavior: auto !important; transition: none !important; animation: none !important;}
+}
+@media print {
+:root {color-scheme: light; --bg: #fff; --panel: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --muted: #333; --line: #bbb; --line-strong: #777;}
+body {background: #fff; font-size: 11pt;}
+.sidebar,
+.topbar,
+.breadcrumbs,
+.reader-actions,
+.bottom-nav,
+.footer,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+main {max-width: none; padding: 0;}
+.reader-layout {display: block;}
+.reader-header {padding-bottom: 15px;}
+.reader-header h1 {font-size: 28pt;}
+.study-card {background: #fff !important; color: #000 !important; padding: 12px 0; border-radius: 0; border: 0; border-bottom: 1px solid #aaa; box-shadow: none;}
+.prose {font-size: 11pt;}
+.prose h2 {font-size: 18pt; break-after: avoid;}
+.prose h3 {break-after: avoid;}
+.table-wrap {overflow: visible;}
+tr,
+figure {break-inside: avoid;}
+a {color: #000 !important;}
+}
+@media (max-width: 800px) {
+.reader-header::after {display: none;}
+.reader-header {padding: 24px 22px 22px; border-radius: 18px;}
+.sidebar::before {height: 3px;}
+.sidebar nav a:hover {transform: none;}
+.bottom-nav {flex-direction: column;}
+.bottom-nav a {max-width: 100%;}
+}
+@media (max-width: 540px) {
+.study-card {padding: 20px 18px;}
+}
+@media print {
+body {background: #fff !important; color: #000;}
+.sidebar,
+.topbar,
+.reader-actions,
+.bottom-nav,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+.reader-layout {display: block;}
+.reader-header,
+.study-card,
+.table-wrap {background: #fff !important; box-shadow: none !important; border-color: #bbb !important; color: #000;}
+.reader-header h1 {color: #000 !important; -webkit-text-fill-color: #000; text-shadow: none; background: none !important;}
+.prose,
+.prose strong {color: #000;}
+.study-card {break-inside: avoid;}
+th {background: #e8e8e8 !important; color: #000 !important;}
+.chip {background: #eee; color: #000; box-shadow: none;}
+}
+.material-github {margin-block: 32px; min-width: 0;}
+.material-github .study-card {overflow-wrap: anywhere;}
+.prose .memory-aid,
+.prose .memory-inline {--mnemonic-color: #facc15;
+  padding: 22px; margin-block: 20px;
+  border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));}
+.prose .memory-aid .memory-line {margin-block: 12px; padding: 16px 18px;
+  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);}
+.prose .memory-line .memory-letter {display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace;}
+@media (max-width: 600px) {
+.prose .memory-aid,
+.prose .memory-inline {padding: 17px;}
+}
+@media print {
+.prose .memory-aid,
+.prose .memory-inline {background: white !important; color: black !important;}
+}
+:root {--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;}
+.tilt-ativo {transition-duration: 60ms, var(--t-base), .15s, .15s;}
+.rev {opacity: 0; transform: translateY(10px);}
+.rev.entrou {opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);}
+@view-transition { navigation: auto; }::view-transition-old(root) {animation: 120ms var(--ease-out) both vt-sai;}
+::view-transition-new(root) {animation: 200ms var(--ease-out) both vt-entra;}
+@media (prefers-reduced-motion: reduce) {
+.rev,
+.rev.entrou {opacity: 1; transform: none; transition: none;}
+::view-transition-old(root),
+::view-transition-new(root) {animation: none;}
+}
+:root {--dc-accent:#60a5fa;--dc-accent-2:#22d3ee;--dc-ink:#eef5ff;--dc-muted:#a9b8ce;--dc-line:rgba(148,163,184,.22);--dc-card:rgba(15,27,48,.55)}
+html {scroll-behavior:smooth;scroll-padding-top:28px}
+.study-card {scroll-margin-top:28px}
+.reader-header > h1 {font-size:clamp(1.7rem,3.6vw,2.65rem);line-height:1.17;letter-spacing:-.045em;font-weight:850;text-wrap:balance}
+.prose .card-titulo {margin:0 0 14px;font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.4;font-weight:760;letter-spacing:-.015em;color:#dbeafe;border-left:3px solid var(--dc-accent);padding:3px 0 3px 12px;text-wrap:pretty}
+.prose .study-card .text-section .card-titulo:first-child {margin-top:1px}
+.prose .study-card h3:not(.card-titulo) {font-weight:730;letter-spacing:-.012em;line-height:1.4}
+.prose .study-card h3:not(.card-titulo) {font-size:1.12rem;color:#dbeafe}
+.material-github>.complementar-titulo {font-size:clamp(1.24rem,2vw,1.55rem);font-weight:760;line-height:1.3;letter-spacing:-.025em;padding:0 0 12px;border-bottom:1px solid var(--dc-line);margin:32px 0 16px;color:#e1edff}
+.indice-unificado {border-color:var(--dc-line)!important;background:linear-gradient(140deg,rgba(30,58,100,.17),rgba(15,23,42,.12));border-radius:16px!important}
+.indice-unificado h2 {letter-spacing:-.02em;font-weight:800}
+.indice-unificado a {text-decoration:none;transition:color .18s,border-color .18s,background .18s}
+.indice-unificado a:hover {color:#7dd3fc}
+@media (prefers-reduced-motion:reduce) {
+html {scroll-behavior:auto}
+.indice-unificado a {transition:none}
+}
+@media print {
+.card-titulo {break-after:avoid}
+}
+:root {--dc-accent:#a66bff;--dc-accent-2:#60a5fa}
+html {scroll-padding-top:24px}
+body {min-width:0}
+main,
+.workspace,
+.reader-layout,
+.prose,
+.study-card {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+main {max-width:1240px}
+h1,
+h2,
+h3 {font-family:"Segoe UI",system-ui,sans-serif;overflow-wrap:break-word}
+.prose {max-width:none;line-height:1.8}
+.prose p {overflow-wrap:break-word}
+.prose h2 {margin:30px 0 18px;font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:750}
+.prose figure {margin:16px 0}
+.study-card .text-section>.card-titulo {margin:0 0 16px}
+.study-card[data-study-kind="texto"] {--kind-ink:#a66bff}
+.indice-unificado {margin:0 0 30px;padding:24px;background:var(--panel,#101527)}
+.indice-unificado h2 {font-size:1.2rem;margin:0 0 18px}
+.indice-unificado ol {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:0;list-style:none}
+.indice-unificado li {min-width:0;margin:0}
+.indice-unificado a {display:block;padding:12px 14px;border:1px solid var(--dc-line);border-radius:10px;background:rgba(96,165,250,.06);font-size:.9rem;line-height:1.5;color:#dbeafe;overflow-wrap:anywhere}
+.indice-unificado a:hover {background:rgba(96,165,250,.14);border-color:#60a5fa;text-decoration:none}
+.table-wrap {max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+table {width:100%;border-collapse:collapse}
+th,
+td {vertical-align:top;overflow-wrap:break-word}
+.mapa-indisponivel {padding:20px;border:1px dashed var(--dc-line);border-radius:12px;background:rgba(96,165,250,.05)}
+.mapa-indisponivel .mapa-titulo {color:#eaf2ff;font-weight:700}
+.mapa-indisponivel p {margin:0 0 12px}
+.mapa-indisponivel a {color:#93c5fd;text-decoration:underline;text-underline-offset:3px}
+.bottom-nav {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:32px 0 18px}
+.bottom-nav a {min-width:0;padding:18px;border:1px solid var(--dc-line);border-radius:12px;overflow-wrap:break-word;background:var(--panel,#101527);font-weight:650}
+.bottom-nav small {display:block;margin-bottom:6px;font-size:.75rem;color:var(--muted,#9aa5c4)}
+.bottom-nav .next {grid-column:2;text-align:right}
+@media (max-width:900px) {
+.indice-unificado ol {grid-template-columns:1fr}
+.bottom-nav {gap:9px}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(1.65rem,6.5vw,2.2rem)}
+.indice-unificado {padding:18px}
+.study-card {padding:20px 16px}
+.bottom-nav {grid-template-columns:1fr}
+.bottom-nav .next {grid-column:1}
+.table-wrap table {min-width:520px}
+}
+@media (prefers-reduced-motion:reduce) {
+*,
+*::before,
+*::after {scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+@media print {
+.indice-unificado,
+.bottom-nav {display:none!important}
+.study-card {background:#fff!important;color:#111!important;box-shadow:none!important}
+.study-card * {color:#111!important}
+.table-wrap {overflow:visible}
+.table-wrap table {min-width:0}
+}
+
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+/* Layout específico do assunto */
+main {max-width:var(--page-width);}
+.reader-header h1 {text-wrap:balance;overflow-wrap:break-word}
+main,
+.workspace,
+.prose {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr);align-items:start}
+.prose {line-height:1.8}
+.study-card {margin-bottom:22px}
+.study-card .card-titulo {line-height:1.4;overflow-wrap:break-word}
+.material-github>h2 {margin-top:32px}
+.table-wrap {max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;margin-block:22px}
+.table-wrap table {width:100%;min-width:var(--table-min-width,520px);font-size:14px;line-height:1.6}
+.table-wrap th,
+.table-wrap td {padding:12px 14px;vertical-align:top;overflow-wrap:break-word}
+.table-wrap th {font-weight:750}
+.table-wrap tbody tr:nth-child(even) {background:color-mix(in srgb,var(--discipline-color) 5%,var(--panel))}
+@media (max-width:1000px) {
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(28px,7vw,36px)}
+.study-card {padding:20px 18px}
+.prose {font-size:16px}
+.bottom-nav {flex-wrap:wrap;gap:16px}
+.bottom-nav a {max-width:100%;overflow-wrap:break-word}
+}
+@media print {
+main {max-width:none}
+.reader-layout {display:block}
+.table-wrap {overflow:visible}
+.table-wrap table {min-width:0}
+.study-card {break-inside:auto}
+.study-card h2,
+.study-card h3 {break-after:avoid}
+}
+</style></head>
+<body class="tema-biblioteca" data-disciplina-acervo="direito-constitucional" data-discipline="direito-constitucional" data-page-kind="aula" style="--discipline-color: #a66bff; --page-width:1240px;">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a>
+<button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button>
+<nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a aria-current="page" href="index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
+<div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
+<main id="conteudo">
+<nav aria-label="Trilha" class="breadcrumbs">
+<a href="../../../index.html">Biblioteca</a> / <a href="index.html">Direito Constitucional</a> / Estrutura e Organização do Estado Brasileiro
+      </nav>
+<header class="reader-header">
+<a class="chip" href="index.html">Direito Constitucional</a>
+<h1>Estrutura e Organização do Estado Brasileiro</h1>
+<p class="muted">Assunto 8 de 14 · 84 blocos de estudo</p>
+<div class="reader-actions">
+<button aria-pressed="false" data-key="assets/materias/direito-constitucional/constitucional-09.html" id="concluir" type="button">Marcar como estudado</button>
+<button id="imprimir" type="button">Imprimir</button>
+<span class="status" id="salvamento"></span>
+</div>
+</header><nav aria-label="Índice do assunto" class="indice-unificado" id="indice"><h2>Neste assunto</h2><ol><li><a href="#topico-01">Visão Geral — Art. 1º e 18 da CF</a></li><li><a href="#topico-02">Forma de Estado: Federação — Características</a></li><li><a href="#topico-03">Forma de Governo: República — Características</a></li><li><a href="#topico-04">Sistema de Governo: Presidencialismo</a></li><li><a href="#topico-05">Regime Político: Democracia — Formas de Exercício</a></li><li><a href="#topico-06">Princípio da Separação dos Poderes</a></li><li><a href="#topico-07">Sistema de Freios e Contrapesos (Checks and Balances)</a></li><li><a href="#topico-08">Funções Típicas e Atípicas dos Poderes</a></li><li><a href="#topico-09">🌎 Forma de Estado — Federação</a></li><li><a href="#topico-10">👑 Forma de Governo — República</a></li><li><a href="#topico-11">⚙️ Funcionamento Político — Sistema e Regime</a></li><li><a href="#topico-12">🗺️ Organização Político-Administrativa (Art. 18)</a></li><li><a href="#topico-13">🔄 Soberania vs Autonomia</a></li><li><a href="#topico-14">🧠 MNEMÔNICO FINAL — 'FRED + LIMPE + EPCC + FASE'</a></li><li><a href="#topico-15">Entes Federativos (Art. 18, caput)</a></li><li><a href="#topico-16">Art. 18, §1º — Brasília, Capital Federal</a></li><li><a href="#topico-17">Art. 18, §§ 3º e 4º — Criação, Incorporação, Fusão e Desmembramento</a></li><li><a href="#topico-18">Peculiaridades do Distrito Federal (Art. 32)</a></li><li><a href="#topico-19">Territórios Federais — Art. 18, §2º e Art. 33</a></li><li><a href="#topico-20">Vedações aos Entes (Art. 19 CF)</a></li><li><a href="#topico-21">Competência e Decreto de Intervenção (Art. 36 da CF)</a></li><li><a href="#topico-22">Espécies de Intervenção Federal (Art. 34)</a></li><li><a href="#topico-23">Princípios Constitucionais Sensíveis — Art. 34, VII da CF</a></li><li><a href="#topico-24">Intervenção Estadual (Art. 35 CF) — CORRIGIDO!</a></li><li><a href="#topico-26">Art. 20 — Bens da União</a></li><li><a href="#topico-27">Art. 26 — Bens dos Estados</a></li><li><a href="#topico-28">Terras Devolutas — Regra e Exceção</a></li><li><a href="#topico-29">Pegadinhas sobre Bens</a></li><li><a href="#topico-30">Visão Geral da Repartição de Competências</a></li><li><a href="#topico-31">Competência Exclusiva da União — Art. 21 (Material/Administrativa)</a></li><li><a href="#topico-32">Competência Privativa da União — Art. 22 (Legislativa)</a></li><li><a href="#topico-33">Competência Comum — Art. 23 (Administrativa)</a></li><li><a href="#topico-34">Competência Concorrente — Art. 24 (Legislativa)</a></li><li><a href="#topico-35">Competências dos Estados (Arts. 25 a 28)</a></li><li><a href="#topico-36">Competências dos Municípios — Art. 30</a></li><li><a href="#topico-37">Competências do Distrito Federal — Art. 32</a></li><li><a href="#topico-38">🧠 MNEMÔNICOS GERAIS</a></li><li><a href="#topico-39">⚠️ Pegadinhas Mais Cobradas</a></li><li><a href="#topico-40">✅ CHECKLIST PARA A PROVA</a></li><li><a href="#topico-41">Exemplo Prático – Conflito de Competências</a></li><li><a href="#topico-42">Lei Orgânica do Município (Art. 29, caput)</a></li><li><a href="#topico-43">Eleição de Prefeito, Vice-Prefeito e Vereadores (Art. 29, I a IV)</a></li><li><a href="#topico-44">Subsídios dos Vereadores (Art. 29, VI e VII)</a></li><li><a href="#topico-45">Inviolabilidade dos Vereadores (Art. 29, IX)</a></li><li><a href="#topico-46">Incompatibilidades e Perda do Mandato (Art. 29, XII e XIII)</a></li><li><a href="#topico-47">Fiscalização pelo Poder Legislativo Municipal (Art. 31, caput)</a></li><li><a href="#topico-48">Auxílio do Tribunal de Contas (Art. 31, §1º)</a></li><li><a href="#topico-49">Parecer Prévio e Prazo (Art. 31, §1º, in fine)</a></li><li><a href="#topico-50">Rejeição do Parecer Prévio — Maioria Qualificada (Art. 31, §2º)</a></li><li><a href="#topico-51">Legitimidade para Questionar Contas (Art. 31, §3º)</a></li><li><a href="#topico-52">Deputados Estaduais — Número e Composição (Art. 27, caput)</a></li><li><a href="#topico-53">Subsídio, Imunidades e Mandato (Art. 27, §1º e §2º)</a></li><li><a href="#topico-54">Governador e Vice-Governador (Art. 28)</a></li><li><a href="#topico-55">Símbolos Nacionais — Art. 13, caput</a></li><li><a href="#topico-56">Idioma Oficial — Art. 13, § 1º</a></li><li><a href="#topico-57">Outras Disposições (Art. 13, § 2º e § 3º)</a></li><li><a href="#topico-58">Símbolos dos Estados, DF e Municípios — Art. 13, § 2º da CF</a></li><li><a href="#topico-59">Bandeira Nacional — Características e Normas</a></li><li><a href="#topico-60">Regras Específicas de Hasteamento da Bandeira</a></li><li><a href="#topico-61">Hino Nacional — Regras e Obrigatoriedade</a></li><li><a href="#topico-62">Armas Nacionais (Brasão)</a></li><li><a href="#topico-63">Selo Nacional</a></li><li><a href="#topico-64">Lei nº 5.700/1971 — Normas sobre Símbolos Nacionais</a></li><li><a href="#topico-65">Obrigatoriedade do Hino nas Escolas — Lei 12.031/2009</a></li><li><a href="#topico-66">🧠 MNEMÔNICOS GERAIS</a></li><li><a href="#topico-67">⚠️ Pegadinhas Mais Cobradas (Atualizadas)</a></li><li><a href="#topico-68">✅ CHECKLIST PARA A PROVA</a></li><li><a href="#topico-69">Exemplo Prático – Caso do Hino em Estádio</a></li></ol></nav>
+<div class="reader-layout">
+<article class="prose">
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-01">Visão Geral — Art. 1º e 18 da CF</h2>
+<p>O Brasil adota simultaneamente quatro características fundamentais:</p>
+<p>- <strong>Forma de Estado:</strong> <strong>Federação</strong> (Art. 1º, caput) – união indissolúvel de Estados autônomos.<br/>- <strong>Forma de Governo:</strong> <strong>República</strong> (Art. 1º, caput) – eletividade, temporalidade e responsabilidade dos governantes.<br/>- <strong>Sistema de Governo:</strong> <strong>Presidencialismo</strong> – Presidente é Chefe de Estado e de Governo, eleito pelo povo.<br/>- <strong>Regime Político:</strong> <strong>Democracia</strong> (Art. 1º, parágrafo único) – poder emana do povo, exercido direta ou indiretamente.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-02">Forma de Estado: Federação — Características</h2>
+<p>O Brasil adota a <strong>forma federativa de Estado</strong> (Art. 1º, caput).</p>
+<p><strong>Características da Federação brasileira:</strong><br/>- <strong>Indissolúvel</strong> – nenhum Estado pode se separar da Federação (vedação ao direito de secessão).<br/>- <strong>Autonomia dos entes</strong> – União, Estados, DF e Municípios possuem autonomia política, administrativa e financeira (Art. 18, caput).<br/>- <strong>Repartição de competências</strong> – definida nos Arts. 21 a 30.<br/>- <strong>Constituição rígida</strong> – não pode ser alterada por emenda que suprima a forma federativa (cláusula pétrea – Art. 60, §4º, I).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-03">Forma de Governo: República — Características</h2>
+<p>O Brasil adota a <strong>forma republicana de governo</strong> (Art. 1º, caput).</p>
+<p><strong>Características da República:</strong><br/>- <strong>Eletividade</strong> – representantes escolhidos pelo povo (direta ou indiretamente).<br/>- <strong>Temporalidade</strong> – mandatos com prazo determinado.<br/>- <strong>Responsabilidade</strong> – governantes prestam contas ao povo.<br/>- <strong>Soberania popular</strong> – o poder emana do povo (Art. 1º, parágrafo único).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o Brasil é uma monarquia parlamentarista. <strong>ERRADO.</strong> É uma república presidencialista.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-04">Sistema de Governo: Presidencialismo</h2>
+<p>O Brasil adota o <strong>presidencialismo</strong> (Art. 1º, caput).</p>
+<p><strong>Características do Presidencialismo:</strong><br/>- O Presidente é <strong>Chefe de Estado</strong> e <strong>Chefe de Governo</strong> simultaneamente.<br/>- Eleito diretamente pelo povo (Art. 77, caput).<br/>- <strong>Independência entre os Poderes</strong> (Art. 2º).<br/>- <strong>Inamovibilidade</strong> – o Presidente não pode ser removido por voto de desconfiança (diferente do parlamentarismo).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca diz que o Brasil adota o parlamentarismo. <strong>ERRADO.</strong> O sistema é presidencialista.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-05">Regime Político: Democracia — Formas de Exercício</h2>
+<p><strong>Regime Político:</strong> Democracia (Art. 1º, parágrafo único).</p>
+<p>'Todo o poder emana do povo, que o exerce por meio de representantes eleitos ou diretamente, nos termos desta Constituição.'</p>
+<p><strong>Formas de exercício da democracia:</strong><br/>- <strong>Direta</strong> – o povo decide pessoalmente (plebiscito, referendo, iniciativa popular de lei).<br/>- <strong>Indireta</strong> – o povo elege representantes (deputados, senadores, prefeitos, governadores, presidente).<br/>- <strong>Semidireta</strong> – combinação das duas formas (ex: o povo elege representantes, mas também pode ser consultado por plebiscito ou referendo).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-06">Princípio da Separação dos Poderes</h2>
+<p><strong>Princípio (Art. 2º):</strong> 'São Poderes da União, independentes e harmônicos entre si, o Legislativo, o Executivo e o Judiciário.'</p>
+<p><strong>São Poderes da União</strong> (não dos Estados, embora os Estados também tenham seus três Poderes):<br/>- <strong>Legislativo</strong> – elabora leis (Congresso Nacional: Câmara dos Deputados + Senado Federal).<br/>- <strong>Executivo</strong> – administra e governa (Presidente da República).<br/>- <strong>Judiciário</strong> – julga e aplica a lei (STF, STJ, TST, TSE, TRFs, TRTs, etc.).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-07">Sistema de Freios e Contrapesos (Checks and Balances)</h2>
+<p>Cada Poder controla e é controlado pelos outros:</p>
+<p>- <strong>Legislativo:</strong> fiscaliza o Executivo (CPIs, impeachment), aprova leis, julga o Presidente em crime de responsabilidade (Art. 52, I).<br/>- <strong>Executivo:</strong> veto, medida provisória, decreto autônomo (Art. 84, VI), lei delegada (Art. 68), nomeia ministros do STF (Art. 84, XX).<br/>- <strong>Judiciário:</strong> controle de constitucionalidade, julga a constitucionalidade das leis (Art. 97, 102, I, a).</p>
+<p>💡 <strong>Exemplo Prático:</strong> O Presidente veta um projeto de lei aprovado pelo Congresso. O Legislativo pode derrubar o veto por maioria absoluta (Art. 66, §4º). O Judiciário, por sua vez, pode declarar a lei inconstitucional se entender que viola a CF. É o freio e contrapeso em ação.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-08">Funções Típicas e Atípicas dos Poderes</h2>
+<p><strong>Funções TÍPICAS:</strong><br/>- <strong>Legislativo</strong> → legislar (Art. 48 CF).<br/>- <strong>Executivo</strong> → administrar (Art. 84 CF).<br/>- <strong>Judiciário</strong> → julgar (Art. 92 CF).</p>
+<p><strong>Funções ATÍPICAS:</strong><br/>- <strong>Legislativo</strong> → julgar (impeachment do Presidente – Art. 52, I) e administrar (gestão interna da Câmara e Senado).<br/>- <strong>Executivo</strong> → legislar (medida provisória – Art. 62; decreto autônomo – Art. 84, VI; lei delegada – Art. 68).<br/>- <strong>Judiciário</strong> → administrar (gestão interna dos tribunais – Art. 99 CF) e, em algumas situações, legislar (regimentos internos dos tribunais).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o Judiciário só exerce função típica de julgar. <strong>ERRADO.</strong> Também exerce funções atípicas (administrativa e legislativa, esta última na elaboração de seus regimentos internos).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-09">🌎 Forma de Estado — Federação</h2>
+<p><strong>FEDERAÇÃO:</strong> União de entes autônomos (indissolúvel).</p>
+<p>- Possui descentralização política (cada ente faz suas leis).<br/>- 4 entes: União, Estados, DF, Municípios.</p>
+<p>🧠 <strong>Dica:</strong> 'O Estado é <strong>FE</strong>derado' (FE = Federação).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A Federação é uma união indissolúvel — Estados não podem se separar (Art. 1º, caput).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-10">👑 Forma de Governo — República</h2>
+<p><strong>REPÚBLICA:</strong> Caracterizada pela eletividade e temporariedade.</p>
+<p>- Dever de prestar contas (responsabilidade do gestor).<br/>- Soberania popular — poder emana do povo.</p>
+<p>🧠 <strong>Dica:</strong> 'O Governo é <strong>RE</strong>publicano' (RE = República).</p>
+<p>⚠️ <strong>Pegadinha:</strong> República não é sinônimo de democracia direta; é a forma de governo, enquanto democracia é o regime político.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-11">⚙️ Funcionamento Político — Sistema e Regime</h2>
+<p><strong>Sistema de Governo: PRESIDENCIALISMO</strong><br/>- O Presidente é, ao mesmo tempo, Chefe de Estado e Chefe de Governo.<br/>- Eleito diretamente pelo povo.<br/>- Inamovibilidade (não cai por voto de desconfiança).</p>
+<p><strong>Regime Político: DEMOCRACIA</strong><br/>- Todo o poder emana do povo (Direta, Indireta ou Semidireta).<br/>- <strong>Direta:</strong> plebiscito, referendo, iniciativa popular.<br/>- <strong>Indireta:</strong> eleição de representantes (regra geral).</p>
+<p>⚠️ <strong>Pegadinha:</strong> Presidencialismo não significa que o Presidente governa sozinho; ele depende da harmonia com os outros Poderes (freios e contrapesos).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-12">🗺️ Organização Político-Administrativa (Art. 18)</h2>
+<p>Art. 18 da CF/88: A organização compreende a <strong>União, os Estados, o Distrito Federal e os Municípios</strong>, todos autônomos.</p>
+<p>- 🏛️ <strong>União:</strong> Representa a soberania do Estado Brasileiro no exterior, mas internamente é apenas autônoma.<br/>- 🗺️ <strong>Estados:</strong> Possuem Constituições Próprias e auto-organização.<br/>- 🏙️ <strong>Municípios:</strong> Possuem Leis Orgânicas (não têm Constituição nem Judiciário próprio).<br/>- 🏢 <strong>Distrito Federal:</strong> Natureza híbrida (acumula competências estaduais e municipais), com Lei Orgânica própria (Art. 32).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-13">🔄 Soberania vs Autonomia</h2>
+<p>🏛️ <strong>República Federativa do Brasil:</strong> Detém a <strong>SOBERANIA</strong> (poder supremo e independente no plano internacional).</p>
+<p>🏘️ <strong>Entes Federados (U/E/DF/M):</strong> Detêm apenas <strong>AUTONOMIA</strong> (capacidade de autogestão nos limites da lei).</p>
+<p>⚠️ <strong>CUIDADO:</strong> Territórios Federais não são entes federados. Eles integram a União e não possuem autonomia política.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-14">🧠 MNEMÔNICO FINAL — 'FRED + LIMPE + EPCC + FASE'</h2>
+<p><strong>Estrutura do Estado:</strong><br/>- <strong>F</strong>ederação + <strong>R</strong>epública + <strong>E</strong>leição direta + <strong>D</strong>emocracia (FRED)</p>
+<p><strong>Administração Pública:</strong><br/>- <strong>L</strong>egalidade + <strong>I</strong>mpessoalidade + <strong>M</strong>oralidade + <strong>P</strong>ublicidade + <strong>E</strong>ficiência (LIMPE)</p>
+<p><strong>Competências:</strong><br/>- <strong>E</strong>xclusiva + <strong>P</strong>rivativa + <strong>C</strong>omum + <strong>C</strong>oncorrente (EPCC)</p>
+<p><strong>Administração Indireta:</strong><br/>- <strong>F</strong>undações + <strong>A</strong>utarquias + <strong>S</strong>ociedades de Economia Mista + <strong>E</strong>mpresas Públicas (FASE)</p>
+<p>📌 <strong>Dica:</strong> Guarde esses mnemônicos para não errar questões conceituais!</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-15">Entes Federativos (Art. 18, caput)</h2>
+<p>A organização político-administrativa da República Federativa do Brasil compreende a <strong>União, os Estados, o Distrito Federal e os Municípios</strong>, todos autônomos.</p>
+<p><strong>Características de cada ente:</strong><br/>- <strong>União</strong> – soberania externa, defesa nacional, relações internacionais.<br/>- <strong>Estados</strong> – possuem Constituição Estadual própria.<br/>- <strong>Distrito Federal</strong> – natureza híbrida (competências estaduais + municipais).<br/>- <strong>Municípios</strong> – possuem Lei Orgânica (não têm Constituição) e não possuem Judiciário próprio (a Justiça Estadual julga as questões municipais).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-16">Art. 18, §1º — Brasília, Capital Federal</h2>
+<p>Art. 18, §1º: <strong>Brasília é a Capital Federal.</strong></p>
+<p>Brasília está localizada no Distrito Federal e é a sede do Governo Federal. A mudança da Capital Federal exige lei complementar (Art. 18, §2º).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-17">Art. 18, §§ 3º e 4º — Criação, Incorporação, Fusão e Desmembramento</h2>
+<p><strong>§3º — Estados:</strong><br/>A criação, incorporação, fusão e desmembramento de Estados dependem de:<br/>- <strong>Plebiscito</strong> das populações diretamente interessadas;<br/>- <strong>Oitiva das Assembleias Legislativas</strong> (parecer não vinculante);<br/>- <strong>Lei Complementar</strong> do Congresso Nacional.</p>
+<p><strong>§4º — Municípios:</strong><br/>A criação, incorporação, fusão e desmembramento de Municípios dependem de:<br/>- <strong>Lei complementar federal</strong> fixando período para criação (ainda não editada – <strong>STF suspendeu novos municípios</strong>);<br/>- <strong>Estudos de viabilidade</strong>;<br/>- <strong>Plebiscito</strong> das populações envolvidas;<br/>- <strong>Lei estadual</strong> efetivando a criação.</p>
+<p>🚨 <strong>Situação atual (ADI 3.682):</strong> A lei complementar federal nunca foi aprovada, portanto <strong>não há criação de novos municípios</strong> no Brasil (salvo os convalidados pela EC 57/2008).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-18">Peculiaridades do Distrito Federal (Art. 32)</h2>
+<p>O Distrito Federal possui regras únicas:</p>
+<p>- <strong>Vedação de divisão em Municípios:</strong> Art. 32, caput – o DF não pode ser dividido em Municípios; organiza-se em <strong>Regiões Administrativas</strong> (RAs).<br/>- <strong>Competência híbrida:</strong> Art. 32, §1º – o DF acumula as competências legislativas e tributárias reservadas aos Estados e Municípios.<br/>- <strong>Lei Orgânica própria:</strong> não possui Constituição Estadual nem Lei Orgânica Municipal; sua norma fundamental é a <strong>Lei Orgânica do Distrito Federal</strong>, aprovada por 2/3 da Câmara Legislativa (Art. 32, §2º).<br/>- <strong>Autonomia:</strong> é ente federativo autônomo (Art. 18, caput), com governador e vice eleitos pelo povo (Art. 32, §3º), e Câmara Legislativa (Art. 32, §4º).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-19">Territórios Federais — Art. 18, §2º e Art. 33</h2>
+<p>Os <strong>Territórios Federais</strong> integram a União e <strong>não possuem autonomia</strong>.<br/>- Não são entes federativos – não têm autonomia política.<br/>- A criação, transformação em Estado ou reintegração ao Estado de origem é regulada por lei complementar (LC nº 20/1974).</p>
+<p><strong>Atualmente não existem Territórios Federais no Brasil:</strong><br/>- Roraima → transformado em Estado (ADCT, art. 4º).<br/>- Amapá → transformado em Estado (ADCT, art. 4º).<br/>- Fernando de Noronha → extinto, retornou a Pernambuco.</p>
+<p><strong>Poderes no Território:</strong> Se houvesse, o Presidente da República nomearia o Governador (Art. 84, XV, 'e'), e a justiça seria federal.</p>
+<p><strong>Organização (Art. 33):</strong><br/>- Se o Território tiver mais de 100 mil habitantes, terá órgãos judiciários de primeira e segunda instância, Ministério Público e Defensoria Pública (§1º).<br/>- Terá Câmara Territorial (§2º) e suas contas serão fiscalizadas pelo Tribunal de Contas da União (§3º).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-20">Vedações aos Entes (Art. 19 CF)</h2>
+<p>É vedado à União, aos Estados, ao DF e aos Municípios:<br/>- <strong>Estabelecer cultos religiosos ou igrejas</strong> (inciso I).<br/>- <strong>Subvencionar cultos religiosos ou igrejas</strong> (inciso II).<br/>- <strong>Recusar fé a documentos públicos</strong> – Art. 19, III: não podem recusar validade a documentos públicos de outros entes em todo o território nacional. STF já consolidou (SV 45) que nenhum ente pode exigir autenticação ou reconhecimento de firma para documentos públicos produzidos por outro ente federativo.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Destaque">
+<span class="card-kicker">Destaque</span>
+<div class="text-section">
+<p>Mapa-mental — Organização do Estado</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-21">Competência e Decreto de Intervenção (Art. 36 da CF)</h2>
+<p>A União não intervirá nos Estados ou no Distrito Federal, salvo nas hipóteses previstas na Constituição.</p>
+<p><strong>Competência para Decretar:</strong> Compete privativamente ao Presidente da República decretar a intervenção federal, mediante decreto.</p>
+<p><strong>Controle do Congresso Nacional:</strong> O Presidente submeterá o decreto de intervenção ao Congresso Nacional no prazo de 24 horas, que poderá aprová-lo ou rejeitá-lo.</p>
+<p><strong>Decreto de Intervenção:</strong> É o ato que formaliza a intervenção. Esse decreto estabelecerá as seguintes regras:<br/>- I – O prazo de vigência;<br/>- II – O interventor;<br/>- III – As medidas aplicadas;<br/>- IV – As áreas afetadas.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-22">Espécies de Intervenção Federal (Art. 34)</h2>
+<p><strong>I – Intervenção Espontânea (Ex Officio)</strong><br/>É decretada pelo Presidente da República de forma unilateral (ex officio).</p>
+<p><strong>Hipóteses:</strong><br/>1. Manter a integridade nacional.<br/>2. Repelir invasão estrangeira ou invasão de uma unidade da federação em outra.<br/>3. Garantir o cumprimento da ordem pública.<br/>4. Reorganizar as finanças da unidade da federação que:<br/>   - I - Deixar de pagar a dívida com a União por mais de 3 (três) anos consecutivos, salvo por motivos de força maior.<br/>   - II - Deixar de repassar receitas tributárias para os municípios no prazo legal.</p>
+<p>---</p>
+<p><strong>II – Intervenção por Solicitação</strong><br/>O Presidente a decretará mediante pedido.</p>
+<p><strong>Observações importantes:</strong><br/>- O pedido é essencial, não podendo o Presidente decretar ex officio.<br/>- O pedido não vincula o Presidente; ele decide se decreta ou não.</p>
+<p><strong>Hipótese:</strong><br/>- Garantir o livre exercício, nas unidades da federação, dos Poderes Legislativo e Executivo.</p>
+<p>---</p>
+<p><strong>III – Intervenção por Requisição do STF</strong><br/>O Presidente faz o Decreto mediante ordem do Supremo Tribunal Federal (STF).</p>
+<p><strong>Hipótese:</strong><br/>- Garantir o pleno exercício do Poder Judiciário nos Estados ou no Distrito Federal.</p>
+<p>---</p>
+<p><strong>IV – Intervenção por Requisição do STF, STJ ou TSE</strong><br/>O Presidente decretará a intervenção mediante requisição de qualquer um dos Tribunais superiores.</p>
+<p><strong>Hipótese:</strong><br/>- Garantir o cumprimento de decisão judicial.</p>
+<p>---</p>
+<p><strong>V – Intervenção por Requisição do STF, por Provimento de Representação do PGR</strong><br/>O Presidente decretará a intervenção mediante requisição do STF, por meio de representação do Procurador-Geral da República (PGR). O STF faz a requisição após a representação do PGR.</p>
+<p><strong>Hipóteses (Ocorre em 2 situações):</strong><br/>1. Garantir o cumprimento da lei federal.<br/>2. Houver violação dos princípios constitucionais (CF/88, Art. 34, inciso VII, da letra \"a\" até a letra \"e\").</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-23">Princípios Constitucionais Sensíveis — Art. 34, VII da CF</h2>
+<p>A União poderá intervir nos Estados ou no Distrito Federal para assegurar a observância dos seguintes princípios (rol taxativo):</p>
+<p><strong>a) forma republicana, sistema representativo e regime democrático;</strong><br/><strong>b) direitos da pessoa humana;</strong><br/><strong>c) autonomia municipal;</strong><br/><strong>d) prestação de contas da administração pública, direta e indireta;</strong><br/><strong>e) aplicação do mínimo exigido da receita resultante de impostos estaduais, compreendida a proveniente de transferências, na manutenção e desenvolvimento do ensino e nas ações e serviços públicos de saúde.</strong></p>
+<p>🧠 <strong>Para concurso — memorize assim:</strong><br/>Art. 34, VII = <strong>“RE-DI-AU-CO-ED”</strong></p>
+<p>- <strong>RE</strong> → Republicana + sistema representativo + regime democrático<br/>- <strong>DI</strong> → Direitos da pessoa humana<br/>- <strong>AU</strong> → Autonomia municipal<br/>- <strong>CO</strong> → Prestação de contas<br/>- <strong>ED</strong> → Educação + saúde</p>
+<p>⚠️ <strong>Pegadinha de prova:</strong> o inciso VII não vai de “a” até “i”. Atualmente são somente <strong>5 alíneas: a, b, c, d e e</strong>.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-24">Intervenção Estadual (Art. 35 CF) — CORRIGIDO!</h2>
+<p>O Estado pode intervir no Município nos seguintes casos <strong>taxativos</strong> (Art. 35):</p>
+<p>I – Deixar de ser paga, sem motivo de força maior, por <strong>dois anos consecutivos</strong>, a dívida fundada.<br/>II – <strong>Não prestar contas</strong> devidamente, nos termos da lei.<br/>III – <strong>Não aplicar o mínimo exigido</strong> da receita municipal em educação (25%) e saúde (15%).<br/>IV – O <strong>Tribunal de Justiça</strong> der provimento a <strong>representação</strong> para assegurar a observância de princípios indicados na Constituição Estadual, ou para prover a execução de lei, de ordem ou de decisão judicial.</p>
+<p>⚠️ <strong>ERRO CORRIGIDO:</strong> O arquivo anterior mencionava \"Deixar o Tribunal de Contas de funcionar regularmente\" como hipótese de intervenção. Isso <strong>NÃO CONSTA</strong> no Art. 35. A hipótese correta é a do <strong>Tribunal de Justiça</strong> mediante representação.</p>
+<p>📌 <strong>Exemplo:</strong> Se um Município deixar de pagar a dívida fundada por 2 anos, o Estado pode intervir. Se o Tribunal de Justiça Estadual, em representação, constatar violação de princípio constitucional, também cabe intervenção.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Destaque">
+<span class="card-kicker">Destaque</span>
+<div class="text-section">
+<p>Mapa-mental — Intervenção</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-26">Art. 20 — Bens da União</h2>
+<p>Pertencem à União:</p>
+<p>- <strong>Terras devolutas</strong> indispensáveis à defesa das fronteiras, fortificações, construções militares e vias federais de comunicação.<br/>- <strong>Lagos, rios e correntes de água</strong> que:<br/>  - Banhem mais de um Estado;<br/>  - Sirvam de limite com outro país;<br/>  - Estendam-se ao exterior;<br/>  - Tenham origem ou foz no exterior.<br/>- <strong>Ilhas oceânicas e costeiras</strong> (ressalvadas as exceções constitucionais).<br/>- <strong>Mar territorial, plataforma continental e zona econômica exclusiva.</strong><br/>- <strong>Terrenos de marinha</strong> (faixa de 33 metros da linha da preamar).<br/>- <strong>Recursos minerais</strong> (inclusive em propriedade particular).<br/>- <strong>Potenciais de energia hidráulica.</strong><br/>- <strong>Cavidades naturais subterrâneas.</strong><br/>- <strong>Terras tradicionalmente ocupadas pelos indígenas</strong> (posse permanente e usufruto exclusivo).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-27">Art. 26 — Bens dos Estados</h2>
+<p>Pertencem aos Estados:</p>
+<p>- <strong>Águas superficiais e subterrâneas</strong> (fluviais, lacustres) que não pertençam à União.<br/>- <strong>Ilhas fluviais e lacustres</strong> que não pertençam à União.<br/>- <strong>Terras devolutas</strong> (regra geral) — salvo as exceções do Art. 20, I (defesa de fronteiras, fortificações, etc.).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-28">Terras Devolutas — Regra e Exceção</h2>
+<p><strong>Regra:</strong> As terras devolutas pertencem aos Estados.</p>
+<p><strong>Exceção (Art. 20, II):</strong> Pertencem à União quando forem indispensáveis para:<br/>- Defesa das fronteiras;<br/>- Fortificações;<br/>- Construções militares;<br/>- Vias federais de comunicação;<br/>- Preservação ambiental definida em lei.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca troca a regra — sempre lembre: regra = Estado; exceção = União.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-29">Pegadinhas sobre Bens</h2>
+<p>📌 <strong>Recursos minerais e potenciais de energia hidráulica</strong> pertencem à União (mesmo em propriedade particular).<br/>📌 <strong>Terras indígenas</strong> pertencem à União (os povos indígenas possuem posse permanente e usufruto exclusivo).<br/>📌 <strong>Ilhas fluviais</strong> = Estados (regra); <strong>ilhas oceânicas</strong> = União (regra).<br/>📌 <strong>Rios que banham mais de um Estado</strong> = União; <strong>rios que passam em apenas um Estado</strong> = Estado.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-30">Visão Geral da Repartição de Competências</h2>
+<p>A Constituição Federal distribui as competências entre os entes federativos (União, Estados, Distrito Federal e Municípios) para evitar conflitos e garantir eficiência na prestação de serviços públicos.</p>
+<p><strong>Princípios norteadores:</strong><br/>- <strong>Predominância do interesse:</strong> União (interesse geral/nacional), Estados (interesse regional), Municípios (interesse local), DF (interesse regional e local).<br/>- <strong>Enumeração dos poderes:</strong> A União tem competências enumeradas taxativamente (Arts. 21 e 22), enquanto os Estados e Municípios possuem competências remanescentes ou implícitas (Art. 25, caput: competências não vedadas pela CF).</p>
+<p><strong>Classificação das competências:</strong><br/>- <strong>Exclusiva</strong> (Art. 21) – indelegável.<br/>- <strong>Privativa</strong> (Art. 22) – delegável por lei complementar.<br/>- <strong>Comum</strong> (Art. 23) – administrativa, exercida por todos.<br/>- <strong>Concorrente</strong> (Art. 24) – legislativa, entre União, Estados e DF.<br/>- <strong>Municipal</strong> (Art. 30) – interesse local e suplementação.</p>
+<p>🧠 <strong>Mnemônico:</strong> 'EPCC' – Exclusiva, Privativa, Comum, Concorrente.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-31">Competência Exclusiva da União — Art. 21 (Material/Administrativa)</h2>
+<p><strong>Competência Exclusiva:</strong> somente a União pode exercer. <strong>Não pode ser delegada</strong> a nenhum outro ente.</p>
+<p><strong>Principais hipóteses (resumo):</strong><br/>- Relações internacionais, guerra, defesa nacional.<br/>- Estado de sítio, defesa e intervenção federal.<br/>- Moeda e sistema financeiro.<br/>- Serviços postais, telecomunicações, radiodifusão, energia elétrica.<br/>- Portos, polícia federal, justiça especializada.<br/>- Anistia, calamidades públicas, recursos hídricos, áreas protegidas.<br/>- Organização da Defensoria Pública e AGU.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca pergunta se a União pode delegar a competência exclusiva – <strong>NÃO</strong>. Só a privativa pode ser delegada.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-32">Competência Privativa da União — Art. 22 (Legislativa)</h2>
+<p><strong>Competência Privativa:</strong> somente a União pode legislar, mas <strong>pode delegar</strong> por lei complementar aos Estados (Art. 22, parágrafo único).</p>
+<p><strong>Principais hipóteses (resumo):</strong><br/>- Direito civil, comercial, penal, processual, eleitoral, agrário, marítimo, aeronáutico, espacial e do trabalho.<br/>- Desapropriação, requisições, fronteiras, seguridade social.<br/>- Forças Armadas e polícias militares.<br/>- Crédito, câmbio, comércio exterior, transportes, trânsito.<br/>- Mineração, telecomunicações, radiodifusão.<br/>- Registro público, propriedade intelectual, licitações.<br/>- Normas gerais de direito financeiro, tributário e orçamentário.<br/>- Proteção à infância, urbanismo, meio ambiente, agrário.</p>
+<p>🧠 <strong>Mnemônico:</strong> 'Desapropriação, Fronteiras, Seguridade, Forças, Crédito, Comércio, Mineração...' – a pegadinha principal é a possibilidade de <strong>delegação por lei complementar</strong>.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-33">Competência Comum — Art. 23 (Administrativa)</h2>
+<p><strong>Competência Comum:</strong> todos os entes (União, Estados, DF e Municípios) podem exercer simultaneamente. É uma competência <strong>administrativa/executiva</strong> (não legislativa).</p>
+<p><strong>Principais hipóteses (resumo):</strong><br/>- Guarda da Constituição, leis e instituições.<br/>- Ordem pública e segurança.<br/>- Patrimônio histórico, cultural, artístico e paisagístico.<br/>- Combate à pobreza e marginalização.<br/>- Acesso à cultura, educação, ciência.<br/>- Proteção ao meio ambiente, florestas, fauna e flora.<br/>- Fomento agropecuário e abastecimento alimentar.<br/>- Habitação, combate à violência e criminalidade.<br/>- Fiscalização de concessões de recursos naturais.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A competência comum é administrativa, não legislativa. Se a banca disser que é competência comum legislar, está errado.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-34">Competência Concorrente — Art. 24 (Legislativa)</h2>
+<p><strong>Competência Concorrente:</strong> União, Estados e DF legislam sobre o mesmo tema (não inclui Municípios). A União fixa diretrizes gerais; Estados e DF legislam de forma suplementar.</p>
+<p><strong>Principais hipóteses (resumo):</strong><br/>- Direito Tributário, Financeiro, Penitenciário, Econômico e Urbanístico (mnemônico: <strong>PUFET</strong>).<br/>- Orçamento, comércio, custas, profissões, produção e consumo.<br/>- Previdência social, saúde, educação, cultura, desporto.<br/>- Assistência jurídica, proteção à infância e juventude, assistência social.<br/>- Direito processual penal e civil (normas gerais).<br/>- Telecomunicações, energia, mineração, recursos hídricos.<br/>- Meio ambiente, patrimônio histórico, proteção ao consumidor.<br/>- Responsabilidade por danos ambientais, consumeristas e a bens culturais.</p>
+<p><strong>Regras de aplicação:</strong><br/>- A União edita <strong>normas gerais</strong> (Art. 24, §1º).<br/>- Os Estados e DF suplementam, no que couber, a legislação federal (Art. 24, §2º).<br/>- Inexistindo lei federal, os Estados e DF podem legislar plenamente, mas a superveniência de lei federal <strong>suspende</strong> a eficácia da lei estadual naquilo que for contrário (Art. 24, §3º e §4º) — <strong>não revoga nem anula</strong>.</p>
+<p>🧠 <strong>Mnemônico:</strong> 'PUFET' – Penitenciário, Urbanístico, Financeiro, Econômico, Tributário.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-35">Competências dos Estados (Arts. 25 a 28)</h2>
+<p>Os Estados têm competências que não lhes são vedadas pela CF (Art. 25, caput) – são as chamadas <strong>competências remanescentes</strong>.</p>
+<p><strong>Art. 25, §1º:</strong> Os Estados podem legislar sobre questões regionais.</p>
+<p><strong>Art. 25, §2º:</strong> Cabe aos Estados explorar diretamente, ou mediante concessão, os serviços locais de gás canalizado (competência própria, vedada à União, salvo exceções).</p>
+<p><strong>Art. 25, §3º:</strong> Os Estados podem instituir regiões metropolitanas, aglomerações urbanas e microrregiões, para integrar serviços públicos comuns, mediante lei complementar.</p>
+<p><strong>Art. 26:</strong> Inclui os bens dos Estados (águas, ilhas fluviais/lacustres, terras devolutas).</p>
+<p><strong>Art. 27:</strong> Número de deputados estaduais (triplo dos federais, com limite de 36 + excedente) e regras de composição da Assembleia Legislativa.</p>
+<p><strong>Art. 28:</strong> Eleição do Governador e Vice-Governador (sistema majoritário, dois turnos).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A exploração de gás canalizado é competência estadual (Art. 25, §2º) – não confundir com o gás natural que é da União (Art. 21, XII).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-36">Competências dos Municípios — Art. 30</h2>
+<p>Os Municípios possuem competências próprias, independentes dos outros entes (Art. 30):</p>
+<p>I – Legislar sobre assuntos de <strong>interesse local</strong>.<br/>II – Suplementar a legislação federal e a estadual no que couber.<br/>III – Instituir e arrecadar os tributos de sua competência (IPTU, ISS, ITBI, taxas), bem como aplicar suas rendas.<br/>IV – Criar, organizar e suprimir distritos, observada a legislação estadual.<br/>V – Organizar e prestar os serviços públicos de <strong>interesse local</strong>, como transporte coletivo, limpeza urbana, iluminação pública, etc.<br/>VI – Manter, com a cooperação técnica e financeira da União e do Estado, programas de educação infantil e de ensino fundamental.<br/>VII – Prestar, com a cooperação técnica e financeira da União e do Estado, serviços de saúde pública.<br/>VIII – Promover a ordenação territorial, mediante planejamento e controle do uso, do parcelamento e da ocupação do solo urbano.<br/>IX – Promover a proteção do patrimônio histórico-cultural local, observada a legislação federal e estadual.</p>
+<p>📖 <strong>Exemplo:</strong> O Município pode proibir estacionamento em determinada rua (interesse local), mas não pode legislar sobre normas gerais de trânsito (competência da União).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-37">Competências do Distrito Federal — Art. 32</h2>
+<p>O DF possui natureza híbrida: <strong>acumula competências de Estado e de Município</strong>.</p>
+<p><strong>Características especiais:</strong><br/>- Possui Legislativo próprio (Câmara Legislativa do DF).<br/>- Possui Governador eleito diretamente.<br/>- <strong>Vedada a divisão em Municípios</strong> (Art. 32, § 1º).<br/>- A área do DF será desmembrada do Estado de origem (Goiás).<br/>- Sua organização e funcionamento serão regulados por <strong>lei orgânica</strong> (não Constituição), aprovada por maioria absoluta da Câmara Legislativa.<br/>- Competências estaduais e municipais acumuladas: o DF pode legislar sobre interesse local (art. 30) e também sobre questões regionais (art. 25).</p>
+<p>⚠️ <strong>Pegadinha:</strong> O DF não pode ser dividido em Municípios, mas pode criar regiões administrativas (que não são Municípios).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-38">🧠 MNEMÔNICOS GERAIS</h2>
+<p>- <strong>'EPCC'</strong> – Exclusiva (só União – não delega), Privativa (só União – delega por LC), Comum (todos juntos – administrativa), Concorrente (União + Estados/DF – legislativa).<br/>- <strong>'PUFET'</strong> – Penitenciário, Urbanístico, Financeiro, Econômico, Tributário (incisos I a V do Art. 24).<br/>- <strong>Competência exclusiva:</strong> Art. 21 – não delegável.<br/>- <strong>Competência privativa:</strong> Art. 22 – delegável por lei complementar.<br/>- <strong>Competência comum:</strong> Art. 23 – todos os entes, execução.<br/>- <strong>Competência concorrente:</strong> Art. 24 – União dá normas gerais; Estados e DF suplementam.<br/>- <strong>Municípios:</strong> Art. 30 – interesse local, suplementação, serviços locais, tributos, ensino fundamental, saúde, ordenamento territorial.<br/>- <strong>DF:</strong> Art. 32 – híbrido, não pode ter Municípios, regido por lei orgânica.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-39">⚠️ Pegadinhas Mais Cobradas</h2>
+<p>❌ 'Estado pode emitir moeda.' → <strong>ERRADO</strong> (exclusiva da União – Art. 21, VII).<br/>❌ 'Competência exclusiva pode ser delegada.' → <strong>ERRADO</strong> (não pode; só a privativa pode – Art. 22, parágrafo único).<br/>❌ 'Delegação da competência privativa é por lei ordinária.' → <strong>ERRADO</strong> (exige lei complementar).<br/>❌ 'Na competência comum, só a União pode agir.' → <strong>ERRADO</strong> (todos os entes agem simultaneamente).<br/>❌ 'Municípios participam da competência concorrente.' → <strong>ERRADO</strong> (só União, Estados e DF).<br/>❌ 'O DF pode ser dividido em Municípios.' → <strong>ERRADO</strong> (vedado, Art. 32, §1º).<br/>❌ 'A competência para legislar sobre gás canalizado é da União.' → <strong>ERRADO</strong> (é estadual – Art. 25, §2º).<br/>❌ 'O Município possui Constituição.' → <strong>ERRADO</strong> (possui Lei Orgânica).<br/>❌ 'Ilhas fluviais pertencem à União (regra).' → <strong>ERRADO</strong> (regra = Estados).<br/>❌ 'Terras devolutas pertencem à União (regra).' → <strong>ERRADO</strong> (regra = Estados).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-40">✅ CHECKLIST PARA A PROVA</h2>
+<p>✅ Competência exclusiva (Art. 21): só União, não delegável.<br/>✅ Competência privativa (Art. 22): só União, delegável por LC.<br/>✅ Competência comum (Art. 23): todos os entes, natureza administrativa.<br/>✅ Competência concorrente (Art. 24): União + Estados/DF, natureza legislativa; União fixa diretrizes, Estados suplementam.<br/>✅ Municípios (Art. 30): interesse local, suplementação, serviços locais, tributos próprios, ensino fundamental, saúde, ordenamento territorial.<br/>✅ DF (Art. 32): híbrido, não divide em Municípios, lei orgânica.<br/>✅ Estados (Art. 25-28): competências remanescentes, gás canalizado, regiões metropolitanas, bens estaduais, eleição de Governador.<br/>✅ Bens: União (fronteiras, ilhas oceânicas, rios que banham mais de um Estado, recursos minerais, energia hidráulica, terras indígenas, terrenos de marinha); Estados (águas, ilhas fluviais/lacustres, terras devolutas).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-41">Exemplo Prático – Conflito de Competências</h2>
+<p>Imagine que o Município X crie uma lei proibindo a circulação de caminhões em determinada via para reduzir acidentes. A União tem competência privativa para legislar sobre trânsito (Art. 22, XI). O Município pode suplementar a legislação federal em aspectos locais (Art. 30, II), desde que não contrarie as normas gerais. Se a lei municipal for mais restritiva, pode ser válida, mas se contrariar o Código de Trânsito Brasileiro, será inconstitucional.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Destaque">
+<span class="card-kicker">Destaque</span>
+<div class="text-section">
+<p>Mapa-mental — Competências</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-42">Lei Orgânica do Município (Art. 29, caput)</h2>
+<p>O Município é regido por <strong>Lei Orgânica</strong>, votada em <strong>dois turnos</strong>, com <strong>intervalo mínimo de 10 dias</strong> entre eles, e aprovada por <strong>2/3 (dois terços) dos membros da Câmara Municipal</strong>.</p>
+<p>A Lei Orgânica deve obedecer aos princípios da Constituição Federal e da Constituição Estadual.</p>
+<p>📌 <strong>Exemplo:</strong> A Lei Orgânica de São Paulo foi aprovada com 2/3 dos vereadores, após dois turnos de votação.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-43">Eleição de Prefeito, Vice-Prefeito e Vereadores (Art. 29, I a IV)</h2>
+<p><strong>Art. 29, I:</strong> Eleição do Prefeito, Vice-Prefeito e Vereadores, para mandato de <strong>4 (quatro) anos</strong>, mediante pleito direto e simultâneo realizado em todo o país.</p>
+<p><strong>Art. 29, II:</strong> Eleição do Prefeito e Vice-Prefeito: se o Município tiver <strong>mais de 200.000 eleitores</strong>, haverá <strong>segundo turno</strong> se nenhum candidato obtiver maioria absoluta dos votos válidos (exceto se houver disposição em contrário na Lei Orgânica).</p>
+<p><strong>Art. 29, III:</strong> Posse do Prefeito e Vice-Prefeito em <strong>1º de janeiro</strong> do ano seguinte à eleição.</p>
+<p><strong>Art. 29, IV:</strong> Número de Vereadores proporcional à população do Município, conforme limites estabelecidos na CF/88 (atualmente, mínimo de 9 e máximo de 55 vereadores).</p>
+<p>⚠️ <strong>Pegadinha:</strong> O segundo turno para Prefeito só ocorre em municípios com mais de 200 mil eleitores. A banca adora trocar esse número.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-44">Subsídios dos Vereadores (Art. 29, VI e VII)</h2>
+<p><strong>Art. 29, VI:</strong> O subsídio dos Vereadores será fixado pela Câmara Municipal em cada legislatura para a subsequente, observado o que dispõe a lei.</p>
+<p><strong>Art. 29, VII:</strong> O subsídio dos Vereadores não pode ultrapassar <strong>75% (setenta e cinco por cento)</strong> do subsídio dos Deputados Estaduais (ou, se não houver, o limite é de 75% do subsídio dos Deputados Federais).</p>
+<p><strong>Art. 29, VIII:</strong> O total da despesa com a remuneração dos Vereadores não pode ultrapassar <strong>5% (cinco por cento)</strong> da receita do Município.</p>
+<p>📌 <strong>Dica:</strong> Os subsídios são fixados para a legislatura seguinte; isso evita aumentos no meio do mandato que beneficiem os próprios vereadores.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-45">Inviolabilidade dos Vereadores (Art. 29, IX)</h2>
+<p><strong>Art. 29, IX:</strong> Os Vereadores são invioláveis por suas opiniões, palavras e votos no exercício do mandato e na circunscrição do Município.</p>
+<p><strong>Art. 29, X:</strong> Não podem ser presos, salvo em flagrante de crime inafiançável; nesse caso, a prisão será comunicada à Câmara em até 24 horas.</p>
+<p><strong>Art. 29, XI:</strong> Não são obrigados a testemunhar sobre informações recebidas em razão do exercício do mandato.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A inviolabilidade dos vereadores é restrita ao âmbito do Município e ao exercício do mandato – diferente da imunidade dos deputados federais, que é mais ampla.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-46">Incompatibilidades e Perda do Mandato (Art. 29, XII e XIII)</h2>
+<p><strong>Art. 29, XII:</strong> O Vereador não pode:<br/>- Firmar ou manter contrato com o Município, suas autarquias, empresas públicas, sociedades de economia mista ou fundações;<br/>- Aceitar cargo, função ou emprego remunerado na administração municipal;<br/>- Patrocinar causa em que haja interesse do Município.</p>
+<p><strong>Art. 29, XIII:</strong> Perde o mandato o Vereador que:<br/>- Deixar de comparecer, sem justa causa, a 1/3 das sessões ordinárias;<br/>- Proceder de modo incompatível com a dignidade do cargo;<br/>- For condenado a pena privativa de liberdade por crime doloso, após trânsito em julgado.</p>
+<p>📌 <strong>Exemplo:</strong> Um vereador que falta a mais de 1/3 das sessões sem justificativa pode ter o mandato cassado pela Câmara.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Destaque">
+<span class="card-kicker">Destaque</span>
+<div class="text-section">
+<p>Mapa-mental – Organização dos Municípios</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-47">Fiscalização pelo Poder Legislativo Municipal (Art. 31, caput)</h2>
+<p>Art. 31, caput: A fiscalização do Município será exercida pelo <strong>Poder Legislativo Municipal</strong>, mediante controle externo, e pelos sistemas de controle interno do Poder Executivo Municipal.</p>
+<p><strong>Controle externo:</strong> exercido pela Câmara Municipal, com auxílio do Tribunal de Contas do Estado (ou do Município, se houver).</p>
+<p><strong>Controle interno:</strong> exercido por órgãos próprios da administração municipal (ex.: controladoria geral).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-48">Auxílio do Tribunal de Contas (Art. 31, §1º)</h2>
+<p>Art. 31, §1º: O controle externo da Câmara Municipal será exercido com o auxílio do <strong>Tribunal de Contas do Estado</strong> (ou do Município, se existir, ou do Tribunal de Contas dos Municípios, onde houver).</p>
+<p>O Tribunal de Contas do Estado emite <strong>parecer prévio</strong> sobre as contas que o Prefeito deve prestar anualmente, no prazo de <strong>60 (sessenta) dias</strong> contados da abertura das contas.</p>
+<p>📌 <strong>Dica:</strong> O parecer prévio é um documento opinativo, mas a Câmara só pode rejeitá-lo por <strong>2/3 (dois terços)</strong> dos votos dos vereadores (Art. 31, §2º).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-49">Parecer Prévio e Prazo (Art. 31, §1º, in fine)</h2>
+<p>O Prefeito deve prestar contas anualmente, no prazo de <strong>60 (sessenta) dias</strong> após a abertura do exercício financeiro (art. 31, §1º, última parte).</p>
+<p><strong>Prazo:</strong> A Câmara Municipal tem <strong>60 dias</strong> para julgar as contas, contados do recebimento do parecer prévio do Tribunal de Contas.</p>
+<p>Se a Câmara não julgar as contas no prazo, elas serão consideradas <strong>aprovadas</strong> (efeito do silêncio – salvo se a Lei Orgânica do Município dispuser de forma diversa).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-50">Rejeição do Parecer Prévio — Maioria Qualificada (Art. 31, §2º)</h2>
+<p>Art. 31, §2º: A rejeição do parecer prévio do Tribunal de Contas, para que produza efeitos, depende de <strong>2/3 (dois terços) dos membros da Câmara Municipal</strong>.</p>
+<p><strong>Regra:</strong> O parecer prévio é aprovado por maioria simples, mas a rejeição exige quórum qualificado (2/3). Essa é uma pegadinha clássica em provas.</p>
+<p><strong>Efeito:</strong> Se a Câmara rejeitar o parecer do Tribunal de Contas e aprovar as contas do Prefeito, a decisão da Câmara prevalece, mas pode ser questionada judicialmente.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-51">Legitimidade para Questionar Contas (Art. 31, §3º)</h2>
+<p>Art. 31, §3º: As contas do Município ficarão, durante <strong>60 (sessenta) dias</strong>, anualmente, à disposição de qualquer contribuinte, para exame e apreciação, o qual poderá questioná-las pela forma prevista na Lei Orgânica.</p>
+<p><strong>Legitimidade:</strong> Qualquer cidadão pode questionar as contas municipais, mas a Lei Orgânica deve regulamentar o procedimento.</p>
+<p>⚠️ <strong>Pegadinha:</strong> O contribuinte não tem ação direta para anular as contas, mas pode provocar o Ministério Público ou a Câmara para que fiscalize.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Destaque">
+<span class="card-kicker">Destaque</span>
+<div class="text-section">
+<p>Mapa-mental – Fiscalização Municipal</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-52">Deputados Estaduais — Número e Composição (Art. 27, caput)</h2>
+<p>Art. 27, caput: O número de Deputados Estaduais corresponde ao <strong>triplo da representação do Estado na Câmara dos Deputados</strong>.</p>
+<p><strong>Regra:</strong><br/>- Se o número de Deputados Federais for <strong>até 12</strong>, o número de Deputados Estaduais será <strong>3 vezes o número de Federais</strong>.<br/>- Se o número de Deputados Federais <strong>exceder 12</strong>, o número de Deputados Estaduais será <strong>36 + (número de Federais - 12)</strong>.</p>
+<p><strong>Exemplos:</strong><br/>- Estado com 8 Deputados Federais → 8 × 3 = 24 Deputados Estaduais.<br/>- Estado com 15 Deputados Federais → 36 + (15 - 12) = 36 + 3 = 39 Deputados Estaduais.</p>
+<p><strong>Limite máximo:</strong> O número de Deputados Estaduais é o triplo dos Federais, com a fórmula acima. Não há teto fixo de 36; o limite é o número de Federais.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca costuma cobrar o cálculo: se o Estado tiver 18 Federais, quantos Estaduais? Resposta: 36 + (18 - 12) = 42.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-53">Subsídio, Imunidades e Mandato (Art. 27, §1º e §2º)</h2>
+<p><strong>Art. 27, §1º:</strong> O subsídio dos Deputados Estaduais será fixado por lei de iniciativa da Assembleia Legislativa, observados os limites fixados na CF e na lei.</p>
+<p><strong>Art. 27, §2º:</strong> Aos Deputados Estaduais aplicam-se as <strong>mesmas imunidades</strong> dos Deputados Federais, nos termos do Art. 53 da CF.</p>
+<p><strong>Mandato:</strong> 4 (quatro) anos.</p>
+<p><strong>Subsídio:</strong> não pode exceder 75% do subsídio dos Deputados Federais (Art. 27, §2º, in fine, alterado pela EC 19/1998).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A imunidade dos Deputados Estaduais é idêntica à dos Federais, mas para os Vereadores é mais restrita (Art. 29, IX).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-54">Governador e Vice-Governador (Art. 28)</h2>
+<p>Art. 28: A eleição do Governador e Vice-Governador de Estado, para mandato de <strong>4 (quatro) anos</strong>, será realizada em <strong>dois turnos</strong> se nenhum candidato obtiver maioria absoluta dos votos válidos no primeiro turno.</p>
+<p><strong>Regras:</strong><br/>- <strong>Primeiro turno:</strong> ocorre no 1º domingo de outubro do ano anterior ao término do mandato.<br/>- <strong>Segundo turno:</strong> ocorre no último domingo de outubro, se necessário.<br/>- <strong>Posse:</strong> em <strong>6 de janeiro</strong> do ano seguinte à eleição.</p>
+<p><strong>Perda do cargo:</strong> aplicam-se as mesmas regras de perda de mandato previstas para o Presidente da República (crime de responsabilidade, improbidade administrativa, etc.), conforme a Constituição Estadual.</p>
+<p>📌 <strong>Exemplo:</strong> Se um Governador comete crime de responsabilidade, pode ser julgado pelo Tribunal de Justiça ou por Tribunal Especial, conforme a Constituição Estadual.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Destaque">
+<span class="card-kicker">Destaque</span>
+<div class="text-section">
+<p>Mapa-mental – Estados</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-55">Símbolos Nacionais — Art. 13, caput</h2>
+<p>Art. 13, caput: 'A bandeira, o hino, as armas e o selo nacional são os símbolos da República Federativa do Brasil.'</p>
+<p><strong>São eles:</strong><br/>- 🏳️ <strong>Bandeira Nacional</strong> – verde e amarela, com o losango azul e a esfera celeste.<br/>- 🎵 <strong>Hino Nacional</strong> – letra de Joaquim Osório Duque Estrada e música de Francisco Manuel da Silva.<br/>- 🛡️ <strong>Armas Nacionais</strong> – o brasão da República.<br/>- 📜 <strong>Selo Nacional</strong> – usado em documentos oficiais.</p>
+<p>📖 <strong>Para Leigos:</strong> Os símbolos nacionais são como a 'identidade visual' do Brasil – representam nossa história, cultura e soberania. Eles são protegidos por lei e devem ser tratados com respeito.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-56">Idioma Oficial — Art. 13, § 1º</h2>
+<p>Art. 13, § 1º: <strong>'A língua portuguesa é o idioma oficial da República Federativa do Brasil.'</strong></p>
+<p><strong>Implicações:</strong><br/>- Todo documento público, lei, decisão judicial e ato oficial deve ser redigido em português.<br/>- O ensino da língua portuguesa é obrigatório em todos os níveis (Art. 210, caput).<br/>- As relações com a administração pública (petições, requerimentos) devem ser em português.</p>
+<p><strong>Línguas indígenas:</strong><br/>- Não são oficiais, mas são reconhecidas como patrimônio cultural imaterial (Art. 231, §2º) e têm proteção legal (Lei 11.645/2008).<br/>- O Brasil aderiu à Declaração das Nações Unidas sobre os Direitos dos Povos Indígenas, mas o português continua sendo o único idioma oficial.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-57">Outras Disposições (Art. 13, § 2º e § 3º)</h2>
+<p>Art. 13, § 2º: 'Os símbolos nacionais devem ser tratados com respeito. É vedado seu uso para fins comerciais sem autorização.'</p>
+<p><strong>ATUALIZAÇÃO (Lei 12.157/2009):</strong> A Lei 5.700/1971 foi alterada e <strong>hoje é permitido</strong> o uso da Bandeira Nacional em vestuário, estampas, objetos de uso pessoal e ornamentações, bem como em propaganda comercial, <strong>desde que com o devido respeito</strong> e sem descaracterização do símbolo. <strong>Não há mais necessidade de autorização prévia</strong> para uso comercial, mas o uso desrespeitoso (ex.: como pano de chão, em peças íntimas, ou rasgado) continua proibido e pode gerar penalidades.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-58">Símbolos dos Estados, DF e Municípios — Art. 13, § 2º da CF</h2>
+<p>Art. 13, § 2º: 'Os Estados, o Distrito Federal e os Municípios poderão ter símbolos próprios.'</p>
+<p><strong>Regras:</strong><br/>- A criação de símbolos subnacionais (bandeira, hino, brasão) é <strong>facultativa</strong>, não obrigatória.<br/>- Em solenidades oficiais, a Bandeira Nacional ocupa lugar de honra (posição central ou à direita do observador, quando com outras bandeiras).<br/>- Não há hierarquia desrespeitosa, mas a Bandeira Nacional deve prevalecer em eventos oficiais.</p>
+<p>📖 <strong>Exemplo:</strong> A bandeira do Estado de São Paulo pode ser hasteada ao lado da Nacional, mas a Nacional deve ficar à direita (lado de honra) ou no centro. Em eventos internacionais, a Bandeira Nacional ocupa o centro e as demais em ordem alfabética.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-59">Bandeira Nacional — Características e Normas</h2>
+<p><strong>Bandeira Nacional:</strong> adotada em 19 de novembro de 1889 (Decreto nº 4, de 19/11/1889).</p>
+<p><strong>Características:</strong><br/>- Retângulo verde (florestas) com um losango amarelo (riquezas minerais).<br/>- No centro, um círculo azul (céu) com a constelação do Cruzeiro do Sul e a frase 'Ordem e Progresso' (positivismo de Augusto Comte).<br/>- As estrelas representam os 26 Estados da Federação e o Distrito Federal – cada estrela corresponde a uma unidade da Federação, com tamanhos e posições baseados no céu do Rio de Janeiro às 20h30 do dia 15 de novembro de 1889.</p>
+<p><strong>Normas (Lei 5.700/1971 com alterações):</strong><br/>- Dimensões: modulares, devendo manter as proporções oficiais (largura 14:20 em relação ao comprimento).<br/>- A Bandeira deve ser confeccionada em tecido e com cores oficiais (verde, amarelo, azul, branco).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-60">Regras Específicas de Hasteamento da Bandeira</h2>
+<p><strong>Hasteamento noturno:</strong> A Bandeira pode permanecer hasteada à noite, <strong>desde que esteja iluminada</strong>.</p>
+<p><strong>Posição de destaque:</strong> Quando hasteada com outras bandeiras (de Estados, Municípios ou países), a Bandeira Nacional deve:<br/>- Ocupar a <strong>posição central</strong> ou <strong>à direita do observador</strong> (quando em número ímpar, a central; em número par, a primeira à direita).<br/>- Não pode ser menor nem ficar abaixo das demais.</p>
+<p><strong>Meio-mastro (luto oficial):</strong> A Bandeira é hasteada a meio-mastro em sinal de luto oficial (ex.: falecimento de Presidente, Governador, ou em datas de tragédia nacional), por determinação do Presidente da República ou por lei.</p>
+<p><strong>Dia da Bandeira (19 de novembro):</strong> Comemora-se a adoção da Bandeira; é comum haver solenidades cívicas e hasteamento solene.</p>
+<p><strong>Descarte de bandeiras inservíveis:</strong> Bandeiras que não podem mais ser usadas (rasgadas, desbotadas) devem ser <strong>incineradas</strong> em cerimônia especial, preferencialmente no dia 19 de novembro, por unidades militares ou corporações, em ato solene.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-61">Hino Nacional — Regras e Obrigatoriedade</h2>
+<p><strong>Hino Nacional:</strong> letra de Joaquim Osório Duque Estrada e música de Francisco Manuel da Silva.</p>
+<p><strong>Características:</strong><br/>- Melodia adotada em 1831; letra oficializada em 1922 (Decreto nº 15.671).<br/>- Execução obrigatória em cerimônias cívicas e solenidades oficiais.<br/>- Durante a execução, deve-se ficar de pé, respeitosamente, sem vaias ou manifestações desrespeitosas.</p>
+<p><strong>Regras:</strong><br/>- É vedada qualquer adaptação ou descaracterização da melodia ou letra (ex.: versões com ritmos diferentes, alteração de palavras).<br/>- O STF já decidiu que a execução do Hino em eventos esportivos é obrigatória, desde que em conformidade com a lei – não há direito a se recusar a ficar de pé por motivo de consciência (o STF entende que o respeito ao Hino é um dever cívico, e a recusa pode ser punida disciplinarmente em estabelecimentos públicos, mas não criminalmente).<br/>- <strong>Nas escolas:</strong> a Lei 12.031/2009 exige sua execução semanal nas escolas de ensino fundamental, promovendo o civismo.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-62">Armas Nacionais (Brasão)</h2>
+<p><strong>Armas Nacionais (Brasão):</strong> adotadas em 19 de novembro de 1889 (Decreto nº 4).</p>
+<p><strong>Características:</strong><br/>- Esfera azul com a constelação do Cruzeiro do Sul, ladeada por ramos de café e tabaco (produtos agrícolas).<br/>- Contém a frase 'República Federativa do Brasil' e a data '15 de novembro de 1889' (Proclamação da República).</p>
+<p><strong>Normas:</strong><br/>- Utilizado em documentos oficiais, moedas, cédulas, e brasões de órgãos públicos.<br/>- Seu uso por particulares é restrito – a Lei 5.700/1971 permite apenas com autorização do órgão competente (ex.: para fins acadêmicos, históricos ou institucionais).<br/>- A reprodução indevida ou descaracterização pode configurar crime de falsificação de símbolo nacional (Art. 296 do Código Penal).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-63">Selo Nacional</h2>
+<p><strong>Selo Nacional:</strong> utilizado em documentos oficiais para autenticação e legitimação.</p>
+<p><strong>Características:</strong><br/>- Adotado em 19 de novembro de 1889 (Decreto nº 4).<br/>- Contém a inscrição 'República Federativa do Brasil' e o desenho das armas nacionais.</p>
+<p><strong>Uso:</strong><br/>- Empregado em atos do Poder Executivo, publicações oficiais, e documentos que exigem fé pública.<br/>- Sua falsificação ou uso indevido constitui crime (Art. 293 do Código Penal: falsificação de selo público).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-64">Lei nº 5.700/1971 — Normas sobre Símbolos Nacionais</h2>
+<p>A Lei nº 5.700/1971 (com alterações da Lei 12.157/2009) estabelece:</p>
+<p><strong>Regras gerais:</strong><br/>- Os símbolos nacionais devem ser usados com respeito e dignidade.<br/>- A bandeira deve ser hasteada em edifícios públicos; se permanecer à noite, deve estar iluminada.<br/>- A execução do Hino Nacional deve ser em cerimônias cívicas e oficiais; não pode ser adaptado.<br/>- As armas nacionais e o selo só podem ser usados por órgãos públicos; particulares precisam de autorização para uso (exceto a bandeira, que teve regras flexibilizadas).</p>
+<p><strong>Penalidades:</strong><br/>- O desrespeito aos símbolos nacionais (ultraje) é contravenção penal (Art. 13 do Decreto-Lei 2.848/1940) e pode gerar multa ou detenção.<br/>- A Lei 5.700/1971 prevê multas para uso indevido ou descaracterização, além de medidas administrativas.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-65">Obrigatoriedade do Hino nas Escolas — Lei 12.031/2009</h2>
+<p>A Lei nº 12.031/2009 alterou a Lei 5.700/1971 e estabeleceu que:</p>
+<p>- O Hino Nacional deve ser executado nas <strong>escolas públicas e privadas de ensino fundamental</strong>, <strong>pelo menos uma vez por semana</strong>.<br/>- A execução deve ocorrer em ambiente respeitoso, com os alunos em posição de respeito.<br/>- A lei busca fortalecer o civismo e o reconhecimento dos símbolos nacionais desde a infância.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca pergunta se o Hino Nacional é obrigatório nas escolas de ensino médio. Não, a lei fala apenas em ensino fundamental.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section">
+
+<p>- <strong>'BHAS'</strong> – Bandeira, Hino, Armas, Selo.<br/>- <strong>'SHAB'</strong> – Selo, Hino, Armas, Bandeira.<br/>- <strong>Símbolos nacionais:</strong> 4 itens (Art. 13, caput).<br/>- <strong>Idioma oficial:</strong> português (Art. 13, § 1º).<br/>- <strong>Lei regulamentadora:</strong> Lei 5.700/1971 (alterada pela Lei 12.157/2009).<br/>- <strong>Uso da bandeira hoje:</strong> permitido em vestuário e comércio (com respeito).<br/>- <strong>Hasteamento noturno:</strong> exige iluminação.<br/>- <strong>Bandeiras inservíveis:</strong> incineradas por unidades militares em cerimônia solene (preferencialmente no Dia da Bandeira).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-67">⚠️ Pegadinhas Mais Cobradas (Atualizadas)</h2>
+<p>❌ 'O Brasil tem vários idiomas oficiais, incluindo línguas indígenas.' → <strong>ERRADO</strong> (só o português é oficial).<br/>❌ 'A bandeira não pode ser usada como roupa.' → <strong>ERRADO</strong> (hoje é permitido, com respeito – Lei 12.157/2009).<br/>❌ 'O uso comercial da bandeira exige autorização.' → <strong>ERRADO</strong> (não exige mais, desde que respeitoso).<br/>❌ 'A bandeira pode ser usada como pano de mesa.' → <strong>ERRADO</strong> (vedado pela Lei 5.700/1971).<br/>❌ 'O Hino Nacional pode ser adaptado para ritmos modernos em eventos culturais.' → <strong>ERRADO</strong> (vedada qualquer alteração).<br/>❌ 'O Hino Nacional é obrigatório apenas nas escolas públicas.' → <strong>ERRADO</strong> (obrigatório em públicas e privadas, ensino fundamental).<br/>❌ 'A bandeira pode ser hasteada à noite sem iluminação.' → <strong>ERRADO</strong> (exige iluminação).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section">
+
+<p>✅ Símbolos nacionais: Bandeira, Hino, Armas, Selo (Art. 13, caput).<br/>✅ Idioma oficial: português (Art. 13, § 1º).<br/>✅ Lei regulamentadora: Lei 5.700/1971 (alterada pela Lei 12.157/2009).<br/>✅ Bandeira: verde e amarela, losango azul, esfera celeste, 'Ordem e Progresso'.<br/>✅ Uso comercial e vestuário: permitido com respeito (Lei 12.157/2009).<br/>✅ Hasteamento noturno: exige iluminação.<br/>✅ Posição de destaque: central ou à direita do observador.<br/>✅ Dia da Bandeira: 19 de novembro.<br/>✅ Hino: execução obrigatória em cerimônias oficiais e semanal no ensino fundamental.<br/>✅ Descarte de bandeiras: incineração em cerimônia solene.<br/>✅ Ultraje aos símbolos: contravenção penal – multa ou detenção.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-69">Exemplo Prático – Caso do Hino em Estádio</h2>
+<p>Em 2023, o STF decidiu que torcedores que se recusam a ficar de pé durante a execução do Hino Nacional em estádios de futebol podem ser punidos administrativamente (ex.: exclusão do estádio), mas não criminalmente. A obrigação de respeito é dever cívico, mas a penalidade deve ser proporcional e não pode violar a liberdade de expressão. A execução do Hino em eventos esportivos é obrigatória por lei, e a posição de respeito é recomendada.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Destaque">
+<span class="card-kicker">Destaque</span>
+<div class="text-section">
+<p>Mapa-mental – Símbolos Nacionais</p>
+</div>
+</div>
+<section class="material-github"><h2 class="complementar-titulo">Material complementar e mapas mentais</h2><p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Ver fonte no GitHub</a></p><h2>Organização Político-Administrativa — Art. 18 a 36</h2><div class="study-card" data-study-kind="texto"><h3>Mapa-mental — Organização do Estado</h3><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental — Organização do Estado</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div><h2>Tipos de Intervenção Federal e Estadual (Arts. 34 a 36)</h2><div class="study-card" data-study-kind="texto"><h3>Mapa-mental — Intervenção</h3><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental — Intervenção</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div><h2>Bens da União e dos Estados — Arts. 20 e 26 da CF</h2><div class="study-card" data-study-kind="tabela"><h3>Titularidade das Ilhas</h3><div class="table-wrap"><table style="; --table-min-width:465px;"><thead><tr><th scope="col">Tipo de Ilha</th><th scope="col">Regra (Titular)</th><th scope="col">Exceção</th></tr></thead><tbody><tr><td>Ilhas fluviais (em rios)</td><td>Estados</td><td>União, se em zona de fronteira</td></tr><tr><td>Ilhas lacustres (em lagos)</td><td>Estados</td><td>União, se em zona de fronteira</td></tr><tr><td>Ilhas oceânicas (no oceano)</td><td>União</td><td>-</td></tr><tr><td>Ilhas costeiras (próximas ao litoral)</td><td>União</td><td>Sede de Município; áreas afetadas ao serviço público</td></tr></tbody></table></div></div><div class="study-card" data-study-kind="tabela"><h3>Titularidade dos Rios e Lagos</h3><div class="table-wrap"><table style="; --table-min-width:460px;"><thead><tr><th scope="col">Critério</th><th scope="col">Titular</th></tr></thead><tbody><tr><td>Rio que passa apenas em um Estado</td><td>Estado</td></tr><tr><td>Rio que banha mais de um Estado</td><td>União</td></tr><tr><td>Rio que faz fronteira internacional</td><td>União</td></tr><tr><td>Rio que tem origem no exterior</td><td>União</td></tr><tr><td>Rio que deságua no exterior</td><td>União</td></tr><tr><td>Lago localizado em um único Estado</td><td>Estado</td></tr><tr><td>Lago que banha mais de um Estado</td><td>União</td></tr></tbody></table></div></div><h2>Competências dos Entes Federativos — Arts. 21 a 30</h2><div class="study-card" data-study-kind="texto"><h3>Mapa-mental — Competências</h3><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental — Competências</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div><h2>Organização dos Municípios — Art. 29 da CF</h2><div class="study-card" data-study-kind="texto"><h3>Mapa-mental – Organização dos Municípios</h3><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental – Organização dos Municípios</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div><h2>Fiscalização dos Municípios — Art. 31 da CF</h2><div class="study-card" data-study-kind="texto"><h3>Mapa-mental – Fiscalização Municipal</h3><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental – Fiscalização Municipal</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div><h2>Estados — Deputados Estaduais e Governador (Arts. 27 e 28)</h2><div class="study-card" data-study-kind="texto"><h3>Mapa-mental – Estados</h3><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental – Estados</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div><h2>Símbolos Nacionais e Identidade Nacional — Art. 13 da CF</h2><div class="study-card" data-study-kind="texto"><h3>Mapa-mental – Símbolos Nacionais</h3><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental – Símbolos Nacionais</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/08.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div></section></article>
+</div>
+<footer class="footer">
+<span>Matéria Policial · Conteúdo para estudar e revisar.</span>
+<a href="../../../index.html">Voltar à biblioteca</a>
+</footer>
+<nav aria-label="Navegação entre assuntos" class="bottom-nav"><a class="previous" href="constitucional-07.html#assunto-08"><small>Assunto anterior</small>Direitos Políticos e Participação Democrática</a><a class="next" href="constitucional-03.html"><small>Próximo assunto</small>Controle de Constitucionalidade</a></nav></main>
+</div>
+</body>
+</html>
+

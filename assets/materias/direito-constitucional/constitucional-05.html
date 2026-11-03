@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#07111f" name="theme-color"/><meta content="Apostila de Remédios Constitucionais: HC, MS, MI, HD, Ação Popular. Questões, jurisprudência e lei seca." name="description"/><title>Remédios Constitucionais · Direito Constitucional · Matéria Policial</title><style id="css-personalizado">/* Remédios Constitucionais — CSS próprio (apostila). */
+:root {color-scheme: dark;
+  --bg: #0a0d18;
+  --panel: #101527;
+  --surface: #151b30;
+  --surface-2: #1c2440;
+  --ink: #eef1fb;
+  --muted: #9aa5c4;
+  --line: #232c4a;
+  --line-strong: #364067;
+  --gold: #ffc45c;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --accent-width: 4px;
+  --tint: 16%;
+  --glow: 34%;
+  --shadow: 0 8px 28px rgb(2 4 14 / 45%);
+  --grad-brand: linear-gradient(120deg, #ffc45c 0%, #ff8a5c 45%, #ff5c8a 100%);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  
+  --paper: var(--bg);
+  --white: var(--surface);
+  --accent: var(--ink);}
+* {box-sizing: border-box;}
+body {margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;}
+[hidden] {display: none !important;}
+a {color: inherit; text-decoration: none;}
+a:hover {text-decoration: underline; text-underline-offset: 3px;}
+button,
+input {font: inherit;}
+button,
+summary {cursor: pointer;}
+button {color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 10px 16px; min-height: 44px; font-size: 13px; font-weight: 600; transition: border-color .15s ease, background-color .15s ease;}
+button:hover {background: var(--surface-2); border-color: var(--muted);}
+:focus-visible {outline: 2px solid var(--gold); outline-offset: 3px;}
+::selection {color: var(--bg); background: var(--gold);}
+h1,
+h2,
+h3,
+h4,
+p {margin: 0;}
+h1,
+h2,
+h3 {font-family: Georgia, "Times New Roman", serif; font-weight: 500;}
+h1 {font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -.02em;}
+h2 {font-size: 28px; line-height: 1.25; letter-spacing: -.01em;}
+h3 {font-size: 21px; line-height: 1.35;}
+small {font-size: 12px;}
+.skip {position: fixed; top: -80px; left: 16px; padding: 10px 16px; z-index: 20; background: var(--ink); color: var(--bg); font-weight: 700; border-radius: var(--radius);}
+.skip:focus {top: 12px;}
+[id] {scroll-margin-top: 24px;}
+.sidebar {position: fixed; inset: 0 auto 0 0; width: 240px; padding: 32px 20px 22px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10;}
+.brand {display: block; margin: 0 10px 28px; font: 500 30px/1 Georgia, serif; letter-spacing: -.02em;}
+.brand-period {color: var(--gold);}
+.brand small {display: block; font: 600 10px/1.5 "Segoe UI", sans-serif; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px;}
+.sidebar nav {overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; padding: 4px; margin: -4px;}
+.nav-label {font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 20px 10px 8px;}
+.sidebar nav a {display: block; font-size: 13px; line-height: 1.45; padding: 8px 10px; margin: 1px 0; border-radius: var(--radius); color: var(--muted);}
+.sidebar nav a:hover {color: var(--ink); background: var(--surface); text-decoration: none;}
+.sidebar nav a[aria-current] {color: var(--ink); background: var(--surface-2); font-weight: 600; box-shadow: inset 2px 0 0 var(--gold);}
+.sidebar-footer {margin-top: auto; padding: 20px 10px 0; font-size: 12px; color: var(--ink);}
+.sidebar-footer span {display: block; color: var(--muted); font-size: 11px; margin-top: 2px;}
+.workspace {margin-left: 240px; min-width: 0;}
+.topbar {min-height: 60px; border-bottom: 1px solid var(--line); padding: 0 44px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; background: var(--bg);}
+.topbar a {color: var(--ink); text-decoration: underline; text-underline-offset: 3px;}
+.topbar > span {font-size: 11px; text-transform: uppercase; letter-spacing: .1em;}
+.mobile-menu {display: none;}
+main {max-width: 1280px; margin: auto; padding: 48px 44px 32px;}
+.eyebrow {color: var(--muted); font: 700 11px/1.6 "Segoe UI", sans-serif; letter-spacing: .12em; text-transform: uppercase;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: var(--discipline-color, var(--line));}
+input[type=search] {border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--ink); background: var(--bg); padding: 10px 13px; min-height: 44px; font-size: 14px;}
+input[type=search] {width: 100%; padding-left: 40px;}
+input[type=search]:focus {outline: none; border-color: var(--gold);}
+input::placeholder {color: var(--muted); opacity: 1;}
+.footer {margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px;}
+.footer a {text-decoration: underline; text-underline-offset: 4px;}
+.breadcrumbs {color: var(--muted); font-size: 12px; margin-bottom: 26px;}
+.breadcrumbs a {text-decoration: underline; text-underline-offset: 3px;}
+.reader-header {padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 22px;}
+.reader-header h1 {max-width: 24ch; margin-bottom: 14px; font-size: clamp(30px, 3.2vw, 44px);}
+.reader-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px;}
+.reader-actions button {font-size: 12px; min-height: 38px; padding: 8px 13px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--surface-2); color: var(--ink); border-color: var(--gold);}
+.bottom-nav {display: flex; justify-content: space-between; gap: 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);}
+.bottom-nav a {max-width: 47%; font: 500 17px/1.4 Georgia, serif;}
+.bottom-nav a:hover {color: var(--gold);}
+.bottom-nav small {display: block; font: 11px/1.7 "Segoe UI", sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+.bottom-nav .next {text-align: right;}
+.prose {min-width: 0; width: 100%; font: 17px/1.8 Georgia, "Times New Roman", serif; overflow-wrap: break-word;}
+.prose h2 {font-size: 25px; line-height: 1.3; margin: 4px 0 18px;}
+.prose h3 {font-size: 21px; line-height: 1.4; margin: 26px 0 10px;}
+.prose h4 {font: 600 15px/1.5 "Segoe UI", sans-serif; margin: 20px 0 10px;}
+.prose p {margin: 0 0 16px;}
+.prose > p {margin: 0 0 20px;}
+.prose strong {font-weight: 700;}
+.prose em {font-style: italic;}
+.prose a {text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere;}
+.prose ul,
+.prose ol {margin: 14px 0 18px; padding-left: 22px;}
+.prose li {padding-left: 3px; margin: 6px 0;}
+.prose li::marker {color: var(--muted);}
+.prose .text-section p {line-height: 1.85;}
+.prose details {padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); margin: 20px 0;}
+.prose summary {font: 600 14px/1.6 "Segoe UI", sans-serif;}
+.prose details[open] summary {margin-bottom: 12px;}
+.study-card {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"], [data-study-kind="h2"], [data-study-kind="h3"], [data-study-kind="destaque"]) {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="explicacao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="passo"], [data-study-kind="tabela"], [data-study-kind="laboratorio-logico"], [data-study-label="Explicação"], [data-study-label="Exemplo"], [data-study-label="Analogia"], [data-study-label="Fórmula"]) {--kind-ink: #2bc4e6;}
+.study-card {color: var(--ink); background: var(--panel); padding: 24px 26px; margin-bottom: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink); border-radius: var(--radius); box-shadow: var(--shadow);}
+.study-card :is(h2, h3) {color: var(--ink);}
+.study-card .text-section > :first-child {margin-top: 0;}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {display: inline-block; padding: 3px 9px; margin: 0 0 14px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--muted); font: 600 11px/1.5 "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .08em;}
+.study-card > :last-child,
+.text-section > :last-child {margin-bottom: 0;}
+.text-section {margin: 0; padding: 0;}
+.table-wrap {max-width: 100%; overflow: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); scrollbar-width: thin;}
+table {width: 100%; border-collapse: collapse; font: 13px/1.6 "Segoe UI", sans-serif; font-variant-numeric: tabular-nums;}
+th,
+td {padding: 11px 14px; text-align: left; vertical-align: top; min-width: 90px; border-bottom: 1px solid var(--line);}
+th {background: var(--surface-2); color: var(--ink); font-size: 12px; font-weight: 600; border-bottom-color: var(--line-strong);}
+tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 2%);}
+tbody tr:last-child td {border-bottom: 0;}
+td[data-truth] {font-weight: 700; text-align: center;}
+td[data-truth=true] {color: #34d399;}
+td[data-truth=false] {color: #ff5d7a;}
+code {font: .85em/1.6 ui-monospace, "DejaVu Sans Mono", Consolas, monospace; color: var(--ink); background: var(--surface); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px; box-decoration-break: clone;}
+[data-discipline="direito-constitucional"] {--discipline-color: #a66bff;}
+.mnemonic-tone-1 {--mnemonic-color: #2bc4e6;}
+.mnemonic-tone-2 {--mnemonic-color: #a56bff;}
+.mnemonic-tone-3 {--mnemonic-color: #34d399;}
+.mnemonic-tone-4 {--mnemonic-color: #ffc83d;}
+.mnemonic-tone-5 {--mnemonic-color: #ff5ca8;}
+.mnemonic-tone-6 {--mnemonic-color: #ff9340;}
+.mnemonic-tone-7 {--mnemonic-color: #6c8cff;}
+.mnemonic-tone-8 {--mnemonic-color: #9fdc3c;}
+.memory-aid li + li {margin-top: 10px;}
+:root {--on-color: #0a0d18;}
+body {--hc: var(--discipline-color, #7a7dff); background:
+  radial-gradient(900px 520px at 88% -8%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 62%),
+  radial-gradient(760px 520px at -6% 38%, rgb(255 92 138 / 11%), transparent 62%),
+  radial-gradient(700px 500px at 60% 112%, rgb(38 196 238 / 10%), transparent 60%),
+  var(--bg); background-attachment: fixed;}
+h1,
+h2,
+h3 {font-family: "Segoe UI", system-ui, Arial, sans-serif; font-weight: 800; letter-spacing: -.02em;}
+h3 {font-weight: 700;}
+::selection {color: var(--on-color); background: var(--gold);}
+* {scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent;}
+button {border-radius: var(--radius-sm); background: var(--surface-2); border-color: var(--line-strong);}
+button:hover {background: color-mix(in srgb, var(--hc) 22%, var(--surface-2)); border-color: var(--hc); transform: translateY(-1px);}
+button {transition: border-color .15s ease, background-color .15s ease, transform .15s ease, box-shadow .15s ease;}
+.eyebrow {display: inline-flex; align-items: center; gap: 10px; color: var(--hc);}
+.eyebrow::before {content: ""; width: 22px; height: 3px; border-radius: 3px; background: var(--grad-brand);}
+.sidebar {background: linear-gradient(180deg, #121833 0%, #0d1226 55%, #0a0d18 100%); border-right: 1px solid var(--line); box-shadow: 8px 0 40px rgb(2 4 14 / 40%);}
+.sidebar::before {content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad-brand);}
+.brand {font: 800 29px/1.05 "Segoe UI", system-ui, sans-serif; letter-spacing: -.03em;}
+.brand-period {background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.brand small {color: var(--gold); letter-spacing: .2em;}
+.nav-label {color: #6e7aa3;}
+.sidebar nav a {display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; --nc: var(--gold); transition: background-color .15s ease, color .15s ease, transform .15s ease;}
+.sidebar nav a::before {content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--nc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nc) 22%, transparent); opacity: .85;}
+.sidebar nav a:hover {color: var(--ink); background: color-mix(in srgb, var(--nc) 14%, transparent); transform: translateX(2px);}
+.sidebar nav a[aria-current] {color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 38%, transparent), color-mix(in srgb, var(--nc) 8%, transparent)); box-shadow: inset 3px 0 0 var(--nc);}
+.sidebar nav a[aria-current]::before {opacity: 1; box-shadow: 0 0 12px var(--nc);}
+.sidebar nav a[href*="direito-administrativo"] {--nc: #4d8dff;}
+.sidebar nav a[href*="atualidades"] {--nc: #ff8a3d;}
+.sidebar nav a[href*="direitos-humanos"] {--nc: #ff5ca8;}
+.sidebar nav a[href*="legislacao-extravagante"] {--nc: #d45cf0;}
+.sidebar nav a[href*="guardas-municipais"] {--nc: #2fd08a;}
+.sidebar nav a[href*="informatica"] {--nc: #26c4ee;}
+.sidebar nav a[href*="matematica"] {--nc: #7a7dff;}
+.sidebar nav a[href*="direito-penal"] {--nc: #ff5a6e;}
+.sidebar nav a[href*="portugues"] {--nc: #25d1b8;}
+.sidebar nav a[href*="processo-penal"] {--nc: #f5bf2e;}
+.sidebar nav a[href*="raciocinio-logico"] {--nc: #9fdc3c;}
+.sidebar-footer {border-top: 1px solid var(--line); margin: auto 10px 0; padding: 18px 0 0;}
+.topbar {position: sticky; top: 0; z-index: 5; background: rgb(10 13 24 / 72%); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line);}
+.topbar > span {color: var(--gold); font-weight: 700;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: color-mix(in srgb, var(--hc) 45%, var(--line));}
+input[type=search] {border-radius: 12px; background: var(--bg); border-color: var(--line-strong);}
+input[type=search]:focus {border-color: var(--hc); box-shadow: 0 0 0 4px color-mix(in srgb, var(--hc) 22%, transparent);}
+.footer {border-top-color: var(--line-strong);}
+.footer a {color: var(--gold);}
+.breadcrumbs a {color: var(--hc); font-weight: 600;}
+.reader-header {position: relative; overflow: hidden; padding: 32px 34px 28px; margin-bottom: 24px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 22px; box-shadow: var(--shadow), 0 0 70px -32px color-mix(in srgb, var(--hc) 65%, transparent);
+  background: radial-gradient(480px 240px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 72%), linear-gradient(160deg, var(--surface-2), var(--panel));}
+.reader-header > * {position: relative; z-index: 1;}
+.reader-header::after {content: ""; position: absolute; right: -50px; top: -50px; width: 190px; height: 190px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 24px color-mix(in srgb, var(--hc) 7%, transparent); pointer-events: none;}
+.reader-header h1 {max-width: 26ch; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; background: linear-gradient(100deg, #fff 20%, color-mix(in srgb, var(--hc) 45%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.reader-actions button {border-radius: 999px; padding: 8px 18px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--hc); color: var(--on-color); border-color: var(--hc); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--hc) 80%, transparent);}
+.reader-actions button[aria-pressed=true]:hover {filter: brightness(1.08); transform: translateY(-1px);}
+.bottom-nav a {flex: 1; max-width: 48%; padding: 18px 22px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--hc) 30%, var(--line)); background: linear-gradient(120deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface)); font: 800 16px/1.4 "Segoe UI", sans-serif; transition: transform .18s ease, border-color .18s ease;}
+.bottom-nav a:hover {color: #fff; border-color: var(--hc); text-decoration: none; transform: translateY(-2px);}
+.bottom-nav small {color: var(--hc); font-weight: 800;}
+.bottom-nav .next {background: linear-gradient(240deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface));}
+.prose {color: #e4e9f8;}
+.prose h2 {font-weight: 800;}
+.prose strong {color: #fff;}
+.prose li::marker {color: var(--hc);}
+.prose details {border-radius: 14px; background: var(--surface);}
+.study-card {--k: var(--kind-ink); position: relative; padding: 24px 28px; margin-bottom: 18px; border: 1px solid color-mix(in srgb, var(--k) 34%, var(--line)); border-left: var(--accent-width) solid var(--k); border-radius: 16px; box-shadow: 0 6px 22px -10px rgb(2 4 14 / 60%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--k) 16%, var(--panel)) 0%, color-mix(in srgb, var(--k) 5%, var(--panel)) 75%);}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {padding: 4px 12px; margin-bottom: 14px; border: 0; border-radius: 999px; background: var(--k, var(--hc)); color: var(--on-color); font-weight: 800; letter-spacing: .1em;}
+.study-card[data-study-label="Conteúdo"] > .card-kicker {display: none;}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 8%, var(--panel)), var(--panel) 80%); border-color: color-mix(in srgb, var(--k) 20%, var(--line)); box-shadow: none;}
+.study-card:is([data-study-kind="destaque"], [data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="resumo"], [data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="questao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="mnemonico"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 24%, var(--panel)) 0%, color-mix(in srgb, var(--k) 8%, var(--panel)) 80%); box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--k) 55%, transparent);}
+.table-wrap {border-radius: 14px; border-color: color-mix(in srgb, var(--hc) 30%, var(--line)); box-shadow: 0 6px 20px -10px rgb(2 4 14 / 60%);}
+th {background: linear-gradient(180deg, color-mix(in srgb, var(--hc) 46%, var(--surface-2)), color-mix(in srgb, var(--hc) 26%, var(--surface-2))); color: #fff; font-weight: 700; border-bottom-color: var(--hc);}
+tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 3.5%);}
+tbody tr:hover td:not([data-truth]) {background: color-mix(in srgb, var(--hc) 11%, transparent);}
+td[data-truth=true] {color: #34d399; background: rgb(52 211 153 / 12%);}
+td[data-truth=false] {color: #ff5d7a; background: rgb(255 93 122 / 12%);}
+code {color: #ffd98a; background: rgb(255 196 92 / 10%); border-color: rgb(255 196 92 / 25%);}
+.skip {background: var(--gold); color: var(--on-color);}
+@media (prefers-reduced-motion: no-preference) {
+main > * {animation: entrar .45s ease both;}
+main > *:nth-child(2) {animation-delay: .05s;}
+main > *:nth-child(3) {animation-delay: .1s;}
+}
+@media (min-width: 1500px) {
+.prose {font-size: 18px;}
+}
+@media (max-width: 1120px) {
+main {padding: 36px 28px 28px;}
+.topbar {padding: 0 28px;}
+}
+@media (max-width: 800px) {
+.sidebar {position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line);}
+.brand {margin: 0; font-size: 26px;}
+.brand small {margin-top: 6px; font-size: 10px;}
+.mobile-menu {display: block; align-self: center; background: transparent;}
+.sidebar nav {display: none; grid-column: 1/-1; max-height: 60vh; margin-top: 20px;}
+.sidebar.open nav {display: block;}
+.sidebar-footer {display: none;}
+.workspace {margin: 0;}
+.topbar {min-height: 46px; padding: 0 24px;}
+main {padding: 30px 24px 26px;}
+.study-card {padding: 22px 22px;}
+.reader-header h1 {font-size: 36px;}
+}
+@media (max-width: 540px) {
+.reader-header h1 {font-size: 32px;}
+.breadcrumbs {margin-bottom: 20px;}
+.prose {font-size: 16.5px;}
+.prose h2 {font-size: 24px;}
+.study-card {padding: 20px 18px; margin-bottom: 15px;}
+th,
+td {padding: 10px; min-width: 100px;}
+.footer {flex-direction: column; gap: 10px;}
+.bottom-nav a {font-size: 16px;}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {scroll-behavior: auto !important; transition: none !important; animation: none !important;}
+}
+@media print {
+:root {color-scheme: light; --bg: #fff; --panel: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --muted: #333; --line: #bbb; --line-strong: #777;}
+body {background: #fff; font-size: 11pt;}
+.sidebar,
+.topbar,
+.breadcrumbs,
+.reader-actions,
+.bottom-nav,
+.footer,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+main {max-width: none; padding: 0;}
+.reader-header {padding-bottom: 15px;}
+.reader-header h1 {font-size: 28pt;}
+.study-card {background: #fff !important; color: #000 !important; padding: 12px 0; border-radius: 0; border: 0; border-bottom: 1px solid #aaa; box-shadow: none;}
+.prose {font-size: 11pt;}
+.prose h2 {font-size: 18pt; break-after: avoid;}
+.prose h3 {break-after: avoid;}
+.table-wrap {overflow: visible;}
+tr {break-inside: avoid;}
+a {color: #000 !important;}
+}
+@media (max-width: 800px) {
+.reader-header::after {display: none;}
+.reader-header {padding: 24px 22px 22px; border-radius: 18px;}
+.sidebar::before {height: 3px;}
+.sidebar nav a:hover {transform: none;}
+.bottom-nav {flex-direction: column;}
+.bottom-nav a {max-width: 100%;}
+}
+@media (max-width: 540px) {
+.study-card {padding: 20px 18px;}
+}
+@media print {
+body {background: #fff !important; color: #000;}
+.sidebar,
+.topbar,
+.reader-actions,
+.bottom-nav,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+.reader-header,
+.study-card,
+.table-wrap {background: #fff !important; box-shadow: none !important; border-color: #bbb !important; color: #000;}
+.reader-header h1 {color: #000 !important; -webkit-text-fill-color: #000; text-shadow: none; background: none !important;}
+.prose,
+.prose strong {color: #000;}
+.study-card {break-inside: avoid;}
+th {background: #e8e8e8 !important; color: #000 !important;}
+}
+.prose .memory-aid,
+.prose .memory-inline {--mnemonic-color: #facc15;
+  padding: 22px; margin-block: 20px;
+  border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));}
+.prose .memory-aid .memory-line {margin-block: 12px; padding: 16px 18px;
+  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);}
+.prose .memory-line .memory-letter {display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace;}
+@media (max-width: 600px) {
+.prose .memory-aid,
+.prose .memory-inline {padding: 17px;}
+}
+@media print {
+.prose .memory-aid,
+.prose .memory-inline {background: white !important; color: black !important;}
+}
+:root {--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;}
+.tilt-ativo {transition-duration: 60ms, var(--t-base), .15s, .15s;}
+.rev {opacity: 0; transform: translateY(10px);}
+.rev.entrou {opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);}
+@view-transition { navigation: auto; }::view-transition-old(root) {animation: 120ms var(--ease-out) both vt-sai;}
+::view-transition-new(root) {animation: 200ms var(--ease-out) both vt-entra;}
+@media (prefers-reduced-motion: reduce) {
+.rev,
+.rev.entrou {opacity: 1; transform: none; transition: none;}
+::view-transition-old(root),
+::view-transition-new(root) {animation: none;}
+}
+main,
+.workspace,
+.study-chapter,
+.study-panel {min-width:0}
+.indice-unificado {padding:24px;margin:24px 0;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.indice-unificado h2 {margin:0 0 16px}
+.indice-unificado ol {list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.indice-unificado a {display:flex;gap:12px;padding:12px;border:1px solid var(--line-strong);border-radius:var(--radius-sm);background:var(--surface);line-height:1.5;color:var(--ink)}
+.indice-unificado a:hover {border-color:var(--discipline-color);text-decoration:none}
+.toc-num,
+.heading-num {color:var(--discipline-color);font:700 12px/1.6 "Segoe UI",sans-serif}
+.study-chapter {margin-top:38px;scroll-margin-top:24px}
+.card-titulo {margin-top:0!important}
+.chapter-heading {display:flex;gap:16px;align-items:flex-start;margin-bottom:24px}
+.chapter-number {padding:8px 12px;border-radius:var(--radius-sm);background:var(--surface-2);color:var(--discipline-color);font-weight:700}
+.chapter-eyebrow {font:600 11px/1.6 "Segoe UI",sans-serif;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px!important}
+.chapter-heading h2 {margin:0}
+.hero-meta {display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.hero-meta span {font:600 12px/1.6 "Segoe UI",sans-serif;color:var(--muted)}
+.reader-actions .button {display:inline-flex;align-items:center;padding:8px 16px;border:1px solid var(--line-strong);border-radius:999px;color:var(--ink);background:var(--surface);font:600 13px/1.6 "Segoe UI",sans-serif;min-height:38px}
+.stats {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:24px 0}
+.stat {padding:20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.stat strong,
+.stat span {display:block}
+.stat strong {font-size:24px;color:var(--discipline-color)}
+.stat span {font-size:12px;color:var(--muted)}
+.toc-heading {display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:18px;flex-wrap:wrap}
+.toc-heading p,
+.search-info {color:var(--muted);font-size:13px}
+.searchbox {display:flex;align-items:center;gap:8px;max-width:100%}
+.searchbox svg {width:18px;height:18px;fill:none;stroke:currentColor;flex-shrink:0}
+.searchbox input {min-width:0;width:100%}
+.study-panel>h3:first-child {margin-top:0}
+.back-link {display:inline-block;margin:18px 0;color:var(--discipline-color);font:600 13px/1.6 "Segoe UI",sans-serif}
+.exercise-commands {display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+.exercise summary {cursor:pointer}
+.q-number {display:block;color:var(--discipline-color);margin-bottom:5px}
+.answer {margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.back-to-top {display:none;position:fixed;bottom:20px;right:20px;z-index:20}
+.back-to-top.show {display:block}
+.table-wrap {max-width:100%;overflow-x:auto}
+.table-wrap table {min-width:520px}
+@media (max-width:900px) {
+.stats {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px) {
+.indice-unificado ol {grid-template-columns:1fr}
+.indice-unificado {padding:18px}
+.chapter-heading {gap:10px}
+.chapter-heading h2 {font-size:24px}
+.bottom-nav {flex-wrap:wrap}
+.bottom-nav a {max-width:100%}
+}
+@media print {
+.indice-unificado,
+.exercise-commands,
+.back-to-top,
+.back-link {display:none!important}
+.table-wrap {overflow:visible}
+.table-wrap table {min-width:0}
+.chapter-heading {break-after:avoid}
+.study-chapter {break-inside:auto}
+.answer {color:#000!important}
+}
+
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+/* Layout específico do assunto */
+main {max-width:var(--page-width);}
+.reader-header h1 {text-wrap:balance;overflow-wrap:break-word}
+main,
+.workspace,
+.prose {min-width:0}
+.prose {line-height:1.8}
+.study-card {margin-bottom:22px}
+.study-card .card-titulo {line-height:1.4;overflow-wrap:break-word}
+.table-wrap {max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;margin-block:22px}
+.table-wrap table {width:100%;min-width:var(--table-min-width,520px);font-size:14px;line-height:1.6}
+.table-wrap th,
+.table-wrap td {padding:12px 14px;vertical-align:top;overflow-wrap:break-word}
+.table-wrap th {font-weight:750}
+.table-wrap tbody tr:nth-child(even) {background:color-mix(in srgb,var(--discipline-color) 5%,var(--panel))}
+.study-chapter {padding-top:28px;border-top:1px solid var(--line)}
+.chapter-heading {align-items:flex-start}
+.exercise summary {padding:8px 0;line-height:1.7}
+.exercise .answer {padding:20px;background:var(--panel);border-radius:var(--radius-sm)}
+.exercise-commands {gap:12px}
+.chapter-heading h2 {line-height:1.3}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(28px,7vw,36px)}
+.study-card {padding:20px 18px}
+.prose {font-size:16px}
+.bottom-nav {flex-wrap:wrap;gap:16px}
+.bottom-nav a {max-width:100%;overflow-wrap:break-word}
+}
+@media print {
+main {max-width:none}
+.table-wrap {overflow:visible}
+.table-wrap table {min-width:0}
+.study-card {break-inside:auto}
+.study-card h3 {break-after:avoid}
+}
+</style></head><body class="tema-biblioteca" data-disciplina-acervo="direito-constitucional" data-discipline="direito-constitucional" data-page-kind="apostila" style="--discipline-color: #a66bff; --page-width:1240px;"><a class="skip" href="#conteudo">Pular para o conteúdo</a><aside class="sidebar" id="sidebar">
+<a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a>
+<button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button>
+<nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a aria-current="page" href="index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
+<div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div>
+</aside><div class="workspace"><header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header><main id="conteudo"><nav aria-label="Trilha de navegação" class="breadcrumbs"><a href="../../../index.html">Biblioteca</a> <span>/</span> <a href="index.html">Direito Constitucional</a><span>/</span><span>Remédios Constitucionais</span></nav><header class="reader-header">
+<div class="eyebrow">Direito Constitucional · Material de estudo</div>
+<h1>Remédios Constitucionais</h1>
+<p>Estude habeas corpus, mandados de segurança e de injunção, habeas data e ação popular. Conteúdo do Markdown organizado em capítulos, tabelas, legislação e revisão para concursos policiais.</p>
+<div class="hero-meta"><span>Art. 5º · CF/88</span><span>Atualizado no material: 03/11/2026</span><span>Leitura orientada para concursos</span></div>
+<div class="reader-actions"><button class="button" id="imprimir" type="button">⎙  Imprimir / salvar PDF</button><a class="button secondary" href="#indice">Explorar capítulos  ↓</a></div>
+</header><section aria-label="Informações do material" class="stats">
+<div class="stat"><strong>15</strong><span>Capítulos completos</span></div>
+<div class="stat"><strong>14</strong><span>Exercícios comentados</span></div>
+<div class="stat"><strong>CF/88</strong><span>Legislação e jurisprudência</span></div>
+<div class="stat"><strong>2026</strong><span>Data da revisão do Markdown</span></div>
+</section><section aria-label="Apresentação da apostila" class="intro-panel prose study-card" data-study-kind="texto"><p><strong>Apostila revisada, ampliada e comentada para concursos públicos</strong><br/>
+<strong>Base de estudo:</strong> anotações em <code>Direito Constitucional.md</code> e dez capturas das aulas do Prof. Evaldo Rodrigues.<br/>
+<strong>Conferência legislativa e jurisprudencial:</strong> 3 de novembro de 2026.</p>
+<blockquote>
+<p><strong>Como usar:</strong> a explicação vem primeiro, seguida da base legal, exemplos, principais súmulas e pegadinhas. As transcrições longas dos diplomas legais não são reproduzidas integralmente: cada dispositivo é identificado pelo artigo, inciso, parágrafo e endereço oficial para leitura da redação integral, preservando o acesso à legislação vigente. As explicações não substituem a leitura da lei seca nem a análise de um caso concreto.</p>
+</blockquote>
+</section><nav aria-label="Índice dos capítulos" class="indice-unificado" id="indice">
+<div class="toc-heading"><div><h2>Navegação pelos assuntos</h2><p>Selecione um capítulo ou pesquise uma palavra no conteúdo.</p></div>
+<label class="searchbox" for="busca-conteudo"><svg aria-hidden="true" viewbox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m16 16 5 5"></path></svg><input aria-label="Pesquisar nos capítulos" autocomplete="off" id="busca-conteudo" placeholder="Pesquisar no material..." type="search"/></label></div>
+<ol class="toc-grid"><li><a href="#capitulo-01"><span class="toc-num">01</span><span>Conceitos fundamentais</span></a></li><li><a href="#capitulo-02"><span class="toc-num">02</span><span>Habeas corpus (HC)</span></a></li><li><a href="#capitulo-03"><span class="toc-num">03</span><span>Mandado de segurança individual (MS)</span></a></li><li><a href="#capitulo-04"><span class="toc-num">04</span><span>Mandado de segurança coletivo (MSC)</span></a></li><li><a href="#capitulo-05"><span class="toc-num">05</span><span>Mandado de injunção individual (MI)</span></a></li><li><a href="#capitulo-06"><span class="toc-num">06</span><span>Mandado de injunção coletivo (MIC)</span></a></li><li><a href="#capitulo-07"><span class="toc-num">07</span><span>Habeas data (HD)</span></a></li><li><a href="#capitulo-08"><span class="toc-num">08</span><span>Ação popular (AP)</span></a></li><li><a href="#capitulo-09"><span class="toc-num">09</span><span>Ação civil pública (ACP) — não confundir</span></a></li><li><a href="#capitulo-10"><span class="toc-num">10</span><span>Quadro comparativo final</span></a></li><li><a href="#capitulo-11"><span class="toc-num">11</span><span>Súmulas e entendimentos mais cobrados</span></a></li><li><a href="#capitulo-12"><span class="toc-num">12</span><span>Principais correções aplicadas</span></a></li><li><a href="#capitulo-13"><span class="toc-num">13</span><span>Exercícios comentados</span></a></li><li><a href="#capitulo-14"><span class="toc-num">14</span><span>Dispositivos dos slides — lei seca e comentário</span></a></li><li><a href="#capitulo-15"><span class="toc-num">15</span><span>Fontes legais e jurisprudenciais</span></a></li></ol><p aria-live="polite" class="search-info" id="resultado-busca"></p>
+</nav><div class="empty-state" hidden="" id="sem-resultados">Nenhum capítulo encontrado. Tente outro termo.</div><section aria-labelledby="capitulo-01-titulo" class="study-chapter prose" id="capitulo-01"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">01</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-01-titulo">Conceitos fundamentais</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><p>Os <strong>remédios constitucionais</strong> são instrumentos para proteger direitos fundamentais diante de ilegalidades, abusos, omissões ou atos lesivos. Em concursos, o primeiro passo é identificar <strong>qual direito foi ameaçado</strong>.</p>
+<div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:465px;">
+<thead>
+<tr>
+<th>Situação</th>
+<th>Instrumento a considerar</th>
+<th>Principal fundamento</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Prisão ilegal ou ameaça concreta à liberdade de ir e vir</td>
+<td><strong>Habeas corpus</strong></td>
+<td>CF, art. 5º, LXVIII</td>
+</tr>
+<tr>
+<td>Violação de direito líquido e certo por autoridade, sem cabimento de HC ou HD</td>
+<td><strong>Mandado de segurança</strong></td>
+<td>CF, art. 5º, LXIX</td>
+</tr>
+<tr>
+<td>Mesmo tipo de direito, defendido coletivamente pelos legitimados</td>
+<td><strong>Mandado de segurança coletivo</strong></td>
+<td>CF, art. 5º, LXX</td>
+</tr>
+<tr>
+<td>Omissão de norma regulamentadora torna inviável exercer direito constitucional</td>
+<td><strong>Mandado de injunção</strong></td>
+<td>CF, art. 5º, LXXI</td>
+</tr>
+<tr>
+<td>Conhecer, corrigir ou complementar dados pessoais em banco público ou de caráter público</td>
+<td><strong>Habeas data</strong></td>
+<td>CF, art. 5º, LXXII; Lei 9.507/1997, art. 7º</td>
+</tr>
+<tr>
+<td>Cidadão pretende invalidar ato lesivo ao patrimônio público, à moralidade, ao ambiente ou ao patrimônio histórico-cultural</td>
+<td><strong>Ação popular</strong></td>
+<td>CF, art. 5º, LXXIII</td>
+</tr>
+</tbody>
+</table></div>
+</section><section class="study-panel key study-card" data-study-kind="texto"><h4>Dicionário para quem nunca estudou Direito</h4>
+<ul>
+<li><strong>Impetrar:</strong> apresentar o pedido judicial de HC, MS, MI ou HD; em linguagem simples, é “entrar com” a medida. A ação popular costuma ser <strong>proposta</strong> ou <strong>ajuizada</strong>.</li>
+<li><strong>Impetrante:</strong> quem apresenta o pedido.</li>
+<li><strong>Paciente:</strong> quem tem a liberdade de locomoção protegida no habeas corpus; pode ser diferente do impetrante.</li>
+<li><strong>Autor:</strong> quem propõe uma ação popular.</li>
+<li><strong>Impetrado / autoridade coatora:</strong> autoridade ou órgão a quem é atribuída a ilegalidade, o abuso ou a omissão; <strong>não significa que já foi considerado culpado</strong>.</li>
+<li><strong>Sujeito ativo:</strong> quem tem legitimidade para ajuizar o instrumento; <strong>sujeito passivo:</strong> quem figura no polo contrário, conforme o procedimento.</li>
+<li><strong>Legitimidade ativa:</strong> autorização jurídica para utilizar aquela ação.</li>
+<li><strong>Direito líquido e certo:</strong> direito que pode ser demonstrado imediatamente por <strong>prova já disponível</strong>, sem necessidade de uma longa investigação de fatos durante o processo. Não quer dizer direito “óbvio” nem impede discussão jurídica.</li>
+<li><strong>Prova pré-constituída:</strong> documentação ou outro elemento que já existe quando o processo começa.</li>
+<li><strong>Dilação probatória:</strong> fase de produção mais ampla de provas, como perícias e audiências de testemunhas; em regra, não combina com o rito de MS ou HC.</li>
+<li><strong>Liminar:</strong> decisão provisória, geralmente urgente, antes do julgamento definitivo. <strong>Não garante vitória no processo</strong>.</li>
+<li><strong>Salvo-conduto:</strong> ordem judicial destinada a impedir constrangimento ilegal iminente à liberdade de ir e vir.</li>
+<li><strong>Mora legislativa:</strong> atraso ou omissão de órgão competente em editar norma necessária.</li>
+<li><strong>Decadência:</strong> perda do direito de usar determinada via processual por ter passado o prazo; no MS, isso não significa necessariamente perder o direito material subjacente.</li>
+<li><strong>Prescrição:</strong> limitação temporal para exercer pretensão, nos termos da lei.</li>
+<li><strong>Trânsito em julgado:</strong> momento em que não cabem mais recursos ordinários ou extraordinários contra a decisão.</li>
+<li><strong>Coisa julgada:</strong> estabilidade da decisão judicial após o fim dos recursos cabíveis.</li>
+<li><strong>Custas processuais:</strong> valores cobrados pela tramitação processual; <strong>honorários de sucumbência:</strong> verba devida ao advogado da parte vencedora nos casos previstos em lei.</li>
+<li><strong>Fiscal da ordem jurídica / custos legis:</strong> papel do Ministério Público de supervisionar a correta aplicação da lei, ainda que não seja o autor.</li>
+<li><strong>Substituição processual:</strong> entidade ou instituição atua em nome próprio defendendo direitos de outras pessoas, sem que cada uma precise ser autora.</li>
+<li><strong>Eficácia plena:</strong> norma constitucional apta a produzir seus efeitos essenciais independentemente de lei integradora.</li>
+<li><strong>Eficácia contida:</strong> norma aplicável desde logo, cujo alcance pode sofrer restrições autorizadas constitucionalmente.</li>
+<li><strong>Eficácia limitada:</strong> norma que exige integração normativa para produzir integralmente determinados efeitos.</li>
+<li><strong>Pessoa natural / física:</strong> ser humano. <strong>Pessoa jurídica:</strong> empresa, associação, sindicato ou outro ente com personalidade jurídica.</li>
+<li><strong>Cidadão (para ação popular):</strong> brasileiro nato ou naturalizado que pode exercer direitos políticos, com a comprovação legal de cidadania.</li>
+</ul>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-02-titulo" class="study-chapter prose" id="capitulo-02"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">02</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-02-titulo">Habeas corpus (HC)</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">2.1</span> Histórico</h3>
+<p>A proteção da liberdade pessoal tem antecedentes na <strong>Magna Carta inglesa de 1215</strong>, associada ao reinado de <strong>João Sem Terra</strong>. Outro marco relevante foi o <strong>Habeas Corpus Act inglês de 1679</strong>. Não se deve afirmar que a Magna Carta criou o habeas corpus brasileiro tal como existe hoje, nem que João Sem Terra “concedeu o primeiro HC”: trata-se de uma evolução histórica.</p>
+<p>No Brasil, mencionam-se antecedentes normativos do período imperial, incluindo medidas de 1821; o <strong>Código de Processo Criminal de 1832</strong> regulamentou expressamente o instituto. O <strong>status constitucional expresso</strong> consolidou-se na Constituição de <strong>1891</strong> e foi mantido nas constituições posteriores. <strong>Cuidado:</strong> Dom Pedro I não era ainda imperador do Brasil em 1821; portanto, a referência do rascunho a um ato praticado “por Dom Pedro I como imperador em 1821” deve ser qualificada historicamente.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">2.2</span> Conceito e finalidade</h3>
+<p><strong>CF, art. 5º, LXVIII:</strong> protege quem sofre, ou está ameaçado de sofrer, violência ou coação <strong>ilegal</strong> contra sua liberdade de locomoção.<br/>
+<strong>CPP, arts. 647 e 648:</strong> disciplinam o cabimento e exemplos de coação ilegal.<br/>
+<strong>CPP, art. 654:</strong> disciplina quem pode impetrar.</p>
+<p><strong>Em linguagem simples:</strong> é uma ferramenta para impedir ou corrigir uma restrição ilegal ao direito de <strong>ir, vir e permanecer</strong>.</p>
+<p><strong>Exemplo:</strong> alguém é preso por decisão sem fundamentação exigida pela legislação; um defensor, familiar ou a própria pessoa pode questionar a ilegalidade por habeas corpus.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">2.3</span> Quem participa?</h3>
+<ul>
+<li><strong>Impetrante:</strong> qualquer pessoa pode impetrar HC, em favor próprio ou de outra pessoa; o <strong>Ministério Público</strong> também pode (CPP, art. 654). A possibilidade de pessoa jurídica <strong>impetrar</strong> não torna a pessoa jurídica <strong>paciente</strong>.</li>
+<li><strong>Paciente:</strong> pessoa <strong>física</strong> cuja liberdade de locomoção se pretende proteger.</li>
+<li><strong>Autoridade apontada como coatora (impetrado):</strong> agente público, autoridade judicial e, em determinadas situações, pessoa particular responsável pelo constrangimento; a designação não antecipa um juízo de culpa.</li>
+<li><strong>Julgamento / competência:</strong> varia conforme <strong>quem praticou o ato</strong> e as regras constitucionais e legais. Não basta dizer que o HC vai sempre “para a autoridade hierarquicamente superior”. Consulte CF, arts. <strong>102, I, d e i; 105, I, c; 108, I, d</strong>, conforme o caso, e CPP, art. <strong>650</strong>, observando que o dispositivo do CPP contém referências históricas antigas de órgãos e constituições.</li>
+</ul>
+<p><strong>Exemplo:</strong> se um juiz de primeira instância ordena uma prisão, o pedido contra o ato jurisdicional costuma ser apreciado pelo tribunal competente, não por um delegado de polícia.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">2.4</span> Modalidades</h3>
+<p><strong>a) Repressivo / liberatório:</strong> a prisão ou a coação já ocorre. Objetiva cessar o constrangimento, mediante ordem de soltura ou providência adequada.<br/>
+<em>Exemplo:</em> pessoa detida ilegalmente pede liberdade.</p>
+<p><strong>b) Preventivo:</strong> existe ameaça <strong>concreta e fundada</strong> de prisão ou de restrição ilegal. Pode resultar em <strong>salvo-conduto</strong>.<br/>
+<em>Exemplo:</em> uma autoridade anuncia prisão sem fundamento legal, existindo elementos objetivos que demonstram o risco.</p>
+<p><strong>c) Suspensivo (expressão doutrinária):</strong> usualmente empregada em alguns materiais quando a ordem de prisão já foi expedida, mas ainda não executada, procurando-se suspender sua eficácia. A nomenclatura <strong>não é classificação expressa do texto constitucional</strong> e pode aparecer dentro da proteção preventiva conforme a doutrina.<br/>
+<em>Exemplo:</em> há mandado de prisão apontado como ilegal, ainda não cumprido. <strong>Não se presume</strong> que uma pessoa esteja foragida apenas por haver mandado expedido.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">2.5</span> Regras processuais importantes</h3>
+<ul>
+<li><strong>Gratuito:</strong> CF, art. 5º, <strong>LXXVII</strong>.</li>
+<li><strong>Pode ser impetrado sem advogado:</strong> CPP, art. <strong>654</strong>. Em comparação com as outras ações constitucionais estudadas, essa é uma peculiaridade marcante do HC.</li>
+<li><strong>Forma menos rígida:</strong> dispensa algumas formalidades típicas, <strong>mas deve conter informações mínimas</strong> sobre o paciente, o constrangimento e a assinatura do impetrante ou de alguém a seu rogo (CPP, art. 654, § 1º). A afirmação de que o HC “pode ser feito em uma pedra” é apenas hipérbole de aula, não regra que dispense viabilidade material de protocolização.</li>
+<li><strong>Pode existir liminar:</strong> a jurisprudência admite providência urgente.</li>
+<li><strong>Pode haver concessão de ofício:</strong> CPP, art. <strong>654, § 2º</strong>, e regras jurisprudenciais pertinentes.</li>
+<li><strong>Não se presta, em regra, à ampla produção de provas:</strong> a ilegalidade precisa ser verificável com os elementos disponíveis. Não significa que o tribunal ignore as provas existentes.</li>
+<li><strong>Pode examinar questões de mérito penal em limites excepcionais</strong>, como ausência manifesta de justa causa ou ilegalidade flagrante. Portanto, a frase “não analisa o mérito” é ampla demais.</li>
+</ul>
+<h4>Punições disciplinares militares</h4>
+<p>A <strong>CF, art. 142, § 2º</strong> prevê a restrição ao HC <strong>em relação a punições disciplinares militares</strong>. Essa regra não afasta, de forma automática, o controle judicial de requisitos de <strong>legalidade</strong> (como competência, observância do procedimento e presença dos pressupostos legais), conforme a jurisprudência. A revisão do simples juízo de conveniência disciplinar é questão diferente.</p>
+<h4>Quando o HC geralmente não serve?</h4>
+<p>O instrumento pressupõe ameaça ou lesão à liberdade de locomoção. Por isso, em regra, não é a via para discutir apenas:</p>
+<ul>
+<li>multa como única pena;</li>
+<li>exclusão de militar, perda de patente ou de função pública sem repercussão direta na liberdade;</li>
+<li>pena privativa de liberdade <strong>já extinta</strong>;</li>
+<li>suspensão de direitos políticos, impeachment ou afastamento de cargo <strong>por si sós</strong>, se ausente ameaça à locomoção.</li>
+</ul>
+<p>As <strong>Súmulas 693, 694 e 695 do STF</strong> tratam de três das hipóteses acima. <strong>Não são as Súmulas 693 e 664</strong>, como constava no rascunho.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">2.6</span> Habeas corpus coletivo</h3>
+<p>É reconhecido judicialmente para situações coletivas concretas de restrição ou ameaça ilegal à locomoção. Caso marcante: <strong>HC 143.641/SP</strong>, decidido pela Segunda Turma do STF em <strong>20/02/2018</strong>, relacionado a gestantes, puérperas e mães de crianças ou de pessoas com deficiência submetidas a prisão cautelar, observadas condições e exceções do julgamento.</p>
+<p><strong>Correção essencial:</strong> a substituição da prisão preventiva por domiciliar encontra disciplina nos <strong>arts. 318 e 318-A do CPP</strong>; o <strong>art. 318-B</strong> permite a aplicação concomitante das medidas cautelares alternativas listadas no <strong>art. 319</strong>. Assim, <strong>o art. 319 não é a base principal da prisão domiciliar</strong>.</p>
+<p><strong>CPP, art. 318-A (síntese):</strong> trata da substituição da prisão preventiva da mulher gestante ou mãe/responsável por criança ou pessoa com deficiência, exigindo, entre outros requisitos legais, ausência de crime praticado com violência ou grave ameaça a pessoa e ausência de crime praticado contra filho ou dependente. Não é correto transformar a jurisprudência em afirmação de benefício automático e irrestrito para “todas as mulheres presas”.</p>
+<p><strong>Exemplo didático:</strong> várias mulheres em prisão preventiva apresentam situação juridicamente semelhante de maternidade, e se busca proteção coletiva de sua liberdade, com análise dos requisitos aplicáveis.</p>
+<h4>Pegadinhas de HC</h4>
+<ol>
+<li><strong>Impetrante pode ser pessoa jurídica; paciente, não.</strong></li>
+<li><strong>É gratuito e dispensa advogado para impetração.</strong></li>
+<li><strong>HC exige relação com liberdade de locomoção</strong>, ainda que o ato impugnado tenha aparência de processo criminal.</li>
+<li><strong>Não confundir art. 142, § 2º, da CF com uma “súmula segunda da Constituição”.</strong> Constituição tem artigo e parágrafo; súmulas pertencem aos tribunais.</li>
+<li><strong>Pessoa condenada a multa apenas:</strong> Súmula <strong>693/STF</strong>; <strong>perda de patente:</strong> Súmula <strong>694/STF</strong>; <strong>pena privativa extinta:</strong> Súmula <strong>695/STF</strong>.</li>
+</ol>
+</section><details class="anotacoes-adicionais"><summary>Anotações e exemplos para revisão</summary><div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section">
+<h3 class="card-titulo">HC e Prisão Civil</h3>
+<p>O HC também é cabível para discutir a legalidade da prisão civil (alimentícia ou depositário infiel, antes da SV 25), pois atinge a liberdade de locomoção. Atualmente, com a SV 25, o HC é usado principalmente para prisão penal e alimentícia.</p>
+</div>
+</div><div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section">
+<h3 class="card-titulo">Para Leigos — HC e Prisão Civil</h3>
+<p>Imagine que você foi preso sem motivo ou por um mandado ilegal. Você pode pedir um HC — é um pedido simples, não precisa de advogado, é de graça, e pode ser feito por qualquer pessoa (um amigo, um parente, até um desconhecido). O juiz vai analisar se a prisão é legal e, se não for, manda soltar.</p>
+</div>
+</div></details><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-03-titulo" class="study-chapter prose" id="capitulo-03"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">03</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-03-titulo">Mandado de segurança individual (MS)</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">3.1</span> História e fundamento</h3>
+<p>O mandado de segurança ganhou previsão constitucional no Brasil na <strong>Constituição de 1934</strong>, com evolução posterior. Hoje é previsto na <strong>CF, art. 5º, LXIX</strong>, e disciplinado pela <strong>Lei nº 12.016/2009</strong>.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">3.2</span> O que é?</h3>
+<p>Protege um <strong>direito líquido e certo</strong>, quando houver ilegalidade ou abuso de poder praticado por <strong>autoridade pública</strong> ou por agente de pessoa jurídica <strong>no exercício de atribuições do Poder Público</strong>, <strong>desde que esse direito não esteja protegido por habeas corpus ou habeas data</strong>.</p>
+<p><strong>Em linguagem simples:</strong> quando você consegue demonstrar documentalmente que uma autoridade desrespeitou um direito seu, o MS pode ser a ação adequada.</p>
+<p><strong>Exemplo:</strong> candidato aprovado dentro do número de vagas em concurso sofre preterição ilegal comprovada por documentos, nos parâmetros da jurisprudência sobre nomeação.</p>
+<h4>Direito líquido e certo ≠ direito sem discussão</h4>
+<ul>
+<li>Não é necessário que o direito seja “incontestável” do ponto de vista jurídico.</li>
+<li>O que se exige é que <strong>os fatos importantes estejam previamente demonstrados</strong>, sem depender de perícia ou produção extensa de provas.</li>
+<li><strong>Súmula 625 do STF:</strong> discussão <strong>jurídica</strong> não impede, por si só, o mandado de segurança.</li>
+</ul>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">3.3</span> Sujeitos</h3>
+<ul>
+<li><strong>Impetrante:</strong> pessoa física ou jurídica, brasileira ou estrangeira, que seja titular do direito alegado, observados os requisitos aplicáveis.</li>
+<li><strong>Autoridade coatora:</strong> autoridade pública ou agente de pessoa jurídica no <strong>exercício efetivo de função pública</strong>, no ponto ligado a essa função; não é qualquer pessoa privada nem toda conduta privada.</li>
+</ul>
+<p><strong>Exemplo:</strong> se um particular presta serviço público delegado, certos atos praticados nessa função podem ser examinados em MS; uma discussão puramente comercial privada, em regra, não.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">3.4</span> Prazo de 120 dias</h3>
+<p><strong>Lei nº 12.016/2009, art. 23:</strong> o direito de requerer MS se extingue após <strong>120 dias contados da ciência do ato impugnado</strong>, ressalvadas particularidades do caso e da natureza do ato.</p>
+<ul>
+<li>Trata-se, como regra, de <strong>prazo decadencial</strong>, não “prescricional”.</li>
+<li>Em termos simples, perder o prazo impede <strong>essa via específica</strong>, mas pode haver outra ação judicial cabível.</li>
+<li><strong>Súmula 632/STF:</strong> admite constitucionalmente que a lei estabeleça prazo de decadência para MS.</li>
+</ul>
+<p><strong>Exemplo:</strong> alguém recebe ciência de ato administrativo que lhe viola um direito e somente pensa em pedir MS muitos meses depois; o prazo de 120 dias será questão central.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">3.5</span> Custas, advogado, liminar e desistência</h3>
+<ul>
+<li><strong>Não é constitucionalmente gratuito de maneira geral</strong>, embora possa haver justiça gratuita conforme o caso.</li>
+<li><strong>Em regra, exige advogado</strong>, ou atuação de órgão de assistência jurídica competente.</li>
+<li><strong>Pode haver liminar</strong>, se presentes os pressupostos.</li>
+<li><strong>Não há condenação em honorários advocatícios sucumbenciais no processo de MS</strong>, conforme Lei 12.016/2009, <strong>art. 25</strong>, sem confundir isso com custas ou com os honorários contratuais do próprio advogado.</li>
+<li><strong>Desistência:</strong> pelo <strong>Tema 530/STF (RE 669.367)</strong>, admite-se desistência pelo impetrante <strong>antes do término do julgamento</strong>, independentemente da anuência da autoridade coatora ou interessados, mesmo após sentença concessiva ainda sujeita à atividade jurisdicional pertinente. <strong>Não é correto dizer que o STF autoriza livremente desistência depois do trânsito em julgado</strong>.</li>
+</ul>
+<h4>Atenção à ADI 4296 — importante para provas</h4>
+<p>O STF invalidou, entre outros pontos, a exigência de <strong>oitiva prévia obrigatória</strong> da pessoa jurídica de direito público como condição para concessão de <strong>liminar em mandado de segurança coletivo</strong> (art. 22, § 2º, da Lei 12.016/2009), bem como restrições específicas do art. 7º, § 2º. Portanto, estudar apenas o texto histórico da lei sem considerar a decisão do STF pode levar ao erro.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">3.6</span> Direito de reunião, certidões e informações públicas</h3>
+<ul>
+<li><strong>Direito de reunião:</strong> pode ser tutelado por <strong>mandado de segurança</strong> se houver ato ilegal ou abusivo, não se confunde automaticamente com liberdade de locomoção protegida por HC.</li>
+<li><strong>Certidão ou informação administrativa de interesse particular, coletivo ou geral:</strong> eventual negativa ilegal, quando presentes requisitos, pode ser discutida por <strong>MS</strong>, com base também na CF, art. <strong>5º, XXXIII e XXXIV, b</strong>; isso é distinto de pedir <strong>dados pessoais do próprio impetrante</strong> em banco de caráter público, hipótese típica de <strong>HD</strong>.</li>
+<li>A referência original às <strong>Súmulas 333 e 624</strong> para esse assunto estava errada: <strong>333/STF trata de matéria tributária histórica</strong>; <strong>624/STF versa sobre competência originária do STF em mandado de segurança contra atos de outros tribunais</strong>.</li>
+</ul>
+<h4>Súmulas úteis para MS</h4>
+<ul>
+<li><strong>Súmula 625/STF:</strong> controvérsia sobre direito não impede MS.</li>
+<li><strong>Súmula 632/STF:</strong> constitucionalidade da fixação de prazo de decadência.</li>
+<li><strong>Súmula 624/STF:</strong> STF não julga originariamente MS contra atos de outros tribunais.</li>
+<li><strong>Súmula 267/STF:</strong> não cabe MS contra ato judicial passível de recurso ou correição, observadas interpretações e exceções reconhecidas pela jurisprudência.</li>
+<li><strong>Súmula 510/STF:</strong> contra ato praticado no exercício de competência delegada, impugna-se a autoridade delegada, nos termos do enunciado.</li>
+</ul>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-04-titulo" class="study-chapter prose" id="capitulo-04"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">04</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-04-titulo">Mandado de segurança coletivo (MSC)</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">4.1</span> Fundamento</h3>
+<p><strong>CF, art. 5º, LXX, alíneas a e b</strong>; <strong>Lei nº 12.016/2009, arts. 21 e 22</strong>. A modalidade coletiva recebeu previsão expressa na Constituição de <strong>1988</strong>.</p>
+<p><strong>Finalidade:</strong> proteger <strong>direitos líquidos e certos</strong> de uma coletividade representada/substituída em juízo por legitimado constitucional.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">4.2</span> Quem pode impetrar?</h3>
+<ol>
+<li><strong>Partido político com representação no Congresso Nacional:</strong> em regra, um parlamentar vinculado ao partido na Câmara dos Deputados <strong>ou</strong> no Senado Federal atende ao requisito de representação; devem ser observados os limites do interesse defendido e da finalidade partidária.</li>
+<li><strong>Organização sindical.</strong></li>
+<li><strong>Entidade de classe.</strong></li>
+<li><strong>Associação legalmente constituída e em funcionamento há pelo menos um ano.</strong></li>
+</ol>
+<p><strong>Pegadinha:</strong> a exigência de <strong>um ano</strong> da alínea <strong>b</strong>, na leitura consolidada para o MS coletivo, é dirigida especificamente <strong>às associações</strong>, não devendo ser aplicada mecanicamente a sindicatos e entidades de classe.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">4.3</span> Autorização dos integrantes</h3>
+<p><strong>Súmula 629/STF:</strong> entidade de classe pode impetrar MSC em favor dos associados <strong>sem autorização individual prévia</strong>. A lógica é a <strong>substituição processual</strong>, não a representação processual ordinária da CF, art. 5º, XXI.</p>
+<p><strong>Exemplo:</strong> sindicato ajuíza MS coletivo para proteger um direito funcional documentalmente demonstrável de servidores de uma categoria sem recolher autorização assinada de cada um.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">4.4</span> Precisa beneficiar todos?</h3>
+<p><strong>Não.</strong> A <strong>Súmula 630/STF</strong> admite MSC por entidade de classe quando a pretensão interessa <strong>somente a parte da categoria</strong>.</p>
+<p><strong>Exemplo:</strong> associação de servidores discute vantagem indevidamente retirada apenas dos associados lotados em determinada área, desde que presentes os requisitos legais.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">4.5</span> Que direitos são protegidos?</h3>
+<p><strong>Lei 12.016/2009, art. 21, parágrafo único:</strong></p>
+<ul>
+<li><strong>Coletivos em sentido estrito:</strong> indivisíveis, pertencentes a grupo/categoria ligados por relação jurídica básica.</li>
+<li><strong>Individuais homogêneos:</strong> direitos individuais de origem comum, cuja proteção conjunta é adequada à situação dos associados ou membros.</li>
+</ul>
+<p><strong>Prazo:</strong> aplicam-se as regras de MS, inclusive o <strong>art. 23</strong> quanto à decadência.<br/>
+<strong>Liminar:</strong> possível; observar a declaração de inconstitucionalidade do <strong>art. 22, § 2º</strong>, na <strong>ADI 4296</strong>.</p>
+</section><details class="anotacoes-adicionais"><summary>Anotações e exemplos para revisão</summary><div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section">
+<h3 class="card-titulo">Para Leigos — MS Coletivo: Art. 5º, LXX</h3>
+<p>Você fez um concurso público, foi aprovado, mas o órgão não te nomeia. Isso é um direito líquido e certo (seu nome está na lista). Você pode impetrar um MS para obrigar a nomeação. Mas não pode usar MS para discutir se uma lei é constitucional — isso se faz por ação direta.</p>
+</div>
+</div></details><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-05-titulo" class="study-chapter prose" id="capitulo-05"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">05</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-05-titulo">Mandado de injunção individual (MI)</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">5.1</span> Origem e fundamento</h3>
+<p>Foi introduzido pela <strong>Constituição de 1988</strong>. Fundamento: <strong>CF, art. 5º, LXXI</strong>. Disciplina: <strong>Lei nº 13.300/2016</strong>.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">5.2</span> O que é?</h3>
+<p>Serve quando a <strong>falta total ou parcial de uma norma regulamentadora</strong> torna <strong>inviável</strong> o exercício de direitos ou liberdades constitucionais, ou de prerrogativas ligadas à <strong>nacionalidade, soberania ou cidadania</strong> (Lei 13.300/2016, <strong>art. 2º</strong>).</p>
+<p><strong>Em linguagem simples:</strong> a Constituição promete um direito, mas sua realização depende de norma que o Poder Público deveria editar e não editou adequadamente; o MI busca superar essa omissão para permitir seu exercício.</p>
+<p><strong>Exemplo didático:</strong> um direito constitucional depende de regulamentação legislativa e, sem ela, o grupo ou pessoa não consegue efetivamente exercê-lo. Não basta existir uma lei pouco conveniente; é preciso demonstrar omissão normativa relevante e inviabilização do exercício do direito.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">5.3</span> Relação com eficácia constitucional</h3>
+<p>Os apontamentos da aula citam o <strong>MI 6.858/DF</strong>, sob relatoria do Min. <strong>Edson Fachin</strong>, como referência sobre o MI em normas de <strong>eficácia limitada stricto sensu</strong>. A lógica é esta:</p>
+<ul>
+<li><strong>Plena:</strong> o conteúdo essencial já é suficientemente aplicável — MI geralmente não é remédio adequado por mera ausência de lei.</li>
+<li><strong>Contida:</strong> norma tem aplicabilidade imediata, mesmo podendo sofrer restrições — a falta de lei restritiva não gera automaticamente MI.</li>
+<li><strong>Limitada:</strong> pode faltar regulamentação indispensável — é o cenário clássico de MI.</li>
+</ul>
+<p><strong>Cuidado:</strong> o que define o cabimento é a <strong>omissão normativa que impede o exercício de direito constitucional</strong>, e não simplesmente a etiqueta dada por um professor à norma.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">5.4</span> Sujeitos</h3>
+<p><strong>Lei 13.300/2016, art. 3º:</strong></p>
+<ul>
+<li><strong>Impetrante:</strong> pessoa natural ou jurídica que se afirma titular de direito, liberdade ou prerrogativa constitucional inviabilizada por falta de norma.</li>
+<li><strong>Impetrado:</strong> <strong>Poder, órgão ou autoridade que tem atribuição para editar a norma faltante</strong>. Não é necessariamente um servidor que cometeu ato material contra o cidadão.</li>
+</ul>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">5.5</span> O que o juiz ou tribunal pode determinar?</h3>
+<p><strong>Lei nº 13.300/2016, art. 8º, incisos I e II e parágrafo único:</strong></p>
+<ul>
+<li>reconhecida a mora normativa, pode fixar <strong>prazo razoável</strong> para que a autoridade competente edite a regulamentação;</li>
+<li>pode determinar <strong>as condições necessárias ao exercício provisório do direito</strong> ou as condições para propor ação própria, se a omissão não for sanada no prazo;</li>
+<li>não é preciso repetir a determinação de prazo se comprovado descumprimento de prazo já estipulado em MI anterior.</li>
+</ul>
+<p><strong>Exemplo ilustrativo:</strong> um tribunal reconhece que a ausência de norma impede o exercício de direito constitucional e estabelece um regime transitório para tornar seu exercício possível enquanto o legislador não atua.</p>
+<h4>A decisão cria uma lei geral?</h4>
+<p><strong>Não necessariamente.</strong> Pela <strong>Lei 13.300/2016, art. 9º</strong>, a decisão, como regra, produz efeitos para as partes; excepcionalmente pode alcançar terceiros ou todos (<strong>ultra partes</strong> ou <strong>erga omnes</strong>) quando isso for indispensável para concretizar o direito. Os efeitos podem durar até surgir norma regulamentadora, observados os arts. 10 e 11.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">5.6</span> Prazo, custo, advogado e liminar</h3>
+<ul>
+<li><strong>Não há prazo decadencial de 120 dias</strong> na Lei 13.300/2016 para impetrar MI; não confundir com MS.</li>
+<li><strong>Não é constitucionalmente gratuito como HC e HD</strong>, embora exista assistência judiciária gratuita quando cabível.</li>
+<li><strong>Em regra, exige advogado</strong> ou representação institucional autorizada.</li>
+<li>A Lei 13.300/2016 <strong>não prevê procedimento específico de medida liminar</strong> e o entendimento tradicional é restritivo quanto a liminares em MI; por isso, é melhor evitar a afirmação absoluta, descontextualizada, de que “nenhuma medida provisória poderá existir em hipótese alguma”.</li>
+</ul>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">5.7</span> Regras subsidiárias</h3>
+<p><strong>Lei 13.300/2016, art. 14:</strong> aplicam-se subsidiariamente as normas do <strong>mandado de segurança</strong> e do <strong>Código de Processo Civil</strong>. A redação da lei menciona tanto o CPC de <strong>1973</strong> quanto o de <strong>2015</strong>, por motivos de transição legislativa; na prática, deve-se considerar o <strong>CPC vigente (Lei 13.105/2015)</strong> e as normas transitórias aplicáveis. A referência histórica ao CPC de 1973 não significa que ele voltou a vigorar como código geral.</p>
+</section><details class="anotacoes-adicionais"><summary>Anotações e exemplos para revisão</summary><div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section">
+<h3 class="card-titulo">Para Leigos — Mandado de Injunção: Art. 5º, LXXI</h3>
+<p>A Constituição diz que você tem direito a um benefício (ex: aposentadoria especial), mas o Congresso nunca criou a lei para regulamentar como pedir esse benefício. Você pode impetrar um MI para que o Judiciário declare a omissão e force o legislador a criar a lei, ou mesmo regular o direito provisoriamente.</p>
+</div>
+</div></details><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-06-titulo" class="study-chapter prose" id="capitulo-06"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">06</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-06-titulo">Mandado de injunção coletivo (MIC)</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">6.1</span> Previsão</h3>
+<p><strong>Lei nº 13.300/2016, arts. 12 e 13.</strong> Busca resolver <strong>omissão normativa</strong> que inviabiliza o exercício de direitos constitucionais de coletividades, grupos, classes ou categorias.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">6.2</span> Legitimados — art. 12 completo em conteúdo</h3>
+<div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:465px;">
+<thead>
+<tr>
+<th>Inciso</th>
+<th>Legitimado</th>
+<th>Exigência legal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>I</strong></td>
+<td><strong>Ministério Público</strong></td>
+<td>Tutela especialmente relevante à ordem jurídica, ao regime democrático ou a interesses sociais ou individuais indisponíveis.</td>
+</tr>
+<tr>
+<td><strong>II</strong></td>
+<td><strong>Partido político com representação no Congresso Nacional</strong></td>
+<td>Defesa de direitos, liberdades ou prerrogativas de integrantes ou ligados à finalidade partidária.</td>
+</tr>
+<tr>
+<td><strong>III</strong></td>
+<td><strong>Organização sindical, entidade de classe ou associação</strong></td>
+<td>Atuação conforme estatutos, para todos ou parte dos membros/associados, pertinente às finalidades, <strong>dispensada autorização especial</strong>; o inciso prevê constituição legal e funcionamento há <strong>ao menos um ano</strong>.</td>
+</tr>
+<tr>
+<td><strong>IV</strong></td>
+<td><strong>Defensoria Pública</strong></td>
+<td>Tutela especialmente relevante aos direitos humanos e direitos individuais/coletivos dos necessitados (CF, art. 5º, LXXIV).</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Pegadinha fundamental:</strong> os legitimados do <strong>MIC não são idênticos</strong> aos do <strong>mandado de segurança coletivo</strong>: o art. 12 da Lei 13.300/2016 <strong>inclui expressamente o Ministério Público e a Defensoria Pública</strong>. Além disso, no MIC, a redação do inciso III prevê requisito temporal no conjunto de legitimados indicado, exigindo atenção à literalidade; não se deve simplesmente transferir ao MIC a regra resumida sobre associações no MSC.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">6.3</span> Coisa julgada e ação individual</h3>
+<p><strong>Lei 13.300/2016, art. 13:</strong> a decisão coletiva vincula em princípio o grupo/categoria substituído, sem prejuízo da possibilidade de extensão excepcional prevista no art. 9º. O parágrafo único disciplina coexistência com demandas individuais e traz prazo de <strong>30 dias</strong> para pedido de desistência da ação individual por quem pretende aproveitar os efeitos da coletiva, contado da ciência comprovada da impetração coletiva.</p>
+<p><strong>Exemplo:</strong> uma entidade de classe pede MI coletivo em favor dos integrantes da categoria para superar omissão legislativa que impede exercício de prerrogativa constitucional.</p>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-07-titulo" class="study-chapter prose" id="capitulo-07"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">07</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-07-titulo">Habeas data (HD)</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">7.1</span> Origem e fundamento</h3>
+<p>O <strong>habeas data</strong> foi incluído na <strong>Constituição de 1988</strong>. É disciplinado pela <strong>Lei nº 9.507/1997</strong>. Fundamento constitucional: <strong>CF, art. 5º, LXXII, alíneas a e b</strong>.</p>
+<p><strong>Objetivo:</strong> garantir controle sobre dados pessoais mantidos por entidades governamentais ou bancos de dados de <strong>caráter público</strong>.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">7.2</span> Três hipóteses legais</h3>
+<p><strong>Lei 9.507/1997, art. 7º, incisos I, II e III:</strong></p>
+<ol>
+<li><strong>Conhecimento</strong> de informações pessoais relativas ao impetrante existentes em registro ou banco de dados governamental ou de caráter público.</li>
+<li><strong>Retificação</strong> de dados pessoais incorretos, salvo opção por procedimento sigiloso judicial ou administrativo.</li>
+<li><strong>Anotação</strong> de contestação ou explicação relacionada a dado verdadeiro mas justificável, objeto de pendência judicial ou amigável.</li>
+</ol>
+<p><strong>Exemplo 1:</strong> cidadã pede para saber quais dados pessoais constam a seu respeito de cadastro governamental de caráter público.<br/>
+<strong>Exemplo 2:</strong> pessoa quer corrigir anotação incorreta em cadastro público sobre ela.<br/>
+<strong>Exemplo 3:</strong> pessoa pretende incluir justificativa em registro verdadeiro, mas sob disputa relevante, observados requisitos legais.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">7.3</span> Caráter personalíssimo</h3>
+<p>O HD protege <strong>dados relativos à pessoa do próprio titular</strong> — pessoa física ou jurídica, conforme a natureza da informação. Como regra, <strong>não serve para buscar dados pessoais de terceiros</strong>.</p>
+<h4>Exceção jurisprudencial relevante: cônjuge falecido</h4>
+<p>A jurisprudência admite, em determinadas condições, que o <strong>cônjuge sobrevivente (supérstite)</strong> busque por HD acesso a informações sobre o cônjuge falecido. Há precedentes do <strong>STJ (HD 147/DF)</strong> e do STF sobre legitimidade do cônjuge sobrevivente. Portanto, personalíssimo <strong>não deve ser confundido com impossibilidade absoluta de qualquer atuação sucessória</strong>.</p>
+<p><strong>Supérstite</strong> significa <strong>sobrevivente</strong>.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">7.4</span> Impetrante e impetrado</h3>
+<ul>
+<li><strong>Impetrante:</strong> o titular das informações pessoais, conforme a hipótese, e quem for legitimado pela jurisprudência aplicável.</li>
+<li><strong>Impetrado:</strong> autoridade/entidade responsável pelo banco de dados <strong>governamental ou de caráter público</strong>; uma organização privada pode estar abrangida quando seu banco de dados tem caráter público, mas <strong>nem toda base privada</strong> se submete automaticamente ao habeas data.</li>
+</ul>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">7.5</span> Necessidade de requerimento administrativo prévio</h3>
+<p><strong>Lei 9.507/1997, art. 8º, parágrafo único:</strong> o pedido de HD deve ser acompanhado de prova de resistência administrativa, identificada por recusa ou pelo decurso do período legal sem decisão:</p>
+<div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:460px;">
+<thead>
+<tr>
+<th>Pedido</th>
+<th>Prazo legal de ausência de decisão indicado no art. 8º</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conhecer dados</td>
+<td><strong>Mais de 10 dias</strong></td>
+</tr>
+<tr>
+<td>Corrigir dados</td>
+<td><strong>Mais de 15 dias</strong></td>
+</tr>
+<tr>
+<td>Inserir anotação/explicação</td>
+<td><strong>Mais de 15 dias</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Súmula 2 do STJ:</strong> reforça que não cabe HD de <strong>acesso</strong> se não ocorreu recusa administrativa. Não é necessário <strong>esgotar recursos em todas as instâncias administrativas</strong>; basta demonstrar a resistência na forma legal.</p>
+<p><strong>Exemplo:</strong> antes de ir à Justiça, o cidadão solicita formalmente os dados e guarda o protocolo. Se o órgão recusar ou não responder dentro do prazo pertinente, reúne a documentação e considera o HD.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">7.6</span> Custos, advogado e liminar</h3>
+<ul>
+<li><strong>Gratuito:</strong> CF, art. <strong>5º, LXXVII</strong>; Lei 9.507/1997, <strong>art. 21</strong>.</li>
+<li><strong>Em regra, exige advogado:</strong> a gratuidade de custas <strong>não elimina</strong> a necessidade de capacidade postulatória, ressalvadas hipóteses legais de representação institucional.</li>
+<li><strong>Não existe prazo decadencial geral de 120 dias</strong>, como no mandado de segurança.</li>
+<li>É possível discutir tutela urgente segundo o regime jurídico aplicável, <strong>sem presumir</strong> que toda liminar será deferida.</li>
+</ul>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">7.7</span> Quando NÃO é habeas data?</h3>
+<ul>
+<li><strong>Obter certidão administrativa:</strong> em caso de recusa ilegal e prova pré-constituída, pode ser matéria de <strong>MS</strong>, considerando CF, art. <strong>5º, XXXIV, b</strong>.</li>
+<li><strong>Pedir informação pública geral sobre gastos, contratos ou políticas públicas:</strong> usualmente utiliza-se direito de acesso à informação e, em caso de ilegalidade documentada, ação adequada como <strong>MS</strong>, não o HD destinado a dados próprios.</li>
+<li><strong>Descobrir nomes de denunciantes ou responsáveis por agressões feitas contra o impetrante:</strong> o HD <strong>não é via genérica</strong> para descobrir identidade de terceiros; outro instrumento jurídico e os limites de privacidade podem ser relevantes.</li>
+</ul>
+<p><strong>Resumo para prova:</strong> <strong>HD = meus dados pessoais em cadastro público ou de caráter público; MS = meu direito líquido e certo violado por autoridade, fora HC/HD.</strong></p>
+</section><details class="anotacoes-adicionais"><summary>Anotações e exemplos para revisão</summary><div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section">
+<h3 class="card-titulo">Para Leigos — Habeas Data: Art. 5º, LXXII</h3>
+<p>Você pede ao SERASA seus dados pessoais e eles se recusam a fornecer. Você pode impetrar um HD para obrigá-los a te dar acesso ou corrigir informações erradas. Mas se você quer ver o andamento de um processo seu no tribunal, o HD não é o caminho — você usa o sistema ou pede vista.</p>
+</div>
+</div></details><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-08-titulo" class="study-chapter prose" id="capitulo-08"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">08</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-08-titulo">Ação popular (AP)</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">8.1</span> Historicidade</h3>
+<p>A ação popular teve previsão constitucional expressa no Brasil na <strong>Constituição de 1934</strong>. Hoje é regida pela <strong>CF, art. 5º, LXXIII</strong>, e pela <strong>Lei nº 4.717/1965</strong>.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">8.2</span> Conceito e objetivo</h3>
+<p>Permite que <strong>qualquer cidadão</strong> proponha ação judicial para <strong>anular ato lesivo</strong>:</p>
+<ul>
+<li>ao <strong>patrimônio público</strong> ou ao patrimônio de entidade da qual o Estado participe;</li>
+<li>à <strong>moralidade administrativa</strong>;</li>
+<li>ao <strong>meio ambiente</strong>;</li>
+<li>ao <strong>patrimônio histórico e cultural</strong>.</li>
+</ul>
+<p><strong>Explicando:</strong> é uma maneira de o cidadão exercer <strong>controle popular</strong> sobre atos prejudiciais ao interesse coletivo.</p>
+<p><strong>Exemplo:</strong> cidadão identifica ato administrativo potencialmente lesivo que desrespeita normas e pode causar dano relevante ao patrimônio histórico municipal. Poderá avaliar a ação popular, demonstrando os requisitos jurídicos.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">8.3</span> Quem pode propor?</h3>
+<p><strong>Cidadão brasileiro</strong>, nato ou naturalizado, no exercício dos direitos políticos, inclusive o jovem <strong>entre 16 e 18 anos</strong> regularmente alistado como eleitor (o voto dessa faixa etária é facultativo).</p>
+<p><strong>Lei 4.717/1965, art. 1º, § 3º:</strong> a prova de cidadania para ir a juízo é realizada com <strong>título eleitoral ou documento equivalente</strong>.</p>
+<h4>Quem NÃO pode propor?</h4>
+<ul>
+<li><strong>Pessoa jurídica:</strong> <strong>Súmula 365/STF</strong>.</li>
+<li><strong>Estrangeiro não naturalizado:</strong> não se enquadra, em regra, como cidadão legitimado para AP.</li>
+<li><strong>Pessoa com direitos políticos suspensos ou perdidos</strong>, enquanto durar o impedimento.</li>
+<li><strong>Ministério Público, como autor originário dessa ação popular</strong>, não substitui a exigência de autor cidadão.</li>
+</ul>
+<p><strong>Atenção:</strong> pessoas jurídicas podem ser <strong>rés</strong> da ação popular; o impedimento da Súmula 365 é de <strong>legitimidade ativa</strong>.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">8.4</span> Quem pode figurar no polo passivo?</h3>
+<p><strong>Lei 4.717/1965, art. 6º:</strong> pode haver, conforme o caso, pessoas jurídicas de direito público ou privado envolvidas no ato, autoridades e agentes que o praticaram ou autorizaram, e beneficiários diretos da lesão. <strong>Não é correto chamar todas essas pessoas de “impetrados” nem antecipar que sejam culpadas</strong>.</p>
+<p><strong>Exemplo:</strong> contratação pública questionada pode envolver ente público, gestores responsáveis e empresa beneficiada, conforme a situação fática e os requisitos da lei.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">8.5</span> Ministério Público: como atua?</h3>
+<p>O <strong>Ministério Público não propõe originalmente a ação popular como se fosse cidadão</strong>, mas tem funções processuais essenciais, incluindo atuação como <strong>fiscal da ordem jurídica</strong> (Lei 4.717/1965, <strong>art. 6º, § 4º</strong>) e a possibilidade de <strong>promover o prosseguimento</strong> em hipóteses legais de desistência ou abandono.</p>
+<h4>Art. 9º da Lei 4.717/1965: desistência</h4>
+<p>Se o autor desistir ou causar a extinção por abandono, a lei prevê publicação de editais e assegura a <strong>qualquer cidadão</strong> e ao <strong>representante do MP</strong> a oportunidade de promover o prosseguimento, dentro de <strong>90 dias contados da última publicação</strong>, observadas as condições do dispositivo.</p>
+<p><strong>Exemplo:</strong> um cidadão ajuíza AP contra ato lesivo, mas abandona o processo. O MP ou outro cidadão poderá, nos termos legais, assumir o prosseguimento.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">8.6</span> Custas, honorários e liminar</h3>
+<ul>
+<li><strong>Constitucionalmente isento de custas judiciais e do ônus de sucumbência</strong>, <strong>salvo comprovada má-fé</strong>: CF, art. <strong>5º, LXXIII</strong>.</li>
+<li><strong>Em regra, exige advogado</strong> para ajuizamento e atuação judicial.</li>
+<li><strong>Admite liminar</strong> para suspender ato lesivo, quando cabível, conforme Lei 4.717/1965, <strong>art. 5º, § 4º</strong>, e a tutela provisória aplicável.</li>
+<li><strong>É ação coletiva de controle popular</strong>, mas é ajuizada <strong>pelo cidadão</strong>, não necessariamente por associação ou partido político.</li>
+</ul>
+<h4>Outros artigos importantes da Lei 4.717/1965</h4>
+<ul>
+<li><strong>Art. 1º, § 3º:</strong> prova da cidadania.</li>
+<li><strong>Art. 5º, § 4º:</strong> possibilidade de suspensão liminar do ato lesivo.</li>
+<li><strong>Art. 6º:</strong> quem integra o polo passivo e atuação do MP.</li>
+<li><strong>Art. 9º:</strong> continuidade após desistência ou abandono, com prazo de 90 dias.</li>
+<li><strong>Art. 18:</strong> coisa julgada, ressalvada improcedência por deficiência de provas.</li>
+<li><strong>Art. 21:</strong> <strong>prescrição quinquenal</strong> (cinco anos) da ação prevista na lei, com análise de contagem e circunstâncias jurídicas relevantes.</li>
+</ul>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">8.7</span> Exemplos do que costuma cair em concurso</h3>
+<p><strong>Caso 1 — legitimidade:</strong> empresa quer propor AP contra obra pública irregular. <strong>Não pode</strong>, pois pessoa jurídica não é cidadão (Súmula 365/STF).</p>
+<p><strong>Caso 2 — eleitor de 17 anos:</strong> jovem possui título eleitoral regular e direitos políticos em exercício. <strong>Pode</strong>, conforme os requisitos da lei.</p>
+<p><strong>Caso 3 — má-fé:</strong> cidadão inventa fatos dolosamente para usar a AP como perseguição. A gratuidade constitucional <strong>não protege a má-fé comprovada</strong>.</p>
+<p><strong>Caso 4 — desistência:</strong> autor desiste e a questão pergunta se tudo acaba necessariamente. <strong>Não:</strong> art. 9º prevê continuação nas condições legais.</p>
+</section><details class="anotacoes-adicionais"><summary>Anotações e exemplos para revisão</summary><div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section">
+<h3 class="card-titulo">Para Leigos — Ação Popular: Art. 5º, LXXIII</h3>
+<p>O prefeito compra um terreno superfaturado para a prefeitura. Um cidadão (você, se for eleitor) pode entrar com ação popular para anular esse contrato e pedir a devolução do dinheiro público. Não custa nada para você (se não for de má-fé).</p>
+</div>
+</div></details><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-09-titulo" class="study-chapter prose" id="capitulo-09"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">09</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-09-titulo">Ação civil pública (ACP) — não confundir</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><p>O último slide compara a ação popular com a <strong>ação civil pública</strong>.</p>
+<ul>
+<li><strong>Lei principal:</strong> <strong>Lei nº 7.347/1985</strong>.</li>
+<li><strong>Tutela:</strong> interesses <strong>difusos e coletivos</strong>, além de outras situações previstas na legislação, como ambiente, consumidores e patrimônio público/social.</li>
+<li><strong>Legitimados ativos (art. 5º):</strong> <strong>Ministério Público</strong>, <strong>Defensoria Pública</strong>, <strong>União</strong>, <strong>Estados</strong>, <strong>Distrito Federal</strong>, <strong>Municípios</strong>, entidades da Administração direta/indireta legalmente previstas, e <strong>associações</strong> que cumpram os requisitos legais.</li>
+<li><strong>Associação na ACP:</strong> em regra, constituída há <strong>pelo menos um ano</strong> e com finalidades institucionais relacionadas à proteção do direito discutido, sem prejuízo das exceções legais específicas.</li>
+</ul>
+<p><strong>A distinção mais cobrada:</strong></p>
+<ul>
+<li><strong>Ação popular:</strong> proposta por <strong>cidadão</strong>, para anular ato lesivo aos bens/interesses enumerados no art. 5º, LXXIII, da CF.</li>
+<li><strong>ACP:</strong> proposta por <strong>legitimados legais</strong> (incluindo MP e Defensoria), com objeto mais amplo disciplinado pela Lei 7.347/1985.</li>
+</ul>
+<p>A ACP também tem <strong>previsão constitucional</strong> (CF, <strong>art. 129, III</strong>, relacionado ao Ministério Público), mas não é um dos remédios expressamente enumerados nos incisos LXVIII a LXXIII do art. 5º. Por isso, a frase do slide “não é um remédio constitucional” precisa ser compreendida como <strong>classificação doutrinária do conjunto estudado</strong>, e não como ausência de base constitucional.</p>
+<p><strong>Exemplo:</strong> MP ajuíza ACP para exigir recuperação de área ambiental degradada; já um cidadão devidamente legitimado pode ajuizar AP contra ato administrativo lesivo ao meio ambiente, se preenchidos seus requisitos.</p>
+</section><details class="anotacoes-adicionais"><summary>Anotações e exemplos para revisão</summary><div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section">
+<h3 class="card-titulo">Para Leigos — Relação com Remédios Constitucionais</h3>
+<p>Uma fábrica polui um rio que abastece toda uma cidade. O Ministério Público pode entrar com ACP para obrigar a fábrica a parar a poluição e reparar os danos. Não precisa de um cidadão específico; é uma ação em defesa do meio ambiente (direito difuso).</p>
+</div>
+</div></details><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-10-titulo" class="study-chapter prose" id="capitulo-10"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">10</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-10-titulo">Quadro comparativo final</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:930px;">
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>HC</th>
+<th>MS individual/coletivo</th>
+<th>MI individual/coletivo</th>
+<th>HD</th>
+<th>Ação popular</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Protege</td>
+<td>Liberdade de locomoção</td>
+<td>Direito líquido e certo fora HC/HD</td>
+<td>Exercício de direito constitucional inviabilizado por omissão regulamentadora</td>
+<td>Dados pessoais em cadastro governamental/de caráter público</td>
+<td>Patrimônio público, moralidade, meio ambiente, patrimônio histórico-cultural</td>
+</tr>
+<tr>
+<td>Constituição</td>
+<td>5º, LXVIII</td>
+<td>5º, LXIX e LXX</td>
+<td>5º, LXXI</td>
+<td>5º, LXXII</td>
+<td>5º, LXXIII</td>
+</tr>
+<tr>
+<td>Lei específica</td>
+<td>CPP, 647 e segs.</td>
+<td>12.016/2009</td>
+<td>13.300/2016</td>
+<td>9.507/1997</td>
+<td>4.717/1965</td>
+</tr>
+<tr>
+<td>Gratuidade constitucional expressa</td>
+<td><strong>Sim</strong></td>
+<td><strong>Não</strong> (possível gratuidade judicial)</td>
+<td><strong>Não</strong> (possível gratuidade judicial)</td>
+<td><strong>Sim</strong></td>
+<td><strong>Sim, salvo má-fé</strong></td>
+</tr>
+<tr>
+<td>Advogado para ajuizar?</td>
+<td><strong>Não é obrigatório</strong></td>
+<td>Em regra, sim</td>
+<td>Em regra, sim</td>
+<td>Em regra, sim</td>
+<td>Em regra, sim</td>
+</tr>
+<tr>
+<td>Prazo decadencial geral de 120 dias?</td>
+<td>Não</td>
+<td><strong>Sim</strong></td>
+<td>Não</td>
+<td>Não</td>
+<td>Não (há prescrição prevista na lei)</td>
+</tr>
+<tr>
+<td>Liminar</td>
+<td>Possível</td>
+<td>Possível; atenção ADI 4296</td>
+<td>Ausência de previsão específica; jurisprudência restritiva</td>
+<td>Tutela urgente depende do caso</td>
+<td>Possível</td>
+</tr>
+<tr>
+<td>Exige pedido administrativo prévio?</td>
+<td>Em regra, não</td>
+<td>Em regra, não</td>
+<td>Em regra, não</td>
+<td><strong>Sim, resistência comprovada</strong></td>
+<td>Em regra, não</td>
+</tr>
+</tbody>
+</table></div>
+<blockquote>
+<p><strong>Método de memorização:</strong> <strong>HC = ir e vir</strong> • <strong>HD = dados meus</strong> • <strong>MI = falta de norma</strong> • <strong>MS = direito líquido e certo</strong> • <strong>AP = cidadão fiscaliza ato lesivo</strong>.</p>
+</blockquote>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-11-titulo" class="study-chapter prose" id="capitulo-11"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">11</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-11-titulo">Súmulas e entendimentos mais cobrados</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><h4>Habeas corpus — STF</h4>
+<div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:460px;">
+<thead>
+<tr>
+<th>Enunciado</th>
+<th>Essência para memorização</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Súmula 693</strong></td>
+<td>Não serve para decisão de <strong>multa</strong>, ou processo cuja única pena possível seja pecuniária.</td>
+</tr>
+<tr>
+<td><strong>Súmula 694</strong></td>
+<td>Não serve, por si só, para <strong>exclusão de militar, perda de patente ou função pública</strong>.</td>
+</tr>
+<tr>
+<td><strong>Súmula 695</strong></td>
+<td>Não cabe HC quando <strong>já extinta a pena privativa de liberdade</strong>.</td>
+</tr>
+</tbody>
+</table></div>
+</section><section class="study-panel study-card" data-study-kind="texto"><h4>Mandado de segurança — STF</h4>
+<div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:460px;">
+<thead>
+<tr>
+<th>Enunciado / tese</th>
+<th>Essência para memorização</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Súmula 267</strong></td>
+<td>Regra sobre MS contra ato judicial com recurso ou correição cabível, observadas exceções jurisprudenciais.</td>
+</tr>
+<tr>
+<td><strong>Súmula 510</strong></td>
+<td>Ato praticado sob competência delegada: impugna-se a autoridade que exerce a delegação.</td>
+</tr>
+<tr>
+<td><strong>Súmula 624</strong></td>
+<td>STF não aprecia originariamente MS contra atos de <strong>outros tribunais</strong>.</td>
+</tr>
+<tr>
+<td><strong>Súmula 625</strong></td>
+<td>Discussão <strong>de direito</strong> não impede MS.</td>
+</tr>
+<tr>
+<td><strong>Súmula 629</strong></td>
+<td>MS coletivo por entidade de classe <strong>independe de autorização</strong> dos associados.</td>
+</tr>
+<tr>
+<td><strong>Súmula 630</strong></td>
+<td>MS coletivo pode alcançar <strong>parte da categoria</strong>.</td>
+</tr>
+<tr>
+<td><strong>Súmula 632</strong></td>
+<td>Lei pode estabelecer prazo decadencial para MS.</td>
+</tr>
+<tr>
+<td><strong>Tema 530/STF</strong></td>
+<td>Desistência do MS sem anuência dos demais, <strong>antes do término do julgamento</strong>.</td>
+</tr>
+<tr>
+<td><strong>ADI 4296/STF</strong></td>
+<td>Invalidou exigência de oitiva prévia obrigatória para liminar em MS coletivo, entre outras restrições.</td>
+</tr>
+</tbody>
+</table></div>
+</section><section class="study-panel study-card" data-study-kind="texto"><h4>Habeas data — STJ</h4>
+<div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:460px;">
+<thead>
+<tr>
+<th>Enunciado</th>
+<th>Essência para memorização</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Súmula 2/STJ</strong></td>
+<td>HD de acesso a informações exige resistência administrativa demonstrada.</td>
+</tr>
+</tbody>
+</table></div>
+</section><section class="study-panel study-card" data-study-kind="texto"><h4>Ação popular — STF</h4>
+<div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:460px;">
+<thead>
+<tr>
+<th>Enunciado</th>
+<th>Essência para memorização</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Súmula 365/STF</strong></td>
+<td>Pessoa jurídica <strong>não pode propor</strong> ação popular.</td>
+</tr>
+</tbody>
+</table></div>
+</section><section class="study-panel warning study-card" data-study-kind="texto"><h4>Atenção aos números ERRADOS no original</h4>
+<ul>
+<li><strong>Súmula 333/STF</strong> não versa sobre o direito de reunião nem sobre certidões; trata de questão tributária histórica (imposto de vendas e consignações).</li>
+<li><strong>Súmula 624/STF</strong> versa sobre <strong>competência originária</strong>, não sobre qual remédio protege direito de reunião.</li>
+<li><strong>Súmula 664/STF</strong> versa sobre <strong>IOF em saques de caderneta de poupança</strong>, não sobre hipóteses de proibição de habeas corpus.</li>
+<li>Não existe “Súmula 1 do CPP” como dispositivo legal do CPP: <strong>súmulas são enunciados jurisprudenciais de tribunais</strong>, enquanto o CPP possui <strong>artigos, incisos, parágrafos e alíneas</strong>.</li>
+</ul>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-12-titulo" class="study-chapter prose" id="capitulo-12"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">12</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-12-titulo">Principais correções aplicadas</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><div aria-label="Tabela de revisão, deslize horizontalmente se necessário" class="table-wrap" role="region" tabindex="0"><table style="; --table-min-width:460px;">
+<thead>
+<tr>
+<th>Trecho problemático nas anotações</th>
+<th>Redação jurídica ajustada</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“habeas corpus art. 5º LXVIIII”</td>
+<td><strong>Art. 5º, LXVIII</strong>.</td>
+</tr>
+<tr>
+<td>“mandado de segurança art. 5º LX e X”</td>
+<td><strong>Art. 5º, LXIX</strong>.</td>
+</tr>
+<tr>
+<td>“mandado de unção”, “mandado de injunção art. 5º LXIX”</td>
+<td><strong>Mandado de injunção, art. 5º, LXXI</strong>.</td>
+</tr>
+<tr>
+<td>“habeas datas” e “Lei LXXLL”</td>
+<td><strong>Habeas data, art. 5º, LXXII; Lei 9.507/1997</strong>.</td>
+</tr>
+<tr>
+<td>“impetrado = culpado”</td>
+<td><strong>Impetrado/autoridade coatora = pessoa/órgão a quem se atribui o ato/omissão, sem presunção de culpa</strong>.</td>
+</tr>
+<tr>
+<td>“HC coletivo: prisão domiciliar prevista no art. 319”</td>
+<td><strong>Prisão domiciliar: CPP, arts. 318 e 318-A; cumulação com cautelares: arts. 318-B e 319</strong>.</td>
+</tr>
+<tr>
+<td>“HC não analisa mérito”</td>
+<td><strong>Rito não comporta ampla dilação probatória; podem ser examinadas ilegalidades evidentes com base nos autos</strong>.</td>
+</tr>
+<tr>
+<td>“MS: pode desistir após trânsito em julgado”</td>
+<td><strong>Tema 530: antes do término do julgamento, inclusive após sentença de mérito ainda não definitiva</strong>.</td>
+</tr>
+<tr>
+<td>“Súmulas 333 e 624 do STF: direito de reunião”</td>
+<td><strong>Não são fundamentos corretos para tal afirmação</strong>.</td>
+</tr>
+<tr>
+<td>“Súmula 664/STF: HC”</td>
+<td><strong>Trocar por 693, 694 e 695/STF, conforme cada hipótese</strong>.</td>
+</tr>
+<tr>
+<td>“norma limitada é a única etiqueta que importa no MI”</td>
+<td><strong>É necessário caracterizar omissão de norma regulamentadora indispensável ao exercício de direito constitucional</strong>.</td>
+</tr>
+<tr>
+<td>“HD em qualquer informação de interesse particular”</td>
+<td><strong>HD é centrado em dados relativos ao titular; certidões e informações públicas gerais têm outras vias</strong>.</td>
+</tr>
+<tr>
+<td>“ação popular é proposta por qualquer pessoa”</td>
+<td><strong>É proposta por cidadão em exercício de direitos políticos; Súmula 365 exclui pessoas jurídicas</strong>.</td>
+</tr>
+<tr>
+<td>“MP pode propor ação popular”</td>
+<td><strong>Não é legitimado originário como cidadão, mas fiscaliza e pode dar prosseguimento nas hipóteses do art. 9º</strong>.</td>
+</tr>
+</tbody>
+</table></div>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-13-titulo" class="study-chapter prose" id="capitulo-13"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">13</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-13-titulo">Exercícios comentados</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><div class="exercise-commands"><button id="mostrar-respostas" type="button">Mostrar todas as respostas</button><button id="ocultar-respostas" type="button">Ocultar todas as respostas</button></div>
+<div class="exercises-list"><details class="exercise"><summary><span class="q-number">Questão 01</span><span class="question-text">Uma associação empresarial tenta ser paciente de HC por estar sujeita a multa administrativa. Cabe HC?</span></summary><div class="answer"><p>
+<strong>Resposta: não.</strong> Pessoa jurídica não possui liberdade física de locomoção e multa isoladamente não é objeto próprio de HC. Não confundir a possibilidade de pessoa jurídica ser <strong>impetrante</strong> de HC em favor de pessoa física.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 02</span><span class="question-text">Uma mulher gestante presa preventivamente pede substituição por prisão domiciliar. A regra principal encontra-se no art. 319 do CPP?</span></summary><div class="answer"><p>
+<strong>Resposta: não.</strong> Verificar <strong>arts. 318 e 318-A</strong>; o <strong>319</strong> disciplina medidas cautelares alternativas e o <strong>318-B</strong> trata de cumulação.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 03</span><span class="question-text">Associação ajuíza MSC e a autoridade afirma que todos os integrantes deveriam ter assinado autorização. A objeção procede necessariamente?</span></summary><div class="answer"><p>
+<strong>Resposta: não.</strong> No MS coletivo, há substituição processual; lembrar <strong>Súmula 629/STF</strong>.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 04</span><span class="question-text">Entidade de classe ajuíza MSC para defender só metade dos associados. Pode?</span></summary><div class="answer"><p>
+<strong>Resposta: sim, em princípio</strong>, observados os demais requisitos. <strong>Súmula 630/STF</strong>.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 05</span><span class="question-text">Falta norma regulamentadora e, por isso, um direito constitucional não pode ser exercido. Remédio típico?</span></summary><div class="answer"><p>
+<strong>Resposta: mandado de injunção.</strong> CF, art. 5º, <strong>LXXI</strong>; Lei 13.300/2016, <strong>art. 2º</strong>.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 06</span><span class="question-text">Defensoria Pública pode impetrar mandado de injunção coletivo?</span></summary><div class="answer"><p>
+<strong>Resposta: sim</strong>, nas hipóteses do <strong>art. 12, IV</strong>, da Lei 13.300/2016.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 07</span><span class="question-text">Pessoa pede dados relativos a si própria em banco governamental, é recusada e possui prova documental. Qual instrumento constitucional típico?</span></summary><div class="answer"><p>
+<strong>Resposta: habeas data</strong>, mediante observância dos requisitos da Lei 9.507/1997.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 08</span><span class="question-text">Pessoa deseja obter certidão administrativa de interesse próprio, recusada ilegalmente. É automaticamente habeas data?</span></summary><div class="answer"><p>
+<strong>Resposta: não.</strong> A negativa de certidão pode dar ensejo a <strong>mandado de segurança</strong>, se presentes os requisitos; HD não é sinônimo de todo pedido de informação.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 09</span><span class="question-text">Uma sociedade empresária pode propor ação popular contra corrupção?</span></summary><div class="answer"><p>
+<strong>Resposta: não.</strong> <strong>Súmula 365/STF</strong>. A legitimidade é do <strong>cidadão</strong>, não da pessoa jurídica.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 10</span><span class="question-text">O Ministério Público é sempre o autor originário da ação popular e não pode participar se o cidadão desistir?</span></summary><div class="answer"><p>
+<strong>Resposta: ambas as partes da afirmação estão incorretas.</strong> O autor originário deve ser cidadão; o MP atua nos termos legais e pode <strong>promover o prosseguimento</strong> na hipótese do <strong>art. 9º</strong>.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 11</span><span class="question-text">A Lei 12.016/2009 exige ouvir previamente o poder público antes de toda liminar em MSC. Essa exigência é plenamente válida?</span></summary><div class="answer"><p>
+<strong>Resposta: não.</strong> A exigência do art. 22, § 2º, foi julgada <strong>inconstitucional</strong> na <strong>ADI 4296/STF</strong>.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 12</span><span class="question-text">O prazo de 120 dias do MS também é prazo geral do MI e do HD?</span></summary><div class="answer"><p>
+<strong>Resposta: não.</strong> Ele é próprio do <strong>mandado de segurança</strong> (Lei 12.016/2009, art. 23).</p></div></details><details class="exercise"><summary><span class="q-number">Questão 13</span><span class="question-text">Cidadão de 17 anos, com título de eleitor regular, nunca pode ajuizar ação popular?</span></summary><div class="answer"><p>
+<strong>Resposta: falso.</strong> A possibilidade de alistamento eleitoral entre 16 e 18 anos permite legitimidade, se presentes os demais requisitos.</p></div></details><details class="exercise"><summary><span class="q-number">Questão 14</span><span class="question-text">Para habeas data, basta ir diretamente ao Judiciário sem solicitar o dado antes?</span></summary><div class="answer"><p>
+<strong>Resposta: em regra, não.</strong> Deve-se demonstrar solicitação e resistência ou inércia na forma da <strong>Lei 9.507/1997, art. 8º</strong>, em consonância com a <strong>Súmula 2/STJ</strong>.</p></div></details></div></section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-14-titulo" class="study-chapter prose" id="capitulo-14"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">14</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-14-titulo">Dispositivos dos slides — lei seca e comentário</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><blockquote>
+<p>Os textos abaixo reproduzem os dispositivos legais exibidos nos slides enviados, com padronização tipográfica e correção de sinais de pontuação. <strong>Não substituem consulta ao texto oficial, especialmente quando houver decisão do STF sobre a aplicação de algum dispositivo.</strong></p>
+</blockquote>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">14.1</span> Art. 8º da Lei 13.300/2016 — consequências da omissão</h3>
+<blockquote>
+<p><strong>Art. 8º.</strong> Reconhecido o estado de mora legislativa, será deferida a injunção para:</p>
+<p><strong>I</strong> — determinar prazo razoável para que o impetrado promova a edição da norma regulamentadora;</p>
+<p><strong>II</strong> — estabelecer as condições em que se dará o exercício dos direitos, das liberdades ou das prerrogativas reclamados ou, se for o caso, as condições em que poderá o interessado promover ação própria visando a exercê-los, caso não seja suprida a mora legislativa no prazo determinado.</p>
+<p><strong>Parágrafo único.</strong> Será dispensada a determinação a que se refere o inciso I do caput quando comprovado que o impetrado deixou de atender, em mandado de injunção anterior, ao prazo estabelecido para a edição da norma.</p>
+</blockquote>
+<p><strong>Tradução para leigos:</strong> o juiz pode dar prazo para criar a regra que falta e definir solução provisória para não deixar o direito constitucional sem efeito. Se já houve descumprimento de prazo judicial anterior, pode dispensar novo prazo.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">14.2</span> Art. 12 da Lei 13.300/2016 — todos os legitimados do MI coletivo</h3>
+<blockquote>
+<p><strong>Art. 12.</strong> O mandado de injunção coletivo pode ser promovido:</p>
+<p><strong>I</strong> — pelo Ministério Público, quando a tutela requerida for especialmente relevante para a defesa da ordem jurídica, do regime democrático ou dos interesses sociais ou individuais indisponíveis;</p>
+<p><strong>II</strong> — por partido político com representação no Congresso Nacional, para assegurar o exercício de direitos, liberdades e prerrogativas de seus integrantes ou relacionados com a finalidade partidária;</p>
+<p><strong>III</strong> — por organização sindical, entidade de classe ou associação legalmente constituída e em funcionamento há pelo menos 1 (um) ano, para assegurar o exercício de direitos, liberdades e prerrogativas em favor da totalidade ou de parte de seus membros ou associados, na forma de seus estatutos e desde que pertinentes a suas finalidades, dispensada, para tanto, autorização especial;</p>
+<p><strong>IV</strong> — pela Defensoria Pública, quando a tutela requerida for especialmente relevante para a promoção dos direitos humanos e a defesa dos direitos individuais e coletivos dos necessitados, na forma do inciso LXXIV do art. 5º da Constituição Federal.</p>
+<p><strong>Parágrafo único.</strong> Os direitos, as liberdades e as prerrogativas protegidos por mandado de injunção coletivo são os pertencentes, indistintamente, a uma coletividade indeterminada de pessoas ou determinada por grupo, classe ou categoria.</p>
+</blockquote>
+<p><strong>Tradução para leigos:</strong> o MI coletivo permite que algumas instituições defendam juntas pessoas atingidas pela mesma omissão legislativa. <strong>MP e Defensoria constam expressamente nesta lei.</strong></p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">14.3</span> Art. 14 da Lei 13.300/2016 — aplicação subsidiária</h3>
+<blockquote>
+<p><strong>Art. 14.</strong> Aplicam-se subsidiariamente ao mandado de injunção as normas do mandado de segurança, disciplinado pela Lei nº 12.016, de 7 de agosto de 2009, e do Código de Processo Civil, instituído pela Lei nº 5.869, de 11 de janeiro de 1973, e pela Lei nº 13.105, de 16 de março de 2015, observado o disposto em seus arts. 1.045 e 1.046.</p>
+</blockquote>
+<p><strong>Tradução para leigos:</strong> quando a Lei do MI deixa uma questão processual sem resposta, usam-se regras compatíveis do MS e do CPC. A menção ao CPC de 1973 decorre da transição e não revoga a vigência do CPC de 2015.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">14.4</span> Art. 5º, LXXIII, da CF — ação popular</h3>
+<blockquote>
+<p><strong>LXXIII</strong> — qualquer cidadão é parte legítima para propor ação popular que vise a anular ato lesivo ao patrimônio público ou de entidade de que o Estado participe, à moralidade administrativa, ao meio ambiente e ao patrimônio histórico e cultural, ficando o autor, salvo comprovada má-fé, isento de custas judiciais e do ônus da sucumbência;</p>
+</blockquote>
+<p><strong>Tradução para leigos:</strong> o eleitor pode questionar judicialmente ato prejudicial ao interesse coletivo, sem pagar custas ou honorários de sucumbência, salvo se agir comprovadamente de má-fé.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">14.5</span> Art. 1º, § 3º, da Lei 4.717/1965 — prova da cidadania</h3>
+<blockquote>
+<p><strong>§ 3º</strong> A prova da cidadania, para ingresso em juízo, será feita com o título eleitoral, ou com documento que a ele corresponda.</p>
+</blockquote>
+<p><strong>Tradução para leigos:</strong> o autor deve demonstrar que é cidadão legitimado a ajuizar a ação, normalmente com o título de eleitor ou equivalente.</p>
+</section><section class="study-panel study-card" data-study-kind="texto"><h3><span aria-hidden="true" class="heading-num">14.6</span> Art. 9º da Lei 4.717/1965 — desistência ou abandono</h3>
+<blockquote>
+<p><strong>Art. 9º.</strong> Se o autor desistir da ação ou der motivo à absolvição da instância, serão publicados editais nos prazos e condições previstos no art. 7º, inciso II, ficando assegurado a qualquer cidadão, bem como ao representante do Ministério Público, dentro do prazo de 90 (noventa) dias da última publicação feita, promover o prosseguimento da ação.</p>
+</blockquote>
+<p><strong>Tradução para leigos:</strong> a desistência de quem começou o processo não precisa encerrar definitivamente a proteção do interesse público. Outro cidadão ou o MP pode continuar nos termos da lei.</p>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><section aria-labelledby="capitulo-15-titulo" class="study-chapter prose" id="capitulo-15"><header class="chapter-heading"><span aria-hidden="true" class="chapter-number">15</span><div><p class="chapter-eyebrow">Capítulo da apostila</p><h2 id="capitulo-15-titulo">Fontes legais e jurisprudenciais</h2></div></header><section class="study-panel study-card" data-study-kind="texto"><p><strong>Constituição e leis (portais oficiais):</strong></p>
+<ol>
+<li><a href="https://www.planalto.gov.br/ccivil_03/constituicao/constituicao.htm" rel="noopener noreferrer" target="_blank">Constituição Federal de 1988 — Planalto</a> — especialmente art. 5º, incisos <strong>XXXIII, XXXIV, LXVIII a LXXIII e LXXVII</strong>, art. <strong>102</strong>, art. <strong>105</strong>, art. <strong>108</strong>, art. <strong>129, III</strong>, e art. <strong>142, § 2º</strong>.</li>
+<li><a href="https://www2.camara.leg.br/legin/fed/declei/1940-1949/decreto-lei-3689-3-outubro-1941-322206-normaatualizada-pe.html" rel="noopener noreferrer" target="_blank">Código de Processo Penal — texto atualizado, Câmara dos Deputados</a> — arts. <strong>318, 318-A, 318-B, 319, 647 a 650 e 654</strong>.</li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/_ato2007-2010/2009/lei/l12016.htm" rel="noopener noreferrer" target="_blank">Lei 12.016/2009 — mandado de segurança, Planalto</a> — arts. <strong>1º, 7º, 21, 22, 23 e 25</strong>, lidos junto com a ADI 4296.</li>
+<li><a href="https://legis.senado.gov.br/norma/602525/publicacao/15661583" rel="noopener noreferrer" target="_blank">Lei 13.300/2016 — mandado de injunção, Senado Federal</a> — arts. <strong>2º, 3º, 8º, 9º, 12, 13 e 14</strong>.</li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/l9507.htm" rel="noopener noreferrer" target="_blank">Lei 9.507/1997 — habeas data, Planalto</a> — arts. <strong>7º, 8º e 21</strong>.</li>
+<li><a href="https://www.planalto.gov.br/ccivil_03/leis/l4717.htm" rel="noopener noreferrer" target="_blank">Lei 4.717/1965 — ação popular, Planalto</a> — arts. <strong>1º, 5º, 6º, 9º, 18 e 21</strong>.</li>
+<li><a href="https://www2.camara.leg.br/legin/fed/lei/1980-1987/lei-7347-24-julho-1985-356939-normaatualizada-pl.html" rel="noopener noreferrer" target="_blank">Lei 7.347/1985 — ação civil pública, Câmara dos Deputados</a> — arts. <strong>1º e 5º</strong>.</li>
+</ol>
+<p><strong>Jurisprudência e orientação oficial:</strong></p>
+<ol start="8">
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2714" rel="noopener noreferrer" target="_blank">STF — Súmula 693 (HC e pena de multa)</a>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2720" rel="noopener noreferrer" target="_blank">STF — Súmula 694 (perda de função/patente)</a>.</li>
+<li><a href="https://portal.stf.jus.br/constituicao-supremo/artigo.asp?abrirArtigo=102&amp;abrirBase=CF" rel="noopener noreferrer" target="_blank">STF — Súmulas constitucionais e competência de HC/MS</a> — inclui referência às Súmulas <strong>624, 693, 694 e 695</strong>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2667" rel="noopener noreferrer" target="_blank">STF — Súmula 365 (ação popular)</a>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2826" rel="noopener noreferrer" target="_blank">STF — Súmula 629 (autorização no MSC)</a>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2828" rel="noopener noreferrer" target="_blank">STF — Súmula 630 (parte da categoria)</a>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2817" rel="noopener noreferrer" target="_blank">STF — Súmula 625 (controvérsia jurídica)</a>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2832" rel="noopener noreferrer" target="_blank">STF — Súmula 632 (prazo decadencial)</a>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudencia/sumariosumulas.asp?base=30&amp;sumula=2815" rel="noopener noreferrer" target="_blank">STF — Súmula 624 (competência originária)</a>.</li>
+<li><a href="https://scon.stj.jus.br/SCON/sumstj/doc.jsp?b=SUMU&amp;i=1&amp;l=10&amp;livre=%222%22.num.&amp;operador=AND&amp;ordenacao=-%40NUM&amp;p=false" rel="noopener noreferrer" target="_blank">STJ — Súmula 2 (resistência administrativa antes do HD)</a>.</li>
+<li><a href="https://portal.stf.jus.br/jurisprudenciaRepercussao/verAndamentoProcesso.asp?classeProcesso=RE&amp;incidente=4189777&amp;numeroProcesso=669367&amp;numeroTema=530" rel="noopener noreferrer" target="_blank">STF — Tema 530 (desistência de MS)</a>.</li>
+<li><a href="https://portal.stf.jus.br/noticias/verNoticiaDetalhe.asp?idConteudo=467335" rel="noopener noreferrer" target="_blank">STF — ADI 4296 (liminares em MS)</a>.</li>
+<li><a href="https://portal.stf.jus.br/textos/verTexto.asp?pagina=casos_notorios_2018&amp;servico=jurisprudenciaPesquisaGeral" rel="noopener noreferrer" target="_blank">STF — HC 143.641 (gestantes e mães)</a>.</li>
+<li><a href="https://noticias.stf.jus.br/postsnoticias/supremo-recebe-habeas-corpus-de-numero-100-000/" rel="noopener noreferrer" target="_blank">STF — histórico do habeas corpus</a>.</li>
+<li><a href="https://www.jusbrasil.com.br/jurisprudencia/stj/8706718/inteiro-teor-13766136" rel="noopener noreferrer" target="_blank">STJ — HD 147/DF: acesso pelo cônjuge sobrevivente</a> — espelho de decisão; priorizar pesquisa em base oficial para utilização prática.</li>
+<li><a href="https://www.stj.jus.br/sites/portalp/Paginas/Comunicacao/Noticias/23122020-Falta-de-prova-sobre-recusa-de-fornecimento-da-informacao-impede-analise-de-habeas-data-no-STJ.aspx" rel="noopener noreferrer" target="_blank">STJ — necessidade de prova da recusa no habeas data</a>.</li>
+</ol>
+<p><strong>Nota editorial:</strong> esta apostila combina a matéria do arquivo enviado com os tópicos efetivamente visíveis nos dez slides: aplicabilidade do MI, art. 8º, arts. 12 e 14 da Lei 13.300/2016, habeas data personalíssimo e dados de terceiros, ação popular, legitimidade ativa, Súmula 365/STF, Ministério Público, sujeito passivo e diferenças em relação à ação civil pública. As explicações foram revisadas e ampliadas quando o rascunho continha referências incorretas, incompletas ou afirmações excessivamente absolutas. Na legislação e jurisprudência, interpretações podem mudar, portanto consulte os links oficiais para atualizações posteriores a 3/11/2026.</p>
+</section><a class="back-link" href="#indice">↑ Voltar ao índice</a></section><footer class="footer"><span>Matéria Policial · Remédios Constitucionais · Conteúdo organizado a partir do Markdown enviado.</span><a href="../../../index.html">Voltar à biblioteca</a></footer><nav aria-label="Navegação entre assuntos" class="bottom-nav"><a class="previous" href="constitucional-07.html#assunto-07"><small>Assunto anterior</small>Direitos e Garantias Fundamentais</a><a class="next" href="constitucional-07.html#assunto-06"><small>Próximo assunto</small>Nacionalidade e Cidadania</a></nav></main></div><button aria-label="Voltar ao topo" class="back-to-top" id="voltar-topo" title="Voltar ao topo" type="button">↑</button><script>(() => {
+  const search = document.getElementById('busca-conteudo');
+  const chapters = [...document.querySelectorAll('.study-chapter')];
+  const tocLinks = [...document.querySelectorAll('.toc-grid a')];
+  const info = document.getElementById('resultado-busca');
+  const empty = document.getElementById('sem-resultados');
+  const clearSearch = () => { if(search.value){search.value='';applySearch();} };
+  function applySearch(){
+    const term=search.value.toLocaleLowerCase('pt-BR').trim().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+    let match=0;
+    chapters.forEach(ch=>{
+      const txt=ch.textContent.toLocaleLowerCase('pt-BR').normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+      const show=!term || txt.includes(term); ch.hidden=!show;
+      if(show)match++;
+    });
+    tocLinks.forEach(a=>{
+      const id=a.getAttribute('href').slice(1);
+      const visible=!document.getElementById(id).hidden;
+      a.parentElement.hidden=!visible;
+    });
+    info.textContent=term?`${match} capítulo${match===1?'':'s'} encontrado${match===1?'':'s'} para “${search.value.trim()}”.`:'';
+    empty.hidden=!!match;
+  }
+  search.addEventListener('input',applySearch);
+  tocLinks.forEach(a=>a.addEventListener('click',clearSearch));
+  const backToTop=document.getElementById('voltar-topo');
+  const updateScroll=()=>{backToTop.classList.toggle('show',scrollY>560);};
+  window.addEventListener('scroll',updateScroll,{passive:true}); updateScroll();
+  backToTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  if('IntersectionObserver' in window){
+    const obs=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{if(entry.isIntersecting){
+        tocLinks.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+entry.target.id));
+      }});
+    },{rootMargin:'-8% 0px -75% 0px',threshold:0});
+    chapters.forEach(ch=>obs.observe(ch));
+  }
+  const answers=[...document.querySelectorAll('.exercise')];
+  document.querySelector('#mostrar-respostas')?.addEventListener('click',()=>answers.forEach(a=>a.open=true));
+  document.querySelector('#ocultar-respostas')?.addEventListener('click',()=>answers.forEach(a=>a.open=false));
+})();</script><script>/* Operações lógicas usadas pelo laboratório e verificadas em quatro combinações. */
+function avaliarConectivos(a, b) {
+  return {not: !a, and: a && b, or: a || b, xor: a !== b, implies: !a || b, iff: a === b, notand: !(a && b), notor: !(a || b), notimplies: a && !b, notiff: a !== b};
+}
+
+
+/* Um argumento é válido se nenhuma atribuição satisfaz as premissas e refuta a conclusão. */
+function avaliarArgumentos(p, q) {
+  const estruturas = {
+    mp: (a, b) => [[!a || b, a], b],
+    ac: (a, b) => [[!a || b, b], a],
+    mt: (a, b) => [[!a || b, !b], !a],
+    sd: (a, b) => [[a || b, !a], b]
+  };
+  const combinacoes = [[true, true], [true, false], [false, true], [false, false]];
+  return Object.fromEntries(Object.entries(estruturas).map(([nome, avaliar]) => {
+    const [premissas, conclusao] = avaliar(p, q);
+    const valido = combinacoes.every(([a, b]) => {
+      const [ps, c] = avaliar(a, b);
+      return !ps.every(Boolean) || c;
+    });
+    return [nome, {premissas, conclusao, valido, contraexemplo: premissas.every(Boolean) && !conclusao}];
+  }));
+}
+
+/* A marcação da aula é gerada na fonte. JavaScript cuida apenas das interações. */
+(() => {
+  'use strict';
+  const normalize = value => String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/\s+/g, ' ').trim();
+  document.querySelectorAll('[data-logic-lab]').forEach(lab => {
+    const p = lab.querySelector('[data-proposition="p"]');
+    const q = lab.querySelector('[data-proposition="q"]');
+    if (!p || !q) return;
+    const update = () => {
+      const a = p.value === 'true', b = q.value === 'true';
+      const values = avaliarConectivos(a, b);
+      for (const output of lab.querySelectorAll('[data-logic-result]')) {
+        const result = values[output.dataset.logicResult];
+        output.textContent = result ? 'V' : 'F';
+        output.dataset.truth = String(result);
+        output.setAttribute('aria-label', result ? 'Verdadeiro' : 'Falso');
+      }
+    };
+    p.addEventListener('change', update); q.addEventListener('change', update); update();
+  });
+  document.querySelectorAll('[data-argument-lab]').forEach(lab => {
+    const p = lab.querySelector('[data-proposition="p"]');
+    const q = lab.querySelector('[data-proposition="q"]');
+    const update = () => {
+      const values = avaliarArgumentos(p.value === 'true', q.value === 'true');
+      for (const card of lab.querySelectorAll('[data-argument]')) {
+        const result = values[card.dataset.argument];
+        const output = card.querySelector('[data-argument-valid]');
+        card.dataset.valid = String(result.valido);
+        card.dataset.counterexample = String(result.contraexemplo);
+        output.textContent = result.valido ? 'V · Válido' : 'F · Inválido';
+        card.querySelector('[data-argument-assignment]').textContent =
+          `Nesta combinação: premissas ${result.premissas.map(x => x ? 'V' : 'F').join(' e ')}; conclusão ${result.conclusao ? 'V' : 'F'}.` +
+          (result.contraexemplo ? ' Contraexemplo encontrado.' : '');
+      }
+    };
+    p.addEventListener('change', update); q.addEventListener('change', update); update();
+  });
+  // Destaca os recursos de memorização presentes nos diferentes formatos do acervo.
+  const memoryPattern = /bizu|mnem[oô]nic|macete|dica de (?:prova|memori)/i;
+  for (const card of document.querySelectorAll('.prose .study-card, .bizu-box, .mnemonic-card, .mnemonic-box, .memory-aid')) {
+    const label = card.dataset.studyLabel || card.querySelector(':scope > h3, :scope > .card-kicker')?.textContent || '';
+    const kind = card.dataset.studyKind || '';
+    if (card.matches('.bizu-box, .mnemonic-card, .mnemonic-box, .memory-aid') || ['bizu', 'mnemonico', 'resumo', 'dica', 'mapa-mental'].includes(kind) || memoryPattern.test(label)) {
+      card.classList.add('memory-aid');
+      const lines = card.querySelectorAll(':scope > p, :scope > ul > li, :scope > ol > li, :scope > .text-section > p, :scope > .text-section > ul > li, :scope > .text-section > ol > li');
+      lines.forEach((line, i) => {
+        line.classList.add('memory-line', `mnemonic-tone-${i % 8 + 1}`);
+        const first = line.querySelector('strong');
+        if (first && /^[A-ZÀ-Ú]$/u.test(first.textContent.trim())) first.classList.add('memory-letter');
+      });
+    }
+  }
+  for (const strong of document.querySelectorAll('.prose p > strong:first-child, .prose li > strong:first-child')) {
+    if (memoryPattern.test(strong.textContent) && !strong.closest('.memory-aid')) strong.parentElement.classList.add('memory-inline');
+  }
+  for (const law of document.querySelectorAll('.leis-estudo')) {
+    const input = law.querySelector('[data-lei-busca]');
+    if (!input) continue;
+    const devices = [...law.querySelectorAll('.lei-dispositivo')].map(el => ({el, text: normalize(el.textContent)}));
+    const status = law.querySelector('[data-lei-resultados]');
+    input.addEventListener('input', () => {
+      const terms = normalize(input.value).split(' ').filter(Boolean);
+      let count = 0;
+      for (const {el, text} of devices) {
+        el.hidden = !terms.every(term => text.includes(term));
+        if (!el.hidden) count++;
+      }
+      law.querySelectorAll('.lei-preambulo').forEach(el => { el.hidden = terms.length > 0; });
+      status.textContent = terms.length ? `${count} dispositivos encontrados.` : '';
+    });
+  }
+  document.querySelectorAll('.prose .table-wrap').forEach(wrapper => {
+    wrapper.querySelectorAll('td').forEach(cell => {
+      const value = cell.textContent.trim().toUpperCase();
+      if (['V', 'F', 'VERDADEIRO', 'FALSO'].includes(value)) cell.dataset.truth = ['V', 'VERDADEIRO'].includes(value) ? 'true' : 'false';
+    });
+  });
+  const menu = document.querySelector('.mobile-menu');
+  menu?.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    menu.setAttribute('aria-expanded', String(open));
+    menu.textContent = open ? 'Fechar menu' : 'Abrir menu';
+    document.querySelector('#sidebar')?.classList.toggle('open', open);
+  });
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      menu?.setAttribute('aria-expanded', 'false');
+      if (menu) menu.textContent = 'Abrir menu';
+      document.querySelector('#sidebar')?.classList.remove('open');
+    }
+  });
+  const cards = [...document.querySelectorAll('.material')];
+  const blocks = [...document.querySelectorAll('.content-block')];
+  const buttons = [...document.querySelectorAll('.filter')];
+  const search = document.querySelector('#busca');
+  const discipline = document.querySelector('#disciplina');
+  // Normaliza uma vez o catálogo, em vez de repetir por card a cada tecla.
+  const cardIndex = cards.map(card => ({
+    card,
+    text: normalize(card.dataset.search || card.textContent),
+    types: (card.dataset.types || card.dataset.type || '').split(/\s+/).filter(Boolean)
+  }));
+  const catalog = document.querySelector('.catalog-all');
+  const directory = document.querySelector('.discipline-directory');
+  const tocLinks = [...document.querySelectorAll('.toc a')];
+  const guideLinks = [...document.querySelectorAll('.technical-guide a')];
+  const params = new URLSearchParams(location.search);
+  let type = params.get('tipo') || '';
+  if (!buttons.some(button => button.dataset.type === type)) type = '';
+  if (search) search.value = params.get('q') || '';
+  if (discipline && [...discipline.options].some(option => option.value === params.get('disciplina'))) discipline.value = params.get('disciplina');
+  function apply() {
+    const query = normalize(search?.value);
+    const terms = query.split(' ').filter(Boolean);
+    const active = Boolean(query || type || discipline?.value);
+    if (catalog && active) catalog.open = true;
+    if (directory) directory.hidden = active;
+    const reset = document.querySelector('#reset-filters');
+    if (reset) reset.hidden = !query && !type && !discipline?.value;
+    const subjectCards = cards.length > 0 && cards[0].dataset.kind === 'assunto';
+    let count = 0;
+    for (const {card, types, text} of cardIndex) {
+      card.hidden = Boolean((type && !types.includes(type)) || (discipline?.value && card.dataset.discipline !== discipline.value) || !terms.every(term => text.includes(term)));
+      if (card.dataset.kind === 'assunto' && card.dataset.href) {
+        card.setAttribute('href', type ? `${card.dataset.href}?tipo=${encodeURIComponent(type)}` : card.dataset.href);
+      }
+      if (!card.hidden) count++;
+    }
+    for (const block of blocks) block.hidden = Boolean(type && block.dataset.type !== type);
+    for (const link of guideLinks) {
+      const target = document.getElementById(link.hash.slice(1));
+      link.hidden = Boolean(target?.closest('.content-block')?.hidden);
+    }
+    for (const link of tocLinks) link.hidden = Boolean(type && link.dataset.type !== type);
+    for (const button of buttons) button.setAttribute('aria-pressed', String(button.dataset.type === type));
+    const results = document.querySelector('#resultados');
+    if (results) results.textContent = `${count} ${count === 1 ? (subjectCards ? 'assunto encontrado' : 'material encontrado') : (subjectCards ? 'assuntos encontrados' : 'materiais encontrados')}`;
+    const empty = document.querySelector('#vazio');
+    if (empty) empty.hidden = count > 0;
+    const status = document.querySelector('#blocos-status');
+    if (status) {
+      const active = buttons.find(button => button.dataset.type === type);
+      status.textContent = type && active ? `Mostrando só: ${active.textContent.trim()}. Selecione “Assunto completo” para ver tudo.` : '';
+    }
+    const next = new URL(location.href);
+    for (const [key, value] of [['tipo', type], ['q', search?.value || ''], ['disciplina', discipline?.value || '']]) {
+      if (value) next.searchParams.set(key, value); else next.searchParams.delete(key);
+    }
+    if (next.href !== location.href) {
+      // Abrir o HTML pelo disco ou limitar o histórico não deve interromper a busca.
+      try { history.replaceState(null, '', next); } catch { /* A filtragem local já foi aplicada. */ }
+    }
+  }
+  document.querySelector('.directory-shortcut')?.addEventListener('click', () => {
+    const catalog = document.querySelector('.catalog-all');
+    if (catalog) catalog.open = true;
+  });
+  buttons.forEach(button => button.addEventListener('click', () => { type = button.dataset.type; apply(); }));
+  search?.addEventListener('input', apply);
+  discipline?.addEventListener('change', apply);
+  for (const reset of document.querySelectorAll('#limpar, #reset-filters')) reset.addEventListener('click', () => {
+    type = ''; if (search) search.value = ''; if (discipline) discipline.value = ''; apply(); search?.focus();
+  });
+  const progressSection = document.querySelector('#progresso');
+  const progressGrid = document.querySelector('#progresso-materiais');
+  const statStudied = document.querySelector('#stat-estudados');
+  if (progressGrid && cards[0]?.dataset.kind === 'assunto') {
+    const isStudied = key => {
+      try { return localStorage.getItem('materia-policial:estudado:' + key) === 'true'; }
+      catch { return false; }
+    };
+    const studied = []; let next = null;
+    for (const card of cards) {
+      if (isStudied(card.dataset.href)) studied.push(card);
+      else if (!next) next = card;
+    }
+    if (statStudied) {
+      statStudied.hidden = false;
+      const value = statStudied.querySelector('strong');
+      if (value) value.textContent = String(studied.length);
+    }
+    if (studied.length) {
+      const add = (card, label, done) => {
+        const copy = card.cloneNode(true);
+        copy.classList.add('progress-card');
+        copy.classList.toggle('done', done);
+        copy.href = copy.dataset.href;
+        const footer = copy.querySelector('.card-footer span');
+        if (footer) footer.textContent = label;
+        progressGrid.append(copy);
+      };
+      if (progressSection) progressSection.hidden = false;
+      if (next) add(next, 'Continuar estudos', false);
+      for (const card of studied) add(card, 'Estudado ✓', true);
+    }
+  }
+  if (buttons.length) apply();
+  const complete = document.querySelector('#concluir');
+  const saveStatus = document.querySelector('#salvamento');
+  if (complete) {
+    const key = 'materia-policial:estudado:' + complete.dataset.key;
+    const show = studied => {
+      complete.setAttribute('aria-pressed', String(studied));
+      complete.textContent = studied ? 'Estudado ✓ Desfazer' : 'Marcar como estudado';
+      complete.classList.toggle('primary', studied);
+    };
+    try { show(localStorage.getItem(key) === 'true'); }
+    catch { if (saveStatus) saveStatus.textContent = 'Este navegador não permite salvar o progresso.'; }
+    complete.addEventListener('click', () => {
+      const studied = complete.getAttribute('aria-pressed') !== 'true';
+      try { localStorage.setItem(key, String(studied)); show(studied); if (saveStatus) saveStatus.textContent = 'Progresso salvo neste navegador.'; }
+      catch { if (saveStatus) saveStatus.textContent = 'Não foi possível salvar. Confira as permissões do navegador.'; }
+    });
+  }
+  document.querySelector('#imprimir')?.addEventListener('click', () => window.print());
+  let printState;
+  window.addEventListener('beforeprint', () => {
+    if (printState) return;
+    printState = [...document.querySelectorAll('details')].map(detail => [detail, detail.open]);
+    printState.forEach(([detail]) => { detail.open = true; });
+  });
+  window.addEventListener('afterprint', () => {
+    printState?.forEach(([detail, open]) => { detail.open = open; });
+    printState = null;
+  });
+  document.querySelectorAll('.question').forEach(form => form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const correct = new FormData(form).get('resposta') === form.dataset.correct;
+    const output = form.querySelector('output');
+    if (!output) return;
+    output.textContent = correct ? 'Resposta correta.' : 'Resposta incorreta. Leia o comentário e tente de novo.';
+    output.className = correct ? 'ok' : 'erro';
+    const comment = form.querySelector('details');
+    if (comment) comment.open = true;
+  }));
+})();
+</script></body></html>
+

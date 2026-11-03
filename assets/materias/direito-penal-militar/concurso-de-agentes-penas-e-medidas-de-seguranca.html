@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#101820" name="theme-color"/><meta content="dark" name="color-scheme"/><title>Concurso de Agentes, Penas e Medidas de Segurança · Direito Penal Militar · Matéria Policial</title><meta content="" name="description"/><link href="../../icone.png" rel="icon"/><script defer="" src="../../js/app.js?v=leitura-20261026"></script><style id="css-personalizado">/* Concurso de Agentes, Penas e Medidas de Segurança — CSS próprio (aula). */
+:root {color-scheme: dark;
+  --bg: #0a0d18;
+  --panel: #101527;
+  --surface: #151b30;
+  --surface-2: #1c2440;
+  --ink: #eef1fb;
+  --muted: #9aa5c4;
+  --line: #232c4a;
+  --line-strong: #364067;
+  --gold: #ffc45c;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --accent-width: 4px;
+  --tint: 16%;
+  --glow: 34%;
+  --shadow: 0 8px 28px rgb(2 4 14 / 45%);
+  --grad-brand: linear-gradient(120deg, #ffc45c 0%, #ff8a5c 45%, #ff5c8a 100%);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  
+  --paper: var(--bg);
+  --white: var(--surface);
+  --accent: var(--ink);}
+* {box-sizing: border-box;}
+body {margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;}
+[hidden] {display: none !important;}
+a {color: inherit; text-decoration: none;}
+a:hover {text-decoration: underline; text-underline-offset: 3px;}
+button {font: inherit;}
+button {cursor: pointer;}
+button {color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 10px 16px; min-height: 44px; font-size: 13px; font-weight: 600; transition: border-color .15s ease, background-color .15s ease;}
+button:hover {background: var(--surface-2); border-color: var(--muted);}
+:focus-visible {outline: 2px solid var(--gold); outline-offset: 3px;}
+::selection {color: var(--bg); background: var(--gold);}
+h1,
+h2,
+h3,
+p {margin: 0;}
+h1,
+h2,
+h3 {font-family: Georgia, "Times New Roman", serif; font-weight: 500;}
+h1 {font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -.02em;}
+h2 {font-size: 28px; line-height: 1.25; letter-spacing: -.01em;}
+h3 {font-size: 21px; line-height: 1.35;}
+small {font-size: 12px;}
+.skip {position: fixed; top: -80px; left: 16px; padding: 10px 16px; z-index: 20; background: var(--ink); color: var(--bg); font-weight: 700; border-radius: var(--radius);}
+.skip:focus {top: 12px;}
+.muted {color: var(--muted); font-size: 12px;}
+.status {color: var(--muted); font-size: 12px;}
+.status:empty {display: none;}
+[id] {scroll-margin-top: 24px;}
+.sidebar {position: fixed; inset: 0 auto 0 0; width: 240px; padding: 32px 20px 22px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10;}
+.brand {display: block; margin: 0 10px 28px; font: 500 30px/1 Georgia, serif; letter-spacing: -.02em;}
+.brand-period {color: var(--gold);}
+.brand small {display: block; font: 600 10px/1.5 "Segoe UI", sans-serif; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px;}
+.sidebar nav {overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; padding: 4px; margin: -4px;}
+.nav-label {font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 20px 10px 8px;}
+.sidebar nav a {display: block; font-size: 13px; line-height: 1.45; padding: 8px 10px; margin: 1px 0; border-radius: var(--radius); color: var(--muted);}
+.sidebar nav a:hover {color: var(--ink); background: var(--surface); text-decoration: none;}
+.sidebar nav a[aria-current] {color: var(--ink); background: var(--surface-2); font-weight: 600; box-shadow: inset 2px 0 0 var(--gold);}
+.sidebar-footer {margin-top: auto; padding: 20px 10px 0; font-size: 12px; color: var(--ink);}
+.sidebar-footer span {display: block; color: var(--muted); font-size: 11px; margin-top: 2px;}
+.workspace {margin-left: 240px; min-width: 0;}
+.topbar {min-height: 60px; border-bottom: 1px solid var(--line); padding: 0 44px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; background: var(--bg);}
+.topbar a {color: var(--ink); text-decoration: underline; text-underline-offset: 3px;}
+.topbar > span {font-size: 11px; text-transform: uppercase; letter-spacing: .1em;}
+.mobile-menu {display: none;}
+main {max-width: 1280px; margin: auto; padding: 48px 44px 32px;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: var(--discipline-color, var(--line));}
+.footer {margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px;}
+.footer a {text-decoration: underline; text-underline-offset: 4px;}
+.breadcrumbs {color: var(--muted); font-size: 12px; margin-bottom: 26px;}
+.breadcrumbs a {text-decoration: underline; text-underline-offset: 3px;}
+.reader-header {padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 22px;}
+.chip {display: inline-block; padding: 3px 10px; margin-bottom: 14px; border: 1px solid var(--line-strong); border-left: var(--accent-width) solid var(--discipline-color, var(--line-strong)); border-radius: var(--radius); color: var(--ink); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;}
+.reader-header h1 {max-width: 24ch; margin-bottom: 14px; font-size: clamp(30px, 3.2vw, 44px);}
+.reader-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px;}
+.reader-actions button {font-size: 12px; min-height: 38px; padding: 8px 13px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--surface-2); color: var(--ink); border-color: var(--gold);}
+.reader-layout {display: grid; grid-template-columns: minmax(0,1fr) 180px; gap: 36px; align-items: start; margin-top: 24px;}
+.prose {min-width: 0; width: 100%; font: 17px/1.8 Georgia, "Times New Roman", serif; overflow-wrap: break-word;}
+.prose h2 {font-size: 25px; line-height: 1.3; margin: 4px 0 18px;}
+.prose h3 {font-size: 21px; line-height: 1.4; margin: 26px 0 10px;}
+.prose p {margin: 0 0 16px;}
+.prose strong {font-weight: 700;}
+.prose a {text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere;}
+.prose ul {margin: 14px 0 18px; padding-left: 22px;}
+.prose li {padding-left: 3px; margin: 6px 0;}
+.prose li::marker {color: var(--muted);}
+.prose :is(img, svg, video) {display: block; max-width: 100%; height: auto; margin: 20px auto;}
+.prose figure {margin: 22px 0;}
+.prose figcaption {font: 12px/1.6 "Segoe UI", sans-serif; color: var(--muted); margin: 10px 0; text-align: center;}
+.study-card {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"], [data-study-kind="h2"], [data-study-kind="h3"], [data-study-kind="destaque"]) {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="alerta"], [data-study-label="Atenção"], [data-study-label="Importante"], [data-study-label="Pegadinha"]) {--kind-ink: #ff9340;}
+.study-card {color: var(--ink); background: var(--panel); padding: 24px 26px; margin-bottom: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink); border-radius: var(--radius); box-shadow: var(--shadow);}
+.study-card :is(h2, h3) {color: var(--ink);}
+.study-card > :last-child {margin-bottom: 0;}
+.mnemonic-tone-1 {--mnemonic-color: #2bc4e6;}
+.mnemonic-tone-2 {--mnemonic-color: #a56bff;}
+.mnemonic-tone-3 {--mnemonic-color: #34d399;}
+.mnemonic-tone-4 {--mnemonic-color: #ffc83d;}
+.mnemonic-tone-5 {--mnemonic-color: #ff5ca8;}
+.mnemonic-tone-6 {--mnemonic-color: #ff9340;}
+.mnemonic-tone-7 {--mnemonic-color: #6c8cff;}
+.mnemonic-tone-8 {--mnemonic-color: #9fdc3c;}
+.memory-aid li + li {margin-top: 10px;}
+:root {--on-color: #0a0d18;}
+body {--hc: var(--discipline-color, #7a7dff); background:
+  radial-gradient(900px 520px at 88% -8%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 62%),
+  radial-gradient(760px 520px at -6% 38%, rgb(255 92 138 / 11%), transparent 62%),
+  radial-gradient(700px 500px at 60% 112%, rgb(38 196 238 / 10%), transparent 60%),
+  var(--bg); background-attachment: fixed;}
+h1,
+h2,
+h3 {font-family: "Segoe UI", system-ui, Arial, sans-serif; font-weight: 800; letter-spacing: -.02em;}
+h3 {font-weight: 700;}
+::selection {color: var(--on-color); background: var(--gold);}
+* {scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent;}
+button {border-radius: var(--radius-sm); background: var(--surface-2); border-color: var(--line-strong);}
+button:hover {background: color-mix(in srgb, var(--hc) 22%, var(--surface-2)); border-color: var(--hc); transform: translateY(-1px);}
+button {transition: border-color .15s ease, background-color .15s ease, transform .15s ease, box-shadow .15s ease;}
+.sidebar {background: linear-gradient(180deg, #121833 0%, #0d1226 55%, #0a0d18 100%); border-right: 1px solid var(--line); box-shadow: 8px 0 40px rgb(2 4 14 / 40%);}
+.sidebar::before {content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad-brand);}
+.brand {font: 800 29px/1.05 "Segoe UI", system-ui, sans-serif; letter-spacing: -.03em;}
+.brand-period {background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.brand small {color: var(--gold); letter-spacing: .2em;}
+.nav-label {color: #6e7aa3;}
+.sidebar nav a {display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; --nc: var(--gold); transition: background-color .15s ease, color .15s ease, transform .15s ease;}
+.sidebar nav a::before {content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--nc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nc) 22%, transparent); opacity: .85;}
+.sidebar nav a:hover {color: var(--ink); background: color-mix(in srgb, var(--nc) 14%, transparent); transform: translateX(2px);}
+.sidebar nav a[aria-current] {color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 38%, transparent), color-mix(in srgb, var(--nc) 8%, transparent)); box-shadow: inset 3px 0 0 var(--nc);}
+.sidebar nav a[aria-current]::before {opacity: 1; box-shadow: 0 0 12px var(--nc);}
+.sidebar nav a[href*="direito-administrativo"] {--nc: #4d8dff;}
+.sidebar nav a[href*="atualidades"] {--nc: #ff8a3d;}
+.sidebar nav a[href*="direito-constitucional"] {--nc: #a66bff;}
+.sidebar nav a[href*="direitos-humanos"] {--nc: #ff5ca8;}
+.sidebar nav a[href*="legislacao-extravagante"] {--nc: #d45cf0;}
+.sidebar nav a[href*="guardas-municipais"] {--nc: #2fd08a;}
+.sidebar nav a[href*="informatica"] {--nc: #26c4ee;}
+.sidebar nav a[href*="matematica"] {--nc: #7a7dff;}
+.sidebar nav a[href*="direito-penal"] {--nc: #ff5a6e;}
+.sidebar nav a[href*="portugues"] {--nc: #25d1b8;}
+.sidebar nav a[href*="processo-penal"] {--nc: #f5bf2e;}
+.sidebar nav a[href*="raciocinio-logico"] {--nc: #9fdc3c;}
+.sidebar-footer {border-top: 1px solid var(--line); margin: auto 10px 0; padding: 18px 0 0;}
+.topbar {position: sticky; top: 0; z-index: 5; background: rgb(10 13 24 / 72%); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line);}
+.topbar > span {color: var(--gold); font-weight: 700;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: color-mix(in srgb, var(--hc) 45%, var(--line));}
+.footer {border-top-color: var(--line-strong);}
+.footer a {color: var(--gold);}
+.breadcrumbs a {color: var(--hc); font-weight: 600;}
+.reader-header {position: relative; overflow: hidden; padding: 32px 34px 28px; margin-bottom: 24px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 22px; box-shadow: var(--shadow), 0 0 70px -32px color-mix(in srgb, var(--hc) 65%, transparent);
+  background: radial-gradient(480px 240px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 72%), linear-gradient(160deg, var(--surface-2), var(--panel));}
+.reader-header > * {position: relative; z-index: 1;}
+.reader-header::after {content: ""; position: absolute; right: -50px; top: -50px; width: 190px; height: 190px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 24px color-mix(in srgb, var(--hc) 7%, transparent); pointer-events: none;}
+.reader-header h1 {max-width: 26ch; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; background: linear-gradient(100deg, #fff 20%, color-mix(in srgb, var(--hc) 45%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.chip {border: 0; border-radius: 999px; padding: 5px 14px; background: var(--hc); color: var(--on-color); font-weight: 800; letter-spacing: .09em; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--hc) 80%, transparent);}
+.chip:hover {text-decoration: none; filter: brightness(1.1);}
+.reader-header .muted {color: #b6c0dd; font-size: 13px;}
+.reader-actions button {border-radius: 999px; padding: 8px 18px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--hc); color: var(--on-color); border-color: var(--hc); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--hc) 80%, transparent);}
+.reader-actions button[aria-pressed=true]:hover {filter: brightness(1.08); transform: translateY(-1px);}
+.prose {color: #e4e9f8;}
+.prose h2 {font-weight: 800;}
+.prose strong {color: #fff;}
+.prose li::marker {color: var(--hc);}
+.study-card {--k: var(--kind-ink); position: relative; padding: 24px 28px; margin-bottom: 18px; border: 1px solid color-mix(in srgb, var(--k) 34%, var(--line)); border-left: var(--accent-width) solid var(--k); border-radius: 16px; box-shadow: 0 6px 22px -10px rgb(2 4 14 / 60%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--k) 16%, var(--panel)) 0%, color-mix(in srgb, var(--k) 5%, var(--panel)) 75%);}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 8%, var(--panel)), var(--panel) 80%); border-color: color-mix(in srgb, var(--k) 20%, var(--line)); box-shadow: none;}
+.study-card:is([data-study-kind="destaque"], [data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="resumo"], [data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="questao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="mnemonico"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 24%, var(--panel)) 0%, color-mix(in srgb, var(--k) 8%, var(--panel)) 80%); box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--k) 55%, transparent);}
+.skip {background: var(--gold); color: var(--on-color);}
+@media (prefers-reduced-motion: no-preference) {
+main > * {animation: entrar .45s ease both;}
+main > *:nth-child(2) {animation-delay: .05s;}
+main > *:nth-child(3) {animation-delay: .1s;}
+}
+@media (min-width: 1500px) {
+.prose {font-size: 18px;}
+.reader-layout {gap: 44px; grid-template-columns: minmax(0,820px) 200px;}
+}
+@media (max-width: 1120px) {
+main {padding: 36px 28px 28px;}
+.topbar {padding: 0 28px;}
+.reader-layout {grid-template-columns: minmax(0,1fr);}
+}
+@media (max-width: 800px) {
+.sidebar {position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line);}
+.brand {margin: 0; font-size: 26px;}
+.brand small {margin-top: 6px; font-size: 10px;}
+.mobile-menu {display: block; align-self: center; background: transparent;}
+.sidebar nav {display: none; grid-column: 1/-1; max-height: 60vh; margin-top: 20px;}
+.sidebar.open nav {display: block;}
+.sidebar-footer {display: none;}
+.workspace {margin: 0;}
+.topbar {min-height: 46px; padding: 0 24px;}
+main {padding: 30px 24px 26px;}
+.study-card {padding: 22px 22px;}
+.reader-header h1 {font-size: 36px;}
+}
+@media (max-width: 540px) {
+.reader-header h1 {font-size: 32px;}
+.breadcrumbs {margin-bottom: 20px;}
+.prose {font-size: 16.5px;}
+.prose h2 {font-size: 24px;}
+.study-card {padding: 20px 18px; margin-bottom: 15px;}
+.footer {flex-direction: column; gap: 10px;}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {scroll-behavior: auto !important; transition: none !important; animation: none !important;}
+}
+@media print {
+:root {color-scheme: light; --bg: #fff; --panel: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --muted: #333; --line: #bbb; --line-strong: #777;}
+body {background: #fff; font-size: 11pt;}
+.sidebar,
+.topbar,
+.breadcrumbs,
+.reader-actions,
+.footer,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+main {max-width: none; padding: 0;}
+.reader-layout {display: block;}
+.reader-header {padding-bottom: 15px;}
+.reader-header h1 {font-size: 28pt;}
+.study-card {background: #fff !important; color: #000 !important; padding: 12px 0; border-radius: 0; border: 0; border-bottom: 1px solid #aaa; box-shadow: none;}
+.prose {font-size: 11pt;}
+.prose h2 {font-size: 18pt; break-after: avoid;}
+.prose h3 {break-after: avoid;}
+figure {break-inside: avoid;}
+a {color: #000 !important;}
+}
+@media (max-width: 800px) {
+.reader-header::after {display: none;}
+.reader-header {padding: 24px 22px 22px; border-radius: 18px;}
+.sidebar::before {height: 3px;}
+.sidebar nav a:hover {transform: none;}
+}
+@media (max-width: 540px) {
+.study-card {padding: 20px 18px;}
+}
+@media print {
+body {background: #fff !important; color: #000;}
+.sidebar,
+.topbar,
+.reader-actions,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+.reader-layout {display: block;}
+.reader-header,
+.study-card {background: #fff !important; box-shadow: none !important; border-color: #bbb !important; color: #000;}
+.reader-header h1 {color: #000 !important; -webkit-text-fill-color: #000; text-shadow: none; background: none !important;}
+.prose,
+.prose strong {color: #000;}
+.study-card {break-inside: avoid;}
+.chip {background: #eee; color: #000; box-shadow: none;}
+}
+[data-discipline="direito-penal-militar"] {--discipline-color: #ed8c53;}
+.material-github {margin-block: 32px; min-width: 0;}
+.material-github img {display: block; max-width: 100%; height: auto; margin-inline: auto; border-radius: 10px;}
+.material-github figcaption {color: var(--muted); font-size: 13px; margin-top: 8px;}
+.material-github .study-card {overflow-wrap: anywhere;}
+.prose .memory-aid,
+.prose .memory-inline {--mnemonic-color: #facc15;
+  padding: 22px; margin-block: 20px;
+  border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));}
+.prose .memory-aid .memory-line {margin-block: 12px; padding: 16px 18px;
+  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);}
+.prose .memory-line .memory-letter {display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace;}
+@media (max-width: 600px) {
+.prose .memory-aid,
+.prose .memory-inline {padding: 17px;}
+}
+@media print {
+.prose .memory-aid,
+.prose .memory-inline {background: white !important; color: black !important;}
+}
+:root {--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;}
+.tilt-ativo {transition-duration: 60ms, var(--t-base), .15s, .15s;}
+.rev {opacity: 0; transform: translateY(10px);}
+.rev.entrou {opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);}
+@view-transition { navigation: auto; }::view-transition-old(root) {animation: 120ms var(--ease-out) both vt-sai;}
+::view-transition-new(root) {animation: 200ms var(--ease-out) both vt-entra;}
+@media (prefers-reduced-motion: reduce) {
+.rev,
+.rev.entrou {opacity: 1; transform: none; transition: none;}
+::view-transition-old(root),
+::view-transition-new(root) {animation: none;}
+}
+
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+/* Layout específico do assunto */
+main {max-width:var(--page-width);}
+.reader-header h1 {text-wrap:balance;overflow-wrap:break-word}
+main,
+.workspace,
+.prose {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr);align-items:start}
+.prose {line-height:1.8}
+.study-card {margin-bottom:22px}
+.material-github>h2 {margin-top:32px}
+@media (max-width:1000px) {
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(28px,7vw,36px)}
+.study-card {padding:20px 18px}
+.prose {font-size:16px}
+}
+@media print {
+main {max-width:none}
+.reader-layout {display:block}
+.study-card {break-inside:auto}
+.study-card h3 {break-after:avoid}
+}
+</style></head><body class="tema-biblioteca" data-disciplina-acervo="direito-penal-militar" data-discipline="direito-penal-militar" data-page-kind="aula" style="--discipline-color: #ed8c53; --page-width:1140px;"><a class="skip" href="#conteudo">Pular para o conteúdo</a><aside class="sidebar" id="sidebar"><a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a><button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button><nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a href="../direito-constitucional/index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a aria-current="page" href="index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal Militar</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav><div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div></aside><div class="workspace"><header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header><main id="conteudo"><nav aria-label="Trilha" class="breadcrumbs"><a href="../../../index.html">Biblioteca</a> / <a href="index.html">Direito Penal Militar</a> / Concurso de Agentes, Penas e Medidas de Segurança</nav><header class="reader-header"><a class="chip" href="index.html">Direito Penal Militar</a><h1>Concurso de Agentes, Penas e Medidas de Segurança</h1><p class="muted"></p><div class="reader-actions"><button aria-pressed="false" data-key="assets/materias/direito-penal-militar/concurso-de-agentes-penas-e-medidas-de-seguranca.html" id="concluir" type="button">Marcar como estudado</button><button id="imprimir" type="button">Imprimir</button><span class="status" id="salvamento"></span></div></header><div class="reader-layout" style="grid-template-columns:minmax(0,1fr)"><article class="prose"><section class="material-github"><h2>Material de estudo: Concurso de Agentes, Penas e Medidas de Segurança</h2><p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direito_penal_militar/assuntos/03.json" rel="noopener" target="_blank">Ver fonte no GitHub</a></p><h2>Concurso de Agentes</h2><div class="study-card" data-study-kind="destaque"><h3>Teoria Monista (Art. 49)</h3><p>Todos que concorrem para o crime incidem nas mesmas penas, na medida de sua culpabilidade.</p><p><strong>Autor</strong>: quem executa a conduta típica.</p><p><strong>Partícipe</strong>: quem induz, instiga ou auxilia (moral ou materialmente).</p></div><div class="study-card" data-study-kind="destaque"><h3>Autor e Partícipe</h3><p><strong>Autor</strong> (Art. 49, caput): é quem executa a conduta típica, pratica o núcleo do tipo penal, ou que, embora não execute, tem o domínio do fato (teoria do domínio do fato).</p><p><strong>Partícipe</strong>: é quem induz, instiga ou auxilia (moral ou materialmente) o autor, sem executar diretamente a conduta típica. A participação pode ser:</p><ul><li><strong>Moral</strong>: induzimento ou instigação (influência psicológica).</li><li><strong>Material</strong>: auxílio físico, fornecimento de meios, etc.</li></ul><p>A pena do partícipe é a mesma do autor, reduzida na medida de sua culpabilidade (Art. 49).</p></div><div class="study-card" data-study-kind="destaque"><h3>Comunicabilidade (Art. 50)</h3><p>Circunstâncias pessoais (reincidência, emoção, parentesco) <strong>não</strong> se comunicam.</p><p>Elementares do crime comunicam‑se, se conhecidas pelo comparsa.</p></div><div class="study-card" data-study-kind="destaque"><h3>Participação de Menor Importância (Art. 51)</h3><p>Se a participação for de somenos importância, a pena pode ser reduzida de <strong>1/3 a 2/3</strong>.</p></div><h2>Penas Principais e Acessórias</h2><div class="study-card" data-study-kind="texto"><h3>Penas Principais (Art. 55 do CPM, com alterações da Lei 14.688/2023)</h3><p><strong>Morte</strong> – apenas em tempo de guerra declarada, por fuzilamento.</p><p><strong>Reclusão e Detenção</strong> – penas privativas de liberdade.</p><p><strong>Prisão</strong> – até 2 anos, cumprida em recinto militar.</p><p><strong>Impedimento</strong> – exclusiva para o crime de insubmissão.</p><p>⚠️ <strong>Revogações</strong> (Lei 14.688/2023): foram extintas as penas de Reforma e de Suspensão do exercício do posto/cargo.</p><p>📌 <strong>Rito e salvaguardas da pena de morte</strong>:</p><ul><li>Exige <strong>guerra declarada</strong> e procedimento especial previsto no CPPM.</li><li>A sentença condenatória é <strong>comunicada imediatamente ao Presidente da República</strong> (art. 84, XXII, CF), para fins de exercício do poder de indulto ou comutação.</li><li>O condenado tem direito à <strong>apelação obrigatória</strong> ao Superior Tribunal Militar (STM), nos termos do art. 122, II, da CF.</li><li>A execução só ocorre após negado o pedido de clemência ou esgotado o prazo recursal especial, respeitando o devido processo legal.</li></ul></div><div class="study-card" data-study-kind="texto"><h3>Penas Acessórias – Efeitos da Condenação (Arts. 98 a 108)</h3><p><strong>Automáticas e obrigatórias</strong>:</p><ul><li>Perda de Posto e Patente (para oficiais condenados a pena superior a 2 anos – Art. 99);</li><li>Exclusão das Forças Armadas (para praças na mesma condição – Art. 101);</li><li>Indignidade para o oficialato (Art. 100 – <strong>não recepcionado pela CF/88</strong>).</li></ul><p><strong>Dependem de declaração judicial</strong>:</p><ul><li>Perda de função pública (Art. 102);</li><li>Inabilitação para cargo público (Art. 104).</li></ul><p><strong>Efeitos extrapenais automáticos</strong>:</p><ul><li>Obrigação de reparar o dano (título executivo judicial);</li><li>Confisco dos instrumentos e produtos do crime.</li></ul></div><div class="study-card" data-study-kind="destaque"><h3>Aplicação da Pena – Sistema Trifásico (Art. 69)</h3><p>1ª fase: fixação da pena‑base entre mínimo e máximo, considerando circunstâncias judiciais.</p><p>2ª fase: aplicação de atenuantes e agravantes (Arts. 70‑72).</p><p>3ª fase: incidência de causas de aumento ou diminuição (ex.: tentativa, minorante da confissão).</p></div><div class="study-card" data-study-kind="alerta"><h3>Agravantes Específicas do CPM (Art. 70)</h3><ul><li>Embriaguez preordenada (II, “l”).</li><li>Crime contra superior hierárquico em serviço (II, “f”).</li><li>Crime com abuso de autoridade ou função (II, “g”).</li></ul></div><div class="study-card" data-study-kind="texto"><h3>Concurso de Crimes (Arts. 79‑80) e Limites de Cumprimento</h3><p><strong>Material</strong> (Art. 79): várias ações → vários crimes → cúmulo material (soma das penas).</p><p><strong>Formal</strong> (Art. 79, §1º): uma ação → vários crimes → exasperação (pena mais grave + aumento de 1/6 a 1/2).</p><p><strong>Crime continuado</strong> (Art. 80): crimes da mesma espécie, condições semelhantes – aplica‑se a pena de um só, aumentada de 1/6 a 1/2.</p><p>⚠️ <strong>Limites máximos de cumprimento (Art. 79, §2º do CPM)</strong>:</p><ul><li>Reclusão: <strong>30 anos</strong>.</li><li>Detenção: <strong>20 anos</strong>.</li></ul><p>📌 <strong>Nuances práticas</strong>:</p><ul><li>Em concurso entre reclusão e detenção, cumpre‑se primeiro a reclusão, depois a detenção, respeitados os tetos de cada modalidade.</li><li>Para fins de progressão de regime e livramento condicional, observa‑se o <strong>total da pena unificada</strong>, nos moldes da LEP.</li><li>O teto do CPM prevalece sobre o limite de 40 anos do CP comum, por força da <strong>especialidade</strong> (o CPM é lei especial).</li><li>A jurisprudência do STM recomenda atenção à <strong>detração</strong> e à <strong>unificação</strong> em casos de condenações sucessivas, aplicando‑se o art. 84 do CPM para evitar bis in idem.</li></ul></div><div class="study-card" data-study-kind="destaque"><h3>Reincidência (Arts. 71 e 78)</h3><p>Militar: só gera reincidência se o crime anterior for <strong>militar ou contra a segurança nacional</strong>.</p><p>Prazo depurador: <strong>5 anos</strong> entre a extinção da pena anterior e o novo crime – após esse prazo, não há reincidência.</p><p>Crime político não gera reincidência (Art. 71, §2º).</p></div><div class="study-card" data-study-kind="destaque"><h3>Reabilitação (Arts. 134‑135)</h3><p>Requisitos: 2 anos após a extinção da pena, bom comportamento e reparação do dano.</p><p>Restaura o sigilo dos antecedentes e cancela efeitos extrapenais, mas <strong>não apaga a reincidência</strong>.</p><p>Revogável se o reabilitado for condenado por crime posterior.</p></div><h2>Medidas de Segurança</h2><div class="study-card" data-study-kind="destaque"><h3>Medidas Detentivas</h3><p><strong>Internação</strong> – manicômio judiciário (para inimputáveis com periculosidade).</p><p><strong>Tratamento ambulatorial</strong> – sem internação (casos de menor gravidade).</p></div><div class="study-card" data-study-kind="texto"><h3>Medidas Não Detentivas (Arts. 115‑117)</h3><p><strong>Exílio local</strong> – proibição de residir/permanecer na localidade do crime por, no mínimo, 1 ano.</p><p><strong>Proibição de lugares</strong> – acesso vedado a locais que favoreçam a recidiva.</p><p><strong>Interdição de licença</strong> (Art. 115) – cassação do direito de dirigir por, no mínimo, 1 ano.</p></div><div class="study-card" data-study-kind="texto"><h3>Medidas Patrimoniais (Arts. 118‑119)</h3><p><strong>Confisco</strong> (Art. 119) – perda em favor da União dos instrumentos e produtos do crime, <strong>independentemente de condenação ou extinção da punibilidade</strong>.</p><p><strong>Interdição de estabelecimento</strong> – proibição de exercer atividade no local por 15 dias a 6 meses.</p></div><div class="study-card" data-study-kind="destaque"><h3>Duração e Controle</h3><p>Prazo mínimo: de 1 a 3 anos, fixado na sentença.</p><p>Prazo máximo: indeterminado no CPM, mas limitado a <strong>30 anos</strong> pelo STF (em linha com o art. 75 do CP).</p><p>Perícia de cessação (Art. 112): primeira perícia após o prazo mínimo; se persistir a periculosidade, nova perícia anualmente.</p><p>Liberação condicional é <strong>reversível</strong>.</p></div><div class="study-card" data-study-kind="destaque"><h3>Internação Substitutiva (Art. 113)</h3><p>Se o internado se cura, é transferido para o estabelecimento penal comum para cumprir o restante da pena (detração).</p><p>Ébrios e toxicômanos (§ 3º) sujeitam‑se à internação curativa nos mesmos moldes.</p></div><div class="study-card" data-study-kind="texto"><h3>Mapa-mental</h3><figure><a href="fontes-github/direito_penal_militar/IMAGENS/03.jpg" rel="noopener" target="_blank"><img alt="Mapa-mental" loading="lazy" src="fontes-github/direito_penal_militar/IMAGENS/03.jpg"/></a><figcaption>Mapa-mental · Clique para ampliar</figcaption></figure></div></section></article></div><footer class="footer"><span>Matéria Policial · Conteúdo para estudar e revisar.</span><a href="../../../index.html">Voltar à biblioteca</a></footer></main></div></body></html>
+

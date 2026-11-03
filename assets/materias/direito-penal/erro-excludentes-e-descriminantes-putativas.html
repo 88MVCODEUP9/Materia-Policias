@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101820" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<title>Erro, Excludentes e Descriminantes Putativas · Direito Penal · Matéria Policial</title>
+<meta content="Teoria do erro (tipo, proibição, erro sobre a pessoa, execução, resultado e aberratio causae), causas de exclusão da ilicitude (estado de necessidade," name="description"/>
+<link href="../../icone.png" rel="icon"/>
+
+<script defer="" src="../../js/app.js?v=leitura-20261026"></script>
+<style id="css-personalizado">/* Erro, Excludentes e Descriminantes Putativas — CSS próprio (aula). */
+:root {color-scheme: dark;
+  --bg: #0a0d18;
+  --panel: #101527;
+  --surface: #151b30;
+  --surface-2: #1c2440;
+  --ink: #eef1fb;
+  --muted: #9aa5c4;
+  --line: #232c4a;
+  --line-strong: #364067;
+  --gold: #ffc45c;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --accent-width: 4px;
+  --tint: 16%;
+  --glow: 34%;
+  --shadow: 0 8px 28px rgb(2 4 14 / 45%);
+  --grad-brand: linear-gradient(120deg, #ffc45c 0%, #ff8a5c 45%, #ff5c8a 100%);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  
+  --paper: var(--bg);
+  --white: var(--surface);
+  --accent: var(--ink);}
+* {box-sizing: border-box;}
+body {margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;}
+[hidden] {display: none !important;}
+a {color: inherit; text-decoration: none;}
+a:hover {text-decoration: underline; text-underline-offset: 3px;}
+button {font: inherit;}
+button {cursor: pointer;}
+button {color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 10px 16px; min-height: 44px; font-size: 13px; font-weight: 600; transition: border-color .15s ease, background-color .15s ease;}
+button:hover {background: var(--surface-2); border-color: var(--muted);}
+:focus-visible {outline: 2px solid var(--gold); outline-offset: 3px;}
+::selection {color: var(--bg); background: var(--gold);}
+h1,
+h2,
+h3,
+p {margin: 0;}
+h1,
+h2,
+h3 {font-family: Georgia, "Times New Roman", serif; font-weight: 500;}
+h1 {font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -.02em;}
+h2 {font-size: 28px; line-height: 1.25; letter-spacing: -.01em;}
+h3 {font-size: 21px; line-height: 1.35;}
+small {font-size: 12px;}
+.skip {position: fixed; top: -80px; left: 16px; padding: 10px 16px; z-index: 20; background: var(--ink); color: var(--bg); font-weight: 700; border-radius: var(--radius);}
+.skip:focus {top: 12px;}
+.muted {color: var(--muted); font-size: 12px;}
+.status {color: var(--muted); font-size: 12px;}
+.status:empty {display: none;}
+[id] {scroll-margin-top: 24px;}
+.sidebar {position: fixed; inset: 0 auto 0 0; width: 240px; padding: 32px 20px 22px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10;}
+.brand {display: block; margin: 0 10px 28px; font: 500 30px/1 Georgia, serif; letter-spacing: -.02em;}
+.brand-period {color: var(--gold);}
+.brand small {display: block; font: 600 10px/1.5 "Segoe UI", sans-serif; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px;}
+.sidebar nav {overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; padding: 4px; margin: -4px;}
+.nav-label {font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 20px 10px 8px;}
+.sidebar nav a {display: block; font-size: 13px; line-height: 1.45; padding: 8px 10px; margin: 1px 0; border-radius: var(--radius); color: var(--muted);}
+.sidebar nav a:hover {color: var(--ink); background: var(--surface); text-decoration: none;}
+.sidebar nav a[aria-current] {color: var(--ink); background: var(--surface-2); font-weight: 600; box-shadow: inset 2px 0 0 var(--gold);}
+.sidebar-footer {margin-top: auto; padding: 20px 10px 0; font-size: 12px; color: var(--ink);}
+.sidebar-footer span {display: block; color: var(--muted); font-size: 11px; margin-top: 2px;}
+.workspace {margin-left: 240px; min-width: 0;}
+.topbar {min-height: 60px; border-bottom: 1px solid var(--line); padding: 0 44px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; background: var(--bg);}
+.topbar a {color: var(--ink); text-decoration: underline; text-underline-offset: 3px;}
+.topbar > span {font-size: 11px; text-transform: uppercase; letter-spacing: .1em;}
+.mobile-menu {display: none;}
+main {max-width: 1280px; margin: auto; padding: 48px 44px 32px;}
+.eyebrow {color: var(--muted); font: 700 11px/1.6 "Segoe UI", sans-serif; letter-spacing: .12em; text-transform: uppercase;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: var(--discipline-color, var(--line));}
+.footer {margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px;}
+.footer a {text-decoration: underline; text-underline-offset: 4px;}
+.breadcrumbs {color: var(--muted); font-size: 12px; margin-bottom: 26px;}
+.breadcrumbs a {text-decoration: underline; text-underline-offset: 3px;}
+.reader-header {padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 22px;}
+.chip {display: inline-block; padding: 3px 10px; margin-bottom: 14px; border: 1px solid var(--line-strong); border-left: var(--accent-width) solid var(--discipline-color, var(--line-strong)); border-radius: var(--radius); color: var(--ink); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;}
+.reader-header h1 {max-width: 24ch; margin-bottom: 14px; font-size: clamp(30px, 3.2vw, 44px);}
+.reader-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px;}
+.reader-actions button {font-size: 12px; min-height: 38px; padding: 8px 13px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--surface-2); color: var(--ink); border-color: var(--gold);}
+.reader-layout {display: grid; grid-template-columns: minmax(0,1fr) 180px; gap: 36px; align-items: start; margin-top: 24px;}
+.toc {position: sticky; top: 28px; max-height: 80vh; overflow-y: auto; scrollbar-width: thin; padding: 4px 0 10px;}
+.toc .eyebrow {font-size: 11px; margin-bottom: 8px;}
+.toc > strong {display: block; font: 500 16px/1.4 Georgia, serif; margin-bottom: 16px;}
+.toc a {display: block; font-size: 12px; line-height: 1.6; color: var(--muted); padding: 8px 0; border-bottom: 1px solid var(--line);}
+.toc a:hover {color: var(--ink); text-decoration: none;}
+.bottom-nav {display: flex; justify-content: space-between; gap: 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);}
+.bottom-nav a {max-width: 47%; font: 500 17px/1.4 Georgia, serif;}
+.bottom-nav a:hover {color: var(--gold);}
+.bottom-nav small {display: block; font: 11px/1.7 "Segoe UI", sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+.bottom-nav .next {text-align: right;}
+.prose {min-width: 0; width: 100%; font: 17px/1.8 Georgia, "Times New Roman", serif; overflow-wrap: break-word;}
+.prose h2 {font-size: 25px; line-height: 1.3; margin: 4px 0 18px;}
+.prose h3 {font-size: 21px; line-height: 1.4; margin: 26px 0 10px;}
+.prose p {margin: 0 0 16px;}
+.prose strong {font-weight: 700;}
+.prose em {font-style: italic;}
+.prose a {text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere;}
+.prose ul {margin: 14px 0 18px; padding-left: 22px;}
+.prose li {padding-left: 3px; margin: 6px 0;}
+.prose li::marker {color: var(--muted);}
+.prose .text-section p {line-height: 1.85;}
+.prose .text-section p + p {margin-top: 14px;}
+.prose :is(img, svg, video) {display: block; max-width: 100%; height: auto; margin: 20px auto;}
+.prose figure {margin: 22px 0;}
+.prose figcaption {font: 12px/1.6 "Segoe UI", sans-serif; color: var(--muted); margin: 10px 0; text-align: center;}
+.study-card {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"], [data-study-kind="h2"], [data-study-kind="h3"], [data-study-kind="destaque"]) {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="bizu"], [data-study-kind="mnemonico"], [data-study-kind="resumo"], [data-study-kind="dica"], [data-study-kind="mapa-mental"], [data-type="resumo"], [data-study-label="Resumo"], [data-study-label="Mnemônico"], [data-study-label="Mapa Mental"], [data-study-label="Bizu"], [data-study-label="Como estudar"]) {--kind-ink: #ffc83d;}
+.study-card:is([data-study-kind="alerta"], [data-study-label="Atenção"], [data-study-label="Importante"], [data-study-label="Pegadinha"]) {--kind-ink: #ff9340;}
+.study-card {color: var(--ink); background: var(--panel); padding: 24px 26px; margin-bottom: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink); border-radius: var(--radius); box-shadow: var(--shadow);}
+.study-card :is(h2, h3) {color: var(--ink);}
+.study-card .text-section > :first-child {margin-top: 0;}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {display: inline-block; padding: 3px 9px; margin: 0 0 14px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--muted); font: 600 11px/1.5 "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .08em;}
+.study-card > :last-child,
+.text-section > :last-child {margin-bottom: 0;}
+.text-section {margin: 0; padding: 0;}
+[data-discipline="direito-penal"] {--discipline-color: #ff5a6e;}
+.mnemonic-tone-1 {--mnemonic-color: #2bc4e6;}
+.mnemonic-tone-2 {--mnemonic-color: #a56bff;}
+.mnemonic-tone-3 {--mnemonic-color: #34d399;}
+.mnemonic-tone-4 {--mnemonic-color: #ffc83d;}
+.mnemonic-tone-5 {--mnemonic-color: #ff5ca8;}
+.mnemonic-tone-6 {--mnemonic-color: #ff9340;}
+.mnemonic-tone-7 {--mnemonic-color: #6c8cff;}
+.mnemonic-tone-8 {--mnemonic-color: #9fdc3c;}
+.memory-aid li + li {margin-top: 10px;}
+.memory-aid .text-section > p + p {margin-top: 12px;}
+:root {--on-color: #0a0d18;}
+body {--hc: var(--discipline-color, #7a7dff); background:
+  radial-gradient(900px 520px at 88% -8%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 62%),
+  radial-gradient(760px 520px at -6% 38%, rgb(255 92 138 / 11%), transparent 62%),
+  radial-gradient(700px 500px at 60% 112%, rgb(38 196 238 / 10%), transparent 60%),
+  var(--bg); background-attachment: fixed;}
+h1,
+h2,
+h3 {font-family: "Segoe UI", system-ui, Arial, sans-serif; font-weight: 800; letter-spacing: -.02em;}
+h3 {font-weight: 700;}
+::selection {color: var(--on-color); background: var(--gold);}
+* {scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent;}
+button {border-radius: var(--radius-sm); background: var(--surface-2); border-color: var(--line-strong);}
+button:hover {background: color-mix(in srgb, var(--hc) 22%, var(--surface-2)); border-color: var(--hc); transform: translateY(-1px);}
+button {transition: border-color .15s ease, background-color .15s ease, transform .15s ease, box-shadow .15s ease;}
+.eyebrow {display: inline-flex; align-items: center; gap: 10px; color: var(--hc);}
+.eyebrow::before {content: ""; width: 22px; height: 3px; border-radius: 3px; background: var(--grad-brand);}
+.sidebar {background: linear-gradient(180deg, #121833 0%, #0d1226 55%, #0a0d18 100%); border-right: 1px solid var(--line); box-shadow: 8px 0 40px rgb(2 4 14 / 40%);}
+.sidebar::before {content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad-brand);}
+.brand {font: 800 29px/1.05 "Segoe UI", system-ui, sans-serif; letter-spacing: -.03em;}
+.brand-period {background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.brand small {color: var(--gold); letter-spacing: .2em;}
+.nav-label {color: #6e7aa3;}
+.sidebar nav a {display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; --nc: var(--gold); transition: background-color .15s ease, color .15s ease, transform .15s ease;}
+.sidebar nav a::before {content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--nc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nc) 22%, transparent); opacity: .85;}
+.sidebar nav a:hover {color: var(--ink); background: color-mix(in srgb, var(--nc) 14%, transparent); transform: translateX(2px);}
+.sidebar nav a[aria-current] {color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 38%, transparent), color-mix(in srgb, var(--nc) 8%, transparent)); box-shadow: inset 3px 0 0 var(--nc);}
+.sidebar nav a[aria-current]::before {opacity: 1; box-shadow: 0 0 12px var(--nc);}
+.sidebar nav a[href*="direito-administrativo"] {--nc: #4d8dff;}
+.sidebar nav a[href*="atualidades"] {--nc: #ff8a3d;}
+.sidebar nav a[href*="direito-constitucional"] {--nc: #a66bff;}
+.sidebar nav a[href*="direitos-humanos"] {--nc: #ff5ca8;}
+.sidebar nav a[href*="legislacao-extravagante"] {--nc: #d45cf0;}
+.sidebar nav a[href*="guardas-municipais"] {--nc: #2fd08a;}
+.sidebar nav a[href*="informatica"] {--nc: #26c4ee;}
+.sidebar nav a[href*="matematica"] {--nc: #7a7dff;}
+.sidebar nav a[href*="direito-penal"] {--nc: #ff5a6e;}
+.sidebar nav a[href*="portugues"] {--nc: #25d1b8;}
+.sidebar nav a[href*="processo-penal"] {--nc: #f5bf2e;}
+.sidebar nav a[href*="raciocinio-logico"] {--nc: #9fdc3c;}
+.sidebar-footer {border-top: 1px solid var(--line); margin: auto 10px 0; padding: 18px 0 0;}
+.topbar {position: sticky; top: 0; z-index: 5; background: rgb(10 13 24 / 72%); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line);}
+.topbar > span {color: var(--gold); font-weight: 700;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: color-mix(in srgb, var(--hc) 45%, var(--line));}
+.footer {border-top-color: var(--line-strong);}
+.footer a {color: var(--gold);}
+.breadcrumbs a {color: var(--hc); font-weight: 600;}
+.reader-header {position: relative; overflow: hidden; padding: 32px 34px 28px; margin-bottom: 24px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 22px; box-shadow: var(--shadow), 0 0 70px -32px color-mix(in srgb, var(--hc) 65%, transparent);
+  background: radial-gradient(480px 240px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 72%), linear-gradient(160deg, var(--surface-2), var(--panel));}
+.reader-header > * {position: relative; z-index: 1;}
+.reader-header::after {content: ""; position: absolute; right: -50px; top: -50px; width: 190px; height: 190px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 24px color-mix(in srgb, var(--hc) 7%, transparent); pointer-events: none;}
+.reader-header h1 {max-width: 26ch; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; background: linear-gradient(100deg, #fff 20%, color-mix(in srgb, var(--hc) 45%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.chip {border: 0; border-radius: 999px; padding: 5px 14px; background: var(--hc); color: var(--on-color); font-weight: 800; letter-spacing: .09em; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--hc) 80%, transparent);}
+.chip:hover {text-decoration: none; filter: brightness(1.1);}
+.reader-header .muted {color: #b6c0dd; font-size: 13px;}
+.reader-actions button {border-radius: 999px; padding: 8px 18px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--hc); color: var(--on-color); border-color: var(--hc); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--hc) 80%, transparent);}
+.reader-actions button[aria-pressed=true]:hover {filter: brightness(1.08); transform: translateY(-1px);}
+.toc {padding: 16px 16px 12px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(160deg, var(--surface), var(--panel));}
+.toc > strong {font: 800 16px/1.4 "Segoe UI", sans-serif;}
+.toc a {border-bottom-color: var(--line); padding: 8px 0 8px 10px; border-left: 2px solid transparent; transition: color .15s ease, border-color .15s ease, padding .15s ease;}
+.toc a:hover {color: #fff; border-left-color: var(--hc); padding-left: 14px;}
+.bottom-nav a {flex: 1; max-width: 48%; padding: 18px 22px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--hc) 30%, var(--line)); background: linear-gradient(120deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface)); font: 800 16px/1.4 "Segoe UI", sans-serif; transition: transform .18s ease, border-color .18s ease;}
+.bottom-nav a:hover {color: #fff; border-color: var(--hc); text-decoration: none; transform: translateY(-2px);}
+.bottom-nav small {color: var(--hc); font-weight: 800;}
+.bottom-nav .next {background: linear-gradient(240deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface));}
+.prose {color: #e4e9f8;}
+.prose h2 {font-weight: 800;}
+.prose strong {color: #fff;}
+.prose li::marker {color: var(--hc);}
+.study-card {--k: var(--kind-ink); position: relative; padding: 24px 28px; margin-bottom: 18px; border: 1px solid color-mix(in srgb, var(--k) 34%, var(--line)); border-left: var(--accent-width) solid var(--k); border-radius: 16px; box-shadow: 0 6px 22px -10px rgb(2 4 14 / 60%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--k) 16%, var(--panel)) 0%, color-mix(in srgb, var(--k) 5%, var(--panel)) 75%);}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {padding: 4px 12px; margin-bottom: 14px; border: 0; border-radius: 999px; background: var(--k, var(--hc)); color: var(--on-color); font-weight: 800; letter-spacing: .1em;}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 8%, var(--panel)), var(--panel) 80%); border-color: color-mix(in srgb, var(--k) 20%, var(--line)); box-shadow: none;}
+.study-card[data-study-kind="h3"] {padding: 14px 20px; margin: 26px 0 14px; background: linear-gradient(90deg, color-mix(in srgb, var(--k) 26%, transparent), transparent 85%); border: 0; border-left: 5px solid var(--k); border-radius: 4px 14px 14px 4px; box-shadow: none;}
+.study-card[data-study-kind="h3"] h3 {margin: 0; font-size: 21px; color: #fff;}
+.study-card:is([data-study-kind="destaque"], [data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="resumo"], [data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="questao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="mnemonico"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 24%, var(--panel)) 0%, color-mix(in srgb, var(--k) 8%, var(--panel)) 80%); box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--k) 55%, transparent);}
+.skip {background: var(--gold); color: var(--on-color);}
+@media (prefers-reduced-motion: no-preference) {
+main > * {animation: entrar .45s ease both;}
+main > *:nth-child(2) {animation-delay: .05s;}
+main > *:nth-child(3) {animation-delay: .1s;}
+}
+@media (min-width: 1500px) {
+.prose {font-size: 18px;}
+.reader-layout {gap: 44px; grid-template-columns: minmax(0,820px) 200px;}
+}
+@media (max-width: 1120px) {
+main {padding: 36px 28px 28px;}
+.topbar {padding: 0 28px;}
+.reader-layout {grid-template-columns: minmax(0,1fr);}
+.toc {position: static; max-height: 190px; order: -1; padding: 16px 0; border-block: 1px solid var(--line);}
+.toc a {display: inline-block; padding: 6px 12px 6px 0; border: 0; margin-right: 10px;}
+.toc > strong {margin-bottom: 8px;}
+}
+@media (max-width: 800px) {
+.sidebar {position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line);}
+.brand {margin: 0; font-size: 26px;}
+.brand small {margin-top: 6px; font-size: 10px;}
+.mobile-menu {display: block; align-self: center; background: transparent;}
+.sidebar nav {display: none; grid-column: 1/-1; max-height: 60vh; margin-top: 20px;}
+.sidebar.open nav {display: block;}
+.sidebar-footer {display: none;}
+.workspace {margin: 0;}
+.topbar {min-height: 46px; padding: 0 24px;}
+main {padding: 30px 24px 26px;}
+.study-card {padding: 22px 22px;}
+.reader-header h1 {font-size: 36px;}
+}
+@media (max-width: 540px) {
+.reader-header h1 {font-size: 32px;}
+.breadcrumbs {margin-bottom: 20px;}
+.prose {font-size: 16.5px;}
+.prose h2 {font-size: 24px;}
+.study-card {padding: 20px 18px; margin-bottom: 15px;}
+.footer {flex-direction: column; gap: 10px;}
+.bottom-nav a {font-size: 16px;}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {scroll-behavior: auto !important; transition: none !important; animation: none !important;}
+}
+@media print {
+:root {color-scheme: light; --bg: #fff; --panel: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --muted: #333; --line: #bbb; --line-strong: #777;}
+body {background: #fff; font-size: 11pt;}
+.sidebar,
+.topbar,
+.breadcrumbs,
+.reader-actions,
+.toc,
+.bottom-nav,
+.footer,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+main {max-width: none; padding: 0;}
+.reader-layout {display: block;}
+.reader-header {padding-bottom: 15px;}
+.reader-header h1 {font-size: 28pt;}
+.study-card {background: #fff !important; color: #000 !important; padding: 12px 0; border-radius: 0; border: 0; border-bottom: 1px solid #aaa; box-shadow: none;}
+.prose {font-size: 11pt;}
+.prose h2 {font-size: 18pt; break-after: avoid;}
+.prose h3 {break-after: avoid;}
+figure {break-inside: avoid;}
+a {color: #000 !important;}
+}
+@media (max-width: 800px) {
+.reader-header::after {display: none;}
+.reader-header {padding: 24px 22px 22px; border-radius: 18px;}
+.sidebar::before {height: 3px;}
+.sidebar nav a:hover {transform: none;}
+.bottom-nav {flex-direction: column;}
+.bottom-nav a {max-width: 100%;}
+}
+@media (max-width: 540px) {
+.study-card {padding: 20px 18px;}
+}
+@media print {
+body {background: #fff !important; color: #000;}
+.sidebar,
+.topbar,
+.reader-actions,
+.toc,
+.bottom-nav,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+.reader-layout {display: block;}
+.reader-header,
+.study-card {background: #fff !important; box-shadow: none !important; border-color: #bbb !important; color: #000;}
+.reader-header h1,
+.study-card[data-study-kind="h3"] h3 {color: #000 !important; -webkit-text-fill-color: #000; text-shadow: none; background: none !important;}
+.prose,
+.prose strong {color: #000;}
+.study-card {break-inside: avoid;}
+.chip {background: #eee; color: #000; box-shadow: none;}
+}
+.material-github {margin-block: 32px; min-width: 0;}
+.material-github img {display: block; max-width: 100%; height: auto; margin-inline: auto; border-radius: 10px;}
+.material-github figcaption {color: var(--muted); font-size: 13px; margin-top: 8px;}
+.material-github .study-card {overflow-wrap: anywhere;}
+.prose .memory-aid,
+.prose .memory-inline {--mnemonic-color: #facc15;
+  padding: 22px; margin-block: 20px;
+  border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));}
+.prose .memory-aid .memory-line {margin-block: 12px; padding: 16px 18px;
+  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);}
+.prose .memory-line .memory-letter {display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace;}
+@media (max-width: 600px) {
+.prose .memory-aid,
+.prose .memory-inline {padding: 17px;}
+}
+@media print {
+.prose .memory-aid,
+.prose .memory-inline {background: white !important; color: black !important;}
+}
+:root {--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;}
+.tilt-ativo {transition-duration: 60ms, var(--t-base), .15s, .15s;}
+.rev {opacity: 0; transform: translateY(10px);}
+.rev.entrou {opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);}
+@view-transition { navigation: auto; }::view-transition-old(root) {animation: 120ms var(--ease-out) both vt-sai;}
+::view-transition-new(root) {animation: 200ms var(--ease-out) both vt-entra;}
+@media (prefers-reduced-motion: reduce) {
+.rev,
+.rev.entrou {opacity: 1; transform: none; transition: none;}
+::view-transition-old(root),
+::view-transition-new(root) {animation: none;}
+}
+
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+/* Layout específico do assunto */
+main {max-width:var(--page-width);}
+.reader-header h1 {text-wrap:balance;overflow-wrap:break-word}
+main,
+.workspace,
+.prose {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr) 210px;align-items:start}
+.prose {line-height:1.8}
+.study-card {margin-bottom:22px}
+.material-github>h2 {margin-top:32px}
+.toc {padding:18px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.toc a {padding-block:10px}
+@media (max-width:1000px) {
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+.toc {position:static;max-height:320px}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(28px,7vw,36px)}
+.study-card {padding:20px 18px}
+.prose {font-size:16px}
+.bottom-nav {flex-wrap:wrap;gap:16px}
+.bottom-nav a {max-width:100%;overflow-wrap:break-word}
+}
+@media print {
+main {max-width:none}
+.reader-layout {display:block}
+.study-card {break-inside:auto}
+.study-card h3 {break-after:avoid}
+}
+</style></head>
+<body class="tema-biblioteca" data-disciplina-acervo="direito-penal" data-discipline="direito-penal" data-page-kind="aula" style="--discipline-color: #ff5a6e; --page-width:1240px;">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a>
+<button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button>
+<nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a href="../direito-constitucional/index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a aria-current="page" href="index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal Militar</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
+<div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
+<main id="conteudo">
+<nav aria-label="Trilha" class="breadcrumbs">
+<a href="../../../index.html">Biblioteca</a> / <a href="index.html">Direito Penal</a> / Erro, Excludentes e Descriminantes Putativas
+      </nav>
+<header class="reader-header">
+<a class="chip" href="index.html">Direito Penal</a>
+<h1>Erro, Excludentes e Descriminantes Putativas</h1>
+<p class="muted">Assunto 3 de 6 · 75 blocos de estudo</p>
+<div class="reader-actions">
+<button aria-pressed="false" data-key="assets/materias/direito-penal/erro-excludentes-e-descriminantes-putativas.html" id="concluir" type="button">Marcar como estudado</button>
+<button id="imprimir" type="button">Imprimir</button>
+<span class="status" id="salvamento"></span>
+</div>
+</header>
+<div class="reader-layout">
+<article class="prose">
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Teoria do erro (tipo, proibição, erro sobre a pessoa, execução, resultado e aberratio causae), causas de exclusão da ilicitude (estado de necessidade, legítima defesa, estrito cumprimento, exercício regular), causas de exclusão da culpabilidade (inimputabilidade, coação, obediência, embriaguez, inexigibilidade de conduta diversa), excesso punível e emoção/paixão.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-erro-de-tipo-proibicao-e-descriminantes-putativas">Erro de Tipo, Proibição e Descriminantes Putativas</h3>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Erro de Tipo (Art. 20 do CP)">
+<span class="card-kicker">Erro de Tipo (Art. 20 do CP)</span>
+<div class="text-section">
+<p>O agente desconhece um elemento do tipo penal (percepção equivocada da realidade).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Essencial inevitável (escusável): exclui o dolo e a culpa → fato atípico (absolvição).</p>
+<p>Essencial evitável (inescusável): exclui o dolo, mas permite punição por crime culposo (se houver previsão).</p>
+<p>Acidental: não exclui o crime, mas afasta qualificadora/agravante.</p>
+<p>Exemplo: O caçador vê um vulto e atira pensando ser um javali, mas era seu filho. Sem possibilidade de prever → erro essencial inevitável = absolvição.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Erro de Proibição (Art. 21 do CP)">
+<span class="card-kicker">Erro de Proibição (Art. 21 do CP)</span>
+<div class="text-section">
+<p>O agente conhece os fatos, mas acredita que sua conduta é lícita (desconhece a ilicitude).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Inevitável (escusável): exclui a culpabilidade → isenção de pena.</p>
+<p>Evitável (inescusável): reduz a pena de 1/6 a 1/3.</p>
+<p>Regra: O desconhecimento da lei é inescusável (art. 21, caput), mas o erro sobre a ilicitude, se inevitável, exclui a culpabilidade.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Descriminantes Putativas (Art. 20, §1º do CP)">
+<span class="card-kicker">Descriminantes Putativas (Art. 20, §1º do CP)</span>
+<div class="text-section">
+<p>O agente imagina uma situação de fato que, se existisse, tornaria sua ação legítima (ex.: legítima defesa putativa).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Escusável (invencível): isento de pena.</p>
+<p>Inescusável (vencível): afasta o dolo, responde por culpa imprópria (crime culposo, se previsto).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Erro de Tipo Permissivo">
+<span class="card-kicker">Erro de Tipo Permissivo</span>
+<div class="text-section">
+<p>Erro sobre os pressupostos fáticos de uma causa de justificação (ligado às descriminantes putativas).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-erros-especificos-pessoa-execucao-resultado-e-causa">Erros Específicos: Pessoa, Execução, Resultado e Causa</h3>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Erro sobre a Pessoa (Error in Persona) – Art. 20, §3º">
+<span class="card-kicker">Erro sobre a Pessoa (Error in Persona) – Art. 20, §3º</span>
+<div class="text-section">
+<p>O agente, por erro, atinge pessoa diversa da visada, mas a ofensa é ao mesmo bem jurídico (ex.: pensa que é A e mata B).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Consequência: Erro sobre a pessoa não isenta de pena. Considera-se como se o crime tivesse sido praticado contra a pessoa visada (tipo penal e qualificadoras são determinados pela pessoa visada).</p>
+<p>Exemplo: Se o agente queria matar o policial (vítima visada) mas mata o civil (vítima real), responde por homicídio qualificado pelo motivo, se a intenção era contra policial.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Erro na Execução (Aberratio Ictus) – Art. 73">
+<span class="card-kicker">Erro na Execução (Aberratio Ictus) – Art. 73</span>
+<div class="text-section">
+<p>Ocorre quando o agente, por erro na execução, atinge pessoa diversa da visada (ex.: atira em A, mas acerta B que estava ao lado).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Regra: Responde como se tivesse praticado o crime contra a pessoa visada (princípio da equivalência). Aplica-se a regra do erro sobre a pessoa.</p>
+<p>Diferença crucial: No <em>error in persona</em>, o erro é sobre a identidade (A era B). Na <em>aberratio ictus</em>, o erro é na pontaria (acerta quem não queria). A consequência penal é a mesma (responde como se fosse a vítima visada).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Resultado Diverso do Pretendido (Aberratio Criminis) – Art. 74">
+<span class="card-kicker">Resultado Diverso do Pretendido (Aberratio Criminis) – Art. 74</span>
+<div class="text-section">
+<p>O agente, por erro na execução, atinge bem jurídico diverso do pretendido (ex.: queria matar A, mas a bala atinge um bem patrimonial, danificando um carro).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Regra: Responde pelo crime efetivamente ocorrido, se for culposo (previsão legal). Se houver dolo no resultado diverso, aplicam-se as regras do concurso de crimes.</p>
+<p>Exemplo: Atira em A para matar, mas erra e acerta o carro de B. Responde por dano culposo (se previsto) e pela tentativa de homicídio contra A.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Aberratio Causae (Desvio no Nexo Causal)">
+<span class="card-kicker">Aberratio Causae (Desvio no Nexo Causal)</span>
+<div class="text-section">
+<p>O agente produz um resultado, mas por uma via causal diversa da imaginada (ex.: atira em A para matá-lo; A cai desacordado e morre afogado em um rio próximo).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Consequência: Não exclui o dolo, pois o resultado foi o pretendido. Aplica-se a teoria da equivalência dos antecedentes (art. 13) – responde pelo crime consumado, pois a causa do resultado era previsível e não rompe o nexo causal.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-estado-de-necessidade-art-24">Estado de Necessidade (Art. 24)</h3>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Espécies: Agressivo e Defensivo">
+<span class="card-kicker">Espécies: Agressivo e Defensivo</span>
+<div class="text-section">
+<p>Defensivo: O agente sacrifica bem jurídico do agressor para salvar bem próprio ou de outrem (ex.: atira no agressor para se salvar).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Agressivo: O agente sacrifica bem jurídico de terceiro inocente para salvar bem próprio ou de outrem (ex.: quebra a vidraça do vizinho para escapar de um incêndio).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Requisitos do Estado de Necessidade">
+<span class="card-kicker">Requisitos do Estado de Necessidade</span>
+<div class="text-section">
+<p>a) Perigo atual e iminente (não passado ou futuro);</p>
+<p>b) Perigo não causado voluntariamente pelo agente;</p>
+<p>c) Inevitabilidade do sacrifício (não havia outro meio menos gravoso);</p>
+<p>d) Proporcionalidade (razoabilidade) – o bem sacrificado não pode ser superior ao bem salvo (exige ponderação).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Excludente de ilicitude (art. 23, I).</p>
+<p>Dever legal de enfrentar o perigo: O agente que tem dever legal de enfrentar o perigo (ex.: bombeiro, policial) não pode invocar estado de necessidade para se eximir da conduta.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-legitima-defesa-art-25">Legítima Defesa (Art. 25)</h3>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Requisitos da Legítima Defesa">
+<span class="card-kicker">Requisitos da Legítima Defesa</span>
+<div class="text-section">
+<p>a) Agressão injusta (contrária ao direito);</p>
+<p>b) Agressão atual ou iminente (presente ou prestes a ocorrer);</p>
+<p>c) Defesa de direito próprio ou de terceiro;</p>
+<p>d) Uso moderado dos meios necessários para repelir a agressão.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Excludente de ilicitude (art. 23, II).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Legítima Defesa de Terceiro e Sucessiva">
+<span class="card-kicker">Legítima Defesa de Terceiro e Sucessiva</span>
+<div class="text-section">
+<p>De terceiro: Qualquer pessoa pode agir em legítima defesa de outrem, mesmo sem autorização (art. 25, caput).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Sucessiva: Ocorre quando alguém, em legítima defesa, repele uma agressão, e o agressor, por sua vez, reage (excesso). A legítima defesa sucessiva é admitida para proteger o direito de quem está sendo vítima do excesso.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Excesso na Legítima Defesa">
+<span class="card-kicker">Excesso na Legítima Defesa</span>
+<div class="text-section">
+<p>Excesso doloso: O agente excede intencionalmente os limites da defesa, respondendo pelo excesso (crime doloso).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Excesso culposo: O agente excede por imprudência, negligência ou imperícia, respondendo por crime culposo (se houver previsão legal).</p>
+<p>Excesso exculpante (escusável): O excesso é decorrente de erro inevitável (descriminante putativa). Exclui a culpabilidade se inevitável, ou reduz a pena se evitável (aplica-se o art. 20, §1º).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-estrito-cumprimento-do-dever-legal-e-exercicio-regular-do-direito">Estrito Cumprimento do Dever Legal e Exercício Regular do Direito</h3>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Estrito Cumprimento do Dever Legal (Art. 23, III)">
+<span class="card-kicker">Estrito Cumprimento do Dever Legal (Art. 23, III)</span>
+<div class="text-section">
+<p>O agente público (ou particular, em alguns casos) pratica o fato no exercício de um dever imposto por lei.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Requisitos:</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="ul">
+<ul>
+<li>Existência de lei que imponha o dever;</li>
+<li>A conduta deve ser estritamente necessária para o cumprimento;</li>
+<li>Observância dos limites legais (não pode haver excesso).</li>
+</ul>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Exemplos: Policial que efetua uma prisão em flagrante usando algemas (se necessário); oficial de justiça que arromba porta para cumprir mandado.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Exercício Regular do Direito (Art. 23, III)">
+<span class="card-kicker">Exercício Regular do Direito (Art. 23, III)</span>
+<div class="text-section">
+<p>O agente pratica o fato no exercício de um direito reconhecido pelo ordenamento jurídico (ex.: direito de correção dos pais, direito de greve, direito de ação penal privada).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Consentimento do ofendido: É causa de exclusão da ilicitude quando o bem jurídico é disponível (ex.: lesões leves, dano a patrimônio alheio, desde que válido, livre e informado). O consentimento deve ser prévio ou contemporâneo ao fato. Para bens indisponíveis (vida), o consentimento não exclui a ilicitude (ex.: eutanásia).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-excesso-punivel-art-23-paragrafo-unico">Excesso Punível (Art. 23, Parágrafo Único)</h3>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Excesso Punível – Art. 23, parágrafo único">
+<span class="card-kicker">Excesso Punível – Art. 23, parágrafo único</span>
+<div class="text-section">
+<p>O excesso doloso ou culposo nas excludentes de ilicitude (estado de necessidade, legítima defesa, estrito cumprimento, exercício regular) é punível.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Regra: O agente responde pelo excesso (crime praticado no excesso), não pela causa de justificação em si.</p>
+<p>Exemplo: O policial, ao efetuar a prisão, desfere 10 tiros após o suspeito já estar imobilizado. Responde pelo excesso doloso (homicídio qualificado ou lesão).</p>
+<p>Excesso exculpante: Se o excesso for inevitável (erro escusável), exclui a culpabilidade.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-coacao-moral-irresistivel-e-obediencia-hierarquica-art-22">Coação Moral Irresistível e Obediência Hierárquica (Art. 22)</h3>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Coação Física vs. Moral">
+<span class="card-kicker">Coação Física vs. Moral</span>
+<div class="text-section">
+<p>Coação Física (Vis Absoluta): O agente é usado como mero instrumento pela força física de outrem. Exclui a própria conduta (fato típico) → o coator responde pelo crime.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Coação Moral Irresistível (Vis Relativa): O agente é coagido por ameaça grave, não tendo liberdade de escolha. Exclui a culpabilidade (art. 22). O coator também responde pelo crime.</p>
+<p>Consequência: Na coação moral irresistível, o coagido não comete crime (isento de pena); quem responde é o coator (art. 22, caput).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Obediência Hierárquica (Art. 22, §2º)">
+<span class="card-kicker">Obediência Hierárquica (Art. 22, §2º)</span>
+<div class="text-section">
+<p>Quem pratica o fato em obediência a ordem hierárquica (superior) pode ter a culpabilidade excluída.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="ul">
+<ul>
+<li>A ordem deve ser legal e proferida por autoridade competente;</li>
+<li>Não deve ser manifestamente ilegal.</li>
+</ul>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Ordem manifestamente ilegal: Se o subordinado cumpre ordem claramente criminosa (ex.: matar uma pessoa inocente), não exclui a culpabilidade, e tanto o superior quanto o subordinado respondem.</p>
+<p>Relação: Obediência a ordem legal se confunde com o estrito cumprimento do dever legal.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-embriaguez-art-28">Embriaguez (Art. 28)</h3>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Embriaguez Voluntária e Culposa">
+<span class="card-kicker">Embriaguez Voluntária e Culposa</span>
+<div class="text-section">
+<p>Voluntária (por vontade própria): Não exclui a imputabilidade (art. 28, II). O agente responde pelo crime, mesmo que completo, pois agiu com <em>actio libera in causa</em> (ação livre na causa).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Culposa (acidental, sem querer): Se o agente ingere álcool sem intenção (ex.: por erro, força maior, caso fortuito), a embriaguez é acidental.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Embriaguez Acidental (Casual) – Art. 28, §1º">
+<span class="card-kicker">Embriaguez Acidental (Casual) – Art. 28, §1º</span>
+<div class="text-section">
+<p>Decorre de caso fortuito ou força maior (ex.: medicamento que causa efeito inesperado; ingestão acidental de bebida alcoólica).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Completa: Se o agente estava completamente incapaz de entender o caráter ilícito do fato → exclui a imputabilidade (isento de pena, aplica-se medida de segurança, se necessário).</p>
+<p>Incompleta: Se a capacidade estava apenas reduzida → redução de pena de 1/3 a 2/3 (sistema vicariante, equipara-se à semi-imputabilidade).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label='Embriaguez Preordenada (Art. 61, II, "l")'>
+<span class="card-kicker">Embriaguez Preordenada (Art. 61, II, "l")</span>
+<div class="text-section">
+<p>O agente se embriaga com a intenção de praticar o crime (dolo de se embriagar para ter coragem).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Consequência: Não exclui a imputabilidade e ainda configura circunstância agravante (art. 61, II, "l"), aumentando a pena.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="dica" data-study-label="Resumo da Embriaguez">
+<span class="card-kicker">Resumo da Embriaguez</span>
+<div class="text-section">
+<p>📌 Voluntária → Não exclui (responde).</p>
+<p>📌 Culposa/Preordenada → Não exclui; preordenada ainda agrava.</p>
+<p>📌 Acidental Completa → Exclui imputabilidade (absolve ou medida de segurança).</p>
+<p>📌 Acidental Incompleta → Reduz de 1/3 a 2/3.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="h3">
+<h3 id="direito-penal-erro-excludentes-e-descriminantes-putativas-emocao-paixao-e-inexigibilidade-de-conduta-diversa">Emoção, Paixão e Inexigibilidade de Conduta Diversa</h3>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Emoção e Paixão (Art. 28, I)">
+<span class="card-kicker">Emoção e Paixão (Art. 28, I)</span>
+<div class="text-section">
+<p>A emoção (comoção súbita) e a paixão (estado permanente) não excluem a imputabilidade (art. 28, I).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Consequências:</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="ul">
+<ul>
+<li>Não isentam de pena;</li>
+<li>Podem funcionar como atenuante (art. 65, III, "c" – relevante valor moral ou social) ou, em alguns casos, configurar o homicídio privilegiado (art. 121, §1º – diminuição de 1/3 a 2/3 por relevante valor moral ou social, ou domínio de violenta emoção).</li>
+</ul>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Importante: Não se confunde com a inexigibilidade de conduta diversa, embora possam se conectar.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Inexigibilidade de Conduta Diversa">
+<span class="card-kicker">Inexigibilidade de Conduta Diversa</span>
+<div class="text-section">
+<p>É o terceiro elemento da culpabilidade (ao lado da imputabilidade e da potencial consciência da ilicitude). Ocorre quando, diante das circunstâncias, não se poderia exigir que o agente agisse de outra forma.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Hipóteses clássicas:</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="ul">
+<ul>
+<li>Coação moral irresistível (art. 22);</li>
+<li>Estado de necessidade (como excludente de culpabilidade, quando há inexigibilidade);</li>
+<li>Casos de medo, pavor ou perturbação psíquica intensa que, sem configurar doença mental, tornam impossível exigir conduta diversa (doutrina).</li>
+</ul>
+</div>
+<div class="study-card" data-study-kind="texto">
+<div class="text-section">
+<p>Efeito: Exclui a culpabilidade → o agente é absolvido, pois não se pode reprovar sua conduta.</p>
+</div>
+</div>
+<section class="material-github"><h2>Material de estudo: Erro, Excludentes e Descriminantes Putativas</h2><p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direito_penal/assuntos/03.json" rel="noopener" target="_blank">Ver fonte no GitHub</a></p><div class="study-card" data-study-kind="texto"><h3>Obediência Hierárquica (Art. 22, §2º)</h3><p>Quem pratica o fato em <strong>obediência a ordem hierárquica</strong> (superior) pode ter a culpabilidade excluída.</p><p><strong>Requisitos:</strong></p><ul><li>A ordem deve ser legal e proferida por autoridade competente;</li><li>Não deve ser manifestamente ilegal.</li></ul><p><strong>Ordem manifestamente ilegal:</strong> Se o subordinado cumpre ordem claramente criminosa (ex.: matar uma pessoa inocente), <strong>não</strong> exclui a culpabilidade, e tanto o superior quanto o subordinado respondem.</p><p><strong>Relação:</strong> Obediência a ordem legal se confunde com o estrito cumprimento do dever legal.</p></div><div class="study-card" data-study-kind="texto"><h3>Mapa-mental</h3><figure><a href="fontes-github/direito_penal/IMAGENS/03.jpg" rel="noopener" target="_blank"><img alt="Mapa-mental" loading="lazy" src="fontes-github/direito_penal/IMAGENS/03.jpg"/></a><figcaption>Mapa-mental · Clique para ampliar</figcaption></figure></div></section></article>
+<nav aria-label="Nesta página" class="toc">
+<span class="eyebrow">NESTA PÁGINA</span>
+<strong>Erro, Excludentes e Descriminantes Putativas</strong>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-erro-de-tipo-proibicao-e-descriminantes-putativas">  Erro de Tipo, Proibição e Descriminantes Putativas</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-erros-especificos-pessoa-execucao-resultado-e-causa">  Erros Específicos: Pessoa, Execução, Resultado e Causa</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-estado-de-necessidade-art-24">  Estado de Necessidade (Art. 24)</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-legitima-defesa-art-25">  Legítima Defesa (Art. 25)</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-estrito-cumprimento-do-dever-legal-e-exercicio-regular-do-direito">  Estrito Cumprimento do Dever Legal e Exercício Regular do Direito</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-excesso-punivel-art-23-paragrafo-unico">  Excesso Punível (Art. 23, Parágrafo Único)</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-coacao-moral-irresistivel-e-obediencia-hierarquica-art-22">  Coação Moral Irresistível e Obediência Hierárquica (Art. 22)</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-embriaguez-art-28">  Embriaguez (Art. 28)</a>
+<a href="#direito-penal-erro-excludentes-e-descriminantes-putativas-emocao-paixao-e-inexigibilidade-de-conduta-diversa">  Emoção, Paixão e Inexigibilidade de Conduta Diversa</a>
+</nav>
+</div>
+<nav aria-label="Navegação entre assuntos" class="bottom-nav">
+<a class="previous" href="teoria-do-crime.html"><small>Assunto anterior</small>Teoria do Crime</a>
+<a class="next" href="concurso-de-pessoas-e-concurso-de-crimes.html"><small>Próximo assunto</small>Concurso de Pessoas e Concurso de Crimes</a>
+</nav>
+<footer class="footer">
+<span>Matéria Policial · Conteúdo para estudar e revisar.</span>
+<a href="../../../index.html">Voltar à biblioteca</a>
+</footer>
+</main>
+</div>
+</body>
+</html>
+

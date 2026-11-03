@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101820" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<title>Poder Legislativo e Processo Legislativo · Direito Constitucional · Matéria Policial</title>
+<meta content="Congresso Nacional — Bicameralismo" name="description"/>
+<link href="../../icone.png" rel="icon"/>
+<script defer="" src="../../js/app.js?v=leitura-20261026"></script>
+<style id="css-personalizado">/* Poder Legislativo e Processo Legislativo — CSS próprio (aula). */
+:root {color-scheme: dark;
+  --bg: #0a0d18;
+  --panel: #101527;
+  --surface: #151b30;
+  --surface-2: #1c2440;
+  --ink: #eef1fb;
+  --muted: #9aa5c4;
+  --line: #232c4a;
+  --line-strong: #364067;
+  --gold: #ffc45c;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --accent-width: 4px;
+  --tint: 16%;
+  --glow: 34%;
+  --shadow: 0 8px 28px rgb(2 4 14 / 45%);
+  --grad-brand: linear-gradient(120deg, #ffc45c 0%, #ff8a5c 45%, #ff5c8a 100%);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  
+  --paper: var(--bg);
+  --white: var(--surface);
+  --accent: var(--ink);}
+* {box-sizing: border-box;}
+body {margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;}
+[hidden] {display: none !important;}
+a {color: inherit; text-decoration: none;}
+a:hover {text-decoration: underline; text-underline-offset: 3px;}
+button {font: inherit;}
+button {cursor: pointer;}
+button {color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 10px 16px; min-height: 44px; font-size: 13px; font-weight: 600; transition: border-color .15s ease, background-color .15s ease;}
+button:hover {background: var(--surface-2); border-color: var(--muted);}
+:focus-visible {outline: 2px solid var(--gold); outline-offset: 3px;}
+::selection {color: var(--bg); background: var(--gold);}
+h1,
+h2,
+p {margin: 0;}
+h1,
+h2 {font-family: Georgia, "Times New Roman", serif; font-weight: 500;}
+h1 {font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -.02em;}
+h2 {font-size: 28px; line-height: 1.25; letter-spacing: -.01em;}
+small {font-size: 12px;}
+.skip {position: fixed; top: -80px; left: 16px; padding: 10px 16px; z-index: 20; background: var(--ink); color: var(--bg); font-weight: 700; border-radius: var(--radius);}
+.skip:focus {top: 12px;}
+.muted {color: var(--muted); font-size: 12px;}
+.status {color: var(--muted); font-size: 12px;}
+.status:empty {display: none;}
+[id] {scroll-margin-top: 24px;}
+.sidebar {position: fixed; inset: 0 auto 0 0; width: 240px; padding: 32px 20px 22px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10;}
+.brand {display: block; margin: 0 10px 28px; font: 500 30px/1 Georgia, serif; letter-spacing: -.02em;}
+.brand-period {color: var(--gold);}
+.brand small {display: block; font: 600 10px/1.5 "Segoe UI", sans-serif; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px;}
+.sidebar nav {overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; padding: 4px; margin: -4px;}
+.nav-label {font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 20px 10px 8px;}
+.sidebar nav a {display: block; font-size: 13px; line-height: 1.45; padding: 8px 10px; margin: 1px 0; border-radius: var(--radius); color: var(--muted);}
+.sidebar nav a:hover {color: var(--ink); background: var(--surface); text-decoration: none;}
+.sidebar nav a[aria-current] {color: var(--ink); background: var(--surface-2); font-weight: 600; box-shadow: inset 2px 0 0 var(--gold);}
+.sidebar-footer {margin-top: auto; padding: 20px 10px 0; font-size: 12px; color: var(--ink);}
+.sidebar-footer span {display: block; color: var(--muted); font-size: 11px; margin-top: 2px;}
+.workspace {margin-left: 240px; min-width: 0;}
+.topbar {min-height: 60px; border-bottom: 1px solid var(--line); padding: 0 44px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; background: var(--bg);}
+.topbar a {color: var(--ink); text-decoration: underline; text-underline-offset: 3px;}
+.topbar > span {font-size: 11px; text-transform: uppercase; letter-spacing: .1em;}
+.mobile-menu {display: none;}
+main {max-width: 1280px; margin: auto; padding: 48px 44px 32px;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: var(--discipline-color, var(--line));}
+.footer {margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px;}
+.footer a {text-decoration: underline; text-underline-offset: 4px;}
+.breadcrumbs {color: var(--muted); font-size: 12px; margin-bottom: 26px;}
+.breadcrumbs a {text-decoration: underline; text-underline-offset: 3px;}
+.reader-header {padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 22px;}
+.chip {display: inline-block; padding: 3px 10px; margin-bottom: 14px; border: 1px solid var(--line-strong); border-left: var(--accent-width) solid var(--discipline-color, var(--line-strong)); border-radius: var(--radius); color: var(--ink); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;}
+.reader-header h1 {max-width: 24ch; margin-bottom: 14px; font-size: clamp(30px, 3.2vw, 44px);}
+.reader-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px;}
+.reader-actions button {font-size: 12px; min-height: 38px; padding: 8px 13px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--surface-2); color: var(--ink); border-color: var(--gold);}
+.reader-layout {display: grid; grid-template-columns: minmax(0,1fr) 180px; gap: 36px; align-items: start; margin-top: 24px;}
+.bottom-nav {display: flex; justify-content: space-between; gap: 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);}
+.bottom-nav a {max-width: 47%; font: 500 17px/1.4 Georgia, serif;}
+.bottom-nav a:hover {color: var(--gold);}
+.bottom-nav small {display: block; font: 11px/1.7 "Segoe UI", sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+.bottom-nav .next {text-align: right;}
+.prose {min-width: 0; width: 100%; font: 17px/1.8 Georgia, "Times New Roman", serif; overflow-wrap: break-word;}
+.prose h2 {font-size: 25px; line-height: 1.3; margin: 4px 0 18px;}
+.prose p {margin: 0 0 16px;}
+.prose strong {font-weight: 700;}
+.prose a {text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere;}
+.prose .text-section p {line-height: 1.85;}
+.prose .text-section p + p {margin-top: 14px;}
+.prose figure {margin: 22px 0;}
+.study-card {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"], [data-study-kind="h2"], [data-study-kind="h3"], [data-study-kind="destaque"]) {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="explicacao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="passo"], [data-study-kind="tabela"], [data-study-kind="laboratorio-logico"], [data-study-label="Explicação"], [data-study-label="Exemplo"], [data-study-label="Analogia"], [data-study-label="Fórmula"]) {--kind-ink: #2bc4e6;}
+.study-card:is([data-study-kind="bizu"], [data-study-kind="mnemonico"], [data-study-kind="resumo"], [data-study-kind="dica"], [data-study-kind="mapa-mental"], [data-type="resumo"], [data-study-label="Resumo"], [data-study-label="Mnemônico"], [data-study-label="Mapa Mental"], [data-study-label="Bizu"], [data-study-label="Como estudar"]) {--kind-ink: #ffc83d;}
+.study-card:is([data-study-kind="alerta"], [data-study-label="Atenção"], [data-study-label="Importante"], [data-study-label="Pegadinha"]) {--kind-ink: #ff9340;}
+.study-card {color: var(--ink); background: var(--panel); padding: 24px 26px; margin-bottom: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink); border-radius: var(--radius); box-shadow: var(--shadow);}
+.study-card :is(h2, h3) {color: var(--ink);}
+.study-card .text-section > :first-child {margin-top: 0;}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {display: inline-block; padding: 3px 9px; margin: 0 0 14px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--muted); font: 600 11px/1.5 "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .08em;}
+.study-card > :last-child,
+.text-section > :last-child {margin-bottom: 0;}
+.text-section {margin: 0; padding: 0;}
+[data-discipline="direito-constitucional"] {--discipline-color: #a66bff;}
+.mnemonic-tone-1 {--mnemonic-color: #2bc4e6;}
+.mnemonic-tone-2 {--mnemonic-color: #a56bff;}
+.mnemonic-tone-3 {--mnemonic-color: #34d399;}
+.mnemonic-tone-4 {--mnemonic-color: #ffc83d;}
+.mnemonic-tone-5 {--mnemonic-color: #ff5ca8;}
+.mnemonic-tone-6 {--mnemonic-color: #ff9340;}
+.mnemonic-tone-7 {--mnemonic-color: #6c8cff;}
+.mnemonic-tone-8 {--mnemonic-color: #9fdc3c;}
+.memory-aid li + li {margin-top: 10px;}
+.memory-aid .text-section > p + p {margin-top: 12px;}
+:root {--on-color: #0a0d18;}
+body {--hc: var(--discipline-color, #7a7dff); background:
+  radial-gradient(900px 520px at 88% -8%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 62%),
+  radial-gradient(760px 520px at -6% 38%, rgb(255 92 138 / 11%), transparent 62%),
+  radial-gradient(700px 500px at 60% 112%, rgb(38 196 238 / 10%), transparent 60%),
+  var(--bg); background-attachment: fixed;}
+h1,
+h2 {font-family: "Segoe UI", system-ui, Arial, sans-serif; font-weight: 800; letter-spacing: -.02em;}
+::selection {color: var(--on-color); background: var(--gold);}
+* {scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent;}
+button {border-radius: var(--radius-sm); background: var(--surface-2); border-color: var(--line-strong);}
+button:hover {background: color-mix(in srgb, var(--hc) 22%, var(--surface-2)); border-color: var(--hc); transform: translateY(-1px);}
+button {transition: border-color .15s ease, background-color .15s ease, transform .15s ease, box-shadow .15s ease;}
+.sidebar {background: linear-gradient(180deg, #121833 0%, #0d1226 55%, #0a0d18 100%); border-right: 1px solid var(--line); box-shadow: 8px 0 40px rgb(2 4 14 / 40%);}
+.sidebar::before {content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad-brand);}
+.brand {font: 800 29px/1.05 "Segoe UI", system-ui, sans-serif; letter-spacing: -.03em;}
+.brand-period {background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.brand small {color: var(--gold); letter-spacing: .2em;}
+.nav-label {color: #6e7aa3;}
+.sidebar nav a {display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; --nc: var(--gold); transition: background-color .15s ease, color .15s ease, transform .15s ease;}
+.sidebar nav a::before {content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--nc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nc) 22%, transparent); opacity: .85;}
+.sidebar nav a:hover {color: var(--ink); background: color-mix(in srgb, var(--nc) 14%, transparent); transform: translateX(2px);}
+.sidebar nav a[aria-current] {color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 38%, transparent), color-mix(in srgb, var(--nc) 8%, transparent)); box-shadow: inset 3px 0 0 var(--nc);}
+.sidebar nav a[aria-current]::before {opacity: 1; box-shadow: 0 0 12px var(--nc);}
+.sidebar nav a[href*="direito-administrativo"] {--nc: #4d8dff;}
+.sidebar nav a[href*="atualidades"] {--nc: #ff8a3d;}
+.sidebar nav a[href*="direitos-humanos"] {--nc: #ff5ca8;}
+.sidebar nav a[href*="legislacao-extravagante"] {--nc: #d45cf0;}
+.sidebar nav a[href*="guardas-municipais"] {--nc: #2fd08a;}
+.sidebar nav a[href*="informatica"] {--nc: #26c4ee;}
+.sidebar nav a[href*="matematica"] {--nc: #7a7dff;}
+.sidebar nav a[href*="direito-penal"] {--nc: #ff5a6e;}
+.sidebar nav a[href*="portugues"] {--nc: #25d1b8;}
+.sidebar nav a[href*="processo-penal"] {--nc: #f5bf2e;}
+.sidebar nav a[href*="raciocinio-logico"] {--nc: #9fdc3c;}
+.sidebar-footer {border-top: 1px solid var(--line); margin: auto 10px 0; padding: 18px 0 0;}
+.topbar {position: sticky; top: 0; z-index: 5; background: rgb(10 13 24 / 72%); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line);}
+.topbar > span {color: var(--gold); font-weight: 700;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: color-mix(in srgb, var(--hc) 45%, var(--line));}
+.footer {border-top-color: var(--line-strong);}
+.footer a {color: var(--gold);}
+.breadcrumbs a {color: var(--hc); font-weight: 600;}
+.reader-header {position: relative; overflow: hidden; padding: 32px 34px 28px; margin-bottom: 24px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 22px; box-shadow: var(--shadow), 0 0 70px -32px color-mix(in srgb, var(--hc) 65%, transparent);
+  background: radial-gradient(480px 240px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 72%), linear-gradient(160deg, var(--surface-2), var(--panel));}
+.reader-header > * {position: relative; z-index: 1;}
+.reader-header::after {content: ""; position: absolute; right: -50px; top: -50px; width: 190px; height: 190px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 24px color-mix(in srgb, var(--hc) 7%, transparent); pointer-events: none;}
+.reader-header h1 {max-width: 26ch; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; background: linear-gradient(100deg, #fff 20%, color-mix(in srgb, var(--hc) 45%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.chip {border: 0; border-radius: 999px; padding: 5px 14px; background: var(--hc); color: var(--on-color); font-weight: 800; letter-spacing: .09em; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--hc) 80%, transparent);}
+.chip:hover {text-decoration: none; filter: brightness(1.1);}
+.reader-header .muted {color: #b6c0dd; font-size: 13px;}
+.reader-actions button {border-radius: 999px; padding: 8px 18px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--hc); color: var(--on-color); border-color: var(--hc); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--hc) 80%, transparent);}
+.reader-actions button[aria-pressed=true]:hover {filter: brightness(1.08); transform: translateY(-1px);}
+.bottom-nav a {flex: 1; max-width: 48%; padding: 18px 22px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--hc) 30%, var(--line)); background: linear-gradient(120deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface)); font: 800 16px/1.4 "Segoe UI", sans-serif; transition: transform .18s ease, border-color .18s ease;}
+.bottom-nav a:hover {color: #fff; border-color: var(--hc); text-decoration: none; transform: translateY(-2px);}
+.bottom-nav small {color: var(--hc); font-weight: 800;}
+.bottom-nav .next {background: linear-gradient(240deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface));}
+.prose {color: #e4e9f8;}
+.prose h2 {font-weight: 800;}
+.prose strong {color: #fff;}
+.study-card {--k: var(--kind-ink); position: relative; padding: 24px 28px; margin-bottom: 18px; border: 1px solid color-mix(in srgb, var(--k) 34%, var(--line)); border-left: var(--accent-width) solid var(--k); border-radius: 16px; box-shadow: 0 6px 22px -10px rgb(2 4 14 / 60%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--k) 16%, var(--panel)) 0%, color-mix(in srgb, var(--k) 5%, var(--panel)) 75%);}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {padding: 4px 12px; margin-bottom: 14px; border: 0; border-radius: 999px; background: var(--k, var(--hc)); color: var(--on-color); font-weight: 800; letter-spacing: .1em;}
+.study-card[data-study-label="Conteúdo"] > .card-kicker {display: none;}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 8%, var(--panel)), var(--panel) 80%); border-color: color-mix(in srgb, var(--k) 20%, var(--line)); box-shadow: none;}
+.study-card:is([data-study-kind="destaque"], [data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="resumo"], [data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="questao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="mnemonico"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 24%, var(--panel)) 0%, color-mix(in srgb, var(--k) 8%, var(--panel)) 80%); box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--k) 55%, transparent);}
+.skip {background: var(--gold); color: var(--on-color);}
+@media (prefers-reduced-motion: no-preference) {
+main > * {animation: entrar .45s ease both;}
+main > *:nth-child(2) {animation-delay: .05s;}
+main > *:nth-child(3) {animation-delay: .1s;}
+}
+@media (min-width: 1500px) {
+.prose {font-size: 18px;}
+.reader-layout {gap: 44px; grid-template-columns: minmax(0,820px) 200px;}
+}
+@media (max-width: 1120px) {
+main {padding: 36px 28px 28px;}
+.topbar {padding: 0 28px;}
+.reader-layout {grid-template-columns: minmax(0,1fr);}
+}
+@media (max-width: 800px) {
+.sidebar {position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line);}
+.brand {margin: 0; font-size: 26px;}
+.brand small {margin-top: 6px; font-size: 10px;}
+.mobile-menu {display: block; align-self: center; background: transparent;}
+.sidebar nav {display: none; grid-column: 1/-1; max-height: 60vh; margin-top: 20px;}
+.sidebar.open nav {display: block;}
+.sidebar-footer {display: none;}
+.workspace {margin: 0;}
+.topbar {min-height: 46px; padding: 0 24px;}
+main {padding: 30px 24px 26px;}
+.study-card {padding: 22px 22px;}
+.reader-header h1 {font-size: 36px;}
+}
+@media (max-width: 540px) {
+.reader-header h1 {font-size: 32px;}
+.breadcrumbs {margin-bottom: 20px;}
+.prose {font-size: 16.5px;}
+.prose h2 {font-size: 24px;}
+.study-card {padding: 20px 18px; margin-bottom: 15px;}
+.footer {flex-direction: column; gap: 10px;}
+.bottom-nav a {font-size: 16px;}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {scroll-behavior: auto !important; transition: none !important; animation: none !important;}
+}
+@media print {
+:root {color-scheme: light; --bg: #fff; --panel: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --muted: #333; --line: #bbb; --line-strong: #777;}
+body {background: #fff; font-size: 11pt;}
+.sidebar,
+.topbar,
+.breadcrumbs,
+.reader-actions,
+.bottom-nav,
+.footer,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+main {max-width: none; padding: 0;}
+.reader-layout {display: block;}
+.reader-header {padding-bottom: 15px;}
+.reader-header h1 {font-size: 28pt;}
+.study-card {background: #fff !important; color: #000 !important; padding: 12px 0; border-radius: 0; border: 0; border-bottom: 1px solid #aaa; box-shadow: none;}
+.prose {font-size: 11pt;}
+.prose h2 {font-size: 18pt; break-after: avoid;}
+figure {break-inside: avoid;}
+a {color: #000 !important;}
+}
+@media (max-width: 800px) {
+.reader-header::after {display: none;}
+.reader-header {padding: 24px 22px 22px; border-radius: 18px;}
+.sidebar::before {height: 3px;}
+.sidebar nav a:hover {transform: none;}
+.bottom-nav {flex-direction: column;}
+.bottom-nav a {max-width: 100%;}
+}
+@media (max-width: 540px) {
+.study-card {padding: 20px 18px;}
+}
+@media print {
+body {background: #fff !important; color: #000;}
+.sidebar,
+.topbar,
+.reader-actions,
+.bottom-nav,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+.reader-layout {display: block;}
+.reader-header,
+.study-card {background: #fff !important; box-shadow: none !important; border-color: #bbb !important; color: #000;}
+.reader-header h1 {color: #000 !important; -webkit-text-fill-color: #000; text-shadow: none; background: none !important;}
+.prose,
+.prose strong {color: #000;}
+.study-card {break-inside: avoid;}
+.chip {background: #eee; color: #000; box-shadow: none;}
+}
+.material-github {margin-block: 32px; min-width: 0;}
+.material-github .study-card {overflow-wrap: anywhere;}
+.prose .memory-aid,
+.prose .memory-inline {--mnemonic-color: #facc15;
+  padding: 22px; margin-block: 20px;
+  border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));}
+.prose .memory-aid .memory-line {margin-block: 12px; padding: 16px 18px;
+  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);}
+.prose .memory-line .memory-letter {display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace;}
+@media (max-width: 600px) {
+.prose .memory-aid,
+.prose .memory-inline {padding: 17px;}
+}
+@media print {
+.prose .memory-aid,
+.prose .memory-inline {background: white !important; color: black !important;}
+}
+:root {--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;}
+.tilt-ativo {transition-duration: 60ms, var(--t-base), .15s, .15s;}
+.rev {opacity: 0; transform: translateY(10px);}
+.rev.entrou {opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);}
+@view-transition { navigation: auto; }::view-transition-old(root) {animation: 120ms var(--ease-out) both vt-sai;}
+::view-transition-new(root) {animation: 200ms var(--ease-out) both vt-entra;}
+@media (prefers-reduced-motion: reduce) {
+.rev,
+.rev.entrou {opacity: 1; transform: none; transition: none;}
+::view-transition-old(root),
+::view-transition-new(root) {animation: none;}
+}
+:root {--dc-accent:#60a5fa;--dc-accent-2:#22d3ee;--dc-ink:#eef5ff;--dc-muted:#a9b8ce;--dc-line:rgba(148,163,184,.22);--dc-card:rgba(15,27,48,.55)}
+html {scroll-behavior:smooth;scroll-padding-top:28px}
+.study-card {scroll-margin-top:28px}
+.reader-header > h1 {font-size:clamp(1.7rem,3.6vw,2.65rem);line-height:1.17;letter-spacing:-.045em;font-weight:850;text-wrap:balance}
+.prose .card-titulo {margin:0 0 14px;font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.4;font-weight:760;letter-spacing:-.015em;color:#dbeafe;border-left:3px solid var(--dc-accent);padding:3px 0 3px 12px;text-wrap:pretty}
+.prose .study-card .text-section .card-titulo:first-child {margin-top:1px}
+.material-github>.complementar-titulo {font-size:clamp(1.24rem,2vw,1.55rem);font-weight:760;line-height:1.3;letter-spacing:-.025em;padding:0 0 12px;border-bottom:1px solid var(--dc-line);margin:32px 0 16px;color:#e1edff}
+.indice-unificado {border-color:var(--dc-line)!important;background:linear-gradient(140deg,rgba(30,58,100,.17),rgba(15,23,42,.12));border-radius:16px!important}
+.indice-unificado h2 {letter-spacing:-.02em;font-weight:800}
+.indice-unificado a {text-decoration:none;transition:color .18s,border-color .18s,background .18s}
+.indice-unificado a:hover {color:#7dd3fc}
+@media (prefers-reduced-motion:reduce) {
+html {scroll-behavior:auto}
+.indice-unificado a {transition:none}
+}
+@media print {
+.card-titulo {break-after:avoid}
+}
+:root {--dc-accent:#a66bff;--dc-accent-2:#60a5fa}
+html {scroll-padding-top:24px}
+body {min-width:0}
+main,
+.workspace,
+.reader-layout,
+.prose,
+.study-card {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+main {max-width:1240px}
+h1,
+h2 {font-family:"Segoe UI",system-ui,sans-serif;overflow-wrap:break-word}
+.prose {max-width:none;line-height:1.8}
+.prose p {overflow-wrap:break-word}
+.prose h2 {margin:30px 0 18px;font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:750}
+.prose figure {margin:16px 0}
+.study-card .text-section>.card-titulo {margin:0 0 16px}
+.study-card[data-study-kind="texto"] {--kind-ink:#a66bff}
+.indice-unificado {margin:0 0 30px;padding:24px;background:var(--panel,#101527)}
+.indice-unificado h2 {font-size:1.2rem;margin:0 0 18px}
+.indice-unificado ol {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:0;list-style:none}
+.indice-unificado li {min-width:0;margin:0}
+.indice-unificado a {display:block;padding:12px 14px;border:1px solid var(--dc-line);border-radius:10px;background:rgba(96,165,250,.06);font-size:.9rem;line-height:1.5;color:#dbeafe;overflow-wrap:anywhere}
+.indice-unificado a:hover {background:rgba(96,165,250,.14);border-color:#60a5fa;text-decoration:none}
+.mapa-indisponivel {padding:20px;border:1px dashed var(--dc-line);border-radius:12px;background:rgba(96,165,250,.05)}
+.mapa-indisponivel .mapa-titulo {color:#eaf2ff;font-weight:700}
+.mapa-indisponivel p {margin:0 0 12px}
+.mapa-indisponivel a {color:#93c5fd;text-decoration:underline;text-underline-offset:3px}
+.bottom-nav {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:32px 0 18px}
+.bottom-nav a {min-width:0;padding:18px;border:1px solid var(--dc-line);border-radius:12px;overflow-wrap:break-word;background:var(--panel,#101527);font-weight:650}
+.bottom-nav small {display:block;margin-bottom:6px;font-size:.75rem;color:var(--muted,#9aa5c4)}
+.bottom-nav .next {grid-column:2;text-align:right}
+@media (max-width:900px) {
+.indice-unificado ol {grid-template-columns:1fr}
+.bottom-nav {gap:9px}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(1.65rem,6.5vw,2.2rem)}
+.indice-unificado {padding:18px}
+.study-card {padding:20px 16px}
+.bottom-nav {grid-template-columns:1fr}
+.bottom-nav .next {grid-column:1}
+}
+@media (prefers-reduced-motion:reduce) {
+*,
+*::before,
+*::after {scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+@media print {
+.indice-unificado,
+.bottom-nav {display:none!important}
+.study-card {background:#fff!important;color:#111!important;box-shadow:none!important}
+.study-card * {color:#111!important}
+}
+
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+/* Layout específico do assunto */
+main {max-width:var(--page-width);}
+.reader-header h1 {text-wrap:balance;overflow-wrap:break-word}
+main,
+.workspace,
+.prose {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr);align-items:start}
+.prose {line-height:1.8}
+.study-card {margin-bottom:22px}
+.study-card .card-titulo {line-height:1.4;overflow-wrap:break-word}
+.material-github>h2 {margin-top:32px}
+@media (max-width:1000px) {
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(28px,7vw,36px)}
+.study-card {padding:20px 18px}
+.prose {font-size:16px}
+.bottom-nav {flex-wrap:wrap;gap:16px}
+.bottom-nav a {max-width:100%;overflow-wrap:break-word}
+}
+@media print {
+main {max-width:none}
+.reader-layout {display:block}
+.study-card {break-inside:auto}
+.study-card h2 {break-after:avoid}
+}
+</style></head>
+<body class="tema-biblioteca" data-disciplina-acervo="direito-constitucional" data-discipline="direito-constitucional" data-page-kind="aula" style="--discipline-color: #a66bff; --page-width:1100px;">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a>
+<button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button>
+<nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a aria-current="page" href="index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
+<div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
+<main id="conteudo">
+<nav aria-label="Trilha" class="breadcrumbs">
+<a href="../../../index.html">Biblioteca</a> / <a href="index.html">Direito Constitucional</a> / Poder Legislativo e Processo Legislativo
+      </nav>
+<header class="reader-header">
+<a class="chip" href="index.html">Direito Constitucional</a>
+<h1>Poder Legislativo e Processo Legislativo</h1>
+<p class="muted">Assunto 10 de 14 · 31 blocos de estudo</p>
+<div class="reader-actions">
+<button aria-pressed="false" data-key="assets/materias/direito-constitucional/constitucional-11.html" id="concluir" type="button">Marcar como estudado</button>
+<button id="imprimir" type="button">Imprimir</button>
+<span class="status" id="salvamento"></span>
+</div>
+</header><nav aria-label="Índice do assunto" class="indice-unificado" id="indice"><h2>Neste assunto</h2><ol><li><a href="#topico-01">Congresso Nacional — Bicameralismo</a></li><li><a href="#topico-02">Composição da Câmara dos Deputados</a></li><li><a href="#topico-03">Composição do Senado Federal</a></li><li><a href="#topico-04">⚠️ Pegadinha: Bicameralismo</a></li><li><a href="#topico-05">Iniciativa Geral (Art. 61, caput)</a></li><li><a href="#topico-06">Iniciativa Privativa (Art. 61, §§ 1º a 4º)</a></li><li><a href="#topico-07">Para Leigos – Quem pode propor lei?</a></li><li><a href="#topico-08">Processo Legislativo Ordinário (Art. 62 a 65)</a></li><li><a href="#topico-09">Processo Legislativo Sumaríssimo (Art. 65)</a></li><li><a href="#topico-10">Quóruns de Maioria Simples e Absoluta</a></li><li><a href="#topico-11">⚠️ Pegadinhas Frequentes</a></li><li><a href="#topico-12">Sancção Presidencial</a></li><li><a href="#topico-13">Veto Político e Veto Jurídico</a></li><li><a href="#topico-14">Para Leigos – O Veto Presidencial</a></li><li><a href="#topico-15">🧠 MNEMÔNICOS GERAIS</a></li><li><a href="#topico-16">⚠️ Pegadinhas Mais Cobradas</a></li><li><a href="#topico-17">✅ CHECKLIST PARA A PROVA</a></li><li><a href="#topico-18">Presidente da República — Chefe de Estado e de Governo</a></li><li><a href="#topico-19">Atribuições do Presidente (Art. 84, caput e parágrafos)</a></li><li><a href="#topico-20">Vice-Presidente da República</a></li><li><a href="#topico-21">⚠️ Pegadinhas Frequentes</a></li><li><a href="#topico-22">Estrutura do Poder Judiciário</a></li><li><a href="#topico-23">Supremo Tribunal Federal (STF) — Art. 93</a></li><li><a href="#topico-24">Superior Tribunal de Justiça (STJ) — Art. 95</a></li><li><a href="#topico-25">Tribunais Regionais Federais (TRFs) e Tribunais de Justiça (TJs)</a></li><li><a href="#topico-26">Para Leigos – A Pirâmide do Poder Judiciário</a></li><li><a href="#topico-27">🧠 MNEMÔNICOS GERAIS</a></li><li><a href="#topico-28">⚠️ Pegadinhas Mais Cobradas</a></li><li><a href="#topico-29">✅ CHECKLIST PARA A PROVA</a></li></ol></nav>
+<div class="reader-layout">
+<article class="prose">
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-01">Congresso Nacional — Bicameralismo</h2>
+<p>O Poder Legislativo é exercido pelo <strong>Congresso Nacional</strong>, que é <strong>bicameral</strong> (duas casas):</p>
+<p>- <strong>Câmara dos Deputados</strong> — representação proporcional por Estado e DF.<br/>- <strong>Senado Federal</strong> — representação igualitária (3 por Estados e DF).</p>
+<p><strong>Competências (Art. 48, caput):</strong><br/>- Legislar com a CF como limite;<br/>- Autorizar a saída de tropas;<br/>- Fiscalizar o Poder Executivo;<br/>- Declarar a guerra;<br/>- Aprovar o orçamento;<br/>- Criar e extinguir ministérios;<br/>- Processar o Presidente da República por crimes de responsabilidade.</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'Câmara = Cidadãos (proporcional) / Senado = Estados (igualitário)'</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-02">Composição da Câmara dos Deputados</h2>
+<p><strong>Representação:</strong> proporcional ao número de eleitores de cada Estado e do DF, com <strong>mínimo de 8 e máximo de 70</strong> deputados por Estado (Art. 14, §1º, inciso II, alínea 'a').</p>
+<p><strong>Total de deputados:</strong> 513 (500 distribuídos entre Estados + 13 do DF).</p>
+<p><strong>Mandato:</strong> 4 anos, com reeleição ilimitada.</p>
+<p><strong>Presidente da Câmara:</strong> eleito entre seus pares, por voto direto e secreto, por 2 anos (Art. 50, §1º). Pode ser reeleito uma vez consecutivamente.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-03">Composição do Senado Federal</h2>
+<p><strong>Representação:</strong> <strong>3 senadores por Estado e pelo DF</strong> (Art. 14, §1º, inciso II, alínea 'b'), totalizando <strong>81 senadores</strong>.</p>
+<p><strong>Mandato:</strong> 8 anos, <strong>sem reeleição para o mesmo cargo</strong> (Art. 15, §1º). Os 81 senadores são divididos em <strong>3 períodos de 3 anos</strong> (sucessivos), com 1/3 renascendo a cada 2 anos.</p>
+<p><strong>Presidente do Senado:</strong> eleito entre seus pares, por voto secreto, por 2 anos (Art. 51, §1º). Pode ser reeleito uma vez consecutivamente.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que Senador pode ser reeleito para o mesmo cargo. <strong>ERRADO.</strong> Senador tem mandato de 8 anos e não há reeleição para o mesmo cargo.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-04">⚠️ Pegadinha: Bicameralismo</h2>
+<p>❌ 'A Câmara dos Deputados tem representação igualitária.' → <strong>ERRADO.</strong> É proporcional.<br/>❌ 'O Senado Federal tem representação proporcional.' → <strong>ERRADO.</strong> É igualitária (3 por Estado/DF).<br/>❌ 'Senador pode ser reeleito para o mesmo cargo.' → <strong>ERRADO.</strong> Mandato de 8 anos, sem reeleição.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-05">Iniciativa Geral (Art. 61, caput)</h2>
+<p>Art. 61, caput: 'Caberá ao Poder Executivo e ao Poder Legislativo propor a legislação complementar, especial e ordinária, bem como ao cidadão, por meio de iniciativa popular, nos termos desta Constituição.'</p>
+<p><strong>Quem pode iniciar leis:</strong><br/>- <strong>Presidente da República</strong> (projeto de lei);<br/>- <strong>Deputado ou Senador</strong> (projeto de lei);<br/>- <strong>Cidadãos</strong> (iniciativa popular — requer 1% do eleitorado nacional, distribuídos em 5 Estados com 0,3% em cada);<br/>- <strong>Mesa do Senado</strong> (medida provisória);<br/>- <strong>Mesa da Câmara</strong> (medida provisória);<br/>- <strong>Presidente da República</strong> (medida provisória).</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'Presidente, Parlamentar, Povo (1%)' — os três iniciadores principais.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-06">Iniciativa Privativa (Art. 61, §§ 1º a 4º)</h2>
+<p>Art. 61, §1º: <strong>'A iniciativa privativa de lei será apresentada por 1% (um por cento) do eleitorado nacional, distribuída em pelo menos 5 (cinco Estados, com 0,3% (três décimos de um por cento) em cada um deles.'</strong></p>
+<p><strong>Requisitos para iniciativa popular:</strong><br/>- <strong>1% do eleitorado nacional</strong> (aproximadamente 1,2 milhão de eleitores);<br/>- Distribuída em <strong>pelo menos 5 Estados</strong>;<br/>- <strong>0,3% em cada Estado</strong> (aproximadamente 70 mil por Estado);<br/>- <strong>Prazo:</strong> 90 dias para coletar as assinaturas.</p>
+<p><strong>Iniciativa parlamentar (Art. 61, §2º):</strong><br/>- O deputado ou senador pode apresentar projeto de lei individual ou coletivo (com outros parlamentares).</p>
+<p><strong>Iniciativa do Poder Executivo (Art. 61, §3º):</strong><br/>- O Presidente da República pode enviar projetos de lei ao Congresso.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que a iniciativa popular exige 1% do eleitorado em cada Estado. <strong>ERRADO.</strong> É 1% do eleitorado nacional, distribuído em pelo menos 5 Estados com 0,3% em cada.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-07">Para Leigos – Quem pode propor lei?</h2>
+<p>Pense no Congresso como um jogo de futebol:</p>
+<p>- <strong>Presidente da República</strong> é como o árbitro que pode sugerir regras (projeto de lei).<br/>- <strong>Deputados e Senadores</strong> são os jogadores que podem propor mudanças no jogo (projetos de lei).<br/>- <strong>Cidadãos</strong> são os torcedores que, se organizarem bem (1% do eleitorado em 5 Estados), podem propor uma nova regra (iniciativa popular).<br/>- <strong>Medida Provisória</strong> é como um 'cartão amarelo' que o Presidente pode mostrar para resolver algo rápido, mas o Congresso precisa confirmar depois.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-08">Processo Legislativo Ordinário (Art. 62 a 65)</h2>
+<p>O processo legislativo ordinário tem as seguintes fases:</p>
+<p>1. <strong>Apresentação</strong> do projeto (iniciativa);<br/>2. <strong>Primeira discussão</strong> (primeira leitura) — exposição do texto;<br/>3. <strong>Comissões</strong> — análise técnica e parecer;<br/>4. <strong>Segunda discussão</strong> (segunda leitura) — debate geral;<br/>5. <strong>Votação</strong> (terceira leitura) — votação final;<br/>6. <strong>Sanção ou veto</strong> do Presidente;<br/>7. <strong>Publicação</strong> da lei.</p>
+<p><strong>Quóruns:</strong><br/>- <strong>Maioria simples:</strong> mais da metade dos votos dos presentes (para a maioria das leis).<br/>- <strong>Maioria absoluta:</strong> 2/3 (60%) ou 3/5 (60%) dos votos de cada Casa (para leis de reforma administrativa, emendas constitucionais, etc.).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que a votação de leis ordinárias exige maioria absoluta. <strong>ERRADO.</strong> A maioria é <strong>simples</strong> (mais da metade dos presentes).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-09">Processo Legislativo Sumaríssimo (Art. 65)</h2>
+<p>Art. 65: 'As leis de iniciativa exclusiva do Poder Executivo, que versarem sobre apenas um assunto e não imponham oneração ao orçamento ou ao fisco, serão tratadas em regime de tramitação sumaríssima.'</p>
+<p><strong>Características:</strong><br/>- <strong>Iniciativa exclusiva do Executivo</strong> (não pode vir de parlamentares ou cidadãos);<br/>- <strong>Apenas um assunto</strong> (monocrética);<br/>- <strong>Sem oneração</strong> ao orçamento ou fisco;<br/>- <strong>Tramitação acelerada</strong> (sem passar por comissões).</p>
+<p><strong>Fases:</strong><br/>1. Apresentação;<br/>2. Primeira e segunda leituras (no mesmo dia);<br/>3. Votação (terceira leitura);<br/>4. Sanção ou veto.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o processo sumaríssimo pode ser usado para qualquer lei. <strong>ERRADO.</strong> Só para leis do Executivo, monocêntricas e sem oneração.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-10">Quóruns de Maioria Simples e Absoluta</h2>
+<p><strong>Maioria Simples (50% + 1):</strong><br/>- Mais da metade dos votos dos parlamentares presentes.<br/>- Usada para a maioria das leis ordinárias.</p>
+<p><strong>Maioria Absoluta (2/3 ou 3/5):</strong><br/>- <strong>2/3 (66,67%):</strong> para emendas constitucionais (Art. 60, caput), leis de iniciativa exclusiva do Poder Executivo em regime de tramitação sumaríssima (Art. 65, §1º).<br/>- <strong>3/5 (60%):</strong> para tratados internacionais (Art. 49, VII), emendas que alteram a forma federativa (Art. 60, §3º).</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'Simples = 50%+1 / Absoluta = 2/3 ou 3/5'.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que emendas constitucionais exigem 3/5. <strong>ERRADO.</strong> Exigem <strong>2/3</strong> (Art. 60, caput).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-11">⚠️ Pegadinhas Frequentes</h2>
+<p>❌ 'Leis ordinárias exigem maioria absoluta.' → <strong>ERRADO</strong> (maioria simples).<br/>❌ 'Emendas constitucionais exigem 3/5.' → <strong>ERRADO</strong> (exigem 2/3).<br/>❌ 'Processo sumaríssimo é para qualquer lei.' → <strong>ERRADO</strong> (só para leis do Executivo, monocêntricas, sem oneração).<br/>❌ 'Iniciativa popular exige 1% em cada Estado.' → <strong>ERRADO</strong> (1% nacional, 0,3% em 5 Estados).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-12">Sancção Presidencial</h2>
+<p>Art. 66, caput: 'O Presidente da República não vedará ao Congresso Nacional, no prazo de 30 (trinta) dias, a lei que lhe for enviada, sancionando-a ou vedando-a, total ou parcialmente.'</p>
+<p><strong>Prazo:</strong> 30 dias para o Presidente sancionar ou vetar a lei.</p>
+<p><strong>Tipos de sanção:</strong><br/>- <strong>Sanção tácita:</strong> se o Presidente não se manifestar em 30 dias, a lei entra em vigor automaticamente.<br/>- <strong>Sanção expressa:</strong> o Presidente assina a lei.<br/>- <strong>Veto:</strong> o Presidente rejeita a lei (total ou parcial).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-13">Veto Político e Veto Jurídico</h2>
+<p><strong>Veto Político (parcial):</strong><br/>- O Presidente veta apenas <strong>alguns artigos ou parágrafos</strong> do projeto.<br/>- O Congresso pode derrubar por <strong>maioria absoluta</strong> (Art. 66, §4º, parágrafo único).</p>
+<p><strong>Veto Jurídico (total):</strong><br/>- O Presidente veta <strong>todo o projeto</strong> por considerá-lo inconstitucional.<br/>- O Congresso pode derrubar por <strong>3/5</strong> dos votos de cada Casa (Art. 66, §4º, parágrafo único).</p>
+<p><strong>Derrubada de veto:</strong><br/>- <strong>Voto nominal (aberto):</strong> hoje é obrigatório (Lei 13.105/2015, art. 10, §1º).<br/>- <strong>Prazo:</strong> 30 dias para a Câmara e 30 dias para o Senado.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que a derrubada de veto pode ser por voto secreto. <strong>ERRADO.</strong> É sempre <strong>nominal</strong> (voto aberto).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-14">Para Leigos – O Veto Presidencial</h2>
+<p>Imagine que o Congresso aprova uma lei com 10 artigos. O Presidente lê e pensa:</p>
+<p>- 'Artigos 1, 2 e 3 estão ótimos, mas o artigo 4 é inconstitucional.' → <strong>Veto parcial (político)</strong> apenas do artigo 4. O Congresso precisa de <strong>maioria absoluta</strong> para derrubar.</p>
+<p>- 'Toda a lei é inconstitucional.' → <strong>Veto total (jurídico)</strong>. O Congresso precisa de <strong>3/5</strong> para derrubar.</p>
+<p>- 'Não vou me manifestar em 30 dias.' → <strong>Sanção tácita</strong>. A lei entra em vigor automaticamente.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-15">🧠 MNEMÔNICOS GERAIS</h2>
+<p>- <strong>'Câmara = proporcional / Senado = igualitário'</strong> — representação nas duas casas.<br/>- <strong>'1% nacional, 0,3% em 5 Estados'</strong> — iniciativa popular.<br/>- <strong>'50%+1 = simples / 2/3 ou 3/5 = absoluta'</strong> — quóruns.<br/>- <strong>'30 dias = sanção/veto / 30+30 = derrubada'</strong> — prazos.<br/>- <strong>'Veto parcial = político / Veto total = jurídico'</strong> — tipos de veto.<br/>- <strong>'Voto nominal (aberto) = derrubada de veto'</strong> — sempre aberto hoje.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-16">⚠️ Pegadinhas Mais Cobradas</h2>
+<p>❌ 'Senador pode ser reeleito para o mesmo cargo.' → <strong>ERRADO</strong> (8 anos, sem reeleição).<br/>❌ 'Leis ordinárias exigem maioria absoluta.' → <strong>ERRADO</strong> (maioria simples).<br/>❌ 'Emendas constitucionais exigem 3/5.' → <strong>ERRADO</strong> (exigem 2/3).<br/>❌ 'Iniciativa popular exige 1% em cada Estado.' → <strong>ERRADO</strong> (1% nacional, 0,3% em 5 Estados).<br/>❌ 'Derrubada de veto é por voto secreto.' → <strong>ERRADO</strong> (é nominal/aberto).<br/>❌ 'Veto parcial exige 3/5 para derrubar.' → <strong>ERRADO</strong> (exige maioria absoluta; 3/5 é para veto jurídico).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-17">✅ CHECKLIST PARA A PROVA</h2>
+<p>✅ Congresso Nacional: Câmara (proporcional, 4 anos) + Senado (igualitário, 8 anos, sem reeleição).<br/>✅ Iniciativa: Presidente, parlamentar, cidadãos (1% nacional, 0,3% em 5 Estados).<br/>✅ Processo ordinário: 3 leituras + comissões + sanção/veto.<br/>✅ Processo sumaríssimo: Executivo, monocrético, sem oneração, tramitação acelerada.<br/>✅ Quóruns: simples (50%+1), absoluta (2/3 para EC, 3/5 para tratados).<br/>✅ Sanção: 30 dias. Veto parcial (político) e total (jurídico).<br/>✅ Derrubada de veto: maioria absoluta (parcial) ou 3/5 (jurídico), voto nominal (aberto).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-18">Presidente da República — Chefe de Estado e de Governo</h2>
+<p>No presidencialismo brasileiro, o <strong>Presidente da República</strong> é simultaneamente <strong>Chefe de Estado</strong> e <strong>Chefe de Governo</strong> (Art. 84, caput).</p>
+<p><strong>Funções de Chefe de Estado:</strong><br/>- Representar a Nação;<br/>- Garantir a ordem constitucional;<br/>- Comandar as Forças Armadas;<br/>- Conduzir relações exteriores.</p>
+<p><strong>Funções de Chefe de Governo:</strong><br/>- Administrar o país;<br/>- Propor a legislação;<br/>- Executar as leis;<br/>- Gerenciar a economia e a política interna.</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'Presidente = Estado + Governo' — no Brasil, as duas funções são acumuladas no mesmo cargo.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-19">Atribuições do Presidente (Art. 84, caput e parágrafos)</h2>
+<p>Art. 84, caput: 'O Presidente da República dirige a política nacional, com as funções de chefe de Estado e de governo, sendo o chefe da execução, e tem as seguintes atribuições:'</p>
+<p><strong>Principais atribuições (Art. 84, I a XVII):</strong><br/>- <strong>I:</strong> Legislar com decreto (medida provisória);<br/>- <strong>II:</strong> Sanctionar ou vetar leis;<br/>- <strong>III:</strong> Manter a ordem pública;<br/>- <strong>IV:</strong> Organizar a administração pública;<br/>- <strong>V:</strong> Conduzir a política nacional de defesa;<br/>- <strong>VI:</strong> Conduzir a política nacional de relações exteriores;<br/>- <strong>VII:</strong> Celebrar tratados e convenções internacionais;<br/>- <strong>VIII:</strong> Conduzir a política nacional de economia;<br/>- <strong>IX:</strong> Nomear e exonerar ministros;<br/>- <strong>X:</strong> Nomear juízes do STF (com aprovação do Senado);<br/>- <strong>XI:</strong> Nomear e exonerar embaixadores;<br/>- <strong>XII:</strong> Nomear comissões reguladoras;<br/>- <strong>XIII:</strong> Comandar as Forças Armadas;<br/>- <strong>XIV:</strong> Declarar estado de sítio e estado de defesa;<br/>- <strong>XV:</strong> Nomear governadores de Territórios Federais;<br/>- <strong>XVI:</strong> Promulgar leis e decretos;<br/>- <strong>XVII:</strong> Outras atribuições definidas em lei.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o Presidente pode legislar por decreto. <strong>ERRADO.</strong> O Presidente pode editar <strong>medidas provisórias</strong> (que têm força de lei), mas não decrees comuns.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-20">Vice-Presidente da República</h2>
+<p>O <strong>Vice-Presidente</strong> é eleito na mesma chapa do Presidente (Art. 12, §4º, II).</p>
+<p><strong>Funções:</strong><br/>- Substituir o Presidente em caso de impedimento;<br/>- Presidir o Conselho de Segurança Nacional;<br/>- Coordenar a articulação do governo no Congresso.</p>
+<p><strong>Eleição:</strong> voto direto e secreto, na mesma chapa do Presidente.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o Vice-Presidente é eleito separadamente do Presidente. <strong>ERRADO.</strong> São eleitos juntos (chapa única).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section">
+
+<p>❌ 'O Presidente pode legislar por decreto comum.' → <strong>ERRADO</strong> (medida provisória, não decreto).<br/>❌ 'O Vice-Presidente é eleito separadamente.' → <strong>ERRADO</strong> (chapa única).<br/>❌ 'O Presidente pode nomear ministros sem aprovação do Senado.' → <strong>ERRADO</strong> (exige aprovação do Senado para ministros do STF).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-22">Estrutura do Poder Judiciário</h2>
+<p>O Poder Judiciário é organizado em <strong>dois ramos principais</strong>:</p>
+<p><strong>1. Justiça Comum:</strong><br/>- <strong>STF (Supremo Tribunal Federal):</strong> corte constitucional, competência sobre ações direitas de inconstitucionalidade, ADPF, ADI, ADC, ADO.<br/>- <strong>STJ (Superior Tribunal de Justiça):</strong> competência sobre recursos federais de matéria não constitucional.<br/>- <strong>TRFs (Tribunais Regionais Federais):</strong> 4 regiões, competência sobre crimes federais e ações federais.<br/>- <strong>TJs (Tribunais de Justiça):</strong> 1 por Estado e DF, competência sobre matéria estadual.<br/>- <strong>Justiça Especial Cível e Criminal:</strong> competência sobre causas de menor complexidade.</p>
+<p><strong>2. Justiça Especial:</strong><br/>- <strong>TSE (Tribunal Superior Eleitoral):</strong> competência sobre matéria eleitoral.<br/>- <strong>TST (Tribunal Superior do Trabalho):</strong> competência sobre matéria trabalhista.<br/>- <strong>TJMs (Tribunais Militares):</strong> competência sobre crimes militares.</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'STF-STJ-TRF-TJ-TSE-TST-TJM' — ordem de hierarquia.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-23">Supremo Tribunal Federal (STF) — Art. 93</h2>
+<p><strong>Função:</strong> é a <strong>corte constitucional</strong> do Brasil, com competência para:</p>
+<p>- Julgar ações diretas de inconstitucionalidade (ADI, ADO);<br/>- Julgar ações declaratórias de constitucionalidade (ADC);<br/>- Julgar arguições de descumprimento de preceito fundamental (ADPF);<br/>- Julgar recursos de constitucionalidade;<br/>- Julgar ações penais de crimes de responsabilidade;<br/>- Julgar ações de improbidade administrativa de alta relevância.</p>
+<p><strong>Composição:</strong> 11 ministros, nomeados pelo Presidente da República com aprovação do Senado Federal, por 2/3 (Art. 10, caput).</p>
+<p><strong>Presidente do STF:</strong> eleito pelo plenário, por 2 anos, entre os ministros.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o STF é o tribunal mais alto do Brasil. <strong>ERRADO.</strong> O STF é a <strong>corte constitucional</strong>; o STJ é o <strong>tribunal de recurso</strong> mais alto para matérias não constitucionais.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-24">Superior Tribunal de Justiça (STJ) — Art. 95</h2>
+<p><strong>Função:</strong> é o <strong>tribunal de recurso</strong> mais alto para matérias <strong>não constitucionais</strong> (direito comum, direito penal comum, direito processual comum).</p>
+<p><strong>Competências principais:</strong><br/>- Recursos de matéria não constitucional;<br/>- Ações de constitucionalidade indireta (quando o STF não tem competência);<br/>- Julgamento de crimes federais de menor complexidade.</p>
+<p><strong>Composição:</strong> 16 ministros, nomeados pelo Presidente da República com aprovação do Senado Federal.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o STJ julga ações de inconstitucionalidade. <strong>ERRADO.</strong> O STJ julga <strong>recursos de constitucionalidade</strong> (quando o STF não tem competência), mas não ações diretas de inconstitucionalidade (ADI, ADO, ADPF).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-25">Tribunais Regionais Federais (TRFs) e Tribunais de Justiça (TJs)</h2>
+<p><strong>TRFs (Tribunais Regionais Federais):</strong><br/>- 4 regiões (SP/RJ/EI, RJ/ES/RR, DF/GO/MT/TO, RS/SC/PR).<br/>- Competência sobre crimes federais e ações federais.<br/>- Presidente nomeado pelo STF.</p>
+<p><strong>TJs (Tribunais de Justiça):</strong><br/>- 1 por Estado e DF.<br/>- Competência sobre matéria estadual (crimes estaduais, ações cíveis estaduais).<br/>- Presidente eleito entre os desembargadores.</p>
+<p><strong>Justiça Especial:</strong><br/>- Competência sobre causas de menor complexidade (valor abaixo de 60 salários mínimos).<br/>- Não há recursos (decisão é final).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que os TRFs julgam crimes estaduais. <strong>ERRADO.</strong> TRFs julgam <strong>crimes federais</strong>; TJs julgam <strong>crimes estaduais</strong>.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-26">Para Leigos – A Pirâmide do Poder Judiciário</h2>
+<p>Pense no Poder Judiciário como uma pirâmide:</p>
+<p>- <strong>Topo:</strong> STF (constitucional) e STJ (não constitucional).<br/>- <strong>Meio:</strong> TRFs (federais) e TJs (estaduais).<br/>- <strong>Base:</strong> Vários (juízos de primeiro grau).<br/>- <strong>Laterais:</strong> TSE (eleitoral), TST (trabalho), TJMs (militar).</p>
+<p>Cada nível tem uma 'especialidade': STF protege a Constituição, STJ protege o direito comum, TRFs lidam com crimes federais, TJs lidam com crimes estaduais.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section">
+
+<p>- <strong>'Presidente = Estado + Governo'</strong> — funções acumuladas no presidencialismo.<br/>- <strong>'STF-STJ-TRF-TJ-TSE-TST-TJM'</strong> — hierarquia do Poder Judiciário.<br/>- <strong>'STF = constitucional / STJ = não constitucional'</strong> — especialidades.<br/>- <strong>'TRF = federal / TJ = estadual'</strong> — competências.<br/>- <strong>'Chapa única'</strong> — Presidente e Vice eleitos juntos.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section">
+
+<p>❌ 'O Presidente pode legislar por decreto comum.' → <strong>ERRADO</strong> (medida provisória).<br/>❌ 'O Vice-Presidente é eleito separadamente.' → <strong>ERRADO</strong> (chapa única).<br/>❌ 'STF é o tribunal mais alto do Brasil.' → <strong>ERRADO</strong> (é a corte constitucional; STJ é o mais alto para não constitucional).<br/>❌ 'STJ julga ADIs.' → <strong>ERRADO</strong> (STF julga ADIs; STJ julga recursos de constitucionalidade).<br/>❌ 'TRF julga crimes estaduais.' → <strong>ERRADO</strong> (TJ julga crimes estaduais; TRF julga crimes federais).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section">
+
+<p>✅ Presidente: Chefe de Estado e Governo (presidencialismo), Art. 84 (17 atribuições).<br/>✅ Vice-Presidente: eleito na chapa única, substitui o Presidente.<br/>✅ STF: corte constitucional, 11 ministros, julga ADI/ADC/ADPF/ADO.<br/>✅ STJ: tribunal de recursos não constitucionais, 16 ministros.<br/>✅ TRFs: 4 regiões, crimes federais.<br/>✅ TJs: 1 por Estado/DF, crimes estaduais.<br/>✅ TSE: matéria eleitoral. TST: matéria trabalhista. TJMs: crimes militares.</p>
+</div>
+</div>
+<section class="material-github"><h2 class="complementar-titulo">Material complementar e mapas mentais</h2><p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/09.json" rel="noopener" target="_blank">Ver fonte no GitHub</a></p><h2>Tabela Resumo e Pegadinhas Finais (Legislativo)</h2><div class="study-card" data-study-kind="texto"><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/09.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div><h2>Tabela Resumo e Pegadinhas Finais (Executivo e Judiciário)</h2><div class="study-card" data-study-kind="texto"><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/09.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div></section></article>
+</div>
+<footer class="footer">
+<span>Matéria Policial · Conteúdo para estudar e revisar.</span>
+<a href="../../../index.html">Voltar à biblioteca</a>
+</footer>
+<nav aria-label="Navegação entre assuntos" class="bottom-nav"><a class="previous" href="constitucional-03.html"><small>Assunto anterior</small>Controle de Constitucionalidade</a><a class="next" href="constitucional-01.html"><small>Próximo assunto</small>Administração Pública — Art. 37 CF</a></nav></main>
+</div>
+</body>
+</html>
+

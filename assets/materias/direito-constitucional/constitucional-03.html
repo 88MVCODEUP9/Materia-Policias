@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="#101820" name="theme-color"/>
+<meta content="dark" name="color-scheme"/>
+<title>Controle de Constitucionalidade · Direito Constitucional · Matéria Policial</title>
+<meta content="O que é Controle de Constitucionalidade?" name="description"/>
+<link href="../../icone.png" rel="icon"/>
+<script defer="" src="../../js/app.js?v=leitura-20261026"></script>
+<style id="css-personalizado">/* Controle de Constitucionalidade — CSS próprio (aula). */
+:root {color-scheme: dark;
+  --bg: #0a0d18;
+  --panel: #101527;
+  --surface: #151b30;
+  --surface-2: #1c2440;
+  --ink: #eef1fb;
+  --muted: #9aa5c4;
+  --line: #232c4a;
+  --line-strong: #364067;
+  --gold: #ffc45c;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --accent-width: 4px;
+  --tint: 16%;
+  --glow: 34%;
+  --shadow: 0 8px 28px rgb(2 4 14 / 45%);
+  --grad-brand: linear-gradient(120deg, #ffc45c 0%, #ff8a5c 45%, #ff5c8a 100%);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  
+  --paper: var(--bg);
+  --white: var(--surface);
+  --accent: var(--ink);}
+* {box-sizing: border-box;}
+body {margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased;}
+[hidden] {display: none !important;}
+a {color: inherit; text-decoration: none;}
+a:hover {text-decoration: underline; text-underline-offset: 3px;}
+button {font: inherit;}
+button {cursor: pointer;}
+button {color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 10px 16px; min-height: 44px; font-size: 13px; font-weight: 600; transition: border-color .15s ease, background-color .15s ease;}
+button:hover {background: var(--surface-2); border-color: var(--muted);}
+:focus-visible {outline: 2px solid var(--gold); outline-offset: 3px;}
+::selection {color: var(--bg); background: var(--gold);}
+h1,
+h2,
+p {margin: 0;}
+h1,
+h2 {font-family: Georgia, "Times New Roman", serif; font-weight: 500;}
+h1 {font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -.02em;}
+h2 {font-size: 28px; line-height: 1.25; letter-spacing: -.01em;}
+small {font-size: 12px;}
+.skip {position: fixed; top: -80px; left: 16px; padding: 10px 16px; z-index: 20; background: var(--ink); color: var(--bg); font-weight: 700; border-radius: var(--radius);}
+.skip:focus {top: 12px;}
+.muted {color: var(--muted); font-size: 12px;}
+.status {color: var(--muted); font-size: 12px;}
+.status:empty {display: none;}
+[id] {scroll-margin-top: 24px;}
+.sidebar {position: fixed; inset: 0 auto 0 0; width: 240px; padding: 32px 20px 22px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10;}
+.brand {display: block; margin: 0 10px 28px; font: 500 30px/1 Georgia, serif; letter-spacing: -.02em;}
+.brand-period {color: var(--gold);}
+.brand small {display: block; font: 600 10px/1.5 "Segoe UI", sans-serif; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px;}
+.sidebar nav {overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; padding: 4px; margin: -4px;}
+.nav-label {font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 20px 10px 8px;}
+.sidebar nav a {display: block; font-size: 13px; line-height: 1.45; padding: 8px 10px; margin: 1px 0; border-radius: var(--radius); color: var(--muted);}
+.sidebar nav a:hover {color: var(--ink); background: var(--surface); text-decoration: none;}
+.sidebar nav a[aria-current] {color: var(--ink); background: var(--surface-2); font-weight: 600; box-shadow: inset 2px 0 0 var(--gold);}
+.sidebar-footer {margin-top: auto; padding: 20px 10px 0; font-size: 12px; color: var(--ink);}
+.sidebar-footer span {display: block; color: var(--muted); font-size: 11px; margin-top: 2px;}
+.workspace {margin-left: 240px; min-width: 0;}
+.topbar {min-height: 60px; border-bottom: 1px solid var(--line); padding: 0 44px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; background: var(--bg);}
+.topbar a {color: var(--ink); text-decoration: underline; text-underline-offset: 3px;}
+.topbar > span {font-size: 11px; text-transform: uppercase; letter-spacing: .1em;}
+.mobile-menu {display: none;}
+main {max-width: 1280px; margin: auto; padding: 48px 44px 32px;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: var(--discipline-color, var(--line));}
+.footer {margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px;}
+.footer a {text-decoration: underline; text-underline-offset: 4px;}
+.breadcrumbs {color: var(--muted); font-size: 12px; margin-bottom: 26px;}
+.breadcrumbs a {text-decoration: underline; text-underline-offset: 3px;}
+.reader-header {padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 22px;}
+.chip {display: inline-block; padding: 3px 10px; margin-bottom: 14px; border: 1px solid var(--line-strong); border-left: var(--accent-width) solid var(--discipline-color, var(--line-strong)); border-radius: var(--radius); color: var(--ink); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em;}
+.reader-header h1 {max-width: 24ch; margin-bottom: 14px; font-size: clamp(30px, 3.2vw, 44px);}
+.reader-actions {display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px;}
+.reader-actions button {font-size: 12px; min-height: 38px; padding: 8px 13px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--surface-2); color: var(--ink); border-color: var(--gold);}
+.reader-layout {display: grid; grid-template-columns: minmax(0,1fr) 180px; gap: 36px; align-items: start; margin-top: 24px;}
+.bottom-nav {display: flex; justify-content: space-between; gap: 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line);}
+.bottom-nav a {max-width: 47%; font: 500 17px/1.4 Georgia, serif;}
+.bottom-nav a:hover {color: var(--gold);}
+.bottom-nav small {display: block; font: 11px/1.7 "Segoe UI", sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px;}
+.bottom-nav .next {text-align: right;}
+.prose {min-width: 0; width: 100%; font: 17px/1.8 Georgia, "Times New Roman", serif; overflow-wrap: break-word;}
+.prose h2 {font-size: 25px; line-height: 1.3; margin: 4px 0 18px;}
+.prose p {margin: 0 0 16px;}
+.prose strong {font-weight: 700;}
+.prose a {text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere;}
+.prose .text-section p {line-height: 1.85;}
+.prose .text-section p + p {margin-top: 14px;}
+.prose figure {margin: 22px 0;}
+.study-card {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"], [data-study-kind="h2"], [data-study-kind="h3"], [data-study-kind="destaque"]) {--kind-ink: var(--discipline-color, #5b9bff);}
+.study-card:is([data-study-kind="explicacao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="passo"], [data-study-kind="tabela"], [data-study-kind="laboratorio-logico"], [data-study-label="Explicação"], [data-study-label="Exemplo"], [data-study-label="Analogia"], [data-study-label="Fórmula"]) {--kind-ink: #2bc4e6;}
+.study-card:is([data-study-kind="bizu"], [data-study-kind="mnemonico"], [data-study-kind="resumo"], [data-study-kind="dica"], [data-study-kind="mapa-mental"], [data-type="resumo"], [data-study-label="Resumo"], [data-study-label="Mnemônico"], [data-study-label="Mapa Mental"], [data-study-label="Bizu"], [data-study-label="Como estudar"]) {--kind-ink: #ffc83d;}
+.study-card:is([data-study-kind="alerta"], [data-study-label="Atenção"], [data-study-label="Importante"], [data-study-label="Pegadinha"]) {--kind-ink: #ff9340;}
+.study-card {color: var(--ink); background: var(--panel); padding: 24px 26px; margin-bottom: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink); border-radius: var(--radius); box-shadow: var(--shadow);}
+.study-card :is(h2, h3) {color: var(--ink);}
+.study-card .text-section > :first-child {margin-top: 0;}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {display: inline-block; padding: 3px 9px; margin: 0 0 14px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--muted); font: 600 11px/1.5 "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .08em;}
+.study-card > :last-child,
+.text-section > :last-child {margin-bottom: 0;}
+.text-section {margin: 0; padding: 0;}
+.table-wrap {max-width: 100%; overflow: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); scrollbar-width: thin;}
+table {width: 100%; border-collapse: collapse; font: 13px/1.6 "Segoe UI", sans-serif; font-variant-numeric: tabular-nums;}
+th,
+td {padding: 11px 14px; text-align: left; vertical-align: top; min-width: 90px; border-bottom: 1px solid var(--line);}
+th {background: var(--surface-2); color: var(--ink); font-size: 12px; font-weight: 600; border-bottom-color: var(--line-strong);}
+tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 2%);}
+tbody tr:last-child td {border-bottom: 0;}
+td[data-truth] {font-weight: 700; text-align: center;}
+td[data-truth=true] {color: #34d399;}
+td[data-truth=false] {color: #ff5d7a;}
+[data-discipline="direito-constitucional"] {--discipline-color: #a66bff;}
+.mnemonic-tone-1 {--mnemonic-color: #2bc4e6;}
+.mnemonic-tone-2 {--mnemonic-color: #a56bff;}
+.mnemonic-tone-3 {--mnemonic-color: #34d399;}
+.mnemonic-tone-4 {--mnemonic-color: #ffc83d;}
+.mnemonic-tone-5 {--mnemonic-color: #ff5ca8;}
+.mnemonic-tone-6 {--mnemonic-color: #ff9340;}
+.mnemonic-tone-7 {--mnemonic-color: #6c8cff;}
+.mnemonic-tone-8 {--mnemonic-color: #9fdc3c;}
+.memory-aid li + li {margin-top: 10px;}
+.memory-aid .text-section > p + p {margin-top: 12px;}
+:root {--on-color: #0a0d18;}
+body {--hc: var(--discipline-color, #7a7dff); background:
+  radial-gradient(900px 520px at 88% -8%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 62%),
+  radial-gradient(760px 520px at -6% 38%, rgb(255 92 138 / 11%), transparent 62%),
+  radial-gradient(700px 500px at 60% 112%, rgb(38 196 238 / 10%), transparent 60%),
+  var(--bg); background-attachment: fixed;}
+h1,
+h2 {font-family: "Segoe UI", system-ui, Arial, sans-serif; font-weight: 800; letter-spacing: -.02em;}
+::selection {color: var(--on-color); background: var(--gold);}
+* {scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent;}
+button {border-radius: var(--radius-sm); background: var(--surface-2); border-color: var(--line-strong);}
+button:hover {background: color-mix(in srgb, var(--hc) 22%, var(--surface-2)); border-color: var(--hc); transform: translateY(-1px);}
+button {transition: border-color .15s ease, background-color .15s ease, transform .15s ease, box-shadow .15s ease;}
+.sidebar {background: linear-gradient(180deg, #121833 0%, #0d1226 55%, #0a0d18 100%); border-right: 1px solid var(--line); box-shadow: 8px 0 40px rgb(2 4 14 / 40%);}
+.sidebar::before {content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad-brand);}
+.brand {font: 800 29px/1.05 "Segoe UI", system-ui, sans-serif; letter-spacing: -.03em;}
+.brand-period {background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.brand small {color: var(--gold); letter-spacing: .2em;}
+.nav-label {color: #6e7aa3;}
+.sidebar nav a {display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; --nc: var(--gold); transition: background-color .15s ease, color .15s ease, transform .15s ease;}
+.sidebar nav a::before {content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--nc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nc) 22%, transparent); opacity: .85;}
+.sidebar nav a:hover {color: var(--ink); background: color-mix(in srgb, var(--nc) 14%, transparent); transform: translateX(2px);}
+.sidebar nav a[aria-current] {color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 38%, transparent), color-mix(in srgb, var(--nc) 8%, transparent)); box-shadow: inset 3px 0 0 var(--nc);}
+.sidebar nav a[aria-current]::before {opacity: 1; box-shadow: 0 0 12px var(--nc);}
+.sidebar nav a[href*="direito-administrativo"] {--nc: #4d8dff;}
+.sidebar nav a[href*="atualidades"] {--nc: #ff8a3d;}
+.sidebar nav a[href*="direitos-humanos"] {--nc: #ff5ca8;}
+.sidebar nav a[href*="legislacao-extravagante"] {--nc: #d45cf0;}
+.sidebar nav a[href*="guardas-municipais"] {--nc: #2fd08a;}
+.sidebar nav a[href*="informatica"] {--nc: #26c4ee;}
+.sidebar nav a[href*="matematica"] {--nc: #7a7dff;}
+.sidebar nav a[href*="direito-penal"] {--nc: #ff5a6e;}
+.sidebar nav a[href*="portugues"] {--nc: #25d1b8;}
+.sidebar nav a[href*="processo-penal"] {--nc: #f5bf2e;}
+.sidebar nav a[href*="raciocinio-logico"] {--nc: #9fdc3c;}
+.sidebar-footer {border-top: 1px solid var(--line); margin: auto 10px 0; padding: 18px 0 0;}
+.topbar {position: sticky; top: 0; z-index: 5; background: rgb(10 13 24 / 72%); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line);}
+.topbar > span {color: var(--gold); font-weight: 700;}
+body[data-discipline] :is(.hero, .reader-header) {border-bottom-color: color-mix(in srgb, var(--hc) 45%, var(--line));}
+.footer {border-top-color: var(--line-strong);}
+.footer a {color: var(--gold);}
+.breadcrumbs a {color: var(--hc); font-weight: 600;}
+.reader-header {position: relative; overflow: hidden; padding: 32px 34px 28px; margin-bottom: 24px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 22px; box-shadow: var(--shadow), 0 0 70px -32px color-mix(in srgb, var(--hc) 65%, transparent);
+  background: radial-gradient(480px 240px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 72%), linear-gradient(160deg, var(--surface-2), var(--panel));}
+.reader-header > * {position: relative; z-index: 1;}
+.reader-header::after {content: ""; position: absolute; right: -50px; top: -50px; width: 190px; height: 190px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 24px color-mix(in srgb, var(--hc) 7%, transparent); pointer-events: none;}
+.reader-header h1 {max-width: 26ch; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; background: linear-gradient(100deg, #fff 20%, color-mix(in srgb, var(--hc) 45%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent;}
+.chip {border: 0; border-radius: 999px; padding: 5px 14px; background: var(--hc); color: var(--on-color); font-weight: 800; letter-spacing: .09em; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--hc) 80%, transparent);}
+.chip:hover {text-decoration: none; filter: brightness(1.1);}
+.reader-header .muted {color: #b6c0dd; font-size: 13px;}
+.reader-actions button {border-radius: 999px; padding: 8px 18px;}
+.reader-actions button[aria-pressed=true],
+.primary {background: var(--hc); color: var(--on-color); border-color: var(--hc); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--hc) 80%, transparent);}
+.reader-actions button[aria-pressed=true]:hover {filter: brightness(1.08); transform: translateY(-1px);}
+.bottom-nav a {flex: 1; max-width: 48%; padding: 18px 22px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--hc) 30%, var(--line)); background: linear-gradient(120deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface)); font: 800 16px/1.4 "Segoe UI", sans-serif; transition: transform .18s ease, border-color .18s ease;}
+.bottom-nav a:hover {color: #fff; border-color: var(--hc); text-decoration: none; transform: translateY(-2px);}
+.bottom-nav small {color: var(--hc); font-weight: 800;}
+.bottom-nav .next {background: linear-gradient(240deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface));}
+.prose {color: #e4e9f8;}
+.prose h2 {font-weight: 800;}
+.prose strong {color: #fff;}
+.study-card {--k: var(--kind-ink); position: relative; padding: 24px 28px; margin-bottom: 18px; border: 1px solid color-mix(in srgb, var(--k) 34%, var(--line)); border-left: var(--accent-width) solid var(--k); border-radius: 16px; box-shadow: 0 6px 22px -10px rgb(2 4 14 / 60%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--k) 16%, var(--panel)) 0%, color-mix(in srgb, var(--k) 5%, var(--panel)) 75%);}
+.prose .study-card > .card-kicker,
+.prose .card-kicker {padding: 4px 12px; margin-bottom: 14px; border: 0; border-radius: 999px; background: var(--k, var(--hc)); color: var(--on-color); font-weight: 800; letter-spacing: .1em;}
+.study-card[data-study-label="Conteúdo"] > .card-kicker {display: none;}
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 8%, var(--panel)), var(--panel) 80%); border-color: color-mix(in srgb, var(--k) 20%, var(--line)); box-shadow: none;}
+.study-card:is([data-study-kind="destaque"], [data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="resumo"], [data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="questao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="mnemonico"]) {background: linear-gradient(135deg, color-mix(in srgb, var(--k) 24%, var(--panel)) 0%, color-mix(in srgb, var(--k) 8%, var(--panel)) 80%); box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--k) 55%, transparent);}
+.table-wrap {border-radius: 14px; border-color: color-mix(in srgb, var(--hc) 30%, var(--line)); box-shadow: 0 6px 20px -10px rgb(2 4 14 / 60%);}
+th {background: linear-gradient(180deg, color-mix(in srgb, var(--hc) 46%, var(--surface-2)), color-mix(in srgb, var(--hc) 26%, var(--surface-2))); color: #fff; font-weight: 700; border-bottom-color: var(--hc);}
+tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 3.5%);}
+tbody tr:hover td:not([data-truth]) {background: color-mix(in srgb, var(--hc) 11%, transparent);}
+td[data-truth=true] {color: #34d399; background: rgb(52 211 153 / 12%);}
+td[data-truth=false] {color: #ff5d7a; background: rgb(255 93 122 / 12%);}
+.skip {background: var(--gold); color: var(--on-color);}
+@media (prefers-reduced-motion: no-preference) {
+main > * {animation: entrar .45s ease both;}
+main > *:nth-child(2) {animation-delay: .05s;}
+main > *:nth-child(3) {animation-delay: .1s;}
+}
+@media (min-width: 1500px) {
+.prose {font-size: 18px;}
+.reader-layout {gap: 44px; grid-template-columns: minmax(0,820px) 200px;}
+}
+@media (max-width: 1120px) {
+main {padding: 36px 28px 28px;}
+.topbar {padding: 0 28px;}
+.reader-layout {grid-template-columns: minmax(0,1fr);}
+}
+@media (max-width: 800px) {
+.sidebar {position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line);}
+.brand {margin: 0; font-size: 26px;}
+.brand small {margin-top: 6px; font-size: 10px;}
+.mobile-menu {display: block; align-self: center; background: transparent;}
+.sidebar nav {display: none; grid-column: 1/-1; max-height: 60vh; margin-top: 20px;}
+.sidebar.open nav {display: block;}
+.sidebar-footer {display: none;}
+.workspace {margin: 0;}
+.topbar {min-height: 46px; padding: 0 24px;}
+main {padding: 30px 24px 26px;}
+.study-card {padding: 22px 22px;}
+.reader-header h1 {font-size: 36px;}
+}
+@media (max-width: 540px) {
+.reader-header h1 {font-size: 32px;}
+.breadcrumbs {margin-bottom: 20px;}
+.prose {font-size: 16.5px;}
+.prose h2 {font-size: 24px;}
+.study-card {padding: 20px 18px; margin-bottom: 15px;}
+th,
+td {padding: 10px; min-width: 100px;}
+.footer {flex-direction: column; gap: 10px;}
+.bottom-nav a {font-size: 16px;}
+}
+@media (prefers-reduced-motion: reduce) {
+*,
+*::before,
+*::after {scroll-behavior: auto !important; transition: none !important; animation: none !important;}
+}
+@media print {
+:root {color-scheme: light; --bg: #fff; --panel: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --muted: #333; --line: #bbb; --line-strong: #777;}
+body {background: #fff; font-size: 11pt;}
+.sidebar,
+.topbar,
+.breadcrumbs,
+.reader-actions,
+.bottom-nav,
+.footer,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+main {max-width: none; padding: 0;}
+.reader-layout {display: block;}
+.reader-header {padding-bottom: 15px;}
+.reader-header h1 {font-size: 28pt;}
+.study-card {background: #fff !important; color: #000 !important; padding: 12px 0; border-radius: 0; border: 0; border-bottom: 1px solid #aaa; box-shadow: none;}
+.prose {font-size: 11pt;}
+.prose h2 {font-size: 18pt; break-after: avoid;}
+.table-wrap {overflow: visible;}
+tr,
+figure {break-inside: avoid;}
+a {color: #000 !important;}
+}
+@media (max-width: 800px) {
+.reader-header::after {display: none;}
+.reader-header {padding: 24px 22px 22px; border-radius: 18px;}
+.sidebar::before {height: 3px;}
+.sidebar nav a:hover {transform: none;}
+.bottom-nav {flex-direction: column;}
+.bottom-nav a {max-width: 100%;}
+}
+@media (max-width: 540px) {
+.study-card {padding: 20px 18px;}
+}
+@media print {
+body {background: #fff !important; color: #000;}
+.sidebar,
+.topbar,
+.reader-actions,
+.bottom-nav,
+.skip {display: none !important;}
+.workspace {margin: 0;}
+.reader-layout {display: block;}
+.reader-header,
+.study-card,
+.table-wrap {background: #fff !important; box-shadow: none !important; border-color: #bbb !important; color: #000;}
+.reader-header h1 {color: #000 !important; -webkit-text-fill-color: #000; text-shadow: none; background: none !important;}
+.prose,
+.prose strong {color: #000;}
+.study-card {break-inside: avoid;}
+th {background: #e8e8e8 !important; color: #000 !important;}
+.chip {background: #eee; color: #000; box-shadow: none;}
+}
+.material-github {margin-block: 32px; min-width: 0;}
+.material-github .study-card {overflow-wrap: anywhere;}
+.prose .memory-aid,
+.prose .memory-inline {--mnemonic-color: #facc15;
+  padding: 22px; margin-block: 20px;
+  border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));}
+.prose .memory-aid .memory-line {margin-block: 12px; padding: 16px 18px;
+  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);}
+.prose .memory-line .memory-letter {display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace;}
+@media (max-width: 600px) {
+.prose .memory-aid,
+.prose .memory-inline {padding: 17px;}
+}
+@media print {
+.prose .memory-aid,
+.prose .memory-inline {background: white !important; color: black !important;}
+}
+:root {--ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;}
+.tilt-ativo {transition-duration: 60ms, var(--t-base), .15s, .15s;}
+.rev {opacity: 0; transform: translateY(10px);}
+.rev.entrou {opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);}
+@view-transition { navigation: auto; }::view-transition-old(root) {animation: 120ms var(--ease-out) both vt-sai;}
+::view-transition-new(root) {animation: 200ms var(--ease-out) both vt-entra;}
+@media (prefers-reduced-motion: reduce) {
+.rev,
+.rev.entrou {opacity: 1; transform: none; transition: none;}
+::view-transition-old(root),
+::view-transition-new(root) {animation: none;}
+}
+:root {--dc-accent:#60a5fa;--dc-accent-2:#22d3ee;--dc-ink:#eef5ff;--dc-muted:#a9b8ce;--dc-line:rgba(148,163,184,.22);--dc-card:rgba(15,27,48,.55)}
+html {scroll-behavior:smooth;scroll-padding-top:28px}
+.study-card {scroll-margin-top:28px}
+.reader-header > h1 {font-size:clamp(1.7rem,3.6vw,2.65rem);line-height:1.17;letter-spacing:-.045em;font-weight:850;text-wrap:balance}
+.prose .card-titulo {margin:0 0 14px;font-size:clamp(1.02rem,1.4vw,1.2rem);line-height:1.4;font-weight:760;letter-spacing:-.015em;color:#dbeafe;border-left:3px solid var(--dc-accent);padding:3px 0 3px 12px;text-wrap:pretty}
+.prose .study-card .text-section .card-titulo:first-child {margin-top:1px}
+.material-github>.complementar-titulo {font-size:clamp(1.24rem,2vw,1.55rem);font-weight:760;line-height:1.3;letter-spacing:-.025em;padding:0 0 12px;border-bottom:1px solid var(--dc-line);margin:32px 0 16px;color:#e1edff}
+.indice-unificado {border-color:var(--dc-line)!important;background:linear-gradient(140deg,rgba(30,58,100,.17),rgba(15,23,42,.12));border-radius:16px!important}
+.indice-unificado h2 {letter-spacing:-.02em;font-weight:800}
+.indice-unificado a {text-decoration:none;transition:color .18s,border-color .18s,background .18s}
+.indice-unificado a:hover {color:#7dd3fc}
+@media (prefers-reduced-motion:reduce) {
+html {scroll-behavior:auto}
+.indice-unificado a {transition:none}
+}
+@media print {
+.card-titulo {break-after:avoid}
+}
+:root {--dc-accent:#a66bff;--dc-accent-2:#60a5fa}
+html {scroll-padding-top:24px}
+body {min-width:0}
+main,
+.workspace,
+.reader-layout,
+.prose,
+.study-card {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+main {max-width:1240px}
+h1,
+h2 {font-family:"Segoe UI",system-ui,sans-serif;overflow-wrap:break-word}
+.prose {max-width:none;line-height:1.8}
+.prose p {overflow-wrap:break-word}
+.prose h2 {margin:30px 0 18px;font-size:clamp(1.3rem,2.5vw,1.75rem);font-weight:750}
+.prose figure {margin:16px 0}
+.study-card .text-section>.card-titulo {margin:0 0 16px}
+.study-card[data-study-kind="texto"] {--kind-ink:#a66bff}
+.indice-unificado {margin:0 0 30px;padding:24px;background:var(--panel,#101527)}
+.indice-unificado h2 {font-size:1.2rem;margin:0 0 18px}
+.indice-unificado ol {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 14px;padding:0;list-style:none}
+.indice-unificado li {min-width:0;margin:0}
+.indice-unificado a {display:block;padding:12px 14px;border:1px solid var(--dc-line);border-radius:10px;background:rgba(96,165,250,.06);font-size:.9rem;line-height:1.5;color:#dbeafe;overflow-wrap:anywhere}
+.indice-unificado a:hover {background:rgba(96,165,250,.14);border-color:#60a5fa;text-decoration:none}
+.table-wrap {max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+table {width:100%;border-collapse:collapse}
+th,
+td {vertical-align:top;overflow-wrap:break-word}
+.mapa-indisponivel {padding:20px;border:1px dashed var(--dc-line);border-radius:12px;background:rgba(96,165,250,.05)}
+.mapa-indisponivel .mapa-titulo {color:#eaf2ff;font-weight:700}
+.mapa-indisponivel p {margin:0 0 12px}
+.mapa-indisponivel a {color:#93c5fd;text-decoration:underline;text-underline-offset:3px}
+.bottom-nav {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:32px 0 18px}
+.bottom-nav a {min-width:0;padding:18px;border:1px solid var(--dc-line);border-radius:12px;overflow-wrap:break-word;background:var(--panel,#101527);font-weight:650}
+.bottom-nav small {display:block;margin-bottom:6px;font-size:.75rem;color:var(--muted,#9aa5c4)}
+.bottom-nav .next {grid-column:2;text-align:right}
+@media (max-width:900px) {
+.indice-unificado ol {grid-template-columns:1fr}
+.bottom-nav {gap:9px}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(1.65rem,6.5vw,2.2rem)}
+.indice-unificado {padding:18px}
+.study-card {padding:20px 16px}
+.bottom-nav {grid-template-columns:1fr}
+.bottom-nav .next {grid-column:1}
+.table-wrap table {min-width:520px}
+}
+@media (prefers-reduced-motion:reduce) {
+*,
+*::before,
+*::after {scroll-behavior:auto!important;animation:none!important;transition:none!important}
+}
+@media print {
+.indice-unificado,
+.bottom-nav {display:none!important}
+.study-card {background:#fff!important;color:#111!important;box-shadow:none!important}
+.study-card * {color:#111!important}
+.table-wrap {overflow:visible}
+.table-wrap table {min-width:0}
+}
+
+@keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+/* Layout específico do assunto */
+main {max-width:var(--page-width);}
+.reader-header h1 {text-wrap:balance;overflow-wrap:break-word}
+main,
+.workspace,
+.prose {min-width:0}
+.reader-layout {grid-template-columns:minmax(0,1fr);align-items:start}
+.prose {line-height:1.8}
+.study-card {margin-bottom:22px}
+.study-card .card-titulo {line-height:1.4;overflow-wrap:break-word}
+.material-github>h2 {margin-top:32px}
+.table-wrap {max-width:100%;overflow-x:auto;overscroll-behavior-x:contain;margin-block:22px}
+.table-wrap table {width:100%;min-width:var(--table-min-width,520px);font-size:14px;line-height:1.6}
+.table-wrap th,
+.table-wrap td {padding:12px 14px;vertical-align:top;overflow-wrap:break-word}
+.table-wrap th {font-weight:750}
+.table-wrap tbody tr:nth-child(even) {background:color-mix(in srgb,var(--discipline-color) 5%,var(--panel))}
+@media (max-width:1000px) {
+.reader-layout {grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px) {
+.reader-header {padding:24px 20px}
+.reader-header h1 {font-size:clamp(28px,7vw,36px)}
+.study-card {padding:20px 18px}
+.prose {font-size:16px}
+.bottom-nav {flex-wrap:wrap;gap:16px}
+.bottom-nav a {max-width:100%;overflow-wrap:break-word}
+}
+@media print {
+main {max-width:none}
+.reader-layout {display:block}
+.table-wrap {overflow:visible}
+.table-wrap table {min-width:0}
+.study-card {break-inside:auto}
+.study-card h2 {break-after:avoid}
+}
+</style></head>
+<body class="tema-biblioteca" data-disciplina-acervo="direito-constitucional" data-discipline="direito-constitucional" data-page-kind="aula" style="--discipline-color: #a66bff; --page-width:1140px;">
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a>
+<button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button>
+<nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a aria-current="page" href="index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
+<div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div>
+</aside>
+<div class="workspace">
+<header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
+<main id="conteudo">
+<nav aria-label="Trilha" class="breadcrumbs">
+<a href="../../../index.html">Biblioteca</a> / <a href="index.html">Direito Constitucional</a> / Controle de Constitucionalidade
+      </nav>
+<header class="reader-header">
+<a class="chip" href="index.html">Direito Constitucional</a>
+<h1>Controle de Constitucionalidade</h1>
+<p class="muted">Assunto 9 de 14 · 19 blocos de estudo</p>
+<div class="reader-actions">
+<button aria-pressed="false" data-key="assets/materias/direito-constitucional/constitucional-03.html" id="concluir" type="button">Marcar como estudado</button>
+<button id="imprimir" type="button">Imprimir</button>
+<span class="status" id="salvamento"></span>
+</div>
+</header><nav aria-label="Índice do assunto" class="indice-unificado" id="indice"><h2>Neste assunto</h2><ol><li><a href="#topico-01">O que é Controle de Constitucionalidade?</a></li><li><a href="#topico-02">Classificação por Órgão e Momento</a></li><li><a href="#topico-03">⚠️ Pegadinha Clássica</a></li><li><a href="#topico-04">As Quatro Ações Constitucionais</a></li><li><a href="#topico-05">ADI — Ação Direta de Inconstitucionalidade</a></li><li><a href="#topico-06">ADC — Ação Declaratória de Constitucionalidade</a></li><li><a href="#topico-07">ADPF — Arguição de Descumprimento de Preceito Fundamental</a></li><li><a href="#topico-08">ADO — Ação Direta de Inconstitucionalidade por Omissão</a></li><li><a href="#topico-09">⚠️ Diferências entre as Ações</a></li><li><a href="#topico-10">Comissão de Constituição e Justiça (CCJ)</a></li><li><a href="#topico-11">Veto Presidencial — Político e Jurídico</a></li><li><a href="#topico-12">⚠️ Pegadinha: Veto e Derrubada</a></li><li><a href="#topico-13">Controle Judicial (Difuso)</a></li><li><a href="#topico-14">Controle Político</a></li><li><a href="#topico-15">Para Leigos – O Jogo de Xadrez</a></li><li><a href="#topico-16">🧠 MNEMÔNICOS GERAIS</a></li><li><a href="#topico-17">⚠️ Pegadinhas Mais Cobradas</a></li><li><a href="#topico-18">✅ CHECKLIST PARA A PROVA</a></li></ol></nav>
+<div class="reader-layout">
+<article class="prose">
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-01">O que é Controle de Constitucionalidade?</h2>
+<p>É o mecanismo pelo qual a ordem constitucional é preservada, garantindo que nenhuma norma jurídica (lei, decreto, etc.) viole a Constituição Federal.</p>
+<p><strong>Dois grandes ramos:</strong><br/>1. <strong>Controle Concentrado (Abstract):</strong> análise de normas isoladas, sem necessidade de um caso concreto. É 'preventivo' — evita que a norma vaze.<br/>2. <strong>Controle Difuso (Concrete):</strong> análise de normas no contexto de um caso concreto (um processo judicial). É 'repressivo' — corrige a aplicação da norma em situações específicas.</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'Concentrado = Concreto? NÃO! Concentrado = Abstract (isolado). Difuso = Concrete (caso real).'</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-02">Classificação por Órgão e Momento</h2>
+<p><strong>Controle Preventivo (pré-execução):</strong><br/>- <strong>CCJ (Comissão de Constituição e Justiça):</strong> analisa projetos de lei em fase de tramitação legislativa, verificando se não violam a Constituição.<br/>- <strong>Veto presidencial:</strong> o Presidente pode vetar um projeto de lei por considerá-lo inconstitucional.</p>
+<p><strong>Controle Repressivo (pós-execução):</strong><br/>- <strong>Judicial:</strong> ações diretas (ADI, ADC, ADPF, ADO) e ações indiretas (habeas corpus, mandado de segurança, etc.).<br/>- <strong>Político:</strong> o Congresso Nacional pode declarar a inconstitucionalidade de atos do Poder Executivo por meio de processos de impeachment ou outros mecanismos.</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'Preventivo = antes (CCJ, veto) / Repressivo = depois (ações judiciais, político).'</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-03">⚠️ Pegadinha Clássica</h2>
+<p>A banca afirma que o Controle Difuso é feito apenas pelo STF. <strong>ERRADO.</strong> O Controle Difuso é exercido por <strong>todos os órgãos jurisdicionados</strong> (STF, STJ, Tribunais Regionais Federais, Tribunais de Justiça, etc.) quando aplicam a Constituição em casos concretos.</p>
+<p>Outra pegadinha: 'ADI é controle difuso.' → <strong>ERRADO.</strong> ADI é controle <strong>concentrado</strong> (abstract), pois não depende de um caso concreto.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-04">As Quatro Ações Constitucionais</h2>
+<p>O Controle Concentrado é exercido por meio de ações diretas perante o STF:</p>
+<p>- <strong>ADI (Ação Direta de Inconstitucionalidade):</strong> ataca <strong>leis ou atos normativos</strong> que contrariam a Constituição.<br/>- <strong>ADC (Ação Declaratória de Constitucionalidade):</strong> pede ao STF que <strong>declare a constitucionalidade</strong> de uma norma (quando há dúvida sobre sua validade).<br/>- <strong>ADPF (Arguição de Descumprimento de Preceito Fundamental):</strong> ataca <strong>atos concretos</strong> que descumprem um preceito fundamental (situação fática concreta, não norma abstrata).<br/>- <strong>ADO (Ação Direta de Inconstitucionalidade por Omissão):</strong> ataca a <strong>omissão do Poder Legislativo</strong> em legislar sobre matéria que a Constituição determina que seja regulada por lei.</p>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'ADICIONA' — <strong>A</strong>DI, <strong>D</strong>ADC, <strong>I</strong>ADPF, <strong>C</strong>ADO, <strong>I</strong>Omissão, <strong>O</strong>missão, <strong>N</strong>ormas, <strong>A</strong>tos, <strong>S</strong>TF.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-05">ADI — Ação Direta de Inconstitucionalidade</h2>
+<p><strong>Objetivo:</strong> declarar a inconstitucionalidade de lei ou ato normativo.</p>
+<p><strong>Legitimidade ativa (quem pode propor):</strong><br/>- <strong>Presidente da República</strong> (Art. 102, I, a);<br/>- <strong>Mesa do Senado Federal</strong> (Art. 102, I, b);<br/>- <strong>Mesa da Câmara dos Deputados</strong> (Art. 102, I, c);<br/>- <strong>Ministério Público Federal</strong> (Art. 102, I, d);<br/>- <strong>Partido político com representação no Congresso Nacional</strong> (Art. 102, I, e);<br/>- <strong>União, Estados, DF e Municípios</strong> (Art. 102, I, f);<br/>- <strong>Cidadãos (1/3 dos deputados + 1/3 dos senadores)</strong> (Art. 102, I, g — ação coletiva de 1/3 + 1/3).</p>
+<p><strong>Requisitos:</strong><br/>- <strong>Reclamação de constitucionalidade</strong> (necessidade de demonstrar a violação à CF);<br/>- <strong>Interesse de oferecer a ação</strong> (legitimidade ativa);<br/>- <strong>Matéria juridicamente relevante</strong> (não pode ser mera repetição de julgado).</p>
+<p><strong>Prazo:</strong> não há prazo legal, mas a ação deve ser apreciada com celeridade (Art. 102, §1º).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-06">ADC — Ação Declaratória de Constitucionalidade</h2>
+<p><strong>Objetivo:</strong> pedir ao STF que declare a <strong>constitucionalidade</strong> de uma norma jurídica quando haja dúvida sobre sua validade.</p>
+<p><strong>Legitimidade ativa (quem pode propor):</strong><br/>- <strong>Presidente da República</strong> (Art. 102, II, a);<br/>- <strong>Mesa do Senado Federal</strong> (Art. 102, II, b);<br/>- <strong>Mesa da Câmara dos Deputados</strong> (Art. 102, II, c);<br/>- <strong>Ministério Público Federal</strong> (Art. 102, II, d);<br/>- <strong>Partido político com representação no Congresso Nacional</strong> (Art. 102, II, e);<br/>- <strong>União, Estados, DF e Municípios</strong> (Art. 102, II, f);<br/>- <strong>Cidadãos (1/3 dos deputados + 1/3 dos senadores)</strong> (Art. 102, II, g).</p>
+<p><strong>Diferença da ADI:</strong> enquanto a ADI ataca a norma, a ADC <strong>confirma</strong> a norma. É um mecanismo de segurança jurídica.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que ADC é para atacar normas. <strong>ERRADO.</strong> ADC é para <strong>declarar a constitucionalidade</strong> (confirmação), não inconstitucionalidade.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-07">ADPF — Arguição de Descumprimento de Preceito Fundamental</h2>
+<p><strong>Objetivo:</strong> pedir ao STF que <strong>pare um ato concreto</strong> que descumpre um preceito fundamental da Constituição.</p>
+<p><strong>Diferenças-chave:</strong><br/>- <strong>ADPF:</strong> ataca <strong>ato concreto</strong> (situação fática real, não norma abstrata). Ex: um decreto que proíbe manifestação política.<br/>- <strong>ADI:</strong> ataca <strong>norma abstrata</strong> (lei, decreto normativo). Ex: uma lei que proíbe manifestação política.</p>
+<p><strong>Legitimidade ativa (quem pode propor):</strong><br/>- <strong>Presidente da República</strong> (Art. 102, III, a);<br/>- <strong>Mesa do Senado Federal</strong> (Art. 102, III, b);<br/>- <strong>Mesa da Câmara dos Deputados</strong> (Art. 102, III, c);<br/>- <strong>Ministério Público Federal</strong> (Art. 102, III, d);<br/>- <strong>Partido político com representação no Congresso Nacional</strong> (Art. 102, III, e);<br/>- <strong>União, Estados, DF e Municípios</strong> (Art. 102, III, f);<br/>- <strong>Cidadãos (1/3 dos deputados + 1/3 dos senadores)</strong> (Art. 102, III, g).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que ADPF é para atacar normas abstratas. <strong>ERRADO.</strong> ADPF é para atos <strong>concretos</strong> que descumprem preceitos fundamentais.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-08">ADO — Ação Direta de Inconstitucionalidade por Omissão</h2>
+<p><strong>Objetivo:</strong> declarar a inconstitucionalidade da <strong>omissão do Poder Legislativo</strong> em legislar sobre matéria que a Constituição determina que seja regulada por lei.</p>
+<p><strong>Exemplo clássico:</strong> A Constituição determina que a lei regulamente a posse de arma de fogo (Art. 22, XVII, da CF). Se o Congresso Nacional não aprovar nenhuma lei sobre o tema, alguém pode propor uma ADO pedindo ao STF para declarar que a omissão é inconstitucional.</p>
+<p><strong>Legitimidade ativa:</strong> as mesmas da ADI (Art. 102, I).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que ADO é para atacar atos do Executivo. <strong>ERRADO.</strong> ADO é para atacar a <strong>omissão do Legislativo</strong> em legislar sobre matéria constitucionalmente regulada.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-09">⚠️ Diferências entre as Ações</h2>
+<p><strong>Tabela comparativa:</strong></p>
+<div aria-label="Tabela" class="table-wrap" role="region" tabindex="0">
+<table style="; --table-min-width:620px;">
+<thead><tr><th scope="col">Ação</th><th scope="col">Ataca</th><th scope="col">Natureza</th><th scope="col">Legitimidade</th></tr></thead>
+<tbody>
+<tr><td><strong>ADI</strong></td><td>Norma abstrata</td><td>Inconstitucionalidade</td><td>Art. 102, I</td></tr>
+<tr><td><strong>ADC</strong></td><td>Norma abstrata</td><td>Constitucionalidade</td><td>Art. 102, II</td></tr>
+<tr><td><strong>ADPF</strong></td><td>Ato concreto</td><td>Descumprimento de preceito fundamental</td><td>Art. 102, III</td></tr>
+<tr><td><strong>ADO</strong></td><td>Omissão do Legislativo</td><td>Inconstitucionalidade por omissão</td><td>Art. 102, I</td></tr>
+</tbody>
+</table>
+</div>
+<p>🧠 <strong>MNEMÔNICO:</strong> 'ADI ataca, ADC afirma, ADPF para atos concretos, ADO para omissão.'</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-10">Comissão de Constituição e Justiça (CCJ)</h2>
+<p>A <strong>CCJ</strong> é uma comissão temporária do Congresso Nacional, composta por 33 membros (11 da Câmara, 11 do Senado, 11 da Fazenda Ribeira — não, na verdade, 11 da Câmara, 11 do Senado e 11 da Fazenda).</p>
+<p><strong>Função:</strong> analisar projetos de lei em fase de tramitação para verificar se são <strong>constitucionalmente compatíveis</strong>. A CCJ pode:<br/>- Aprovar o projeto (se for constitucional);<br/>- Rejeitar o projeto (se violar a Constituição);<br/>- Devolver com observações.</p>
+<p><strong>Prazo:</strong> a CCJ tem 30 dias para se manifestar sobre projetos de lei que lhe sejam submetidos.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que a CCJ pode vetar projetos de lei. <strong>ERRADO.</strong> A CCJ apenas se manifesta; o veto é do Presidente da República.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-11">Veto Presidencial — Político e Jurídico</h2>
+<p>O Presidente da República pode vetoar um projeto de lei aprovado pelo Congresso Nacional (Art. 66, §1º).</p>
+<p><strong>Dois tipos de veto:</strong></p>
+<p>1. <strong>Veto político (ou parcial):</strong> o Presidente veta apenas <strong>alguns artigos ou parágrafos</strong> do projeto, mantendo os demais. O Congresso pode derrubar esse veto por <strong>maioria absoluta</strong> (Art. 66, §4º).</p>
+<p>2. <strong>Veto jurídico (ou total):</strong> o Presidente veta <strong>todo o projeto</strong> por considerá-lo inconstitucional. O CongressNacional pode derrubar esse veto por <strong>3/5</strong> dos votos de cada Casa (Art. 66, §4º, parágrafo único).</p>
+<p><strong>Derrubada de veto:</strong><br/>- <strong>Voto aberto (nominal):</strong> hoje é obrigatório (Lei 13.105/2015, art. 10, §1º — a derrubada de veto é sempre nominal e por maioria absoluta do Congresso Nacional).<br/>- <strong>Prazo:</strong> 30 dias para a Câmara e 30 dias para o Senado (Art. 66, §4º).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que a derrubada de veto pode ser por voto secreto. <strong>ERRADO.</strong> Hoje é sempre <strong>nominal</strong> (voto aberto) e por <strong>maioria absoluta</strong>.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-12">⚠️ Pegadinha: Veto e Derrubada</h2>
+<p>❌ 'O veto presidencial pode ser derrubado por maioria simples.' → <strong>ERRADO.</strong> Exige <strong>maioria absoluta</strong> (ou 3/5 para veto jurídico).<br/>❌ 'A derrubada de veto pode ser por voto secreto.' → <strong>ERRADO.</strong> É sempre <strong>nominal</strong> (voto aberto).<br/>❌ 'O Presidente pode vetar parcialmente por inconstitucionalidade.' → <strong>ERRADO.</strong> Veto parcial é sempre <strong>político</strong>; voto total por inconstitucionalidade é <strong>jurídico</strong>.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="destaque" data-study-label="Conceito">
+<span class="card-kicker">Conceito</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-13">Controle Judicial (Difuso)</h2>
+<p>O <strong>Controle Difuso</strong> é exercido por <strong>todos os juízes</strong> (não apenas o STF) quando aplicam a Constituição em casos concretos.</p>
+<p><strong>Como funciona:</strong><br/>- O juiz, ao julgar um caso, verifica se a lei aplicada é constitucional.<br/>- Se houver dúvida, o juiz pode <strong>suspender a aplicação</strong> da norma e, em alguns casos, <strong>elevar a questão ao STF</strong> (recurso especial ou agravo de recado).<br/>- O STF, ao receber a questão, pode <strong>reconhecer a inconstitucionalidade</strong> da norma, que passa a ser nula para todos os efeitos.</p>
+<p><strong>Exemplo:</strong> Um juiz estadual julga um caso de usucapião e verifica que a lei estadual que regulamenta o prazo de usucapião viola a Constituição. Ele pode suspender a aplicação da lei e elevar a questão ao STF.</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que apenas o STF pode declarar inconstitucionalidade. <strong>ERRADO.</strong> Qualquer juiz pode, no exercício do controle difuso.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="texto" data-study-label="Conteúdo">
+<span class="card-kicker">Conteúdo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-14">Controle Político</h2>
+<p>O <strong>Controle Político</strong> é exercido pelo Congresso Nacional sobre os atos do Poder Executivo.</p>
+<p><strong>Instrumentos:</strong><br/>- <strong>Processo de Impeachment (Art. 86):</strong> o Congresso pode processar o Presidente da República, Governadores e outros oficiais por crimes de responsabilidade.<br/>- <strong>CPI (Comissão Parlamentar de Inquérito):</strong> investiga atos de improbidade ou corrupção.<br/>- <strong>Fiscalização orçamentária:</strong> o Congresso aprova e fiscaliza o orçamento público.</p>
+<p><strong>Diferença do Controle Judicial:</strong><br/>- O Controle Político é <strong>político</strong> (baseado na vontade parlamentar), não jurídico.<br/>- O Controle Judicial é <strong>jurídico</strong> (baseado no direito).</p>
+<p>⚠️ <strong>Pegadinha:</strong> A banca afirma que o impeachment é um processo penal. <strong>ERRADO.</strong> É um processo <strong>político</strong> (crime de responsabilidade), não penal.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="exemplo" data-study-label="Exemplo">
+<span class="card-kicker">Exemplo</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-15">Para Leigos – O Jogo de Xadrez</h2>
+<p>Pense no controle de constitucionalidade como um jogo de xadrez:</p>
+<p>- <strong>Controle Concentrado (ADI, ADC, ADPF, ADO):</strong> o STF analisa as 'peças' (normas) isoladamente, como se estivesse revisando o tabuleiro antes do jogo.<br/>- <strong>Controle Difuso:</strong> os juízes vão descobrindo problemas com as 'peças' enquanto jogam (caso concreto).<br/>- <strong>Controle Preventivo (CCJ, veto):</strong> o Congresso e o Presidente tentam prevenir problemas antes que a partida comece.<br/>- <strong>Controle Repressivo (judicial, político):</strong> depois que algo dá errado, o STF ou o Congresso corrige.</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-16">🧠 MNEMÔNICOS GERAIS</h2>
+<p>- <strong>'ADICIONA'</strong> — ADI (ataca norma), ADC (afirma norma), ADPF (ato concreto), ADO (omissão).<br/>- <strong>'Preventivo = antes / Repressivo = depois'</strong> — CCJ e veto são preventivos; ações judiciais e político são repressivos.<br/>- <strong>'Concentrado = Abstract / Difuso = Concrete'</strong> — Concentrado analisa normas isoladas; Difuso analisa casos reais.<br/>- <strong>Derrubada de veto:</strong> maioria absoluta (3/5 para veto jurídico), voto nominal (aberto).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
+<span class="card-kicker">Atenção</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-17">⚠️ Pegadinhas Mais Cobradas</h2>
+<p>❌ 'Controle difuso é só do STF.' → <strong>ERRADO</strong> (qualquer juiz pode exercer).<br/>❌ 'ADI é controle difuso.' → <strong>ERRADO</strong> (é concentrado/abstract).<br/>❌ 'ADPF ataca normas abstratas.' → <strong>ERRADO</strong> (ataca atos concretos).<br/>❌ 'ADO ataca atos do Executivo.' → <strong>ERRADO</strong> (ataca omissão do Legislativo).<br/>❌ 'Derrubada de veto é por voto secreto.' → <strong>ERRADO</strong> (é nominal/aberto).<br/>❌ 'Veto jurídico é derrubado por maioria simples.' → <strong>ERRADO</strong> (exige 3/5).</p>
+</div>
+</div>
+<div class="study-card" data-study-kind="bizu" data-study-label="Bizu">
+<span class="card-kicker">Bizu</span>
+<div class="text-section"><h2 class="card-titulo" id="topico-18">✅ CHECKLIST PARA A PROVA</h2>
+<p>✅ Controle Concentrado (Abstract): ADI, ADC, ADPF, ADO — perante o STF.<br/>✅ Controle Difuso (Concrete): qualquer juiz, em caso concreto.<br/>✅ Controle Preventivo: CCJ (30 dias) e veto presidencial.<br/>✅ Controle Repressivo: ações judiciais e controle político (impeachment, CPI).<br/>✅ ADI: ataca norma abstrata. ADC: confirma norma. ADPF: ato concreto. ADO: omissão do Legislativo.<br/>✅ Veto político: parcial, derrubada por maioria absoluta. Veto jurídico: total, derrubada por 3/5.<br/>✅ Derrubada de veto: sempre voto nominal (aberto).</p>
+</div>
+</div>
+<section class="material-github"><h2 class="complementar-titulo">Material complementar e mapas mentais</h2><p class="muted">Material complementar · <a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/12.json" rel="noopener" target="_blank">Ver fonte no GitHub</a></p><h2>Tabela Resumo e Pegadinhas Finais</h2><div class="study-card" data-study-kind="texto"><figure class="mapa-indisponivel"><p class="mapa-titulo">Mapa-mental</p><p>A imagem deste mapa mental não foi incluída no arquivo original.</p><a href="https://github.com/88MVcode9/ARQUIVOS/blob/main/MATERIAL%20DE%20ESTUDOS/direitos-constitucional/assuntos/12.json" rel="noopener" target="_blank">Consultar material na fonte</a></figure></div></section></article>
+</div>
+<footer class="footer">
+<span>Matéria Policial · Conteúdo para estudar e revisar.</span>
+<a href="../../../index.html">Voltar à biblioteca</a>
+</footer>
+<nav aria-label="Navegação entre assuntos" class="bottom-nav"><a class="previous" href="constitucional-09.html"><small>Assunto anterior</small>Estrutura e Organização do Estado Brasileiro</a><a class="next" href="constitucional-11.html"><small>Próximo assunto</small>Poder Legislativo e Processo Legislativo</a></nav></main>
+</div>
+</body>
+</html>
+

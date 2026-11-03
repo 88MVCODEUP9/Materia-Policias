@@ -1,0 +1,1216 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><meta content="#101820" name="theme-color"/><meta content="dark" name="color-scheme"/><title>Lei 13.709/2018 — Lei Geral de Proteção de Dados · Polícia Civil · Matéria Policial</title><meta content="" name="description"/><link href="../../icone.png" rel="icon"/><style data-materia="policia-civil">/* CSS customizado e inline - policia-civil */
+/* Matéria Policial — biblioteca de estudos, tema escuro colorido.
+   Cada disciplina e cada tipo de bloco tem sua cor (--discipline-color / --kind-ink),
+   usada em preenchimentos, gradientes e brilhos, não só na borda.
+   Para um visual mais discreto, reduza --tint e --glow. */
+
+/* ───────── Tokens ───────── */
+:root {
+  color-scheme: dark;
+  --bg: #0a0d18;
+  --panel: #101527;
+  --surface: #151b30;
+  --surface-2: #1c2440;
+  --ink: #eef1fb;
+  --muted: #9aa5c4;
+  --line: #232c4a;
+  --line-strong: #364067;
+  --gold: #ffc45c;
+  --radius: 14px;
+  --radius-sm: 9px;
+  --accent-width: 4px;
+  --tint: 16%;
+  --glow: 34%;
+  --shadow: 0 8px 28px rgb(2 4 14 / 45%);
+  --grad-brand: linear-gradient(120deg, #ffc45c 0%, #ff8a5c 45%, #ff5c8a 100%);
+  font-family: "Segoe UI", system-ui, Arial, sans-serif;
+  font-synthesis: none;
+  /* compatibilidade com nomes antigos */
+  --paper: var(--bg);
+  --white: var(--surface);
+  --accent: var(--ink);
+}
+
+/* ───────── Base ───────── */
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+[hidden] { display: none !important; }
+a { color: inherit; text-decoration: none; }
+a:hover { text-decoration: underline; text-underline-offset: 3px; }
+button, input, select { font: inherit; }
+button, select, summary { cursor: pointer; }
+button { color: var(--ink); background: var(--surface); border: 1px solid var(--line-strong); border-radius: var(--radius); padding: 10px 16px; min-height: 44px; font-size: 13px; font-weight: 600; transition: border-color .15s ease, background-color .15s ease; }
+button:hover { background: var(--surface-2); border-color: var(--muted); }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+::selection { color: var(--bg); background: var(--gold); }
+h1, h2, h3, h4, p { margin: 0; }
+h1, h2, h3 { font-family: Georgia, "Times New Roman", serif; font-weight: 500; }
+h1 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.15; letter-spacing: -.02em; }
+h2 { font-size: 28px; line-height: 1.25; letter-spacing: -.01em; }
+h3 { font-size: 21px; line-height: 1.35; }
+small { font-size: 12px; }
+.skip { position: fixed; top: -80px; left: 16px; padding: 10px 16px; z-index: 20; background: var(--ink); color: var(--bg); font-weight: 700; border-radius: var(--radius); }
+.skip:focus { top: 12px; }
+.muted { color: var(--muted); font-size: 12px; }
+.status { color: var(--muted); font-size: 12px; }
+.status:empty { display: none; }
+[id] { scroll-margin-top: 24px; }
+.block-anchor { display: block; scroll-margin-top: 20px; }
+
+/* ───────── Estrutura: menu lateral, topo, área principal ───────── */
+.sidebar { position: fixed; inset: 0 auto 0 0; width: 240px; padding: 32px 20px 22px; background: var(--panel); border-right: 1px solid var(--line); display: flex; flex-direction: column; z-index: 10; }
+.brand { display: block; margin: 0 10px 28px; font: 500 30px/1 Georgia, serif; letter-spacing: -.02em; }
+.brand-period { color: var(--gold); }
+.brand small { display: block; font: 600 10px/1.5 "Segoe UI", sans-serif; color: var(--muted); letter-spacing: .14em; text-transform: uppercase; margin-top: 12px; }
+.sidebar nav { overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; padding: 4px; margin: -4px; }
+.nav-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); padding: 20px 10px 8px; }
+.sidebar nav a { display: block; font-size: 13px; line-height: 1.45; padding: 8px 10px; margin: 1px 0; border-radius: var(--radius); color: var(--muted); }
+.sidebar nav a:hover { color: var(--ink); background: var(--surface); text-decoration: none; }
+.sidebar nav a[aria-current] { color: var(--ink); background: var(--surface-2); font-weight: 600; box-shadow: inset 2px 0 0 var(--gold); }
+.sidebar-footer { margin-top: auto; padding: 20px 10px 0; font-size: 12px; color: var(--ink); }
+.sidebar-footer span { display: block; color: var(--muted); font-size: 11px; margin-top: 2px; }
+.workspace { margin-left: 240px; min-width: 0; }
+.topbar { min-height: 60px; border-bottom: 1px solid var(--line); padding: 0 44px; display: flex; justify-content: space-between; align-items: center; color: var(--muted); font-size: 12px; background: var(--bg); }
+.topbar a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+.topbar > span { font-size: 11px; text-transform: uppercase; letter-spacing: .1em; }
+.mobile-menu { display: none; }
+main { max-width: 1280px; margin: auto; padding: 48px 44px 32px; }
+.eyebrow { color: var(--muted); font: 700 11px/1.6 "Segoe UI", sans-serif; letter-spacing: .12em; text-transform: uppercase; }
+
+/* ───────── Abertura da página ───────── */
+.hero { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: end; gap: 36px; padding-bottom: 32px; margin-bottom: 40px; border-bottom: 1px solid var(--line); }
+.hero .eyebrow { margin-bottom: 14px; }
+.hero h1 { max-width: 680px; margin-bottom: 16px; }
+.hero p:not(.eyebrow) { max-width: 60ch; color: var(--muted); font-size: 14px; line-height: 1.75; }
+.hero-stats { display: flex; gap: 28px; padding-bottom: 4px; }
+.hero-stats strong { display: block; font: 500 30px/1 Georgia, serif; }
+.hero-stats span { display: block; margin-top: 8px; color: var(--muted); font-size: 12px; }
+.section-title { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
+.section-title .eyebrow { margin-bottom: 8px; }
+.directory-shortcut { font-size: 12px; text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
+
+/* ───────── Diretório de disciplinas ───────── */
+.discipline-directory { margin-bottom: 48px; }
+.discipline-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 12px; }
+.discipline-card { display: grid; grid-template-columns: 28px minmax(0,1fr) auto; gap: 4px 14px; grid-template-areas: "number title count" "number description description"; align-content: center; padding: 20px 20px 20px 22px; background: var(--panel); border: 1px solid var(--line); border-left: var(--accent-width) solid var(--discipline-color, var(--line-strong)); border-radius: var(--radius); transition: background-color .15s ease, border-color .15s ease; }
+.discipline-card:is(:hover, :focus-visible) { background: var(--surface); border-color: var(--line-strong); text-decoration: none; }
+.discipline-number { grid-area: number; color: var(--muted); font: 400 16px/1.7 Georgia, serif; }
+.discipline-card h3 { grid-area: title; font-size: 18px; line-height: 1.4; }
+.discipline-card p { grid-area: description; color: var(--muted); font-size: 13px; line-height: 1.6; max-width: 52ch; }
+.discipline-bottom { grid-area: count; font-size: 11px; color: var(--muted); align-self: center; white-space: nowrap; }
+.discipline-bottom > span { margin-left: 6px; color: var(--ink); font-weight: 600; }
+body[data-discipline] :is(.hero, .reader-header) { border-bottom-color: var(--discipline-color, var(--line)); }
+
+/* ───────── Busca e filtros ───────── */
+#biblioteca { scroll-margin-top: 28px; }
+.toolbar { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px; margin-bottom: 18px; }
+.search-row { display: flex; gap: 10px; margin-bottom: 14px; }
+.search-box { position: relative; display: block; flex: 1; min-width: 0; }
+.search-box > span { position: absolute; top: 12px; left: 14px; color: var(--muted); font-size: 20px; line-height: 1; }
+input[type=search], select { border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--ink); background: var(--bg); padding: 10px 13px; min-height: 44px; font-size: 14px; }
+input[type=search] { width: 100%; padding-left: 40px; }
+input[type=search]:focus, select:focus { outline: none; border-color: var(--gold); }
+input::placeholder { color: var(--muted); opacity: 1; }
+.search-row select { max-width: 250px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filter { min-height: 36px; padding: 6px 12px; font-size: 12px; font-weight: 500; background: transparent; color: var(--muted); border-color: var(--line-strong); border-radius: 999px; }
+.filter:hover { color: var(--ink); }
+.filter[aria-pressed=true] { background: var(--surface-2); color: var(--ink); border-color: var(--kind-ink, var(--ink)); font-weight: 600; }
+.filter .dot { display: none; }
+.reset-filters { background: transparent; border: 0; color: var(--muted); text-decoration: underline; text-underline-offset: 3px; font-size: 12px; padding: 8px 0 0; min-height: auto; }
+.reset-filters:hover { color: var(--ink); background: transparent; }
+.results { font-size: 12px; color: var(--muted); margin: 0 0 14px; }
+
+/* ───────── Cards de materiais e assuntos ───────── */
+.grid { display: grid; grid-template-columns: minmax(0,1fr); gap: 8px; }
+.material { display: grid; grid-template-columns: minmax(0,1fr) auto; grid-template-areas: "discipline badges" "title footer"; gap: 6px 20px; padding: 18px 22px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); min-width: 0; transition: border-color .15s ease, background-color .15s ease; }
+.material:hover { background: var(--surface-2); border-color: var(--line-strong); text-decoration: none; }
+.material h3 { grid-area: title; font-size: 19px; align-self: center; }
+.material .discipline { grid-area: discipline; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.badges { grid-area: badges; display: flex; flex-wrap: wrap; gap: 6px; align-self: start; justify-content: end; }
+.badge { display: inline-block; padding: 2px 8px; color: var(--muted); background: transparent; border: 1px solid var(--line-strong); border-left: var(--accent-width) solid var(--kind-ink, var(--line-strong)); border-radius: var(--radius); font: 500 11px/1.6 "Segoe UI", sans-serif; }
+.badge svg { display: none; }
+.card-footer { grid-area: footer; display: flex; gap: 14px; align-items: center; font-size: 11px; color: var(--muted); }
+.go { font-size: 18px; line-height: 1; color: var(--muted); }
+.material:hover .go { color: var(--ink); }
+/* Cards de assuntos: mesma hierarquia no catálogo e nas disciplinas. */
+.material.subject { border-left: var(--accent-width) solid var(--discipline-color, #5b9bff); }
+.material.subject:is(:hover, :focus-visible) { background: var(--surface-2); }
+.material.subject h3 { font-family: "Segoe UI", Arial, sans-serif; font-size: clamp(16px, 1.8vw, 19px); font-weight: 600; line-height: 1.45; overflow-wrap: anywhere; }
+.material.subject .discipline { font-size: 11px; letter-spacing: .04em; }
+.material.subject .card-footer { font-size: 12px; white-space: nowrap; }
+.material.subject .badge { font-size: 11px; padding: 3px 8px; }
+.empty { text-align: center; padding: 40px 24px; border: 1px dashed var(--line-strong); border-radius: var(--radius); }
+.empty h3 { margin-bottom: 8px; }
+.empty p { color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+.catalog-all { margin-top: 40px; }
+.catalog-all > summary { font: 500 24px/1.4 Georgia, serif; padding: 14px 0; margin-bottom: 16px; border-top: 1px solid var(--line); }
+.toolbar + .discipline-directory { margin-top: 40px; }
+.footer { margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; color: var(--muted); font-size: 12px; }
+.footer a { text-decoration: underline; text-underline-offset: 4px; }
+
+/* ───────── Leitor ───────── */
+.breadcrumbs { color: var(--muted); font-size: 12px; margin-bottom: 26px; }
+.breadcrumbs a { text-decoration: underline; text-underline-offset: 3px; }
+.reader-header { padding-bottom: 24px; border-bottom: 1px solid var(--line); margin-bottom: 22px; }
+.chip { display: inline-block; padding: 3px 10px; margin-bottom: 14px; border: 1px solid var(--line-strong); border-left: var(--accent-width) solid var(--discipline-color, var(--line-strong)); border-radius: var(--radius); color: var(--ink); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; }
+.reader-header h1 { max-width: 24ch; margin-bottom: 14px; font-size: clamp(30px, 3.2vw, 44px); }
+.reader-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 18px; }
+.reader-actions button { font-size: 12px; min-height: 38px; padding: 8px 13px; }
+.reader-actions button[aria-pressed=true], .primary { background: var(--surface-2); color: var(--ink); border-color: var(--gold); }
+#blocos-status { margin: 14px 0; }
+.reader-layout { display: grid; grid-template-columns: minmax(0,1fr) 180px; gap: 36px; align-items: start; margin-top: 24px; }
+.toc { position: sticky; top: 28px; max-height: 80vh; overflow-y: auto; scrollbar-width: thin; padding: 4px 0 10px; }
+.toc .eyebrow { font-size: 11px; margin-bottom: 8px; }
+.toc > strong { display: block; font: 500 16px/1.4 Georgia, serif; margin-bottom: 16px; }
+.toc a { display: block; font-size: 12px; line-height: 1.6; color: var(--muted); padding: 8px 0; border-bottom: 1px solid var(--line); }
+.toc a:hover { color: var(--ink); text-decoration: none; }
+.bottom-nav { display: flex; justify-content: space-between; gap: 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); }
+.bottom-nav a { max-width: 47%; font: 500 17px/1.4 Georgia, serif; }
+.bottom-nav a:hover { color: var(--gold); }
+.bottom-nav small { display: block; font: 11px/1.7 "Segoe UI", sans-serif; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+.bottom-nav .next { text-align: right; }
+
+/* ───────── Texto das aulas ───────── */
+.prose { min-width: 0; width: 100%; font: 17px/1.8 Georgia, "Times New Roman", serif; overflow-wrap: break-word; }
+.prose h2 { font-size: 25px; line-height: 1.3; margin: 4px 0 18px; }
+.prose h3 { font-size: 21px; line-height: 1.4; margin: 26px 0 10px; }
+.prose h4, .prose h5 { font: 600 15px/1.5 "Segoe UI", sans-serif; margin: 20px 0 10px; }
+.prose p { margin: 0 0 16px; }
+.prose > p { margin: 0 0 20px; }
+.prose strong { font-weight: 700; }
+.prose em { font-style: italic; }
+.prose a { text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.prose ul, .prose ol { margin: 14px 0 18px; padding-left: 22px; }
+.prose li { padding-left: 3px; margin: 6px 0; }
+.prose li::marker { color: var(--muted); }
+.prose .text-section p { line-height: 1.85; }
+.prose .text-section p + p { margin-top: 14px; }
+.prose :is(img, svg, video) { display: block; max-width: 100%; height: auto; margin: 20px auto; }
+.prose figure { margin: 22px 0; }
+.prose figcaption { font: 12px/1.6 "Segoe UI", sans-serif; color: var(--muted); margin: 10px 0; text-align: center; }
+.prose details { padding: 16px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); margin: 20px 0; }
+.prose summary { font: 600 14px/1.6 "Segoe UI", sans-serif; }
+.prose details[open] summary { margin-bottom: 12px; }
+
+/* ───────── Blocos de estudo: cada tipo tem sua cor ───────── */
+.study-card { --kind-ink: var(--discipline-color, #5b9bff); }
+/* texto, destaque */
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"], [data-study-kind="h2"], [data-study-kind="h3"], [data-study-kind="destaque"]) { --kind-ink: var(--discipline-color, #5b9bff); }
+/* explicação, exemplo, fórmula, tabela */
+.study-card:is([data-study-kind="explicacao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="passo"], [data-study-kind="tabela"], [data-study-kind="laboratorio-logico"], [data-study-label="Explicação"], [data-study-label="Exemplo"], [data-study-label="Analogia"], [data-study-label="Fórmula"]) { --kind-ink: #2bc4e6; }
+/* legislação */
+.study-card:is([data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="sumula"], [data-study-kind="paragrafo"], [data-type="legislacao"], [data-study-label="Legislação"], [data-study-label="Legislação de referência"], [data-study-label="Jurisprudência"]) { --kind-ink: #a56bff; }
+/* resumo, bizu, mnemônico */
+.study-card:is([data-study-kind="bizu"], [data-study-kind="mnemonico"], [data-study-kind="resumo"], [data-study-kind="dica"], [data-study-kind="mapa-mental"], [data-type="resumo"], [data-study-label="Resumo"], [data-study-label="Mnemônico"], [data-study-label="Mapa Mental"], [data-study-label="Bizu"], [data-study-label="Como estudar"]) { --kind-ink: #ffc83d; }
+/* alerta */
+.study-card:is([data-study-kind="alerta"], [data-study-label="Atenção"], [data-study-label="Importante"], [data-study-label="Pegadinha"]) { --kind-ink: #ff9340; }
+/* questões, certo */
+.study-card:is([data-study-kind="questao"], [data-study-kind="questoes"], [data-study-kind="certo"], [data-type="questoes"]) { --kind-ink: #34d399; }
+/* errado */
+.study-card:is([data-study-kind="errado"], [data-study-label="Errado"]) { --kind-ink: #ff5d7a; }
+
+.study-card { color: var(--ink); background: var(--panel); padding: 24px 26px; margin-bottom: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink); border-radius: var(--radius); box-shadow: var(--shadow); }
+.study-card :is(h2, h3) { color: var(--ink); }
+.study-card .text-section > :first-child { margin-top: 0; }
+.study-card .text-section > p:only-child > strong:only-child { font-size: 1.05em; }
+.prose .study-card > .card-kicker, .prose .card-kicker { display: inline-block; padding: 3px 9px; margin: 0 0 14px; border: 1px solid var(--line-strong); border-radius: var(--radius); color: var(--muted); font: 600 11px/1.5 "Segoe UI", sans-serif; text-transform: uppercase; letter-spacing: .08em; }
+.study-card > :last-child, .callout > :last-child, .text-section > :last-child { margin-bottom: 0; }
+.callout, .text-section { margin: 0; padding: 0; }
+.callout > .label { display: none; }
+.note { padding: 14px 18px; background: var(--surface); color: var(--ink); border: 1px solid var(--line); border-left: var(--accent-width) solid var(--kind-ink, var(--line-strong)); border-radius: var(--radius); margin: 16px 0; font-size: .95em; }
+.blk, .alert { margin: 18px 0; padding: 18px 20px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+.blk h3:first-child { margin-top: 0; }
+.alert--warning { border-left: var(--accent-width) solid #ff9340; }
+.alert--danger { border-left: var(--accent-width) solid #ff5d7a; }
+.mind-root { font: 600 15px/1.6 "Segoe UI", sans-serif; text-align: center; color: var(--ink); border: 1px solid var(--gold); padding: 16px; border-radius: var(--radius); background: var(--surface); }
+.branches { list-style: none; padding: 0 !important; }
+.branches > li { background: var(--surface); border: 1px solid var(--line); padding: 16px !important; border-radius: var(--radius); }
+.calculation { display: block; padding: 16px; margin-top: 16px; border: 1px solid var(--line); border-left: var(--accent-width) solid #2bc4e6; border-radius: var(--radius); background: var(--surface); }
+.calculation > span { display: block; margin: 8px 0; }
+
+/* ───────── Tabelas, código e símbolos ───────── */
+.table-wrap { max-width: 100%; overflow: auto; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); scrollbar-width: thin; }
+table { width: 100%; border-collapse: collapse; font: 13px/1.6 "Segoe UI", sans-serif; font-variant-numeric: tabular-nums; }
+th, td { padding: 11px 14px; text-align: left; vertical-align: top; min-width: 90px; border-bottom: 1px solid var(--line); }
+th { background: var(--surface-2); color: var(--ink); font-size: 12px; font-weight: 600; border-bottom-color: var(--line-strong); }
+tbody tr:nth-child(even) td:not([data-truth]) { background: rgb(255 255 255 / 2%); }
+tbody tr:last-child td { border-bottom: 0; }
+td[data-truth] { font-weight: 700; text-align: center; }
+td[data-truth=true] { color: #34d399; }
+td[data-truth=false] { color: #ff5d7a; }
+code, kbd { font: .85em/1.6 ui-monospace, "DejaVu Sans Mono", Consolas, monospace; color: var(--ink); background: var(--surface); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px; box-decoration-break: clone; }
+pre { max-width: 100%; margin: 18px 0; padding: 18px; overflow-x: auto; white-space: pre; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); tab-size: 4; font: 13px/1.8 ui-monospace, Consolas, monospace; }
+pre code { color: inherit; background: transparent; border: 0; padding: 0; font-size: inherit; white-space: pre; }
+.symbol { font-family: "Cambria Math", "DejaVu Sans", Georgia, serif; font-variant-numeric: tabular-nums; letter-spacing: .02em; }
+p.symbol { padding: 12px 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); overflow-x: auto; white-space: nowrap; font-size: 1.05em; }
+.hl { font-weight: 700; color: var(--gold); }
+
+/* ───────── Questões e laboratório lógico ───────── */
+.question fieldset { border: 0; padding: 0; margin: 0; }
+.question legend { font-weight: 600; margin-bottom: 16px; }
+.question label { display: flex; align-items: baseline; gap: 10px; font: 14px/1.7 "Segoe UI", sans-serif; padding: 9px 0; }
+.question input { accent-color: var(--gold); }
+.question output { display: block; font: 600 13px/1.7 "Segoe UI", sans-serif; margin-top: 12px; }
+.question .ok, .question .erro { padding-left: 12px; border-left: 2px solid; }
+.question .ok { border-left-color: #34d399; }
+.question .erro { border-left-color: #ff5d7a; }
+.logic-lab h2 { font-size: 26px; }
+.logic-inputs { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 20px 0; }
+.logic-inputs label { font: 600 13px/1.6 "Segoe UI", sans-serif; }
+.logic-inputs select { display: block; width: 100%; margin-top: 8px; }
+.logic-results { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 10px; }
+.logic-results > div { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 14px; text-align: center; }
+.logic-results .symbol { display: block; font-size: 20px; }
+.logic-results small { display: block; font: 11px/1.6 "Segoe UI", sans-serif; color: var(--muted); margin: 8px 0; }
+.logic-results output { display: inline-block; min-width: 30px; padding: 0 8px; border: 1px solid #34d399; border-radius: var(--radius); font: 700 14px/2 "Segoe UI", sans-serif; color: #34d399; }
+.logic-results output[data-truth=false] { border-color: #ff5d7a; color: #ff5d7a; }
+
+/* ───────── Estruturas por disciplina ───────── */
+[data-study-discipline="matematica"] .prose { font-family: "Segoe UI", Arial, sans-serif; font-size: 16px; font-variant-numeric: tabular-nums; }
+[data-study-discipline="matematica"] .study-card[data-study-kind=formula] p { line-height: 2; letter-spacing: .01em; }
+[data-study-discipline="raciocinio-logico"] .prose :is(th, td) { min-width: 78px; }
+[data-study-discipline="informatica"] .prose { font-family: "Segoe UI", Arial, sans-serif; font-size: 15px; }
+[data-study-discipline="informatica"] .prose pre::before { content: "COMANDO / SINTAXE"; display: block; color: var(--muted); margin-bottom: 10px; font: 600 11px/1.5 "Segoe UI", sans-serif; letter-spacing: .08em; }
+
+/* Cor de cada disciplina: usada em preenchimentos, brilhos e acentos. */
+[data-discipline="direito-administrativo"] { --discipline-color: #4d8dff; }
+[data-discipline="atualidades"] { --discipline-color: #ff8a3d; }
+[data-discipline="direito-constitucional"] { --discipline-color: #a66bff; }
+[data-discipline="direitos-humanos"] { --discipline-color: #ff5ca8; }
+[data-discipline="legislacao-extravagante"] { --discipline-color: #d45cf0; }
+[data-discipline="guardas-municipais"] { --discipline-color: #2fd08a; }
+[data-discipline="informatica"] { --discipline-color: #26c4ee; }
+[data-discipline="matematica"] { --discipline-color: #7a7dff; }
+[data-discipline="direito-penal"] { --discipline-color: #ff5a6e; }
+[data-discipline="portugues"] { --discipline-color: #25d1b8; }
+[data-discipline="processo-penal"] { --discipline-color: #f5bf2e; }
+[data-discipline="raciocinio-logico"] { --discipline-color: #9fdc3c; }
+
+/* Cor de cada tipo de material (selo e filtro): somente acento. */
+.badge.teoria, .filter.teoria { --kind-ink: #5b9bff; }
+.badge.resumo, .filter.resumo { --kind-ink: #ffc83d; }
+.badge.legislacao, .filter.legislacao { --kind-ink: #a56bff; }
+.badge.questoes, .filter.questoes { --kind-ink: #34d399; }
+
+/* ───────── Mnemônicos: o par letra/significado é ligado pela cor ───────── */
+.mnemonic-tone-1 { --mnemonic-color: #2bc4e6; }
+.mnemonic-tone-2 { --mnemonic-color: #a56bff; }
+.mnemonic-tone-3 { --mnemonic-color: #34d399; }
+.mnemonic-tone-4 { --mnemonic-color: #ffc83d; }
+.mnemonic-tone-5 { --mnemonic-color: #ff5ca8; }
+.mnemonic-tone-6 { --mnemonic-color: #ff9340; }
+.mnemonic-tone-7 { --mnemonic-color: #6c8cff; }
+.mnemonic-tone-8 { --mnemonic-color: #9fdc3c; }
+.memory-aid li + li { margin-top: 10px; }
+.memory-aid .callout { padding: 0; }
+.memory-aid .text-section > p + p { margin-top: 12px; }
+.memory-aid .memory-keyword { font-weight: 700; padding-bottom: 1px; border-bottom: 2px solid var(--mnemonic-color); box-decoration-break: clone; }
+.memory-aid .memory-acronym { font-weight: 700; letter-spacing: .04em; }
+.memory-aid .mnemonic-item { margin: 10px 0; padding: 18px; border: 1px solid var(--line); border-left: var(--accent-width) solid var(--mnemonic-color); border-radius: var(--radius); background: var(--surface); }
+.memory-aid .mnemonic-text h3.mnemonic-term { font: 600 18px/1.4 "Segoe UI", Arial, sans-serif; margin: 0 0 6px; }
+.memory-aid .mnemonic-prompt { font: 600 14px/1.6 "Segoe UI", Arial, sans-serif; margin-bottom: 10px; }
+.memory-aid .mnemonic-recap { padding: 14px 16px; margin-top: 18px; border: 1px dashed var(--line-strong); border-radius: var(--radius); font: 600 14px/1.8 "Segoe UI", Arial, sans-serif; }
+.mnemonic-key { display: flex; flex-wrap: wrap; gap: 8px; padding: 6px 0 18px; margin-bottom: 4px; }
+.mnemonic-key > span { display: grid; place-items: center; min-width: 34px; padding: 3px 9px; border: 1px solid var(--mnemonic-color); border-radius: var(--radius); color: var(--ink); font: 700 17px/1.5 ui-monospace, monospace; }
+.mnemonic-item { display: grid; grid-template-columns: 42px minmax(0,1fr); gap: 16px; padding: 20px 0; border-top: 1px solid var(--line); }
+.mnemonic-letter { display: grid; place-items: center; align-self: start; min-height: 42px; padding: 4px; border: 1px solid var(--mnemonic-color); border-radius: var(--radius); color: var(--ink); font: 700 22px/1.4 ui-monospace, monospace; }
+.mnemonic-text { min-width: 0; }
+.mnemonic-text > :last-child { margin-bottom: 0; }
+
+/* Guia de cores */
+.color-guide { margin-top: 24px; padding: 14px 18px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); font-size: 13px; }
+.color-guide summary { font-weight: 600; }
+.color-guide p { color: var(--muted); margin-top: 10px; max-width: 75ch; }
+.color-guide ul { display: flex; flex-wrap: wrap; gap: 10px 22px; list-style: none; padding: 0; margin: 14px 0 0; }
+.color-guide li::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; background: var(--legend-color); margin-right: 8px; vertical-align: 0; }
+[data-color="teoria"] { --legend-color: #5b9bff; }
+[data-color="explicacao"] { --legend-color: #2bc4e6; }
+[data-color="legislacao"] { --legend-color: #a56bff; }
+[data-color="resumo"] { --legend-color: #ffc83d; }
+[data-color="alerta"] { --legend-color: #ff9340; }
+[data-color="certo"] { --legend-color: #34d399; }
+[data-color="errado"] { --legend-color: #ff5d7a; }
+
+/* ═════════ Camada visual: cor, brilho e profundidade ═════════ */
+:root { --on-color: #0a0d18; }
+body { --hc: var(--discipline-color, #7a7dff); background:
+  radial-gradient(900px 520px at 88% -8%, color-mix(in srgb, var(--hc) 24%, transparent), transparent 62%),
+  radial-gradient(760px 520px at -6% 38%, rgb(255 92 138 / 11%), transparent 62%),
+  radial-gradient(700px 500px at 60% 112%, rgb(38 196 238 / 10%), transparent 60%),
+  var(--bg); background-attachment: fixed; }
+h1, h2, h3 { font-family: "Segoe UI", system-ui, Arial, sans-serif; font-weight: 800; letter-spacing: -.02em; }
+h3 { font-weight: 700; }
+::selection { color: var(--on-color); background: var(--gold); }
+* { scrollbar-width: thin; scrollbar-color: var(--line-strong) transparent; }
+button { border-radius: var(--radius-sm); background: var(--surface-2); border-color: var(--line-strong); }
+button:hover { background: color-mix(in srgb, var(--hc) 22%, var(--surface-2)); border-color: var(--hc); transform: translateY(-1px); }
+button { transition: border-color .15s ease, background-color .15s ease, transform .15s ease, box-shadow .15s ease; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--hc); }
+.eyebrow::before { content: ""; width: 22px; height: 3px; border-radius: 3px; background: var(--grad-brand); }
+
+/* ───────── Menu lateral ───────── */
+.sidebar { background: linear-gradient(180deg, #121833 0%, #0d1226 55%, #0a0d18 100%); border-right: 1px solid var(--line); box-shadow: 8px 0 40px rgb(2 4 14 / 40%); }
+.sidebar::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 3px; background: var(--grad-brand); }
+.brand { font: 800 29px/1.05 "Segoe UI", system-ui, sans-serif; letter-spacing: -.03em; }
+.brand-period { background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.brand small { color: var(--gold); letter-spacing: .2em; }
+.nav-label { color: #6e7aa3; }
+.sidebar nav a { display: flex; align-items: center; gap: 11px; padding: 9px 12px; border-radius: 10px; --nc: var(--gold); transition: background-color .15s ease, color .15s ease, transform .15s ease; }
+.sidebar nav a::before { content: ""; flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--nc); box-shadow: 0 0 0 3px color-mix(in srgb, var(--nc) 22%, transparent); opacity: .85; }
+.sidebar nav a:hover { color: var(--ink); background: color-mix(in srgb, var(--nc) 14%, transparent); transform: translateX(2px); }
+.sidebar nav a[aria-current] { color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--nc) 38%, transparent), color-mix(in srgb, var(--nc) 8%, transparent)); box-shadow: inset 3px 0 0 var(--nc); }
+.sidebar nav a[aria-current]::before { opacity: 1; box-shadow: 0 0 12px var(--nc); }
+.sidebar nav a[href*="direito-administrativo"] { --nc: #4d8dff; }
+.sidebar nav a[href*="atualidades"] { --nc: #ff8a3d; }
+.sidebar nav a[href*="direito-constitucional"] { --nc: #a66bff; }
+.sidebar nav a[href*="direitos-humanos"] { --nc: #ff5ca8; }
+.sidebar nav a[href*="legislacao-extravagante"] { --nc: #d45cf0; }
+.sidebar nav a[href*="guardas-municipais"] { --nc: #2fd08a; }
+.sidebar nav a[href*="informatica"] { --nc: #26c4ee; }
+.sidebar nav a[href*="matematica"] { --nc: #7a7dff; }
+.sidebar nav a[href*="direito-penal"] { --nc: #ff5a6e; }
+.sidebar nav a[href*="portugues"] { --nc: #25d1b8; }
+.sidebar nav a[href*="processo-penal"] { --nc: #f5bf2e; }
+.sidebar nav a[href*="raciocinio-logico"] { --nc: #9fdc3c; }
+.sidebar-footer { border-top: 1px solid var(--line); margin: auto 10px 0; padding: 18px 0 0; }
+.topbar { position: sticky; top: 0; z-index: 5; background: rgb(10 13 24 / 72%); backdrop-filter: blur(14px) saturate(140%); -webkit-backdrop-filter: blur(14px) saturate(140%); border-bottom-color: var(--line); }
+.topbar > span { color: var(--gold); font-weight: 700; }
+
+/* ───────── Abertura da página ───────── */
+.hero { position: relative; overflow: hidden; padding: 44px 44px 40px; margin-bottom: 44px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 24px; box-shadow: var(--shadow), 0 0 80px -30px color-mix(in srgb, var(--hc) 60%, transparent);
+  background:
+    radial-gradient(520px 280px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 70%),
+    radial-gradient(460px 260px at 0% 110%, rgb(255 92 138 / 20%), transparent 70%),
+    linear-gradient(160deg, var(--surface-2), var(--panel)); }
+.hero::after { content: ""; position: absolute; right: -70px; top: -70px; width: 240px; height: 240px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 28px color-mix(in srgb, var(--hc) 7%, transparent), 0 0 0 60px color-mix(in srgb, var(--hc) 4%, transparent); pointer-events: none; }
+.hero > * { position: relative; z-index: 1; }
+.hero h1 { font-size: clamp(34px, 4.2vw, 56px); font-weight: 800; background: linear-gradient(100deg, #fff 10%, color-mix(in srgb, var(--hc) 55%, #fff) 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero p:not(.eyebrow) { color: #b6c0dd; font-size: 15px; }
+.hero-stats { gap: 14px; }
+.hero-stats > div { min-width: 104px; padding: 16px 20px; border-radius: 16px; background: rgb(255 255 255 / 5%); border: 1px solid color-mix(in srgb, var(--hc) 30%, var(--line)); backdrop-filter: blur(6px); }
+.hero-stats strong { font: 800 34px/1 "Segoe UI", system-ui, sans-serif; background: var(--grad-brand); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.section-title h2 { font-size: 30px; }
+.directory-shortcut { color: var(--gold); font-weight: 700; }
+
+/* ───────── Disciplinas ───────── */
+.discipline-grid { gap: 16px; }
+.discipline-card { --dc: var(--discipline-color, var(--line-strong)); position: relative; overflow: hidden; border: 1px solid color-mix(in srgb, var(--dc) 38%, var(--line)); border-left: 1px solid color-mix(in srgb, var(--dc) 38%, var(--line)); border-radius: 18px; padding: 22px 22px 22px 20px; gap: 6px 16px; grid-template-columns: 46px minmax(0,1fr) auto;
+  background: radial-gradient(260px 140px at 100% 0%, color-mix(in srgb, var(--dc) 30%, transparent), transparent 75%), linear-gradient(150deg, color-mix(in srgb, var(--dc) 20%, var(--panel)), color-mix(in srgb, var(--dc) 5%, var(--panel)));
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+.discipline-card::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, var(--dc), transparent); opacity: .85; }
+.discipline-card:is(:hover, :focus-visible) { transform: translateY(-4px); border-color: var(--dc); background: radial-gradient(260px 140px at 100% 0%, color-mix(in srgb, var(--dc) 42%, transparent), transparent 75%), linear-gradient(150deg, color-mix(in srgb, var(--dc) 28%, var(--panel)), color-mix(in srgb, var(--dc) 8%, var(--panel))); box-shadow: 0 16px 36px -12px color-mix(in srgb, var(--dc) 55%, transparent); }
+.discipline-number { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 13px; background: var(--dc); color: var(--on-color); font: 800 15px/1 "Segoe UI", sans-serif; letter-spacing: .02em; box-shadow: 0 6px 16px -4px color-mix(in srgb, var(--dc) 70%, transparent); }
+.discipline-card h3 { font-size: 19px; font-weight: 800; align-self: center; }
+.discipline-card p { color: #aeb9d6; }
+.discipline-bottom { padding: 4px 11px; border-radius: 999px; background: color-mix(in srgb, var(--dc) 22%, transparent); color: var(--ink); font-weight: 600; }
+.discipline-bottom > span { color: var(--dc); margin-left: 4px; }
+body[data-discipline] :is(.hero, .reader-header) { border-bottom-color: color-mix(in srgb, var(--hc) 45%, var(--line)); }
+
+/* ───────── Busca e filtros ───────── */
+.toolbar { border-radius: 18px; padding: 20px; background: linear-gradient(160deg, var(--surface), var(--panel)); box-shadow: var(--shadow); }
+input[type=search], select { border-radius: 12px; background: var(--bg); border-color: var(--line-strong); }
+input[type=search]:focus, select:focus { border-color: var(--hc); box-shadow: 0 0 0 4px color-mix(in srgb, var(--hc) 22%, transparent); }
+.search-box > span { color: var(--gold); top: 11px; font-size: 22px; }
+.filters { gap: 8px; }
+.filter { --fc: var(--kind-ink, var(--hc)); min-height: 38px; padding: 7px 15px; font-size: 12.5px; font-weight: 600; color: #c4cce6; background: color-mix(in srgb, var(--fc) 10%, transparent); border: 1px solid color-mix(in srgb, var(--fc) 40%, var(--line-strong)); }
+.filter:hover { color: #fff; background: color-mix(in srgb, var(--fc) 24%, transparent); border-color: var(--fc); transform: translateY(-1px); }
+.filter[aria-pressed=true] { background: var(--fc); border-color: var(--fc); color: var(--on-color); font-weight: 800; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--fc) 75%, transparent); }
+.filter:not(.teoria, .resumo, .legislacao, .questoes) { --fc: var(--gold); }
+.reset-filters { color: var(--gold); }
+.results { color: var(--muted); }
+
+/* ───────── Cards de assuntos ───────── */
+.grid { gap: 12px; }
+.material { --dc: var(--discipline-color, var(--line-strong)); position: relative; padding: 20px 24px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--dc) 30%, var(--line));
+  background: linear-gradient(120deg, color-mix(in srgb, var(--dc) 14%, var(--surface)), var(--surface) 62%); transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.material.subject { border-left: 5px solid var(--dc); }
+.material:hover, .material.subject:is(:hover, :focus-visible) { transform: translateX(4px); border-color: var(--dc); background: linear-gradient(120deg, color-mix(in srgb, var(--dc) 24%, var(--surface-2)), var(--surface-2) 70%); box-shadow: 0 10px 28px -12px color-mix(in srgb, var(--dc) 60%, transparent); }
+.material .discipline { color: var(--dc); font-weight: 800; letter-spacing: .1em; }
+.material h3 { font-weight: 800; }
+.material.subject h3 { font-weight: 700; }
+.go { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: color-mix(in srgb, var(--dc) 22%, transparent); color: var(--dc); transition: background-color .15s ease, color .15s ease; }
+.material:hover .go { background: var(--dc); color: var(--on-color); }
+.badge { border-left-width: 1px; border-radius: 999px; padding: 3px 11px; color: #fff; font-weight: 700; background: color-mix(in srgb, var(--kind-ink, var(--line-strong)) 30%, transparent); border-color: color-mix(in srgb, var(--kind-ink, var(--line-strong)) 70%, transparent); }
+.empty { border-radius: 18px; background: var(--surface); }
+.catalog-all > summary { font: 800 24px/1.4 "Segoe UI", system-ui, sans-serif; border-top-color: var(--line-strong); }
+.footer { border-top-color: var(--line-strong); }
+.footer a { color: var(--gold); }
+
+/* ───────── Leitor ───────── */
+.breadcrumbs a { color: var(--hc); font-weight: 600; }
+.reader-header { position: relative; overflow: hidden; padding: 32px 34px 28px; margin-bottom: 24px; border: 1px solid color-mix(in srgb, var(--hc) 45%, var(--line)); border-radius: 22px; box-shadow: var(--shadow), 0 0 70px -32px color-mix(in srgb, var(--hc) 65%, transparent);
+  background: radial-gradient(480px 240px at 100% 0%, color-mix(in srgb, var(--hc) 34%, transparent), transparent 72%), linear-gradient(160deg, var(--surface-2), var(--panel)); }
+.reader-header > * { position: relative; z-index: 1; }
+.reader-header::after { content: ""; position: absolute; right: -50px; top: -50px; width: 190px; height: 190px; border-radius: 50%; border: 2px solid color-mix(in srgb, var(--hc) 35%, transparent); box-shadow: 0 0 0 24px color-mix(in srgb, var(--hc) 7%, transparent); pointer-events: none; }
+.reader-header h1 { max-width: 26ch; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; background: linear-gradient(100deg, #fff 20%, color-mix(in srgb, var(--hc) 45%, #fff)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.chip { border: 0; border-radius: 999px; padding: 5px 14px; background: var(--hc); color: var(--on-color); font-weight: 800; letter-spacing: .09em; box-shadow: 0 6px 18px -6px color-mix(in srgb, var(--hc) 80%, transparent); }
+.chip:hover { text-decoration: none; filter: brightness(1.1); }
+.reader-header .muted { color: #b6c0dd; font-size: 13px; }
+.reader-actions button { border-radius: 999px; padding: 8px 18px; }
+.reader-actions button[aria-pressed=true], .primary { background: var(--hc); color: var(--on-color); border-color: var(--hc); box-shadow: 0 8px 20px -8px color-mix(in srgb, var(--hc) 80%, transparent); }
+.reader-actions button[aria-pressed=true]:hover { filter: brightness(1.08); transform: translateY(-1px); }
+.toc { padding: 16px 16px 12px; border-radius: 16px; border: 1px solid var(--line); background: linear-gradient(160deg, var(--surface), var(--panel)); }
+.toc > strong { font: 800 16px/1.4 "Segoe UI", sans-serif; }
+.toc a { border-bottom-color: var(--line); padding: 8px 0 8px 10px; border-left: 2px solid transparent; transition: color .15s ease, border-color .15s ease, padding .15s ease; }
+.toc a:hover { color: #fff; border-left-color: var(--hc); padding-left: 14px; }
+.bottom-nav a { flex: 1; max-width: 48%; padding: 18px 22px; border-radius: 16px; border: 1px solid color-mix(in srgb, var(--hc) 30%, var(--line)); background: linear-gradient(120deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface)); font: 800 16px/1.4 "Segoe UI", sans-serif; transition: transform .18s ease, border-color .18s ease; }
+.bottom-nav a:hover { color: #fff; border-color: var(--hc); text-decoration: none; transform: translateY(-2px); }
+.bottom-nav small { color: var(--hc); font-weight: 800; }
+.bottom-nav .next { background: linear-gradient(240deg, color-mix(in srgb, var(--hc) 14%, var(--surface)), var(--surface)); }
+
+/* ───────── Texto das aulas ───────── */
+.prose { color: #e4e9f8; }
+.prose h2 { font-weight: 800; }
+.prose strong { color: #fff; }
+.prose li::marker { color: var(--hc); }
+.prose details { border-radius: 14px; background: var(--surface); }
+
+/* ───────── Blocos de estudo: preenchidos pela cor do tipo ───────── */
+.study-card { --k: var(--kind-ink); position: relative; padding: 24px 28px; margin-bottom: 18px; border: 1px solid color-mix(in srgb, var(--k) 34%, var(--line)); border-left: var(--accent-width) solid var(--k); border-radius: 16px; box-shadow: 0 6px 22px -10px rgb(2 4 14 / 60%);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--k) 16%, var(--panel)) 0%, color-mix(in srgb, var(--k) 5%, var(--panel)) 75%); }
+.prose .study-card > .card-kicker, .prose .card-kicker { padding: 4px 12px; margin-bottom: 14px; border: 0; border-radius: 999px; background: var(--k, var(--hc)); color: var(--on-color); font-weight: 800; letter-spacing: .1em; }
+/* "Conteúdo" é só ruído repetido: some. Os demais rótulos viram selo colorido. */
+.study-card[data-study-label="Conteúdo"] > .card-kicker { display: none; }
+/* texto corrido: card leve, para o conceito e os alertas se destacarem */
+.study-card:is([data-study-kind="texto"], [data-study-kind="ul"], [data-study-kind="html"]) { background: linear-gradient(135deg, color-mix(in srgb, var(--k) 8%, var(--panel)), var(--panel) 80%); border-color: color-mix(in srgb, var(--k) 20%, var(--line)); box-shadow: none; }
+/* títulos viram faixas de seção */
+.study-card[data-study-kind="h2"] { padding: 22px 28px; margin-top: 34px; border: 0; border-radius: 18px; background: linear-gradient(100deg, color-mix(in srgb, var(--k) 70%, #0a0d18), color-mix(in srgb, var(--k) 22%, var(--panel)) 80%); box-shadow: 0 14px 34px -14px color-mix(in srgb, var(--k) 70%, transparent); }
+.study-card[data-study-kind="h2"] h2 { margin: 0; color: #fff; font-size: 26px; text-shadow: 0 2px 10px rgb(0 0 0 / 30%); }
+.study-card[data-study-kind="h3"] { padding: 14px 20px; margin: 26px 0 14px; background: linear-gradient(90deg, color-mix(in srgb, var(--k) 26%, transparent), transparent 85%); border: 0; border-left: 5px solid var(--k); border-radius: 4px 14px 14px 4px; box-shadow: none; }
+.study-card[data-study-kind="h3"] h3 { margin: 0; font-size: 21px; color: #fff; }
+.study-card:is([data-study-kind="destaque"], [data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="resumo"], [data-study-kind="lei"], [data-study-kind="artigo"], [data-study-kind="questao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="mnemonico"]) { background: linear-gradient(135deg, color-mix(in srgb, var(--k) 24%, var(--panel)) 0%, color-mix(in srgb, var(--k) 8%, var(--panel)) 80%); box-shadow: 0 10px 30px -14px color-mix(in srgb, var(--k) 55%, transparent); }
+.study-card[data-study-kind="destaque"] .text-section > p:first-child > strong { color: color-mix(in srgb, var(--k) 40%, #fff); }
+.note { border-radius: 12px; background: color-mix(in srgb, var(--kind-ink, var(--hc)) 12%, var(--surface)); }
+.blk, .alert { border-radius: 14px; }
+.alert--warning { background: color-mix(in srgb, #ff9340 14%, var(--surface)); }
+.alert--danger { background: color-mix(in srgb, #ff5d7a 14%, var(--surface)); }
+.mind-root { border: 0; border-radius: 16px; background: linear-gradient(120deg, var(--hc), color-mix(in srgb, var(--hc) 50%, #ff5c8a)); color: var(--on-color); font-weight: 800; box-shadow: 0 10px 26px -10px color-mix(in srgb, var(--hc) 75%, transparent); }
+.branches > li { border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--hc) 12%, var(--surface)), var(--surface)); border-color: color-mix(in srgb, var(--hc) 30%, var(--line)); }
+.calculation { border-radius: 14px; background: color-mix(in srgb, #2bc4e6 10%, var(--surface)); }
+
+/* ───────── Tabelas, código e símbolos ───────── */
+.table-wrap { border-radius: 14px; border-color: color-mix(in srgb, var(--hc) 30%, var(--line)); box-shadow: 0 6px 20px -10px rgb(2 4 14 / 60%); }
+th { background: linear-gradient(180deg, color-mix(in srgb, var(--hc) 46%, var(--surface-2)), color-mix(in srgb, var(--hc) 26%, var(--surface-2))); color: #fff; font-weight: 700; border-bottom-color: var(--hc); }
+tbody tr:nth-child(even) td:not([data-truth]) { background: rgb(255 255 255 / 3.5%); }
+tbody tr:hover td:not([data-truth]) { background: color-mix(in srgb, var(--hc) 11%, transparent); }
+td[data-truth=true] { color: #34d399; background: rgb(52 211 153 / 12%); }
+td[data-truth=false] { color: #ff5d7a; background: rgb(255 93 122 / 12%); }
+code, kbd { color: #ffd98a; background: rgb(255 196 92 / 10%); border-color: rgb(255 196 92 / 25%); }
+pre { border-radius: 14px; background: #070a14; border-color: var(--line-strong); }
+pre code { color: #d9e1ff; background: transparent; border: 0; }
+p.symbol { border-radius: 12px; background: color-mix(in srgb, var(--hc) 12%, var(--surface)); border-color: color-mix(in srgb, var(--hc) 35%, var(--line)); }
+.hl { color: var(--gold); }
+
+/* ───────── Questões e laboratório lógico ───────── */
+.question label { border-radius: 10px; padding: 9px 12px; transition: background-color .15s ease; }
+.question label:hover { background: rgb(255 255 255 / 5%); }
+.question .ok, .question .erro { padding: 8px 14px; border-radius: 10px; border-left-width: 4px; }
+.question .ok { background: rgb(52 211 153 / 13%); }
+.question .erro { background: rgb(255 93 122 / 13%); }
+.logic-results > div { border-radius: 14px; background: linear-gradient(160deg, var(--surface-2), var(--surface)); }
+.logic-results output { border-radius: 999px; background: rgb(52 211 153 / 14%); }
+.logic-results output[data-truth=false] { background: rgb(255 93 122 / 14%); }
+
+/* ───────── Mnemônicos ───────── */
+.mnemonic-key > span, .mnemonic-letter { border: 0; border-radius: 12px; background: var(--mnemonic-color); color: var(--on-color); box-shadow: 0 6px 16px -6px color-mix(in srgb, var(--mnemonic-color) 80%, transparent); }
+.memory-aid .mnemonic-item { border-radius: 14px; background: linear-gradient(135deg, color-mix(in srgb, var(--mnemonic-color) 16%, var(--surface)), var(--surface) 75%); border-color: color-mix(in srgb, var(--mnemonic-color) 35%, var(--line)); }
+.memory-aid .memory-keyword { border-bottom-width: 3px; }
+.memory-aid .mnemonic-recap { border-radius: 14px; background: rgb(255 255 255 / 4%); }
+.color-guide { border-radius: 14px; }
+.color-guide li::before { border-radius: 50%; width: 11px; height: 11px; }
+
+/* ───────── Detalhes finais ───────── */
+.skip { background: var(--gold); color: var(--on-color); }
+@media (prefers-reduced-motion: no-preference) {
+  main > * { animation: entrar .45s ease both; }
+  main > *:nth-child(2) { animation-delay: .05s; }
+  main > *:nth-child(3) { animation-delay: .1s; }
+  @keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+}
+
+/* ───────── Responsivo ───────── */
+@media (min-width: 1500px) {
+  .prose { font-size: 18px; }
+  .reader-layout { gap: 44px; grid-template-columns: minmax(0,820px) 200px; }
+}
+@media (max-width: 1120px) {
+  main { padding: 36px 28px 28px; }
+  .topbar { padding: 0 28px; }
+  .hero { gap: 24px; }
+  .hero-stats { gap: 18px; }
+  .reader-layout { grid-template-columns: minmax(0,1fr); }
+  .toc { position: static; max-height: 190px; order: -1; padding: 16px 0; border-block: 1px solid var(--line); }
+  .toc a { display: inline-block; padding: 6px 12px 6px 0; border: 0; margin-right: 10px; }
+  .toc > strong { margin-bottom: 8px; }
+  .discipline-grid { column-gap: 20px; }
+  .discipline-card { grid-template-columns: 22px minmax(0,1fr); grid-template-areas: "number title" "number description" "number count"; }
+}
+@media (max-width: 800px) {
+  .sidebar { position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line); }
+  .brand { margin: 0; font-size: 26px; }
+  .brand small { margin-top: 6px; font-size: 10px; }
+  .mobile-menu { display: block; align-self: center; background: transparent; }
+  .sidebar nav { display: none; grid-column: 1/-1; max-height: 60vh; margin-top: 20px; }
+  .sidebar.open nav { display: block; }
+  .sidebar-footer { display: none; }
+  .workspace { margin: 0; }
+  .topbar { min-height: 46px; padding: 0 24px; }
+  main { padding: 30px 24px 26px; }
+  .hero h1 { font-size: 40px; }
+  .hero-stats strong { font-size: 26px; }
+  .study-card { padding: 22px 22px; }
+  .reader-header h1 { font-size: 36px; }
+}
+@media (max-width: 540px) {
+  .hero { display: block; margin-bottom: 28px; padding-bottom: 24px; }
+  .hero h1 { font-size: 34px; }
+  .hero-stats { margin-top: 22px; gap: 26px; }
+  .hero-stats strong { font-size: 24px; }
+  .hero-stats div { display: flex; align-items: baseline; gap: 7px; }
+  .hero-stats span { margin: 0; }
+  .discipline-grid { grid-template-columns: minmax(0,1fr); }
+  .discipline-card { grid-template-columns: 26px minmax(0,1fr) auto; grid-template-areas: "number title count" "number description description"; padding: 18px 16px 18px 18px; }
+  .discipline-card h3 { font-size: 17px; }
+  .section-title { align-items: start; flex-direction: column; gap: 8px; }
+  .section-title h2 { font-size: 26px; }
+  .search-row { flex-direction: column; }
+  .search-row select { max-width: 100%; width: 100%; }
+  .toolbar { padding: 14px; }
+  .filters { gap: 5px; }
+  .filter { padding: 6px 10px; font-size: 11px; }
+  .material { padding: 18px; grid-template-areas: "discipline discipline" "title title" "badges footer"; gap: 10px; }
+  .material h3 { font-size: 19px; }
+  .badges { justify-content: start; }
+  .card-footer > span:first-child { display: none; }
+  .reader-header h1 { font-size: 32px; }
+  .breadcrumbs { margin-bottom: 20px; }
+  .prose { font-size: 16.5px; }
+  .prose h2 { font-size: 24px; }
+  .study-card { padding: 20px 18px; margin-bottom: 15px; }
+  th, td { padding: 10px; min-width: 100px; }
+  .logic-inputs { grid-template-columns: minmax(0,1fr); }
+  .logic-results { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .footer { flex-direction: column; gap: 10px; }
+  .bottom-nav a { font-size: 16px; }
+  .mnemonic-item { grid-template-columns: 32px minmax(0,1fr); gap: 12px; padding: 18px 0; }
+  .mnemonic-letter { min-height: 34px; font-size: 19px; }
+  .mnemonic-key { gap: 6px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+
+/* ───────── Impressão ───────── */
+@media print {
+  :root { color-scheme: light; --bg: #fff; --panel: #fff; --surface: #fff; --surface-2: #fff; --ink: #000; --muted: #333; --line: #bbb; --line-strong: #777; }
+  body { background: #fff; font-size: 11pt; }
+  .sidebar, .topbar, .breadcrumbs, .reader-actions, .filters, .toc, .bottom-nav, .footer, .skip, .logic-inputs, .color-guide { display: none !important; }
+  .workspace { margin: 0; }
+  main { max-width: none; padding: 0; }
+  .reader-layout { display: block; }
+  .reader-header { padding-bottom: 15px; }
+  .reader-header h1 { font-size: 28pt; }
+  .study-card { background: #fff !important; color: #000 !important; padding: 12px 0; border-radius: 0; border: 0; border-bottom: 1px solid #aaa; box-shadow: none; }
+  .prose { font-size: 11pt; }
+  .note, .blk, .alert, .calculation, .branches > li { background: #fff; color: #000; box-shadow: none; }
+  .prose h2 { font-size: 18pt; break-after: avoid; }
+  .prose h3 { break-after: avoid; }
+  pre { white-space: pre-wrap; background: #eee; color: #000; }
+  .table-wrap { overflow: visible; }
+  tr, figure, .logic-results { break-inside: avoid; }
+  a { color: #000 !important; }
+}
+
+@media (max-width: 800px) {
+  .hero { padding: 30px 24px 28px; border-radius: 20px; }
+  .hero::after, .reader-header::after { display: none; }
+  .reader-header { padding: 24px 22px 22px; border-radius: 18px; }
+  .sidebar::before { height: 3px; }
+  .sidebar nav a:hover { transform: none; }
+  .bottom-nav { flex-direction: column; }
+  .bottom-nav a { max-width: 100%; }
+  .study-card[data-study-kind="h2"] h2 { font-size: 22px; }
+}
+@media (max-width: 540px) {
+  .hero { padding: 26px 20px 24px; }
+  .hero-stats > div { padding: 12px 16px; min-width: 0; }
+  .discipline-card { grid-template-columns: 42px minmax(0,1fr) auto; padding: 18px 16px; }
+  .study-card { padding: 20px 18px; }
+  .study-card[data-study-kind="h2"] { padding: 18px 18px; }
+}
+
+/* ───────── Impressão: fundo branco e texto preto para economizar tinta ───────── */
+@media print {
+  body { background: #fff !important; color: #000; }
+  .sidebar, .topbar, .reader-actions, .filters, .toc, .bottom-nav, .skip { display: none !important; }
+  .workspace { margin: 0; }
+  .reader-layout { display: block; }
+  .reader-header, .study-card, .table-wrap, .hero { background: #fff !important; box-shadow: none !important; border-color: #bbb !important; color: #000; }
+  .reader-header h1, .hero h1, .study-card[data-study-kind="h2"] h2, .study-card[data-study-kind="h3"] h3 { color: #000 !important; -webkit-text-fill-color: #000; text-shadow: none; background: none !important; }
+  .prose, .prose strong { color: #000; }
+  .study-card { break-inside: avoid; }
+  th { background: #e8e8e8 !important; color: #000 !important; }
+  .chip { background: #eee; color: #000; box-shadow: none; }
+}
+
+/* Materiais da pasta MATERIAL DE ESTUDOS: usa o leitor e as cores do acervo. */
+[data-discipline="direito-penal-militar"] { --discipline-color: #ed8c53; }
+.material-github { margin-block: 32px; min-width: 0; }
+.material-github img { display: block; max-width: 100%; height: auto; margin-inline: auto; border-radius: 10px; }
+.material-github figcaption { color: var(--muted); font-size: 13px; margin-top: 8px; }
+.material-github .study-card { overflow-wrap: anywhere; }
+.material-github svg { max-width: 100%; }
+.material-github pre { white-space: pre-wrap; overflow-wrap: anywhere; }
+.apostila-pdf { display: block; width: 100%; height: 75vh; min-height: 420px; margin-top: 20px; border: 1px solid var(--line); border-radius: 10px; }
+@media print { .apostila-pdf { display: none; } }
+
+/* Leitura das normas e trilhas por corporação. */
+[data-discipline="pm-pernambuco"] { --discipline-color: #60a5fa; }
+[data-discipline="pm-bahia"] { --discipline-color: #fb7185; }
+[data-discipline="pm-alagoas"] { --discipline-color: #a78bfa; }
+[data-discipline="bombeiros-pernambuco"] { --discipline-color: #fb923c; }
+[data-discipline="policia-civil"] { --discipline-color: #facc15; }
+.leis-estudo { margin-block: 32px; min-width: 0; }
+.lei-versao { color: var(--muted); font: 13px/1.7 "Segoe UI", sans-serif; margin-block: 12px; }
+.lei-indice, .lei-consulta { margin-block: 20px; padding: 18px; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--panel); }
+.lei-indice nav { display: flex; flex-wrap: wrap; gap: 8px; max-height: 280px; overflow: auto; padding-top: 16px; }
+.lei-indice nav a { display: inline-block; padding: 5px 10px; border: 1px solid var(--line-strong); border-radius: 8px; font: 13px/1.6 "Segoe UI", sans-serif; }
+.lei-consulta label { display: block; font: 600 14px/1.6 "Segoe UI", sans-serif; }
+.lei-consulta input { margin-top: 10px; padding-left: 14px; }
+.lei-dispositivo { padding: 16px 0; border-bottom: 1px solid var(--line); scroll-margin-top: 25px; }
+.lei-dispositivo:target { background: color-mix(in srgb, var(--discipline-color) 14%, var(--panel)); padding-inline: 16px; border-radius: 10px; }
+.lei-documento { overflow-wrap: anywhere; }
+.lei-documento del { color: var(--muted); }
+.lei-documento table { width: 100%; }
+
+/* Bizus e mnemônicos: o par letra/conceito compartilha a mesma cor. */
+.prose .memory-aid, .prose .memory-inline, .prose .bizu-box {
+  --mnemonic-color: #facc15;
+  padding: 22px; margin-block: 20px;
+  border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));
+}
+.prose .memory-aid > h3, .prose .memory-aid > .card-kicker { color: #fde68a; }
+.prose .memory-aid > .card-kicker { background: #facc1520; border: 1px solid #facc1550; }
+.prose .memory-aid .memory-line {
+  margin-block: 12px; padding: 16px 18px;
+  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);
+}
+.prose .memory-line > strong, .prose .memory-line .memory-keyword { color: var(--mnemonic-color, #fde68a); }
+.prose .memory-line .memory-letter { display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace; }
+.prose .bizu-box { display: flex; gap: 14px; align-items: flex-start; }
+.prose .bizu-icon { flex: 0 0 auto; font-size: 24px; }
+
+/* Aulas de lógica: títulos, exemplos, tabelas e laboratórios com hierarquia comum. */
+[data-discipline="raciocinio-logico"] .prose .section-header { display: flex; gap: 14px; align-items: center; margin-bottom: 22px; }
+[data-discipline="raciocinio-logico"] .prose .icon-circle { display: grid; place-items: center; flex: 0 0 48px; height: 48px; border: 1px solid #22d3ee55; border-radius: 14px; background: #22d3ee18; font-size: 25px; }
+[data-discipline="raciocinio-logico"] .prose .highlight { display: block; margin-top: 8px; color: #a5b4fc; font: 400 15px/1.6 "Segoe UI", sans-serif; }
+[data-discipline="raciocinio-logico"] .material-github .card { margin-block: 15px; padding: 20px; border: 1px solid #60a5fa40; border-left: 4px solid #60a5fa; border-radius: 12px; background: #60a5fa0c; }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-cyan { border-left-color: #22d3ee; }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-purple { border-left-color: #c084fc; }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-green { border-left-color: #4ade80; }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-pink { border-left-color: #f472b6; }
+[data-discipline="raciocinio-logico"] .prose :is(.formula-box, .example-box, .quote-block) { padding: 18px; margin-block: 16px; border: 1px solid #a78bfa44; border-radius: 12px; background: #a78bfa10; }
+[data-discipline="raciocinio-logico"] .prose .symbol, .result-symbol { font-family: ui-monospace, monospace; color: #a5f3fc; overflow-wrap: anywhere; }
+.logic-lab, .argument-lab { padding: clamp(18px, 3vw, 28px); margin-block: 24px; border: 1px solid #22d3ee70; border-top: 4px solid #22d3ee; border-radius: 18px; background: linear-gradient(135deg, #123045, #161b36 60%, #241938); }
+.prose :is(.logic-lab, .argument-lab) > h3 { color: #a5f3fc; font-size: clamp(20px, 2vw, 26px); }
+.prose :is(.logic-lab, .argument-lab) > p { font: 15px/1.75 "Segoe UI", sans-serif; color: #d0dcf4; }
+.logic-inputs label { padding: 14px; border: 1px solid #60a5fa60; border-radius: 12px; background: #101527b0; color: #a5f3fc; }
+.logic-inputs label:nth-child(2) { border-color: #c084fc60; color: #e9d5ff; }
+.logic-results { grid-template-columns: repeat(auto-fit, minmax(min(100%, 180px), 1fr)); }
+.logic-results > div { display: grid; justify-items: center; align-content: start; gap: 8px; padding: 20px 14px; border-color: #64748b80; background: #0c1428c0; }
+.logic-results output { min-width: 46px; min-height: 40px; background: #34d39918; color: #86efac; border-color: #34d39970; font-size: 20px; }
+.logic-results output[data-truth=false] { background: #fb718518; color: #fda4af; border-color: #fb718570; }
+.argument-results { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.argument-result { display: flex; flex-direction: column; gap: 12px; padding: 22px; border: 1px solid #34d39960; border-top: 4px solid #34d399; border-radius: 14px; background: linear-gradient(150deg,#34d39912,#0c1428); }
+.argument-result[data-valid=false] { border-color: #fb718580; background: linear-gradient(150deg,#fb71851c,#0c1428); }
+.argument-result[data-counterexample=true] { box-shadow: 0 0 0 2px #fb7185; }
+.prose .argument-result h4 { margin: 0; font: 700 16px/1.5 "Segoe UI", sans-serif; color: #f1f5f9; }
+.argument-result output { align-self: flex-start; padding: 5px 12px; border: 1px solid #34d39970; border-radius: 8px; background: #34d39920; color: #86efac; font: 700 15px/1.7 "Segoe UI", sans-serif; }
+.argument-result[data-valid=false] output { color: #fda4af; border-color: #fb718570; background: #fb718520; }
+.prose .argument-result p { margin: 0; color: #cbd5e1; font: 13px/1.7 "Segoe UI", sans-serif; }
+.prose .lab-note { padding: 16px; margin-top: 20px; border: 1px solid #a78bfa66; border-radius: 12px; background: #a78bfa18; }
+@media (max-width: 600px) { .argument-results, .logic-inputs { grid-template-columns: 1fr; } .prose .memory-aid, .prose .memory-inline, .prose .bizu-box { padding: 17px; } }
+@media print { .prose .memory-aid, .prose .memory-inline, .logic-lab, .argument-lab, .argument-result { background: white !important; color: black !important; } .lei-consulta { display: none; } }
+
+/* Roteiro visual da aula de argumentação. */
+[data-discipline="raciocinio-logico"] #estudo {
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid #818cf840;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #151d36, #111827 72%);
+}
+[data-discipline="raciocinio-logico"] #estudo .step-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 245px), 1fr));
+  gap: 14px;
+  margin-top: 22px;
+}
+[data-discipline="raciocinio-logico"] #estudo .step-item {
+  --step-color: #38bdf8;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  min-width: 0;
+  padding: 17px;
+  border: 1px solid color-mix(in srgb, var(--step-color) 38%, transparent);
+  border-radius: 15px;
+  background: linear-gradient(135deg, color-mix(in srgb, var(--step-color) 12%, #111827), #111827 78%);
+  transition: transform .18s ease, border-color .18s ease;
+}
+[data-discipline="raciocinio-logico"] #estudo .step-item:hover {
+  transform: translateY(-2px);
+  border-color: color-mix(in srgb, var(--step-color) 72%, transparent);
+}
+[data-discipline="raciocinio-logico"] #estudo .step-item:nth-child(7n + 2) { --step-color: #a78bfa; }
+[data-discipline="raciocinio-logico"] #estudo .step-item:nth-child(7n + 3) { --step-color: #34d399; }
+[data-discipline="raciocinio-logico"] #estudo .step-item:nth-child(7n + 4) { --step-color: #fb7185; }
+[data-discipline="raciocinio-logico"] #estudo .step-item:nth-child(7n + 5) { --step-color: #fbbf24; }
+[data-discipline="raciocinio-logico"] #estudo .step-item:nth-child(7n + 6) { --step-color: #22d3ee; }
+[data-discipline="raciocinio-logico"] #estudo .step-item:nth-child(7n) { --step-color: #fb923c; }
+[data-discipline="raciocinio-logico"] #estudo .step-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  min-height: 38px;
+  border: 1px solid color-mix(in srgb, var(--step-color) 64%, transparent);
+  border-radius: 12px;
+  background: color-mix(in srgb, var(--step-color) 18%, #111827);
+  color: var(--step-color);
+  font: 800 16px/1 ui-monospace, monospace;
+}
+[data-discipline="raciocinio-logico"] #estudo .step-content { min-width: 0; }
+[data-discipline="raciocinio-logico"] #estudo .step-content h4 {
+  margin: 1px 0 6px;
+  color: #f8fafc;
+  font: 700 15px/1.45 "Segoe UI", sans-serif;
+}
+[data-discipline="raciocinio-logico"] #estudo .step-content p {
+  margin: 0;
+  color: #cbd5e1;
+  font: 13px/1.7 "Segoe UI", sans-serif;
+}
+[data-discipline="raciocinio-logico"] .argument-lab > h3 {
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  margin: 0 0 8px;
+}
+[data-discipline="raciocinio-logico"] .argument-lab .logic-inputs label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  font-weight: 700;
+}
+[data-discipline="raciocinio-logico"] .argument-lab .logic-inputs select {
+  width: auto;
+  min-width: 150px;
+  border: 1px solid #67e8f970;
+  border-radius: 9px;
+  background: #101527;
+  color: #f8fafc;
+  padding: 9px 12px;
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-discipline="raciocinio-logico"] #estudo .step-item { transition: none; }
+  [data-discipline="raciocinio-logico"] #estudo .step-item:hover { transform: none; }
+}
+@media (max-width: 600px) {
+  [data-discipline="raciocinio-logico"] #estudo .step-list { grid-template-columns: 1fr; }
+  [data-discipline="raciocinio-logico"] .argument-lab .logic-inputs label { align-items: stretch; flex-direction: column; }
+  [data-discipline="raciocinio-logico"] .argument-lab .logic-inputs select { width: 100%; }
+}
+
+/* Fluxogramas da aula de argumentação: diagramas nativos, sem código Mermaid visível. */
+[data-discipline="raciocinio-logico"] #fluxo > .card {
+  padding: clamp(18px, 3vw, 30px);
+  border: 1px solid #fbbf2445;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #211d35, #131a2b 72%);
+}
+[data-discipline="raciocinio-logico"] #fluxo > .card > p:first-child {
+  max-width: 70ch;
+  margin: 0 0 20px;
+  color: #dbe5f5;
+  font: 15px/1.75 "Segoe UI", sans-serif;
+}
+.flowchart-example {
+  --flow-accent: #22d3ee;
+  min-width: 0;
+  margin-block: 16px;
+  padding: clamp(17px, 2.5vw, 24px);
+  border: 1px solid color-mix(in srgb, var(--flow-accent) 38%, #29354a);
+  border-radius: 17px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--flow-accent) 9%, #111827), #101727 74%);
+}
+.flowchart-example + .flowchart-example { --flow-accent: #a78bfa; }
+.flowchart-title { display: flex; gap: 13px; align-items: center; margin-bottom: 20px; }
+.flowchart-index {
+  display: grid; place-items: center; flex: 0 0 42px; height: 42px;
+  border: 1px solid color-mix(in srgb, var(--flow-accent) 64%, transparent);
+  border-radius: 13px; background: color-mix(in srgb, var(--flow-accent) 16%, #101727);
+  color: var(--flow-accent); font: 800 15px/1 ui-monospace, monospace;
+}
+.prose .flowchart-title h3 { margin: 0 0 3px; color: #f8fafc; font: 700 17px/1.4 "Segoe UI", sans-serif; }
+.flowchart-title p { margin: 0; color: #aebbd0; font: 13px/1.6 "Segoe UI", sans-serif; }
+.flow-node {
+  display: flex; flex-direction: column; justify-content: center; gap: 7px;
+  min-width: 0; min-height: 86px; padding: 15px 17px;
+  border: 1px solid #52627a; border-radius: 14px; background: #111827;
+}
+.flow-node > span { color: #9aa9bf; font: 800 10px/1.4 "Segoe UI", sans-serif; letter-spacing: .1em; }
+.flow-node > strong { color: #f1f5f9; font: 600 14px/1.6 "Segoe UI", sans-serif; overflow-wrap: anywhere; }
+.flow-node.premise { border-color: #38bdf866; background: linear-gradient(135deg, #0c4a6e55, #111827 78%); }
+.flow-node.premise > span { color: #7dd3fc; }
+.flow-node.decision { border-color: #fbbf2477; background: linear-gradient(135deg, #78350f55, #111827 78%); }
+.flow-node.decision > span { color: #fcd34d; }
+.flow-node.conclusion { border-color: #34d39977; background: linear-gradient(135deg, #064e3b66, #111827 78%); }
+.flow-node.conclusion > span { color: #6ee7b7; }
+.flow-node.note { border-color: #fb718566; background: linear-gradient(135deg, #88133744, #111827 78%); }
+.flow-node.note > span { color: #fda4af; }
+.flowchart-start { display: grid; grid-template-columns: minmax(0, 1fr) 38px minmax(0, 1fr); align-items: center; gap: 12px; }
+.flow-arrow { display: grid; place-items: center; color: var(--flow-accent); font: 800 28px/1 ui-monospace, monospace; }
+.flowchart-branches { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+.flow-branch { display: grid; grid-template-columns: 1fr; justify-items: stretch; gap: 7px; }
+.branch-label { justify-self: start; padding: 4px 9px; border: 1px solid #34d39955; border-radius: 999px; background: #34d39912; color: #86efac; font: 800 11px/1.5 "Segoe UI", sans-serif; letter-spacing: .04em; }
+.flow-branch.no .branch-label { border-color: #fb718555; background: #fb718512; color: #fda4af; }
+.branch-arrow { justify-self: center; color: #6ee7b7; font: 800 22px/1 ui-monospace, monospace; }
+.flow-branch.no .branch-arrow { color: #fda4af; }
+.flowchart-premises { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.flowchart-down { display: grid; place-items: center; height: 44px; color: var(--flow-accent); font: 800 27px/1 ui-monospace, monospace; }
+.flow-conclusion { max-width: 560px; margin-inline: auto; text-align: center; }
+[data-discipline="raciocinio-logico"] #fluxo .bizu-box { margin-top: 20px; }
+@media (max-width: 640px) {
+  .flowchart-start { grid-template-columns: 1fr; }
+  .flow-arrow { transform: rotate(90deg); }
+  .flowchart-branches, .flowchart-premises { grid-template-columns: 1fr; }
+  .flow-node { min-height: 76px; }
+}
+@media print {
+  .flowchart-example, .flow-node { background: white !important; color: black !important; }
+  .flow-node > strong, .prose .flowchart-title h3 { color: black !important; }
+}
+
+/* Correções jurídicas distribuídas nos respectivos assuntos. */
+.prose .correcao-integrada {
+  margin: 0 0 28px;
+  padding: clamp(19px, 3vw, 28px);
+  border: 1px solid #fbbf2460;
+  border-left: 5px solid #fbbf24;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #fbbf2414, #151a2b 62%, #111827);
+}
+.prose .correcao-integrada .correcao-kicker {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 9px;
+  border: 1px solid #fbbf2450;
+  border-radius: 999px;
+  background: #fbbf2416;
+  color: #fcd34d;
+  font: 800 10px/1.5 "Segoe UI", sans-serif;
+  letter-spacing: .1em;
+}
+.prose .correcao-integrada h2 {
+  margin: 0 0 12px;
+  color: #f8fafc;
+  font-size: clamp(18px, 2.2vw, 22px);
+}
+.prose .correcao-integrada > p:not(.correcao-kicker):not(.correcao-fonte) {
+  margin: 0;
+  color: #d5deec;
+  font: 14px/1.8 "Segoe UI", sans-serif;
+}
+.prose .correcao-integrada .correcao-fonte {
+  margin: 14px 0 0;
+  color: #aebbd0;
+  font: 12px/1.7 "Segoe UI", sans-serif;
+}
+.correcao-integrada a { color: #7dd3fc; text-decoration: underline; text-underline-offset: 3px; }
+@media print {
+  .prose .correcao-integrada { border-color: #555; border-left-color: #111; background: white !important; }
+  .prose .correcao-integrada :is(h2, p, a) { color: black !important; }
+}
+
+
+/* Estilos 3D */
+/* Camada 3D · Matéria Policial
+   Regras de movimento (Emil Kowalski): só transform/opacity, curvas ease-out fortes,
+   entradas ≤ 300 ms, pressão em scale(.97), hover só em ponteiro fino, reduced-motion respeitado.
+   Regras de estilo (taste-skill): profundidade vem de geometria e sombra, sem brilho decorativo. */
+
+:root {
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --t-fast: 140ms;
+  --t-base: 220ms;
+}
+
+/* ---------- Estante 3D (anel de livros) ---------- */
+.estante3d { margin: 0 0 56px; }
+.estante3d .section-title { margin-bottom: 8px; }
+.estante3d-dica { color: var(--muted); font-size: 13px; line-height: 1.6; max-width: 62ch; }
+
+.cena3d {
+  --w: 150px; --h: 206px; --t: 26px; --n: 12;
+  --R: 262px;
+  --esc: 1;
+  position: relative; height: 410px; margin-top: 8px;
+  display: grid; place-items: center;
+  perspective: 1500px; perspective-origin: 50% 38%;
+  overflow: hidden; touch-action: pan-y; cursor: grab; user-select: none; -webkit-user-select: none;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, transparent 0 62%, color-mix(in srgb, var(--panel) 80%, transparent) 62% 100%);
+}
+.cena3d.arrastando { cursor: grabbing; }
+.palco3d {
+  position: relative; width: var(--w); height: var(--h);
+  transform-style: preserve-3d;
+  transform: translateY(8px) scale(var(--esc)) rotateX(-12deg);
+}
+.anel3d {
+  position: absolute; inset: 0;
+  transform-style: preserve-3d;
+  transform: translateZ(calc(var(--R) * -1)) rotateY(var(--giro, 0deg));
+  will-change: transform;
+}
+/* chão: sombra projetada, dá a ancoragem de profundidade */
+.chao3d {
+  position: absolute; left: 50%; bottom: 78px; width: 720px; height: 90px; margin-left: -360px;
+  background: radial-gradient(closest-side, rgb(0 0 0 / 55%), transparent);
+  transform: scale(var(--esc)); pointer-events: none;
+}
+
+.livro3d {
+  --cor: var(--discipline-color, #5b9bff);
+  --miolo: color-mix(in srgb, var(--cor) 32%, #0a0d18);
+  --papel: #d9d4c4;
+  position: absolute; inset: 0; display: block; color: var(--ink);
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * (360deg / var(--n)))) translateZ(var(--R));
+  text-decoration: none;
+  outline: none;
+}
+.livro3d > i, .livro3d > b { position: absolute; display: block; font-style: normal; backface-visibility: hidden; }
+
+.livro3d .capa {
+  inset: 0; padding: 16px 14px 14px 18px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  background: var(--miolo);
+  border: 1px solid color-mix(in srgb, var(--cor) 55%, transparent);
+  border-left: 6px solid var(--cor);
+  border-radius: 2px 5px 5px 2px;
+  transform: translateZ(calc(var(--t) / 2));
+  transition: filter var(--t-base) var(--ease-out);
+}
+.livro3d .capa .num { font: 600 11px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .12em; color: color-mix(in srgb, var(--cor) 70%, #fff); }
+.livro3d .capa .nome { font: 800 14px/1.25 "Segoe UI", system-ui, sans-serif; letter-spacing: -.01em; text-wrap: balance; overflow-wrap: normal; word-break: normal; }
+.livro3d .capa .qtd { font-size: 11px; color: color-mix(in srgb, var(--ink) 70%, transparent); }
+.livro3d .verso {
+  inset: 0; background: color-mix(in srgb, var(--cor) 22%, #0a0d18);
+  border-radius: 5px 2px 2px 5px;
+  transform: translateZ(calc(var(--t) / -2)) rotateY(180deg);
+}
+.livro3d .lombada {
+  width: var(--t); height: 100%; left: calc(50% - var(--t) / 2); top: 0;
+  background: var(--cor);
+  transform: rotateY(-90deg) translateZ(calc(var(--w) / 2));
+}
+.livro3d .folhas {
+  width: var(--t); height: 100%; left: calc(50% - var(--t) / 2); top: 0;
+  background: repeating-linear-gradient(90deg, var(--papel) 0 2px, #bdb8a7 2px 3px);
+  transform: rotateY(90deg) translateZ(calc(var(--w) / 2));
+}
+.livro3d .topo {
+  width: 100%; height: var(--t); left: 0; top: calc(50% - var(--t) / 2);
+  background: repeating-linear-gradient(0deg, var(--papel) 0 2px, #bdb8a7 2px 3px);
+  transform: rotateX(90deg) translateZ(calc(var(--h) / 2));
+}
+.livro3d .base {
+  width: 100%; height: var(--t); left: 0; top: calc(50% - var(--t) / 2);
+  background: color-mix(in srgb, var(--cor) 28%, #05070d);
+  transform: rotateX(-90deg) translateZ(calc(var(--h) / 2));
+}
+@media (hover: hover) and (pointer: fine) {
+  .livro3d:hover .capa { filter: brightness(1.18); }
+}
+.livro3d:focus-visible .capa { outline: 2px solid var(--gold); outline-offset: 3px; }
+
+.cena3d-controles {
+  position: absolute; inset: auto 0 14px; display: flex; justify-content: center; align-items: center; gap: 18px;
+  pointer-events: none;
+}
+.cena3d-controles > * { pointer-events: auto; }
+.cena3d-legenda { min-width: 230px; text-align: center; color: var(--ink); font-size: 13px; font-weight: 600; font-variant-numeric: tabular-nums; }
+.cena3d-legenda small { display: block; margin-top: 3px; font-weight: 400; color: var(--muted); font-size: 11px; }
+.cena3d-btn {
+  width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; padding: 0;
+  background: var(--surface); border: 1px solid var(--line-strong); color: var(--ink); font-size: 18px; line-height: 1; cursor: pointer;
+  transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
+}
+.cena3d-btn:active { transform: scale(0.94); }
+@media (hover: hover) and (pointer: fine) { .cena3d-btn:hover { background: var(--panel); } }
+.cena3d-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+@media (max-width: 760px) {
+  .cena3d { height: 340px; --esc: .8; }
+  .cena3d-legenda { min-width: 180px; }
+}
+@media (max-width: 460px) { .cena3d { --esc: .62; height: 290px; } }
+
+/* sem JS: estante vira fileira estática de capas, sem 3D */
+.sem-js-estante { display: none; }
+
+/* ---------- Inclinação dos cartões (pointer fino) ---------- */
+.discipline-card, .material.subject, .lei-card {
+  --rx: 0; --ry: 0;
+  transform: perspective(900px) rotateX(calc(var(--rx) * 1deg)) rotateY(calc(var(--ry) * 1deg));
+  transform-style: preserve-3d;
+  box-shadow:
+    calc(var(--ry) * -1.2px) calc(6px + var(--rx) * 1.2px) 18px -8px rgb(0 0 0 / 55%),
+    0 1px 0 rgb(255 255 255 / 3%) inset;
+  transition: transform var(--t-base) var(--ease-out), box-shadow var(--t-base) var(--ease-out), background-color .15s ease, border-color .15s ease;
+}
+.discipline-card > *, .material.subject > *, .lei-card > * { transform: translateZ(10px); }
+.discipline-card .discipline-number, .lei-card .lei-sigla { transform: translateZ(22px); }
+.discipline-card:is(:hover, :focus-visible) {
+  transform: perspective(900px) translateY(-3px) rotateX(calc(var(--rx) * 1deg)) rotateY(calc(var(--ry) * 1deg));
+}
+.discipline-card:active, .material.subject:active, .lei-card:active {
+  transform: perspective(900px) scale(0.97);
+  transition-duration: 100ms;
+}
+.tilt-ativo { transition-duration: 60ms, var(--t-base), .15s, .15s; }
+
+/* ---------- Entrada por rolagem ---------- */
+.rev { opacity: 0; transform: translateY(10px); }
+.rev.entrou {
+  opacity: 1; transform: none;
+  transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
+  transition-delay: calc(var(--d, 0) * 28ms);
+}
+.js-3d .discipline-card.rev.entrou, .js-3d .lei-card.rev.entrou { transform: perspective(900px) rotateX(calc(var(--rx) * 1deg)) rotateY(calc(var(--ry) * 1deg)); }
+
+/* ---------- Progresso de leitura ---------- */
+.progresso3d {
+  position: fixed; left: 0; top: 0; right: 0; height: 3px; z-index: 40; pointer-events: none;
+  transform-origin: 0 50%; transform: scaleX(var(--p, 0));
+  background: var(--discipline-color, var(--gold));
+}
+
+/* ---------- Transição entre páginas (navegadores com suporte) ---------- */
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: 120ms var(--ease-out) both vt-sai; }
+::view-transition-new(root) { animation: 200ms var(--ease-out) both vt-entra; }
+@keyframes vt-sai { to { opacity: 0; } }
+@keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
+
+/* ---------- Página de Legislação ---------- */
+.leis-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 12px; margin-bottom: 36px; }
+.lei-card {
+  --discipline-color: #6c8cff;
+  display: grid; gap: 6px; align-content: start; padding: 18px 18px 16px 20px; min-height: 132px;
+  background: var(--panel); border: 1px solid var(--line); border-left: var(--accent-width) solid var(--discipline-color);
+  border-radius: var(--radius); color: var(--ink); text-decoration: none;
+}
+.lei-card:is(:hover, :focus-visible) { background: var(--surface); border-color: var(--line-strong); text-decoration: none; }
+.lei-card[aria-current="true"] { background: var(--surface); border-color: var(--discipline-color); }
+.lei-sigla { font: 800 11px/1 "Segoe UI", system-ui, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: color-mix(in srgb, var(--discipline-color) 70%, #fff); }
+.lei-card h3 { font-size: 16px; line-height: 1.35; }
+.lei-card small { color: var(--muted); font-size: 12px; }
+.lei-card[data-id="cf88"] { --discipline-color: #a66bff; }
+.lei-card[data-id="cp"] { --discipline-color: #ff5a6e; }
+.lei-card[data-id="cpp"] { --discipline-color: #ff8a3d; }
+.lei-card[data-id="cpm"] { --discipline-color: #2fd08a; }
+.lei-card[data-id="cppm"] { --discipline-color: #f5bf2e; }
+.lei-card[data-id="lep"] { --discipline-color: #26c4ee; }
+.lei-card[data-id="eca"] { --discipline-color: #ff5ca8; }
+.lei-card[data-id="maria-da-penha"] { --discipline-color: #d45cf0; }
+.lei-card[data-id="drogas"] { --discipline-color: #9fdc3c; }
+.lei-card[data-id="orcrim"] { --discipline-color: #4d8dff; }
+.lei-card[data-id="abuso"] { --discipline-color: #25d1b8; }
+
+.leitor { scroll-margin-top: 80px; }
+.leitor-barra {
+  position: sticky; top: 60px; z-index: 6; display: grid; gap: 10px; padding: 12px 0 14px;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.leitor-linha { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.leitor-linha input[type="search"], .leitor-linha input[type="text"] {
+  flex: 1 1 220px; min-width: 0; height: 40px; padding: 0 12px; background: var(--panel); color: var(--ink);
+  border: 1px solid var(--line-strong); border-radius: var(--radius-sm); font: inherit; font-size: 14px;
+}
+.leitor-linha input.curto { flex: 0 1 150px; }
+.leitor-linha input:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.leitor-titulo { font: 800 20px/1.25 "Segoe UI", system-ui, sans-serif; letter-spacing: -.01em; }
+.leitor-meta { color: var(--muted); font-size: 12px; line-height: 1.6; }
+.leitor-meta a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; }
+.btn-lei {
+  height: 40px; padding: 0 14px; background: var(--surface); color: var(--ink); border: 1px solid var(--line-strong);
+  border-radius: var(--radius-sm); font: inherit; font-size: 13px; cursor: pointer;
+  transition: transform var(--t-fast) var(--ease-out), background-color var(--t-fast) ease;
+}
+.btn-lei:active { transform: scale(0.97); }
+@media (hover: hover) and (pointer: fine) { .btn-lei:hover { background: var(--panel); } }
+.btn-lei:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+
+.leitor-resultados, .leitor-indice {
+  max-height: 320px; overflow: auto; margin: 10px 0 0; padding: 6px; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius-sm);
+}
+.leitor-resultados[hidden], .leitor-indice[hidden] { display: none; }
+.leitor-resultados button, .leitor-indice a {
+  display: block; width: 100%; padding: 8px 10px; text-align: left; background: none; border: 0; border-radius: 6px;
+  color: var(--ink); font: inherit; font-size: 13px; line-height: 1.5; cursor: pointer; text-decoration: none;
+}
+.leitor-resultados button:focus-visible, .leitor-indice a:focus-visible { outline: 2px solid var(--gold); outline-offset: -2px; }
+@media (hover: hover) and (pointer: fine) {
+  .leitor-resultados button:hover, .leitor-indice a:hover { background: var(--surface); }
+}
+.leitor-resultados mark { background: color-mix(in srgb, var(--gold) 38%, transparent); color: inherit; border-radius: 3px; padding: 0 1px; }
+.leitor-resultados .ref { font-weight: 700; margin-right: 6px; }
+.leitor-indice a[data-n="2"] { font-weight: 700; margin-top: 4px; }
+.leitor-indice a[data-n="3"] { padding-left: 22px; }
+.leitor-indice a[data-n="4"], .leitor-indice a[data-n="5"] { padding-left: 38px; color: var(--muted); }
+
+.lei-texto { max-width: 78ch; margin: 26px 0 40px; font-size: 16px; line-height: 1.8; }
+.lei-texto > * { content-visibility: auto; contain-intrinsic-size: auto 48px; }
+.lei-texto p { margin: 0 0 12px; overflow-wrap: anywhere; }
+.lei-texto h2, .lei-texto h3, .lei-texto h4, .lei-texto h5 { scroll-margin-top: 150px; margin: 34px 0 12px; line-height: 1.3; }
+.lei-texto h2 { font-size: 22px; padding-top: 14px; border-top: 1px solid var(--line-strong); }
+.lei-texto h3 { font-size: 18px; }
+.lei-texto h4, .lei-texto h5 { font-size: 15px; color: var(--muted); }
+.lei-texto p.art { scroll-margin-top: 150px; margin-top: 22px; padding-left: 14px; border-left: 3px solid var(--line-strong); }
+.lei-texto p.art strong { color: var(--gold); }
+.lei-texto p.par { padding-left: 14px; }
+.lei-texto p.inc { padding-left: 34px; }
+.lei-texto p.ali { padding-left: 54px; }
+.lei-texto blockquote { margin: 0 0 16px; padding: 10px 14px; color: var(--muted); font-size: 13px; line-height: 1.7; border-left: 3px solid var(--line-strong); background: var(--panel); border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+.lei-texto hr { border: 0; border-top: 1px solid var(--line); margin: 26px 0; }
+.lei-texto del { color: var(--muted); }
+.lei-texto .tabela { overflow-x: auto; margin: 0 0 16px; }
+.lei-texto table { border-collapse: collapse; font-size: 14px; min-width: 100%; }
+.lei-texto th, .lei-texto td { border: 1px solid var(--line); padding: 6px 10px; text-align: left; vertical-align: top; }
+.lei-texto .alvo { outline: 2px solid var(--gold); outline-offset: 4px; border-radius: 4px; }
+.leitor-vazio { padding: 40px 0; color: var(--muted); }
+.leitor-aviso { margin-top: 28px; padding: 12px 14px; color: var(--muted); font-size: 12px; line-height: 1.7; border: 1px solid var(--line); border-radius: var(--radius-sm); }
+
+/* ---------- Movimento reduzido / sem 3D ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .rev, .rev.entrou { opacity: 1; transform: none; transition: none; }
+  .discipline-card, .material.subject, .lei-card { transform: none !important; transition: none; }
+  .discipline-card > *, .material.subject > *, .lei-card > * { transform: none; }
+  .progresso3d { transition: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+@media print { .cena3d, .progresso3d, .estante3d { display: none; } }
+
+
+/* Estilos específicos da matéria */
+[data-discipline="policia-civil"]{--discipline-color: #facc15;}
+</style><script defer="" src="../../js/app.js?v=leitura-20261026"></script></head><body class="tema-biblioteca" data-disciplina-acervo="policia-civil" data-discipline="policia-civil" data-lei-id="lgpd"><a class="skip" href="#conteudo">Pular para o conteúdo</a><aside class="sidebar" id="sidebar"><a class="brand" href="../../../index.html"><span>Matéria<br/>Policial<span class="brand-period">.</span><small>CONCURSOS PÚBLICOS</small></span></a><button aria-controls="navegacao" aria-expanded="false" class="mobile-menu">Abrir menu</button><nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a href="../direito-administrativo/index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a href="../direito-constitucional/index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal Militar</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a aria-current="page" href="index.html">Polícia Civil</a></nav><div class="sidebar-footer">Biblioteca de estudos<br/><span>Teoria · revisão · legislação</span></div></aside><div class="workspace"><header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header><main id="conteudo"><nav aria-label="Trilha" class="breadcrumbs"><a href="../../../index.html">Biblioteca</a> / <a href="index.html">Polícia Civil</a></nav><header class="reader-header"><a class="chip" href="index.html">Polícia Civil</a><h1>Lei 13.709/2018 — Lei Geral de Proteção de Dados</h1><p class="muted">Legislação e roteiro de estudo</p><div class="reader-actions"><button aria-pressed="false" data-key="assets/materias/policia-civil/lgpd.html" id="concluir">Marcar como estudado</button><button id="imprimir">Imprimir</button><span class="status" id="salvamento"></span></div></header><div class="reader-layout" style="grid-template-columns:minmax(0,1fr)"><article class="prose"><section class="leis-estudo" data-lei-id="lgpd"><h2>Lei 13.709/2018 — Lei Geral de Proteção de Dados</h2><p class="lei-versao">BR / 2026-10-13 / compilada (texto vigente)</p><p><a class="chip" href="https://normas.leg.br/?urn=urn:lex:br:federal:lei:2018-08-14;13709" rel="noopener" target="_blank">Consultar fonte oficial</a> <a download="" href="../../leis/federal/leis-ordinarias/2018/lei-13709-2018-08-14.md">Baixar cópia local</a></p><p class="muted">A redação desta cópia corresponde à versão identificada acima. Consulte a fonte oficial para conferir alterações posteriores e o recorte do seu edital.</p><div class="study-card" data-study-kind="resumo"><h3>Roteiro de leitura</h3><ol><li>Princípios e direitos</li><li>Agentes de tratamento</li><li>Âmbito de aplicação e tratamento para segurança pública</li></ol></div><details class="lei-indice"><summary>Índice dos 80 dispositivos</summary><nav aria-label="Índice de artigos"><a href="#lei-art-1">Art. 1</a><a href="#lei-art-2-a">Art. 2-A</a><a href="#lei-art-3">Art. 3</a><a href="#lei-art-4">Art. 4</a><a href="#lei-art-5">Art. 5</a><a href="#lei-art-6">Art. 6</a><a href="#lei-art-7-o">Art. 7-O</a><a href="#lei-art-8-o">Art. 8-O</a><a href="#lei-art-9-o">Art. 9-O</a><a href="#lei-art-10-o">Art. 10-O</a><a href="#lei-art-11-o">Art. 11-O</a><a href="#lei-art-12">Art. 12</a><a href="#lei-art-13">Art. 13</a><a href="#lei-art-14-o">Art. 14-O</a><a href="#lei-art-15-o">Art. 15-O</a><a href="#lei-art-16">Art. 16</a><a href="#lei-art-17">Art. 17</a><a href="#lei-art-18-o">Art. 18-O</a><a href="#lei-art-19-a">Art. 19-A</a><a href="#lei-art-20-o">Art. 20-O</a><a href="#lei-art-21">Art. 21</a><a href="#lei-art-22-a">Art. 22-A</a><a href="#lei-art-23-o">Art. 23-O</a><a href="#lei-art-24">Art. 24</a><a href="#lei-art-25">Art. 25</a><a href="#lei-art-26-o">Art. 26-O</a><a href="#lei-art-27-a">Art. 27-A</a><a href="#lei-art-28">Art. 28</a><a href="#lei-art-29-a">Art. 29-A</a><a href="#lei-art-30-a">Art. 30-A</a><a href="#lei-art-31">Art. 31</a><a href="#lei-art-32-a">Art. 32-A</a><a href="#lei-art-33-a">Art. 33-A</a><a href="#lei-art-34-o">Art. 34-O</a><a href="#lei-art-35-a">Art. 35-A</a><a href="#lei-art-36">Art. 36</a><a href="#lei-art-37-o">Art. 37-O</a><a href="#lei-art-38-a">Art. 38-A</a><a href="#lei-art-39-o">Art. 39-O</a><a href="#lei-art-40-a">Art. 40-A</a><a href="#lei-art-41-o">Art. 41-O</a><a href="#lei-art-42-o">Art. 42-O</a><a href="#lei-art-43">Art. 43</a><a href="#lei-art-44-o">Art. 44-O</a><a href="#lei-art-45">Art. 45</a><a href="#lei-art-46">Art. 46</a><a href="#lei-art-47">Art. 47</a><a href="#lei-art-48-o">Art. 48-O</a><a href="#lei-art-49">Art. 49</a><a href="#lei-art-50">Art. 50</a><a href="#lei-art-51-a">Art. 51-A</a><a href="#lei-art-52">Art. 52</a><a href="#lei-art-53-a">Art. 53-A</a><a href="#lei-art-54-o">Art. 54-O</a><a href="#lei-art-55">Art. 55</a><a href="#lei-art-55-a">Art. 55-A</a><a href="#lei-art-55-b">Art. 55-B</a><a href="#lei-art-55-c">Art. 55-C</a><a href="#lei-art-55-d">Art. 55-D</a><a href="#lei-art-55-e">Art. 55-E</a><a href="#lei-art-55-f">Art. 55-F</a><a href="#lei-art-55-g">Art. 55-G</a><a href="#lei-art-55-h">Art. 55-H</a><a href="#lei-art-55-i">Art. 55-I</a><a href="#lei-art-55-j">Art. 55-J</a><a href="#lei-art-55-k">Art. 55-K</a><a href="#lei-art-55-l">Art. 55-L</a><a href="#lei-art-55-m">Art. 55-M</a><a href="#lei-art-56">Art. 56</a><a href="#lei-art-57">Art. 57</a><a href="#lei-art-58">Art. 58</a><a href="#lei-art-58-a">Art. 58-A</a><a href="#lei-art-58-b">Art. 58-B</a><a href="#lei-art-59">Art. 59</a><a href="#lei-art-60-a">Art. 60-A</a><a href="#lei-art-61-a">Art. 61-A</a><a href="#lei-art-62-a">Art. 62-A</a><a href="#lei-art-63-a">Art. 63-A</a><a href="#lei-art-64">Art. 64</a><a href="#lei-art-65">Art. 65</a></nav></details><section aria-label="Busca no texto da norma" class="lei-consulta"><label>Buscar na lei<input data-lei-busca="" placeholder="Ex.: investigação, ingresso, disciplina…" type="search"/></label><p data-lei-resultados="" role="status"></p></section><div class="lei-documento"><section class="lei-preambulo"><h2>Lei nº 13.709 de 14/08/2018</h2><p><strong>LEI Nº 13.709, DE 14 DE AGOSTO DE 2018</strong></p><p>Lei Geral de Proteção de Dados Pessoais (LGPD) *(Ementa com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p><strong>O PRESIDENTE DA REPÚBLICA</strong></p><p>Faço saber que o Congresso Nacional decreta e eu sanciono a seguinte Lei:</p></section><section class="lei-preambulo"><h5>CAPÍTULO I — DISPOSIÇÕES PRELIMINARES</h5></section><section class="lei-dispositivo" data-artigo="1" id="lei-art-1"><p><strong>Art. 1º</strong> Esta Lei dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.</p><p><strong>Parágrafo único.</strong> As normas gerais contidas nesta Lei são de interesse nacional e devem ser observadas pela União, Estados, Distrito Federal e Municípios. *(Parágrafo único acrescido pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="2-A" id="lei-art-2-a"><p><strong>Art. 2º</strong> A disciplina da proteção de dados pessoais tem como fundamentos:</p><p>I - o respeito à privacidade;</p><p>II - a autodeterminação informativa;</p><p>III - a liberdade de expressão, de informação, de comunicação e de opinião;</p><p>IV - a inviolabilidade da intimidade, da honra e da imagem;</p><p>V - o desenvolvimento econômico e tecnológico e a inovação;</p><p>VI - a livre iniciativa, a livre concorrência e a defesa do consumidor; e</p><p>VII - os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais.</p></section><section class="lei-dispositivo" data-artigo="3" id="lei-art-3"><p><strong>Art. 3º</strong> Esta Lei aplica-se a qualquer operação de tratamento realizada por pessoa natural ou por pessoa jurídica de direito público ou privado, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:</p><p>I - a operação de tratamento seja realizada no território nacional;</p><p>II - a atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional; ou *(Inciso com redação dada pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>III - os dados pessoais objeto do tratamento tenham sido coletados no território nacional.</p><p><strong>§ 1º</strong> Consideram-se coletados no território nacional os dados pessoais cujo titular nele se encontre no momento da coleta.</p><p><strong>§ 2º</strong> Excetua-se do disposto no inciso I deste artigo o tratamento de dados previsto no inciso IV do *caput* do art. 4º desta Lei.</p></section><section class="lei-dispositivo" data-artigo="4" id="lei-art-4"><p><strong>Art. 4º</strong> Esta Lei não se aplica ao tratamento de dados pessoais:</p><p>I - realizado por pessoa natural para fins exclusivamente particulares e não econômicos;</p><p>II - realizado para fins exclusivamente:</p><p>a) jornalístico e artísticos; ou</p><p>b) acadêmicos, aplicando-se a esta hipótese os arts. 7º e 11 desta Lei;</p><p>III - realizado para fins exclusivos de:</p><p>a) segurança pública;</p><p>b) defesa nacional;</p><p>c) segurança do Estado; ou</p><p>d) atividades de investigação e repressão de infrações penais; ou</p><p>IV - provenientes de fora do território nacional e que não sejam objeto de comunicação, uso compartilhado de dados com agentes de tratamento brasileiros ou objeto de transferência internacional de dados com outro país que não o de proveniência, desde que o país de proveniência proporcione grau de proteção de dados pessoais adequado ao previsto nesta Lei.</p><p><strong>§ 1º</strong> O tratamento de dados pessoais previsto no inciso III será regido por legislação específica, que deverá prever medidas proporcionais e estritamente necessárias ao atendimento do interesse público, observados o devido processo legal, os princípios gerais de proteção e os direitos do titular previstos nesta Lei.</p><p><strong>§ 2º</strong> É vedado o tratamento dos dados a que se refere o inciso III do *caput* deste artigo por pessoa de direito privado, exceto em procedimentos sob tutela de pessoa jurídica de direito público, que serão objeto de informe específico à autoridade nacional e que deverão observar a limitação imposta no § 4º deste artigo.</p><p><strong>§ 3º</strong> A autoridade nacional emitirá opiniões técnicas ou recomendações referentes às exceções previstas no inciso III do *caput* deste artigo e deverá solicitar aos responsáveis relatórios de impacto à proteção de dados pessoais.</p><p><strong>§ 4º</strong> Em nenhum caso a totalidade dos dados pessoais de banco de dados de que trata o inciso III do *caput* deste artigo poderá ser tratada por pessoa de direito privado, salvo por aquela que possua capital integralmente constituído pelo poder público. *(Parágrafo com redação dada pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="5" id="lei-art-5"><p><strong>Art. 5º</strong> Para os fins desta Lei, considera-se:</p><p>I - dado pessoal: informação relacionada a pessoa natural identificada ou identificável;</p><p>II - dado pessoal sensível: dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural;</p><p>III - dado anonimizado: dado relativo a titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento;</p><p>IV - banco de dados: conjunto estruturado de dados pessoais, estabelecido em um ou em vários locais, em suporte eletrônico ou físico;</p><p>V - titular: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento;</p><p>VI - controlador: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais;</p><p>VII - operador: pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador;</p><p>VIII - encarregado: pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD); *(Inciso com redação dada pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>IX - agentes de tratamento: o controlador e o operador;</p><p>X - tratamento: toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração;</p><p>XI - anonimização: utilização de meios técnicos razoáveis e disponíveis no momento do tratamento, por meio dos quais um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo;</p><p>XII - consentimento: manifestação livre, informada e inequívoca pela qual o titular concorda com o tratamento de seus dados pessoais para uma finalidade determinada;</p><p>XIII - bloqueio: suspensão temporária de qualquer operação de tratamento, mediante guarda do dado pessoal ou do banco de dados;</p><p>XIV - eliminação: exclusão de dado ou de conjunto de dados armazenados em banco de dados, independentemente do procedimento empregado;</p><p>XV - transferência internacional de dados: transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro;</p><p>XVI - uso compartilhado de dados: comunicação, difusão, transferência internacional, interconexão de dados pessoais ou tratamento compartilhado de bancos de dados pessoais por órgãos e entidades públicos no cumprimento de suas competências legais, ou entre esses e entes privados, reciprocamente, com autorização específica, para uma ou mais modalidades de tratamento permitidas por esses entes públicos, ou entre entes privados;</p><p>XVII - relatório de impacto à proteção de dados pessoais: documentação do controlador que contém a descrição dos processos de tratamento de dados pessoais que podem gerar riscos às liberdades civis e aos direitos fundamentais, bem como medidas, salvaguardas e mecanismos de mitigação de risco;</p><p>XVIII - órgão de pesquisa: órgão ou entidade da administração pública direta ou indireta ou pessoa jurídica de direito privado sem fins lucrativos legalmente constituída sob as leis brasileiras, com sede e foro no País, que inclua em sua missão institucional ou em seu objetivo social ou estatutário a pesquisa básica ou aplicada de caráter histórico, científico, tecnológico ou estatístico; e *(Inciso com redação dada pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>XIX - autoridade nacional: órgão da administração pública responsável por zelar, implementar e fiscalizar o cumprimento desta Lei em todo o território nacional. *(Inciso com redação dada pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="6" id="lei-art-6"><p><strong>Art. 6º</strong> As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios:</p><p>I - finalidade: realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades;</p><p>II - adequação: compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento;</p><p>III - necessidade: limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados;</p><p>IV - livre acesso: garantia, aos titulares, de consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais;</p><p>V - qualidade dos dados: garantia, aos titulares, de exatidão, clareza, relevância e atualização dos dados, de acordo com a necessidade e para o cumprimento da finalidade de seu tratamento;</p><p>VI - transparência: garantia, aos titulares, de informações claras, precisas e facilmente acessíveis sobre a realização do tratamento e os respectivos agentes de tratamento, observados os segredos comercial e industrial;</p><p>VII - segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão;</p><p>VIII - prevenção: adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais;</p><p>IX - não discriminação: impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos;</p><p>X- responsabilização e prestação de contas: demonstração, pelo agente, da adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais e, inclusive, da eficácia dessas medidas.</p></section><section class="lei-preambulo"><h5>CAPÍTULO II — DO TRATAMENTO DE DADOS PESSOAIS</h5></section><section class="lei-preambulo"><h5>Seção I — Dos Requisitos para o Tratamento de Dados Pessoais</h5></section><section class="lei-dispositivo" data-artigo="7-O" id="lei-art-7-o"><p><strong>Art. 7º</strong> O tratamento de dados pessoais somente poderá ser realizado nas seguintes hipóteses:</p><p>I - mediante o fornecimento de consentimento pelo titular;</p><p>II - para o cumprimento de obrigação legal ou regulatória pelo controlador;</p><p>III - pela administração pública, para o tratamento e uso compartilhado de dados necessários à execução de políticas públicas previstas em leis e regulamentos ou respaldadas em contratos, convênios ou instrumentos congêneres, observadas as disposições do Capítulo IV desta Lei;</p><p>IV - para a realização de estudos por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;</p><p>V - quando necessário para a execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular, a pedido do titular dos dados;</p><p>VI - para o exercício regular de direitos em processo judicial, administrativo ou arbitral, esse último nos termos da Lei nº 9.307, de 23 de setembro de 1996 (Lei de Arbitragem);</p><p>VII - para a proteção da vida ou da incolumidade física do titular ou de terceiro;</p><p>VIII - para a tutela da saúde, exclusivamente, em procedimento realizado por profissionais de saúde, serviços de saúde ou autoridade sanitária; *(Inciso com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p>IX - quando necessário para atender aos interesses legítimos do controlador ou de terceiro, exceto no caso de prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção dos dados pessoais; ou</p><p>X - para a proteção do crédito, inclusive quanto ao disposto na legislação pertinente.</p><p><strong>§ 1º</strong> *(Revogado pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 2º</strong> *(Revogado pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 3º</strong> O tratamento de dados pessoais cujo acesso é público deve considerar a finalidade, a boa-fé e o interesse público que justificaram sua disponibilização.</p><p><strong>§ 4º</strong> É dispensada a exigência do consentimento previsto no *caput* deste artigo para os dados tornados manifestamente públicos pelo titular, resguardados os direitos do titular e os princípios previstos nesta Lei.</p><p><strong>§ 5º</strong> O controlador que obteve o consentimento referido no inciso I do *caput* deste artigo que necessitar comunicar ou compartilhar dados pessoais com outros controladores deverá obter consentimento específico do titular para esse fim, ressalvadas as hipóteses de dispensa do consentimento previstas nesta Lei.</p><p><strong>§ 6º</strong> A eventual dispensa da exigência do consentimento não desobriga os agentes de tratamento das demais obrigações previstas nesta Lei, especialmente da observância dos princípios gerais e da garantia dos direitos do titular.</p><p><strong>§ 7º</strong> O tratamento posterior dos dados pessoais a que se referem os §§ 3º e 4º deste artigo poderá ser realizado para novas finalidades, desde que observados os propósitos legítimos e específicos para o novo tratamento e a preservação dos direitos do titular, assim como os fundamentos e os princípios previstos nesta Lei. *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="8-O" id="lei-art-8-o"><p><strong>Art. 8º</strong> O consentimento previsto no inciso I do art. 7º desta Lei deverá ser fornecido por escrito ou por outro meio que demonstre a manifestação de vontade do titular.</p><p><strong>§ 1º</strong> Caso o consentimento seja fornecido por escrito, esse deverá constar de cláusula destacada das demais cláusulas contratuais.</p><p><strong>§ 2º</strong> Cabe ao controlador o ônus da prova de que o consentimento foi obtido em conformidade com o disposto nesta Lei.</p><p><strong>§ 3º</strong> É vedado o tratamento de dados pessoais mediante vício de consentimento.</p><p><strong>§ 4º</strong> O consentimento deverá referir-se a finalidades determinadas, e as autorizações genéricas para o tratamento de dados pessoais serão nulas.</p><p><strong>§ 5º</strong> O consentimento pode ser revogado a qualquer momento mediante manifestação expressa do titular, por procedimento gratuito e facilitado, ratificados os tratamentos realizados sob amparo do consentimento anteriormente manifestado enquanto não houver requerimento de eliminação, nos termos do inciso VI do *caput* do art. 18 desta Lei.</p><p><strong>§ 6º</strong> Em caso de alteração de informação referida nos incisos I, II, III ou V do art. 9º desta Lei, o controlador deverá informar ao titular, com destaque de forma específica do teor das alterações, podendo o titular, nos casos em que o seu consentimento é exigido, revogá-lo caso discorde da alteração.</p></section><section class="lei-dispositivo" data-artigo="9-O" id="lei-art-9-o"><p><strong>Art. 9º</strong> O titular tem direito ao acesso facilitado às informações sobre o tratamento de seus dados, que deverão ser disponibilizadas de forma clara, adequada e ostensiva acerca de, entre outras características previstas em regulamentação para o atendimento do princípio do livre acesso:</p><p>I - finalidade específica do tratamento;</p><p>II - forma e duração do tratamento, observados os segredos comercial e industrial;</p><p>III - identificação do controlador;</p><p>IV - informações de contato do controlador;</p><p>V - informações acerca do uso compartilhado de dados pelo controlador e a finalidade;</p><p>VI - responsabilidades dos agentes que realizarão o tratamento; e</p><p>VII - direitos do titular, com menção explícita aos direitos contidos no art. 18 desta Lei.</p><p><strong>§ 1º</strong> Na hipótese em que o consentimento é requerido, esse será considerado nulo caso as informações fornecidas ao titular tenham conteúdo enganoso ou abusivo ou não tenham sido apresentadas previamente com transparência, de forma clara e inequívoca.</p><p><strong>§ 2º</strong> Na hipótese em que o consentimento é requerido, se houver mudanças da finalidade para o tratamento de dados pessoais não compatíveis com o consentimento original, o controlador deverá informar previamente o titular sobre as mudanças de finalidade, podendo o titular revogar o consentimento, caso discorde das alterações.</p><p><strong>§ 3º</strong> Quando o tratamento de dados pessoais for condição para o fornecimento de produto ou de serviço ou para o exercício de direito, o titular será informado com destaque sobre esse fato e sobre os meios pelos quais poderá exercer os direitos do titular elencados no art. 18 desta Lei.</p></section><section class="lei-dispositivo" data-artigo="10-O" id="lei-art-10-o"><p><strong>Art. 10.</strong> O legítimo interesse do controlador somente poderá fundamentar tratamento de dados pessoais para finalidades legítimas, consideradas a partir de situações concretas, que incluem, mas não se limitam a:</p><p>I - apoio e promoção de atividades do controlador; e</p><p>II - proteção, em relação ao titular, do exercício regular de seus direitos ou prestação de serviços que o beneficiem, respeitadas as legítimas expectativas dele e os direitos e liberdades fundamentais, nos termos desta Lei.</p><p><strong>§ 1º</strong> Quando o tratamento for baseado no legítimo interesse do controlador, somente os dados pessoais estritamente necessários para a finalidade pretendida poderão ser tratados.</p><p><strong>§ 2º</strong> O controlador deverá adotar medidas para garantir a transparência do tratamento de dados baseado em seu legítimo interesse.</p><p><strong>§ 3º</strong> A autoridade nacional poderá solicitar ao controlador relatório de impacto à proteção de dados pessoais, quando o tratamento tiver como fundamento seu interesse legítimo, observados os segredos comercial e industrial.</p></section><section class="lei-preambulo"><h5>Seção II — Do Tratamento de Dados Pessoais Sensíveis</h5></section><section class="lei-dispositivo" data-artigo="11-O" id="lei-art-11-o"><p><strong>Art. 11.</strong> O tratamento de dados pessoais sensíveis somente poderá ocorrer nas seguintes hipóteses:</p><p>I - quando o titular ou seu responsável legal consentir, de forma específica e destacada, para finalidades específicas;</p><p>II - sem fornecimento de consentimento do titular, nas hipóteses em que for indispensável para:</p><p>a) cumprimento de obrigação legal ou regulatória pelo controlador;</p><p>b) tratamento compartilhado de dados necessários à execução, pela administração pública, de políticas públicas previstas em leis ou regulamentos;</p><p>c) realização de estudos por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais sensíveis;</p><p>d) exercício regular de direitos, inclusive em contrato e em processo judicial, administrativo e arbitral, este último nos termos da Lei nº 9.307, de 23 de setembro de 1996 (Lei de Arbitragem);</p><p>e) proteção da vida ou da incolumidade física do titular ou de terceiro;</p><p>f) tutela da saúde, exclusivamente, em procedimento realizado por profissionais de saúde, serviços de saúde ou autoridade sanitária; ou *(Alínea com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p>g) garantia da prevenção à fraude e à segurança do titular, nos processos de identificação e autenticação de cadastro em sistemas eletrônicos, resguardados os direitos mencionados no art. 9º desta Lei e exceto no caso de prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção dos dados pessoais.</p><p><strong>§ 1º</strong> Aplica-se o disposto neste artigo a qualquer tratamento de dados pessoais que revele dados pessoais sensíveis e que possa causar dano ao titular, ressalvado o disposto em legislação específica.</p><p><strong>§ 2º</strong> Nos casos de aplicação do disposto nas alíneas "a" e "b" do inciso II do *caput* deste artigo pelos órgãos e pelas entidades públicas, será dada publicidade à referida dispensa de consentimento, nos termos do inciso I do *caput* do art. 23 desta Lei.</p><p><strong>§ 3º</strong> A comunicação ou o uso compartilhado de dados pessoais sensíveis entre controladores com objetivo de obter vantagem econômica poderá ser objeto de vedação ou de regulamentação por parte da autoridade nacional, ouvidos os órgãos setoriais do Poder Público, no âmbito de suas competências.</p><p><strong>§ 4º</strong> É vedada a comunicação ou o uso compartilhado entre controladores de dados pessoais sensíveis referentes à saúde com objetivo de obter vantagem econômica, exceto nas hipóteses relativas a prestação de serviços de saúde, de assistência farmacêutica e de assistência à saúde, desde que observado o § 5º deste artigo, incluídos os serviços auxiliares de diagnose e terapia, em benefício dos interesses dos titulares de dados, e para permitir:</p><p>I - a portabilidade de dados quando solicitada pelo titular; ou</p><p>II - as transações financeiras e administrativas resultantes do uso e da prestação dos serviços de que trata este parágrafo. *(Inciso com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 5º</strong> É vedado às operadoras de planos privados de assistência à saúde o tratamento de dados de saúde para a prática de seleção de riscos na contratação de qualquer modalidade, assim como na contratação e exclusão de beneficiários. *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="12" id="lei-art-12"><p><strong>Art. 12.</strong> Os dados anonimizados não serão considerados dados pessoais para os fins desta Lei, salvo quando o processo de anonimização ao qual foram submetidos for revertido, utilizando exclusivamente meios próprios, ou quando, com esforços razoáveis, puder ser revertido.</p><p><strong>§ 1º</strong> A determinação do que seja razoável deve levar em consideração fatores objetivos, tais como custo e tempo necessários para reverter o processo de anonimização, de acordo com as tecnologias disponíveis, e a utilização exclusiva de meios próprios.</p><p><strong>§ 2º</strong> Poderão ser igualmente considerados como dados pessoais, para os fins desta Lei, aqueles utilizados para formação do perfil comportamental de determinada pessoa natural, se identificada.</p><p><strong>§ 3º</strong> A autoridade nacional poderá dispor sobre padrões e técnicas utilizados em processos de anonimização e realizar verificações acerca de sua segurança, ouvido o Conselho Nacional de Proteção de Dados Pessoais.</p></section><section class="lei-dispositivo" data-artigo="13" id="lei-art-13"><p><strong>Art. 13.</strong> Na realização de estudos em saúde pública, os órgãos de pesquisa poderão ter acesso a bases de dados pessoais, que serão tratados exclusivamente dentro do órgão e estritamente para a finalidade de realização de estudos e pesquisas e mantidos em ambiente controlado e seguro, conforme práticas de segurança previstas em regulamento específico e que incluam, sempre que possível, a anonimização ou pseudonimização dos dados, bem como considerem os devidos padrões éticos relacionados a estudos e pesquisas.</p><p><strong>§ 1º</strong> A divulgação dos resultados ou de qualquer excerto do estudo ou da pesquisa de que trata o *caput* deste artigo em nenhuma hipótese poderá revelar dados pessoais.</p><p><strong>§ 2º</strong> O órgão de pesquisa será o responsável pela segurança da informação prevista no *caput* deste artigo, não permitida, em circunstância alguma, a transferência dos dados a terceiro.</p><p><strong>§ 3º</strong> O acesso aos dados de que trata este artigo será objeto de regulamentação por parte da autoridade nacional e das autoridades da área de saúde e sanitárias, no âmbito de suas competências.</p><p><strong>§ 4º</strong> Para os efeitos deste artigo, a pseudonimização é o tratamento por meio do qual um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo, senão pelo uso de informação adicional mantida separadamente pelo controlador em ambiente controlado e seguro.</p></section><section class="lei-preambulo"><h5>Seção III — Do Tratamento de Dados Pessoais de Crianças e de Adolescentes</h5></section><section class="lei-dispositivo" data-artigo="14-O" id="lei-art-14-o"><p><strong>Art. 14.</strong> O tratamento de dados pessoais de crianças e de adolescentes deverá ser realizado em seu melhor interesse, nos termos deste artigo e da legislação pertinente.</p><p><strong>§ 1º</strong> O tratamento de dados pessoais de crianças deverá ser realizado com o consentimento específico e em destaque dado por pelo menos um dos pais ou pelo responsável legal.</p><p><strong>§ 2º</strong> No tratamento de dados de que trata o § 1º deste artigo, os controladores deverão manter pública a informação sobre os tipos de dados coletados, a forma de sua utilização e os procedimentos para o exercício dos direitos a que se refere o art. 18 desta Lei.</p><p><strong>§ 3º</strong> Poderão ser coletados dados pessoais de crianças sem o consentimento a que se refere o § 1º deste artigo quando a coleta for necessária para contatar os pais ou o responsável legal, utilizados uma única vez e sem armazenamento, ou para sua proteção, e em nenhum caso poderão ser repassados a terceiro sem o consentimento de que trata o § 1º deste artigo.</p><p><strong>§ 4º</strong> Os controladores não deverão condicionar a participação dos titulares de que trata o § 1º deste artigo em jogos, aplicações de internet ou outras atividades ao fornecimento de informações pessoais além das estritamente necessárias à atividade.</p><p><strong>§ 5º</strong> O controlador deve realizar todos os esforços razoáveis para verificar que o consentimento a que se refere o § 1º deste artigo foi dado pelo responsável pela criança, consideradas as tecnologias disponíveis.</p><p><strong>§ 6º</strong> As informações sobre o tratamento de dados referidas neste artigo deverão ser fornecidas de maneira simples, clara e acessível, consideradas as características físico-motoras, perceptivas, sensoriais, intelectuais e mentais do usuário, com uso de recursos audiovisuais quando adequado, de forma a proporcionar a informação necessária aos pais ou ao responsável legal e adequada ao entendimento da criança.</p></section><section class="lei-preambulo"><h5>Seção IV — Do Término do Tratamento de Dados</h5></section><section class="lei-dispositivo" data-artigo="15-O" id="lei-art-15-o"><p><strong>Art. 15.</strong> O término do tratamento de dados pessoais ocorrerá nas seguintes hipóteses:</p><p>I - verificação de que a finalidade foi alcançada ou de que os dados deixaram de ser necessários ou pertinentes ao alcance da finalidade específica almejada;</p><p>II - fim do período de tratamento;</p><p>III - comunicação do titular, inclusive no exercício de seu direito de revogação do consentimento conforme disposto no § 5º do art. 8º desta Lei, resguardado o interesse público; ou</p><p>IV - determinação da autoridade nacional, quando houver violação ao disposto nesta Lei.</p></section><section class="lei-dispositivo" data-artigo="16" id="lei-art-16"><p><strong>Art. 16.</strong> Os dados pessoais serão eliminados após o término de seu tratamento, no âmbito e nos limites técnicos das atividades, autorizada a conservação para as seguintes finalidades:</p><p>I - cumprimento de obrigação legal ou regulatória pelo controlador;</p><p>II - estudo por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais;</p><p>III - transferência a terceiro, desde que respeitados os requisitos de tratamento de dados dispostos nesta Lei; ou</p><p>IV - uso exclusivo do controlador, vedado seu acesso por terceiro, e desde que anonimizados os dados.</p></section><section class="lei-preambulo"><h5>CAPÍTULO III — DOS DIREITOS DO TITULAR</h5></section><section class="lei-dispositivo" data-artigo="17" id="lei-art-17"><p><strong>Art. 17.</strong> Toda pessoa natural tem assegurada a titularidade de seus dados pessoais e garantidos os direitos fundamentais de liberdade, de intimidade e de privacidade, nos termos desta Lei.</p></section><section class="lei-dispositivo" data-artigo="18-O" id="lei-art-18-o"><p><strong>Art. 18.</strong> O titular dos dados pessoais tem direito a obter do controlador, em relação aos dados do titular por ele tratados, a qualquer momento e mediante requisição:</p><p>I - confirmação da existência de tratamento;</p><p>II - acesso aos dados;</p><p>III - correção de dados incompletos, inexatos ou desatualizados;</p><p>IV - anonimização, bloqueio ou eliminação de dados desnecessários, excessivos ou tratados em desconformidade com o disposto nesta Lei;</p><p>V - portabilidade dos dados a outro fornecedor de serviço ou produto, mediante requisição expressa, de acordo com a regulamentação da autoridade nacional, observados os segredos comercial e industrial; *(Inciso com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p>VI - eliminação dos dados pessoais tratados com o consentimento do titular, exceto nas hipóteses previstas no art. 16 desta Lei;</p><p>VII - informação das entidades públicas e privadas com as quais o controlador realizou uso compartilhado de dados;</p><p>VIII - informação sobre a possibilidade de não fornecer consentimento e sobre as consequências da negativa;</p><p>IX - revogação do consentimento, nos termos do § 5º do art. 8º desta Lei.</p><p><strong>§ 1º</strong> O titular dos dados pessoais tem o direito de peticionar em relação aos seus dados contra o controlador perante a autoridade nacional.</p><p><strong>§ 2º</strong> O titular pode opor-se a tratamento realizado com fundamento em uma das hipóteses de dispensa de consentimento, em caso de descumprimento ao disposto nesta Lei.</p><p><strong>§ 3º</strong> Os direitos previstos neste artigo serão exercidos mediante requerimento expresso do titular ou de representante legalmente constituído, a agente de tratamento.</p><p><strong>§ 4º</strong> Em caso de impossibilidade de adoção imediata da providência de que trata o § 3º deste artigo, o controlador enviará ao titular resposta em que poderá:</p><p>I - comunicar que não é agente de tratamento dos dados e indicar, sempre que possível, o agente; ou</p><p>II - indicar as razões de fato ou de direito que impedem a adoção imediata da providência.</p><p><strong>§ 5º</strong> O requerimento referido no § 3º deste artigo será atendido sem custos para o titular, nos prazos e nos termos previstos em regulamento.</p><p><strong>§ 6º</strong> O responsável deverá informar, de maneira imediata, aos agentes de tratamento com os quais tenha realizado uso compartilhado de dados a correção, a eliminação, a anonimização ou o bloqueio dos dados, para que repitam idêntico procedimento, exceto nos casos em que esta comunicação seja comprovadamente impossível ou implique esforço desproporcional. *(Parágrafo com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 7º</strong> A portabilidade dos dados pessoais a que se refere o inciso V do *caput* deste artigo não inclui dados que já tenham sido anonimizados pelo controlador.</p><p><strong>§ 8º</strong> O direito a que se refere o § 1º deste artigo também poderá ser exercido perante os organismos de defesa do consumidor.</p></section><section class="lei-dispositivo" data-artigo="19-A" id="lei-art-19-a"><p><strong>Art. 19.</strong> A confirmação de existência ou o acesso a dados pessoais serão providenciados, mediante requisição do titular:</p><p>I - em formato simplificado, imediatamente; ou</p><p>II - por meio de declaração clara e completa, que indique a origem dos dados, a inexistência de registro, os critérios utilizados e a finalidade do tratamento, observados os segredos comercial e industrial, fornecida no prazo de até 15 (quinze) dias, contado da data do requerimento do titular.</p><p><strong>§ 1º</strong> Os dados pessoais serão armazenados em formato que favoreça o exercício do direito de acesso.</p><p><strong>§ 2º</strong> As informações e os dados poderão ser fornecidos, a critério do titular:</p><p>I - por meio eletrônico, seguro e idôneo para esse fim; ou</p><p>II - sob forma impressa.</p><p><strong>§ 3º</strong> Quando o tratamento tiver origem no consentimento do titular ou em contrato, o titular poderá solicitar cópia eletrônica integral de seus dados pessoais, observados os segredos comercial e industrial, nos termos de regulamentação da autoridade nacional, em formato que permita a sua utilização subsequente, inclusive em outras operações de tratamento.</p><p><strong>§ 4º</strong> A autoridade nacional poderá dispor de forma diferenciada acerca dos prazos previstos nos incisos I e II do *caput* deste artigo para os setores específicos.</p></section><section class="lei-dispositivo" data-artigo="20-O" id="lei-art-20-o"><p><strong>Art. 20.</strong> O titular dos dados tem direito a solicitar a revisão de decisões tomadas unicamente com base em tratamento automatizado de dados pessoais que afetem seus interesses, incluídas as decisões destinadas a definir o seu perfil pessoal, profissional, de consumo e de crédito ou os aspectos de sua personalidade. *(“Caput” do artigo com redação dada pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 1º</strong> O controlador deverá fornecer, sempre que solicitadas, informações claras e adequadas a respeito dos critérios e dos procedimentos utilizados para a decisão automatizada, observados os segredos comercial e industrial.</p><p><strong>§ 2º</strong> Em caso de não oferecimento de informações de que trata o § 1º deste artigo baseado na observância de segredo comercial e industrial, a autoridade nacional poderá realizar auditoria para verificação de aspectos discriminatórios em tratamento automatizado de dados pessoais.</p><p><strong>§ 3º</strong> *(VETADO na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="21" id="lei-art-21"><p><strong>Art. 21.</strong> Os dados pessoais referentes ao exercício regular de direitos pelo titular não podem ser utilizados em seu prejuízo.</p></section><section class="lei-dispositivo" data-artigo="22-A" id="lei-art-22-a"><p><strong>Art. 22.</strong> A defesa dos interesses e dos direitos dos titulares de dados poderá ser exercida em juízo, individual ou coletivamente, na forma do disposto na legislação pertinente, acerca dos instrumentos de tutela individual e coletiva.</p></section><section class="lei-preambulo"><h5>CAPÍTULO IV — DO TRATAMENTO DE DADOS PESSOAIS PELO PODER PÚBLICO</h5></section><section class="lei-preambulo"><h5>Seção I — Das Regras</h5></section><section class="lei-dispositivo" data-artigo="23-O" id="lei-art-23-o"><p><strong>Art. 23.</strong> O tratamento de dados pessoais pelas pessoas jurídicas de direito público referidas no parágrafo único do art. 1º da Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), deverá ser realizado para o atendimento de sua finalidade pública, na persecução do interesse público, com o objetivo de executar as competências legais ou cumprir as atribuições legais do serviço público, desde que:</p><p>I - sejam informadas as hipóteses em que, no exercício de suas competências, realizam o tratamento de dados pessoais, fornecendo informações claras e atualizadas sobre a previsão legal, a finalidade, os procedimentos e as práticas utilizadas para a execução dessas atividades, em veículos de fácil acesso, preferencialmente em seus sítios eletrônicos;</p><p>II - (VETADO); e</p><p>III - seja indicado um encarregado quando realizarem operações de tratamento de dados pessoais, nos termos do art. 39 desta Lei; e *(Inciso com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p>IV - *(Vetado na Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 1º</strong> A autoridade nacional poderá dispor sobre as formas de publicidade das operações de tratamento.</p><p><strong>§ 2º</strong> O disposto nesta Lei não dispensa as pessoas jurídicas mencionadas no *caput* deste artigo de instituir as autoridades de que trata a Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação).</p><p><strong>§ 3º</strong> Os prazos e procedimentos para exercício dos direitos do titular perante o Poder Público observarão o disposto em legislação específica, em especial as disposições constantes da Lei nº 9.507, de 12 de novembro de 1997 (Lei do Habeas Data), da Lei nº 9.784, de 29 de janeiro de 1999 (Lei Geral do Processo Administrativo), e da Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação).</p><p><strong>§ 4º</strong> Os serviços notariais e de registro exercidos em caráter privado, por delegação do Poder Público, terão o mesmo tratamento dispensado às pessoas jurídicas referidas no *caput* deste artigo, nos termos desta Lei.</p><p><strong>§ 5º</strong> Os órgãos notariais e de registro devem fornecer acesso aos dados por meio eletrônico para a administração pública, tendo em vista as finalidades de que trata o *caput* deste artigo.</p></section><section class="lei-dispositivo" data-artigo="24" id="lei-art-24"><p><strong>Art. 24.</strong> As empresas públicas e as sociedades de economia mista que atuam em regime de concorrência, sujeitas ao disposto no art. 173 da Constituição Federal, terão o mesmo tratamento dispensado às pessoas jurídicas de direito privado particulares, nos termos desta Lei.</p><p><strong>Parágrafo único.</strong> As empresas públicas e as sociedades de economia mista, quando estiverem operacionalizando políticas públicas e no âmbito da execução delas, terão o mesmo tratamento dispensado aos órgãos e às entidades do Poder Público, nos termos deste Capítulo.</p></section><section class="lei-dispositivo" data-artigo="25" id="lei-art-25"><p><strong>Art. 25.</strong> Os dados deverão ser mantidos em formato interoperável e estruturado para o uso compartilhado, com vistas à execução de políticas públicas, à prestação de serviços públicos, à descentralização da atividade pública e à disseminação e ao acesso das informações pelo público em geral.</p></section><section class="lei-dispositivo" data-artigo="26-O" id="lei-art-26-o"><p><strong>Art. 26.</strong> O uso compartilhado de dados pessoais pelo Poder Público deve atender a finalidades específicas de execução de políticas públicas e atribuição legal pelos órgãos e pelas entidades públicas, respeitados os princípios de proteção de dados pessoais elencados no art. 6º desta Lei.</p><p><strong>§ 1º</strong> É vedado ao Poder Público transferir a entidades privadas dados pessoais constantes de bases de dados a que tenha acesso, exceto:</p><p>I - em casos de execução descentralizada de atividade pública que exija a transferência, exclusivamente para esse fim específico e determinado, observado o disposto na Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação);</p><p>II - (VETADO);</p><p>III - nos casos em que os dados forem acessíveis publicamente, observadas as disposições desta Lei;</p><p>IV - quando houver previsão legal ou a transferência for respaldada em contratos, convênios ou instrumentos congêneres; ou *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>V - na hipótese de a transferência dos dados objetivar exclusivamente a prevenção de fraudes e irregularidades, ou proteger e resguardar a segurança e a integridade do titular dos dados, desde que vedado o tratamento para outras finalidades. *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 2º</strong> Os contratos e convênios de que trata o § 1º deste artigo deverão ser comunicados à autoridade nacional.</p></section><section class="lei-dispositivo" data-artigo="27-A" id="lei-art-27-a"><p><strong>Art. 27.</strong> A comunicação ou o uso compartilhado de dados pessoais de pessoa jurídica de direito público a pessoa de direito privado será informado à autoridade nacional e dependerá de consentimento do titular, exceto:</p><p>I - nas hipóteses de dispensa de consentimento previstas nesta Lei;</p><p>II - nos casos de uso compartilhado de dados, em que será dada publicidade nos termos do inciso I do *caput* do art. 23 desta Lei; ou</p><p>III - nas exceções constantes do § 1º do art. 26 desta Lei.</p><p><strong>Parágrafo único.</strong> A informação à autoridade nacional de que trata o *caput* deste artigo será objeto de regulamentação. *(Parágrafo único acrescido pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="28" id="lei-art-28"><p><strong>Art. 28.</strong> (VETADO).</p></section><section class="lei-dispositivo" data-artigo="29-A" id="lei-art-29-a"><p><strong>Art. 29.</strong> A autoridade nacional poderá solicitar, a qualquer momento, aos órgãos e às entidades do poder público a realização de operações de tratamento de dados pessoais, informações específicas sobre o âmbito e a natureza dos dados e outros detalhes do tratamento realizado e poderá emitir parecer técnico complementar para garantir o cumprimento desta Lei. *(Artigo com redação dada pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="30-A" id="lei-art-30-a"><p><strong>Art. 30.</strong> A autoridade nacional poderá estabelecer normas complementares para as atividades de comunicação e de uso compartilhado de dados pessoais.</p></section><section class="lei-preambulo"><h5>Seção II — Da Responsabilidade</h5></section><section class="lei-dispositivo" data-artigo="31" id="lei-art-31"><p><strong>Art. 31.</strong> Quando houver infração a esta Lei em decorrência do tratamento de dados pessoais por órgãos públicos, a autoridade nacional poderá enviar informe com medidas cabíveis para fazer cessar a violação.</p></section><section class="lei-dispositivo" data-artigo="32-A" id="lei-art-32-a"><p><strong>Art. 32.</strong> A autoridade nacional poderá solicitar a agentes do Poder Público a publicação de relatórios de impacto à proteção de dados pessoais e sugerir a adoção de padrões e de boas práticas para os tratamentos de dados pessoais pelo Poder Público.</p></section><section class="lei-preambulo"><h5>CAPÍTULO V — DA TRANSFERÊNCIA INTERNACIONAL DE DADOS</h5></section><section class="lei-dispositivo" data-artigo="33-A" id="lei-art-33-a"><p><strong>Art. 33.</strong> A transferência internacional de dados pessoais somente é permitida nos seguintes casos:</p><p>I - para países ou organismos internacionais que proporcionem grau de proteção de dados pessoais adequado ao previsto nesta Lei;</p><p>II - quando o controlador oferecer e comprovar garantias de cumprimento dos princípios, dos direitos do titular e do regime de proteção de dados previstos nesta Lei, na forma de:</p><p>a) cláusulas contratuais específicas para determinada transferência;</p><p>b) cláusulas-padrão contratuais;</p><p>c) normas corporativas globais;</p><p>d) selos, certificados e códigos de conduta regularmente emitidos;</p><p>III - quando a transferência for necessária para a cooperação jurídica internacional entre órgãos públicos de inteligência, de investigação e de persecução, de acordo com os instrumentos de direito internacional;</p><p>IV - quando a transferência for necessária para a proteção da vida ou da incolumidade física do titular ou de terceiro;</p><p>V - quando a autoridade nacional autorizar a transferência;</p><p>VI - quando a transferência resultar em compromisso assumido em acordo de cooperação internacional;</p><p>VII - quando a transferência for necessária para a execução de política pública ou atribuição legal do serviço público, sendo dada publicidade nos termos do inciso I do *caput* do art. 23 desta Lei;</p><p>VIII - quando o titular tiver fornecido o seu consentimento específico e em destaque para a transferência, com informação prévia sobre o caráter internacional da operação, distinguindo claramente esta de outras finalidades; ou</p><p>IX - quando necessário para atender as hipóteses previstas nos incisos II, V e VI do art. 7º desta Lei.</p><p><strong>Parágrafo único.</strong> Para os fins do inciso I deste artigo, as pessoas jurídicas de direito público referidas no parágrafo único do art. 1º da Lei nº 12.527, de 18 de novembro de 2011 (Lei de Acesso à Informação), no âmbito de suas competências legais, e responsáveis, no âmbito de suas atividades, poderão requerer à autoridade nacional a avaliação do nível de proteção a dados pessoais conferido por país ou organismo internacional.</p></section><section class="lei-dispositivo" data-artigo="34-O" id="lei-art-34-o"><p><strong>Art. 34.</strong> O nível de proteção de dados do país estrangeiro ou do organismo internacional mencionado no inciso I do *caput* do art. 33 desta Lei será avaliado pela autoridade nacional, que levará em consideração:</p><p>I - as normas gerais e setoriais da legislação em vigor no país de destino ou no organismo internacional;</p><p>II - a natureza dos dados;</p><p>III - a observância dos princípios gerais de proteção de dados pessoais e direitos dos titulares previstos nesta Lei;</p><p>IV - a adoção de medidas de segurança previstas em regulamento;</p><p>V - a existência de garantias judiciais e institucionais para o respeito aos direitos de proteção de dados pessoais; e</p><p>VI - outras circunstâncias específicas relativas à transferência.</p></section><section class="lei-dispositivo" data-artigo="35-A" id="lei-art-35-a"><p><strong>Art. 35.</strong> A definição do conteúdo de cláusulas-padrão contratuais, bem como a verificação de cláusulas contratuais específicas para uma determinada transferência, normas corporativas globais ou selos, certificados e códigos de conduta, a que se refere o inciso II do *caput* do art. 33 desta Lei, será realizada pela autoridade nacional.</p><p><strong>§ 1º</strong> Para a verificação do disposto no *caput* deste artigo, deverão ser considerados os requisitos, as condições e as garantias mínimas para a transferência que observem os direitos, as garantias e os princípios desta Lei.</p><p><strong>§ 2º</strong> Na análise de cláusulas contratuais, de documentos ou de normas corporativas globais submetidas à aprovação da autoridade nacional, poderão ser requeridas informações suplementares ou realizadas diligências de verificação quanto às operações de tratamento, quando necessário.</p><p><strong>§ 3º</strong> A autoridade nacional poderá designar organismos de certificação para a realização do previsto no *caput* deste artigo, que permanecerão sob sua fiscalização nos termos definidos em regulamento.</p><p><strong>§ 4º</strong> Os atos realizados por organismo de certificação poderão ser revistos pela autoridade nacional e, caso em desconformidade com esta Lei, submetidos a revisão ou anulados.</p><p><strong>§ 5º</strong> As garantias suficientes de observância dos princípios gerais de proteção e dos direitos do titular referidas no *caput* deste artigo serão também analisadas de acordo com as medidas técnicas e organizacionais adotadas pelo operador, de acordo com o previsto nos §§ 1º e 2º do art. 46 desta Lei.</p></section><section class="lei-dispositivo" data-artigo="36" id="lei-art-36"><p><strong>Art. 36.</strong> As alterações nas garantias apresentadas como suficientes de observância dos princípios gerais de proteção e dos direitos do titular referidas no inciso II do art. 33 desta Lei deverão ser comunicadas à autoridade nacional.</p></section><section class="lei-preambulo"><h5>CAPÍTULO VI — DOS AGENTES DE TRATAMENTO DE DADOS PESSOAIS</h5></section><section class="lei-preambulo"><h5>Seção I — Do Controlador e do Operador</h5></section><section class="lei-dispositivo" data-artigo="37-O" id="lei-art-37-o"><p><strong>Art. 37.</strong> O controlador e o operador devem manter registro das operações de tratamento de dados pessoais que realizarem, especialmente quando baseado no legítimo interesse.</p></section><section class="lei-dispositivo" data-artigo="38-A" id="lei-art-38-a"><p><strong>Art. 38.</strong> A autoridade nacional poderá determinar ao controlador que elabore relatório de impacto à proteção de dados pessoais, inclusive de dados sensíveis, referente a suas operações de tratamento de dados, nos termos de regulamento, observados os segredos comercial e industrial.</p><p><strong>Parágrafo único.</strong> Observado o disposto no *caput* deste artigo, o relatório deverá conter, no mínimo, a descrição dos tipos de dados coletados, a metodologia utilizada para a coleta e para a garantia da segurança das informações e a análise do controlador com relação a medidas, salvaguardas e mecanismos de mitigação de risco adotados.</p></section><section class="lei-dispositivo" data-artigo="39-O" id="lei-art-39-o"><p><strong>Art. 39.</strong> O operador deverá realizar o tratamento segundo as instruções fornecidas pelo controlador, que verificará a observância das próprias instruções e das normas sobre a matéria.</p></section><section class="lei-dispositivo" data-artigo="40-A" id="lei-art-40-a"><p><strong>Art. 40.</strong> A autoridade nacional poderá dispor sobre padrões de interoperabilidade para fins de portabilidade, livre acesso aos dados e segurança, assim como sobre o tempo de guarda dos registros, tendo em vista especialmente a necessidade e a transparência.</p></section><section class="lei-preambulo"><h5>Seção II — Do Encarregado pelo Tratamento de Dados Pessoais</h5></section><section class="lei-dispositivo" data-artigo="41-O" id="lei-art-41-o"><p><strong>Art. 41.</strong> O controlador deverá indicar encarregado pelo tratamento de dados pessoais.</p><p><strong>§ 1º</strong> A identidade e as informações de contato do encarregado deverão ser divulgadas publicamente, de forma clara e objetiva, preferencialmente no sítio eletrônico do controlador.</p><p><strong>§ 2º</strong> As atividades do encarregado consistem em:</p><p>I - aceitar reclamações e comunicações dos titulares, prestar esclarecimentos e adotar providências;</p><p>II - receber comunicações da autoridade nacional e adotar providências;</p><p>III - orientar os funcionários e os contratados da entidade a respeito das práticas a serem tomadas em relação à proteção de dados pessoais; e</p><p>IV - executar as demais atribuições determinadas pelo controlador ou estabelecidas em normas complementares.</p><p><strong>§ 3º</strong> A autoridade nacional poderá estabelecer normas complementares sobre a definição e as atribuições do encarregado, inclusive hipóteses de dispensa da necessidade de sua indicação, conforme a natureza e o porte da entidade ou o volume de operações de tratamento de dados.</p><p><strong>§ 4º</strong> *(Vetado na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-preambulo"><h5>Seção III — Da Responsabilidade e do Ressarcimento de Danos</h5></section><section class="lei-dispositivo" data-artigo="42-O" id="lei-art-42-o"><p><strong>Art. 42.</strong> O controlador ou o operador que, em razão do exercício de atividade de tratamento de dados pessoais, causar a outrem dano patrimonial, moral, individual ou coletivo, em violação à legislação de proteção de dados pessoais, é obrigado a repará-lo.</p><p><strong>§ 1º</strong> A fim de assegurar a efetiva indenização ao titular dos dados:</p><p>I - o operador responde solidariamente pelos danos causados pelo tratamento quando descumprir as obrigações da legislação de proteção de dados ou quando não tiver seguido as instruções lícitas do controlador, hipótese em que o operador equipara-se ao controlador, salvo nos casos de exclusão previstos no art. 43 desta Lei;</p><p>II - os controladores que estiverem diretamente envolvidos no tratamento do qual decorreram danos ao titular dos dados respondem solidariamente, salvo nos casos de exclusão previstos no art. 43 desta Lei.</p><p><strong>§ 2º</strong> O juiz, no processo civil, poderá inverter o ônus da prova a favor do titular dos dados quando, a seu juízo, for verossímil a alegação, houver hipossuficiência para fins de produção de prova ou quando a produção de prova pelo titular resultar-lhe excessivamente onerosa.</p><p><strong>§ 3º</strong> As ações de reparação por danos coletivos que tenham por objeto a responsabilização nos termos do *caput* deste artigo podem ser exercidas coletivamente em juízo, observado o disposto na legislação pertinente.</p><p><strong>§ 4º</strong> Aquele que reparar o dano ao titular tem direito de regresso contra os demais responsáveis, na medida de sua participação no evento danoso.</p></section><section class="lei-dispositivo" data-artigo="43" id="lei-art-43"><p><strong>Art. 43.</strong> Os agentes de tratamento só não serão responsabilizados quando provarem:</p><p>I - que não realizaram o tratamento de dados pessoais que lhes é atribuído;</p><p>II - que, embora tenham realizado o tratamento de dados pessoais que lhes é atribuído, não houve violação à legislação de proteção de dados; ou</p><p>III - que o dano é decorrente de culpa exclusiva do titular dos dados ou de terceiro.</p></section><section class="lei-dispositivo" data-artigo="44-O" id="lei-art-44-o"><p><strong>Art. 44.</strong> O tratamento de dados pessoais será irregular quando deixar de observar a legislação ou quando não fornecer a segurança que o titular dele pode esperar, consideradas as circunstâncias relevantes, entre as quais:</p><p>I - o modo pelo qual é realizado;</p><p>II - o resultado e os riscos que razoavelmente dele se esperam;</p><p>III - as técnicas de tratamento de dados pessoais disponíveis à época em que foi realizado.</p><p><strong>Parágrafo único.</strong> Responde pelos danos decorrentes da violação da segurança dos dados o controlador ou o operador que, ao deixar de adotar as medidas de segurança previstas no art. 46 desta Lei, der causa ao dano.</p></section><section class="lei-dispositivo" data-artigo="45" id="lei-art-45"><p><strong>Art. 45.</strong> As hipóteses de violação do direito do titular no âmbito das relações de consumo permanecem sujeitas às regras de responsabilidade previstas na legislação pertinente.</p></section><section class="lei-preambulo"><h5>CAPÍTULO VII — DA SEGURANÇA E DAS BOAS PRÁTICAS</h5></section><section class="lei-preambulo"><h5>Seção I — Da Segurança e do Sigilo de Dados</h5></section><section class="lei-dispositivo" data-artigo="46" id="lei-art-46"><p><strong>Art. 46.</strong> Os agentes de tratamento devem adotar medidas de segurança, técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou qualquer forma de tratamento inadequado ou ilícito.</p><p><strong>§ 1º</strong> A autoridade nacional poderá dispor sobre padrões técnicos mínimos para tornar aplicável o disposto no *caput* deste artigo, considerados a natureza das informações tratadas, as características específicas do tratamento e o estado atual da tecnologia, especialmente no caso de dados pessoais sensíveis, assim como os princípios previstos no *caput* do art. 6º desta Lei.</p><p><strong>§ 2º</strong> As medidas de que trata o *caput* deste artigo deverão ser observadas desde a fase de concepção do produto ou do serviço até a sua execução.</p></section><section class="lei-dispositivo" data-artigo="47" id="lei-art-47"><p><strong>Art. 47.</strong> Os agentes de tratamento ou qualquer outra pessoa que intervenha em uma das fases do tratamento obriga-se a garantir a segurança da informação prevista nesta Lei em relação aos dados pessoais, mesmo após o seu término.</p></section><section class="lei-dispositivo" data-artigo="48-O" id="lei-art-48-o"><p><strong>Art. 48.</strong> O controlador deverá comunicar à autoridade nacional e ao titular a ocorrência de incidente de segurança que possa acarretar risco ou dano relevante aos titulares.</p><p><strong>§ 1º</strong> A comunicação será feita em prazo razoável, conforme definido pela autoridade nacional, e deverá mencionar, no mínimo:</p><p>I - a descrição da natureza dos dados pessoais afetados;</p><p>II - as informações sobre os titulares envolvidos;</p><p>III - a indicação das medidas técnicas e de segurança utilizadas para a proteção dos dados, observados os segredos comercial e industrial;</p><p>IV - os riscos relacionados ao incidente;</p><p>V - os motivos da demora, no caso de a comunicação não ter sido imediata; e</p><p>VI - as medidas que foram ou que serão adotadas para reverter ou mitigar os efeitos do prejuízo.</p><p><strong>§ 2º</strong> A autoridade nacional verificará a gravidade do incidente e poderá, caso necessário para a salvaguarda dos direitos dos titulares, determinar ao controlador a adoção de providências, tais como:</p><p>I - ampla divulgação do fato em meios de comunicação; e</p><p>II - medidas para reverter ou mitigar os efeitos do incidente.</p><p><strong>§ 3º</strong> No juízo de gravidade do incidente, será avaliada eventual comprovação de que foram adotadas medidas técnicas adequadas que tornem os dados pessoais afetados ininteligíveis, no âmbito e nos limites técnicos de seus serviços, para terceiros não autorizados a acessá-los.</p></section><section class="lei-dispositivo" data-artigo="49" id="lei-art-49"><p><strong>Art. 49.</strong> Os sistemas utilizados para o tratamento de dados pessoais devem ser estruturados de forma a atender aos requisitos de segurança, aos padrões de boas práticas e de governança e aos princípios gerais previstos nesta Lei e às demais normas regulamentares.</p></section><section class="lei-preambulo"><h5>Seção II — Das Boas Práticas e da Governança</h5></section><section class="lei-dispositivo" data-artigo="50" id="lei-art-50"><p><strong>Art. 50.</strong> Os controladores e operadores, no âmbito de suas competências, pelo tratamento de dados pessoais, individualmente ou por meio de associações, poderão formular regras de boas práticas e de governança que estabeleçam as condições de organização, o regime de funcionamento, os procedimentos, incluindo reclamações e petições de titulares, as normas de segurança, os padrões técnicos, as obrigações específicas para os diversos envolvidos no tratamento, as ações educativas, os mecanismos internos de supervisão e de mitigação de riscos e outros aspectos relacionados ao tratamento de dados pessoais.</p><p><strong>§ 1º</strong> Ao estabelecer regras de boas práticas, o controlador e o operador levarão em consideração, em relação ao tratamento e aos dados, a natureza, o escopo, a finalidade e a probabilidade e a gravidade dos riscos e dos benefícios decorrentes de tratamento de dados do titular.</p><p><strong>§ 2º</strong> Na aplicação dos princípios indicados nos incisos VII e VIII do *caput* do art. 6º desta Lei, o controlador, observados a estrutura, a escala e o volume de suas operações, bem como a sensibilidade dos dados tratados e a probabilidade e a gravidade dos danos para os titulares dos dados, poderá:</p><p>I - implementar programa de governança em privacidade que, no mínimo:</p><p>a) demonstre o comprometimento do controlador em adotar processos e políticas internas que assegurem o cumprimento, de forma abrangente, de normas e boas práticas relativas à proteção de dados pessoais;</p><p>b) seja aplicável a todo o conjunto de dados pessoais que estejam sob seu controle, independentemente do modo como se realizou sua coleta;</p><p>c) seja adaptado à estrutura, à escala e ao volume de suas operações, bem como à sensibilidade dos dados tratados;</p><p>d) estabeleça políticas e salvaguardas adequadas com base em processo de avaliação sistemática de impactos e riscos à privacidade;</p><p>e) tenha o objetivo de estabelecer relação de confiança com o titular, por meio de atuação transparente e que assegure mecanismos de participação do titular;</p><p>f) esteja integrado a sua estrutura geral de governança e estabeleça e aplique mecanismos de supervisão internos e externos;</p><p>g) conte com planos de resposta a incidentes e remediação; e</p><p>h) seja atualizado constantemente com base em informações obtidas a partir de monitoramento contínuo e avaliações periódicas;</p><p>II - demonstrar a efetividade de seu programa de governança em privacidade quando apropriado e, em especial, a pedido da autoridade nacional ou de outra entidade responsável por promover o cumprimento de boas práticas ou códigos de conduta, os quais, de forma independente, promovam o cumprimento desta Lei.</p><p><strong>§ 3º</strong> As regras de boas práticas e de governança deverão ser publicadas e atualizadas periodicamente e poderão ser reconhecidas e divulgadas pela autoridade nacional.</p></section><section class="lei-dispositivo" data-artigo="51-A" id="lei-art-51-a"><p><strong>Art. 51.</strong> A autoridade nacional estimulará a adoção de padrões técnicos que facilitem o controle pelos titulares dos seus dados pessoais.</p></section><section class="lei-preambulo"><h5>CAPÍTULO VIII — DA FISCALIZAÇÃO</h5></section><section class="lei-preambulo"><h5>Seção I — Das Sanções Administrativas</h5></section><section class="lei-dispositivo" data-artigo="52" id="lei-art-52"><p><strong>Art. 52.</strong> Os agentes de tratamento de dados, em razão das infrações cometidas às normas previstas nesta Lei, ficam sujeitos às seguintes sanções administrativas aplicáveis pela autoridade nacional: *(Artigo republicado no DOU Edição Extra de 15/8/2018)*</p><p>I - advertência, com indicação de prazo para adoção de medidas corretivas;</p><p>II - multa simples, de até 2% (dois por cento) do faturamento da pessoa jurídica de direito privado, grupo ou conglomerado no Brasil no seu último exercício, excluídos os tributos, limitada, no total, a R$ 50.000.000,00 (cinquenta milhões de reais) por infração;</p><p>III - multa diária, observado o limite total a que se refere o inciso II;</p><p>IV - publicização da infração após devidamente apurada e confirmada a sua ocorrência;</p><p>V - bloqueio dos dados pessoais a que se refere a infração até a sua regularização;</p><p>VI - eliminação dos dados pessoais a que se refere a infração;</p><p>VII - (VETADO);</p><p>VIII - (VETADO);</p><p>IX - (VETADO).</p><p>X - suspensão parcial do funcionamento do banco de dados a que se refere a infração pelo período máximo de 6 (seis) meses, prorrogável por igual período, até a regularização da atividade de tratamento pelo controlador; *(Inciso acrescido pela Lei nº 13.853, de 8/7/2019, vetado pelo Presidente da República, mantido pelo Congresso Nacional e publicado no DOU de 20/12/2019)*</p><p>XI - suspensão do exercício da atividade de tratamento dos dados pessoais a que se refere a infração pelo período máximo de 6 (seis) meses, prorrogável por igual período; *(Inciso acrescido pela Lei nº 13.853, de 8/7/2019, vetado pelo Presidente da República, mantido pelo Congresso Nacional e publicado no DOU de 20/12/2019)*</p><p>XII - proibição parcial ou total do exercício de atividades relacionadas a tratamento de dados. *(Inciso acrescido pela Lei nº 13.853, de 8/7/2019, vetado pelo Presidente da República, mantido pelo Congresso Nacional e publicado no DOU de 20/12/2019)*</p><p><strong>§ 1º</strong> As sanções serão aplicadas após procedimento administrativo que possibilite a oportunidade da ampla defesa, de forma gradativa, isolada ou cumulativa, de acordo com as peculiaridades do caso concreto e considerados os seguintes parâmetros e critérios:</p><p>I - a gravidade e a natureza das infrações e dos direitos pessoais afetados;</p><p>II - a boa-fé do infrator;</p><p>III - a vantagem auferida ou pretendida pelo infrator;</p><p>IV - a condição econômica do infrator;</p><p>V - a reincidência;</p><p>VI - o grau do dano;</p><p>VII - a cooperação do infrator;</p><p>VIII - a adoção reiterada e demonstrada de mecanismos e procedimentos internos capazes de minimizar o dano, voltados ao tratamento seguro e adequado de dados, em consonância com o disposto no inciso II do § 2º do art. 48 desta Lei;</p><p>IX - a adoção de política de boas práticas e governança;</p><p>X – a pronta adoção de medidas corretivas; e</p><p>XI - a proporcionalidade entre a gravidade da falta e a intensidade da sanção.</p><p><strong>§ 2º</strong> O disposto neste artigo não substitui a aplicação de sanções administrativas, civis ou penais definidas na Lei nº 8.078, de 11 de setembro de 1990, e em legislação específica. *(Parágrafo com redação dada pela Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 3º</strong> O disposto nos incisos I, IV, V, VI, X, XI e XII do *caput* deste artigo poderá ser aplicado às entidades e aos órgãos públicos, sem prejuízo do disposto na Lei nº 8.112, de 11 de dezembro de 1990, na Lei nº 8.429, de 2 de junho de 1992, e na Lei nº 12.527, de 18 de novembro de 2011. *(Parágrafo com redação dada pela Lei nº 13.853, de 8/7/2019, vetado pelo Presidente da República, mantido pelo Congresso Nacional e publicado no DOU de 20/12/2019)*</p><p><strong>§ 4º</strong> No cálculo do valor da multa de que trata o inciso II do *caput* deste artigo, a autoridade nacional poderá considerar o faturamento total da empresa ou grupo de empresas, quando não dispuser do valor do faturamento no ramo de atividade empresarial em que ocorreu a infração, definido pela autoridade nacional, ou quando o valor for apresentado de forma incompleta ou não for demonstrado de forma inequívoca e idônea.</p><p><strong>§ 5º</strong> O produto da arrecadação das multas aplicadas pela ANPD, inscritas ou não em dívida ativa, será destinado ao Fundo de Defesa de Direitos Difusos de que tratam o art. 13 da Lei nº 7.347, de 24 de julho de 1985, e a Lei nº 9.008, de 21 de março de 1995. *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019)*</p><p><strong>§ 6º</strong> As sanções previstas nos incisos X, XI e XII do *caput* deste artigo serão aplicadas:</p><p>I - somente após já ter sido imposta ao menos 1 (uma) das sanções de que tratam os incisos II, III, IV, V e VI do *caput* deste artigo para o mesmo caso concreto; e</p><p>II - em caso de controladores submetidos a outros órgãos e entidades com competências sancionatórias, ouvidos esses órgãos. *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019, vetado pelo Presidente da República, mantido pelo Congresso Nacional e publicado no DOU de 20/12/2019)*</p><p><strong>§ 7º</strong> Os vazamentos individuais ou os acessos não autorizados de que trata o *caput* do art. 46 desta Lei poderão ser objeto de conciliação direta entre controlador e titular e, caso não haja acordo, o controlador estará sujeito à aplicação das penalidades de que trata este artigo. *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="53-A" id="lei-art-53-a"><p><strong>Art. 53.</strong> A autoridade nacional definirá, por meio de regulamento próprio sobre sanções administrativas a infrações a esta Lei, que deverá ser objeto de consulta pública, as metodologias que orientarão o cálculo do valor-base das sanções de multa.</p><p><strong>§ 1º</strong> As metodologias a que se refere o *caput* deste artigo devem ser previamente publicadas, para ciência dos agentes de tratamento, e devem apresentar objetivamente as formas e dosimetrias para o cálculo do valor-base das sanções de multa, que deverão conter fundamentação detalhada de todos os seus elementos, demonstrando a observância dos critérios previstos nesta Lei.</p><p><strong>§ 2º</strong> O regulamento de sanções e metodologias correspondentes deve estabelecer as circunstâncias e as condições para a adoção de multa simples ou diária.</p></section><section class="lei-dispositivo" data-artigo="54-O" id="lei-art-54-o"><p><strong>Art. 54.</strong> O valor da sanção de multa diária aplicável às infrações a esta Lei deve observar a gravidade da falta e a extensão do dano ou prejuízo causado e ser fundamentado pela autoridade nacional.</p><p><strong>Parágrafo único.</strong> A intimação da sanção de multa diária deverá conter, no mínimo, a descrição da obrigação imposta, o prazo razoável e estipulado pelo órgão para o seu cumprimento e o valor da multa diária a ser aplicada pelo seu descumprimento.</p></section><section class="lei-preambulo"><h5>CAPÍTULO IX — DA AUTORIDADE NACIONAL DE PROTEÇÃO DE DADOS</h5><p>(ANPD) E DO CONSELHO NACIONAL DE PROTEÇÃO DE</p><p>DADOS PESSOAIS E DA PRIVACIDADE</p></section><section class="lei-preambulo"><h5>Seção I — Da Autoridade Nacional de Proteção de Dados (ANPD)</h5></section><section class="lei-dispositivo" data-artigo="55" id="lei-art-55"><p><strong>Art. 55.</strong> (VETADO).</p></section><section class="lei-dispositivo" data-artigo="55-A" id="lei-art-55-a"><p><strong>Art. 55-A.</strong> Fica criada a Autoridade Nacional de Proteção de Dados (ANPD), autarquia de natureza especial, dotada de autonomia técnica e decisória, com patrimônio próprio e com sede e foro no Distrito Federal. *(“Caput” do artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019, e com nova redação dada pela Medida Provisória nº 1.124, de 13/6/2022, convertida na Lei nº 14.460, de 25/10/2022)*</p><p><strong>§ 1º</strong> *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019, e revogado pela Medida Provisória nº 1.124, de 13/6/2022, convertida na Lei nº 14.460, de 25/10/2022)*</p><p><strong>§ 2º</strong> *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019, e revogado pela Medida Provisória nº 1.124, de 13/6/2022, convertida na Lei nº 14.460, de 25/10/2022)*</p><p><strong>§ 3º</strong> *(Parágrafo acrescido pela Lei nº 13.853, de 8/7/2019, e revogado pela Medida Provisória nº 1.124, de 13/6/2022, convertida na Lei nº 14.460, de 25/10/2022)*</p></section><section class="lei-dispositivo" data-artigo="55-B" id="lei-art-55-b"><p><strong>Art. 55-B.</strong> *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019, e revogado pela Medida Provisória nº 1.124, de 13/6/2022, convertida na Lei nº 14.460, de 25/10/2022)*</p></section><section class="lei-dispositivo" data-artigo="55-C" id="lei-art-55-c"><p><strong>Art. 55-C.</strong> A ANPD é composta de: *(“Caput” do artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>I - Conselho Diretor, órgão máximo de direção; *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>II - Conselho Nacional de Proteção de Dados Pessoais e da Privacidade; *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>III - Corregedoria; *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>IV - Ouvidoria; *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>V - *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019 e revogado pela Lei nº 14.460, de 25/10/2022)*</p><p>V-A - Procuradoria; e *(Inciso acrescido pela Lei nº 14.460, de 25/10/2022)*</p><p>VI - unidades administrativas e unidades especializadas necessárias à aplicação do disposto nesta Lei. *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="55-D" id="lei-art-55-d"><p><strong>Art. 55-D.</strong> O Conselho Diretor da ANPD será composto de 5 (cinco) diretores, incluído o Diretor-Presidente.</p><p><strong>§ 1º</strong> Os membros do Conselho Diretor da ANPD serão escolhidos pelo Presidente da República e por ele nomeados, após aprovação pelo Senado Federal, nos termos da alínea 'f' do inciso III do art. 52 da Constituição Federal, e ocuparão cargo em comissão do Grupo-Direção e Assessoramento Superiores - DAS, no mínimo, de nível 5.</p><p><strong>§ 2º</strong> Os membros do Conselho Diretor serão escolhidos dentre brasileiros que tenham reputação ilibada, nível superior de educação e elevado conceito no campo de especialidade dos cargos para os quais serão nomeados.</p><p><strong>§ 3º</strong> O mandato dos membros do Conselho Diretor será de 4 (quatro) anos.</p><p><strong>§ 4º</strong> Os mandatos dos primeiros membros do Conselho Diretor nomeados serão de 2 (dois), de 3 (três), de 4 (quatro), de 5 (cinco) e de 6 (seis) anos, conforme estabelecido no ato de nomeação.</p><p><strong>§ 5º</strong> Na hipótese de vacância do cargo no curso do mandato de membro do Conselho Diretor, o prazo remanescente será completado pelo sucessor. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, e com redação dada pela Lei nº 13.853, de 8/7/2019, na qual foi convertida a referida Medida Provisória)*</p></section><section class="lei-dispositivo" data-artigo="55-E" id="lei-art-55-e"><p><strong>Art. 55-E.</strong> Os membros do Conselho Diretor somente perderão seus cargos em virtude de renúncia, condenação judicial transitada em julgado ou pena de demissão decorrente de processo administrativo disciplinar.</p><p><strong>§ 1º</strong> Nos termos *do caput* deste artigo, cabe ao Ministro de Estado Chefe da Casa Civil da Presidência da República instaurar o processo administrativo disciplinar, que será conduzido por comissão especial constituída por servidores públicos federais estáveis.</p><p><strong>§ 2º</strong> Compete ao Presidente da República determinar o afastamento preventivo, somente quando assim recomendado pela comissão especial de que trata o § 1º deste artigo, e proferir o julgamento. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="55-F" id="lei-art-55-f"><p><strong>Art. 55-F.</strong> Aplica-se aos membros do Conselho Diretor, após o exercício do cargo, o disposto no art. 6º da Lei nº 12.813, de 16 de maio de 2013.</p><p><strong>Parágrafo único.</strong> A infração ao disposto no *caput* caracteriza ato de improbidade administrativa. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="55-G" id="lei-art-55-g"><p><strong>Art.55-G.</strong> Ato do Presidente da República disporá sobre a estrutura regimental da A N P D.</p><p><strong>§ 1º</strong> Até a data de entrada em vigor de sua estrutura regimental, a ANPD receberá o apoio técnico e administrativo da Casa Civil da Presidência da República para o exercício de suas atividades.</p><p><strong>§ 2º</strong> O Conselho Diretor disporá sobre o regimento interno da ANPD. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, e com redação dada pela Lei nº 13.853, de 8/7/2019, na qual foi convertida a referida Medida Provisória)*</p></section><section class="lei-dispositivo" data-artigo="55-H" id="lei-art-55-h"><p><strong>Art. 55-H.</strong> Os cargos em comissão e as funções de confiança da ANPD serão remanejados de outros órgãos e entidades do Poder Executivo federal. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="55-I" id="lei-art-55-i"><p><strong>Art. 55-I.</strong> Os ocupantes dos cargos em comissão e das funções de confiança da ANPD serão indicados pelo Conselho Diretor e nomeados ou designados pelo Diretor-Presidente. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="55-J" id="lei-art-55-j"><p><strong>Art. 55-J.</strong> Compete à ANPD:</p><p>I - zelar pela proteção dos dados pessoais, nos termos da legislação;</p><p>II - zelar pela observância dos segredos comercial e industrial, observada a proteção de dados pessoais e do sigilo das informações quando protegido por lei ou quando a quebra do sigilo violar os fundamentos do art. 2º desta Lei;</p><p>III - elaborar diretrizes para a Política Nacional de Proteção de Dados Pessoais e da Privacidade;</p><p>IV - fiscalizar e aplicar sanções em caso de tratamento de dados realizado em descumprimento à legislação, mediante processo administrativo que assegure o contraditório, a ampla defesa e o direito de recurso;</p><p>V - apreciar petições de titular contra controlador após comprovada pelo titular a apresentação de reclamação ao controlador não solucionada no prazo estabelecido em regulamentação;</p><p>VI - promover na população o conhecimento das normas e das políticas públicas sobre proteção de dados pessoais e das medidas de segurança;</p><p>VII - promover e elaborar estudos sobre as práticas nacionais e internacionais de proteção de dados pessoais e privacidade;</p><p>VIII - estimular a adoção de padrões para serviços e produtos que facilitem o exercício de controle dos titulares sobre seus dados pessoais, os quais deverão levar em consideração as especificidades das atividades e o porte dos responsáveis;</p><p>IX - promover ações de cooperação com autoridades de proteção de dados pessoais de outros países, de natureza internacional ou transnacional;</p><p>X - dispor sobre as formas de publicidade das operações de tratamento de dados pessoais, respeitados os segredos comercial e industrial;</p><p>XI - solicitar, a qualquer momento, às entidades do poder público que realizem operações de tratamento de dados pessoais informe específico sobre o âmbito, a natureza dos dados e os demais detalhes do tratamento realizado, com a possibilidade de emitir parecer técnico complementar para garantir o cumprimento desta Lei;</p><p>XII - elaborar relatórios de gestão anuais acerca de suas atividades;</p><p>XIII - editar regulamentos e procedimentos sobre proteção de dados pessoais e privacidade, bem como sobre relatórios de impacto à proteção de dados pessoais para os casos em que o tratamento representar alto risco à garantia dos princípios gerais de proteção de dados pessoais previstos nesta Lei;</p><p>XIV - ouvir os agentes de tratamento e a sociedade em matérias de interesse relevante e prestar contas sobre suas atividades e planejamento;</p><p>XV - arrecadar e aplicar suas receitas e publicar, no relatório de gestão a que se refere o inciso XII do caput deste artigo, o detalhamento de suas receitas e despesas;</p><p>XVI - realizar auditorias, ou determinar sua realização, no âmbito da atividade de fiscalização de que trata o inciso IV e com a devida observância do disposto no inciso II do *caput* deste artigo, sobre o tratamento de dados pessoais efetuado pelos agentes de tratamento, incluído o poder público;</p><p>XVII - celebrar, a qualquer momento, compromisso com agentes de tratamento para eliminar irregularidade, incerteza jurídica ou situação contenciosa no âmbito de processos administrativos, de acordo com o previsto no Decreto-Lei nº 4.657, de 4 de setembro de 1942;</p><p>XVIII - editar normas, orientações e procedimentos simplificados e diferenciados, inclusive quanto aos prazos, para que microempresas e empresas de pequeno porte, bem como iniciativas empresariais de caráter incremental ou disruptivo que se autodeclarem *startups* ou empresas de inovação, possam adequar-se a esta Lei;</p><p>XIX - garantir que o tratamento de dados de idosos seja efetuado de maneira simples, clara, acessível e adequada ao seu entendimento, nos termos desta Lei e da Lei nº 10.741, de 1º de outubro de 2003 (Estatuto do Idoso);</p><p>XX - deliberar, na esfera administrativa, em caráter terminativo, sobre a interpretação desta Lei, as suas competências e os casos omissos;</p><p>XXI - comunicar às autoridades competentes as infrações penais das quais tiver conhecimento; XXII - comunicar aos órgãos de controle interno o descumprimento do disposto nesta Lei por órgãos e entidades da administração pública federal;</p><p>XXIII - articular-se com as autoridades reguladoras públicas para exercer suas competências em setores específicos de atividades econômicas e governamentais sujeitas à regulação; e</p><p>XXIV - implementar mecanismos simplificados, inclusive por meio eletrônico, para o registro de reclamações sobre o tratamento de dados pessoais em desconformidade com esta Lei.</p><p><strong>§ 1º</strong> Ao impor condicionantes administrativas ao tratamento de dados pessoais por agente de tratamento privado, sejam eles limites, encargos ou sujeições, a ANPD deve observar a exigência de mínima intervenção, assegurados os fundamentos, os princípios e os direitos dos titulares previstos no art. 170 da Constituição Federal e nesta Lei.</p><p><strong>§ 2º</strong> Os regulamentos e as normas editados pela ANPD devem ser precedidos de consulta e audiência públicas, bem como de análises de impacto regulatório.</p><p><strong>§ 3º</strong> A ANPD e os órgãos e entidades públicos responsáveis pela regulação de setores específicos da atividade econômica e governamental devem coordenar suas atividades, nas correspondentes esferas de atuação, com vistas a assegurar o cumprimento de suas atribuições com a maior eficiência e promover o adequado funcionamento dos setores regulados, conforme legislação específica, e o tratamento de dados pessoais, na forma desta Lei.</p><p><strong>§ 4º</strong> A ANPD manterá fórum permanente de comunicação, inclusive por meio de cooperação técnica, com órgãos e entidades da administração pública responsáveis pela regulação de setores específicos da atividade econômica e governamental, a fim de facilitar as competências regulatória, fiscalizatória e punitiva da ANPD.</p><p><strong>§ 5º</strong> No exercício das competências de que trata o *caput* deste artigo, a autoridade competente deverá zelar pela preservação do segredo empresarial e do sigilo das informações, nos termos da lei.</p><p><strong>§ 6º</strong> As reclamações colhidas conforme o disposto no inciso V do *caput* deste artigo poderão ser analisadas de forma agregada, e as eventuais providências delas decorrentes poderão ser adotadas de forma padronizada. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, e com redação dada pela Lei nº 13.853, de 8/7/2019, na qual foi convertida a referida Medida Provisória)*</p></section><section class="lei-dispositivo" data-artigo="55-K" id="lei-art-55-k"><p><strong>Art. 55-K.</strong> A aplicação das sanções previstas nesta Lei compete exclusivamente à ANPD, e suas competências prevalecerão, no que se refere à proteção de dados pessoais, sobre as competências correlatas de outras entidades ou órgãos da administração pública.</p><p><strong>Parágrafo único.</strong> A ANPD articulará sua atuação com outros órgãos e entidades com competências sancionatórias e normativas afetas ao tema de proteção de dados pessoais e será o órgão central de interpretação desta Lei e do estabelecimento de normas e diretrizes para a sua implementação. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="55-L" id="lei-art-55-l"><p><strong>Art. 55-L.</strong> Constituem receitas da ANPD:</p><p>I - as dotações, consignadas no orçamento geral da União, os créditos especiais, os créditos adicionais, as transferências e os repasses que lhe forem conferidos;</p><p>II - as doações, os legados, as subvenções e outros recursos que lhe forem destinados;</p><p>III - os valores apurados na venda ou aluguel de bens móveis e imóveis de sua propriedade;</p><p>IV - os valores apurados em aplicações no mercado financeiro das receitas previstas neste artigo;</p><p>V - (VETADO);</p><p>VI - os recursos provenientes de acordos, convênios ou contratos celebrados com entidades, organismos ou empresas, públicos ou privados, nacionais ou internacionais;</p><p>VII - o produto da venda de publicações, material técnico, dados e informações, inclusive para fins de licitação pública. *(Artigo acrescido pela Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="55-M" id="lei-art-55-m"><p><strong>Art. 55-M.</strong> Constituem o patrimônio da ANPD os bens e os direitos:</p><p>I - que lhe forem transferidos pelos órgãos da Presidência da República; e</p><p>II - que venha a adquirir ou a incorporar. *(Artigo acrescido pela Medida Provisória nº 1.124, de 13/6/2022, convertida na Lei nº 14.460, de 25/10/2022)*</p></section><section class="lei-dispositivo" data-artigo="56" id="lei-art-56"><p><strong>Art. 56.</strong> (VETADO).</p></section><section class="lei-dispositivo" data-artigo="57" id="lei-art-57"><p><strong>Art. 57.</strong> (VETADO).</p></section><section class="lei-preambulo"><h5>Seção II — Do Conselho Nacional de Proteção de Dados Pessoais e da Privacidade</h5></section><section class="lei-dispositivo" data-artigo="58" id="lei-art-58"><p><strong>Art. 58.</strong> (VETADO).</p></section><section class="lei-dispositivo" data-artigo="58-A" id="lei-art-58-a"><p><strong>Art. 58-A.</strong> O Conselho Nacional de Proteção de Dados Pessoais e da Privacidade será composto de 23 (vinte e três) representantes, titulares e suplentes, dos seguintes órgãos:</p><p>I - 5 (cinco) do Poder Executivo federal;</p><p>II - 1 (um) do Senado Federal;</p><p>III - 1 (um) da Câmara dos Deputados;</p><p>IV - 1 (um) do Conselho Nacional de Justiça;</p><p>V - 1 (um) do Conselho Nacional do Ministério Público;</p><p>VI - 1 (um) do Comitê Gestor da Internet no Brasil;</p><p>VII - 3 (três) de entidades da sociedade civil com atuação relacionada a proteção de dados pessoais;</p><p>VIII - 3 (três) de instituições científicas, tecnológicas e de inovação;</p><p>IX - 3 (três) de confederações sindicais representativas das categorias econômicas do setor produtivo;</p><p>X - 2 (dois) de entidades representativas do setor empresarial relacionado à área de tratamento de dados pessoais; e</p><p>XI - 2 (dois) de entidades representativas do setor laboral.</p><p><strong>§ 1º</strong> Os representantes serão designados por ato do Presidente da República, permitida a delegação.</p><p><strong>§ 2º</strong> Os representantes de que tratam os incisos I, II, III, IV, V e VI do *caput* deste artigo e seus suplentes serão indicados pelos titulares dos respectivos órgãos e entidades da administração pública.</p><p><strong>§ 3º</strong> Os representantes de que tratam os incisos VII, VIII, IX, X e XI do *caput* deste artigo e seus suplentes:</p><p>I - serão indicados na forma de regulamento;</p><p>II - não poderão ser membros do Comitê Gestor da Internet no Brasil;</p><p>III - terão mandato de 2 (dois) anos, permitida 1 (uma) recondução.</p><p><strong>§ 4º</strong> A participação no Conselho Nacional de Proteção de Dados Pessoais e da Privacidade será considerada prestação de serviço público relevante, não remunerada. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, e com redação dada pela Lei nº 13.853, de 8/7/2019, na qual foi convertida a referida Medida Provisória)*</p></section><section class="lei-dispositivo" data-artigo="58-B" id="lei-art-58-b"><p><strong>Art. 58-B.</strong> Compete ao Conselho Nacional de Proteção de Dados Pessoais e da Privacidade:</p><p>I - propor diretrizes estratégicas e fornecer subsídios para a elaboração da Política Nacional de Proteção de Dados Pessoais e da Privacidade e para a atuação da ANPD;</p><p>II - elaborar relatórios anuais de avaliação da execução das ações da Política Nacional de Proteção de Dados Pessoais e da Privacidade;</p><p>III - sugerir ações a serem realizadas pela ANPD;</p><p>IV - elaborar estudos e realizar debates e audiências públicas sobre a proteção de dados pessoais e da privacidade; e</p><p>V - disseminar o conhecimento sobre a proteção de dados pessoais e da privacidade à população. *(Artigo acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p></section><section class="lei-dispositivo" data-artigo="59" id="lei-art-59"><p><strong>Art. 59.</strong> (VETADO).</p></section><section class="lei-preambulo"><h5>CAPÍTULO X — DISPOSIÇÕES FINAIS E TRANSITÓRIAS</h5></section><section class="lei-dispositivo" data-artigo="60-A" id="lei-art-60-a"><p><strong>Art. 60.</strong> A Lei nº 12.965, de 23 de abril de 2014 (Marco Civil da Internet), passa a vigorar com as seguintes alterações:</p><p>“Art. 7º .....................................................................................</p><p>..........................................................................................................</p><p>X- exclusão definitiva dos dados pessoais que tiver fornecido a determinada aplicação de internet, a seu requerimento, ao término da relação entre as partes, ressalvadas as hipóteses de guarda obrigatória de registros previstas nesta Lei e na que dispõe sobre a proteção de dados pessoais;</p><p>...............................................................................................” (NR)</p><p>“Art. 16. ...................................................................................</p><p>..........................................................................................................</p><p>II - de dados pessoais que sejam excessivos em relação à finalidade para a qual foi dado consentimento pelo seu titular, exceto nas hipóteses previstas na Lei que dispõe sobre a proteção de dados pessoais.” (NR)</p></section><section class="lei-dispositivo" data-artigo="61-A" id="lei-art-61-a"><p><strong>Art. 61.</strong> A empresa estrangeira será notificada e intimada de todos os atos processuais previstos nesta Lei, independentemente de procuração ou de disposição contratual ou estatutária, na pessoa do agente ou representante ou pessoa responsável por sua filial, agência, sucursal, estabelecimento ou escritório instalado no Brasil.</p></section><section class="lei-dispositivo" data-artigo="62-A" id="lei-art-62-a"><p><strong>Art. 62.</strong> A autoridade nacional e o Instituto Nacional de Estudos e Pesquisas Educacionais Anísio Teixeira (Inep), no âmbito de suas competências, editarão regulamentos específicos para o acesso a dados tratados pela União para o cumprimento do disposto no § 2º do art. 9º da Lei nº 9.394, de 20 de dezembro de 1996 (Lei de Diretrizes e Bases da Educação Nacional), e aos referentes ao Sistema Nacional de Avaliação da Educação Superior (Sinaes), de que trata a Lei nº 10.861, de 14 de abril de 2004.</p></section><section class="lei-dispositivo" data-artigo="63-A" id="lei-art-63-a"><p><strong>Art. 63.</strong> A autoridade nacional estabelecerá normas sobre a adequação progressiva de bancos de dados constituídos até a data de entrada em vigor desta Lei, consideradas a complexidade das operações de tratamento e a natureza dos dados.</p></section><section class="lei-dispositivo" data-artigo="64" id="lei-art-64"><p><strong>Art. 64.</strong> Os direitos e princípios expressos nesta Lei não excluem outros previstos no ordenamento jurídico pátrio relacionados à matéria ou nos tratados internacionais em que a República Federativa do Brasil seja parte.</p></section><section class="lei-dispositivo" data-artigo="65" id="lei-art-65"><p><strong>Art. 65.</strong> Esta Lei entra em vigor: *(“Caput” do artigo com redação dada pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>I - dia 28 de dezembro de 2018, quanto aos arts. 55-A, 55-B, 55-C, 55-D, 55- E, 55-F, 55-G, 55-H, 55-I, 55-J, 55-K, 55-L, 58-A e 58-B; e *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, e com redação dada pela Lei nº 13.853, de 8/7/2019, na qual foi convertida a referida Medida Provisória)*</p><p>I-A - dia 1º de agosto de 2021, quanto aos arts. 52, 53 e 54; *(Inciso acrescido pela Lei nº 14.010, de 10/6/2020)*</p><p>II - 24 (vinte e quatro) meses após a data de sua publicação, quanto aos demais artigos. *(Inciso acrescido pela Medida Provisória nº 869, de 27/12/2018, convertida na Lei nº 13.853, de 8/7/2019)*</p><p>Brasília, 14 de agosto de 2018; 197º da Independência e 130º da República.</p><p>MICHEL TEMER</p><p>Torquato Jardim</p><p>Aloysio Nunes Ferreira Filho</p><p>Eduardo Refinetti Guardia</p><p>Esteves Pedro Colnago Junior</p><p>Gilberto Magalhães Occhi</p><p>Gilberto Kassab</p><p>Wagner de Campos Rosário</p><p>Gustavo do Vale Rocha</p><p>Ilan Goldfajn</p><p>Raul Jungmann</p><p>Eliseu Padilha</p></section></div></section></article></div><footer class="footer"><a href="../../../index.html">Voltar à biblioteca</a></footer></main></div></body></html>
+
