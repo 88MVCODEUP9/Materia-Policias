@@ -1,0 +1,133 @@
+/* Complementos compartilhados dos materiais; carregados após os estilos locais. */
+:where(.prose, .reader-layout, .study-card, .text-section, .material-github) { min-width: 0; }
+.prose { overflow-wrap: anywhere; }
+.prose :is(.study-card, .card, .blk, .arg-card, .falacia-card, .venn-item) { min-width: 0; max-width: 100%; }
+.prose :is(.arg-card, .falacia-card, .venn-item, .lei-preambulo, .anotacoes-adicionais) {
+  margin-block: 16px; padding: 20px; border: 1px solid var(--line);
+  border-radius: var(--radius); background: var(--panel); color: var(--ink);
+}
+.prose .lei-preambulo { border-left: 4px solid var(--discipline-color, var(--cyan)); }
+.prose .lei-preambulo > :last-child { margin-bottom: 0; }
+.prose :is(.arg-grid, .venn-svg-container, .toc-grid) {
+  display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px;
+}
+.prose :is(.arg-grid, .venn-svg-container) > * { margin-block: 0; }
+.prose .venn-item { text-align: center; }
+.prose .venn-item svg { width: 180px; max-width: 100%; height: auto; }
+.prose :is(.arg-prem, .falacia-def, .example-text) { margin-block: 8px; }
+.prose .arg-concl { margin-top: 12px; padding-top: 12px; border-top: 1px solid var(--line); font-weight: 700; color: var(--green); }
+.prose :is(.arg-tag, .example-label) { display: inline-block; margin-block: 8px; color: var(--cyan); font-size: 13px; font-weight: 700; }
+.prose :is(.falacia-nome, .venn-label, .mapa-titulo) { margin-bottom: 10px; font-weight: 800; color: var(--ink); }
+.prose .falacia-ex { margin-top: 12px; color: var(--muted); }
+.prose :is(.venn-desc, .quote-author) { color: var(--muted); font-size: 14px; }
+.prose :is(.subtopico-titulo, .material-subtitulo, .c-h5) { margin: 22px 0 12px; font-size: 18px; line-height: 1.5; color: var(--cyan); }
+.prose .subtopico-titulo[data-num]::before { content: attr(data-num) " · "; }
+.prose :is(.assunto-titulo, .complementar-titulo) { margin-block: 28px 16px; }
+.prose :is(.referencia-assunto, .empty-state) { padding: 16px; border: 1px dashed var(--line-strong); border-radius: var(--radius-sm); }
+.prose .anotacoes-adicionais > summary { cursor: pointer; font-weight: 700; }
+.prose .anotacoes-adicionais[open] > summary { margin-bottom: 16px; }
+.prose .question-text { min-width: 0; overflow-wrap: anywhere; }
+.prose .toc-grid a { display: flex; gap: 12px; align-items: baseline; }
+.prose .alert-box { display: flex; align-items: flex-start; gap: 12px; margin-block: 18px; padding: 18px; border: 1px solid var(--orange); border-left-width: 4px; border-radius: var(--radius-sm); background: var(--panel); }
+.prose .alert-icon { flex: 0 0 auto; }
+.prose .alert-text { min-width: 0; }
+.prose .truth-table-wrapper { max-width: 100%; overflow-x: auto; margin-block: 18px; }
+.prose .table--compact :is(th, td) { padding: 8px 10px; }
+.table-wrap table { min-width: var(--table-min-width, 0px); }
+.prose pre { max-width: 100%; overflow-x: auto; }
+.prose :is(.key, .blk--definicao) { border-left: 4px solid var(--cyan); }
+.prose .warning { border-left: 4px solid var(--orange); }
+.prose :is(.rV, .truth-table .val-V) { color: var(--green); }
+.prose :is(.rF, .truth-table .val-F) { color: var(--red); }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-blue { border-left-color: var(--blue); }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-orange { border-left-color: var(--orange); }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-teal { border-left-color: var(--cyan); }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-red { border-left-color: var(--red); }
+[data-discipline="raciocinio-logico"] .material-github .card-accent-yellow { border-left-color: var(--yellow); }
+@media (max-width: 600px) {
+  .prose :is(.arg-grid, .venn-svg-container, .toc-grid) { grid-template-columns: minmax(0, 1fr); }
+  .prose :is(.arg-card, .falacia-card, .venn-item, .lei-preambulo, .anotacoes-adicionais) { padding: 16px; }
+  .hero-stats { flex-wrap: wrap; }
+  .card-footer, .breadcrumbs { white-space: normal; overflow-wrap: anywhere; }
+  .bottom-nav { flex-wrap: wrap; }
+  .bottom-nav a { min-width: 0; max-width: 100%; flex: 1 1 180px; overflow-wrap: anywhere; }
+}
+@media print {
+  .prose :is(.arg-card, .falacia-card, .venn-item, .lei-preambulo, .anotacoes-adicionais, .alert-box) { background: white; color: black; border-color: #aaa; box-shadow: none; }
+}
+
+/* Parágrafos e linhas permanecem dentro do card do assunto. */
+.prose .leitura-paragrafo {
+  --bloco-cor: #60a5fa;
+  display: block; margin: 0 0 16px; padding: 0;
+  border: 0; border-radius: 0; background: transparent; box-shadow: none;
+  color: var(--ink); line-height: 1.85; overflow-wrap: anywhere;
+}
+.prose .leitura-artigo { --bloco-cor: #38bdf8; }
+.prose .leitura-dispositivo-paragrafo { --bloco-cor: #c084fc; }
+.prose .leitura-inciso { --bloco-cor: #34d399; }
+.prose .leitura-alinea { --bloco-cor: #fbbf24; }
+.prose .leitura-paragrafo > :is(strong, b):first-child { color: var(--bloco-cor); }
+.prose .lei-dispositivo {
+  margin: 28px 0; padding: clamp(14px, 2vw, 24px);
+  border: 1px solid #38bdf84d; border-radius: 18px;
+  background: linear-gradient(145deg, #38bdf80a, var(--panel));
+}
+.prose .lei-dispositivo > .leitura-paragrafo:last-child { margin-bottom: 0; }
+@media (max-width: 600px) {
+  .prose .leitura-paragrafo { padding: 0; }
+}
+@media print {
+  .prose .lei-dispositivo { background: white; color: black; border-color: #888; box-shadow: none; }
+  .prose .leitura-paragrafo > :is(strong, b):first-child { color: black; }
+}
+
+/* Hierarquia de tópicos e linhas dos materiais de leitura. */
+.prose :is(h2, h3, h4) { text-wrap: balance; }
+.prose h2 { margin-block: 32px 18px; }
+.prose h3 { margin-block: 24px 14px; }
+.prose .topico-organizado {
+  margin: 24px 0 14px; padding: 0;
+  border: 0; border-radius: 0; background: transparent;
+  color: var(--cyan); font-size: 18px; line-height: 1.5;
+}
+.prose .texto-organizado {
+  margin: 0 0 20px; padding: 0;
+  border: 0; border-radius: 0; background: transparent;
+}
+.prose .linha-organizada { margin: 0 0 14px; line-height: 1.85; }
+.prose .lista-organizada { margin: 12px 0; padding: 0; list-style: none; }
+.prose .lista-organizada > li {
+  margin: 8px 0; padding: 0; border: 0;
+  line-height: 1.8; overflow-wrap: anywhere;
+}
+.prose .lista-organizada > li:nth-child(odd) { background: transparent; }
+.prose .lista-organizada > li:last-child { border-bottom: 0; }
+.prose .texto-organizado > :last-child { margin-bottom: 0; }
+.prose li > p.leitura-paragrafo { margin-block: 10px; }
+.prose :is(.study-card, .text-section) > :is(h2, h3, h4):first-child { margin-top: 0; }
+@media print {
+  .prose :is(.texto-organizado, .topico-organizado) { background: transparent; color: black; border-color: #888; }
+  .prose .lista-organizada > li:nth-child(odd) { background: transparent; }
+}
+
+/* Abertura da lei: título, identificação, ementa e apresentação no mesmo card. */
+.prose .lei-preambulo {
+  padding: clamp(20px, 3vw, 30px);
+  border-left: 4px solid var(--discipline-color, var(--cyan));
+}
+.prose .lei-preambulo > h2 { margin: 0 0 18px; font-size: clamp(22px, 2.5vw, 28px); line-height: 1.35; }
+.prose .lei-preambulo > :is(h3, h4, .topico-organizado) {
+  margin: 24px 0 12px; padding: 0; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none; color: var(--cyan);
+  font-size: 16px; line-height: 1.6;
+}
+.prose .lei-preambulo > :is(h3, h4) strong { color: inherit; }
+.prose .lei-preambulo > :is(p, .leitura-paragrafo, .texto-organizado) {
+  margin: 0 0 18px; padding: 0; border: 0; border-radius: 0;
+  background: transparent; box-shadow: none; line-height: 1.85;
+}
+.prose .lei-preambulo > :last-child { margin-bottom: 0; }
+@media print {
+  .prose .lei-preambulo > :is(h3, h4, p, .texto-organizado) { color: black; background: transparent; }
+}

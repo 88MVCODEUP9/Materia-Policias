@@ -1,0 +1,20 @@
+/* Raciocínio lógico: símbolos, premissas, conclusões e tabelas-verdade. */
+body[data-discipline="raciocinio-logico"] { --discipline-color: #a3e635; }
+[data-discipline="raciocinio-logico"] .prose { font-size: 17px; line-height: 1.85; }
+[data-discipline="raciocinio-logico"] .study-card { --k: #a3e635; padding: clamp(18px, 3vw, 28px); }
+[data-discipline="raciocinio-logico"] .study-card[data-conteudo="exemplo"] { --k: #38bdf8; }
+[data-discipline="raciocinio-logico"] .prose :is(p.symbol,.calculo-linha,.connective-symbol,.qcalc) {
+  font-family: "Cambria Math", "DejaVu Sans", serif; font-size: clamp(19px, 2vw, 24px);
+  line-height: 1.9; color: #d9f99d; font-variant-numeric: tabular-nums;
+}
+[data-discipline="raciocinio-logico"] .prose p.symbol { white-space: normal; overflow-wrap: anywhere; padding: 0; border: 0; background: transparent; }
+[data-discipline="raciocinio-logico"] .prose .truth-table { text-align: center; font-variant-numeric: tabular-nums; }
+[data-discipline="raciocinio-logico"] .prose .truth-table :is(th,td) { text-align: center; padding: 12px 16px; }
+[data-discipline="raciocinio-logico"] .prose th { background: #365314; }
+[data-discipline="raciocinio-logico"] .prose :is(.val-V,.result-V,.tv) { color: #86efac; font-weight: 800; }
+[data-discipline="raciocinio-logico"] .prose :is(.val-F,.result-F,.tf) { color: #fda4af; font-weight: 800; }
+[data-discipline="raciocinio-logico"] .prose .arg-prem { margin-block: 12px; }
+[data-discipline="raciocinio-logico"] .prose .arg-concl { padding-top: 14px; margin-top: 16px; color: #bef264; }
+[data-discipline="raciocinio-logico"] .prose .exemplo-linha { color: #bae6fd; }
+@media (max-width:600px) { [data-discipline="raciocinio-logico"] .prose :is(.connective-grid,.neg-grid,.equivalence-grid,.logic-results,.qgrid) { grid-template-columns: minmax(0,1fr); } }
+@media print { [data-discipline="raciocinio-logico"] .prose :is(p.symbol,.calculo-linha,.qcalc,.arg-concl,.exemplo-linha) { color: black; } }

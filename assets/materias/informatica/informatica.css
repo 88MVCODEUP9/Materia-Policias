@@ -1,0 +1,18 @@
+/* Informática: comandos, atalhos e comparações. */
+body[data-discipline="informatica"] { --discipline-color: #22d3ee; }
+[data-discipline="informatica"] .prose { font-size: 16.5px; line-height: 1.85; }
+[data-discipline="informatica"] .study-card { --k: #22d3ee; padding: clamp(18px, 3vw, 28px); }
+[data-discipline="informatica"] .study-card[data-conteudo="exemplo"] { --k: #34d399; }
+[data-discipline="informatica"] .prose pre {
+  margin: 20px 0; padding: 20px; max-width: 100%; overflow-x: auto;
+  border: 1px solid #22d3ee55; border-left: 4px solid #22d3ee;
+  border-radius: 10px; background: #060d1a; color: #a5f3fc;
+  font: 14px/1.9 ui-monospace, SFMono-Regular, Consolas, monospace; tab-size: 4;
+}
+[data-discipline="informatica"] .prose pre code { white-space: pre; background: transparent; color: inherit; padding: 0; border: 0; }
+[data-discipline="informatica"] .prose :not(pre) > code { padding: 2px 6px; border-radius: 4px; background: #22d3ee14; color: #a5f3fc; overflow-wrap: anywhere; }
+[data-discipline="informatica"] .prose kbd { display: inline-block; padding: 1px 7px; margin: 2px; border: 1px solid #64748b; border-bottom-width: 3px; border-radius: 5px; background: #172033; color: #f1f5f9; font: 13px/1.6 ui-monospace, monospace; }
+[data-discipline="informatica"] .prose th { background: #164e63; }
+[data-discipline="informatica"] .prose :is(th,td) { padding: 13px 16px; }
+[data-discipline="informatica"] .prose .exemplo-linha { color: #a7f3d0; }
+@media print { [data-discipline="informatica"] .prose :is(pre,code,kbd,.exemplo-linha) { color: black; background: white; } }

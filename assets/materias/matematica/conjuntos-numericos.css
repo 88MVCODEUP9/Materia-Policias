@@ -1,0 +1,24 @@
+.pagina-conjuntos .study-card > h2 { margin: 0 0 20px; font-size: clamp(23px, 2.6vw, 29px); }
+.pagina-conjuntos .study-card > h2 + .card-kicker { margin-bottom: 16px; }
+.pagina-conjuntos .conjuntos-visao { --k: #c4b5fd; }
+.pagina-conjuntos .cadeia-conjuntos { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 28px 0; }
+.pagina-conjuntos .cadeia-conjuntos > span { flex: 1; min-width: 76px; color: #ddd6fe; font: 700 36px/1.4 "Cambria Math", serif; text-align: center; }
+.pagina-conjuntos .cadeia-conjuntos small { display: block; color: var(--muted); font: 13px/1.7 var(--font); }
+.pagina-conjuntos .cadeia-conjuntos > b { color: #a78bfa; font: 28px/1.4 "Cambria Math", serif; }
+.pagina-conjuntos caption { padding: 14px 16px; text-align: left; font-weight: 700; color: #ddd6fe; }
+.pagina-conjuntos .table-wrap table { min-width: 620px; }
+.pagina-conjuntos tbody th { background: #a78bfa12; font-size: 14px; white-space: nowrap; }
+.pagina-conjuntos details { margin-top: 22px; padding-top: 16px; border-top: 1px solid var(--line); }
+.pagina-conjuntos summary { cursor: pointer; color: #a7f3d0; font-weight: 700; line-height: 1.6; }
+.pagina-conjuntos details[open] summary { margin-bottom: 18px; }
+.pagina-conjuntos .texto-organizado:has(> .linha-organizada) { margin-top: 16px; }
+.pagina-conjuntos .linha-organizada { margin-bottom: 10px; }
+@media(max-width:600px) {
+ .pagina-conjuntos .cadeia-conjuntos { gap: 4px; }
+ .pagina-conjuntos .cadeia-conjuntos > span { min-width: 45px; font-size: 30px; }
+ .pagina-conjuntos .cadeia-conjuntos small { font-size: 10px; }
+ .pagina-conjuntos .cadeia-conjuntos > b { font-size: 21px; }
+}
+@media print { .pagina-conjuntos .cadeia-conjuntos :is(span,b,small), .pagina-conjuntos summary { color: black; } }
+[data-discipline="matematica"] .pagina-conjuntos tbody th { background: #a78bfa12; color: #ddd6fe; }
+@media(max-width:600px) { .pagina-conjuntos caption { text-align: left; font-size: 13px; } }
