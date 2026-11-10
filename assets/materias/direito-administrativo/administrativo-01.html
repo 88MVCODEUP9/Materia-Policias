@@ -599,6 +599,307 @@ tbody tr:last-child td { border-bottom: 0; }
 <span class="status" id="salvamento"></span>
 </div>
 </header>
+
+
+
+<div style="
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  margin:24px auto;
+  padding:0;
+  box-sizing:border-box;
+">
+<!-- BOTÃO YOUTUBE COM CORREDOR ANIMADO -->
+<button
+  type="button"
+  data-url="https://www.youtube.com/live/hBb2FlQ4OP8?t=234&is=q7pzhxKn0caqubmr"
+  aria-label="Assistir vídeo no YouTube"
+  style="
+    position:relative;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
+    width:190px;
+    height:48px;
+    padding:0 14px;
+    overflow:hidden;
+    border:1px solid #ff365566;
+    border-radius:12px;
+    background:linear-gradient(145deg,#24212d,#101018);
+    color:white;
+    font:600 13px Arial,sans-serif;
+    cursor:pointer;
+    box-shadow:0 5px 18px #0005;
+    transition:transform .25s,box-shadow .25s;
+    isolation:isolate;
+  "
+  onmouseenter="
+    if(!this.disabled){
+      this.style.transform='translateY(-2px)';
+      this.style.boxShadow='0 8px 24px #ff304044';
+    }
+  "
+  onmouseleave="
+    this.style.transform='';
+    this.style.boxShadow='0 5px 18px #0005';
+  "
+  onclick="
+    if(this.disabled)return;
+
+    const b=this;
+    const q=s=>b.querySelector('[data-'+s+']');
+    const url=b.dataset.url;
+    const duration=2600;
+    const reduced=matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    b.disabled=true;
+    b.style.cursor='wait';
+    b.setAttribute('aria-busy','true');
+
+    q('play').style.display='none';
+    q('runner').style.display='block';
+    q('label').textContent='Carregando...';
+
+    const animations=[];
+
+    function animate(el,frames,options){
+      const a=el.animate(frames,options);
+      animations.push(a);
+      return a;
+    }
+
+    if(!reduced){
+      animate(q('body'),[
+        {transform:'translateY(0)'},
+        {transform:'translateY(-2px)'},
+        {transform:'translateY(0)'}
+      ],{
+        duration:220,
+        iterations:Infinity
+      });
+
+      ['arm-a','leg-b','arm-b','leg-a']
+      .forEach((name,i)=>{
+        const reverse=i<2;
+        animate(q(name),[
+          {transform:'rotate('+(reverse?-38:38)+'deg)'},
+          {transform:'rotate('+(reverse?38:-38)+'deg)'},
+          {transform:'rotate('+(reverse?-38:38)+'deg)'}
+        ],{
+          duration:420,
+          iterations:Infinity,
+          easing:'ease-in-out'
+        });
+      });
+
+      animate(q('runner'),[
+        {transform:'translateX(0) scale(.92)'},
+        {transform:'translateX(3px) scale(1)'},
+        {transform:'translateX(0) scale(.92)'}
+      ],{
+        duration:500,
+        iterations:Infinity
+      });
+    }
+
+    const progress=animate(q('progress'),[
+      {width:'0%'},
+      {width:'100%'}
+    ],{
+      duration:reduced?500:duration,
+      easing:'cubic-bezier(.4,0,.2,1)',
+      fill:'forwards'
+    });
+
+    progress.finished.then(()=>{
+      animations.forEach(a=>a.cancel());
+      q('runner').style.display='none';
+      q('check').style.display='block';
+      q('label').textContent='Abrindo vídeo...';
+      q('progress').style.width='100%';
+
+      setTimeout(()=>{
+        window.location.assign(url);
+      },250);
+    }).catch(()=>{});
+  "
+>
+  <!-- Ícone YouTube -->
+  <span
+    style="
+      position:relative;
+      display:grid;
+      place-items:center;
+      width:30px;
+      height:26px;
+      flex-shrink:0;
+      z-index:2;
+    "
+  >
+    <svg
+      data-play
+      width="30"
+      height="23"
+      viewBox="0 0 30 23"
+      aria-hidden="true"
+    >
+      <rect
+        x="0" y="1"
+        width="30" height="21"
+        rx="7"
+        fill="#ff0033"
+      />
+      <path
+        d="M12 6.5 L21 11.5 L12 16.5 Z"
+        fill="white"
+      />
+    </svg>
+
+    <!-- MENINO CORRENDO -->
+    <svg
+      data-runner
+      width="34"
+      height="37"
+      viewBox="0 0 40 48"
+      aria-hidden="true"
+      style="
+        display:none;
+        overflow:visible;
+        filter:drop-shadow(0 0 5px #ff3655);
+      "
+    >
+      <g data-body>
+        <!-- Cabeça -->
+        <circle
+          cx="23" cy="8" r="4"
+          fill="#fff"
+        />
+
+        <!-- Braço traseiro -->
+        <g
+          data-arm-b
+          style="transform-origin:21px 18px;"
+          fill="none"
+          stroke="#ff718d"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M21 18 L15 24 L10 20"/>
+        </g>
+
+        <!-- Perna traseira -->
+        <g
+          data-leg-b
+          style="transform-origin:19px 28px;"
+          fill="none"
+          stroke="#ff718d"
+          stroke-width="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 28 L12 35 L7 39"/>
+        </g>
+
+        <!-- Tronco -->
+        <path
+          d="M22 16 L19 28"
+          fill="none"
+          stroke="#fff"
+          stroke-width="6"
+          stroke-linecap="round"
+        />
+
+        <!-- Braço dianteiro -->
+        <g
+          data-arm-a
+          style="transform-origin:22px 18px;"
+          fill="none"
+          stroke="#fff"
+          stroke-width="3.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M22 18 L28 24 L33 19"/>
+        </g>
+
+        <!-- Perna dianteira -->
+        <g
+          data-leg-a
+          style="transform-origin:19px 28px;"
+          fill="none"
+          stroke="#fff"
+          stroke-width="4"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 28 L26 35 L23 42"/>
+        </g>
+      </g>
+    </svg>
+
+    <!-- Concluído -->
+    <svg
+      data-check
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      aria-hidden="true"
+      style="display:none;"
+    >
+      <circle cx="12" cy="12" r="11" fill="#22c55e"/>
+      <path
+        d="M6 12 L10 16 L18 8"
+        fill="none"
+        stroke="white"
+        stroke-width="2.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+  </span>
+
+  <!-- Texto -->
+  <span
+    data-label
+    style="
+      position:relative;
+      z-index:2;
+      white-space:nowrap;
+      font-size:13px;
+      letter-spacing:.1px;
+      pointer-events:none;
+    "
+  >Assistir no YouTube</span>
+
+  <!-- Barra de carregamento -->
+  <span
+    data-progress
+    aria-hidden="true"
+    style="
+      position:absolute;
+      left:0;
+      bottom:0;
+      width:0%;
+      height:3px;
+      background:linear-gradient(
+        90deg,#ff0033,#ff6b87
+      );
+      box-shadow:0 0 10px #ff3655;
+      pointer-events:none;
+      z-index:3;
+    "
+  ></span>
+</button>
+</div> 
+
+
+
 <div class="reader-layout">
 <article class="prose">
 <div class="study-card" data-study-kind="conceito" data-study-label="Conceito">
@@ -700,7 +1001,7 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 <h4 class="topico-organizado"><strong>Administração Indireta – Explicação para leigos</strong></h4>
 <p class="leitura-paragrafo leitura-texto">A Administração Indireta reúne entidades com personalidade jurídica própria, instituídas ou autorizadas por lei para executar atividades administrativas ou econômicas. Elas têm autonomia nos limites da lei e ficam vinculadas a um órgão supervisor, sem subordinação hierárquica. Exemplos: INSS (autarquia), Caixa Econômica Federal (empresa pública) e Petrobras (sociedade de economia mista).</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4><ul class="lista-organizada"><li>Autarquias, Fundações, Empresas Públicas e Sociedades de Economia Mista.</li><li>Não possuem autonomia política, que pertence aos entes federativos. A autonomia administrativa, técnica ou financeira de cada entidade varia conforme sua lei e seu regime jurídico.</li><li>Personalidade jurídica própria, patrimônio e receitas próprios.</li><li>Vinculação ao Ministério ou Secretaria supervisor (tutela), mas sem subordinação hierárquica.</li><li>Exemplos: IBAMA (autarquia), Fiocruz (fundação), Correios (empresa pública), Petrobras (SEM).</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4><ul class="lista-organizada"><li>Autarquias, Fundações, Empresas Públicas e Sociedades de Economia Mista.</li><li>Não possuem autonomia política, que pertence aos entes federativos. A autonomia administrativa, técnica ou financeira de cada entidade varia conforme sua lei e seu regime jurídico.</li><li>Personalidade jurídica própria, patrimônio e receitas próprios.</li><li>Vinculação ao Ministério ou Secretaria supervisor (tutela), mas sem subordinação hierárquica.</li><li>Exemplos: IBAMA (autarquia), Fiocruz (fundação), Correios (empresa pública), Petrobras (Sociedades de Economia Mista).</li></ul></div>
 </div>
 </div>
 <div class="study-card" data-study-kind="explicacao" data-study-label="Explicação">
