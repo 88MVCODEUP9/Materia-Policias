@@ -10,7 +10,6 @@
 <link href="../../icone.png" rel="icon">
 <link href="../componentes.css?v=20261106-organizacao-4" rel="stylesheet">
 
-<script defer src="../../js/app.js?v=leitura-20261026"></script>
 <style id="tema-unificado">
 /* =====================================================================
    TEMA UNIFICADO · Matéria Policial
@@ -408,15 +407,9 @@ tbody tr:last-child td { border-bottom: 0; }
   .toc > strong { margin-bottom: 8px; }
 }
 @media (max-width: 800px) {
-  .sidebar { position: relative; width: 100%; padding: 20px 24px; display: grid; grid-template-columns: 1fr auto; border-right: 0; border-bottom: 1px solid var(--line); }
-  .brand { margin: 0; font-size: 24px; }
+  .brand { font-size: 24px; }
   .brand small { margin-top: 6px; }
-  .mobile-menu { display: block; align-self: center; background: transparent; }
-  .sidebar nav { display: none; grid-column: 1 / -1; max-height: 60vh; margin-top: 20px; }
-  .sidebar.open nav { display: block; }
-  .sidebar-footer { display: none; }
-  .workspace { margin: 0; }
-  .topbar { position: static; min-height: 46px; padding: 0 24px; }
+  .topbar { min-height: 56px; padding: 0 20px; }
   main { padding: 28px 20px 26px; }
   .reader-header { padding: 24px 22px 22px; border-radius: 20px; }
   .reader-header::after, .hero::after { display: none; }
@@ -434,6 +427,48 @@ tbody tr:last-child td { border-bottom: 0; }
   .prose .study-card .topico-organizado { font-size: 17px; }
   .notas-assunto { padding: 0 12px 8px; }
   .material-github summary { padding: 14px 16px; }
+}
+
+/* ---------- 12. Menu lateral em mobile/tablet (gaveta) ---------- */
+.menu-toggle { display: none; }
+.sidebar-backdrop {
+  position: fixed; inset: 0; z-index: 50;
+  background: rgb(3 6 18 / 68%); backdrop-filter: blur(3px);
+  opacity: 0; visibility: hidden;
+  transition: opacity .25s ease, visibility 0s linear .25s;
+}
+.sidebar-backdrop.ativo { opacity: 1; visibility: visible; transition: opacity .25s ease, visibility 0s; }
+@media (max-width: 1024px) {
+  .menu-toggle {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; min-height: 0; padding: 0; margin-right: 12px;
+    flex: none; background: transparent; border-color: var(--line-strong);
+  }
+  .menu-toggle-bars { position: relative; display: block; width: 18px; height: 2px; border-radius: 2px; background: var(--cyan); }
+  .menu-toggle-bars::before, .menu-toggle-bars::after {
+    content: ""; position: absolute; left: 0; width: 18px; height: 2px; border-radius: 2px;
+    background: inherit; transition: transform .2s ease, top .2s ease;
+  }
+  .menu-toggle-bars::before { top: -6px; }
+  .menu-toggle-bars::after { top: 6px; }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bars { background: transparent; }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bars::before { top: 0; transform: rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-bars::after { top: 0; transform: rotate(-45deg); }
+  .topbar { justify-content: flex-start; }
+  .topbar > span { margin-left: auto; }
+  .sidebar {
+    z-index: 60; width: min(300px, 86vw); padding: 24px 18px 20px;
+    border-right: 1px solid var(--line); border-bottom: 0;
+    transform: translateX(-100%); visibility: hidden;
+    transition: transform .3s cubic-bezier(.23,1,.32,1), visibility 0s linear .3s;
+    box-shadow: 24px 0 60px rgb(0 0 0 / 45%);
+  }
+  .sidebar.open { transform: none; visibility: visible; transition: transform .3s cubic-bezier(.23,1,.32,1), visibility 0s; }
+  .sidebar nav { display: block; grid-column: auto; max-height: none; margin: -4px; padding: 4px; }
+  .sidebar-footer { display: block; }
+  .mobile-menu { display: none; }
+  .workspace { margin-left: 0; }
+  body.menu-aberto { overflow: hidden; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
@@ -586,8 +621,9 @@ tbody tr:last-child td { border-bottom: 0; }
 <nav aria-label="Navegação principal" id="navegacao"><a href="../../../index.html">Biblioteca</a><p class="nav-label">Disciplinas</p><a aria-current="page" href="index.html">Direito Administrativo</a><a href="../atualidades/index.html">Atualidades</a><a href="../direito-constitucional/index.html">Direito Constitucional</a><a href="../direitos-humanos/index.html">Direitos Humanos</a><a href="../legislacao-extravagante/index.html">Legislação Extravagante</a><a href="../guardas-municipais/index.html">Guardas Municipais</a><a href="../informatica/index.html">Informática</a><a href="../matematica/index.html">Matemática</a><a href="../direito-penal/index.html">Direito Penal</a><a href="../direito-penal-militar/index.html">Direito Penal Militar</a><a href="../portugues/index.html">Língua Portuguesa</a><a href="../processo-penal/index.html">Processo Penal Militar</a><a href="../raciocinio-logico/index.html">Raciocínio Lógico</a><a href="../pm-pernambuco/index.html">PM de Pernambuco</a><a href="../pm-bahia/index.html">PM da Bahia</a><a href="../pm-alagoas/index.html">PM de Alagoas</a><a href="../bombeiros-pernambuco/index.html">Bombeiros de Pernambuco</a><a href="../policia-civil/index.html">Polícia Civil</a></nav>
 <div class="sidebar-footer">Biblioteca de estudos<br><span>Teoria · revisão · legislação</span></div>
 </aside>
+<div aria-hidden="true" class="sidebar-backdrop"></div>
 <div class="workspace">
-<header class="topbar"><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
+<header class="topbar"><button aria-controls="sidebar" aria-expanded="false" aria-label="Abrir menu de navegação" class="menu-toggle" type="button"><span aria-hidden="true" class="menu-toggle-bars"></span></button><a href="../../../index.html">Biblioteca de estudos</a><span>Matéria Policial</span></header>
 <main id="conteudo">
 <nav aria-label="Trilha" class="breadcrumbs">
 <a href="../../../index.html">Biblioteca</a> / <a href="index.html">Direito Administrativo</a> / Administração Direta e Indireta
@@ -927,7 +963,18 @@ tbody tr:last-child td { border-bottom: 0; }
 <h4 class="topico-organizado"><strong>Administração Direta – Explicação para leigos</strong></h4>
 <p class="leitura-paragrafo leitura-texto">A Administração Direta é a atuação administrativa dos próprios entes federativos por meio de seus órgãos, sem interposição de uma entidade descentralizada. Pense em uma secretaria estadual que executa diretamente uma política pública.</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4><ul class="lista-organizada"><li>União, Estados, DF e Municípios.</li><li>A autonomia política pertence aos entes federativos; seus órgãos não têm personalidade nem autonomia política própria.</li><li>Prestação centralizada.</li><li>Órgãos públicos sem personalidade jurídica própria.</li><li>Despesas realizadas diretamente pelo orçamento do ente.</li><li>Exemplos: Ministérios, Secretarias Estaduais, Câmaras Municipais.</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4><ul class="lista-organizada">
+  <li>União, Estados, DF e Municípios.</li>
+  <br>
+  <li>A autonomia política pertence aos entes federativos; seus órgãos não têm personalidade nem autonomia política própria.</li>
+  <br>
+  <li>Prestação centralizada.</li>
+  <br>
+  <li>Órgãos públicos sem personalidade jurídica própria.</li>
+  <br>
+  <li>Despesas realizadas diretamente pelo orçamento do ente.</li>
+  <br>
+  <li>Exemplos: Ministérios, Secretarias Estaduais, Câmaras Municipais.</li></ul></div>
 </div>
 </div>
 <div class="study-card" data-study-kind="explicacao" data-study-label="Explicação">
@@ -973,16 +1020,42 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 <h4 class="topico-organizado"><strong>Teoria da Imputação Voluntária (Orgânica)</strong></h4>
 <p class="leitura-paragrafo leitura-texto">Como o ato do agente é atribuído ao Estado se o órgão não tem personalidade? A doutrina brasileira adota a <strong>teoria da imputação voluntária</strong> (ou orgânica, de Otto Gierke): a vontade do agente público é imputada (atribuída) diretamente à pessoa jurídica a qual ele pertence. O agente é a “mão” do Estado.</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Outras teorias (rejeitadas)</strong></h4><ul class="lista-organizada"><li><strong>Mandato:</strong> o agente seria mandatário do Estado – se extrapolasse o mandato, o Estado não responderia (inaceitável).</li><li><strong>Representação:</strong> o agente seria representante do Estado – mas a representação pressupõe separação de vontades, o que não ocorre na Administração Pública.</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Outras teorias (rejeitadas)</strong></h4>
+  <ul class="lista-organizada">
+   <li><strong>Mandato:</strong> o agente seria mandatário do Estado – se extrapolasse o mandato, o Estado não responderia (inaceitável).</li>
+   <br>
+   <li><strong>Representação:</strong> o agente seria representante do Estado – mas a representação pressupõe separação de vontades, o que não ocorre na Administração Pública.</li></ul></div>
 </div>
 </div>
 <div class="study-card" data-study-kind="explicacao" data-study-label="Explicação">
 <span class="card-kicker">Explicação</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>Classificação dos Órgãos (Hely Lopes Meirelles)</strong></h4>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>A) Quanto à Posição Estatal (Hierarquia)</strong></h4><ul class="lista-organizada"><li><strong>Independentes:</strong> origem constitucional, topo da pirâmide, sem subordinação. Ex: Presidência da República, Congresso Nacional, STF, Tribunais de Contas.</li><li><strong>Autônomos:</strong> cúpula administrativa, ampla autonomia. Ex: Ministérios, Secretarias de Estado, Advocacia-Geral da União.</li><li><strong>Superiores:</strong> direção, controle e comando, subordinados a uma chefia. Ex: Procuradorias, Coordenadorias.</li><li><strong>Subordinados:</strong> execução, vínculo direto com chefia. Ex: Seções, serviços e setores.</li></ul></div>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>B) Quanto à Estrutura</strong></h4><ul class="lista-organizada"><li><strong>Simples:</strong> um único centro de decisão.</li><li><strong>Compostos:</strong> vários órgãos subordinados a um principal.</li></ul></div>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>C) Quanto à Função</strong></h4><ul class="lista-organizada"><li><strong>Ativos:</strong> realizam as funções típicas de Estado.</li><li><strong>Consultivos:</strong> emitem pareceres e opiniões.</li><li><strong>Controladores:</strong> fiscalizam e controlam.</li><li><strong>Decisórios:</strong> decidem litígios ou questões administrativas.</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>A) Quanto à Posição Estatal (Hierarquia)</strong></h4>
+  <ul class="lista-organizada">
+    <li><strong>Independentes:</strong> origem constitucional, topo da pirâmide, sem subordinação. Ex: Presidência da República, Congresso Nacional, STF, Tribunais de Contas.</li>
+    <br>
+    <li><strong>Autônomos:</strong> cúpula administrativa, ampla autonomia. Ex: Ministérios, Secretarias de Estado, Advocacia-Geral da União.</li>
+    <br>
+    <li><strong>Superiores:</strong> direção, controle e comando, subordinados a uma chefia. Ex: Procuradorias, Coordenadorias.</li>
+    <br>
+    <li><strong>Subordinados:</strong> execução, vínculo direto com chefia. Ex: Seções, serviços e setores.</li>
+  </ul></div>
+<br>
+  <div class="texto-organizado"><h4 class="topico-organizado"><strong>B) Quanto à Estrutura</strong></h4><ul class="lista-organizada">
+    <li><strong>Simples:</strong> um único centro de decisão.</li>
+    <br>
+    <li><strong>Compostos:</strong> vários órgãos subordinados a um principal.</li></ul></div>
+    <br>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>C) Quanto à Função</strong></h4>
+  <ul class="lista-organizada">
+    <li><strong>Ativos:</strong> realizam as funções típicas de Estado.</li>
+    <br>
+    <li><strong>Consultivos:</strong> emitem pareceres e opiniões.</li>
+    <br>
+    <li><strong>Controladores:</strong> fiscalizam e controlam.</li>
+    <br>
+    <li><strong>Decisórios:</strong> decidem litígios ou questões administrativas.</li></ul></div>
 </div>
 </div>
 </div>
@@ -1001,7 +1074,17 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 <h4 class="topico-organizado"><strong>Administração Indireta – Explicação para leigos</strong></h4>
 <p class="leitura-paragrafo leitura-texto">A Administração Indireta reúne entidades com personalidade jurídica própria, instituídas ou autorizadas por lei para executar atividades administrativas ou econômicas. Elas têm autonomia nos limites da lei e ficam vinculadas a um órgão supervisor, sem subordinação hierárquica. Exemplos: INSS (autarquia), Caixa Econômica Federal (empresa pública) e Petrobras (sociedade de economia mista).</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4><ul class="lista-organizada"><li>Autarquias, Fundações, Empresas Públicas e Sociedades de Economia Mista.</li><li>Não possuem autonomia política, que pertence aos entes federativos. A autonomia administrativa, técnica ou financeira de cada entidade varia conforme sua lei e seu regime jurídico.</li><li>Personalidade jurídica própria, patrimônio e receitas próprios.</li><li>Vinculação ao Ministério ou Secretaria supervisor (tutela), mas sem subordinação hierárquica.</li><li>Exemplos: IBAMA (autarquia), Fiocruz (fundação), Correios (empresa pública), Petrobras (Sociedades de Economia Mista).</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4>
+  <ul class="lista-organizada">
+    <li>Autarquias, Fundações, Empresas Públicas e Sociedades de Economia Mista.</li>
+    <br>
+    <li>Não possuem autonomia política, que pertence aos entes federativos. A autonomia administrativa, técnica ou financeira de cada entidade varia conforme sua lei e seu regime jurídico.</li>
+    <br>
+    <li>Personalidade jurídica própria, patrimônio e receitas próprios.</li>
+    <br>
+    <li>Vinculação ao Ministério ou Secretaria supervisor (tutela), mas sem subordinação hierárquica.</li>
+    <br>
+    <li>Exemplos: IBAMA (autarquia), Fiocruz (fundação), Correios (empresa pública), Petrobras (Sociedades de Economia Mista).</li></ul></div>
 </div>
 </div>
 <div class="study-card" data-study-kind="explicacao" data-study-label="Explicação">
@@ -1151,7 +1234,16 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 <h4 class="topico-organizado"><strong>Fundações de Direito Público</strong></h4>
 <p class="leitura-paragrafo leitura-texto">São criadas por <strong>lei específica</strong>, com personalidade jurídica de direito público, destinadas a atividades de interesse social (educação, pesquisa, cultura, assistência). Seguem o <strong>regime de autarquia</strong>, com licitação, concurso público e responsabilidade objetiva.</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4><ul class="lista-organizada"><li>Personalidade jurídica de direito público;</li><li>Patrimônio próprio e autonomia nos limites da lei;</li><li>Regime jurídico de direito público, com concurso e licitação;</li><li>Imunidade recíproca nos limites do art. 150, § 2º, da Constituição;</li><li>Não se submetem à Lei 13.303/2016, que rege empresas públicas e sociedades de economia mista.</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4>
+  <ul class="lista-organizada"><li>Personalidade jurídica de direito público;</li>
+    <br>
+    <li>Patrimônio próprio e autonomia nos limites da lei;</li>
+    <br>
+    <li>Regime jurídico de direito público, com concurso e licitação;</li>
+    <br>
+    <li>Imunidade recíproca nos limites do art. 150, § 2º, da Constituição;</li>
+    <br>
+    <li>Não se submetem à Lei 13.303/2016, que rege empresas públicas e sociedades de economia mista.</li></ul></div>
 <br>
 <p class="leitura-paragrafo leitura-texto"><strong>Exemplos:</strong> Fundação Nacional dos Povos Indígenas (Funai), Fundação Oswaldo Cruz (Fiocruz) e Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq).</p>
 </div>
@@ -1162,7 +1254,17 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 <h4 class="topico-organizado"><strong>Fundações de Direito Privado</strong></h4>
 <p class="leitura-paragrafo leitura-texto">São criadas por <strong>autorização legal e registro</strong>, com personalidade jurídica de direito privado, mas atuam no <strong>interesse público</strong>. Possuem maior flexibilidade na gestão, mas estão submetidas a controle estatal.</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4><ul class="lista-organizada"><li>Personalidade jurídica de direito privado;</li><li>Patrimônio próprio e regime híbrido, com normas públicas e privadas;</li><li>Admissão de pessoal mediante concurso público, em regime definido pela lei;</li><li>Controle estatal e pelos órgãos de fiscalização;</li><li>O tratamento tributário depende da natureza e finalidade da fundação; não há exclusão automática de toda imunidade constitucional.</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características</strong></h4>
+  <ul class="lista-organizada">
+    <li>Personalidade jurídica de direito privado;</li>
+    <br>
+    <li>Patrimônio próprio e regime híbrido, com normas públicas e privadas;</li>
+    <br>
+    <li>Admissão de pessoal mediante concurso público, em regime definido pela lei;</li>
+    <br>
+    <li>Controle estatal e pelos órgãos de fiscalização;</li>
+    <br>
+    <li>O tratamento tributário depende da natureza e finalidade da fundação; não há exclusão automática de toda imunidade constitucional.</li></ul></div>
 <br>
 <p class="leitura-paragrafo leitura-texto"><strong>Exemplos:</strong> Fundação Getúlio Vargas (FGV), Fundação Bradesco, Fundação Estudar.</p>
 </div>
@@ -1175,7 +1277,10 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 <br>
 <p class="leitura-paragrafo leitura-texto"><strong>Sociedades de Economia Mista (SEM):</strong> A entidade é uma sociedade anônima cuja maioria das ações com direito a voto pertence ao ente público instituidor ou a entidade da Administração Indireta, nos termos da Lei 13.303/2016.</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Exemplos</strong></h4><ul class="lista-organizada"><li><strong>EP:</strong> Caixa Econômica Federal (100% pública), Correios (100% pública).</li><li><strong>SEM:</strong> Petrobras e Banco do Brasil. A proporção acionária pode mudar; o requisito jurídico relevante é a maioria do capital votante sob controle público.</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Exemplos</strong></h4>
+  <ul class="lista-organizada"><li><strong>EP:</strong> Caixa Econômica Federal (100% pública), Correios (100% pública).</li>
+    <br>
+    <li><strong>SEM:</strong> Petrobras e Banco do Brasil. A proporção acionária pode mudar; o requisito jurídico relevante é a maioria do capital votante sob controle público.</li></ul></div>
 </div>
 </div>
 <div class="study-card" data-study-kind="explicacao" data-study-label="Explicação">
@@ -1215,7 +1320,11 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 <h4 class="topico-organizado"><strong>Imunidade Tributária Recíproca</strong></h4>
 <p class="leitura-paragrafo leitura-texto"><strong>Autarquias e fundações instituídas e mantidas pelo poder público:</strong> a imunidade recíproca alcança patrimônio, renda e serviços vinculados às suas finalidades essenciais ou delas decorrentes, nos termos do art. 150, VI, “a”, e § 2º, da CF. Não é uma isenção geral de todo tributo.</p>
 <br>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>Empresas Públicas e SEM</strong></h4><ul class="lista-organizada"><li><strong>Exploradoras de atividade econômica:</strong> submetem-se ao regime tributário próprio das empresas privadas, conforme o art. 173, § 2º, da CF.</li><li><strong>Prestadoras de serviço público:</strong> a eventual imunidade depende do regime da atividade e dos critérios fixados pelo STF; não se estende automaticamente a toda estatal nem a toda atividade da mesma entidade.</li></ul></div>
+<div class="texto-organizado">
+  <h4 class="topico-organizado"><strong>Empresas Públicas e SEM</strong></h4>
+  <ul class="lista-organizada"><li><strong>Exploradoras de atividade econômica:</strong> submetem-se ao regime tributário próprio das empresas privadas, conforme o art. 173, § 2º, da CF.</li>
+    <br>
+    <li><strong>Prestadoras de serviço público:</strong> a eventual imunidade depende do regime da atividade e dos critérios fixados pelo STF; não se estende automaticamente a toda estatal nem a toda atividade da mesma entidade.</li></ul></div>
 <br>
 <p class="leitura-paragrafo leitura-texto"><strong>Atenção:</strong> A imunidade recíproca não se aplica a EP/SEM que explorem atividade econômica em sentido estrito.</p>
 </div>
@@ -1722,5 +1831,218 @@ Resultado da Desconcentração (divisão interna). Não possuem patrimônio pró
 </footer>
 </main>
 </div>
+<script>
+(function () {
+  var sidebar = document.getElementById('sidebar');
+  var toggle = document.querySelector('.menu-toggle');
+  var backdrop = document.querySelector('.sidebar-backdrop');
+  if (!sidebar || !toggle) return;
+
+  function setOpen(open, returnFocus) {
+    sidebar.classList.toggle('open', open);
+    document.body.classList.toggle('menu-aberto', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Fechar menu de navegação' : 'Abrir menu de navegação');
+    if (backdrop) {
+      backdrop.classList.toggle('ativo', open);
+      backdrop.setAttribute('aria-hidden', open ? 'false' : 'true');
+    }
+    if (open) {
+      var firstLink = sidebar.querySelector('nav a');
+      if (firstLink) setTimeout(function () {
+        if (sidebar.classList.contains('open')) firstLink.focus({ preventScroll: true });
+      }, 120);
+    } else if (returnFocus) {
+      toggle.focus({ preventScroll: true });
+    }
+  }
+
+  toggle.addEventListener('click', function () {
+    setOpen(!sidebar.classList.contains('open'));
+  });
+
+  if (backdrop) {
+    backdrop.addEventListener('click', function () { setOpen(false, true); });
+  }
+
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && sidebar.classList.contains('open')) {
+      setOpen(false, true);
+    }
+  });
+
+  sidebar.addEventListener('click', function (event) {
+    if (event.target.closest('nav a')) setOpen(false);
+  });
+
+  var desktop = window.matchMedia('(min-width: 1025px)');
+  function syncLayout() { if (desktop.matches) setOpen(false); }
+  if (desktop.addEventListener) desktop.addEventListener('change', syncLayout);
+  else if (desktop.addListener) desktop.addListener(syncLayout);
+  syncLayout();
+})();
+</script>
+<script>
+/* =====================================================================
+   MENU LATERAL (mobile/tablet) E UTILIDADES DA PÁGINA
+   Embutido na própria página: funciona sem nenhum arquivo .js externo.
+
+   1. Menu lateral — o botão “Abrir menu” alterna a classe .open em
+      #sidebar (o CSS do tema unificado cuida do resto).
+   2. Marcar assunto como estudado — #concluir persiste em localStorage
+      e mostra o feedback em #salvamento.
+   3. Impressão — #imprimir.
+   4. Catálogo da biblioteca — #limpar reexibe todos os assuntos.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var CHAVE_ESTUDO = "materia-policial:estudados";
+
+  /* ---------- Persistência (tolerante a modo privado e file://) -------- */
+  function lerEstudados() {
+    try {
+      var bruto = JSON.parse(localStorage.getItem(CHAVE_ESTUDO) || "[]");
+      return new Set(Array.isArray(bruto) ? bruto : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+  function gravarEstudados(conjunto) {
+    try {
+      localStorage.setItem(CHAVE_ESTUDO, JSON.stringify(Array.from(conjunto)));
+    } catch (e) {
+      /* sem acesso ao armazenamento: segue sem persistir */
+    }
+  }
+
+  /* =====================================================================
+     1. MENU LATERAL (mobile e tablet, até 800px de largura)
+     ===================================================================== */
+  var sidebar = document.getElementById("sidebar");
+  var botaoMenu = sidebar ? sidebar.querySelector(".mobile-menu") : null;
+
+  if (sidebar && botaoMenu) {
+    var menuAberto = function () {
+      return sidebar.classList.contains("open");
+    };
+    var aplicarEstado = function (aberto) {
+      sidebar.classList.toggle("open", aberto);
+      botaoMenu.setAttribute("aria-expanded", aberto ? "true" : "false");
+      botaoMenu.textContent = aberto ? "Fechar menu" : "Abrir menu";
+    };
+
+    /* Realce do botão com o menu aberto + toque sem atraso no mobile. */
+    var estilo = document.createElement("style");
+    estilo.textContent =
+      ".mobile-menu{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}" +
+      ".sidebar.open .mobile-menu{border-color:var(--blue);color:#fff;" +
+      "box-shadow:0 8px 24px -12px var(--blue);}";
+    document.head.appendChild(estilo);
+
+    /* Abrir/fechar pelo botão. */
+    botaoMenu.addEventListener("click", function (evento) {
+      evento.stopPropagation();
+      aplicarEstado(!menuAberto());
+    });
+
+    /* Fecha ao clicar fora da barra lateral. */
+    document.addEventListener("click", function (evento) {
+      if (menuAberto() && !sidebar.contains(evento.target)) aplicarEstado(false);
+    });
+
+    /* Fecha com Esc e devolve o foco ao botão. */
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key === "Escape" && menuAberto()) {
+        aplicarEstado(false);
+        botaoMenu.focus();
+      }
+    });
+
+    /* Fecha ao escolher um link do menu (navegação ou âncora). */
+    sidebar.addEventListener("click", function (evento) {
+      var alvo = evento.target;
+      var link = alvo && alvo.closest ? alvo.closest("nav a") : null;
+      if (menuAberto() && link) aplicarEstado(false);
+    });
+
+    /* Fecha ao voltar ao layout de telas grandes (desktop). */
+    if (typeof window.matchMedia === "function") {
+      var desktop = window.matchMedia("(min-width: 801px)");
+      var aoVirarDesktop = function (mudanca) {
+        if (mudanca.matches) aplicarEstado(false);
+      };
+      if (desktop.addEventListener) desktop.addEventListener("change", aoVirarDesktop);
+      else if (desktop.addListener) desktop.addListener(aoVirarDesktop); /* Safari antigo */
+    }
+  }
+
+  /* =====================================================================
+     2. MARCAR COMO ESTUDADO (#concluir) + FEEDBACK (#salvamento)
+     ===================================================================== */
+  var botaoConcluir = document.getElementById("concluir");
+  var aviso = document.getElementById("salvamento");
+  var agendamento = null;
+
+  function avisarSalvo() {
+    if (!aviso) return;
+    aviso.textContent = "Salvo ✓";
+    if (agendamento) clearTimeout(agendamento);
+    agendamento = setTimeout(function () {
+      aviso.textContent = "";
+    }, 2400);
+  }
+
+  if (botaoConcluir) {
+    var estudados = lerEstudados();
+    var chave = botaoConcluir.getAttribute("data-key") || window.location.pathname;
+
+    var pintar = function () {
+      var marcado = estudados.has(chave);
+      botaoConcluir.setAttribute("aria-pressed", marcado ? "true" : "false");
+      botaoConcluir.textContent = marcado ? "Estudado ✓" : "Marcar como estudado";
+      botaoConcluir.title = marcado
+        ? "Clique para desmarcar este assunto"
+        : "Marcar este assunto como estudado";
+    };
+
+    botaoConcluir.addEventListener("click", function () {
+      if (estudados.has(chave)) estudados.delete(chave);
+      else estudados.add(chave);
+      gravarEstudados(estudados);
+      pintar();
+      avisarSalvo();
+    });
+
+    pintar();
+  }
+
+  /* =====================================================================
+     3. IMPRIMIR (#imprimir)
+     ===================================================================== */
+  var botaoImprimir = document.getElementById("imprimir");
+  if (botaoImprimir) {
+    botaoImprimir.addEventListener("click", function () {
+      window.print();
+    });
+  }
+
+  /* =====================================================================
+     4. CATÁLOGO DA BIBLIOTECA — LIMPAR FILTROS (#limpar)
+     ===================================================================== */
+  var botaoLimpar = document.getElementById("limpar");
+  if (botaoLimpar) {
+    botaoLimpar.addEventListener("click", function () {
+      document
+        .querySelectorAll("#materiais .material")
+        .forEach(function (card) {
+          card.hidden = false;
+        });
+      var vazio = document.getElementById("vazio");
+      if (vazio) vazio.hidden = true;
+    });
+  }
+})();
+</script>
 </body>
 </html>

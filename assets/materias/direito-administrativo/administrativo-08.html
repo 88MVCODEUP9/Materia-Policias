@@ -10,7 +10,6 @@
 <meta content="1. Como o Estado age? (A Trilogia)" name="description"/>
 <link href="../../icone.png" rel="icon"/>
 
-<script defer="" src="../../js/app.js?v=leitura-20261026"></script>
 <style id="tema-unificado">
 /* =====================================================================
    TEMA UNIFICADO · Matéria Policial
@@ -206,33 +205,48 @@ main { max-width: var(--page-width, 1280px); margin: auto; padding: 44px 44px 32
 .toc > strong { display: block; margin-bottom: 14px; font: 800 15px/1.4 var(--font); color: #fff; }
 .toc a { display: block; padding: 8px 0 8px 12px; border-left: 2px solid var(--line); font-size: 12px; line-height: 1.55; color: var(--muted); }
 .toc a:hover { color: #fff; border-left-color: var(--cyan); text-decoration: none; }
-.bottom-nav { display: flex; justify-content: space-between; gap: 22px; margin-top: 36px; padding-top: 22px; border-top: 1px solid var(--line); }
+.bottom-nav { display: flex; justify-content: space-between; gap: 22px; margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--line); }
 .bottom-nav a { max-width: 47%; padding: 14px 18px; border: 1px solid var(--line); border-radius: 14px; background: linear-gradient(145deg, rgb(18 25 54 / 90%), rgb(10 16 38 / 90%)); font: 700 15px/1.4 var(--font); color: #fff; }
 .bottom-nav a:hover { border-color: var(--cyan); text-decoration: none; box-shadow: 0 10px 28px -14px var(--cyan); }
 .bottom-nav small { display: block; margin-bottom: 6px; font: 800 10px/1.7 var(--font); letter-spacing: .1em; text-transform: uppercase; color: var(--cyan); }
 .bottom-nav .next { text-align: right; }
-.prose { min-width: 0; width: 100%; color: var(--muted); font: 400 16.5px/1.8 var(--font); overflow-wrap: break-word; }
-.prose h2 { margin: 4px 0 18px; font-size: 25px; line-height: 1.3; }
-.prose h3 { margin: 26px 0 10px; font-size: 20px; line-height: 1.4; }
+
+/* Texto corrido */
+.prose { min-width: 0; width: 100%; color: var(--muted); font: 400 16px/1.8 var(--font); overflow-wrap: break-word; text-wrap: pretty; }
 .prose p { margin: 0 0 16px; }
 .prose a { color: var(--cyan); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
-.prose ul, .prose ol { margin: 14px 0 18px; padding-left: 22px; }
+.prose ul, .prose ol { margin: 12px 0 18px; padding-left: 22px; }
 .prose li { margin: 6px 0; padding-left: 3px; }
 .prose li::marker { color: var(--cyan); }
-.prose .text-section p { line-height: 1.85; }
-.prose .text-section p + p { margin-top: 14px; }
+.prose .text-section p { line-height: 1.8; }
 .prose :is(img, svg, video) { display: block; max-width: 100%; height: auto; margin: 20px auto; border-radius: 12px; }
 .prose figure { margin: 22px 0; }
 .prose figcaption { margin: 10px 0; text-align: center; color: var(--muted); font: 12px/1.6 var(--font); }
 .text-section { margin: 0; padding: 0; }
+
+/* Títulos de seção (entre os cards) */
+.prose h2 {
+  display: flex; align-items: center; gap: 14px; margin: 52px 0 22px; padding-bottom: 14px;
+  font-size: 24px; line-height: 1.3; border-bottom: 1px solid var(--line);
+}
+.prose h2::before { content: ""; flex: none; width: 6px; height: 28px; border-radius: 3px; background: var(--grad-brand); }
+.prose article > h2:first-child, .prose section > h2:first-child, .prose > :first-child { margin-top: 0; }
+.prose h3 { margin: 30px 0 12px; font-size: 19px; line-height: 1.4; }
+.prose .study-card :is(h3, h4) { margin-top: 0; }
+
+/* Medida de leitura confortável dentro dos cards (tabelas e figuras ocupam a largura toda) */
+.prose .study-card .text-section > :is(p, ul, ol, .texto-organizado) { max-width: 78ch; }
+.prose .study-card > :is(p, ul, ol) { max-width: 78ch; }
+.prose .study-card .text-section > :last-child, .prose .study-card .texto-organizado > :last-child { margin-bottom: 0; }
 
 /* ---------- 7. Cards de estudo (cor por tipo de bloco) ---------- */
 .study-card { --kind-ink: var(--hc); --k: var(--kind-ink); }
 .study-card:is([data-study-kind="explicacao"], [data-study-kind="exemplo"], [data-study-kind="formula"], [data-study-kind="passo"], [data-study-kind="tabela"], [data-study-kind="laboratorio-logico"], [data-study-label="Explicação"], [data-study-label="Exemplo"], [data-study-label="Analogia"], [data-study-label="Fórmula"]) { --kind-ink: #2bc4e6; }
 .study-card:is([data-study-kind="bizu"], [data-study-kind="mnemonico"], [data-study-kind="resumo"], [data-study-kind="dica"], [data-study-kind="mapa-mental"], [data-type="resumo"], [data-study-label="Resumo"], [data-study-label="Mnemônico"], [data-study-label="Mapa Mental"], [data-study-label="Bizu"], [data-study-label="Como estudar"]) { --kind-ink: #ffc83d; }
 .study-card:is([data-study-kind="alerta"], [data-study-label="Atenção"], [data-study-label="Importante"], [data-study-label="Pegadinha"]) { --kind-ink: #ff9340; }
+.study-card:is([data-study-kind="lei"], [data-study-kind="artigo"]) { --kind-ink: #a875ff; }
 .study-card {
-  position: relative; margin: 0 0 18px; padding: 24px 26px; color: var(--ink);
+  position: relative; margin: 0 0 20px; padding: 26px 30px; color: var(--ink);
   background: linear-gradient(145deg, color-mix(in srgb, var(--k) 9%, rgb(18 25 54 / 97%)), rgb(10 16 38 / 97%) 78%);
   border: 1px solid color-mix(in srgb, var(--k) 24%, rgb(95 123 185 / 34%));
   border-left: var(--accent-width) solid var(--k);
@@ -244,7 +258,7 @@ main { max-width: var(--page-width, 1280px); margin: auto; padding: 44px 44px 32
   box-shadow: 0 18px 52px rgb(0 0 0 / 30%), 0 12px 34px -18px color-mix(in srgb, var(--k) 60%, transparent), inset 0 1px 0 rgb(255 255 255 / 3%);
 }
 .study-card:is([data-study-kind="alerta"], [data-study-kind="bizu"], [data-study-kind="dica"], [data-study-kind="mnemonico"], [data-study-kind="resumo"], [data-study-kind="mapa-mental"]) {
-  background: color-mix(in srgb, var(--k) 15%, rgb(10 16 38 / 97%));
+  background: linear-gradient(145deg, color-mix(in oklab, var(--k) 12%, #0e1534), #0a1028 88%);
   border-left-width: 6px; border-radius: 4px var(--radius) var(--radius) 4px;
 }
 .study-card[data-study-kind="h2"], .study-card[data-study-kind="h3"] {
@@ -256,25 +270,91 @@ main { max-width: var(--page-width, 1280px); margin: auto; padding: 44px 44px 32
 .study-card[data-study-kind="h3"] h3 { font-size: 20px; }
 .study-card .text-section > :first-child { margin-top: 0; }
 .study-card > :last-child, .text-section > :last-child { margin-bottom: 0; }
+
+/* Etiqueta do bloco: texto pequeno com marcador colorido (sem "pílula" pesada) */
 .prose .card-kicker, .prose .study-card > .card-kicker {
-  display: inline-block; margin: 0 0 14px; padding: 3px 11px; border-radius: 999px;
-  border: 1px solid color-mix(in srgb, var(--k, var(--cyan)) 55%, transparent);
-  background: color-mix(in srgb, var(--k, var(--cyan)) 14%, transparent);
-  color: #fff; font: 800 11px/1.5 var(--font); letter-spacing: .08em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 9px; margin: 0 0 14px; padding: 0; border: 0; background: none;
+  color: color-mix(in srgb, var(--k, var(--cyan)) 70%, #fff);
+  font: 800 11px/1.4 var(--font); letter-spacing: .14em; text-transform: uppercase;
 }
+.prose .card-kicker::before {
+  content: ""; flex: none; width: 8px; height: 8px; border-radius: 50%; background: var(--k, var(--cyan));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--k, var(--cyan)) 24%, transparent);
+}
+.prose .card-kicker:empty { display: none; }
+
+/* Texto organizado dentro dos cards */
+.prose .study-card .topico-organizado { margin: 0 0 12px; font: 800 18px/1.4 var(--font); letter-spacing: -.015em; color: #fff; }
+.prose .study-card .topico-organizado strong { color: inherit; font-weight: inherit; }
+.prose .study-card .texto-organizado { margin-top: 6px; }
+.prose .study-card .texto-organizado > .topico-organizado {
+  margin: 20px 0 8px; font: 800 12px/1.5 var(--font); letter-spacing: .1em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--k, var(--cyan)) 72%, #fff);
+}
+.prose .study-card .leitura-paragrafo { margin: 0 0 12px; }
+.prose .study-card .leitura-texto { color: #d4ddf2; }
+.prose .study-card .leitura-artigo {
+  margin: 14px 0; padding: 14px 18px; border-left: 3px solid var(--k); border-radius: 4px 12px 12px 4px;
+  background: rgb(255 255 255 / 4%); color: #e6ecfb; font-size: 15px; line-height: 1.75;
+}
+.prose .study-card .leitura-artigo strong { color: color-mix(in srgb, var(--k) 60%, #fff); }
+.prose .study-card .leitura-inciso { margin: 20px 0 6px; font-weight: 800; color: #fff; }
+.prose .study-card .linha-organizada { margin: 0; padding: 10px 0; border-bottom: 1px solid rgb(255 255 255 / 8%); color: #d4ddf2; }
+.prose .study-card .linha-organizada:first-child { padding-top: 2px; }
+.prose .study-card .linha-organizada:last-child { padding-bottom: 0; border-bottom: 0; }
+.prose .study-card ul.lista-organizada { list-style: none; margin: 8px 0 14px; padding: 0; }
+.prose .study-card ul.lista-organizada > li { position: relative; margin: 0; padding: 6px 0 6px 22px; color: #d4ddf2; }
+.prose .study-card ul.lista-organizada > li::before {
+  content: ""; position: absolute; left: 4px; top: .95em; width: 7px; height: 7px; border-radius: 50%;
+  background: var(--k, var(--cyan)); box-shadow: 0 0 0 3px color-mix(in srgb, var(--k, var(--cyan)) 22%, transparent);
+}
+.prose .study-card ul:not([class]) > li, .prose .study-card ol > li { color: #d4ddf2; }
 
 /* ---------- 8. Tabelas ---------- */
 .table-wrap {
-  max-width: 100%; overflow: auto; margin: 20px 0; scrollbar-width: thin;
-  border: 1px solid color-mix(in srgb, var(--hc) 30%, rgb(97 126 190 / 30%)); border-radius: 16px;
+  max-width: 100%; overflow: auto; margin: 20px 0 4px; scrollbar-width: thin;
+  border: 1px solid color-mix(in srgb, var(--hc) 30%, rgb(97 126 190 / 30%)); border-radius: 14px;
   background: rgb(7 12 29 / 70%); box-shadow: 0 6px 20px -10px rgb(2 4 14 / 60%);
 }
-table { width: 100%; border-collapse: separate; border-spacing: 0; font: 13.5px/1.6 var(--font); font-variant-numeric: tabular-nums; }
-th { padding: 11px 14px; text-align: left; font-weight: 800; color: #fff; background: linear-gradient(90deg, #1e3a8a, #4338ca); border-bottom: 1px solid rgb(255 255 255 / 9%); }
-td { padding: 10px 14px; vertical-align: top; color: var(--muted); border-bottom: 1px solid rgb(106 132 184 / 22%); }
-tbody tr:nth-child(even) td { background: rgb(26 35 72 / 34%); }
-tbody tr:hover td { background: rgb(73 162 255 / 8%); }
+table { width: 100%; min-width: var(--table-min-width, 0); border-collapse: separate; border-spacing: 0; font: 14px/1.6 var(--font); font-variant-numeric: tabular-nums; }
+th {
+  padding: 12px 16px; text-align: left; font: 800 11.5px/1.4 var(--font); letter-spacing: .07em; text-transform: uppercase; color: #fff;
+  background: color-mix(in oklab, var(--hc) 42%, #141c4e);
+  border-bottom: 1px solid rgb(255 255 255 / 9%);
+}
+td { padding: 12px 16px; vertical-align: top; color: #cfd8ee; border-bottom: 1px solid rgb(106 132 184 / 22%); }
+td:first-child { color: #fff; }
+tbody tr:nth-child(even) td { background: rgb(255 255 255 / 3%); }
+tbody tr:hover td { background: color-mix(in srgb, var(--hc) 10%, transparent); }
 tbody tr:last-child td { border-bottom: 0; }
+.study-card .table-wrap:first-child { margin-top: 4px; }
+
+/* ---------- 8b. Anotações complementares (bloco recolhível) ---------- */
+.material-github { margin-block: 40px 8px; min-width: 0; }
+.material-github img { display: block; max-width: 100%; height: auto; margin-inline: auto; border-radius: 10px; }
+.material-github figcaption { margin-top: 8px; color: var(--muted); font-size: 13px; }
+.material-github .study-card { overflow-wrap: anywhere; }
+.material-github details { margin-top: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: rgb(13 19 48 / 55%); }
+.material-github summary {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 22px;
+  color: #fff; font-weight: 800; cursor: pointer; list-style: none;
+}
+.material-github summary::-webkit-details-marker { display: none; }
+.material-github summary::after { content: "+"; flex: none; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 8px; border: 1px solid var(--line-strong); color: var(--cyan); font-size: 18px; line-height: 1; }
+.material-github details[open] > summary { border-bottom: 1px solid var(--line); }
+.material-github details[open] > summary::after { content: "–"; }
+.notas-assunto { padding: 0 22px 12px; }
+.nota-cabecalho {
+  margin: 30px 0 18px; padding: 18px 22px; border-left: 5px solid var(--hc); border-radius: 4px 14px 14px 4px;
+  background: linear-gradient(90deg, color-mix(in srgb, var(--hc) 24%, transparent), transparent 90%);
+}
+.nota-cabecalho h3 { margin: 0 0 6px; font-size: 22px; }
+.nota-cabecalho p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
+.nota-secao-titulo { display: flex; align-items: baseline; gap: 12px; margin: 30px 0 14px; font-size: 17px; line-height: 1.4; color: #fff; }
+.nota-num {
+  flex: none; padding: 4px 8px; border-radius: 8px; border: 1px solid color-mix(in srgb, var(--hc) 50%, transparent);
+  background: color-mix(in srgb, var(--hc) 22%, transparent); font: 800 11px/1 var(--font); letter-spacing: .06em; color: #fff;
+}
 
 /* ---------- 9. Índice: seções, cards de assunto, selos ---------- */
 .section-title { display: flex; align-items: end; justify-content: space-between; gap: 20px; margin-bottom: 20px; }
@@ -347,6 +427,13 @@ tbody tr:last-child td { border-bottom: 0; }
   .material { grid-template-columns: minmax(0, 1fr); grid-template-areas: "discipline" "badges" "title" "footer"; }
   .badges { justify-content: start; }
 }
+@media (max-width: 800px) {
+  .prose { font-size: 15.5px; }
+  .prose h2 { margin: 40px 0 18px; font-size: 21px; }
+  .prose .study-card .topico-organizado { font-size: 17px; }
+  .notas-assunto { padding: 0 12px 8px; }
+  .material-github summary { padding: 14px 16px; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
@@ -364,88 +451,70 @@ tbody tr:last-child td { border-bottom: 0; }
   .prose, .prose p, .prose li, td { color: #000; }
   .study-card { break-inside: avoid; border-radius: 0; }
   .prose h2, .prose h3 { break-after: avoid; }
+  .prose h2::before, .prose .card-kicker::before { display: none; }
+  .prose .study-card .leitura-artigo, .prose .study-card .linha-organizada { background: none; color: #000; }
+  .prose .study-card .leitura-texto, .prose .study-card ul > li, td, td:first-child { color: #000; }
+  th { background: #eee !important; color: #000 !important; }
+  .material-github details > :not(summary) { display: block; }
   a { color: #000 !important; }
 }
 </style><style id="css-personalizado">
-/* Identidade da matéria: direito-administrativo · cor #4d8dff */
-/* CSS específico da página/matéria — regras que não fazem parte do tema unificado */
+/* ---------- Identidade da matéria: direito-administrativo · cor #4d8dff ---------- */
 :root { --paper: var(--bg); --white: var(--surface); --ease-out: cubic-bezier(0.23, 1, 0.32, 1); --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1); --t-fast: 140ms; --t-base: 220ms; }
-tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 2%);}
-tbody tr:last-child td {border-bottom: 0;}
-td[data-truth] {font-weight: 700; text-align: center;}
-td[data-truth=true] {color: #34d399;}
-td[data-truth=false] {color: #ff5d7a;}
-[data-discipline="direito-administrativo"] {--discipline-color: #4d8dff;}
-.mnemonic-tone-1 {--mnemonic-color: #2bc4e6;}
-.mnemonic-tone-2 {--mnemonic-color: #a56bff;}
-.mnemonic-tone-3 {--mnemonic-color: #34d399;}
-.mnemonic-tone-4 {--mnemonic-color: #ffc83d;}
-.mnemonic-tone-5 {--mnemonic-color: #ff5ca8;}
-.mnemonic-tone-6 {--mnemonic-color: #ff9340;}
-.mnemonic-tone-7 {--mnemonic-color: #6c8cff;}
-.mnemonic-tone-8 {--mnemonic-color: #9fdc3c;}
-.memory-aid li + li {margin-top: 10px;}
-.memory-aid .text-section > p + p {margin-top: 12px;}
-tbody tr:nth-child(even) td:not([data-truth]) {background: rgb(255 255 255 / 3.5%);}
-tbody tr:hover td:not([data-truth]) {background: color-mix(in srgb, var(--hc) 11%, transparent);}
-td[data-truth=true] {color: #34d399; background: rgb(52 211 153 / 12%);}
-td[data-truth=false] {color: #ff5d7a; background: rgb(255 93 122 / 12%);}
-@media (prefers-reduced-motion: no-preference) {
-  main > * {animation: entrar .45s ease both;}
-  main > *:nth-child(2) {animation-delay: .05s;}
-  main > *:nth-child(3) {animation-delay: .1s;}
-}
-@media (max-width: 800px) {
-  .sidebar.open nav {display: block;}
-}
-@media (prefers-reduced-motion: reduce) {
-  *,
-*::before,
-*::after {scroll-behavior: auto !important; transition: none !important; animation: none !important;}
-}
-@media print {
-  tr,
-figure {break-inside: avoid;}
-}
-.material-github {margin-block: 32px; min-width: 0;}
-.material-github img {display: block; max-width: 100%; height: auto; margin-inline: auto; border-radius: 10px;}
-.material-github figcaption {color: var(--muted); font-size: 13px; margin-top: 8px;}
-.material-github .study-card {overflow-wrap: anywhere;}
-.prose .memory-aid,
-.prose .memory-inline {--mnemonic-color: #facc15;
-  padding: 22px; margin-block: 20px;
+[data-discipline="direito-administrativo"] { --discipline-color: #4d8dff; }
+
+/* ---------- Mnemônicos ---------- */
+.mnemonic-tone-1 { --mnemonic-color: #2bc4e6; }
+.mnemonic-tone-2 { --mnemonic-color: #a56bff; }
+.mnemonic-tone-3 { --mnemonic-color: #34d399; }
+.mnemonic-tone-4 { --mnemonic-color: #ffc83d; }
+.mnemonic-tone-5 { --mnemonic-color: #ff5ca8; }
+.mnemonic-tone-6 { --mnemonic-color: #ff9340; }
+.mnemonic-tone-7 { --mnemonic-color: #6c8cff; }
+.mnemonic-tone-8 { --mnemonic-color: #9fdc3c; }
+.prose .memory-aid, .prose .memory-inline {
+  --mnemonic-color: #facc15; padding: 22px; margin-block: 20px;
   border: 1px solid #facc1555; border-left: 5px solid #facc15; border-radius: 16px;
-  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));}
-.prose .memory-aid .memory-line {margin-block: 12px; padding: 16px 18px;
-  border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
-  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);}
-.prose .memory-line .memory-letter {display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px; border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent); font: 800 21px/1.3 ui-monospace, monospace;}
-@media (max-width: 600px) {
-  .prose .memory-aid,
-.prose .memory-inline {padding: 17px;}
+  background: linear-gradient(125deg, #facc1518, #a78bfa12 70%, var(--panel));
 }
-@media print {
-  .prose .memory-aid,
-.prose .memory-inline {background: white !important; color: black !important;}
+.prose .memory-aid .memory-line {
+  margin-block: 12px; padding: 16px 18px; border-left: 4px solid var(--mnemonic-color, #facc15); border-radius: 4px 12px 12px 4px;
+  background: color-mix(in srgb, var(--mnemonic-color, #facc15) 10%, #101527);
 }
-.tilt-ativo {transition-duration: 60ms, var(--t-base), .15s, .15s;}
-.rev {opacity: 0; transform: translateY(10px);}
-.rev.entrou {opacity: 1; transform: none;
+.prose .memory-line .memory-letter {
+  display: inline-grid; place-items: center; min-width: 34px; min-height: 34px; margin-right: 5px; padding: 1px 8px;
+  border: 1px solid var(--mnemonic-color); border-radius: 9px; background: color-mix(in srgb, var(--mnemonic-color) 18%, transparent);
+  font: 800 21px/1.3 var(--mono);
+}
+.memory-aid li + li { margin-top: 10px; }
+.memory-aid .text-section > p + p { margin-top: 12px; }
+@media (max-width: 600px) { .prose .memory-aid, .prose .memory-inline { padding: 17px; } }
+@media print { .prose .memory-aid, .prose .memory-inline { background: white !important; color: black !important; } }
+
+/* ---------- Movimento e transições de página ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  main > * { animation: entrar .45s ease both; }
+  main > *:nth-child(2) { animation-delay: .05s; }
+  main > *:nth-child(3) { animation-delay: .1s; }
+}
+.tilt-ativo { transition-duration: 60ms, var(--t-base), .15s, .15s; }
+.rev { opacity: 0; transform: translateY(10px); }
+.rev.entrou {
+  opacity: 1; transform: none;
   transition: opacity var(--t-base) var(--ease-out), transform var(--t-base) var(--ease-out);
-  transition-delay: calc(var(--d, 0) * 28ms);}
-@view-transition { navigation: auto; }
-::view-transition-old(root) {animation: 120ms var(--ease-out) both vt-sai;}
-::view-transition-new(root) {animation: 200ms var(--ease-out) both vt-entra;}
-@media (prefers-reduced-motion: reduce) {
-  .rev,
-.rev.entrou {opacity: 1; transform: none; transition: none;}
-  ::view-transition-old(root),
-::view-transition-new(root) {animation: none;}
+  transition-delay: calc(var(--d, 0) * 28ms);
 }
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation: 120ms var(--ease-out) both vt-sai; }
+::view-transition-new(root) { animation: 200ms var(--ease-out) both vt-entra; }
+@media (prefers-reduced-motion: reduce) {
+  .rev, .rev.entrou { opacity: 1; transform: none; transition: none; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
+}
+@media print { tr, figure { break-inside: avoid; } }
 @keyframes entrar { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @keyframes vt-sai { to { opacity: 0; } }
 @keyframes vt-entra { from { opacity: 0; transform: translateY(6px); } }
-.material-github>h2 {margin-top:32px}
 </style><link rel="stylesheet" href="../componentes.css?v=20261106-organizacao-4"/>
 </head>
 <body class="tema-biblioteca" data-disciplina-acervo="direito-administrativo" data-discipline="direito-administrativo" data-page-kind="aula" style="--discipline-color: #4d8dff; --page-width:1100px;">
@@ -461,7 +530,7 @@ figure {break-inside: avoid;}
 <main id="conteudo">
 <nav aria-label="Trilha" class="breadcrumbs">
 <a href="../../../index.html">Biblioteca</a> / <a href="index.html">Direito Administrativo</a> / Licitações, Atos e Contratos (Lei 14.133/2021)
-      </nav>
+ </nav>
 <header class="reader-header">
 <a class="chip" href="index.html">Direito Administrativo</a>
 <h1>Licitações, Atos e Contratos (Lei 14.133/2021)</h1>
@@ -478,14 +547,14 @@ figure {break-inside: avoid;}
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>1. Como o Estado age? (A Trilogia)</strong></h4>
-<p class="leitura-paragrafo leitura-texto">Antes de estudarmos o Ato Administrativo a fundo, precisamos entender que o Estado faz três coisas diferentes no dia a dia. Vamos colocar cada uma em sua 'caixinha':</p>
+<p class="leitura-paragrafo leitura-texto">Antes de estudarmos o Ato Administrativo a fundo, precisamos entender que o Estado faz três coisas diferentes no dia a dia. Vamos colocar cada uma em sua “caixinha”:</p>
 </div>
 </div>
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>1.1 Ato Administrativo</strong></h4>
-<p class="leitura-paragrafo leitura-texto">É a decisão oficial, a 'canetada' baseada no Direito Público. O Estado age como 'chefe' (relação vertical), impondo regras.</p>
+<p class="leitura-paragrafo leitura-texto">É a decisão oficial, a “canetada” baseada no Direito Público. O Estado age como “chefe” (relação vertical), impondo regras.</p>
 <div class="texto-organizado"><p class="linha-organizada"><strong>O que é:</strong> Uma manifestação de vontade que cria, modifica ou extingue direitos.</p><p class="linha-organizada"><strong>Exemplo Prático:</strong> O guarda de trânsito aplicando uma multa ou o Prefeito nomeando você após passar no concurso.</p></div>
 </div>
 </div>
@@ -493,7 +562,7 @@ figure {break-inside: avoid;}
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>1.2 Fato Administrativo</strong></h4>
-<p class="leitura-paragrafo leitura-texto">É a ação na prática, o trabalho braçal ou o evento da natureza. Não tem 'canetada', é o mundo físico acontecendo.</p>
+<p class="leitura-paragrafo leitura-texto">É a ação na prática, o trabalho braçal ou o evento da natureza. Não tem “canetada”, é o mundo físico acontecendo.</p>
 <div class="texto-organizado"><p class="linha-organizada"><strong>Naturais:</strong> Uma enchente que obriga a prefeitura a agir, ou a morte de um servidor (gera o direito à pensão para a família).</p><p class="linha-organizada"><strong>Voluntários (Ato-Fato):</strong> O trator da prefeitura demolindo um muro condenado, ou a viatura batendo no seu portão sem querer (gera dever de indenizar).</p></div>
 </div>
 </div>
@@ -501,7 +570,7 @@ figure {break-inside: avoid;}
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>1.3 Ato da Administração (Direito Privado)</strong></h4>
-<p class="leitura-paragrafo leitura-texto">Aqui o Estado tira o terno de 'chefe' e veste roupas comuns. Ele age em pé de igualdade com o cidadão (Direito Privado), sem impor nada à força.</p>
+<p class="leitura-paragrafo leitura-texto">Aqui o Estado tira o terno de “chefe” e veste roupas comuns. Ele age em pé de igualdade com o cidadão (Direito Privado), sem impor nada à força.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Exemplo Prático:</strong> A prefeitura quer alugar a sua casa para fazer um posto de saúde. Ela não pode tomar a casa; ela assina um contrato de aluguel normal com você, regido pela Lei do Inquilinato. Outro exemplo: a Caixa Econômica abrindo uma conta poupança para você.</p>
 </div>
 </div>
@@ -509,8 +578,8 @@ figure {break-inside: avoid;}
 <span class="card-kicker">Bizu</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>2. Requisitos do Ato Administrativo: os 5 Ingredientes – FF.COM</strong></h4>
-<p class="leitura-paragrafo leitura-texto"><strong>F</strong> Finalidade (Para que serve?): O objetivo final tem que ser sempre o Interesse Público. Se um prefeito desapropria o terreno de um inimigo apenas por vingança pessoal, ocorre o 'desvio de finalidade' (e o ato é ilegal).</p>
-<div class="texto-organizado"><p class="linha-organizada"><strong>F</strong> Forma (Como se apresenta?): A lei exige que o ato seja, via de regra, escrito e motivado (explicado). O Estado não costuma dar ordens 'de boca', tudo precisa estar no papel.</p><p class="linha-organizada">Obs: Formas do Ato: Publicação (condição de eficácia, não de existência), Motivação (exposição dos motivos, obrigatória para atos que afetam direitos ou para atos discricionários, com exceções – ex: atos de mero expediente).</p></div>
+<p class="leitura-paragrafo leitura-texto"><strong>F</strong> Finalidade (Para que serve?): O objetivo final tem que ser sempre o Interesse Público. Se um prefeito desapropria o terreno de um inimigo apenas por vingança pessoal, ocorre o “desvio de finalidade” (e o ato é ilegal).</p>
+<div class="texto-organizado"><p class="linha-organizada"><strong>F</strong> Forma (Como se apresenta?): A lei exige que o ato seja, via de regra, escrito e motivado (explicado). O Estado não costuma dar ordens “de boca”, tudo precisa estar no papel.</p><p class="linha-organizada">Obs: Formas do Ato: Publicação (condição de eficácia, não de existência), Motivação (exposição dos motivos, obrigatória para atos que afetam direitos ou para atos discricionários, com exceções – ex: atos de mero expediente).</p></div>
 <p class="leitura-paragrafo leitura-texto"><strong>C</strong> Competência (Quem assina?): Só quem tem poder legal pode praticar o ato. Um diretor de escola não pode demitir um professor – isso é competência do Secretário de Educação.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>O</strong> Objeto (Sobre o quê?): É o conteúdo do ato – deve ser lícito, possível e determinado.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>M</strong> Motivo (Por quê?): É a situação de fato que autoriza a prática do ato. Para atos vinculados, o motivo está previsto em lei; para os discricionários, o administrador escolhe o motivo dentro da lei.</p>
@@ -521,7 +590,7 @@ figure {break-inside: avoid;}
 <div class="text-section">
 <h4 class="topico-organizado"><strong>Teoria dos Motivos Determinantes</strong></h4>
 <p class="leitura-paragrafo leitura-texto">A Administração fica amarrada (vinculada) aos motivos que ela declarou. Se for comprovado que o motivo alegado é falso ou inexistente, o ato será anulado.</p>
-<p class="leitura-paragrafo leitura-texto"><strong>Exemplo Clássico:</strong> Um Prefeito exonera um servidor de cargo de confiança (que pode ser demitido sem justificativa), mas resolve colocar no papel que o motivo foi 'falta de verbas'. Se o servidor provar na Justiça que havia verba sobrando, a exoneração é anulada, pois o motivo declarado era falso. Mesmo que o Prefeito pudesse exonerar sem motivo, ele escolheu motivar – e a motivação deve ser verdadeira.</p>
+<p class="leitura-paragrafo leitura-texto"><strong>Exemplo Clássico:</strong> Um Prefeito exonera um servidor de cargo de confiança (que pode ser demitido sem justificativa), mas resolve colocar no papel que o motivo foi “falta de verbas”. Se o servidor provar na Justiça que havia verba sobrando, a exoneração é anulada, pois o motivo declarado era falso. Mesmo que o Prefeito pudesse exonerar sem motivo, ele escolheu motivar – e a motivação deve ser verdadeira.</p>
 </div>
 </div>
 <div class="study-card" data-study-kind="resumo" data-study-label="Bizu">
@@ -546,7 +615,7 @@ figure {break-inside: avoid;}
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>Quanto ao grau de liberdade (vínculo)</strong></h4>
-<p class="leitura-paragrafo leitura-texto"><strong>Vinculados:</strong> Nenhuma liberdade. A lei diz: 'aconteceu X, faça Y'. Exemplo: Se você cumpriu os requisitos para aposentadoria, o Estado é obrigado a conceder.</p>
+<p class="leitura-paragrafo leitura-texto"><strong>Vinculados:</strong> Nenhuma liberdade. A lei diz: “aconteceu X, faça Y”. Exemplo: Se você cumpriu os requisitos para aposentadoria, o Estado é obrigado a conceder.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Discricionários:</strong> A lei dá uma margem de escolha (conveniência e oportunidade). Exemplo: O prefeito decide se é melhor construir uma praça ou reformar uma rua com a verba que sobrou.</p>
 </div>
 </div>
@@ -601,14 +670,14 @@ figure {break-inside: avoid;}
 <div class="text-section">
 <h4 class="topico-organizado"><strong>II – Controle Externo (Judiciário e TCs)</strong></h4>
 <p class="leitura-paragrafo leitura-texto">Quando alguém de fora analisa os atos do Poder Executivo.</p>
-<p class="leitura-paragrafo leitura-texto"><strong>Poder Judiciário:</strong> O juiz só analisa a LEGALIDADE. O juiz pode anular um ato ilegal da prefeitura, mas o juiz nunca pode revogar um ato do prefeito por achar 'inconveniente' (isso seria invasão de poderes). Além disso, o juiz nunca age sozinho, precisa ser provocado.</p>
+<p class="leitura-paragrafo leitura-texto"><strong>Poder Judiciário:</strong> O juiz só analisa a LEGALIDADE. O juiz pode anular um ato ilegal da prefeitura, mas o juiz nunca pode revogar um ato do prefeito por achar “inconveniente” (isso seria invasão de poderes). Além disso, o juiz nunca age sozinho, precisa ser provocado.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Tribunais de Contas:</strong> Auxiliam o Legislativo fiscalizando o dinheiro e o orçamento público.</p>
 </div>
 </div>
 <div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
 <span class="card-kicker">Atenção</span>
 <div class="text-section">
-<h4 class="topico-organizado"><strong>🚫 Não se revoga:</strong></h4>
+<h4 class="topico-organizado"><strong>Não se revoga</strong></h4>
 <div class="texto-organizado"><p class="linha-organizada">Atos ilegais (esses se anulam).</p><p class="linha-organizada">Atos vinculados (não há juízo de mérito para reavaliar).</p><p class="linha-organizada">Atos que já exauriram seus efeitos (não se apaga o que já aconteceu).</p></div>
 </div>
 </div>
@@ -628,7 +697,7 @@ figure {break-inside: avoid;}
 </div>
 </div>
 <div class="study-card" data-study-kind="alerta" data-study-label="Atenção">
-<span class="card-kicker"></span>
+<span class="card-kicker">Atenção</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>ATENÇÃO: Nova Lei em vigor!</strong></h4>
 <p class="leitura-paragrafo leitura-texto">A <strong>Lei 14.133/2021</strong> revogou as Leis 8.666/93, 10.520/02 (Pregão) e 12.462/11 (RDC). As modalidades <strong>Tomada de Preços</strong> e <strong>Convite NÃO EXISTEM MAIS</strong> na nova sistemática. O pregão foi incorporado como modalidade.</p>
@@ -675,7 +744,7 @@ figure {break-inside: avoid;}
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
-<h4 class="topico-organizado"><strong>📂 Fase Interna (Preparatória)</strong></h4>
+<h4 class="topico-organizado"><strong>Fase Interna (Preparatória)</strong></h4>
 <p class="leitura-paragrafo leitura-texto">Autuação do processo administrativo. Definição do objeto (Estudo Técnico Preliminar e Termo de Referência). Comprovação de dotação orçamentária. Escolha do agente de contratação ou comissão. Elaboração do edital. Parecer jurídico (controle de legalidade). Autorização para a fase externa. Publicação obrigatória no Portal Nacional de Contratações Públicas (PNCP).</p>
 </div>
 </div>
@@ -688,7 +757,7 @@ figure {break-inside: avoid;}
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
-<h4 class="topico-organizado"><strong>📌 Após a Fase Recursal – Desdobramentos</strong></h4>
+<h4 class="topico-organizado"><strong>Após a Fase Recursal – Desdobramentos</strong></h4>
 <p class="leitura-paragrafo leitura-texto"><strong>Devolução ao agente de contratação:</strong> para correção de vícios sanáveis (erros que não afetam o direito de terceiros).</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Anulação:</strong> extinção por ilegalidade. Efeitos retroativos (ex tunc). Em regra, não gera indenização, salvo se o particular não tiver concorrido para o vício.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Revogação:</strong> extinção de licitação legal por motivo de conveniência e oportunidade, fundada em fato superveniente. Exige motivação expressa.</p>
@@ -713,7 +782,7 @@ figure {break-inside: avoid;}
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
-<h4 class="topico-organizado"><strong>📄 Dispensa (Art. 75) – Rol Taxativo</strong></h4>
+<h4 class="topico-organizado"><strong>Dispensa (Art. 75) – Rol Taxativo</strong></h4>
 <p class="leitura-paragrafo leitura-texto">A competição é viável, mas a lei autoriza a Administração a não licitar.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Principais hipóteses:</strong> Valor abaixo do limite (obras até R$ 100.000; serviços/compras até R$ 50.000); Emergência/calamidade pública; Pesquisa científica/tecnológica com instituição especializada; Transferência de tecnologia; Doação (sem gasto público); Licitação deserta (se repetida e mantidas as condições).</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Atenção:</strong> O rol é taxativo – só vale o que está escrito na lei.</p>
@@ -722,7 +791,7 @@ figure {break-inside: avoid;}
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
-<h4 class="topico-organizado"><strong>🧩 Inexigibilidade (Art. 74) – Rol Exemplificativo</strong></h4>
+<h4 class="topico-organizado"><strong>Inexigibilidade (Art. 74) – Rol Exemplificativo</strong></h4>
 <p class="leitura-paragrafo leitura-texto">A competição é inviável/impossível – a lei obriga a contratar diretamente.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Principais hipóteses:</strong> Fornecedor exclusivo; Serviços técnicos especializados de natureza predominantemente intelectual, com profissionais ou empresas de notória especialização (vedado para publicidade e divulgação); Artista consagrado; Credenciamento (ex.: médicos no SUS); Locação/aquisição de imóvel com características de instalação/localização que inviabilizem a competição (ex: único imóvel adequado para determinado fim público).</p>
 </div>
@@ -741,7 +810,7 @@ figure {break-inside: avoid;}
 </div>
 </div>
 <div class="study-card" data-study-kind="resumo" data-study-label="Bizu">
-<span class="card-kicker"></span>
+<span class="card-kicker">Bizu</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>Bizu dos efeitos</strong></h4>
 <div class="texto-organizado"><h4 class="topico-organizado"><strong>Impugnação e Recurso contra julgamento = PARA TUDO (efeito suspensivo).</strong></h4><h4 class="topico-organizado"><strong>Recurso à autoridade superior = SEGUE O JOGO (efeito devolutivo).</strong></h4></div>
@@ -754,14 +823,14 @@ figure {break-inside: avoid;}
 <p class="leitura-paragrafo leitura-texto"><strong>📋 Como funciona:</strong> A Administração realiza uma licitação para registrar preços de bens/serviços comuns. Vários fornecedores são registrados com seus preços. Quando houver necessidade real, a Administração contrata diretamente um dos registrados, sem nova licitação.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Validade:</strong> até 12 meses, prorrogável por igual período.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>✅ Vantagens:</strong> Agilidade, Economia, Planejamento.</p>
-<p class="leitura-paragrafo leitura-texto"><strong>Bizu:</strong> Registro de preços não é contrato – é um 'pré‑contrato' que autoriza contratações futuras. A adesão ao SRP por outros órgãos (carona) é permitida, desde que prevista no edital e com anuência do órgão gerenciador.</p>
+<p class="leitura-paragrafo leitura-texto"><strong>Bizu:</strong> Registro de preços não é contrato – é um “pré‑contrato” que autoriza contratações futuras. A adesão ao SRP por outros órgãos (carona) é permitida, desde que prevista no edital e com anuência do órgão gerenciador.</p>
 </div>
 </div>
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>8. Portal Nacional de Contratações Públicas (PNCP)</strong></h4>
-<div class="texto-organizado"><p class="linha-organizada">O PNCP é o sítio eletrônico oficial para divulgação de todas as licitações e contratos da Administração Pública (União, Estados, DF e Municípios). É obrigatório publicar:</p><ul class="lista-organizada"><li>- Edital e anexos.</li><li>- Aviso de licitação.</li><li>- Resultados e julgamentos.</li><li>- Contratos e seus aditivos.</li><li>- Dispensas e inexigibilidades.</li></ul></div>
+<div class="texto-organizado"><p class="linha-organizada">O PNCP é o sítio eletrônico oficial para divulgação de todas as licitações e contratos da Administração Pública (União, Estados, DF e Municípios). É obrigatório publicar:</p><ul class="lista-organizada"><li>Edital e anexos.</li><li>Aviso de licitação.</li><li>Resultados e julgamentos.</li><li>Contratos e seus aditivos.</li><li>Dispensas e inexigibilidades.</li></ul></div>
 <p class="leitura-paragrafo leitura-texto">A publicidade no PNCP substitui a publicação em Diário Oficial para muitos efeitos, mas a lei ainda exige a publicação resumida no Diário Oficial para contratos de maior vulto.</p>
 <p class="leitura-paragrafo leitura-texto">⚠️ <strong>Pegadinha:</strong> O PNCP é a única fonte oficial para licitações – a Administração não pode usar outros meios para dar publicidade.</p>
 </div>
@@ -771,7 +840,7 @@ figure {break-inside: avoid;}
 <div class="text-section">
 <h4 class="topico-organizado"><strong>1. Definição e Características</strong></h4>
 <p class="leitura-paragrafo leitura-texto"><strong>📌 Definição:</strong> Contrato administrativo é o acordo de vontades entre a Administração Pública e um particular para atender ao interesse público. É uma manifestação bilateral de vontade, porém a relação não é de igualdade entre as partes. Trata-se de uma relação vertical, pois a Administração possui prerrogativas especiais chamadas cláusulas exorbitantes, que a colocam em posição de supremacia para proteger o interesse público.</p>
-<div class="texto-organizado"><h4 class="topico-organizado"><strong>🔹 Características principais:</strong></h4><ul class="lista-organizada"><li>- <strong>Contrato de adesão:</strong> as cláusulas são impostas pela Administração (o particular adere).</li><li>- <strong>Natureza pública:</strong> regido pelo Direito Público, com aplicação subsidiária do Código Civil.</li><li>- <strong>Formal:</strong> exige forma escrita e publicação.</li><li>- <strong>Sinalagmático:</strong> obrigações recíprocas, mas com desequilíbrio de poder.</li><li>- <strong>Comutativo:</strong> as prestações são definidas inicialmente, mas podem ser alteradas.</li></ul></div>
+<div class="texto-organizado"><h4 class="topico-organizado"><strong>Características principais</strong></h4><ul class="lista-organizada"><li><strong>Contrato de adesão:</strong> as cláusulas são impostas pela Administração (o particular adere).</li><li><strong>Natureza pública:</strong> regido pelo Direito Público, com aplicação subsidiária do Código Civil.</li><li><strong>Formal:</strong> exige forma escrita e publicação.</li><li><strong>Sinalagmático:</strong> obrigações recíprocas, mas com desequilíbrio de poder.</li><li><strong>Comutativo:</strong> as prestações são definidas inicialmente, mas podem ser alteradas.</li></ul></div>
 </div>
 </div>
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
@@ -817,13 +886,13 @@ figure {break-inside: avoid;}
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
 <h4 class="topico-organizado"><strong>5. Rescisão Unilateral do Contrato Administrativo</strong></h4>
-<p class="leitura-paragrafo leitura-texto">A Administração pode rescindir unilateralmente o contrato em duas situações principais (na Lei 14.133/2021, o termo genérico é 'rescisão unilateral', mas a doutrina distingue):</p>
+<p class="leitura-paragrafo leitura-texto">A Administração pode rescindir unilateralmente o contrato em duas situações principais (na Lei 14.133/2021, o termo genérico é “rescisão unilateral”, mas a doutrina distingue):</p>
 </div>
 </div>
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
-<h4 class="topico-organizado"><strong>🏛️ Rescisão por Interesse Público (Encampação – na concessão)</strong></h4>
+<h4 class="topico-organizado"><strong>Rescisão por Interesse Público (Encampação – na concessão)</strong></h4>
 <p class="leitura-paragrafo leitura-texto">Rescisão por interesse público, mesmo sem culpa do contratado.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Características:</strong> Interesse público superveniente. Há indenização prévia ao contratado pelos prejuízos sofridos. Depende de autorização legislativa, nos casos previstos em lei.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Macete:</strong> Interesse Público + Indenização prévia + Autorização legislativa.</p>
@@ -833,7 +902,7 @@ figure {break-inside: avoid;}
 <div class="study-card" data-study-kind="destaque" data-study-label="Conteúdo">
 <span class="card-kicker">Conteúdo</span>
 <div class="text-section">
-<h4 class="topico-organizado"><strong>❌ Rescisão por Culpa do Contratado (Caducidade – na concessão)</strong></h4>
+<h4 class="topico-organizado"><strong>Rescisão por Culpa do Contratado (Caducidade – na concessão)</strong></h4>
 <p class="leitura-paragrafo leitura-texto">Rescisão por descumprimento contratual pelo contratado.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Características:</strong> O contratado descumpre suas obrigações. Não há indenização prévia ao contratado. Não depende de autorização legislativa. Exige processo administrativo com contraditório e ampla defesa.</p>
 <p class="leitura-paragrafo leitura-texto"><strong>Macete:</strong> Descumprimento + Sem indenização + Sem autorização + Processo administrativo.</p>
@@ -893,7 +962,7 @@ figure {break-inside: avoid;}
 
 </div>
 </div>
-<section class="material-github"><h2>Material de estudo: Licitações, Atos e Contratos (Lei 14.133/2021)</h2><h2>Licitações (Lei 14.133/2021)</h2><div class="study-card" data-study-kind="texto"><h3>📢 Fase Externa</h3><ul><li>1. Divulgação do edital – obrigatória no PNCP (Portal Nacional de Contratações Públicas).</li><li>2. Apresentação de propostas e documentos – envio pelos licitantes.</li><li>3. Classificação/Julgamento – ordenação das propostas conforme critérios do edital.</li><li>4. Habilitação – análise documental do primeiro colocado. Divide‑se em: Habilitação jurídica (ex.: contrato social), Qualificação técnica (atestados de capacidade), Qualificação econômico‑financeira (balanços), Regularidade fiscal e trabalhista (certidões negativas), e Art. 7º, XXXIII, CF – comprovação de não emprego de menor de 16 anos (salvo aprendiz a partir de 14) e de menor de 18 em trabalho noturno/perigoso/insalubre.</li><li>5. Fase recursal – única oportunidade para recurso contra julgamento ou habilitação.</li><li>6. Homologação – o chefe do órgão valida todo o procedimento.</li></ul></div><div class="study-card" data-study-kind="texto"><h3>Diferença Essencial: Dispensa x Inexigibilidade</h3><div class="table-wrap"><table style="; --table-min-width:465px;"><thead><tr><th scope="col">Critério</th><th scope="col">Dispensa (Art. 75)</th><th scope="col">Inexigibilidade (Art. 74)</th></tr></thead><tbody><tr><td>Natureza</td><td>Faculdade (pode ou não licitar)</td><td>Obrigação (não pode licitar)</td></tr><tr><td>Possibilidade</td><td>É possível competir</td><td>É impossível competir</td></tr><tr><td>Rol</td><td>Taxativo (numerus clausus)</td><td>Exemplificativo (rol aberto)</td></tr><tr><td>Exemplo</td><td>Valor até R$ 100k (engenharia) ou R$ 50k (demais)</td><td>Fornecedor exclusivo, notória especialização</td></tr></tbody></table></div></div><div class="study-card" data-study-kind="texto"><h3>6. Recursos na Licitação</h3><ul><li><strong>📋 Pedido de Esclarecimento:</strong> antes do julgamento, até 2 dias úteis antes da abertura das propostas.</li><li><strong>🚫 Impugnação ao Edital:</strong> contestação de cláusula do edital. Prazo: 5 dias úteis antes da abertura. Efeito suspensivo (para a licitação).</li><li><strong>⚠️ Recurso contra o julgamento/habilitação:</strong> prazo de 3 dias úteis da publicação do resultado. Efeito suspensivo.</li><li><strong>📂 Recurso à Autoridade Superior:</strong> se o recurso for negado pela comissão, prazo de 3 dias úteis. Efeito meramente devolutivo (a licitação continua).</li></ul></div><h2>Contratos Administrativos (Lei 14.133/2021)</h2><div class="study-card" data-study-kind="texto"><h3>3. Requisitos para existência do Contrato Administrativo – FF.COM adaptado</h3><ul><li><strong>F</strong> Finalidade pública: atender ao interesse público – se for interesse privado do gestor, é ilegal.</li><li><strong>F</strong> Forma escrita: o contrato DEVE ser formalizado por escrito (não vale de boca).</li><li><strong>C</strong> Competência: quem assina deve ter poder legal (ex.: prefeito, secretário autorizado).</li><li><strong>O</strong> Objeto: lícito, possível e determinado (ou determinável).</li><li><strong>M</strong> Motivo: fundamento legal que justifica o contrato (lei, decreto, edital).</li></ul></div><div class="study-card" data-study-kind="texto"><h3>Detalhamento das cláusulas exorbitantes</h3><ul><li><strong>1. Fiscalizar a execução:</strong> A Administração pode acompanhar, fiscalizar e exigir a correta execução do contrato. Observação: a fiscalização não exclui nem reduz a responsabilidade do contratado pelos danos ou falhas na execução.</li><li><strong>2. Aplicar sanções:</strong> As principais sanções previstas na Lei 14.133/2021: Advertência; Multa (compensatória e/ou moratória); Impedimento de licitar e contratar – até 3 anos (efeitos apenas no ente aplicador); Declaração de inidoneidade – de 3 a 6 anos (efeitos perante toda a Administração). Toda penalidade exige processo administrativo com contraditório e ampla defesa.</li><li><strong>3. Rescindir unilateralmente:</strong> A Administração pode rescindir o contrato nos casos previstos em lei, principalmente por descumprimento ou por interesse público. (Ver detalhes em 'Rescisão Unilateral' abaixo.)</li><li><strong>4. Alterar unilateralmente:</strong> Qualitativa: mudança das especificações técnicas do objeto. Quantitativa: aumento ou redução da quantidade, dentro dos limites legais. Não é permitida alteração que modifique a natureza do objeto nem alterações arbitrárias.
+<section class="material-github"><h2>Material de estudo: Licitações, Atos e Contratos (Lei 14.133/2021)</h2><h2>Licitações (Lei 14.133/2021)</h2><div class="study-card" data-study-kind="texto"><h3>Fase Externa</h3><ul><li>1. Divulgação do edital – obrigatória no PNCP (Portal Nacional de Contratações Públicas).</li><li>2. Apresentação de propostas e documentos – envio pelos licitantes.</li><li>3. Classificação/Julgamento – ordenação das propostas conforme critérios do edital.</li><li>4. Habilitação – análise documental do primeiro colocado. Divide‑se em: Habilitação jurídica (ex.: contrato social), Qualificação técnica (atestados de capacidade), Qualificação econômico‑financeira (balanços), Regularidade fiscal e trabalhista (certidões negativas), e Art. 7º, XXXIII, CF – comprovação de não emprego de menor de 16 anos (salvo aprendiz a partir de 14) e de menor de 18 em trabalho noturno/perigoso/insalubre.</li><li>5. Fase recursal – única oportunidade para recurso contra julgamento ou habilitação.</li><li>6. Homologação – o chefe do órgão valida todo o procedimento.</li></ul></div><div class="study-card" data-study-kind="texto"><h3>Diferença Essencial: Dispensa x Inexigibilidade</h3><div class="table-wrap"><table style="--table-min-width:465px;"><thead><tr><th scope="col">Critério</th><th scope="col">Dispensa (Art. 75)</th><th scope="col">Inexigibilidade (Art. 74)</th></tr></thead><tbody><tr><td>Natureza</td><td>Faculdade (pode ou não licitar)</td><td>Obrigação (não pode licitar)</td></tr><tr><td>Possibilidade</td><td>É possível competir</td><td>É impossível competir</td></tr><tr><td>Rol</td><td>Taxativo (numerus clausus)</td><td>Exemplificativo (rol aberto)</td></tr><tr><td>Exemplo</td><td>Valor até R$ 100k (engenharia) ou R$ 50k (demais)</td><td>Fornecedor exclusivo, notória especialização</td></tr></tbody></table></div></div><div class="study-card" data-study-kind="texto"><h3>6. Recursos na Licitação</h3><ul><li><strong>📋 Pedido de Esclarecimento:</strong> antes do julgamento, até 2 dias úteis antes da abertura das propostas.</li><li><strong>🚫 Impugnação ao Edital:</strong> contestação de cláusula do edital. Prazo: 5 dias úteis antes da abertura. Efeito suspensivo (para a licitação).</li><li><strong>⚠️ Recurso contra o julgamento/habilitação:</strong> prazo de 3 dias úteis da publicação do resultado. Efeito suspensivo.</li><li><strong>📂 Recurso à Autoridade Superior:</strong> se o recurso for negado pela comissão, prazo de 3 dias úteis. Efeito meramente devolutivo (a licitação continua).</li></ul></div><h2>Contratos Administrativos (Lei 14.133/2021)</h2><div class="study-card" data-study-kind="texto"><h3>3. Requisitos para existência do Contrato Administrativo – FF.COM adaptado</h3><ul><li><strong>F</strong> Finalidade pública: atender ao interesse público – se for interesse privado do gestor, é ilegal.</li><li><strong>F</strong> Forma escrita: o contrato DEVE ser formalizado por escrito (não vale de boca).</li><li><strong>C</strong> Competência: quem assina deve ter poder legal (ex.: prefeito, secretário autorizado).</li><li><strong>O</strong> Objeto: lícito, possível e determinado (ou determinável).</li><li><strong>M</strong> Motivo: fundamento legal que justifica o contrato (lei, decreto, edital).</li></ul></div><div class="study-card" data-study-kind="texto"><h3>Detalhamento das cláusulas exorbitantes</h3><ul><li><strong>1. Fiscalizar a execução:</strong> A Administração pode acompanhar, fiscalizar e exigir a correta execução do contrato. Observação: a fiscalização não exclui nem reduz a responsabilidade do contratado pelos danos ou falhas na execução.</li><li><strong>2. Aplicar sanções:</strong> As principais sanções previstas na Lei 14.133/2021: Advertência; Multa (compensatória e/ou moratória); Impedimento de licitar e contratar – até 3 anos (efeitos apenas no ente aplicador); Declaração de inidoneidade – de 3 a 6 anos (efeitos perante toda a Administração). Toda penalidade exige processo administrativo com contraditório e ampla defesa.</li><li><strong>3. Rescindir unilateralmente:</strong> A Administração pode rescindir o contrato nos casos previstos em lei, principalmente por descumprimento ou por interesse público. (Ver detalhes em “Rescisão Unilateral” abaixo.)</li><li><strong>4. Alterar unilateralmente:</strong> Qualitativa: mudança das especificações técnicas do objeto. Quantitativa: aumento ou redução da quantidade, dentro dos limites legais. Não é permitida alteração que modifique a natureza do objeto nem alterações arbitrárias.
 
 <strong>Limites quantitativos (Art. 125):</strong>
 - Regra geral: acréscimos e supressões de até <strong>25%</strong> do valor inicial atualizado do contrato.
@@ -909,6 +978,168 @@ figure {break-inside: avoid;}
 </footer>
 </main>
 </div>
+<script>
+/* =====================================================================
+   MENU LATERAL (mobile/tablet) E UTILIDADES DA PÁGINA
+   Embutido na própria página: funciona sem nenhum arquivo .js externo.
+
+   1. Menu lateral — o botão “Abrir menu” alterna a classe .open em
+      #sidebar (o CSS do tema unificado cuida do resto).
+   2. Marcar assunto como estudado — #concluir persiste em localStorage
+      e mostra o feedback em #salvamento.
+   3. Impressão — #imprimir.
+   4. Catálogo da biblioteca — #limpar reexibe todos os assuntos.
+   ===================================================================== */
+(function () {
+  "use strict";
+
+  var CHAVE_ESTUDO = "materia-policial:estudados";
+
+  /* ---------- Persistência (tolerante a modo privado e file://) -------- */
+  function lerEstudados() {
+    try {
+      var bruto = JSON.parse(localStorage.getItem(CHAVE_ESTUDO) || "[]");
+      return new Set(Array.isArray(bruto) ? bruto : []);
+    } catch (e) {
+      return new Set();
+    }
+  }
+  function gravarEstudados(conjunto) {
+    try {
+      localStorage.setItem(CHAVE_ESTUDO, JSON.stringify(Array.from(conjunto)));
+    } catch (e) {
+      /* sem acesso ao armazenamento: segue sem persistir */
+    }
+  }
+
+  /* =====================================================================
+     1. MENU LATERAL (mobile e tablet, até 800px de largura)
+     ===================================================================== */
+  var sidebar = document.getElementById("sidebar");
+  var botaoMenu = sidebar ? sidebar.querySelector(".mobile-menu") : null;
+
+  if (sidebar && botaoMenu) {
+    var menuAberto = function () {
+      return sidebar.classList.contains("open");
+    };
+    var aplicarEstado = function (aberto) {
+      sidebar.classList.toggle("open", aberto);
+      botaoMenu.setAttribute("aria-expanded", aberto ? "true" : "false");
+      botaoMenu.textContent = aberto ? "Fechar menu" : "Abrir menu";
+    };
+
+    /* Realce do botão com o menu aberto + toque sem atraso no mobile. */
+    var estilo = document.createElement("style");
+    estilo.textContent =
+      ".mobile-menu{touch-action:manipulation;-webkit-tap-highlight-color:transparent;}" +
+      ".sidebar.open .mobile-menu{border-color:var(--blue);color:#fff;" +
+      "box-shadow:0 8px 24px -12px var(--blue);}";
+    document.head.appendChild(estilo);
+
+    /* Abrir/fechar pelo botão. */
+    botaoMenu.addEventListener("click", function (evento) {
+      evento.stopPropagation();
+      aplicarEstado(!menuAberto());
+    });
+
+    /* Fecha ao clicar fora da barra lateral. */
+    document.addEventListener("click", function (evento) {
+      if (menuAberto() && !sidebar.contains(evento.target)) aplicarEstado(false);
+    });
+
+    /* Fecha com Esc e devolve o foco ao botão. */
+    document.addEventListener("keydown", function (evento) {
+      if (evento.key === "Escape" && menuAberto()) {
+        aplicarEstado(false);
+        botaoMenu.focus();
+      }
+    });
+
+    /* Fecha ao escolher um link do menu (navegação ou âncora). */
+    sidebar.addEventListener("click", function (evento) {
+      var alvo = evento.target;
+      var link = alvo && alvo.closest ? alvo.closest("nav a") : null;
+      if (menuAberto() && link) aplicarEstado(false);
+    });
+
+    /* Fecha ao voltar ao layout de telas grandes (desktop). */
+    if (typeof window.matchMedia === "function") {
+      var desktop = window.matchMedia("(min-width: 801px)");
+      var aoVirarDesktop = function (mudanca) {
+        if (mudanca.matches) aplicarEstado(false);
+      };
+      if (desktop.addEventListener) desktop.addEventListener("change", aoVirarDesktop);
+      else if (desktop.addListener) desktop.addListener(aoVirarDesktop); /* Safari antigo */
+    }
+  }
+
+  /* =====================================================================
+     2. MARCAR COMO ESTUDADO (#concluir) + FEEDBACK (#salvamento)
+     ===================================================================== */
+  var botaoConcluir = document.getElementById("concluir");
+  var aviso = document.getElementById("salvamento");
+  var agendamento = null;
+
+  function avisarSalvo() {
+    if (!aviso) return;
+    aviso.textContent = "Salvo ✓";
+    if (agendamento) clearTimeout(agendamento);
+    agendamento = setTimeout(function () {
+      aviso.textContent = "";
+    }, 2400);
+  }
+
+  if (botaoConcluir) {
+    var estudados = lerEstudados();
+    var chave = botaoConcluir.getAttribute("data-key") || window.location.pathname;
+
+    var pintar = function () {
+      var marcado = estudados.has(chave);
+      botaoConcluir.setAttribute("aria-pressed", marcado ? "true" : "false");
+      botaoConcluir.textContent = marcado ? "Estudado ✓" : "Marcar como estudado";
+      botaoConcluir.title = marcado
+        ? "Clique para desmarcar este assunto"
+        : "Marcar este assunto como estudado";
+    };
+
+    botaoConcluir.addEventListener("click", function () {
+      if (estudados.has(chave)) estudados.delete(chave);
+      else estudados.add(chave);
+      gravarEstudados(estudados);
+      pintar();
+      avisarSalvo();
+    });
+
+    pintar();
+  }
+
+  /* =====================================================================
+     3. IMPRIMIR (#imprimir)
+     ===================================================================== */
+  var botaoImprimir = document.getElementById("imprimir");
+  if (botaoImprimir) {
+    botaoImprimir.addEventListener("click", function () {
+      window.print();
+    });
+  }
+
+  /* =====================================================================
+     4. CATÁLOGO DA BIBLIOTECA — LIMPAR FILTROS (#limpar)
+     ===================================================================== */
+  var botaoLimpar = document.getElementById("limpar");
+  if (botaoLimpar) {
+    botaoLimpar.addEventListener("click", function () {
+      document
+        .querySelectorAll("#materiais .material")
+        .forEach(function (card) {
+          card.hidden = false;
+        });
+      var vazio = document.getElementById("vazio");
+      if (vazio) vazio.hidden = true;
+    });
+  }
+})();
+</script>
 </body>
 </html>
 
